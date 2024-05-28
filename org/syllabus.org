@@ -1,0 +1,132 @@
+#+title: Introduction to Data Science (DSC 105) Syllabus
+#+author: Marcus Birkenkrahe
+#+startup: overview hideblocks indent
+#+subtitle: DSC105 Introduction to Data Science - Syllabus - Fall 2024
+* General Course Information
+#+attr_html: :width 400px:
+[[../img/poster.png]]
+- Course title: Introduction to data science
+- Course number and section: DSC 105.01
+- Meeting Times: Mon-Wed-Fri from 11:00-11:50 am
+- Meeting place: Derby Science Building computer lab room 209
+- Professor: Marcus Birkenkrahe
+- Professor's Office: Derby Science Building 210
+- Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
+- Office hours: [[https://calendar.app.google/yjr7tB7foMYowRJm7][by appointment]] MWF 4pm, Tue 3pm, Thu 11 am & 3 pm
+- Textbook: No textbook. Recommended: Data Science from Scratch by Joel
+  Grus (2e), O'Reilly 2019. Dive into Data Science by Bradford
+  Tuckfield, NoStarch 2023. Python Data Science Handbook by Jake
+  Vanderplas, O'Reilly 2019.
+
+* Objectives
+
+Data science is concerned with getting data to work for us, to give us
+its (presumed) hidden treasures. Data science has been called "the
+sexiest job of the 21st century". Even if you don't want to become a
+professonial data scientist, it's helpful to master the basic concepts
+if you want to succeed in today's data-driven business.
+
+* Target audience
+
+The course is for anyone who is interested in becoming more data
+literate in their own field of interest - be it languages, theatre,
+biology, psychology or exercise science - and growing their personal
+skill stack. Visualization of data-driven insights and improved
+productivity when working with data and media is a concern for any
+professional.
+
+* Student Learning Outcomes
+
+Students who complete "Introduction to data science" (DSC 105) will be
+able to:
+
+- Learn computer and data science principles by playing with data
+- Acquire basic programming skills using Python, R, SQL, and bash
+- Apply literate programming principles by working with Org-mode
+- Use infrastructure including command line, Jupyter notebooks, GitHub
+- Understand the relationship of humans, machines, and data
+- Develop their critical thinking skills
+- Learn how to effectively use AI coding assistants like Copilot, Code
+  Interpreter (ChatGPT)
+- Understand the impact of, and can code in R, Python, SQL, bash
+- Know how to effectively present assignment and project results
+
+Students, who complete DSC 105 will have fulfilled the prerequisites
+for DSC 205, Introduction to advanced data science, which focuses on
+advanced practices in data exploration, visualization, and integration
+with databases and other languages through R and Python packages and
+APIs.
+
+* Course requirements
+
+Formal prerequisites: Introduction to Programming (either CSC100 or
+CSC115 or CSC109, and MTH101 (College Algebra).
+
+Otherwise no prior knowledge required. Some knowledge of, and
+experience with computers and/or programming is useful but not
+critical. Curiosity is essential. You will gain data literacy skills
+by taking this course. The course will prepare you for further studies
+in computer and data science, or in other disciplines that use modern
+computing, i.e. every discipline, from accounting to zoology).
+
+* Grading
+
+| WHEN    | DESCRIPTION            | IMPACT |
+|---------+------------------------+--------|
+| Weekly  | DataCamp assignments   |    25% |
+| Monthly | Project sprint reviews |    25% |
+| Weekly  | Tests                  |    25% |
+| TBD     | Final exam (optional)  |    25% |
+
+- DataCamp is an online learning platform for data science
+- Sprint reviews are monthly group project progress reports
+- Tests are open-book multiple choice exams to be completed at home
+- The final exam is optional if you want to improve your grade
+
+* Dates and class schedule
+
+| Week | Datacamp assignments              | Project           |
+|------+-----------------------------------+-------------------|
+|    1 |                                   |                   |
+|    2 | Intro to Python: Basics           |                   |
+|    3 | Intro to Python: Lists            |                   |
+|    4 | Intron to Python: Functions       | 1st sprint review |
+|    5 | Intro to Python: NumPy            |                   |
+|    6 | Intermed Python: Matplotlib       |                   |
+|    7 | Intermed Python: Pandas           |                   |
+|    8 | Intermed Python: Logic            | 2nd sprint review |
+|    9 | Intermed Python: Loops            |                   |
+|   10 | Intermed Python: Case Study       |                   |
+|   11 | Data with pandas: Subsetting      |                   |
+|   12 | Data with pandas: Agreggating     | 3rd sprint review |
+|   13 | Data with pandas: Indexing        |                   |
+|   14 | Data with pandas: Visualizing     |                   |
+|   15 |                                   |                   |
+|   16 |                                   | 4th sprint review |
+
+* Learning management system
+
+- We use Lyon's Canvas installation for this course.
+- The home page contains: assignments, grades, pages, people,
+  syllabus, quizzes, Google Drive, Course evaluation and Zoom.
+- The Zoom page includes cloud recordings of all past sessions.
+- Recorded sessions will be deleted after the last class.
+
+* DataCamp
+
+The course includes a free subscription to the DataCamp classroom at
+[[https://datacamp.com/][datacamp.com]] for further study, and the opportunity to earn
+certificates. DataCamp is a popular data science online learning
+platform.
+
+* GitHub
+
+All course materials are available in a public GitHub repository
+([[https://github.com/birkenkrahe/dsc105][github.com/birkenkrahe/dsc105]]). Registration for students
+includes a free subscription to GitHub codespaces with the AI coding
+assistant Copilot. GitHub is the worldwide largest online platform for
+software development.
+
+* [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies (Fall 2023)]]
+
+Online: https://tinyurl.com/LyonPolicyF23, see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
