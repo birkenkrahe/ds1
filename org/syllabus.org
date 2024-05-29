@@ -13,10 +13,10 @@
 - Professor's Office: Derby Science Building 210
 - Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
 - Office hours: [[https://calendar.app.google/yjr7tB7foMYowRJm7][by appointment]] MWF 4pm, Tue 3pm, Thu 11 am & 3 pm
-- Textbook: No textbook. Recommended: Data Science from Scratch by Joel
-  Grus (2e), O'Reilly 2019. Dive into Data Science by Bradford
-  Tuckfield, NoStarch 2023. Python Data Science Handbook by Jake
-  Vanderplas, O'Reilly 2019.
+- Textbook: No specific textbook. Recommended: Data Science from
+  Scratch by Joel Grus (2e), O'Reilly 2019. Dive into Data Science by
+  Bradford Tuckfield, NoStarch 2023. Python Data Science Handbook by
+  Jake Vanderplas, O'Reilly 2019.
 
 * Objectives
 
@@ -85,24 +85,58 @@ computing, i.e. every discipline, from accounting to zoology).
 
 * Dates and class schedule
 
-| Week | Datacamp assignments              | Project           |
-|------+-----------------------------------+-------------------|
-|    1 |                                   |                   |
-|    2 | Intro to Python: Basics           |                   |
-|    3 | Intro to Python: Lists            |                   |
-|    4 | Intron to Python: Functions       | 1st sprint review |
-|    5 | Intro to Python: NumPy            |                   |
-|    6 | Intermed Python: Matplotlib       |                   |
-|    7 | Intermed Python: Pandas           |                   |
-|    8 | Intermed Python: Logic            | 2nd sprint review |
-|    9 | Intermed Python: Loops            |                   |
-|   10 | Intermed Python: Case Study       |                   |
-|   11 | Data with pandas: Subsetting      |                   |
-|   12 | Data with pandas: Agreggating     | 3rd sprint review |
-|   13 | Data with pandas: Indexing        |                   |
-|   14 | Data with pandas: Visualizing     |                   |
-|   15 |                                   |                   |
-|   16 |                                   | 4th sprint review |
+** Assignment and project schedule:
+
+| Week | Datacamp assignments                                 | Project           |
+|------+------------------------------------------------------+-------------------|
+|    1 |                                                      |                   |
+|    2 | Introduction to Data Science                         |                   |
+|    3 | Data Collection and Storage                          |                   |
+|    4 | Preparation, Exploration, and Visualization          | 1st sprint review |
+|    5 | Experimentation and Prediction                       |                   |
+|    6 | Introduction to Python: Basics                       |                   |
+|    7 | Introduction to Python: Lists                        |                   |
+|    8 | Introduction to Python: Functions & Packages         | 2nd sprint review |
+|    9 | Introduction to Python: NumPy                        |                   |
+|   10 | Intermediate Python: Matplotlib                      |                   |
+|   11 | Intermediate Python: Dictionaries & Pandas           |                   |
+|   12 | Intermediate Python: Logic, Control Flow & Filtering | 3rd sprint review |
+|   13 | Intermediate Python: Loops                           |                   |
+|   14 | Intermediate Python: Case Study: Hacker Statistics   |                   |
+|   15 |                                                      |                   |
+|   16 |                                                      | 4th sprint review |
+
+** Textbook and topic schedule
+
+|   | Topic                  | Textbook "Dive into Data Science"          |    Page |
+|---+------------------------+--------------------------------------------+---------|
+|   | Introduction           | Introduction                               |   12-14 |
+|   | Setting up             | Setting Up the Environment                 |   15-20 |
+|   | Exploring data         | Your First Day as CEO                      |   20-24 |
+|   | Data tables            | Displaying Data with Python                |   25-27 |
+|   | Summarization          | Calculating Summary Statistics             |   28-30 |
+|   | Subsetting             | Analyzing Subsets of Data                  |   31-34 |
+|   | Visualization          | Visualizing Data with Matplotlib           |   35-42 |
+|   | Correlations           | Exploring Correlations                     |   43-49 |
+|   | Visualize correlations | Creating Heat Maps                         |   50-52 |
+|---+------------------------+--------------------------------------------+---------|
+|   | Forecasting            | Predicting Customer Demand                 |   55-56 |
+|   | Data cleaning          | Cleaning Erroneous Data                    |   56-58 |
+|   | Plotting trends        | Plotting Data to Find Trends               |   59-60 |
+|   | Linear regression      | Performing Linear Regression               |   60-69 |
+|   | Forecasting            | Using Regression to Forecast Future Trends |   70-72 |
+|   |                        | Trying More Regression Models              |   72-85 |
+|---+------------------------+--------------------------------------------+---------|
+|   | Hypothesis testing     | Reading Population Data                    |   88-97 |
+|   |                        | Performing Hypothesis Testing              |  98-104 |
+|   |                        | Comparing Groups in a Practical Context    | 105-109 |
+|---+------------------------+--------------------------------------------+---------|
+|   | A/B testing            | The Need for Experimentation               | 111-112 |
+|   |                        | Running Experiments to Test New Hypotheses | 113-121 |
+|   |                        | Optimizing Frameworks                      | 122-125 |
+|   |                        | Understanding Effect Sizes                 | 126-128 |
+|   |                        | Calculating the Significance of Data       | 129-131 |
+|---+------------------------+--------------------------------------------+---------|
 
 * Learning management system
 
@@ -114,19 +148,22 @@ computing, i.e. every discipline, from accounting to zoology).
 
 * DataCamp
 
-The course includes a free subscription to the DataCamp classroom at
-[[https://datacamp.com/][datacamp.com]] for further study, and the opportunity to earn
-certificates. DataCamp is a popular data science online learning
-platform.
+- The course includes a free subscription to the DataCamp classroom at
+  [[https://datacamp.com/][datacamp.com]] for further study, and the opportunity to earn
+  certificates. DataCamp is a popular data science online learning
+  platform.
+
+- The [[https://datacamp.com/datalab][DataLab workspace]] that comes with the DataCamp subscription will
+  be our usual stomping ground to experiment with either Python or R.
 
 * GitHub
 
 All course materials are available in a public GitHub repository
-([[https://github.com/birkenkrahe/dsc105][github.com/birkenkrahe/dsc105]]). Registration for students
+([[https://github.com/birkenkrahe/ds1][github.com/birkenkrahe/ds1]]). Registration for students
 includes a free subscription to GitHub codespaces with the AI coding
 assistant Copilot. GitHub is the worldwide largest online platform for
 software development.
 
-* [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies (Fall 2023)]]
+* [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies (Spring 2024)]]
 
 Online: https://tinyurl.com/LyonPolicyF23, see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
