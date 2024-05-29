@@ -84,7 +84,6 @@ computing, i.e. every discipline, from accounting to zoology).
 - The final exam is optional if you want to improve your grade
 
 * Dates and class schedule
-
 ** Assignment and project schedule:
 
 | Week | Datacamp assignments                                 | Project           |
