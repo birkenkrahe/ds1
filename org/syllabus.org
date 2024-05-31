@@ -83,60 +83,6 @@ computing, i.e. every discipline, from accounting to zoology).
 - Tests are open-book multiple choice exams to be completed at home
 - The final exam is optional if you want to improve your grade
 
-* Dates and class schedule
-** Assignment and project schedule:
-
-| Week | Datacamp assignments                                 | Project           |
-|------+------------------------------------------------------+-------------------|
-|    1 |                                                      |                   |
-|    2 | Introduction to Data Science                         |                   |
-|    3 | Data Collection and Storage                          |                   |
-|    4 | Preparation, Exploration, and Visualization          | 1st sprint review |
-|    5 | Experimentation and Prediction                       |                   |
-|    6 | Introduction to Python: Basics                       |                   |
-|    7 | Introduction to Python: Lists                        |                   |
-|    8 | Introduction to Python: Functions & Packages         | 2nd sprint review |
-|    9 | Introduction to Python: NumPy                        |                   |
-|   10 | Intermediate Python: Matplotlib                      |                   |
-|   11 | Intermediate Python: Dictionaries & Pandas           |                   |
-|   12 | Intermediate Python: Logic, Control Flow & Filtering | 3rd sprint review |
-|   13 | Intermediate Python: Loops                           |                   |
-|   14 | Intermediate Python: Case Study: Hacker Statistics   |                   |
-|   15 |                                                      |                   |
-|   16 |                                                      | 4th sprint review |
-
-** Textbook and topic schedule
-
-|   | Topic                  | Textbook "Dive into Data Science"          |    Page |
-|---+------------------------+--------------------------------------------+---------|
-|   | Introduction           | Introduction                               |   12-14 |
-|   | Setting up             | Setting Up the Environment                 |   15-20 |
-|   | Exploring data         | Your First Day as CEO                      |   20-24 |
-|   | Data tables            | Displaying Data with Python                |   25-27 |
-|   | Summarization          | Calculating Summary Statistics             |   28-30 |
-|   | Subsetting             | Analyzing Subsets of Data                  |   31-34 |
-|   | Visualization          | Visualizing Data with Matplotlib           |   35-42 |
-|   | Correlations           | Exploring Correlations                     |   43-49 |
-|   | Visualize correlations | Creating Heat Maps                         |   50-52 |
-|---+------------------------+--------------------------------------------+---------|
-|   | Forecasting            | Predicting Customer Demand                 |   55-56 |
-|   | Data cleaning          | Cleaning Erroneous Data                    |   56-58 |
-|   | Plotting trends        | Plotting Data to Find Trends               |   59-60 |
-|   | Linear regression      | Performing Linear Regression               |   60-69 |
-|   | Forecasting            | Using Regression to Forecast Future Trends |   70-72 |
-|   |                        | Trying More Regression Models              |   72-85 |
-|---+------------------------+--------------------------------------------+---------|
-|   | Hypothesis testing     | Reading Population Data                    |   88-97 |
-|   |                        | Performing Hypothesis Testing              |  98-104 |
-|   |                        | Comparing Groups in a Practical Context    | 105-109 |
-|---+------------------------+--------------------------------------------+---------|
-|   | A/B testing            | The Need for Experimentation               | 111-112 |
-|   |                        | Running Experiments to Test New Hypotheses | 113-121 |
-|   |                        | Optimizing Frameworks                      | 122-125 |
-|   |                        | Understanding Effect Sizes                 | 126-128 |
-|   |                        | Calculating the Significance of Data       | 129-131 |
-|---+------------------------+--------------------------------------------+---------|
-
 * Learning management system
 
 - We use Lyon's Canvas installation for this course.
@@ -166,3 +112,74 @@ software development.
 * [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies (Spring 2024)]]
 
 Online: https://tinyurl.com/LyonPolicyF23, see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
+* Dates and class schedule
+** Assignment and project schedule:
+
+- We will cover max. 13 DataCamp courses, 4 project sprint reviews.
+- Each course carries a certificate that you can add to your resume.
+- We emphasize the data science workflow and Python as a toolbox.
+
+|------+--------------------------------------------------------------------+-------------------|
+| Week | Datacamp assignments                                               | Project           |
+|------+--------------------------------------------------------------------+-------------------|
+|    1 |                                                                    |                   |
+|    2 | Data Science for Everyone: Introduction to Data Science            |                   |
+|    3 | Data Science for Everyone: Data Collection and Storage             |                   |
+|    4 | Data Science for Everyone: Preparation, Exploration, Visualization | 1st sprint review |
+|    5 | Data Science for Everyone: Experimentation and Prediction          |                   |
+|    6 | Introduction to Python: Basics                                     |                   |
+|    7 | Introduction to Python: Lists                                      |                   |
+|    8 | Introduction to Python: Functions & Packages                       | 2nd sprint review |
+|    9 | Introduction to Python: NumPy                                      |                   |
+|   10 | Intermediate Python: Matplotlib                                    |                   |
+|   11 | Intermediate Python: Dictionaries & Pandas                         |                   |
+|   12 | Intermediate Python: Logic, Control Flow & Filtering               | 3rd sprint review |
+|   13 | Intermediate Python: Loops                                         |                   |
+|   14 | Intermediate Python: Case Study: Hacker Statistics                 |                   |
+|   15 |                                                                    |                   |
+|   16 |                                                                    | 4th sprint review |
+|------+--------------------------------------------------------------------+-------------------|
+
+** Textbook and topic schedule
+
+- We will cover up to 4 chapters of this introductory text.
+- We emphasize descriptive and prescriptive data analytics.
+- We also cover aspects of data engineering and modeling.
+
+|----+------------------------+--------------------------------------------+---------|
+| Ch | Topic                  | Textbook "Dive into Data Science"          |    Page |
+|----+------------------------+--------------------------------------------+---------|
+|  1 | Introduction           | Introduction                               |   12-14 |
+|    | Setting up             | Setting Up the Environment                 |   15-20 |
+|    | Exploring data         | Your First Day as CEO                      |   20-24 |
+|    | Data tables            | Displaying Data with Python                |   25-27 |
+|    | Summarization          | Calculating Summary Statistics             |   28-30 |
+|    | Subsetting             | Analyzing Subsets of Data                  |   31-34 |
+|    | Visualization          | Visualizing Data with Matplotlib           |   35-42 |
+|    | Correlations           | Exploring Correlations                     |   43-49 |
+|    | Visualize correlations | Creating Heat Maps                         |   50-52 |
+|----+------------------------+--------------------------------------------+---------|
+|  2 | Forecasting            | Predicting Customer Demand                 |   55-56 |
+|    | Data cleaning          | Cleaning Erroneous Data                    |   56-58 |
+|    | Plotting trends        | Plotting Data to Find Trends               |   59-60 |
+|    | Linear regression      | Performing Linear Regression               |   60-69 |
+|    | Forecasting            | Using Regression to Forecast Future Trends |   70-72 |
+|    |                        | Trying More Regression Models              |   72-85 |
+|----+------------------------+--------------------------------------------+---------|
+|  3 | Hypothesis testing     | Reading Population Data                    |   88-97 |
+|    |                        | Performing Hypothesis Testing              |  98-104 |
+|    |                        | Comparing Groups in a Practical Context    | 105-109 |
+|----+------------------------+--------------------------------------------+---------|
+|  4 | A/B testing            | The Need for Experimentation               | 111-112 |
+|    |                        | Running Experiments to Test New Hypotheses | 113-121 |
+|    |                        | Optimizing Frameworks                      | 122-125 |
+|    |                        | Understanding Effect Sizes                 | 126-128 |
+|    |                        | Calculating the Significance of Data       | 129-131 |
+|----+------------------------+--------------------------------------------+---------|
+
+- The next 7 chapters will be covered in the next course (DSC 205).
+- The course is titled  "Introduction to Advanced Data Science".
+- This course emphasises predictive analytics, un/supervised learning.
+- It also includes: Web scraping, natural language processing, SQL, R.
+  
+  
