@@ -98,20 +98,22 @@ computing, i.e. every discipline, from accounting to zoology).
   certificates. DataCamp is a popular data science online learning
   platform.
 
-- The [[https://datacamp.com/datalab][DataLab workspace]] that comes with the DataCamp subscription will
-  be our usual stomping ground to experiment with either Python or R.
+- We will use the [[https://datacamp.com/datalab][DataLab workspace]] that comes with the DataCamp
+  subscription will be our usual stomping to experiment with either
+  Python or R.
 
 * GitHub
 
 All course materials are available in a public GitHub repository
-([[https://github.com/birkenkrahe/ds1][github.com/birkenkrahe/ds1]]). Registration for students
-includes a free subscription to GitHub codespaces with the AI coding
-assistant Copilot. GitHub is the worldwide largest online platform for
-software development.
+([[https://github.com/birkenkrahe/ds1][github.com/birkenkrahe/ds1]]). Registration for students includes a
+free subscription to GitHub Codespaces with the AI coding assistant
+Copilot (you need to provide proof of student status yourself). GitHub
+is the worldwide largest online platform for software development.
 
-* [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies (Spring 2024)]]
+* [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies]]
 
 Online: https://tinyurl.com/LyonPolicyF23, see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
+
 * Dates and class schedule
 ** Assignment and project schedule:
 
