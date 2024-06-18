@@ -117,30 +117,31 @@ Online: https://tinyurl.com/LyonPolicyF23, see also [[https://catalog.lyon.edu/c
 * Dates and class schedule
 ** Assignment and project schedule:
 
-- We will cover max. 13 DataCamp courses, 4 project sprint reviews.
+- Summer prep program: [[https://app.datacamp.com/learn/courses/understanding-data-science][Understanding Data Science]] (2 hours)
+- We will cover 13 DataCamp courses, and 4 project sprint reviews.
 - Each course carries a certificate that you can add to your resume.
 - We emphasize the data science workflow and Python as a toolbox.
 
-|------+--------------------------------------------------------------------+-------------------|
-| Week | Datacamp assignments                                               | Project           |
-|------+--------------------------------------------------------------------+-------------------|
-|    1 |                                                                    |                   |
-|    2 | Data Science for Everyone: Introduction to Data Science            |                   |
-|    3 | Data Science for Everyone: Data Collection and Storage             |                   |
-|    4 | Data Science for Everyone: Preparation, Exploration, Visualization | 1st sprint review |
-|    5 | Data Science for Everyone: Experimentation and Prediction          |                   |
-|    6 | Introduction to Python: Basics                                     |                   |
-|    7 | Introduction to Python: Lists                                      |                   |
-|    8 | Introduction to Python: Functions & Packages                       | 2nd sprint review |
-|    9 | Introduction to Python: NumPy                                      |                   |
-|   10 | Intermediate Python: Matplotlib                                    |                   |
-|   11 | Intermediate Python: Dictionaries & Pandas                         |                   |
-|   12 | Intermediate Python: Logic, Control Flow & Filtering               | 3rd sprint review |
-|   13 | Intermediate Python: Loops                                         |                   |
-|   14 | Intermediate Python: Case Study: Hacker Statistics                 |                   |
-|   15 |                                                                    |                   |
-|   16 |                                                                    | 4th sprint review |
-|------+--------------------------------------------------------------------+-------------------|
+|------+-------------------------------------------------------------+-------------------|
+| Week | Datacamp assignments                                        | Project           |
+|------+-------------------------------------------------------------+-------------------|
+|    1 | [[https://app.datacamp.com/learn/courses/intro-to-python-for-data-science][Introduction to Python: Basics]]                              |                   |
+|    2 | Introduction to Python: Lists                               |                   |
+|    3 | Introduction to Python: Functions & Packages                |                   |
+|    4 |                                                             | 1st sprint review |
+|    5 | Introduction to Python: NumPy                               |                   |
+|    6 | [[https://app.datacamp.com/learn/courses/intermediate-python][Intermediate Python: Matplotlib]]                             |                   |
+|    7 | Intermediate Python: Dictionaries & Pandas                  |                   |
+|    8 | Intermediate Python: Logic, Control Flow & Filtering        | 2nd sprint review |
+|    9 | Intermediate Python: Loops                                  |                   |
+|   10 | Intermediate Python: Case Study: Hacker Statistics          |                   |
+|   11 | [[https://app.datacamp.com/learn/courses/data-manipulation-with-pandas][Data Manipulation w/pandas: Transforming DataFrames]]         |                   |
+|   12 |                                                             | 3rd sprint review |
+|   13 | Data Manipulation w/pandas: Aggregating DataFrames          |                   |
+|   14 | Data Manipulation w/pandas: Slicing/Indexing DataFrames     |                   |
+|   15 | Data Manipulation w/pandas: Creating/Visualizing DataFrames |                   |
+|   16 |                                                             | 4th sprint review |
+|------+-------------------------------------------------------------+-------------------|
 
 ** Textbook and topic schedule
 
