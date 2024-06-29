@@ -13,10 +13,10 @@
 - Professor's Office: Derby Science Building 210
 - Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
 - Office hours: [[https://calendar.app.google/yjr7tB7foMYowRJm7][by appointment]] MWF 4pm, Tue 3pm, Thu 11 am & 3 pm
-- Textbook: No specific textbook. Recommended: Data Science from
-  Scratch by Joel Grus (2e), O'Reilly 2019. Dive into Data Science by
-  Bradford Tuckfield, NoStarch 2023. Python Data Science Handbook by
-  Jake Vanderplas, O'Reilly 2019.
+- Textbook (optional): Dive into Data Science by Bradford Tuckfield,
+  NoStarch 2023. Recommended: Data Science from Scratch by Joel Grus
+  (2e), O'Reilly 2019. Python Data Science Handbook by Jake
+  Vanderplas, O'Reilly 2019.
 
 * Objectives
 
@@ -110,14 +110,15 @@ free subscription to GitHub Codespaces with the AI coding assistant
 Copilot (you need to provide proof of student status yourself). GitHub
 is the worldwide largest online platform for software development.
 
-* [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies]]
+* Lyon College Standard Policies
 
-Online: https://tinyurl.com/LyonPolicyF23, see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
+Online: [[https://tinyurl.com/LyonPolicyOnline]], see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
 
 * Dates and class schedule
 ** Assignment and project schedule:
 
 - Summer prep program: [[https://app.datacamp.com/learn/courses/understanding-data-science][Understanding Data Science]] (2 hours)
+- Summary course: [[https://app.datacamp.com/learn/courses/introduction-to-data-science-in-python][Introduction to Data Science in Python]] (4 hours)
 - We will cover 13 DataCamp courses, and 4 project sprint reviews.
 - Each course carries a certificate that you can add to your resume.
 - We emphasize the data science workflow and Python as a toolbox.
