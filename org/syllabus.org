@@ -156,42 +156,42 @@ See also: [[https://catalog.lyon.edu/202425-academic-calendar][2024-25 Academic 
 |   16 |                                                             | 4th sprint review |
 |------+-------------------------------------------------------------+-------------------|
 
-** Textbook and topic schedule
+** Textbook example and topic schedule
 
 - We will cover up to 4 chapters of this introductory text.
 - We emphasize descriptive and prescriptive data analytics.
 - We also cover aspects of data engineering and modeling.
 
-|----+------------------------+--------------------------------------------+---------|
-| Ch | Topic                  | Textbook "Dive into Data Science"          |    Page |
-|----+------------------------+--------------------------------------------+---------|
-|  1 | Introduction           | Introduction                               |   12-14 |
-|    | Setting up             | Setting Up the Environment                 |   15-20 |
-|    | Exploring data         | Your First Day as CEO                      |   20-24 |
-|    | Data tables            | Displaying Data with Python                |   25-27 |
-|    | Summarization          | Calculating Summary Statistics             |   28-30 |
-|    | Subsetting             | Analyzing Subsets of Data                  |   31-34 |
-|    | Visualization          | Visualizing Data with Matplotlib           |   35-42 |
-|    | Correlations           | Exploring Correlations                     |   43-49 |
-|    | Visualize correlations | Creating Heat Maps                         |   50-52 |
-|----+------------------------+--------------------------------------------+---------|
-|  2 | Forecasting            | Predicting Customer Demand                 |   55-56 |
-|    | Data cleaning          | Cleaning Erroneous Data                    |   56-58 |
-|    | Plotting trends        | Plotting Data to Find Trends               |   59-60 |
-|    | Linear regression      | Performing Linear Regression               |   60-69 |
-|    | Forecasting            | Using Regression to Forecast Future Trends |   70-72 |
-|    |                        | Trying More Regression Models              |   72-85 |
-|----+------------------------+--------------------------------------------+---------|
-|  3 | Hypothesis testing     | Reading Population Data                    |   88-97 |
-|    |                        | Performing Hypothesis Testing              |  98-104 |
-|    |                        | Comparing Groups in a Practical Context    | 105-109 |
-|----+------------------------+--------------------------------------------+---------|
-|  4 | A/B testing            | The Need for Experimentation               | 111-112 |
-|    |                        | Running Experiments to Test New Hypotheses | 113-121 |
-|    |                        | Optimizing Frameworks                      | 122-125 |
-|    |                        | Understanding Effect Sizes                 | 126-128 |
-|    |                        | Calculating the Significance of Data       | 129-131 |
-|----+------------------------+--------------------------------------------+---------|
+|----+------------------------+--------------------------------------------+---------+------|
+| Ch | Topic                  | Textbook "Dive into Data Science"          |    Page | Week |
+|----+------------------------+--------------------------------------------+---------+------|
+|  1 | Introduction           | Introduction                               |   12-14 | 1    |
+|    | Setting up             | Setting Up the Environment                 |   15-20 |      |
+|    | Exploring data         | Your First Day as CEO                      |   20-24 | 2    |
+|    | Data tables            | Displaying Data with Python                |   25-27 |      |
+|    | Summarization          | Calculating Summary Statistics             |   28-30 | 3    |
+|    | Subsetting             | Analyzing Subsets of Data                  |   31-34 |      |
+|    | Visualization          | Visualizing Data with Matplotlib           |   35-42 | 4    |
+|    | Correlations           | Exploring Correlations                     |   43-49 |      |
+|    | Visualize correlations | Creating Heat Maps                         |   50-52 | 5    |
+|----+------------------------+--------------------------------------------+---------+------|
+|  2 | Forecasting            | Predicting Customer Demand                 |   55-56 | 6    |
+|    | Data cleaning          | Cleaning Erroneous Data                    |   56-58 |      |
+|    | Plotting trends        | Plotting Data to Find Trends               |   59-60 | 7    |
+|    | Linear regression      | Performing Linear Regression               |   60-69 |      |
+|    | Forecasting            | Using Regression to Forecast Future Trends |   70-72 | 8    |
+|    |                        | Trying More Regression Models              |   72-85 |      |
+|----+------------------------+--------------------------------------------+---------+------|
+|  3 | Hypothesis testing     | Reading Population Data                    |   88-97 | 9    |
+|    |                        | Performing Hypothesis Testing              |  98-104 |      |
+|    |                        | Comparing Groups in a Practical Context    | 105-109 | 10   |
+|----+------------------------+--------------------------------------------+---------+------|
+|  4 | A/B testing            | The Need for Experimentation               | 111-112 | 11   |
+|    |                        | Running Experiments to Test New Hypotheses | 113-121 |      |
+|    |                        | Optimizing Frameworks                      | 122-125 | 12   |
+|    |                        | Understanding Effect Sizes                 | 126-128 |      |
+|    |                        | Calculating the Significance of Data       | 129-131 | 13   |
+|----+------------------------+--------------------------------------------+---------+------|
 
 - The next 7 chapters will be covered in the next course (DSC 205).
 - The course is titled  "Introduction to Advanced Data Science".
