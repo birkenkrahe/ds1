@@ -27,7 +27,9 @@
 [[../img/top_skills_2024.png]]
 
 Top skills:
-1) 
+1) Data analysis (Python, R)
+2) Data visualization (R, Power BI, Tableau)
+3) Database management (SQL)
 
 * DATA SCIENCE AS A FIELD OF SCIENTIFIC STUDY
 
