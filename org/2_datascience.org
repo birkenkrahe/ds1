@@ -24,7 +24,7 @@
 
 * 2024 update: top data science skills:
 #+attr_html: :width 600px:
-[[../img/top_skills_2024.png]]
+[[../img/topSkills2024.png]]
 
 Top skills:
 1) Data analysis (Python, R)
