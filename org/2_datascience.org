@@ -26,7 +26,8 @@
 #+attr_html: :width 600px:
 [[../img/top_skills_2024.png]]
 
-Top skills
+Top skills:
+1) 
 
 * DATA SCIENCE AS A FIELD OF SCIENTIFIC STUDY
 
