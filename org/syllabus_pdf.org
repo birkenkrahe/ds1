@@ -2,7 +2,6 @@
 #+author: Marcus Birkenkrahe
 #+startup: overview hideblocks indent
 #+subtitle: DSC105 Introduction to Data Science - Syllabus - Fall 2024
-#+options: toc:1 num:1
 * General Course Information
 #+attr_html: :width 400px:
 [[../img/poster.png]]
@@ -13,11 +12,12 @@
 - Professor: Marcus Birkenkrahe
 - Professor's Office: Derby Science Building 210
 - Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
-- Office hours: [[https://calendar.app.google/yjr7tB7foMYowRJm7][by appointment]] MWF 4pm, Tue 3pm, Thu 11 am & 3 pm
-- Textbook (optional): Dive into Data Science by Bradford Tuckfield,
-  NoStarch 2023. Recommended: Data Science from Scratch by Joel Grus
-  (2e), O'Reilly 2019. Python Data Science Handbook by Jake
-  Vanderplas, O'Reilly 2019.
+- Office hours: [[https://calendar.app.google/yjr7tB7foMYowRJm7][by appointment]] MWF 4pm, Tue/Thu 3pm, Fri 4 pm
+- Textbook (optional): fasteR - Fast Lane to Learning R! by Norm
+  Matloff (GitHub). Book of R by T.D. Davies. Dive into Data Science
+  by Bradford Tuckfield, NoStarch 2023. Recommended: Data Science from
+  Scratch by Joel Grus (2e), O'Reilly 2019. Python Data Science
+  Handbook by Jake Vanderplas, O'Reilly 2019.
 
 * Objectives
 
@@ -122,78 +122,36 @@ Online: [[https://tinyurl.com/LyonPolicyOnline]], see also [[https://catalog.lyo
 
 See also: [[https://catalog.lyon.edu/202425-academic-calendar][2024-25 Academic Calendar]]
 
-** Assignment and project schedule:
-
-- Summer prep program: [[https://app.datacamp.com/learn/courses/understanding-data-science][Understanding Data Science]] (2 hours) [Aug 19]
-- Bonus: [[https://app.datacamp.com/learn/courses/introduction-to-data-science-in-python][Introduction to Data Science in Python]] (4 hours) [Dec 6]
-- We will cover 13 DataCamp courses, and 4 project sprint reviews.
-- Each course carries a certificate that you can add to your resume.
-- We emphasize the data science workflow and Python as a toolbox.
-
-|------+-------------------------------------------------------------+-------------------|
-| Week | Datacamp assignments                                        | Project           |
-|------+-------------------------------------------------------------+-------------------|
-|    1 | [[https://app.datacamp.com/learn/courses/intro-to-python-for-data-science][Introduction to Python: Basics]]                              |                   |
-|    2 | Introduction to Python: Lists                               |                   |
-|    3 | Introduction to Python: Functions & Packages                |                   |
-|    4 |                                                             | 1st sprint review |
-|    5 | Introduction to Python: NumPy                               |                   |
-|    6 | [[https://app.datacamp.com/learn/courses/intermediate-python][Intermediate Python: Matplotlib]]                             |                   |
-|    7 | Intermediate Python: Dictionaries & Pandas                  |                   |
-|    8 | Intermediate Python: Logic, Control Flow & Filtering        | 2nd sprint review |
-|    9 | Intermediate Python: Loops                                  |                   |
-|   10 | Intermediate Python: Case Study: Hacker Statistics          |                   |
-|   11 | [[https://app.datacamp.com/learn/courses/data-manipulation-with-pandas][Data Manipulation w/pandas: Transforming DataFrames]]         |                   |
-|   12 |                                                             | 3rd sprint review |
-|   13 | Data Manipulation w/pandas: Aggregating DataFrames          |                   |
-|   14 | Data Manipulation w/pandas: Slicing/Indexing DataFrames     |                   |
-|   15 | Data Manipulation w/pandas: Creating/Visualizing DataFrames |                   |
-|   16 |                                                             | 4th sprint review |
-|------+-------------------------------------------------------------+-------------------|
-
-** Textbook example and topic schedule
-
-- We will cover up to 4 chapters of this introductory text.
-- We emphasize descriptive and prescriptive data analytics.
-- We also cover aspects of data engineering and modeling.
-
-|----+------------------------+--------------------------------------------+---------+------|
-| Ch | Topic                  | Textbook "Dive into Data Science"          |    Page | Week |
-|----+------------------------+--------------------------------------------+---------+------|
-|  1 | Introduction           | Introduction                               |   12-14 | 1    |
-|    | Setting up             | Setting Up the Environment                 |   15-20 |      |
-|    | Exploring data         | Your First Day as CEO                      |   20-24 | 2    |
-|    | Data tables            | Displaying Data with Python                |   25-27 |      |
-|    | Summarization          | Calculating Summary Statistics             |   28-30 | 3    |
-|    | Subsetting             | Analyzing Subsets of Data                  |   31-34 |      |
-|    | Visualization          | Visualizing Data with Matplotlib           |   35-42 | 4    |
-|    | Correlations           | Exploring Correlations                     |   43-49 |      |
-|    | Visualize correlations | Creating Heat Maps                         |   50-52 | 5    |
-|----+------------------------+--------------------------------------------+---------+------|
-|  2 | Forecasting            | Predicting Customer Demand                 |   55-56 | 6    |
-|    | Data cleaning          | Cleaning Erroneous Data                    |   56-58 |      |
-|    | Plotting trends        | Plotting Data to Find Trends               |   59-60 | 7    |
-|    | Linear regression      | Performing Linear Regression               |   60-69 |      |
-|    | Forecasting            | Using Regression to Forecast Future Trends |   70-72 | 8    |
-|    |                        | Trying More Regression Models              |   72-85 |      |
-|----+------------------------+--------------------------------------------+---------+------|
-|  3 | Hypothesis testing     | Reading Population Data                    |   88-97 | 9    |
-|    |                        | Performing Hypothesis Testing              |  98-104 |      |
-|    |                        | Comparing Groups in a Practical Context    | 105-109 | 10   |
-|----+------------------------+--------------------------------------------+---------+------|
-|  4 | A/B testing            | The Need for Experimentation               | 111-112 | 11   |
-|    |                        | Running Experiments to Test New Hypotheses | 113-121 |      |
-|    |                        | Optimizing Frameworks                      | 122-125 | 12   |
-|    |                        | Understanding Effect Sizes                 | 126-128 |      |
-|    |                        | Calculating the Significance of Data       | 129-131 | 13   |
-|----+------------------------+--------------------------------------------+---------+------|
-
-- The next 7 chapters will be covered in the next course (DSC 205).
-- The course is titled  "Introduction to Advanced Data Science".
-- This course emphasises predictive analytics, un/supervised learning.
-- It also includes: Web scraping, natural language processing, SQL, R.
+- We will cover 15 DataCamp lessons, and 4 project sprint reviews.
+- A whole DataCamp course carries a certificate that you can add to
+  your resume.
+- There will be short weekly multiple choice tests, which form the
+  basis of the (optional) final exam.
   
+|------+---------------------------------------------+-------------------|
+| Week | DataCamp assignments                        | Project           |
+|------+---------------------------------------------+-------------------|
+|    1 | [[https://app.datacamp.com/learn/courses/understanding-data-science][Introduction to data science]]                |                   |
+|    2 | Data Collection and Storage                 |                   |
+|    3 | Preparation, Exploration, and Visualization |                   |
+|    4 | Experimentation and Prediction              | 1st sprint review |
+|    5 | [[https://app.datacamp.com/learn/courses/free-introduction-to-r][Introduction to R: Basics]]                   |                   |
+|    6 | Introduction to R: Vectors                  |                   |
+|    7 | Introduction to R: Matrices                 |                   |
+|    8 | Introduction to R: Factors                  | 2nd sprint review |
+|    9 | Introduction to R: Data frames              |                   |
+|   10 | Introduction to R: Lists                    |                   |
+|   11 | EDA in R: Categorical data                  |                   |
+|   12 | EDA in R: Numerical data                    | 3rd sprint review |
+|   13 | EDA in R: Numerical Summaries               |                   |
+|   14 | EDA in R: Case study                        |                   |
+|   15 | Python for R Users: The Basics              |                   |
+|   16 |                                             | 4th sprint review |
+|------+---------------------------------------------+-------------------|
+
 * A note on using AI to write code for you or debug your code
+
+[[https://github.com/birkenkrahe/org/blob/master/fall24/UsingAItoCode.pdf][See full PDF on GitHub.]]
 
 *Short summary:* For students, using AI is a waste of time at best, and
 a crime against your ability to learn at worst. Learning never comes
@@ -202,28 +160,29 @@ that only works some of the time, and you'll never know when. Instead:
 join Lyon's Programming Student Club and experience the pain of not
 knowing first hand every week!
 
-*Will you be punished for using AI in my class?* Not directly because
-nobody can tell if you used AI or not but indirectly by turning in
-suboptimal results, by learning less, and by having less time for
-other, more productive activities.
+Will you be punished for using AI in my class?*
 
-*Are there any data on this?* Not much on coding as such but a recent
-(15 July), substantive, long (59 p) paper titled "Generative AI Can
-Harm Learning"), based on a very carefully conducted field experiment
-with a large (1000) sample of high school students concluded: "Our
-results suggest that students attempt to use [AI] as a "crutch" during
-practice problem sessions, and when successful, perform worse on their
-own. Thus, to maintain long-term productivity, we must be cautious
-when deploying generative AI to ensure humans continue to learn
-critical skills."  ([[https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486&s=03][Bastani et al, 2024]]).
+Not directly because nobody can tell if you used AI or not but
+indirectly by turning in suboptimal results, by learning less, and
+by having less time for other, more productive activities.
 
-** *References*
+
+*Are there any data on this?*
+
+Not much on coding as such but a recent (15 July), substantive, long
+(59 p) paper titled "Generative AI Can Harm Learning"), based on a
+very carefully conducted field experiment with a large (1000) sample
+of high school students concluded: "Our results suggest that students
+attempt to use [AI] as a "crutch" during practice problem sessions,
+and when successful, perform worse on their own. Thus, to maintain
+long-term productivity, we must be cautious when deploying generative
+AI to ensure humans continue to learn critical skills."  ([[https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486&s=03][Bastani et
+al, 2024]]).
+
+*References*
 
 Bastani, Hamsa and Bastani, Osbert and Sungu, Alp and Ge, Haosen and
 Kabakcı, Özge and Mariman, Rei, Generative AI Can Harm Learning
 (July 15, 2024). [[https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486&s=03#][Available at ssrn.com]].
-
-
-
 
 

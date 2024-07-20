@@ -58,11 +58,9 @@
 [[../img/1_topics.jpg]]
 
 1) Getting started with literate programming
-2) Introductory and intermediate Python programming
-3) Exploratory Data Analysis (EDA) using Python (and R)
-4) Plotting data with Matplotlib
-6) Forecasting trends and predicting data
-7) Hypothesis testing and data-driven experiments
+2) Introductory R and Python programming
+3) Exploratory Data Analysis (EDA) using R (and Python)
+4) Plotting data with base R, ggplot2 and matplotlib
 
 * Video lectures (old and new)
 #+attr_html: :width 400px
@@ -80,26 +78,6 @@ take a look at these, if you're bored with or put off by Python[fn:1].
 - [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXnLB9cVQQKRxtAFFDfyGw0h][Plotting with ggplot2]]
 - [[https://www.youtube.com/playlist?list=PLwgb17bzeNyi9RjO0pL48am-Bk6XWol44][Data import]] with R
 - [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXl3RimChL59F7lKSDGA97AZ][RStudio R Notebooks and literate programming]]
-#+end_quote
-
-New in fall 2024: lectures using the Python programming language[fn:2]
-#+begin_quote
-1. [ ] Setting up the environment for literate programming
-2. [ ] What is data science and why is it so hot right now?
-3. [ ] What is literate programming?
-4. [ ] Exploring and analysing data
-5. [ ] Finding patterns in data sets
-6. [ ] Using CSV to store data
-7. [ ] Displaying data with Python
-8. [ ] Calculating summary statistics
-9. [ ] Analysing nighttime data
-10. [ ]  Analysing seasonal data
-11. [ ]  Drawing and displaying a simple plot
-12. [ ]  Clarifying plots with titles and labels
-13. [ ] Plotting subsets of data
-14. [ ] Testing different plot types
-15. [ ] Exploring correlations
-16. [ ] Creating heat maps
 #+end_quote
 
 * Agile project (with "Scrum")
@@ -164,15 +142,6 @@ IMRaD is the framework for all scientific publications:
 - Complete them on time to get full points (late submission: 50%)
 - DataCamp certificates can support your resume ([[https://www.linkedin.com/in/birkenkrahe/][LinkedIn example)]]
 #+end_quote
-* Introduction to the textbook
-#+attr_html: :width 300px
-[[../img/1_dive_into_data_science.png]]
-
-- Tuckfield B (2023). Dive Into Data Science, NoStarch Press ([[https://www.amazon.com/Science-Business-People-Bradford-Tuckfield-ebook/dp/B09WJY5P99/ref=sr_1_1?crid=2V5T3ZDTNKOI1&dib=eyJ2IjoiMSJ9.7d41h-IUYMSlIxotiEuDLjBgu89E_j--6lqNXPSrKghDL_Pn3h7ZoQDyHHUSPx2G.w6f0lyrixgvcYI38jq4a7aSYwMmyQrwvipq-rMJAdnM&dib_tag=se&keywords=tuckfield+dive+into+data+science&qid=1719716373&sprefix=tuckfield+dive+into+data+science%2Caps%2C100&sr=8-1][$24]])
-- The book is quite densely written (320 pages for 2 terms)
-- We'll cover most of it int the course of DSC 105 + DSC 205
-- The syllabus contains a schedule aligned with page numbers
-
 * Good-bye Jupyter, Hello (again) Emacs + Org-mode!
 #+attr_html: :width 500px
 [[../img/1_emacs.png]]
@@ -220,8 +189,7 @@ Paper: "[[https://www.mdpi.com/2673-6470/3/3/15][Teaching Data Science with Lite
 [[../img/home.jpg]]
 
 - Register with DataCamp now if you haven't done it yet ([[https://lyon.instructure.com/courses/2628/pages/course-links][links]]).
-- Mandatory: Complete "[[https://lyon.instructure.com/courses/2628/assignments/29342][Python Basics]]" by Aug-26 11 am.
-- Bonus: Complete "[[https://lyon.instructure.com/courses/2628/assignments/29341][Understanding data science]]" by Sep-2
+- Complete [[https://app.datacamp.com/learn/courses/understanding-data-science][Introduction to data science]] on the DataCamp platform.
 
 * Next: GitHub + Git / Emacs + Org-mode
 * Footnotes
