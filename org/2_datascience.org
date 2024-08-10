@@ -2,6 +2,7 @@
 #+AUTHOR: Marcus Birkenkrahe
 #+Subtitle: Introduction to data science / DSC 105 / Fall 2024
 #+STARTUP: hideblocks overview indent inlineimages
+#+OPTIONS: toc:1 num:1 ^:nil
 #+ATTR_HTML: :width 500px
 #+caption: Modern picture of Pythagoras of Samos (ca. 570-495 BC)
 [[../img/2_pythagoras.jpg]]
@@ -232,7 +233,7 @@ definition of sexy.« -Gil Press ([[https://www.forbes.com/sites/gilpress/2012/0
 #+end_quote
 
 #+begin_quote
-#+NAME: fig:trend
+#+NAME: fig:trend1
 #+CAPTION: Google Trends, March 2021
 #+attr_html: :width 600px
 [[../img/2_ds_trends1.png]]
@@ -292,7 +293,7 @@ Between two of these areas each are application areas:
 
 Practice: [[https://ideaboardz.com/for/What%20are%20your%20skills%3F/4579973][fill this Kanban board for your own skills (if any)!]]
 
-URL: *tinyurl.com/5n75ytbx*
+URL: [[https://tinyurl.com/data-science-skills][tinyurl.com/data-science-skills]]
 
 - In which *domain* do you have knowledge?
 - Which (non-trivial) *decisions* have you made?
@@ -431,29 +432,21 @@ science). Metaphors are a type of model. [[challenge_frankenstein][(Hints)]]
 #+end_quote
 
 * WHAT'S THE (US) JOB MARKET FOR DATA SCIENTISTS LIKE?
-#+attr_html: :width 750px
+#+attr_html: :width 700px
+#+caption: Source: 365datascience.com/career-advice/data-scientist-job-market/
 #+NAME: fig:jobs
-[[../img/2_ds_demand.png]]
+[[../img/2_ds_demand2.png]]
 
 *Challenge: search a job portal for "data scientist".*
 
-#+attr_html: :width 300px
-#+NAME: fig:jobs
-[[../img/2_ds_demand1.png]]
-
 #+begin_quote
-The value of statistics like shown in figure [[fig:jobs]] depends on the
-exact definitions of the job, on the ability of business to recruit
-exactly for what they want etc. I have personally not spoken to any
-recruiter about this - I only read career-related blogs and looked
-at statistics like these (published by [[https://ischoolonline.berkeley.edu/data-science/][Berkeley School of
-Information 2020]], a site that is interested in attracting data
-science students, therefore highly biased). However, as a rule, you
-can never go wrong with growing your skill stack, especially with
-regard to STEM skills, and within these especially with regard to
-your ability to analyse data quantitatively - which is what data
-science boils down to. For more details on "data science careers",
-see [[robinson_nolis_2020][Robinson/Nolis (2020)]].
+The value of statistics depends on the exact definitions of the job,
+on the ability of business to recruit exactly for what they want etc.
+However, as a rule, you can never go wrong with growing your skill
+stack, especially with regard to STEM skills, and within these
+especially with regard to your ability to analyse data
+quantitatively - which is what data science boils down to. For more
+details on "data science careers", see [[robinson_nolis_2020][Robinson/Nolis (2020)]].
 
 Mathematics, especially statistics, programming and databases are
 the skill-based disciplines that you need to master. Having said
@@ -469,6 +462,7 @@ linear algebra, markov chains, and a variety of algorithms for
 
 * JOB PROFILES (ACCORDING TO DATACAMP)
 #+name: fig:prof
+#+caption: Source: DataCamp, Understanding Data Science
 #+attr_html: :width 600px
 [[../img/2_ds_jobs.png]]
 
@@ -492,7 +486,7 @@ the needs and the available experience.
 
 * WHAT ARE TYPICAL DATA SCIENCE PROBLEMS?
 #+NAME: fig:decision
-#+attr_html: :width 750px
+#+attr_html: :width 700px
 #+caption: Cartoon by Cassie Kozyrkov (@quaesita)
 [[../img/2_data_science_adventure.png]]
 
@@ -501,20 +495,19 @@ the needs and the available experience.
 - *Machine learning*: many decisions involving big data [DSC 305 spring'23]
 
 #+begin_quote
-The cartoon in figure [[fig:decision]] is by Google's head of "decision
-intelligence", [[kozyrkov_2019][Cassie Kozyrkov (2018)]]. She has a specific,
-business- and decision-oriented idea of the purpose of data
-science, which I share: data science is there to help you make
-decisions. The option tree shown distinguishes three sub-fields of
-data science: data analytics, statistics and machine learning. It
-asks if you're "making decisions" at the start (many, few, hardly
-any), it quickly focuses on the type of data (few vs big) and the
-'uncertainty' and 'importance' of the decisions. This is still a
-data-centric, not a decision-centric taxonomy. A focus on the
-latter would allow for many more options (e.g. strategic
-vs. tactical, organizational vs. managerial, routine
-vs. exceptional decisions etc.) Hence, for decision science, this
-kind of breakdown is not very useful.
+The cartoon in figure [[fig:decision]] is by Google's (former) head of
+"decision intelligence", [[kozyrkov_2019][Cassie Kozyrkov (2018)]]. She has a specific,
+business- and decision-oriented idea of the purpose of data science,
+which I share: data science is there to help you make decisions. The
+option tree shown distinguishes three sub-fields of data science: data
+analytics, statistics and machine learning. It asks if you're "making
+decisions" at the start (many, few, hardly any), it quickly focuses on
+the type of data (few vs big) and the 'uncertainty' and 'importance'
+of the decisions. This is still a data-centric, not a decision-centric
+taxonomy. A focus on the latter would allow for many more options
+(e.g. strategic vs. tactical, organizational vs. managerial, routine
+vs. exceptional decisions etc.) Hence, for decision science, this kind
+of breakdown is not very useful.
 
 The dominance of "big data" has also been doubted, especially when
 it comes to making (business) decisions. "Small [not big] data"
@@ -623,7 +616,7 @@ graphical - it could also be making a table, or creating a metaphor.
 #+attr_html: :width 750px
 [[../img/2_ds_workflow.png]]
 
-Source: [[https://learn.datacamp.com/courses/data-science-for-everyone][Data science for everyone]] (DataCamp)
+Source: [[https://learn.datacamp.com/courses/data-science-for-everyone][Understanding Data Science]] (DataCamp)
 
 * A MODEL FOR LEARNING DATA SCIENCE 
 #+NAME: fig:lyon

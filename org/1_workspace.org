@@ -1,14 +1,15 @@
-#+title: Introducing DataCamp Workspace with R
+#+title: Introducing Emacs + Org-mode with R
 #+startup: overview hideblocks indent inlineimages
 #+property: header-args:R :results output :noweb yes :session *R*
+#+options: toc:nil num:1 ^:nil
 * Code along in R: unicorn companies
 
-This is a demo notebook using R and the R shell (R Core Team, 2022) as
-part of an DataCamp workspace demo originally developed by DataCamp
-for Python (Schouwenaars & Cotton, 2022). Along the way, we'll also
-test the "AI" and the shared editing functions. We use the "unicorns"
-dataset (CB Insights, 2023) to demonstrate the following data
-analytics steps:
+This is a demo literate programming notebook using R + Emacs +
+Org-mode + ESS part of an DataCamp workspace demo originally developed
+by DataCamp for Python (Schouwenaars & Cotton, 2022). In DataCamp, you
+have access to AI and shared editing - neither of which I've found
+very useful (so far). We use the "unicorns" dataset (CB
+Insights, 2023) to demonstrate the following data analytics steps:
 
 1. Importing a CSV file as a ~data.frame~
 2. Viewing ~unique~ column data
@@ -16,7 +17,14 @@ analytics steps:
 4. Grouping data by column values
 5. Creating a barplot of category counts
 
-** Unicorn Companies
+* Prerequisites
+
+1. R installed (=R --version=)
+2. Emacs installed with the ESS package loaded. (=M-x R RET=))
+3. Emacs configuration file downloaded as =~/.emacs=
+4. Emacs + Org-mode R code test file =testR.org= runs.
+
+* Unicorn Companies
 
 A [[https://en.wikipedia.org/wiki/Unicorn_(finance)][unicorn company]] is a privately held startup company with a current
 valuation of over $1 billion USD. In this workspace, we'll be looking
@@ -26,7 +34,7 @@ select investors, and valuation of each unicorn. Former unicorn
 companies that have since exited due to IPO (Initial Public Offering)
 or acquisitions are not included in this list.
 
-** Importing a CSV file as data frame
+* Importing a CSV file as data frame
 
 We import the CSV file as a data frame and print the column headers
 (alongside other information) with the ~str~ function. If you only want
@@ -62,7 +70,7 @@ wait with that until you understand the data set better.
 Though the data look quite clean and appealing, a table view is not
 the best way to get an overview - there are too many records.
 
-** Viewing ~unique~ column data
+* Viewing ~unique~ column data
 
 For investment purposes, the ~Category~ column or feature is most
 interesting: this is the type of company. How many of these types
@@ -109,7 +117,7 @@ To get help, you can use ~?~ or the ~help~ function:
 There is a lot of help information here and you may want to look at it
 on the web instead e.g. using [[https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html][this function index for base R]].
 
-** Testing the AI coding assistant
+* Testing the AI coding assistant
 
 This is a good place to show off your ~AI~ assistant: you may not know
 how to look for help for ~unique~. Add an ~AI~ code block. The assistant
@@ -153,7 +161,7 @@ These experiments show that we're still quite far away from getting
 fully relieved of our coding burdens but for simple fixes, it's pretty
 good.
 
-** Clean data frame column ~Category~
+* Clean data frame column ~Category~
 
 There are a couple of typos in the ~Category~ values: 'Artificial
 intelligence' needs to become 'Artificial Intelligence', and
@@ -189,7 +197,7 @@ and replaces it by the second everywhere in the column:
 [15] "Mobile & telecommunications"
 #+end_example
 
-** Share editing rights
+* Share editing rights
 
 One of the neater properties of DataCamp Workspace is the ability to
 share your notebook and edit synchronously like in GoogleDocs.
@@ -209,13 +217,13 @@ adding a new code block with the command ~df~ and run it.
 Once this is done, ~Remove~ access from your workspace for the
 other person.
 
-** Grouping data by column values
+* Grouping data by column values
 
 Now that the categories are cleaned up, we group by ~Category~. In R, we
 can do this with the ~dplyr~ package, or with ~data.table~, or with base
 R.
 
-*** Grouping data by column with base R
+** Grouping data by column with base R
 
 With base R, we can use the ~stats::aggregate~ function, which splits
 the data into subsets.
@@ -246,10 +254,9 @@ its first argument into ascending (default) or descending order:
 : Error: object 'grouped_df' not found
 : Error: object 'grouped_df' not found
 
-*** Grouping data by column with ~dplyr~
+** Grouping data by column with ~dplyr~
 
-
-** Creating a barplot of category counts
+* Creating a barplot of category counts
 
 Plotting is a cinch in R: the ~barplot~ function will create a simple
 bar plot of ~grouped_df~ right away:

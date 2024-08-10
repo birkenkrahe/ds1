@@ -1,0 +1,60 @@
+#+TITLE: Emacs + Org-mode + ESS + R Test
+#+AUTHOR: Marcus Birkenkrahe
+#+SUBTITLE: Introduction to Data Science Lyon College Fall 2024
+#+PROPERTY: header-args:R :session *R* :results output :exports both
+#+startup: overview hideblocks indent entitiespretty:
+* README
+
+To run all tests without bothering with the documentation or the code,
+run =M-x org-babel-execute-buffer=. To make the graph visible, press
+=<F6>=. When you run any code for the first time, you're asked where you
+want the R session to be run (default: the current directory).
+
+* Load data
+
+The built-in dataset =mtcars= is a good test dataset. It contains data
+of 32 vintage cars. Though the dataset is built-in, we can load it and
+check that it is loaded.
+#+begin_src R 
+  data("mtcars")
+  ls()
+#+end_src
+
+#+RESULTS:
+: [1] "mtcars"
+
+* Data overview
+
+Next, we print some dataset characteristics:
+#+begin_src R
+  str(mtcars)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+'data.frame':	32 obs. of  11 variables:
+ $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+ $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+ $ disp: num  160 160 108 258 360 ...
+ $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+ $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+ $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+ $ qsec: num  16.5 17 18.6 19.4 17 ...
+ $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+ $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+ $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+ $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+#+end_example
+
+* Plot data
+
+Plotting is part of base R. We can simply plot with the =plot=
+command. Here is a scatterplot of the miles-per-gallon (=mpg=) vs. the
+weight (=wt=) feature for every car in the dataset.
+
+#+begin_src R :file mtcars.png :session *R* :results file graphics output :exports both
+  plot(x=mtcars$mpg,y=mtcars$wt)
+#+end_src
+
+#+RESULTS:
+[[file:mtcars.png]]
