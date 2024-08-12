@@ -17,9 +17,11 @@
 [[../img/1_pferd.jpeg]]
 
 - PhD: theoretical particle physics (mathematical data science)
-- Industry: Knowledge management (applied data science)
+- Industry: Knowledge management & Cybersecurity
 - Research: see [[https://www.researchgate.net/profile/Marcus-Birkenkrahe/research][researchgate.net]]
-- Profile: see ChatGPT's Aug 2024 memory of me.
+- Profile: see ChatGPT's [[https://github.com/birkenkrahe/org/blob/master/fall24/memory.png][Aug 2024 memory]] of me:
+  #+attr_html: :width 600px:
+  [[../img/memory.png]]
 
 * About you
 #+attr_html: :width 500px
