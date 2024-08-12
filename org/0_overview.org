@@ -19,7 +19,7 @@
 - PhD: theoretical particle physics (mathematical data science)
 - Industry: Knowledge management (applied data science)
 - Research: see [[https://www.researchgate.net/profile/Marcus-Birkenkrahe/research][researchgate.net]]
-- 
+- Profile: see ChatGPT's Aug 2024 memory of me.
 
 * About you
 #+attr_html: :width 500px
