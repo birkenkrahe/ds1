@@ -136,7 +136,7 @@ See also: [[https://catalog.lyon.edu/202425-academic-calendar][2024-25 Academic 
   your resume.
 - There will be short weekly multiple choice tests, which form the
   basis of the (optional) final exam.
-  
+
 |------+---------------------------------------------+-------------------|
 | Week | DataCamp assignments                        | Project           |
 |------+---------------------------------------------+-------------------|
