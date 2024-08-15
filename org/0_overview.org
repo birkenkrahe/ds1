@@ -176,7 +176,7 @@ Paper: "[[https://www.mdpi.com/2673-6470/3/3/15][Teaching Data Science with Lite
 #+end_quote
 * Tests (multiple-choice)
 #+attr_html: :width 600px
-[[../img/1_entry_quiz.png]]
+p[[../img/1_entry_quiz.png]]
 
 #+begin_quote
 - Tests have to be completed online, are timed, and have a deadline;
