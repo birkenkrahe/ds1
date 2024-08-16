@@ -29,10 +29,10 @@
 #+attr_html: :width 500px
 [[../img/1_universal_converter_box.png]]
 
-1. Why are you here?
-2. What would delight you?
-3. What would disappoint you?
-4. Where are you headed?
+1. Why are you here (/in this course/)?
+2. What would delight you (/in this course/)?
+3. What would disappoint you (/in this course/)?
+4. Where are you headed (/after this course/)?
 
 * Course syllabus
 #+attr_html: :width 400px
