@@ -1,20 +1,13 @@
-#+TITLE: NOTEBOOK - ALG1
+#+TITLE: NOTEBOOK - INTRODUCTION TO DATA SCIENCE
 #+AUTHOR: Marcus Birkenkrahe
 #+SUBTITLE: CSC 240 Data Structures Lyon College Fall 2024
 #+STARTUP: overview hideblocks indent entitiespretty:
-#+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both
+#+PROPERTY: header-args:R :session *R* :results output :exports both
 * Week 1
 
-** Why is the maximum number for a =char= type =127= and what does that mean?
+** Syllabus: About Using AI to write code for you or debug your code
 
-It means that the computer can represent 127 characters, including
-lower- and upper-case alphanumeric characters like ='a'= and ='A'=,
-symbols like =+=, punctuation like =!=, and special characters like
-newline, carriage return etc.
-
-As you saw in the lecture, the 
+I'm feeling quite strongly about this - [[https://github.com/birkenkrahe/org/blob/master/fall24/UsingAItoCode.org][here are my views]], which I
+also attached to the syllabus.
 
 
-
-* Week 2
-** Review questions

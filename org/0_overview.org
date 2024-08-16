@@ -41,6 +41,7 @@
 - [[https://lyon.instructure.com/courses/2628/assignments/syllabus][Syllabus on Canvas]]
 - General information & standard policies
 - Course information (grading, schedule)
+- *New: [[https://github.com/birkenkrahe/org/blob/master/fall24/UsingAItoCode.org][About [not] Using AI to Write Code For You*]]
 
 * Canvas LMS
 #+attr_html: :width 500px
