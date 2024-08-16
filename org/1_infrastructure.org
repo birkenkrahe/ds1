@@ -17,6 +17,8 @@
   which you can find at tinyurl.com/emacs-tutor (with videos).
 
 * Using Emacs + R in Google Cloud Shell
+#+attr_html: :width 600px: 
+[[../img/cloud.png]]
 
 1. Go to [[https://cloud.google.com/shell/][cloud.google.com/shell/]] and register with your Lyon Google
    account. This is completely free for up to 50 hours per week.
@@ -83,6 +85,10 @@
     shut the application down by shutting the browser window down. In
     your cloud shell, Emacs will remain installed, but R unfortunately
     will not and you'll have to install it every time you go in.
+
+Here is another example showing the dashboard of the Cloud Editor.
+#+attr_html: :width 600px:
+[[../img/cloud_hist.png]]
 
 * Summary
 

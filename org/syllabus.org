@@ -109,9 +109,8 @@ computing, i.e. every discipline, from accounting to zoology).
   certificates. DataCamp is a popular data science online learning
   platform.
 
-- We will use the [[https://datacamp.com/datalab][DataLab workspace]] that comes with the DataCamp
-  subscription will be our usual stomping to experiment with either
-  Python or R.
+- The [[https://datacamp.com/datalab][DataLab workspace]] that comes with the DataCamp subscription will
+  be an occasional stomping to experiment with either Python or R.
 
 * GitHub
 

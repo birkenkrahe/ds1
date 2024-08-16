@@ -177,6 +177,39 @@ Paper: "[[https://www.mdpi.com/2673-6470/3/3/15][Teaching Data Science with Lite
 - Useful when learning any programming language
   
 #+end_quote
+* Using GitHub
+
+- GitHub is the top software development platform now owned (but not
+  ruined yet) by Microsoft.
+
+- The term 'Git' refers to the version control software of the same
+  name. You can also use it as a central document repository.
+
+- All course materials (data/src/org/pdf/img) are on GitHub at
+  [[https://github.com/birkenkrahe/ds1][github.com/birkenkrahe/ds1]]. You can watch/fork this repository.
+
+- You can use GitHub yourself to synchronize content between different
+  computers, e.g. the lab and your PC.
+
+- Recommended: the [[https://docs.github.com/en/get-started/start-your-journey/hello-world][Hello World exercise]] at GitHub. This teaches you
+  the typical software project development workflow.
+
+* Using Linux
+#+attr_html: :width 600px:
+
+[[../img/penguins.jpg]]
+
+Linux is the world's most used operating system (the software between
+you and your computer, or your phone) based on 1970s Unix developed by
+Linus Torvalds (who also wrote the Git version control software).
+
+With some luck, we're going to get lots of Linux love this term: IT is
+working on a server with 50 virtual Linux boxes just for you and me!
+
+While they sort us out, we're going to take a look at Google Cloud
+Shell, which is free for the time being and will allow us to spin up
+Linux + Emacs + R.
+
 * Tests (multiple-choice)
 #+attr_html: :width 600px
 p[[../img/1_entry_quiz.png]]
@@ -198,7 +231,7 @@ p[[../img/1_entry_quiz.png]]
 - Complete chapter 1 of the course "Understanding Data Science",
   [[https://app.datacamp.com/learn/courses/understanding-data-science][Introduction to data science]] on the DataCamp platform.
 
-* Next: GitHub + Git / Emacs + Org-mode
+* Next: [[https://github.com/birkenkrahe/ds1/blob/main/pdf/1_infrastructure.pdf][Infrastructure exercise]]
 * Footnotes
 
 [fn:1]There are good reasons to choose R over Python as a first
