@@ -1,0 +1,20 @@
+#+TITLE: NOTEBOOK - ALG1
+#+AUTHOR: Marcus Birkenkrahe
+#+SUBTITLE: CSC 240 Data Structures Lyon College Fall 2024
+#+STARTUP: overview hideblocks indent entitiespretty:
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both
+* Week 1
+
+** Why is the maximum number for a =char= type =127= and what does that mean?
+
+It means that the computer can represent 127 characters, including
+lower- and upper-case alphanumeric characters like ='a'= and ='A'=,
+symbols like =+=, punctuation like =!=, and special characters like
+newline, carriage return etc.
+
+As you saw in the lecture, the 
+
+
+
+* Week 2
+** Review questions
