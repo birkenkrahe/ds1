@@ -89,6 +89,12 @@
     This time, the plot is shown in the notebook itself just like in
     Emacs, which both stores the plot and shows it.
 
+13. Before leaving, give your workbook a title: =Testing R= will be
+    suggested when you click on the title field. This workbook will be
+    permanent as long as you have a DataCamp account. Though if you
+    aren't subscribed to my DataCamp classroom, you'll have a limited
+    number of workbooks and a limited number of AI prompts available.
+
 * Issues with interactive notebooks
 
 There are multiple problems with this approach:
