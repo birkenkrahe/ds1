@@ -1,0 +1,10 @@
+#+TITLE: GETTING STARTED - COURSE INFRASTRUCTURE - EMACS
+#+AUTHOR: Marcus Birkenkrahe
+#+Subtitle: Introduction to data science / DSC 105 / Fall 2024
+#+STARTUP: hideblocks overview indent inlineimages
+#+OPTIONS: toc:nil num:nil ^:nil
+#+PROPERTY: header-args:R :session *R* :results output :exports both
+* Overview
+
+1) Emacs Tutorial
+2) Org-mode Tutorial

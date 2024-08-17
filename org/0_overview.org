@@ -141,7 +141,7 @@ IMRaD is the framework for all scientific publications:
 - Most if not all term assignments are DataCamp assignments
 - Assignments are drawn from several courses:
   1. Understanding data science (bonus, pre-term)
-  2. Introduction to Rn
+  2. Introduction to R
   3. Intermediate R
   4. Explorative Data Analysis with R
   5. Python for R Users

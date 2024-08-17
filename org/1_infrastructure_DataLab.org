@@ -1,0 +1,112 @@
+#+TITLE: GETTING STARTED - COURSE INFRASTRUCTURE - DATALAB
+#+AUTHOR: Marcus Birkenkrahe
+#+Subtitle: Introduction to data science / DSC 105 / Fall 2024
+#+STARTUP: hideblocks overview indent inlineimages
+#+OPTIONS: toc:nil num:nil ^:nil
+#+PROPERTY: header-args:R :session *R* :results output :exports both
+
+1. Go to your DataCamp dashboard.
+
+2. You can get to =DataLab= from the dashboard selector but we're going
+   to do something different: Open the "Introduction to R" course
+   dashboard: select =Learn= and type =Introduction to R= in the search.
+
+3. You can see that there are almost as many offerings in Python as in
+   R - if you narrow it down, you can see that R has a lead on
+   probability and stats, while Python leads for machine
+   learning. Narrow the search to =R= and find the =Introduction to R=
+   course (assigned to you later in this class).
+
+4. In the course dashboard, find the =Create Course Notes= under
+   =Resources= in the right sidebar and click on =+=.
+
+5. You are now in the =DataLab= application. This is an interactive
+   notebook like Emacs + Org-mode earlier. It's got some advanatages
+   and some disadvantages. Open a =New Workbook=.
+
+6. Though you came from an R course, these notebooks are set to Python
+   by default. Change that in the =Environment= tab by selecting =R= as
+   =Workbook language=, and run =Start session= to restart the
+   environment.
+
+7. In the workbook editor, you can now see that =R= instead of =Python= is
+   offered, alongside =Text=, =SQL= and =Chart=. Click on =Text= and then
+   repeat the commands that you used in Emacs before (almost) to the
+   letter: this text is =Markdown= - headlines are started with =#=, and
+   code font is obtained with =`= (backtick) rather than ===.
+   #+attr_html: :width 450px:
+   [[../img/datalab_text.png]]
+
+8. Now, instead of writing code in the text, you need to add an =R=
+   block with =+=: You have the choice to add code or =tell our AI what
+   to do=. Why don't we try that! At the prompt, enter
+   #+begin_example
+   Show me the structure of the mtcars data frame.
+   #+end_example
+
+9. This is what you get - if it's correct (as shown) then click
+   =Accept=.
+   #+attr_html: :width 450px:
+   [[../img/datalab_ai.png]]
+
+10. You now have a code block and you can cancel the AI prompt entry
+    field and run the code by clicking on the play button (or typing
+    =CTRL + RET= on the keyboard). You should get the same result as in
+    Emacs.
+    #+attr_html: :width 450px:
+    [[../img/datalab_mtcars.png]]
+
+11. Let's move on with the plot: put the following into a text box,
+    and then repeat it at the AI prompt:
+    #+begin_example
+    Make a scatterplot of miles-per-gallon vs. weight
+    and store the plot in a file `mtcars.png`.
+    #+end_example
+    #+attr_html: :width 600px:
+    [[../img/datalab_plot.png]]
+
+    Because you saved the result to a file, it won't show in the
+    notebook. You need to open it using the tab =File > Show Workbook
+    Files=:
+    #+attr_html: :width 500px:
+    [[../img/datalab_ggplot.png]]
+    
+    You recognize the scatterplot from Emacs though the code is vastly
+    more complicated than necessary, leading to a customized plot.
+
+12. The AI result is markedly different from what we did in Emacs
+    (below). Let's see what DataLab does when we use this command:
+    #+attr_html: :width 600px:
+    [[../img/emacs_plot.png]]
+
+    Add a new code block, enter the one-line command and run the
+    block - you will notice that the R console suggests completions to
+    you, e.g. when you type =plot(x==mtcars$=, all the possible columns
+    of =mtcars= are suggested to you.
+    #+attr_html: :width 500px: 
+    [[../img/datalab_plot2.png]]
+    
+    This time, the plot is shown in the notebook itself just like in
+    Emacs, which both stores the plot and shows it.
+
+* Issues with interactive notebooks
+
+There are multiple problems with this approach:
+- The interface changes often
+- Having AI assistance at your fingertips (which you could also add to
+  Emacs) is dangerous for beginners: you learn nothing or very little,
+  and the code tends to be more complicated than necessary.
+- You can only use one language per notebook at a time (R or
+  Python), and only interpreted languages (not C,C++, Java, etc.).
+- You rely on an Internet connection
+- You can save and share your notebook only in the =.ipynb= (I-Python)
+  format (that's plain-text but needs notebook software to be
+  processed). You can also render Emacs-Org-mode notebooks in this
+  format for upload to commercial notebook tools
+
+* Which tool to use when
+
+When competing, you might have to use commercial tools (like Datalab,
+Jupyter, VSCode, RStudio, Colab) but whenever possible you should
+revert to FOSS tools (like Emacs + Org-mode). They're usually superior
+by design and offer much more flexibility and productivity gains.

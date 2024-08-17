@@ -9,8 +9,8 @@
 
 1. What are my views on using generative AI when learning how to code?
    #+begin_quote
-     "Don't do it." For the long version, see my pamphlet "[[https://github.com/birkenkrahe/org/blob/master/fall24/UsingAItoCode.org][About [not]
-     Using AI to Write Code For You]]"
+   "Don't do it." For the long version, see my pamphlet "[[https://github.com/birkenkrahe/org/blob/master/fall24/UsingAItoCode.org][About [not]
+   Using AI to Write Code For You]]"
    #+end_quote
 2. What does IMRaD stand for and why is it relevant to us?
    #+begin_quote
@@ -31,15 +31,82 @@
    - [ ] Explore an R or Python package of your choice.
    - [ ] Complete a DataCamp competition and report on it.
    - [ ] Create a demo that your audience can participate in.
-5. True or false? You can complete your DataCamp assignments any time.
+5. True or false? Does this course have a final exam?
+   #+begin_quote
+   Yes it does but it's optional: you only have to write the final
+   exam if you're unhappy with your grade and want to improve it. If
+   your final exam result is worse than your final grade up to that
+   point, it won't be counted.
+   #+end_quote
+6. True or false? You can complete your DataCamp assignments any time.
    #+begin_quote
    True - but you will suffer a 50% point loss for late completion.
    #+end_quote
-6. What is "Google Cloud Shell"?
+7. What is "Google Cloud Shell"?
    #+begin_quote
    A free cloud application that offers an editor (looks like VSCode)
    and a command-line or shell program. Allows 50 hours computing time
    per week and 5GB of space. The Emacs installation is permanent, the
    installation of R, alas, is not.
    #+end_quote
-7. 
+8. What does =sudo apt install emacs= mean?
+   #+begin_quote
+   1. =sudo=: gives you admin rights for what follows, requires passwprd
+   2. =apt=: package manager program for Debian-like Linux distros
+   3. =install=: install the following program (if it can be found)
+   #+end_quote
+9. What is =wget=?
+   #+begin_quote
+   GNU =wget= is a non-interactive network downloader. It's one of many
+   GNU utilities that Linux uses. =wget= works in the background. Check
+   out [[https://www.man7.org/linux/man-pages/man1/wget.1.html][the manual page online]] (or in Linux).
+   #+end_quote
+10. What're the advantages of DataCamp assignments?
+    #+begin_quote
+    - The assignments are online & asynchronous (do them when you want)
+    - The lessons (often) come with videos and textbook material
+    - You can practice what you've learnt (5 questions per day)
+    - You can work through DataCamp on the desktop or on your phone
+    - You can use completed courses to get internships and work
+    - You can use [[https://datacamp.com/datalab][DataLab]] as an interactive notebook (similar to Emacs)
+    #+end_quote
+
+* Week 2
+
+- [ ] Linux exercise
+- [ ] Emacs tutorial
+- [ ] Datalab demo
+
+** Finish Google Cloud Shell exercise (GitHub)
+
+Head over to =shell.cloud.google.com=. You should get to the terminal
+right away. Move the editor out of the way, then continue the
+exercise to the end:
+
+1. Check that Emacs is (still) installed.
+   #+begin_src bash :results output :exports both
+     emacs --version
+   #+end_src
+2. Install R
+3. Open Emacs
+4. Create an Org-mode file 
+5. Run R
+6. Close Emacs
+
+** Start Birkenkrahe's Emacs Tutorial (GitHub)
+
+1. Open the tutorial at [[https://tinyurl.com/emacs-tutor][tinyurl.com/emacs-tutor]]. 
+2. Code along with me using Emacs in the cloud.
+3. Finish at home if necessary
+
+Note: some keybindings are not available because you're using Emacs in
+a browser - most notably =C-n= (CTRL + n) - use the arrow keys instead.
+
+** Datalab demo (GitHub)
+
+DataCamp's DataLab and Google's Colab or RStudio are alternatives to
+Emacs + Org-mode that you want to know about (and also so that you can
+appreciate what our infrastructure brings to the table).
+
+You'll get a handout of the exercise (PDF).
+
