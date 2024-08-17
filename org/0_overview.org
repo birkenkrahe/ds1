@@ -41,7 +41,7 @@
 - [[https://lyon.instructure.com/courses/2628/assignments/syllabus][Syllabus on Canvas]]
 - General information & standard policies
 - Course information (grading, schedule)
-- *New: [[https://github.com/birkenkrahe/org/blob/master/fall24/UsingAItoCode.org][About [not] Using AI to Write Code For You*]]
+- *New:* [[https://github.com/birkenkrahe/org/blob/master/fall24/UsingAItoCode.org][About [not] Using AI to Write Code For You*]]
 
 * Canvas LMS
 #+attr_html: :width 500px
@@ -141,10 +141,10 @@ IMRaD is the framework for all scientific publications:
 - Most if not all term assignments are DataCamp assignments
 - Assignments are drawn from several courses:
   1. Understanding data science (bonus, pre-term)
-  2. Introduction to Python 
-  3. Intermediate Python
-  4. Data Manipulation with Pandas
-  5. Introduction to data science with Python (bonus)
+  2. Introduction to Rn
+  3. Intermediate R
+  4. Explorative Data Analysis with R
+  5. Python for R Users
 - Complete them on time to get full points (late submission: 50%)
 - DataCamp certificates can support your resume ([[https://www.linkedin.com/in/birkenkrahe/][LinkedIn example)]]
 #+end_quote
@@ -212,7 +212,7 @@ Linux + Emacs + R.
 
 * Tests (multiple-choice)
 #+attr_html: :width 600px
-p[[../img/1_entry_quiz.png]]
+[[../img/1_entry_quiz.png]]
 
 #+begin_quote
 - Tests have to be completed online, are timed, and have a deadline;

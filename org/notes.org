@@ -5,9 +5,41 @@
 #+PROPERTY: header-args:R :session *R* :results output :exports both
 * Week 1
 
-** Syllabus: About Using AI to write code for you or debug your code
+** Review questions:
 
-I'm feeling quite strongly about this - [[https://github.com/birkenkrahe/org/blob/master/fall24/UsingAItoCode.org][here are my views]], which I
-also attached to the syllabus.
-
-
+1. What are my views on using generative AI when learning how to code?
+   #+begin_quote
+     "Don't do it." For the long version, see my pamphlet "[[https://github.com/birkenkrahe/org/blob/master/fall24/UsingAItoCode.org][About [not]
+     Using AI to Write Code For You]]"
+   #+end_quote
+2. What does IMRaD stand for and why is it relevant to us?
+   #+begin_quote
+   - "Introduction, Method, Results, and Discussion" is the standard
+     format of scientific publications.
+   - Our project sprint reviews follow IMRaD: in each sprint, one of
+     these is the central concern.
+   #+end_quote
+3. What's the purpose of a sprint review in Scrum?
+   #+begin_quote
+   Presentation of a prototype, which is whatever the project team has
+   created by then (perhaps nothing). It's not the same as a milestone
+   (which is a date at which a particular result is expected).
+   #+end_quote
+4. Which of these do not apply to the projects in this course:
+   - [ ] Use a project from another course in this class.
+   - [ ] Explore a dataset of your choice that you are curious about.
+   - [ ] Explore an R or Python package of your choice.
+   - [ ] Complete a DataCamp competition and report on it.
+   - [ ] Create a demo that your audience can participate in.
+5. True or false? You can complete your DataCamp assignments any time.
+   #+begin_quote
+   True - but you will suffer a 50% point loss for late completion.
+   #+end_quote
+6. What is "Google Cloud Shell"?
+   #+begin_quote
+   A free cloud application that offers an editor (looks like VSCode)
+   and a command-line or shell program. Allows 50 hours computing time
+   per week and 5GB of space. The Emacs installation is permanent, the
+   installation of R, alas, is not.
+   #+end_quote
+7. 
