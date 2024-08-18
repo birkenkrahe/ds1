@@ -3,8 +3,7 @@
 #+SUBTITLE: CSC 240 Data Structures Lyon College Fall 2024
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+PROPERTY: header-args:R :session *R* :results output :exports both
-* Week 1
-
+* Week 1 - Orientation
 ** Review questions:
 
 1. What are my views on using generative AI when learning how to code?
@@ -61,7 +60,7 @@
    GNU utilities that Linux uses. =wget= works in the background. Check
    out [[https://www.man7.org/linux/man-pages/man1/wget.1.html][the manual page online]] (or in Linux).
    #+end_quote
-10. What're the advantages of DataCamp assignments?
+10. What are the advantages of DataCamp assignments?
     #+begin_quote
     - The assignments are online & asynchronous (do them when you want)
     - The lessons (often) come with videos and textbook material
@@ -71,27 +70,26 @@
     - You can use [[https://datacamp.com/datalab][DataLab]] as an interactive notebook (similar to Emacs)
     #+end_quote
 
-* Week 2
+* Week 2 - Infrastructure & Introduction to Data Science
 
+Infrastructure
 - [ ] Linux exercise
 - [ ] Emacs tutorial
 - [ ] Datalab demo
 
-** Finish Google Cloud Shell exercise (GitHub)
+** Finish Google Cloud Shell exercise ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Google_Cloud_Shell.org][GitHub]])
 
 Head over to =shell.cloud.google.com=. You should get to the terminal
 right away. Move the editor out of the way, then continue the
 exercise to the end:
 
-1. Check that Emacs is (still) installed.
-   #+begin_src bash :results output :exports both
-     emacs --version
-   #+end_src
+1. Emacs is actually pre-installed.
 2. Install R
 3. Open Emacs
 4. Create an Org-mode file 
 5. Run R
 6. Close Emacs
+7. Watch your quota (50 hours/week)
 
 ** Start Birkenkrahe's Emacs Tutorial (GitHub)
 
