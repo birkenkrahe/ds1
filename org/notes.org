@@ -100,7 +100,8 @@ exercise to the end:
 3. Finish at home if necessary
 
 Note: some keybindings are not available because you're using Emacs in
-a browser - most notably =C-n= (CTRL + n) - use the arrow keys instead.
+a browser - most notably =C-n= (CTRL + n) and =C-v= (CTRL + v) use the
+arrow keys =<Down>= and =<FN><PgDown>= instead.
 
 ** Datalab demo (GitHub)
 
