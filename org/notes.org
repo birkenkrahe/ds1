@@ -3,7 +3,7 @@
 #+SUBTITLE: CSC 240 Data Structures Lyon College Fall 2024
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+PROPERTY: header-args:R :session *R* :results output :exports both
-* Week 1 - Orientation
+* Week 1 - Orientation ([[https://github.com/birkenkrahe/ds1/blob/main/org/0_overview.org][GitHub]])
 
 #+attr_html: :width 300px:
 [[../img/difficulty.png]]
@@ -117,11 +117,11 @@ exercise to the end:
 6. Close Emacs
 7. Watch your quota (50 hours/week)
 
-** Start Birkenkrahe's Emacs Tutorial (GitHub)
+** Start Birkenkrahe's Emacs Tutorial ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Emacs.org][GitHub]])
 
-1. Open the tutorial at [[https://tinyurl.com/emacs-tutor][tinyurl.com/emacs-tutor]]. 
+1. You'll get a handout. Online: [[https://tinyurl.com/emacs-tutor][tinyurl.com/emacs-tutor]].
 2. Code along with me using Emacs in the cloud.
-3. Finish at home if necessary
+3. Finish at home if necessary.
 
 Note: some keybindings are not available because you're using Emacs in
 a browser - most notably =C-n= (CTRL + n) and =C-v= (CTRL + v) use the
