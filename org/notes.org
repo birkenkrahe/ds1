@@ -32,6 +32,8 @@ Linux server). See also: review questions in week 2.
   4) Submit your proposal
   #+end_quote
 
+- *Review questions from week 1*
+
 - *Getting started with infrastructure*:
   1. [ ] Linux exercise (to be finished)
   2. [ ] Emacs tutorial
@@ -109,13 +111,15 @@ Head over to =shell.cloud.google.com=. You should get to the terminal
 right away. Move the editor out of the way, then continue the
 exercise to the end:
 
-1. Emacs is actually pre-installed.
-2. Install R
-3. Open Emacs
-4. Create an Org-mode file 
-5. Run R
-6. Close Emacs
-7. Watch your quota (50 hours/week)
+1. Install Google Cloud Shell app using Chrome: login, and then:
+   =Settings > Save and Share > Install page as app=
+3. Emacs is actually pre-installed.
+4. Install R 
+5. Open Emacs
+6. Create an Org-mode file 
+7. Run R
+8. Close Emacs
+9. Watch your quota (50 hours/week)
 
 ** Start Birkenkrahe's Emacs Tutorial ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Emacs.org][GitHub]])
 
