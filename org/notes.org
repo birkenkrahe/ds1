@@ -39,7 +39,7 @@ Linux server). See also: review questions in week 2.
   2. [ ] Emacs tutorial
   3. [ ] Datalab demo
 
-** Review questions:
+* Review questions:
 
 1. What are my views on using generative AI when learning how to code?
    #+begin_quote
@@ -60,11 +60,11 @@ Linux server). See also: review questions in week 2.
    (which is a date at which a particular result is expected).
    #+end_quote
 4. Which of these do not apply to the projects in this course:
-   - [ ] Use a project from another course in this class.
-   - [ ] Explore a dataset of your choice that you are curious about.
-   - [ ] Explore an R or Python package of your choice.
-   - [ ] Complete a DataCamp competition and report on it.
-   - [ ] Create a demo that your audience can participate in.
+   - [X] Use a project from another course in this class.
+   - [X] Explore a dataset of your choice that you are curious about.
+   - [X] Explore an R or Python package of your choice.
+   - [X] Complete a DataCamp competition and report on it.
+   - [X] Create a demo that your audience can participate in.
 5. True or false? Does this course have a final exam?
    #+begin_quote
    Yes it does but it's optional: you only have to write the final
@@ -105,7 +105,7 @@ Linux server). See also: review questions in week 2.
     - You can use [[https://datacamp.com/datalab][DataLab]] as an interactive notebook (similar to Emacs)
     #+end_quote
 
-** Finish Google Cloud Shell exercise ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Google_Cloud_Shell.org][GitHub]])
+* Finish Google Cloud Shell exercise ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Google_Cloud_Shell.org][GitHub]])
 
 Head over to =shell.cloud.google.com=. You should get to the terminal
 right away. Move the editor out of the way, then continue the
@@ -121,7 +121,7 @@ exercise to the end:
 8. Close Emacs
 9. Watch your quota (50 hours/week)
 
-** Start Birkenkrahe's Emacs Tutorial ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Emacs.org][GitHub]])
+* Start Birkenkrahe's Emacs Tutorial ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Emacs.org][GitHub]])
 
 1. You'll get a handout. Online: [[https://tinyurl.com/emacs-tutor][tinyurl.com/emacs-tutor]].
 2. Code along with me using Emacs in the cloud.
@@ -131,7 +131,7 @@ Note: some keybindings are not available because you're using Emacs in
 a browser - most notably =C-n= (CTRL + n) and =C-v= (CTRL + v) use the
 arrow keys =<Down>= and =<FN><PgDown>= instead.
 
-** Datalab demo (GitHub)
+* Datalab demo (GitHub)
 
 DataCamp's DataLab and Google's Colab or RStudio are alternatives to
 Emacs + Org-mode that you want to know about (and also so that you can
