@@ -4,6 +4,39 @@
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+PROPERTY: header-args:R :session *R* :results output :exports both
 * Week 1 - Orientation
+
+#+attr_html: :width 300px:
+[[../img/difficulty.png]]
+
+/Image:/ comparing the expected difficulty (smooth curve) to the actual
+difficulty (step function) of a class or of a technical book.
+
+What did we achieve: Just a little overview and exposure to Linux and
+Emacs using the Google Cloud Shell platform (while waiting for Lyon's
+Linux server). See also: review questions in week 2.
+
+* Week 2 - Infrastructure & Introduction to Data Science
+
+- *DataCamp:* make sure that you subscribe to my workspace, and that you
+  can see the assignments. Where can you find the invitation link?
+  #+begin_quote
+  The link was posted in Google Chat and you can find it in Canvas in
+  the Wiki page "Course links".
+  #+end_quote
+
+- *Project:* published [[https://lyon.instructure.com/courses/2628/assignments/32556][1st sprint review instructions]] - get to work!
+  #+begin_quote
+  1) Pick a team
+  2) Pick a topic (or topics)
+  3) Write a proposal
+  4) Submit your proposal
+  #+end_quote
+
+- *Getting started with infrastructure*:
+  1. [ ] Linux exercise (to be finished)
+  2. [ ] Emacs tutorial
+  3. [ ] Datalab demo
+
 ** Review questions:
 
 1. What are my views on using generative AI when learning how to code?
@@ -69,13 +102,6 @@
     - You can use completed courses to get internships and work
     - You can use [[https://datacamp.com/datalab][DataLab]] as an interactive notebook (similar to Emacs)
     #+end_quote
-
-* Week 2 - Infrastructure & Introduction to Data Science
-
-Infrastructure
-- [ ] Linux exercise
-- [ ] Emacs tutorial
-- [ ] Datalab demo
 
 ** Finish Google Cloud Shell exercise ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Google_Cloud_Shell.org][GitHub]])
 
