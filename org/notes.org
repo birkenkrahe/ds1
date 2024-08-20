@@ -39,7 +39,7 @@ Linux server). See also: review questions in week 2.
   2. [ ] Emacs tutorial
   3. [ ] Datalab demo
 
-* Review questions:
+* DONE Review questions:
 
 1. What are my views on using generative AI when learning how to code?
    #+begin_quote
@@ -105,7 +105,7 @@ Linux server). See also: review questions in week 2.
     - You can use [[https://datacamp.com/datalab][DataLab]] as an interactive notebook (similar to Emacs)
     #+end_quote
 
-* Finish Google Cloud Shell exercise ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Google_Cloud_Shell.org][GitHub]])
+* DONE Finish Google Cloud Shell exercise ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Google_Cloud_Shell.org][GitHub]])
 
 Head over to =shell.cloud.google.com=. You should get to the terminal
 right away. Move the editor out of the way, then continue the
