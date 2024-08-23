@@ -16,6 +16,8 @@ Emacs using the Google Cloud Shell platform (while waiting for Lyon's
 Linux server). See also: review questions in week 2.
 
 * Week 2 - Infrastructure & Introduction to Data Science
+#+attr_html: :width 600px:
+[[../img/penguins.jpg]]
 
 - *DataCamp:* make sure that you subscribe to my workspace, and that you
   can see the assignments. Where can you find the invitation link?
@@ -35,11 +37,11 @@ Linux server). See also: review questions in week 2.
 - *Review questions from week 1*
 
 - *Getting started with infrastructure*:
-  1. [ ] Linux exercise (to be finished)
+  1. [X] Linux exercise (to be finished)
   2. [ ] Emacs tutorial
   3. [ ] Datalab demo
 
-* DONE Review questions:
+* DONE Review questions (Week 1):
 
 1. What are my views on using generative AI when learning how to code?
    #+begin_quote
@@ -121,15 +123,53 @@ exercise to the end:
 8. Close Emacs
 9. Watch your quota (50 hours/week)
 
+* NEXT Review questions: GitHub Hello World Project
+
+1. What is the purpose of Git, and who created it?
+   #+begin_quote
+   Controlling the main ("productive") version of a software in the
+   presence of potentially many collaborators who work on that
+   software at the same time. Git's creator is Linus Torvalds, who
+   also wrote the (first) Linux kernel.
+   #+end_quote
+
+2. What does it mean that a repo is =public= or =private=, and who can
+   make changes in your repos?
+   #+begin_quote
+   Private repos can also be accessed by collaborators, which you need
+   to invite using their email. Public repos are visible to
+   everyone. Nobody can make direct changes in any of your repos -
+   changes are applied to Git repos via =merge=.
+   #+end_quote
+
+4. What is the purpose of a =pull= request in GitHub?
+   #+begin_quote
+   A =pull= request is a request for the maintainer of the main branch
+   to consider incorporating your changes into the main code base.
+   #+end_quote
+
+5. How do you finalize and merge a pull request?
+   #+begin_quote
+   To finalize and merge a =pull= request, view the =pull= request, and if
+   there are no conflicts, click on the =Merge pull request= button, and
+   then confirm the merge.
+   #+end_quote
+
+6. What can you do with someone else's GitHub public repository?
+   #+begin_quote
+   - You can watch it (get notifications if there are changes).
+   - You can fork it to your own organization (make a copy in GitHub).
+   - You can clone it (create a remote copy on your PC).
+   #+end_quote
+   
 * Start Birkenkrahe's Emacs Tutorial ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Emacs.org][GitHub]])
 
 1. You'll get a handout. Online: [[https://tinyurl.com/emacs-tutor][tinyurl.com/emacs-tutor]].
 2. Code along with me using Emacs in the cloud.
 3. Finish at home if necessary.
 
-Note: some keybindings are not available because you're using Emacs in
-a browser - most notably =C-n= (CTRL + n) and =C-v= (CTRL + v) use the
-arrow keys =<Down>= and =<FN><PgDown>= instead.
+Note: You need to install Google Cloud Shell as an app in order to
+have all keybindings in Emacs (esp. =C-v= and =C-n=).
 
 * Datalab demo (GitHub)
 

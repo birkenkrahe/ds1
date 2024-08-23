@@ -196,7 +196,6 @@ Paper: "[[https://www.mdpi.com/2673-6470/3/3/15][Teaching Data Science with Lite
 
 * Using Linux
 #+attr_html: :width 600px:
-
 [[../img/penguins.jpg]]
 
 Linux is the world's most used operating system (the software between
