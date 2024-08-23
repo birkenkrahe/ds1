@@ -32,8 +32,9 @@ Image source: https://xkcd.com/378/
   tutorial step by step: [[https://youtu.be/RdRbm1wG1Gc][Part 1]] and [[https://youtu.be/VhsEMIjAaEk][Part 2]].
 
 - Version 2 is for Linux users. You can try this e.g. in Google Cloud
-  Shell (=cloud.google.com/shell=) where you install Emacs in the
-  terminal with =sudo apt install emacs=.
+  Shell (=cloud.google.com/shell=) where Emacs is pre-installed. Install
+  the shell locally via the browser so that you can use all key
+  bindings.
 
 - This file is available as PDF or Markdown (.md) or Org-mode file in
   [[https://github.com/birkenkrahe/org/tree/master/emacs][github.com/birkenkrahe/org/tree/master/emacs]].
