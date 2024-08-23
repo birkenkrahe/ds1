@@ -161,8 +161,56 @@ exercise to the end:
    - You can fork it to your own organization (make a copy in GitHub).
    - You can clone it (create a remote copy on your PC).
    #+end_quote
+
+* Review questions: Understanding data science
+
+1. What role would be expected to build a sales data dashboard in a company?
+   #+begin_quote
+   Data analyst.
+   #+end_quote
+2. What role would be expected to build a predictive model based on
+   customer data?
+   #+begin_quote
+   Data scientist.
+   #+end_quote
+3. What role would be expected to collect and prepare data from the
+   factory floor for analysis?
+   #+begin_quote
+   Data engineer.
+   #+end_quote
+4. You've collected sales and weather data for a restaurant. What kind
+   of predictions might be possible using machine learning?
+   #+begin_quote
+   1. *Sales forecasting* based on historical sales data, weather
+      patterns and factors like holidays. Helps with inventory
+      management, staffing, planning promotions.
+   2. *Customer numbers expected* on a given day or time based on
+      weather conditions, time of day, day of the week. Optimize
+      staffing levels, improve customer service.
+   3. *Demand prediction* for specific menu items dependent on weather
+      or time of year or day. Optimize inventory management and menu
+      planning.
+   4. *Promotion effectiveness*: predict how different weather
+      conditions might affect the success of promotions or discounts.
+   5. *Seasonal trend analysis*: analyse and predict seasonal trends in
+      sales (e.g. during summer months or special events).
+   6. *Customer satisfaction* prediction (like ratings) based on past
+      trends during similar conditions.
+   7. *Impact of external events*: predict how local festivals, sporting
+      events in conjunction with weather conditions affect business.
+   8. *Dynamic pricing models*: implement dynamic pricing based on
+      historical events (summer/winter prices, festival prices etc.)
+   9. *Predicting supply chain disruptions*: correlate adverse weather
+      and other external events to predict potential supply issues.
+   10. *Operational efficiency prediction*: Predict restaurant's utility
+       usage (electricity, heating, cooling) based on weather data and
+       customer numbers.
+   #+end_quote
+5. How does the data science pipeline or workflow look like?
+   #+attr_html: :width 600px:
+   [[../img/2_ds_workflow.png]]
    
-* Start Birkenkrahe's Emacs Tutorial ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Emacs.org][GitHub]])
+* Start: Birkenkrahe's Emacs Tutorial ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Emacs.org][GitHub]]) 
 
 1. You'll get a handout. Online: [[https://tinyurl.com/emacs-tutor][tinyurl.com/emacs-tutor]].
 2. Code along with me using Emacs in the cloud.
