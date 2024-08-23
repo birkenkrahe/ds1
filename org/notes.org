@@ -123,14 +123,14 @@ exercise to the end:
 8. Close Emacs
 9. Watch your quota (50 hours/week)
 
-* NEXT Review questions: GitHub Hello World Project
+* Review questions: GitHub Hello World Project
 
 1. What is the purpose of Git, and who created it?
    #+begin_quote
    Controlling the main ("productive") version of a software in the
    presence of potentially many collaborators who work on that
    software at the same time. Git's creator is Linus Torvalds, who
-   also wrote the (first) Linux kernel.
+   also wrote the (first) Linux kernel (on top of GNU).
    #+end_quote
 
 2. What does it mean that a repo is =public= or =private=, and who can
