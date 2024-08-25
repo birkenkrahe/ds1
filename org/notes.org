@@ -223,6 +223,9 @@ have all keybindings in Emacs (esp. =C-v= and =C-n=).
 #+attr_html: :width 400px:
 [[../img/2_pythagoras.jpg]]
 
+* We have the Linux Server!
+
+
 * Datalab demo (GitHub)
 
 DataCamp's DataLab and Google's Colab or RStudio are alternatives to
