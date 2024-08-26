@@ -230,12 +230,13 @@ Plan:
 - [ ] Introduction to data science (lecture) - 30 min
 - [ ] Introduction to R (lecture/practice) - 60 min
 
-* Datalab demo (GitHub)
+* DONE Datalab demo (GitHub)
 
 DataCamp's DataLab and Google's Colab or RStudio are alternatives to
 Emacs + Org-mode that you want to know about (and also so that you can
 appreciate what our infrastructure brings to the table).
 
 You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datalab/w/64260e9e-2c3c-4e6b-be4b-2dc6bac45d93/edit][here is my notebook]].
+
 
 
