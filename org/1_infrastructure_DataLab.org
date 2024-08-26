@@ -14,9 +14,9 @@
   4) Using the AI to assist you
   5) Not using the AI
 
-- You can find my notebook [[https://www.datacamp.com/datalab/w/64260e9e-2c3c-4e6b-be4b-2dc6bac45d93/edit][here]].
+- You can find my notebook "Testing R in datalab" [[https://www.datacamp.com/datalab/w/64260e9e-2c3c-4e6b-be4b-2dc6bac45d93/edit][here]].
 
-* Entering datalab
+* Enter datalab
 
 1. Go to your DataCamp dashboard.
 
@@ -35,89 +35,119 @@
 
 * Create a new notebook
 
-5. You are now in the =DataLab= application. This is an interactive
+1. You are now in the =DataLab= application. This is an interactive
    notebook like Emacs + Org-mode earlier. It's got some advanatages
    and some disadvantages. Open a =New Workbook=.
 
-6. Though you came from an R course, these notebooks are set to Python
+2. Though you came from an R course, these notebooks are set to Python
    by default. Change that in the =Environment= tab by selecting =R= as
    =Workbook language=, and run =Start session= to restart the
    environment.
 
 * Add text
 
-7. In the workbook editor, you can now see that =R= instead of =Python= is
-   offered, alongside =Text=, =SQL= and =Chart=. Click on =Text= and then
-   repeat the commands that you used in Emacs before (almost) to the
-   letter: this text is =Markdown= - headlines are started with =#=, and
-   code font is obtained with =`= (backtick) rather than ===.
-   #+attr_html: :width 450px:
-   [[../img/datalab_text.png]]
+In the workbook editor, you can now see that =R= instead of =Python= is
+offered, alongside =Text=, =SQL= and =Chart=. Click on =Text= and then
+repeat the commands that you used in Emacs before (almost) to the
+letter: this text is =Markdown= - headlines are started with =#=, and
+code font is obtained with =`= (backtick) rather than ===.
+#+attr_html: :width 450px:
+[[../img/datalab_text.png]]
 
 * Add code with AI
 
-8. Now, instead of writing code in the text, you need to add an =R=
+1. Now, instead of writing code in the text, you need to add an =R=
    block with =+=: You have the choice to add code or =tell our AI what
    to do=. Why don't we try that! At the prompt, enter
    #+begin_example
    Show me the structure of the mtcars data frame.
    #+end_example
 
-9. This is what you get - if it's correct (as shown) then click
+2. This is what you get - if it's correct (as shown) then click
    =Accept=.
    #+attr_html: :width 450px:
    [[../img/datalab_ai.png]]
 
-10. You now have a code block and you can cancel the AI prompt entry
-    field and run the code by clicking on the play button (or typing
-    =CTRL + RET= on the keyboard). You should get the same result as in
-    Emacs.
-    #+attr_html: :width 450px:
-    [[../img/datalab_mtcars.png]]
+3. You now have a code block and you can cancel the AI prompt entry
+   field and run the code by clicking on the play button (or typing
+   =CTRL + RET= on the keyboard). You should get the same result as in
+   Emacs.
+   #+attr_html: :width 450px:
+   [[../img/datalab_mtcars.png]]
 
-11. Let's move on with the plot: put the following into a text box,
-    and then repeat it at the AI prompt:
-    #+begin_example
-    Make a scatterplot of miles-per-gallon vs. weight
-    and store the plot in a file `mtcars.png`.
-    #+end_example
-    #+attr_html: :width 600px:
-    [[../img/datalab_plot.png]]
+4. Let's move on with the plot: put the following into a text box,
+   and then repeat it at the AI prompt:
+   #+begin_example
+   Make a scatterplot of miles-per-gallon vs. weight
+   and store the plot in a file `mtcars.png`.
+   #+end_example
+   #+attr_html: :width 600px:
+   [[../img/datalab_plot.png]]
 
-    Because you saved the result to a file, it won't show in the
-    notebook. You need to open it using the tab =File > Show Workbook
-    Files=:
-    #+attr_html: :width 500px:
-    [[../img/datalab_ggplot.png]]
-    
-    You recognize the scatterplot from Emacs though the code is vastly
-    more complicated than necessary, leading to a customized plot.
+   Because you saved the result to a file, it won't show in the
+   notebook. You need to open it using the tab =File > Show Workbook
+   Files=:
+   #+attr_html: :width 500px:
+   [[../img/datalab_ggplot.png]]
 
-    To see the workbook files, open =View > Show workbook files= (the
-    keyboard bindings may not work because of browser override).
+   You recognize the scatterplot from Emacs though the code is vastly
+   more complicated than necessary, leading to a customized plot.
+
+   To see the workbook files, open =View > Show workbook files= (the
+   keyboard bindings may not work because of browser override).
 
 * Add code without AI
 
-12. The AI result is markedly different from what we did in Emacs
-    (below). Let's see what DataLab does when we use this command:
-    #+attr_html: :width 600px:
-    [[../img/emacs_plot.png]]
+1. The AI result is markedly different from what we did in Emacs
+   (below). Let's see what DataLab does when we use this command:
+   #+attr_html: :width 600px:
+   [[../img/emacs_plot.png]]
 
-    Add a new code block, enter the one-line command and run the
-    block - you will notice that the R console suggests completions to
-    you, e.g. when you type =plot(x==mtcars$=, all the possible columns
-    of =mtcars= are suggested to you.
-    #+attr_html: :width 500px: 
-    [[../img/datalab_plot2.png]]
-    
-    This time, the plot is shown in the notebook itself just like in
-    Emacs, which both stores the plot and shows it.
+   Add a new code block, enter the one-line command and run the
+   block - you will notice that the R console suggests completions to
+   you, e.g. when you type =plot(x==mtcars$=, all the possible columns
+   of =mtcars= are suggested to you.
+   #+attr_html: :width 500px:
+   [[../img/datalab_plot2.png]]
 
-13. Before leaving, give your workbook a title: =Testing R= will be
-    suggested when you click on the title field. This workbook will be
-    permanent as long as you have a DataCamp account. Though if you
-    aren't subscribed to my DataCamp classroom, you'll have a limited
-    number of workbooks and a limited number of AI prompts available.
+   This time, the plot is shown in the notebook itself just like in
+   Emacs, which both stores the plot and shows it.
+
+2. Before leaving, give your workbook a title: =Testing R= will be
+   suggested when you click on the title field. This workbook will be
+   permanent as long as you have a DataCamp account. Though if you
+   aren't subscribed to my DataCamp classroom, you'll have a limited
+   number of workbooks and a limited number of AI prompts available.
+
+* Use the AI Chat
+
+1. Open the =AI Chat= menu on the right (instead of the =Code= or =Report=
+   tabs).
+   
+2. At the prompt, enter:
+   #+begin_example
+   Can you draw a trendline thorugh the mpg vs wt graph?
+   #+end_example
+
+3. The AI presents the results and discussion in the chat, and if you
+   go back to the code, you can see that it's been entered there
+   (without documentation), and that our original code was
+   overwritten (perhaps because the trendline is an extension).
+
+   #+attr_html: :width 600px:
+   [[../img/ai_chat.png]]
+
+   #+attr_html: :width 600px: 
+   [[../img/ai_chat_code.png]]
+   
+4. You can see that when working with both the code and the chat
+   editor, you need to be careful to keep them synchronized.
+
+5. If you already did this exercise in Emacs + Org-mode (or on the R
+   console), and you fully understood how to make such a plot, then
+   the AI may be able to teach you new things. However, trust me, they
+   will only stick if you create your own examples manually, without
+   using the AI as a crutch.
 
 * Issues with interactive notebooks
 
@@ -133,7 +163,7 @@ There are multiple problems with this approach:
   format (that's plain-text but needs notebook software to be
   processed). You can also render Emacs-Org-mode notebooks in this
   format for upload to commercial notebook tools
-  
+
 * Which tool to use when
 
 When competing, you might have to use commercial tools (like Datalab,
