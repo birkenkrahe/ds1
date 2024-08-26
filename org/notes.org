@@ -225,6 +225,7 @@ have all keybindings in Emacs (esp. =C-v= and =C-n=).
 
 * We have the Linux Server!
 
+Now what?
 
 * Datalab demo (GitHub)
 
