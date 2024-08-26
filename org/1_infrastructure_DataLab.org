@@ -4,6 +4,19 @@
 #+STARTUP: hideblocks overview indent inlineimages
 #+OPTIONS: toc:nil num:nil ^:nil
 #+PROPERTY: header-args:R :session *R* :results output :exports both
+* README
+
+- Brief exploration of DataCamp's "datalab" platform for interactive
+  notebooks:
+  1) Opening datalab
+  2) Changing the environment from Python to R
+  3) Adding and running text and code blocks
+  4) Using the AI to assist you
+  5) Not using the AI
+
+- You can find my notebook [[https://www.datacamp.com/datalab/w/64260e9e-2c3c-4e6b-be4b-2dc6bac45d93/edit][here]].
+
+* Exploring datalab
 
 1. Go to your DataCamp dashboard.
 
@@ -74,6 +87,9 @@
     You recognize the scatterplot from Emacs though the code is vastly
     more complicated than necessary, leading to a customized plot.
 
+    To see the workbook files, open =View > Show workbook files= (the
+    keyboard bindings may not work because of browser override).
+
 12. The AI result is markedly different from what we did in Emacs
     (below). Let's see what DataLab does when we use this command:
     #+attr_html: :width 600px:
@@ -109,7 +125,7 @@ There are multiple problems with this approach:
   format (that's plain-text but needs notebook software to be
   processed). You can also render Emacs-Org-mode notebooks in this
   format for upload to commercial notebook tools
-
+  
 * Which tool to use when
 
 When competing, you might have to use commercial tools (like Datalab,
