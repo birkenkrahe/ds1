@@ -38,7 +38,7 @@ Linux server). See also: review questions in week 2.
 
 - *Getting started with infrastructure*:
   1. [X] Linux exercise (to be finished)
-  2. [ ] Emacs tutorial
+  2. [X] Emacs tutorial
   3. [ ] Datalab demo
 
 ** Review questions (Week 1):
@@ -223,9 +223,12 @@ have all keybindings in Emacs (esp. =C-v= and =C-n=).
 #+attr_html: :width 400px:
 [[../img/2_pythagoras.jpg]]
 
-* We have the Linux Server!
-
-Now what?
+Plan:
+- [ ] We have the Linux server! You've all got accounts.
+- [ ] Next DataCamp lesson (and Quiz 1) due August 30
+- [ ] Datalab demo in DataCamp (interactive)
+- [ ] Introduction to data science (lecture)
+- [ ] Introduction to R (lecture/practice)
 
 * Datalab demo (GitHub)
 
