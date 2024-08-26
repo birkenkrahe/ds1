@@ -16,7 +16,7 @@
 
 - You can find my notebook [[https://www.datacamp.com/datalab/w/64260e9e-2c3c-4e6b-be4b-2dc6bac45d93/edit][here]].
 
-* Exploring datalab
+* Entering datalab
 
 1. Go to your DataCamp dashboard.
 
@@ -33,6 +33,8 @@
 4. In the course dashboard, find the =Create Course Notes= under
    =Resources= in the right sidebar and click on =+=.
 
+* Create a new notebook
+
 5. You are now in the =DataLab= application. This is an interactive
    notebook like Emacs + Org-mode earlier. It's got some advanatages
    and some disadvantages. Open a =New Workbook=.
@@ -42,6 +44,8 @@
    =Workbook language=, and run =Start session= to restart the
    environment.
 
+* Add text
+
 7. In the workbook editor, you can now see that =R= instead of =Python= is
    offered, alongside =Text=, =SQL= and =Chart=. Click on =Text= and then
    repeat the commands that you used in Emacs before (almost) to the
@@ -49,6 +53,8 @@
    code font is obtained with =`= (backtick) rather than ===.
    #+attr_html: :width 450px:
    [[../img/datalab_text.png]]
+
+* Add code with AI
 
 8. Now, instead of writing code in the text, you need to add an =R=
    block with =+=: You have the choice to add code or =tell our AI what
@@ -89,6 +95,8 @@
 
     To see the workbook files, open =View > Show workbook files= (the
     keyboard bindings may not work because of browser override).
+
+* Add code without AI
 
 12. The AI result is markedly different from what we did in Emacs
     (below). Let's see what DataLab does when we use this command:

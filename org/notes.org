@@ -225,10 +225,10 @@ have all keybindings in Emacs (esp. =C-v= and =C-n=).
 
 Plan:
 - [ ] We have the Linux server! You've all got accounts.
-- [ ] Next DataCamp lesson (and Quiz 1) due August 30
-- [ ] Datalab demo in DataCamp (interactive)
-- [ ] Introduction to data science (lecture)
-- [ ] Introduction to R (lecture/practice)
+- [ ] *Next DataCamp lesson (and Quiz 1) due August 30*
+- [ ] Datalab demo in DataCamp (interactive) - 15 min
+- [ ] Introduction to data science (lecture) - 30 min
+- [ ] Introduction to R (lecture/practice) - 60 min
 
 * Datalab demo (GitHub)
 
@@ -236,6 +236,6 @@ DataCamp's DataLab and Google's Colab or RStudio are alternatives to
 Emacs + Org-mode that you want to know about (and also so that you can
 appreciate what our infrastructure brings to the table).
 
-You'll get a handout of the exercise (PDF).
+You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datalab/w/64260e9e-2c3c-4e6b-be4b-2dc6bac45d93/edit][here is my notebook]].
 
 
