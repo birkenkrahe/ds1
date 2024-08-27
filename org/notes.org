@@ -238,5 +238,18 @@ appreciate what our infrastructure brings to the table).
 
 You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datalab/w/64260e9e-2c3c-4e6b-be4b-2dc6bac45d93/edit][here is my notebook]].
 
+* TODO Linux server has arrived
+
+- You should have received your VM server address and password
+
+- Start "Remote Desktop Protocol" on your (Windows) PC
+
+- Enter the server name (e.g. =cslinux01.lyon.edu=) => =Connect=
+
+- Login the =Xorg= session with username = email, and password
+
+- Do not shut down or log out of the VM but only close the window
+
+
 
 
