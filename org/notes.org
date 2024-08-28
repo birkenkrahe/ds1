@@ -224,9 +224,9 @@ have all keybindings in Emacs (esp. =C-v= and =C-n=).
 [[../img/2_pythagoras.jpg]]
 
 Plan:
+- [X] *Next DataCamp lesson (and Quiz 1) due August 30*
+- [X] Datalab demo in DataCamp (interactive) - 15 min
 - [ ] We have the Linux server! You've all got accounts.
-- [ ] *Next DataCamp lesson (and Quiz 1) due August 30*
-- [ ] Datalab demo in DataCamp (interactive) - 15 min
 - [ ] Introduction to data science (lecture) - 30 min
 - [ ] Introduction to R (lecture/practice) - 60 min
 
@@ -250,6 +250,12 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 
 - Do not shut down or log out of the VM but only close the window
 
+* Introduction to data science (lecture)
 
+- Data science popularity
+- Data science definitions
+- Data science skill sets
+- Data science jobs
+- Data science processes
 
 
