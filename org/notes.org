@@ -246,11 +246,43 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 
 - Enter the server name (e.g. =cslinux01.lyon.edu=) => =Connect=
 
-- Login the =Xorg= session with username = email, and password
+- Login the =Xorg= session with username =firstname.lastname=, pw
 
-- Do not shut down or log out of the VM but only close the window
+- *Do not shut down or log out of the VM but only close the window*
 
-* Introduction to data science (lecture)
+- Currently access only from Lyon 104 but other subnets will be added.
+
+- IT will give me admin access and set VMs to auto-boot soon.
+
+* TODO Review questions (DataLab)
+
+1. Which languages does dataLab support?
+   #+begin_quote
+   R, Python, SQL
+   #+end_quote
+2. How many languages are supported in a single Jupyter notebook?
+   #+begin_quote
+   One high level language (R or Python), and SQL to connect to
+   relational databases.
+   #+end_quote
+3. How can you change the notebook language?
+   #+begin_quote
+   You must changed the runtime =Environment=.
+   #+end_quote
+4. Which shell are you using when you work in dataLab?
+   #+begin_quote
+   The IPython ("Interactive Python") shell, made popular by the
+   Jupyter notebook application (see also "Jupyter Lab")
+   #+end_quote
+5. What's the difference between dataLab, Google Colab, RStudio, and
+   Emacs Org-mode?
+   #+begin_quote
+   - Emacs, RStudio, DataLab give you terminal access
+   - Colab, RStudio, Datalab all work with IPython (.ipynb)
+   - Emacs Org-mode provides portable plain-text files
+   #+end_quote
+   
+* TODO Introduction to data science (lecture)
 
 - Data science popularity
 - Data science definitions
