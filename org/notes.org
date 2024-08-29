@@ -238,7 +238,7 @@ appreciate what our infrastructure brings to the table).
 
 You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datalab/w/64260e9e-2c3c-4e6b-be4b-2dc6bac45d93/edit][here is my notebook]].
 
-* IN PROGRESS Linux server has arrived
+* DONE Linux server has arrived
 
 - You should have received your VM server address and password
 
@@ -324,6 +324,10 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    session, then R is using =~/= because that's where the file is
    located.
    #+end_quote
+
+* TODO Review questions (DataCamp - Data Collection and Storage)
+
+
 
 * TODO Introduction to data science (lecture)
 
