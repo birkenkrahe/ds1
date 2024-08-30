@@ -325,10 +325,110 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    located.
    #+end_quote
 
-
 * TODO Review questions (DataCamp - Data Collection and Storage)
 
+1) What's an API?
+   #+begin_quote
+   API stands for Application Programming Interface, a protocol or set
+   of instructions to request data over the Internet. If an
+   organization does not offer an API, you cannot (legally) access its
+   applications, e.g. databases.
+   #+end_quote
 
+2) Does X (formerly Twitter) have a public API and what's it good for?
+   #+begin_quote
+   Free access to the X API is limited since April 2023 but developers
+   can still access it if they're on an X subscription plan.
+
+   The API allows access to various X features such as: reading and
+   posting tweets (via bot apps), tracking/following users, sending
+   direct messages, etc. See https://developer.x.com/en
+
+   X API: could be a project!
+   #+end_quote
+
+3) What could you do with the data obtained from X?
+   #+begin_quote
+   - Perform a "sentiment analysis" on the text of each tweet,
+     e.g. automatically check if a tweet is positive or negative.
+   - Count how many times a word, or a hashtag (=#birkenkrahe=) appears
+     each week.
+   - Combine sentiment analysis and hashtag counts to check if
+     positive tweets are correlated with more customers or more views.
+   #+end_quote
+
+4) What are the main types of data and how are they different?
+   #+begin_quote
+   The two main types of data are **quantitative** and
+   **qualitative**. Quantitative data deals with numbers and can be
+   measured, while qualitative data deals with descriptions and can be
+   observed but not measured (directly).
+
+   Either of these data types can be structured/stored as image, text,
+   geospatial, network data. Example: text data are qualitative
+   (content) and have to be converted to quantitative data (tokens)
+   for analysis and processing.
+   #+end_quote
+
+5) What do you need to consider when storing data?
+   #+begin_quote
+   - Location (e.g. parallel storage solutions or the cloud)
+   - Data type (e.g. unstructured or tabular)
+   - Retrieval (e.g. NoSQL for document (collection-based), or SQL for
+     relational (table-based) databases.
+   #+end_quote
+
+6) What's a query language? What's an example?
+   #+begin_quote
+   A language to articulate data queries, for example querying a table
+   in a relational database management system using SQL, as in the
+   query: =SELECT customer_name FROM customers;=
+   #+end_quote
+
+7) What are the top cloud providers in the world?
+   #+begin_quote
+   - Amazon with Amazon Web Services (AWS)
+   - Microsoft with Azure
+   - Alphabet with Google Cloud
+   #+end_quote
+
+8) What does it mean to "scale data storage"?
+   #+begin_quote
+   When collecting large amounts of different types data from multiple
+   sources, the "scaling" question is "how much, what type, and how
+   fast"? If an application (e.g. for storage) scales, it can store
+   small and (arbitrarily) large data volumes. To scale, technology
+   either has to be invented or adapted - with computers, scale always
+   comes at a price.
+   #+end_quote
+
+9) What's a "data pipeline"?
+   #+begin_quote
+   A data pipeline is a workflow, a prescribed series of steps or
+   stages that is used to retrieve, load, and store data, to better
+   control individual steps and (ideally) automate the entire process.
+
+   The term "pipeline" is used whenever segments are combined so that
+   the output of the previous segment is the input of the next,
+   e.g. in the following shell command, which pipes the string into a
+   file and then counts the characters of the string:
+   #+end_quote
+   #+begin_src bash :results output :exports both
+     echo "Hello" | tee hello.txt |  wc -c
+     cat hello.txt
+   #+end_src
+
+10) What's "ETL" and how is it used (think of an example)?
+    #+begin_quote
+    - ETL stands for the "Extract", "Transform", "Load" data pipeline.
+    - Example: autonomous vehicle operation:
+      1. Retrieve real-time traffic data (e.g. "rain", "stop sign")
+      2. Transform retrieved data for analysis (e.g. create table)
+      3. Load transformed data into container (e.g. SQLite database)
+    - When an ETL pipeline is well set up, it can be automated. In the
+      case of automated vehicles, operation otherwise wouldn't be
+      possible.
+    #+end_quote
 
 * TODO Introduction to data science (lecture)
 
