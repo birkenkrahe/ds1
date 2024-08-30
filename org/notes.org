@@ -271,20 +271,24 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+begin_quote
    R, Python, SQL
    #+end_quote
+
 2. How many languages are supported in a single Jupyter notebook?
    #+begin_quote
    One high level language (R or Python), and SQL to connect to
    relational databases.
    #+end_quote
+
 3. How can you change the notebook language?
    #+begin_quote
    You must changed the runtime =Environment=.
    #+end_quote
+
 4. Which shell are you using when you work in dataLab?
    #+begin_quote
    The IPython ("Interactive Python") shell, made popular by the
    Jupyter notebook application (see also "Jupyter Lab")
    #+end_quote
+
 5. What's the difference between dataLab, Google Colab, RStudio, and
    Emacs Org-mode?
    #+begin_quote
@@ -292,6 +296,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    - Colab, RStudio, Datalab all work with IPython (.ipynb)
    - Emacs Org-mode provides portable plain-text files
    #+end_quote
+
 6. What are these: Emacs, Org-mode, Linux, R?
    #+begin_quote
    1) Emacs: an editor
@@ -299,13 +304,15 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    3) Linux: an operating system (running on a virtual machine)
    4) R: a statistical programming language
    #+end_quote
+
 7. Which software do you need to run R inside Emacs (as in =testR.org=)?
    #+begin_quote
    1. Emacs installed (with =sudo apt install emacs=)
    2. R installed (with =sudo apt install r-base=)
-   3. ESS package installed in Emacs (with =list-packages=)
-   4. =.emacs= file downloaded (with =wget=)
+   3. ESS package installed in Emacs (with =M-x list-packages=)
+   4. =.emacs= file downloaded (with =wget= from tinyurl.com/lyon-emacs)
    #+end_quote
+
 8. How can you configure an =.org= file so that all code blocks in that
    file can execute R code via an R console in the background?
    #+begin_quote
@@ -316,6 +323,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    Either run it with =C-c C-c= ("Local setup refreshed"), or re-open
    the file (it is read whenever the file is being opened).
    #+end_quote
+
 9. When you create an Org-mode file in your home directory (=~/=) and
    run an R code block inside it - which directory is R using?
    #+begin_quote
@@ -325,7 +333,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    located.
    #+end_quote
 
-* TODO Review questions (DataCamp - Data Collection and Storage)
+* Review questions (DataCamp - Data Collection and Storage)
 
 1) What's an API?
    #+begin_quote
@@ -357,7 +365,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
      positive tweets are correlated with more customers or more views.
    #+end_quote
 
-4) What are the main types of data and how are they different?
+4) What are the main categories of data and how do they differ from one another?
    #+begin_quote
    The two main types of data are **quantitative** and
    **qualitative**. Quantitative data deals with numbers and can be
@@ -372,8 +380,8 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 
 5) What do you need to consider when storing data?
    #+begin_quote
-   - Location (e.g. parallel storage solutions or the cloud)
-   - Data type (e.g. unstructured or tabular)
+   - Location (e.g. parallel storage solutions or the cloud, or locally)
+   - Data category (e.g. unstructured or tabular)
    - Retrieval (e.g. NoSQL for document (collection-based), or SQL for
      relational (table-based) databases.
    #+end_quote
@@ -389,7 +397,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+begin_quote
    - Amazon with Amazon Web Services (AWS)
    - Microsoft with Azure
-   - Alphabet with Google Cloud
+   - Alphabet with Google Cloud (as in "Google Cloud Shell")
    #+end_quote
 
 8) What does it mean to "scale data storage"?
@@ -413,10 +421,15 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    e.g. in the following shell command, which pipes the string into a
    file and then counts the characters of the string:
    #+end_quote
-   #+begin_src bash :results output :exports both
+   Example in a =bash= code block:
+   #+begin_src bash :results output 
      echo "Hello" | tee hello.txt |  wc -c
      cat hello.txt
    #+end_src
+
+   #+RESULTS:
+   : 6
+   : Hello
 
 10) What's "ETL" and how is it used (think of an example)?
     #+begin_quote
@@ -430,7 +443,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
       possible.
     #+end_quote
 
-* TODO Introduction to data science (lecture)
+* IN PROGRESS Introduction to data science (lecture)
 
 - Data science popularity
 - Data science definitions
