@@ -133,7 +133,7 @@ Image: Selfie by Cristina Zaragoza (Unsplash)
    - How do you validate?
 
 Example: social networking analysis - Predicting Tie Strength
-(2009). Paper: https://1drv.ms/b/s!AhEvK3qWokrvqz6uRFcluk1LEOW5
+(2009). [[https://sing.stanford.edu/cs303-sp11/papers/gilbert_tie_strength.pdf][Paper (PDF)]]
 
 This paper uses a model to distinguish between weak and strong ties
 (with over 85% accuracy) based on a parametrization (= features to

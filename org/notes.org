@@ -15,7 +15,7 @@ What did we achieve: Just a little overview and exposure to Linux and
 Emacs using the Google Cloud Shell platform (while waiting for Lyon's
 Linux server). See also: review questions in week 2.
 
-* Week 2 - Infrastructure & Introduction to Data Science
+* Week 2 - Infrastructure Injection
 #+attr_html: :width 600px:
 [[../img/penguins.jpg]]
 
@@ -219,7 +219,7 @@ exercise to the end:
 Note: You need to install Google Cloud Shell as an app in order to
 have all keybindings in Emacs (esp. =C-v= and =C-n=).
 
-* Week 3
+* Week 3 - DataLab & Data Collection and Storage
 #+attr_html: :width 400px:
 [[../img/2_pythagoras.jpg]]
 
@@ -230,7 +230,7 @@ Plan:
 - [ ] Introduction to data science (lecture) - 30 min
 - [ ] Introduction to R (lecture/practice) - 60 min
 
-* DONE Datalab demo (GitHub)
+** Datalab demo (GitHub)
 
 DataCamp's DataLab and Google's Colab or RStudio are alternatives to
 Emacs + Org-mode that you want to know about (and also so that you can
@@ -238,7 +238,7 @@ appreciate what our infrastructure brings to the table).
 
 You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datalab/w/64260e9e-2c3c-4e6b-be4b-2dc6bac45d93/edit][here is my notebook]].
 
-* DONE Linux server has arrived
+** Linux server has arrived
 
 - You should have received your VM server address and password
 
@@ -265,7 +265,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
     #+end_src
   #+end_example
 
-* TODO Review questions (DataLab & Linux)
+** Review questions (DataLab & Linux)
 
 1. Which languages does dataLab support?
    #+begin_quote
@@ -333,7 +333,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    located.
    #+end_quote
 
-* Review questions (DataCamp - Data Collection and Storage)
+** Review questions (DataCamp - Data Collection and Storage)
 
 1) What's an API?
    #+begin_quote
@@ -443,7 +443,9 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
       possible.
     #+end_quote
 
-* IN PROGRESS Introduction to data science (lecture)
+
+* Week 4 - Introduction to data science
+** IN PROGRESS Introduction to data science (lecture)
 
 - Data science popularity
 - Data science definitions
