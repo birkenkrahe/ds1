@@ -467,13 +467,65 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
   #+begin_src bash :results output :exports both
     ls | wc -l
   #+end_src
-  
 
 ** NEXT Review: "Preparation, Exploration, Visualization"
 
+1. Why is data preparation important in data science?
+   #+begin_quote
+   To prevent errors, incorrect results, and bias in algorithms.
+   #+end_quote
+   Code example:
+   #+begin_src R :session *R* :results output :exports both
 
+   #+end_src
 
+2. What is the purpose of removing duplicates in a dataset?
+   #+begin_quote
+   To ensure that each observation (row) is unique.
+   #+end_quote
+   Code example:
+   #+begin_src R :session *R* :results output :exports both
 
+   #+end_src
+
+3. What are methods to handle missing values?
+   #+begin_quote
+   Impute (replace, e.g. by an average), drop, or keep
+   #+end_quote
+   Code example:
+   #+begin_src R :session *R* :results output :exports both
+
+   #+end_src
+
+4. What is the main goal of EDA?
+   #+begin_quote
+   The main goal of Exploratory Data Analysis is to explore the data
+   and formulate hypotheses, e.g. about correlation, trends, patterns.
+   #+end_quote
+   Code example:
+   #+begin_src R :session *R* :results output :exports both
+     summary(mtcars)
+   #+end_src
+
+5. What does Anscombe's quartet illustrate in the context of EDA?
+   #+begin_quote
+   The Anscombe quartet shows the importance of visualizing data even
+   if the statistical properties are very similar.
+   #+end_quote
+   Code example:
+   #+begin_src R :file :session *R* :results file graphics output :exports both
+
+   #+end_src
+
+6. What is 'labeling' in data visualizations, and why is it important?
+   #+begin_quote
+   Labeling helps viewers understand what each axis, title, and legend
+   represents.
+   #+end_quote
+   Code example:
+   #+begin_src R :file :session *R* :results file graphics output :exports both
+
+   #+end_src
 
 ** IN PROGRESS Introduction to data science (lecture)
 
