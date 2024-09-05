@@ -451,8 +451,10 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 - [ ] Enter project team & idea in Canvas ([[https://lyon.instructure.com/courses/2628/pages/add-your-project-here][wiki]]) by Friday 11 AM
 - [ ] Lecture: Introduction to Data Science / skills / jobs
 
-** DONE Recap last week (I watched the Zoom recording and checked the Whiteboard screenshots)
+** DONE Recap of last week
 
+- I watched the Zoom recording and checked the Whiteboard screenshots.
+  
 - Do you know how to find the Zoom recording and the Whiteboard
   screenshots?
 
@@ -467,14 +469,20 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
   #+end_src
   
 
+** NEXT Review: "Preparation, Exploration, Visualization"
+
+
+
+
+
 ** IN PROGRESS Introduction to data science (lecture)
 
 - [X] Data science popularity
 - [X] Data science definitions
-- [ ] Data science skill sets
-- Data science jobs
-- Data science processes
+- [X] Data science skill sets
+- [ ] Data science jobs
+- [ ] Data science processes
 
-** NEXT Introduction to R
+** TODO Introduction to R
 
 
