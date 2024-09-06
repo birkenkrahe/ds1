@@ -479,27 +479,28 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+begin_src R :session *R* :results output :exports both
      df <- read.csv("../data/cleaning.csv") # read CSV data into data frame
      str(df)  # structure of data frame
+     df
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':      4 obs. of  4 variables:
-   :  $ Name   : chr  "Sara" "Lis" "Hadrien" "Lis"
-   :  $ Age    : int  27 30 NA 30
-   :  $ Size   : num  1.77 5.58 1.8 5.58
-   :  $ Country: chr  "Belgium" "USA" "FR" "USA"
+   #+begin_example
+   'data.frame':	4 obs. of  4 variables:
+    $ Name   : chr  "Sara" "Lis" "Hadrien" "Lis"
+    $ Age    : int  27 30 NA 30
+    $ Size   : num  1.77 5.58 1.8 5.58
+    $ Country: chr  "Belgium" "USA" "FR" "USA"
+        Name Age Size Country
+   1    Sara  27 1.77 Belgium
+   2     Lis  30 5.58     USA
+   3 Hadrien  NA 1.80      FR
+   4     Lis  30 5.58     USA
+   #+end_example
 
    #+begin_src R :session *R* :results output :exports both
      df$Country[1] <- "BE"  # change to country code
      df$Size[df$Size==5.58] <- 1.70  # change inches to meters
      str(df)
    #+end_src
-
-   #+RESULTS:
-   : 'data.frame':      4 obs. of  4 variables:
-   :  $ Name   : chr  "Sara" "Lis" "Hadrien" "Lis"
-   :  $ Age    : int  27 30 NA 30
-   :  $ Size   : num  1.77 1.7 1.8 1.7
-   :  $ Country: chr  "BE" "USA" "FR" "USA"
 
 2. What is the purpose of removing duplicates in a dataset?
    #+begin_quote
@@ -517,7 +518,8 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    : 1    Sara  27 1.77 Belgium
    : 2     Lis  30 5.58     USA
    : 3 Hadrien  NA 1.80      FR
-   : Name Age Size Country
+   : 4     Lis  30 5.58     USA
+   :      Name Age Size Country
    : 1    Sara  27 1.77 Belgium
    : 2     Lis  30 5.58     USA
    : 3 Hadrien  NA 1.80      FR
@@ -535,6 +537,20 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
      df
    #+end_src
 
+   #+RESULTS:
+   #+begin_example
+        Name Age Size Country
+   1    Sara  27 1.77 Belgium
+   2     Lis  30 5.58     USA
+   3 Hadrien  NA 1.80      FR
+   [1] NA
+   [1] NA
+        Name Age Size Country
+   1    Sara  27 1.77 Belgium
+   2     Lis  30 5.58     USA
+   3 Hadrien  28 1.80      FR
+   #+end_example
+
 4. What is the main goal of EDA?
    #+begin_quote
    The main goal of Exploratory Data Analysis is to explore the data,
@@ -543,16 +559,16 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+end_quote
    Code example:
    #+begin_src R :session *R* :results output :exports both
-     summary(df) # statistical summary for
+     summary(df) # statistical summary for the data frame df
    #+end_src
 
    #+RESULTS:
-   :      Name                Age             Size         Country
-   :  Length:3           Min.   :27.00   Min.   :1.770   Length:3
-   :  Class :character   1st Qu.:27.50   1st Qu.:1.785   Class :character
-   :  Mode  :character   Median :28.00   Median :1.800   Mode  :character
-   :                     Mean   :28.33   Mean   :3.050
-   :                     3rd Qu.:29.00   3rd Qu.:3.690
+   :      Name                Age             Size         Country         
+   :  Length:3           Min.   :27.00   Min.   :1.770   Length:3          
+   :  Class :character   1st Qu.:27.50   1st Qu.:1.785   Class :character  
+   :  Mode  :character   Median :28.00   Median :1.800   Mode  :character  
+   :                     Mean   :28.33   Mean   :3.050                     
+   :                     3rd Qu.:29.00   3rd Qu.:3.690                     
    :                     Max.   :30.00   Max.   :5.580
 
 5. What does Anscombe's quartet illustrate in the context of EDA?
@@ -566,12 +582,12 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+end_src
 
    #+RESULTS:
-   :        x1             x2             y1               y2
-   :  Min.   : 4.0   Min.   : 4.0   Min.   : 4.260   Min.   :3.100
-   :  1st Qu.: 6.5   1st Qu.: 6.5   1st Qu.: 6.315   1st Qu.:6.695
-   :  Median : 9.0   Median : 9.0   Median : 7.580   Median :8.140
-   :  Mean   : 9.0   Mean   : 9.0   Mean   : 7.501   Mean   :7.501
-   :  3rd Qu.:11.5   3rd Qu.:11.5   3rd Qu.: 8.570   3rd Qu.:8.950
+   :        x1             x2             y1               y2       
+   :  Min.   : 4.0   Min.   : 4.0   Min.   : 4.260   Min.   :3.100  
+   :  1st Qu.: 6.5   1st Qu.: 6.5   1st Qu.: 6.315   1st Qu.:6.695  
+   :  Median : 9.0   Median : 9.0   Median : 7.580   Median :8.140  
+   :  Mean   : 9.0   Mean   : 9.0   Mean   : 7.501   Mean   :7.501  
+   :  3rd Qu.:11.5   3rd Qu.:11.5   3rd Qu.: 8.570   3rd Qu.:8.950  
    :  Max.   :14.0   Max.   :14.0   Max.   :10.840   Max.   :9.260
 
    #+begin_src R :file ../img/anscombe.png :session *R* :results file graphics output :exports both
@@ -585,12 +601,12 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 
 6. What does 'Knowing your data' mean?
    #+begin_quote
-   - Preview data values (=head=)
-   - View structure (=str=)
-   - Descriptive stats (=summary=)
-   - Visualize (=plot=)
-   - Look for correlations
-   - Look for outliers
+   1. Preview data values (=head=)
+   2. View structure (=str=)
+   3. Descriptive stats (=summary=)
+   4. Visualize (=plot=)
+   5. Look for correlations
+   6. Look for outliers
    #+end_quote
 
 7. Which picture or photo do you know that's "worth a thousand words"?
@@ -659,6 +675,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 - [ ] R customization at startup
 
 The practice exercises are on GitHub at: tinyurl.com/intro-R-practice
+
 
 * Week 4
 
