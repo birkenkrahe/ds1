@@ -228,18 +228,21 @@ have a Mac available and may be able to figure something out.)/
 #+attr_html: :width 300px
 [[../img/3_github.png]]
 
-You can either:
+You can do one of these three things to get files from GitHub:
 
 - Open the course directory in GitHub, github.com/birkenkrahe/ds1, go
-  to the file ~/org/3_introR_practice.org~, open the ~raw~ version of the
-  file, save and open the file in Emacs
+  to the file /org/3_introR_practice.org, open the "raw" version of
+  the file, save and open the file in Emacs.
 
 - Open the full URL of the raw file in the Emacs browser =eww= and write
-  the buffer to an Org-mode file.
+  the buffer to an Org-mode file: [[https://tinyurl.com/intro-R-practice][tinyurl.com/intro-R-practice]].
   
-- Right click on the file in Explorer
-- Change ~Opens with:~ property to Emacs
-- Open file with Emacs from the Explorer
+- Use the command-line with =wget=:
+  #+begin_src bash :results output :exports both
+    wget Rpractice.org https  tinyurl.com/intro-R-practice
+
+  #+end_src
+  
 
 #+begin_notes
 The [[https://github.com/birkenkrahe/ds1][GitHub course directory]] contains all lecture and practice files
