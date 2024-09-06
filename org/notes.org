@@ -3,7 +3,7 @@
 #+SUBTITLE: DSC 105 Data Structures Lyon College Fall 2024
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+PROPERTY: header-args:R :session *R* :results output :exports both
-* Week 1 - Orientation ([[https://github.com/birkenkrahe/ds1/blob/main/org/0_overview.org][GitHub]])
+* Week 0 - Orientation ([[https://github.com/birkenkrahe/ds1/blob/main/org/0_overview.org][GitHub]])
 
 #+attr_html: :width 300px:
 [[../img/difficulty.png]]
@@ -15,7 +15,7 @@ What did we achieve: Just a little overview and exposure to Linux and
 Emacs using the Google Cloud Shell platform (while waiting for Lyon's
 Linux server). See also: review questions in week 2.
 
-* Week 2 - Infrastructure Injection
+* Week 1 - Infrastructure Injection
 #+attr_html: :width 600px:
 [[../img/penguins.jpg]]
 
@@ -116,9 +116,9 @@ exercise to the end:
 1. Install Google Cloud Shell app using Chrome: login, and then:
    =Settings > Save and Share > Install page as app=
 3. Emacs is actually pre-installed.
-4. Install R 
+4. Install R
 5. Open Emacs
-6. Create an Org-mode file 
+6. Create an Org-mode file
 7. Run R
 8. Close Emacs
 9. Watch your quota (50 hours/week)
@@ -209,8 +209,8 @@ exercise to the end:
 5. How does the data science pipeline or workflow look like?
    #+attr_html: :width 600px:
    [[../img/2_ds_workflow.png]]
-   
-** Start: Birkenkrahe's Emacs Tutorial ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Emacs.org][GitHub]]) 
+
+** Start: Birkenkrahe's Emacs Tutorial ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_infrastructure_Emacs.org][GitHub]])
 
 1. You'll get a handout. Online: [[https://tinyurl.com/emacs-tutor][tinyurl.com/emacs-tutor]].
 2. Code along with me using Emacs in the cloud.
@@ -219,7 +219,7 @@ exercise to the end:
 Note: You need to install Google Cloud Shell as an app in order to
 have all keybindings in Emacs (esp. =C-v= and =C-n=).
 
-* Week 3 - DataLab & Data Collection and Storage
+* Week 2 - DataLab & Data Collection and Storage
 #+attr_html: :width 400px:
 [[../img/2_pythagoras.jpg]]
 
@@ -422,7 +422,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    file and then counts the characters of the string:
    #+end_quote
    Example in a =bash= code block:
-   #+begin_src bash :results output 
+   #+begin_src bash :results output
      echo "Hello" | tee hello.txt |  wc -c
      cat hello.txt
    #+end_src
@@ -443,7 +443,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
       possible.
     #+end_quote
 
-* Week 4 - Introduction to data science
+* Week 3 - Introduction to data science
 #+attr_html: :width 600px:
 [[../img/frankenstein.jpeg]]
 
@@ -454,7 +454,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 ** DONE Recap of last week
 
 - I watched the Zoom recording and checked the Whiteboard screenshots.
-  
+
 - Do you know how to find the Zoom recording and the Whiteboard
   screenshots?
 
@@ -476,8 +476,29 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+end_quote
    Code example:
    #+begin_src R :session *R* :results output :exports both
-
+     df <- read.csv("../data/cleaning.csv") # read CSV data into data frame
+     str(df)  # structure of data frame
    #+end_src
+
+   #+RESULTS:
+   : 'data.frame':      4 obs. of  4 variables:
+   :  $ Name   : chr  "Sara" "Lis" "Hadrien" "Lis"
+   :  $ Age    : int  27 30 NA 30
+   :  $ Size   : num  1.77 5.58 1.8 5.58
+   :  $ Country: chr  "Belgium" "USA" "FR" "USA"
+
+   #+begin_src R :session *R* :results output :exports both
+     df$Country[1] <- "BE"  # change to country code
+     df$Size[df$Size==5.58] <- 1.70  # change inches to meters
+     str(df)
+   #+end_src
+
+   #+RESULTS:
+   : 'data.frame':      4 obs. of  4 variables:
+   :  $ Name   : chr  "Sara" "Lis" "Hadrien" "Lis"
+   :  $ Age    : int  27 30 NA 30
+   :  $ Size   : num  1.77 1.7 1.8 1.7
+   :  $ Country: chr  "BE" "USA" "FR" "USA"
 
 2. What is the purpose of removing duplicates in a dataset?
    #+begin_quote
@@ -485,8 +506,20 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+end_quote
    Code example:
    #+begin_src R :session *R* :results output :exports both
-
+     df      # original data frame with duplicate row
+     df[-4,] -> df   # duplicate row removed
+     df
    #+end_src
+
+   #+RESULTS:
+   :      Name Age Size Country
+   : 1    Sara  27 1.77 Belgium
+   : 2     Lis  30 5.58     USA
+   : 3 Hadrien  NA 1.80      FR
+   : Name Age Size Country
+   : 1    Sara  27 1.77 Belgium
+   : 2     Lis  30 5.58     USA
+   : 3 Hadrien  NA 1.80      FR
 
 3. What are methods to handle missing values?
    #+begin_quote
@@ -494,18 +527,32 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+end_quote
    Code example:
    #+begin_src R :session *R* :results output :exports both
-
+     df
+     df$Age[Name="Hadrien"]  # extract third element of "Age" column
+     df$Age[3]
+     df$Age[3] <- as.integer(mean(df$Age[-3])) # impute mean for missing value
+     df
    #+end_src
 
 4. What is the main goal of EDA?
    #+begin_quote
-   The main goal of Exploratory Data Analysis is to explore the data
-   and formulate hypotheses, e.g. about correlation, trends, patterns.
+   The main goal of Exploratory Data Analysis is to explore the data,
+   formulate hypotheses, and assess characteristics, e.g. about
+   correlation, trends, patterns. It happens after data preparation.
    #+end_quote
    Code example:
    #+begin_src R :session *R* :results output :exports both
-     summary(mtcars)
+     summary(df) # statistical summary for
    #+end_src
+
+   #+RESULTS:
+   :      Name                Age             Size         Country
+   :  Length:3           Min.   :27.00   Min.   :1.770   Length:3
+   :  Class :character   1st Qu.:27.50   1st Qu.:1.785   Class :character
+   :  Mode  :character   Median :28.00   Median :1.800   Mode  :character
+   :                     Mean   :28.33   Mean   :3.050
+   :                     3rd Qu.:29.00   3rd Qu.:3.690
+   :                     Max.   :30.00   Max.   :5.580
 
 5. What does Anscombe's quartet illustrate in the context of EDA?
    #+begin_quote
@@ -513,19 +560,83 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    if the statistical properties are very similar.
    #+end_quote
    Code example:
-   #+begin_src R :file :session *R* :results file graphics output :exports both
-
+   #+begin_src R :session *R* :results output :exports both
+     summary(anscombe[c("x1","x2","y1","y2")])
    #+end_src
 
-6. What is 'labeling' in data visualizations, and why is it important?
+   #+RESULTS:
+   :        x1             x2             y1               y2
+   :  Min.   : 4.0   Min.   : 4.0   Min.   : 4.260   Min.   :3.100
+   :  1st Qu.: 6.5   1st Qu.: 6.5   1st Qu.: 6.315   1st Qu.:6.695
+   :  Median : 9.0   Median : 9.0   Median : 7.580   Median :8.140
+   :  Mean   : 9.0   Mean   : 9.0   Mean   : 7.501   Mean   :7.501
+   :  3rd Qu.:11.5   3rd Qu.:11.5   3rd Qu.: 8.570   3rd Qu.:8.950
+   :  Max.   :14.0   Max.   :14.0   Max.   :10.840   Max.   :9.260
+
+   #+begin_src R :file ../img/anscombe.png :session *R* :results file graphics output :exports both
+     par(mfrow=c(1,2), pty='s')
+     plot(anscombe$x1, anscombe$y1, col="red",  pch=19) # linearly correlated
+     plot(anscombe$x2, anscombe$y2, col="blue", pch=9 ) # non-linearly correlated
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/anscombe.png]]
+
+6. What does 'Knowing your data' mean?
    #+begin_quote
-   Labeling helps viewers understand what each axis, title, and legend
-   represents.
+   - Preview data values (=head=)
+   - View structure (=str=)
+   - Descriptive stats (=summary=)
+   - Visualize (=plot=)
+   - Look for correlations
+   - Look for outliers
    #+end_quote
-   Code example:
-   #+begin_src R :file :session *R* :results file graphics output :exports both
 
-   #+end_src
+7. Which picture or photo do you know that's "worth a thousand words"?
+   #+attr_html: :width 400px:
+   #+caption: 16-year old German soldier crying when he is captured, WWII
+   [[../img/hitler_youth_crying.jpg]]
+
+   - Others that came to my mind instantly:
+     #+begin_quote
+     - [[https://www.witf.io/wp-content/uploads/2020/02/iwo-jima-rosenthal-520748-1-1920x1080.jpg][Battle of Iwo Jima]]
+     - [[https://www.njspotlightnews.org/wp-content/uploads/sites/123/2024/07/Donald-Trump-assassination-attempt-July-13-2024.jpg][Trump assassination]]
+     - [[https://www.gannett-cdn.com/-mm-/f40f3606fa7f520417c0c9e02d7aa7a371d004ba/r=x513&c=680x510/local/-/media/USATODAY/USATODAY/2013/04/28/war-icons-003-4_3.jpg][Vietnam war]]
+     #+end_quote
+
+8. What are dashboards in data science, and what are they good for?
+   #+begin_quote
+   - Dashboards group relevant information in one place
+   - Real-time information helps viewers to keep track
+   - Dashboards can be customized to different data needs
+   - Dashboards can easily be overwhelming (design issues)
+   - Interactive dashboards can help extract features
+   #+end_quote
+
+9. What are dashboards definitely not good for?
+   #+begin_quote
+   - Data preparation, cleaning and transformation
+   - Explorative Data Analysis (because they are fixed)
+   #+end_quote
+
+10. What is 'labeling' in data visualizations, and why is it important?
+    #+begin_quote
+    Labeling helps viewers understand what each axis, title, and legend
+    represents. Units and data sources are also important.
+    #+end_quote
+    Code example:
+    #+begin_src R :file ../img/labeling.png :session *R* :results file graphics output :exports both
+      par(mfrow=c(1,2),pty='s')
+      plot(mtcars$wt,mtcars$mpg) # unlabeled
+      plot(mtcars$wt,mtcars$mpg,
+           main="32 cars from `mtcars`",
+           xlab="Weight [tons]",
+           ylab="Miles-per-gallon") # labeled
+    #+end_src
+
+    #+RESULTS:
+    [[file:../img/labeling.png]]
+
 
 ** IN PROGRESS Introduction to data science (lecture)
 
@@ -536,5 +647,4 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 - [ ] Data science processes
 
 ** TODO Introduction to R
-
 

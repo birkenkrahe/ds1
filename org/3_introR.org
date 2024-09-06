@@ -5,7 +5,7 @@
 #+ATTR_HTML: :width 200px
 #+CAPTION: RStudio Ball Logo (Source: rstudio.com)
 [[../img/3_rstudioball.png]]
-* OVERVIEW
+* Overview
 #+ATTR_HTML: :width 600px
 #+CAPTION: Bridge and Waterfall at Pontoise (Cezanne, 1881)
 [[../img/3_cezanne.jpg]]
@@ -23,7 +23,7 @@
   a [[challenges][section at the end of the document]].
   #+end_notes
 
-* WHY WE ARE USING R
+* Why we are using R
 
 #+NAME: fig:tiobe
 #+ATTR_HTML: :width 700px
@@ -34,12 +34,12 @@
 - Strong on analysis and visualization
 
 [[https://www.tiobe.com/tiobe-index/][Image Source: TIOBE.com/index - Check some of these languages out!]]
-Image is from 2021. Update 2023: R fell back to position 18.
+Image is from 2021. Update 2024: R fell back to position 18.
 
 #+begin_notes
-When it comes to "self-service" data analysis, three languages are
-mentioned most often: R, Python and SQL. All three have their
-relative merits and issues.
+When it comes to data analysis, three languages are mentioned most
+often: R, Python and SQL. All three have their relative merits and
+issues.
 
 I chose R as the programming language for this introductory
 course. The choice is partly *personal* and partly
@@ -90,7 +90,7 @@ interest in COVID-19 data analysis.
 
 #+end_notes
 
-* MATLOFF'S 10 REASONS
+* Matloff's 10 reasons
 
 #+name: fig:matloff
 #+attr_html: :width 700px
@@ -98,7 +98,7 @@ interest in COVID-19 data analysis.
 
 Source: [[https://nostarch.com/artofr.htm][The Art of R Programming (2011)]]
 
-* Obtaining and installing r from cran
+* Obtaining and installing R from cran
 
 URL: https://cran.r-project.org/mirrors.html
 
@@ -214,7 +214,7 @@ easily by changing a system setting.
 have a Mac available and may be able to figure something out.)/
 
 #+end_notes
-* Practice: download practice files
+* +Practice: download practice files+
 #+attr_html: :width 300px
 [[../img/3_github.png]]
 
@@ -235,7 +235,7 @@ a file type to be opened by one program (not possible in Linux or
 MacOS because Unix does not know file type extensions.
 #+end_comment
 
-* Practice: install R
+* +Practice: install R+
 
 #+attr_html: :width 420px
 [[../img/3_practice.png]]
@@ -244,7 +244,7 @@ MacOS because Unix does not know file type extensions.
 - MacOS people: help each other!
 - Linux people: you're good!
 
-* Opening r for the first time
+* Opening R for the first time
 
 #+NAME: fig:Rlogo
 #+ATTR_HTML: :width 300 px
