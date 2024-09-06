@@ -468,6 +468,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
     ls | wc -l
   #+end_src
 
+
 ** NEXT Review: "Preparation, Exploration, Visualization"
 
 1. Why is data preparation important in data science?
@@ -646,5 +647,28 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 - [ ] Data science jobs
 - [ ] Data science processes
 
-** TODO Introduction to R
+** TODO Introduction to R (with practice file)
+[[../img/3_Rlogo.png]]
+
+
+- [ ] Why R?
+- [ ] What is R?
+- [ ] R shell practice
+- [ ] Exploring =base:options=
+- [ ] R package commands
+- [ ] R customization at startup
+
+The practice exercises are on GitHub at: tinyurl.com/intro-R-practice
+
+* Week 4
+
+Summary R shell
+
+- R is an interpreted program with a shell (CLI/console)
+- On Linux, the executable (a wrapper script) is in =/usr/bin/R=
+- The R files are in =/usr/lib/R/=
+- You can run R scripts in the foreground with =Rscript= or in the
+  background as a "batch" job with =R CMD BATCH=.
+
+Summary R environment  
 

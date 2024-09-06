@@ -17,7 +17,7 @@
 
   #+begin_notes
   Inspiration and ideas especially from [[davies][Davies(2016)]] and other places
-  gratefully received (see [[references][references]]). 
+  gratefully received (see [[references][references]]).
   #+end_notes
 
 * Why we are using R
@@ -224,69 +224,79 @@ have a Mac available and may be able to figure something out.)/
 
 #+end_notes
 
-* Get the practice file
-#+attr_html: :width 300px
-[[../img/3_github.png]]
-
-You can do one of these three things to get files from GitHub:
-
-- Open the course directory in GitHub, github.com/birkenkrahe/ds1, go
-  to the file /org/3_introR_practice.org, open the "raw" version of
-  the file, save and open the file in Emacs.
-
-- Open the full URL of the raw file in the Emacs browser =eww= and write
-  the buffer to an Org-mode file: [[https://tinyurl.com/intro-R-practice][tinyurl.com/intro-R-practice]].
-  
-- Use the command-line with =wget=:
-  #+begin_src bash :results output :exports both
-    wget Rpractice.org https  tinyurl.com/intro-R-practice
-
-  #+end_src
-  
-
-#+begin_notes
-The [[https://github.com/birkenkrahe/ds1][GitHub course directory]] contains all lecture and practice files
-(as =.org= and =.pdf=). The ~raw~ version is the Org-mode file without
-markup 3 In Windows, you can set a file type to be opened by one
-program (not possible in Linux or MacOS because Unix does not know
-file type extensions.
-#+end_notes
-
-* Practice: install R
+* Installing R on your PC at home
 
 #+attr_html: :width 420px
 [[../img/3_practice.png]]
 
-- Windows people: help each other!
-- MacOS people: help each other!
-- Linux people: you're good! (=sudo apt install r-base=)
+- See FAQ on GitHub (birkenkrahe/org)
+- Linux: =sudo apt install r-base && sudo apt install emacs=
+- Windows or Mac: You need Emacs from [[https://emacs-modified.gitlab.io/][emacs-modified.gitlab.io]]
+- You need my ~.emacs~ file from tinyurl.com/lyon-emacs
+- Come to my office hours for help (tinyurl.com/fall24-office-hours)
 
-* Opening R for the first time
+* Practice: Find R on your machine & run R scripts
 
-#+NAME: fig:Rlogo
-#+ATTR_HTML: :width 300 px
-[[../img/3_Rlogo.png]]
+Open a terminal to execute the following shell commands. Do either:
+- Open a "dumb" terminal outside of Emacs
+- Open a "smart" terminal inside Emacs (=M-x shell=)
+- Create an Org-mode file with =bash= code blocks (like here)
 
-- R is an /interpreted language/ - instructions are entered via CLI[fn:2]
-- On your windows box, you have R as a terminal program and as a GUI
-- In Emacs, you can execute R code blocks and display graphs together
+  
+1. Check where the R executable is located:
+   #+begin_src bash :results output :exports both
+     which R
+   #+end_src
 
-* Practice: find R / run R scripts
-#+attr_html: :width 500px
-[[../img/practice.jpg]]
+2. View the top of the file:
+   #+begin_src bash :results output :exports both
+     cat /usr/bin/R | head -10
+   #+end_src
 
-Summary:
+3. The R files are contained in =$R_HOME_DIR=, which is =/usr/lib/R=
 
-- R is an interpreted program with a shell (CLI/console)
-- On Windows, there are a GUI and a terminal program
-- You can run R scripts in the foreground or in the background
+4. Now look for the =Rscript= program:
+   #+begin_src bash :results output :exports both
+     which Rscript
+   #+end_src
 
-* R shell: version and platform
+5. Create an R test file =test.R=, list and view it:
+   #+begin_src bash :results output :exports both
+     echo "str(mtcars)" > test.R
+     ls -l test.R
+     cat test.R
+   #+end_src
 
+6. Run the file on the command line as a script:
+   #+begin_src bash :results output :exports both
+     Rscript test.R
+   #+end_src
+
+7. Run the file as a batch job (in the background):
+   #+begin_src bash :results none :exports both
+     R CMD BATCH test.R
+   #+end_src
+
+8. The results are stored in a file: =testR.out=:
+   #+begin_src bash :results output :exports both
+     cat test.Rout
+   #+end_src
+
+* R shell: Version and platform
 #+NAME: fig:cli-1
+#+attr_html: :width 550px:
 [[../img/3_opening_R_1.png]]
 
-What type of bit-architecture do you have?
+- What type of bit-architecture do you have?
+  #+begin_src bash :results output :exports both
+    uname -m
+  #+end_src
+
+  #+RESULTS:
+  : x86_64
+
+- The =uname= command prints system information. In Emacs, run =M-x man
+  RET uname= to access the manual page.
 
 #+begin_notes
 This is the first screen you see (figure [[fig:cli-1]]) after starting R
@@ -300,16 +310,19 @@ program runs, is shown - a 64-bit version of Linux using the [[https://en.wikipe
 computer architecture]].
 
 *Challenge:* what type of computer architecture does your computer
-have (most importantly: 64-bit)? [[platform][(Hint)]]
+have (most importantly: 64-bit)? (Linux: =cat /etc/cpuinfo=)
 
 #+end_notes
 
-* R shell: distribution license
-
+* R shell: Distribution license
 #+NAME: fig:cli-2
+#+attr_html: :width 550px:
 [[../img/3_opening_R_2.png]]
 
-Type ~license()~. What is "GNU"?
+- Open the R console, either in a dumb or in a smart terminal (=M-x
+  shell)=, or in a dedicated R buffer (=*R*=).
+
+- Type ~license()~. What is "GNU"?
 
 #+begin_notes
 As you'll find out when following the instructions in figure
@@ -327,12 +340,12 @@ of this language.
 to it? Are there any programs that you have used before? [[gnu][(Hint)]]
 #+end_notes
 
-* R shell: the r project
-
-#+CAPTION:
+* R shell: The R project
 #+NAME: fig:cli-3
+#+attr_html: :width 550px:
 [[../img/3_opening_R_3.png]]
 
+On the R console:
 - Enter ~citation()~. Why cite software?
 - Enter ~contributors()~. Who can contribute?
 
@@ -355,13 +368,18 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
   (like HTML or LaTeX)? [[latex][(Hint)]]
   #+end_notes
 
-* R shell: demo and help
-
+* R shell: Demo and help
 #+NAME: fig:cli-4
+#+attr_html: :width 550px:
 [[../img/3_opening_R_4.png]]
 
-- Enter ~demo(graphics)~ and marvel.
+Do this on an R console in a dumb or smart shell:
+- Enter ~demo(graphics)~ for some graphics examples.
+
 - Enter ~help.start()~ - where is this page?
+  #+begin_src R :session *R* :results output :exports both
+    help.start()
+  #+end_src
 
   #+begin_notes
   The section higlighted in figure [[fig:cli-4]] suggests a few commands
@@ -398,55 +416,399 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
   in command-line mode.
   #+end_notes
 
-* Practice: exploring the r shell
-#+attr_html: :width 500px
-[[../img/practice.jpg]]
-
-Summary:
-- Contents of the R startup screen: R's version, license, project,
-  citation, how to get help and demos, and how to quit R
-- GPL is the GNU Public License (important for FOSS)
-- BibTeX and LaTeX for scientific document processing
-
-* Working directory
-
+* R environment: working directory
 #+NAME: fig:cli-5
+#+attr_html: :width 550px:
 [[../img/3_opening_R_5.png]]
 
+In the R console:
+
 - Enter ~getwd()~ ("get working dir")
-- Use ~setwd()~ to change directory
+  #+begin_src R :session *R* :results output :exports both
+    getwd()
+  #+end_src
 
-  #+begin_notes
-  When you start R, you may be asked, which working directory you wish
-  to use. This is where all files created (e.g. plots) will be put and
-  where R will look first to load scripts with R commands for execution.
+  #+RESULTS:
+  : [1] "/home/aletheia/GitHub/ds1/org"
 
-  The [[https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/getwd][~setwd()~]] command in figure [[fig:cli-5]] allows you to set any
-  directory as working directory. To check which one is used right
-  now, you can use [[https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/getwd][~getwd()~]].
+- Use ~setwd()~ to change directory to your user home directory (=$HOME=):
 
-  How you specify the path to the current working directory depends on
-  your operating system, e.g. ~/home/marcus~ for my home directory on
-  MacOS/Linux, or ~C:\Users\Marcus~ under Windows. Especially as a
-  Windows user, you should look at your file organisation - this will
-  pay off as soon as you use the terminal or command-line. The Bash
-  shell that I use on my Linux computer (and that most MacOS users
-  will use) is also available within Windows 10 [[posey][(Posey 2018]]).
-  #+end_notes
-* Practice: change working directory
-#+attr_html: :width 500px
-[[../img/practice.jpg]]
+  1) Using an absolute path address: from the root directory (=/=)
+     #+begin_src R
+       setwd("../../../")
+       getwd()
+     #+end_src
+     
+     #+RESULTS:
+     : /home/aletheia
 
-Summary:
-- Function without arguments: ~getwd()~
-- Function with arguments: ~setwd('...')~
-- Absolute pathname like ~c:/Users/birkenkrahe/~
-- Relative pathnames like ~../../~ ("go up by 2 levels")
+  2) Using a relative path address: from the current location (=.=)
+     #+begin_src R
+       setwd("/home/aletheia")
+       getwd()
+     #+end_src
+
+     #+RESULTS:
+     : /home/aletheia
+
+#+begin_notes
+When you start R, you may be asked, which working directory you wish
+to use. This is where all files created (e.g. plots) will be put and
+where R will look first to load scripts with R commands for execution.
+
+The [[https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/getwd][setwd()]] command in figure [[fig:cli-5]] allows you to set any
+directory as working directory. To check which one is used right
+now, you can use [[https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/getwd][getwd()]].
+
+How you specify the path to the current working directory depends on
+your operating system, e.g. ~/home/marcus~ for my home directory on
+MacOS/Linux, or ~C:\Users\Marcus~ under Windows. Especially as a
+Windows user, you should look at your file organisation - this will
+pay off as soon as you use the terminal or command-line. The Bash
+shell that I use on my Linux computer (and that most MacOS users
+will use) is also available within Windows 10 [[posey][(Posey 2018]]).
+#+end_notes
 
 * The R shell prompt
-
 #+NAME: fig:cli-6
+#+attr_html: :width 550px:
 [[../img/3_opening_R_6.png]]
+
+- The function =options= controls all glocal options for R:
+  #+begin_src R :session *R* :results output :exports both
+    help(options)
+  #+end_src
+
+- =options= is a list:
+  #+begin_src R :session *R* :results output :exports both
+    class(options())
+  #+end_src
+
+  #+RESULTS:
+  : [1] "list"
+
+- You can look at it:
+  #+begin_src R :session *R* :results output :exports both
+    options()
+  #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  $add.smooth
+  [1] TRUE
+
+  $bitmapType
+  [1] "cairo"
+
+  $browser
+  [1] "xdg-open"
+
+  $browserNLdisabled
+  [1] FALSE
+
+  $CBoundsCheck
+  [1] FALSE
+
+  $check.bounds
+  [1] FALSE
+
+  $citation.bibtex.max
+  [1] 1
+
+  $continue
+  [1] "+ "
+
+  $contrasts
+          unordered           ordered 
+  "contr.treatment"      "contr.poly" 
+
+  $defaultPackages
+  [1] "datasets"  "utils"     "grDevices" "graphics"  "stats"     "methods"  
+
+  $demo.ask
+  [1] "default"
+
+  $deparse.cutoff
+  [1] 60
+
+  $device
+  function (display = "", width, height, pointsize, gamma, bg, 
+      canvas, fonts, family, xpos, ypos, title, type, antialias, 
+      symbolfamily) 
+  {
+      if (display != "XImage") {
+          check <- Sys.getenv("_R_CHECK_SCREEN_DEVICE_", "")
+          msg <- "screen devices should not be used in examples etc"
+          if (identical(check, "stop")) 
+              stop(msg, domain = NA)
+          else if (identical(check, "warn")) 
+              warning(msg, immediate. = TRUE, noBreaks. = TRUE, 
+                  domain = NA)
+      }
+      if (display == "" && .Platform$GUI == "AQUA" && is.na(Sys.getenv("DISPLAY", 
+          NA))) 
+          Sys.setenv(DISPLAY = ":0")
+      new <- list()
+      if (!missing(display)) 
+          new$display <- display
+      if (!missing(width)) 
+          new$width <- width
+      if (!missing(height)) 
+          new$height <- height
+      if (!missing(gamma)) 
+          new$gamma <- gamma
+      if (!missing(pointsize)) 
+          new$pointsize <- pointsize
+      if (!missing(bg)) 
+          new$bg <- bg
+      if (!missing(canvas)) 
+          new$canvas <- canvas
+      if (!missing(xpos)) 
+          new$xpos <- xpos
+      if (!missing(ypos)) 
+          new$ypos <- ypos
+      if (!missing(title)) 
+          new$title <- title
+      if (!checkIntFormat(new$title)) 
+          stop("invalid 'title'")
+      if (!missing(type)) {
+          new$type <- match.arg(type, c("Xlib", "cairo", "nbcairo", 
+              "dbcairo"))
+          if (!capabilities("cairo") && type != "Xlib") 
+              warning("cairo-based types are not supported on this build - using \"Xlib\"")
+      }
+      if (!missing(family)) 
+          new$family <- family
+      if (!missing(fonts)) 
+          new$fonts <- fonts
+      if (!missing(antialias) && type != "Xlib") 
+          new$antialias <- match.arg(antialias, aa.cairo)
+      if (!missing(symbolfamily)) 
+          new$symbolfamily <- symbolfamily
+      d <- check.options(new, name.opt = ".X11.Options", envir = .X11env)
+      if (d$type == "Xlib" && !missing(family)) {
+          fns <- X11Fonts()
+          if (!family %in% names(fns)) 
+              stop("unknown family for X11(type = \"XLib\")")
+          d$fonts[1] <- fns[[family]]
+      }
+      type <- if (capabilities("cairo")) 
+          switch(d$type, cairo = 1L, nbcairo = 2L, dbcairo = 3L, 
+              0L)
+      else 0L
+      if (display == "XImage") 
+          type <- 0L
+      antialias <- match(d$antialias, aa.cairo)
+      if (grepl("darwin", R.version$os)) 
+          check_for_XQuartz()
+      .External2(C_X11, d$display, d$width, d$height, d$pointsize, 
+          d$gamma, d$colortype, d$maxcubesize, d$bg, d$canvas, 
+          d$fonts, NA_integer_, d$xpos, d$ypos, d$title, type, 
+          antialias, d$family, optionSymbolFont(d$symbolfamily))
+      invisible()
+  }
+  <bytecode: 0x5684ab307550>
+  <environment: namespace:grDevices>
+
+  $device.ask.default
+  [1] FALSE
+
+  $digits
+  [1] 7
+
+  $dvipscmd
+  [1] "dvips"
+
+  $echo
+  [1] TRUE
+
+  $editor
+  [1] "emacsclient"
+
+  $encoding
+  [1] "native.enc"
+
+  $example.ask
+  [1] "default"
+
+  $expressions
+  [1] 5000
+
+  $help.search.types
+  [1] "vignette" "demo"     "help"    
+
+  $help.try.all.packages
+  [1] FALSE
+
+  $HTTPUserAgent
+  [1] "R (4.1.2 x86_64-pc-linux-gnu x86_64 linux-gnu)"
+
+  $internet.info
+  [1] 2
+
+  $keep.parse.data
+  [1] TRUE
+
+  $keep.parse.data.pkgs
+  [1] FALSE
+
+  $keep.source
+  [1] TRUE
+
+  $keep.source.pkgs
+  [1] FALSE
+
+  $length
+  [1] 99999
+
+  $locatorBell
+  [1] TRUE
+
+  $mailer
+  [1] "mailto"
+
+  $matprod
+  [1] "default"
+
+  $max.print
+  [1] 99999
+
+  $menu.graphics
+  [1] TRUE
+
+  $na.action
+  [1] "na.omit"
+
+  $nwarnings
+  [1] 50
+
+  $OutDec
+  [1] "."
+
+  $pager
+  [1] "cat"
+
+  $papersize
+  [1] "a4"
+
+  $PCRE_limit_recursion
+  [1] NA
+
+  $PCRE_study
+  [1] FALSE
+
+  $PCRE_use_JIT
+  [1] TRUE
+
+  $pdfviewer
+  [1] "/usr/bin/xdg-open"
+
+  $pkgType
+  [1] "source"
+
+  $printcmd
+  [1] "/usr/bin/lpr"
+
+  $prompt
+  [1] "> "
+
+  $repos
+                           CRAN 
+  "https://cloud.r-project.org" 
+
+  $rl_word_breaks
+  [1] " \t\n\"\\'`><=%;,|&{()}"
+
+  $scipen
+  [1] 0
+
+  $show.coef.Pvalues
+  [1] TRUE
+
+  $show.error.locations
+  [1] TRUE
+
+  $show.error.messages
+  [1] TRUE
+
+  $show.signif.stars
+  [1] TRUE
+
+  $STERM
+  [1] "iESS"
+
+  $str
+  $str$strict.width
+  [1] "no"
+
+  $str$digits.d
+  [1] 3
+
+  $str$vec.len
+  [1] 4
+
+  $str$list.len
+  [1] 99
+
+  $str$deparse.lines
+  NULL
+
+  $str$drop.deparse.attr
+  [1] TRUE
+
+  $str$formatNum
+  function (x, ...) 
+  format(x, trim = TRUE, drop0trailing = TRUE, ...)
+  <environment: 0x5684abc638f8>
+
+
+  $str.dendrogram.last
+  [1] "'"
+
+  $stringsAsFactors
+  [1] FALSE
+
+  $texi2dvi
+  [1] "/usr/bin/texi2dvi"
+
+  $timeout
+  [1] 60
+
+  $ts.eps
+  [1] 1e-05
+
+  $ts.S.compat
+  [1] FALSE
+
+  $unzip
+  [1] "/usr/bin/unzip"
+
+  $useFancyQuotes
+  [1] TRUE
+
+  $verbose
+  [1] FALSE
+
+  $warn
+  [1] 0
+
+  $warning.length
+  [1] 1000
+
+  $width
+  [1] 92
+  #+end_example
+
+- You can extract display options with ~$~, e.g. for the R console
+  prompt:
+  #+begin_src R :session *R* :results output :exports both
+    options()$prompt
+  #+end_src
+
+  #+RESULTS:
+  : [1] "> "
+
+
 
 #+begin_notes
 Figure [[fig:cli-6]] shows a new utility command, ~options()~, that you
@@ -460,14 +822,6 @@ effort). Freedom of extensibility is the name of the command-line
 game.
 #+end_notes
 
-* Practice: change r shell prompt
-#+attr_html: :width 500px
-[[../img/practice.jpg]]
-
-Summary:
-- The functions ~options~ controls display options
-- You can extract display options with ~$~, e.g. ~options()$prompt~
-- You can get help with the ~help~ function (or ~?~)
 
 * Computing and commenting
 
@@ -489,7 +843,7 @@ this because it is strongest when manipulating tabular data - data
 ordered in columns and rows.
 #+end_notes
 
-* Practice: compute and comment
+* Practice: Compute and comment
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
@@ -619,7 +973,7 @@ Summary:
 - See also: [[https://www.r-bloggers.com/2014/09/fun-with-rprofile-and-customizing-r-startup/]["Fun with .Rprofile and customizing R startup"]]
   (Fischetti, 2014)
 
-* Practice: customizing at startup
+* Practice: Customizing at startup
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
@@ -639,7 +993,7 @@ Summary:
 - We're not using RStudio ([[https://github.com/birkenkrahe/org/blob/master/FAQ.org#are-we-going-to-use-rstudio][why]]) but Emacs + ESS + Org-mode instead
 
 - You can [[https://www.rstudio.com/products/rstudio/download/][download RStudio from here]] - perhaps you learn to like
-  it[fn:6]
+  it[fn:5]
 
 * Concept Summary
 
@@ -713,7 +1067,7 @@ See also: [[https://youtu.be/ARJ8cAGm6JE][HAL 9000: "I'm sorry Dave, I'm afraid 
   follow a bunch of data science experts on [[https://twitter.com/birkenkrahe][Twitter]] for the same
   reason. If you do this for any topic that is being discussed on a
   factual (rather than an overly political or emotional) basis,
-  you'll learn more faster[fn:5].
+  you'll learn more faster[fn:6].
 - For example: take a look at "[[https://rweekly.org/][R Weekly]]" for a weekly, curated
   collection of articles from the R community. This will give you an
   idea of the spread of information.
@@ -845,9 +1199,8 @@ workspace) and reopening it again.
 
 The simplest way is to type ~help(Boston)~ (again, only after
 loading the ~MASS~ package).
-* Footnotes
 
-[fn:6]
+* Footnotes
 
 [fn:1]To open the R console, and direct plots to the correct device,
 the R program needs to be "plugged into" your operating system, as it
@@ -866,7 +1219,12 @@ that interfaces R and C++.
 
 [fn:4]You can also re-set this home directory - [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-to-set-a-new-emacs-home-directory][this FAQ explains how]].
 
-[fn:5]Data science is a mixed affair when it comes to this last tip:
+[fn:5]I don't like it because I think it's way too complicated but
+some developers swear by it. It contains a script editor, an R
+console, an environment buffer and a graphics buffer. It is fairly
+customizable, but nowhere near as flexible as Emacs + ESS + Orgmode.
+
+[fn:6]Data science is a mixed affair when it comes to this last tip:
 because of the importance of statistics and models for COVID-19,
 public discussions e.g. on Twitter are often instantly politicized and
 emotionally charged. However, to be able to navigate these waters and
