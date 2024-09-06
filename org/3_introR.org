@@ -17,14 +17,10 @@
 
   #+begin_notes
   Inspiration and ideas especially from [[davies][Davies(2016)]] and other places
-  gratefully received (see [[references][references]]). At the end of some sections,
-  you find challenges - things for you to think about or do
-  something. You find solutions and tips regarding these challenges in
-  a [[challenges][section at the end of the document]].
+  gratefully received (see [[references][references]]). 
   #+end_notes
 
 * Why we are using R
-
 #+NAME: fig:tiobe
 #+ATTR_HTML: :width 700px
 [[../img/3_tiobe.png]]
@@ -34,7 +30,9 @@
 - Strong on analysis and visualization
 
 [[https://www.tiobe.com/tiobe-index/][Image Source: TIOBE.com/index - Check some of these languages out!]]
-Image is from 2021. Update 2024: R fell back to position 18.
+Image is from 2021. Update 2024: R fell back to position 19.
+
+If you don't want to leave Emacs, you can also use the =eww= browser.
 
 #+begin_notes
 When it comes to data analysis, three languages are mentioned most
@@ -98,6 +96,12 @@ interest in COVID-19 data analysis.
 
 Source: [[https://nostarch.com/artofr.htm][The Art of R Programming (2011)]]
 
+Things you should know the definition of (roughly):
+- Public domain
+- OOP and functional programming
+- Command history
+- Command-line
+
 * Obtaining and installing R from cran
 
 URL: https://cran.r-project.org/mirrors.html
@@ -107,13 +111,18 @@ URL: https://cran.r-project.org/mirrors.html
 [[../img/3_cran.png]]
 
 - CRAN = "Comprehensive R Archive Network"x at [[https://www.r-project.org][r-project.org]]
-- Use /[[https://cran.r-project.org/mirrors.html][mirror sites]]/ (*what's that?*) for download
-- PRACTICE: *DOWNLOAD THE /INSTALLER/ PROGRAM FOR YOUR OPERATING SYSTEM*
+
+- Use /[[https://cran.r-project.org/mirrors.html][mirror sites]]/ (*what's that?*) for download (open browser)
+
+- Practice: on the CLI, check for updates of everything:
+  #+begin_example bash
+  sudo apt update -y && sudo apt upgrade -y
+    #+end_example
 
 #+begin_notes
 
-Download the installer for your operating system from your local
-CRAN ("*Comprehensive R Archive Network*") mirror here:
+You can download the installer for your operating system from your
+local CRAN ("*Comprehensive R Archive Network*") mirror here:
 https://cran.r-project.org/mirrors.html.
 
 For example, if you are in Berlin, the Nürnberg server is closest:
@@ -214,35 +223,40 @@ easily by changing a system setting.
 have a Mac available and may be able to figure something out.)/
 
 #+end_notes
-* +Practice: download practice files+
+
+* Get the practice file
 #+attr_html: :width 300px
 [[../img/3_github.png]]
 
-1) Open the course directory in GitHub,
-   https://github.com/birkenkrahe/ds1
-2) Open ~/org/3_introR_practice.org~
-3) Open the ~raw~ version of the file
-4) Save file as ~3_introR_practice.org~
-5) Right click on the file in Explorer
-6) Change ~Opens with:~ property to Emacs
-7) Open file with Emacs from the Explorer
+You can either:
 
-Summary:
-#+begin_comment
-The GitHub directory contains all lecture and practice files. The ~raw~
-version is the Org-mode file without markup 3 In Windows, you can set
-a file type to be opened by one program (not possible in Linux or
-MacOS because Unix does not know file type extensions.
-#+end_comment
+- Open the course directory in GitHub, github.com/birkenkrahe/ds1, go
+  to the file ~/org/3_introR_practice.org~, open the ~raw~ version of the
+  file, save and open the file in Emacs
 
-* +Practice: install R+
+- Open the full URL of the raw file in the Emacs browser =eww= and write
+  the buffer to an Org-mode file.
+  
+- Right click on the file in Explorer
+- Change ~Opens with:~ property to Emacs
+- Open file with Emacs from the Explorer
+
+#+begin_notes
+The [[https://github.com/birkenkrahe/ds1][GitHub course directory]] contains all lecture and practice files
+(as =.org= and =.pdf=). The ~raw~ version is the Org-mode file without
+markup 3 In Windows, you can set a file type to be opened by one
+program (not possible in Linux or MacOS because Unix does not know
+file type extensions.
+#+end_notes
+
+* Practice: install R
 
 #+attr_html: :width 420px
 [[../img/3_practice.png]]
 
 - Windows people: help each other!
 - MacOS people: help each other!
-- Linux people: you're good!
+- Linux people: you're good! (=sudo apt install r-base=)
 
 * Opening R for the first time
 
@@ -259,6 +273,7 @@ MacOS because Unix does not know file type extensions.
 [[../img/practice.jpg]]
 
 Summary:
+
 - R is an interpreted program with a shell (CLI/console)
 - On Windows, there are a GUI and a terminal program
 - You can run R scripts in the foreground or in the background
@@ -275,8 +290,8 @@ This is the first screen you see (figure [[fig:cli-1]]) after starting R
 on the command-line. The highlighted section shows the current
 (June 2020) version of Base-R, as the core R program is officially
 called. Versions get their own names, like operating systems (my
-Ubuntu Linux operating system e.g. has the version number 18.04-LTS
-and the name "Bionic Beaver"). R 4.0.2 is also called "Taking Off
+Ubuntu Linux operating system e.g. has the version number ~18.04-LTS~
+and the name "Bionic Beaver"). ~R 4.0.2~ is also called "Taking Off
 Again". Lastly, the platform of the operating system on which the R
 program runs, is shown - a 64-bit version of Linux using the [[https://en.wikipedia.org/wiki/X86-64][x86
 computer architecture]].
@@ -787,9 +802,6 @@ alternative to ESS is the highly popular IDE (Integrated
 Development Environment) RStudio. We will not be using it in this
 course but I encourage you to check it out, try it and see if you
 like it, especially if my teaching tempo is too slow for you!
-** Version and platform
-<<platform>> See here to find out details of your CPU and computer architecture
-for [[https://www.howtogeek.com/413942/how-to-see-what-cpu-is-in-your-pc-and-how-fast-it-is/][Windows]] or [[https://www.macworld.com/article/3393161/how-to-check-if-mac-software-is-32-or-64-bit.html][MacOS]].
 ** Distribution license
 <<gnu>> Go to [[https://www.gnu.org/software/software.html][GNU Software]] to see a list of all programs
 distributed under the GPL. These programs constitute the GNU system
