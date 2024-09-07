@@ -663,6 +663,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 - [ ] Data science jobs
 - [ ] Data science processes
 
+
 ** TODO Introduction to R (with practice file)
 [[../img/3_Rlogo.png]]
 
