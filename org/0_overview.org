@@ -230,7 +230,7 @@ Linux + Emacs + R.
 - Complete chapter 1 of the course "Understanding Data Science",
   [[https://app.datacamp.com/learn/courses/understanding-data-science][Introduction to data science]] on the DataCamp platform.
 
-* Next: [[https://github.com/birkenkrahe/ds1/blob/main/pdf/1_infrastructure.pdf][Infrastructure exercise]]
+* Next: Infrastructure Exercise
 * Footnotes
 
 [fn:1]There are good reasons to choose R over Python as a first
