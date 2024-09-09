@@ -511,6 +511,33 @@ will use) is also available within Windows 10 [[posey][(Posey 2018]]).
   :                          CRAN 
   : "https://cloud.r-project.org"
 
+- Change the shell prompt to ~R>~:
+  #+begin_src R :session *R* :results output :exports both
+    options(prompt="R> ")
+  #+end_src
+
+  #+RESULTS:
+
+- The change affects only your current R session. Change to the ~*R*~
+  console buffer to check this:
+  #+begin_example R
+  > setwd('/home/aletheia/GitHub/ds1/org/')
+  > options(prompt="R> ")
+  'org_babel_R_eoe'
+  R> [1] "org_babel_R_eoe"
+  R> 
+  #+end_example
+
+- On the R console, change the prompt back to what it was.
+  #+begin_example
+  R> 
+  R> options(prompt="> ")
+  > 
+  > options()$prompt
+  [1] "> "
+  > 
+  #+end_example
+
 #+begin_notes
 Figure [[fig:cli-6]] shows a new utility command, ~options()~, that you
 can use to change the identifying prompt at the beginning of the
