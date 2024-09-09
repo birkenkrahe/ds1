@@ -374,47 +374,47 @@ On the R console:
 [[../img/3_opening_R_4.png]]
 
 Do this on an R console in a dumb or smart shell:
-- Enter ~demo(graphics)~ for some graphics examples.
+1) Enter ~demo(graphics)~ for some graphics examples.
 
-- Enter ~help.start()~ - where is this page?
-  #+begin_src R :session *R* :results output :exports both
-    help.start()
-  #+end_src
+2) Enter ~help.start()~ - where is this page?
+   #+begin_src R :session *R* :results output :exports both
+     help.start()
+   #+end_src
 
-  #+begin_notes
-  The section higlighted in figure [[fig:cli-4]] suggests a few commands
-  that you ought to try for yourself:
+   #+begin_notes
+   The section higlighted in figure [[fig:cli-4]] suggests a few commands
+   that you ought to try for yourself:
 
-  ~help()~ is a function to get help for whatever you put in between
-  the brackets. A quick win is ~help(help)~, or help about the help
-  function. The format of the help pages is borrowed from the [[https://en.wikipedia.org/wiki/Man_page][Unix
-  man[ual] pages]]. An alternative to ~help()~ is ~?~ followed by the
-  term you need help with, e.g. ~?help~, which is the same as
-  ~help(help)~ but much shorter. Lastly, ~help.start()~ opens a
-  browser window with help in HTML format. Very useful access to a
-  wealth of systematic information. If you don't know the exact name,
-  you can also search across all documentation using ~help.search()~
-  or the shortcut ~??~. Try entering ~??cars~ if you are looking for
-  datasets on cars. You'll find that there are four known datasets
-  with cars in different packages.
+   ~help()~ is a function to get help for whatever you put in between
+   the brackets. A quick win is ~help(help)~, or help about the help
+   function. The format of the help pages is borrowed from the [[https://en.wikipedia.org/wiki/Man_page][Unix
+   man[ual] pages]]. An alternative to ~help()~ is ~?~ followed by the
+   term you need help with, e.g. ~?help~, which is the same as
+   ~help(help)~ but much shorter. Lastly, ~help.start()~ opens a
+   browser window with help in HTML format. Very useful access to a
+   wealth of systematic information. If you don't know the exact name,
+   you can also search across all documentation using ~help.search()~
+   or the shortcut ~??~. Try entering ~??cars~ if you are looking for
+   datasets on cars. You'll find that there are four known datasets
+   with cars in different packages.
 
-  Via the dataset search, you can also find out that functions like
-  ~help()~ or ~demo()~ are part of the ~utils~ package - respective
-  functions are listed as ~utils::[function]~. It contains all sorts
-  of functions for housekeeping and administration.
+   Via the dataset search, you can also find out that functions like
+   ~help()~ or ~demo()~ are part of the ~utils~ package - respective
+   functions are listed as ~utils::[function]~. It contains all sorts
+   of functions for housekeeping and administration.
 
-  The R help system is however not written for beginners. Personally,
-  I more often go to textbooks or, preferably, to stackoverflow.com if
-  I have a question or need to remind myself of a command or a way of
-  doing things.
+   The R help system is however not written for beginners. Personally,
+   I more often go to textbooks or, preferably, to stackoverflow.com if
+   I have a question or need to remind myself of a command or a way of
+   doing things.
 
-  There are a few interactive demo programs available, too. You should
-  try ~demo(graphics)~ and marvel at the various possibilities of R to
-  create plots with your data. Notice how few lines of code are
-  sufficient to create great effects! The window that opens when you
-  execute the demo commands is the standard graphics output when using R
-  in command-line mode.
-  #+end_notes
+   There are a few interactive demo programs available, too. You should
+   try ~demo(graphics)~ and marvel at the various possibilities of R to
+   create plots with your data. Notice how few lines of code are
+   sufficient to create great effects! The window that opens when you
+   execute the demo commands is the standard graphics output when using R
+   in command-line mode.
+   #+end_notes
 
 * R environment: working directory
 #+NAME: fig:cli-5
@@ -423,33 +423,33 @@ Do this on an R console in a dumb or smart shell:
 
 In the R console:
 
-- Enter ~getwd()~ ("get working dir")
-  #+begin_src R :session *R* :results output :exports both
-    getwd()
-  #+end_src
+1) Enter ~getwd()~ ("get working dir")
+   #+begin_src R :session *R* :results output :exports both
+     getwd()
+   #+end_src
 
-  #+RESULTS:
-  : [1] "/home/aletheia/GitHub/ds1/org"
+   #+RESULTS:
+   : [1] "/home/aletheia/GitHub/ds1/org"
 
-- Use ~setwd()~ to change directory to your user home directory (=$HOME=):
+2) Use ~setwd()~ to change directory to your user home directory (=$HOME=):
 
-  1) Using an absolute path address: from the root directory (=/=)
-     #+begin_src R
-       setwd("../../../")
-       getwd()
-     #+end_src
+   1) Using an absolute path address: from the root directory (=/=)
+      #+begin_src R
+        setwd("../../../")
+        getwd()
+      #+end_src
      
-     #+RESULTS:
-     : /home/aletheia
+      #+RESULTS:
+      : /home/aletheia
 
-  2) Using a relative path address: from the current location (=.=)
-     #+begin_src R
-       setwd("/home/aletheia")
-       getwd()
-     #+end_src
+   2) Using a relative path address: from the current location (=.=)
+      #+begin_src R
+        setwd("/home/aletheia")
+        getwd()
+      #+end_src
 
-     #+RESULTS:
-     : /home/aletheia
+      #+RESULTS:
+      : /home/aletheia
 
 #+begin_notes
 When you start R, you may be asked, which working directory you wish
@@ -469,74 +469,74 @@ shell that I use on my Linux computer (and that most MacOS users
 will use) is also available within Windows 10 [[posey][(Posey 2018]]).
 #+end_notes
 
-* The R shell prompt
+* R display ~options~
 #+NAME: fig:cli-6
 #+attr_html: :width 550px:
 [[../img/3_opening_R_6.png]]
 
-- The function =options= controls all glocal options for R:
-  #+begin_src R :session *R* :results output :exports both
-    help(options)
-  #+end_src
+1) The function =options= controls all glocal options for R:
+   #+begin_src R :session *R* :results output :exports both
+     help(options)
+   #+end_src
 
-- =options= is a list:
-  #+begin_src R :session *R* :results output :exports both
-    class(options())
-  #+end_src
+2) =options= is a list:
+   #+begin_src R :session *R* :results output :exports both
+     class(options())
+   #+end_src
 
-  #+RESULTS:
-  : [1] "list"
+   #+RESULTS:
+   : [1] "list"
 
-- You can look at it:
-  #+begin_src R :session *R* :results output :exports both
-    options()
-  #+end_src
+3) You can look at it:
+   #+begin_src R :session *R* :results output :exports both
+     options()
+   #+end_src
 
-- You can extract display options with ~$~, e.g. for the R console
-  prompt:
-  #+begin_src R :session *R* :results output :exports both
-    options()$prompt
-  #+end_src
+4) You can extract display options with ~$~, e.g. for the R console
+   prompt:
+   #+begin_src R :session *R* :results output :exports both
+     options()$prompt
+   #+end_src
 
-  #+RESULTS:
-  : [1] "> "
+   #+RESULTS:
+   : [1] "> "
 
-- Another important option setting is for the repository that R uses
-  to download packages: Set to the default CRAN repo in my ~.Rprofile~
-  #+begin_src R :session *R* :results output :exports both
-    options()$repos
-  #+end_src
+5) Another important option setting is for the repository that R uses
+   to download packages: Set to the default CRAN repo in my ~.Rprofile~
+   #+begin_src R :session *R* :results output :exports both
+     options()$repos
+   #+end_src
 
-  #+RESULTS:
-  :                          CRAN 
-  : "https://cloud.r-project.org"
+   #+RESULTS:
+   :                          CRAN 
+   : "https://cloud.r-project.org"
 
-- Change the shell prompt to ~R>~:
-  #+begin_src R :session *R* :results output :exports both
-    options(prompt="R> ")
-  #+end_src
+6) Change the shell prompt to ~R>~:
+   #+begin_src R :session *R* :results output :exports both
+     options(prompt="R> ")
+   #+end_src
 
-  #+RESULTS:
+   #+RESULTS:
 
-- The change affects only your current R session. Change to the ~*R*~
-  console buffer to check this:
-  #+begin_example R
-  > setwd('/home/aletheia/GitHub/ds1/org/')
-  > options(prompt="R> ")
-  'org_babel_R_eoe'
-  R> [1] "org_babel_R_eoe"
-  R> 
-  #+end_example
+7) The change affects only your current R session. Change to the ~*R*~
+   console buffer to check this:
+   #+begin_example R
+   > setwd('/home/aletheia/GitHub/ds1/org/')
+   > options(prompt="R> ")
+   'org_babel_R_eoe'
+   R> [1] "org_babel_R_eoe"
+   R> 
+   #+end_example
 
-- On the R console, change the prompt back to what it was.
-  #+begin_example
-  R> 
-  R> options(prompt="> ")
-  > 
-  > options()$prompt
-  [1] "> "
-  > 
-  #+end_example
+8) On the R console, change the prompt back to what it was.
+   #+begin_example
+   R> 
+   R> options(prompt="> ")
+   > 
+   > options()$prompt
+   [1] "> "
+   > 
+   #+end_example
 
 #+begin_notes
 Figure [[fig:cli-6]] shows a new utility command, ~options()~, that you
@@ -550,13 +550,18 @@ effort). Freedom of extensibility is the name of the command-line
 game.
 #+end_notes
 
-
-* Computing and commenting
+* R computing and commenting
 
 #+NAME: fig:cli-8
 #+ATTR_HTML: :height 300 px
 [[../img/3_opening_R_8.png]]
 
+1) In the R console compute 2 + 2 (code block, =*R*= buffer or terminal)
+2) Pass the operation ~2+2~ as an argument to the ~print~ function
+3) Run both operations again but with an inline comment
+4) Put the code into an R script ~print.R~ (C-x C-f)
+5) Open a shell with ~M-x shell~ and run the script there.
+  
 #+begin_notes
 One of the advantages of the interactive command-line is the ability
 to perform arithmetic operations. In figure [[fig:cli-8]] we begin with
@@ -571,15 +576,6 @@ this because it is strongest when manipulating tabular data - data
 ordered in columns and rows.
 #+end_notes
 
-* Practice: Compute and comment
-#+attr_html: :width 500px
-[[../img/practice.jpg]]
-
-Summary:
-- You can print results with or without ~print~
-- Create (inline) comments with ~#~
-- ~eshell~ is a Linux-type shell in Emacs ([[https://www.gnu.org/software/emacs/manual/html_mono/eshell.html#:~:text=Eshell%20is%20a%20command%20shell,code%20is%20natural%20and%20seamless.][doc]])
-
 * R packages
 
 - Packages contain functions and data sets
@@ -590,16 +586,33 @@ Summary:
 #+caption: MASS is from the book by Venables/Ripley (2002)
 [[../img/3_MASS.png]]
 
-* Install packages
+* Install R packages
 
 #+NAME: fig:cli-9
 #+attr_html: :width 700px
 [[../img/3_opening_R_9.png]]
 
 - To install package "~MASS~": enter ~install.packages("MASS")~
-- Installation includes identifying location on your computer
+- Installation includes identifying location on your computer: you may
+  have to do it on the R console and confirm creation of a local repo
 - Installation downloads compressed /tarball/ from a CRAN mirror site
 - ~md5sum~ is a GNU utility program that checks correct file transfer
+- Package version and R version may be out of synch
+
+* Installing older versions of packages for older version of R
+
+For example for the =MASS= package: check your R =version= and then pick
+an earlier package version using the [[https://cran.r-project.org/src/contrib/Archive/MASS/][CRAN archive]].
+
+For example, if you have R version 4.0.4 (2021-02-15), then version
+7.3.54 from 2021-05-03 is a safe bet:
+#+begin_example R
+  install.packages("remotes")
+  require(remotes)
+  install_version("MASS", version="7.3.54")
+  library(MASS)
+  search()  # MASS appears in environment list
+#+end_example
 
 * Miscellaneous package commands
 
@@ -629,6 +642,13 @@ Summary:
   #+caption: Search paths for R packages on my Windows box
   [[../img/3_searchpaths.png]]
 
+To list functions in a package, use =lsf.str= for lots of detail, or =ls=
+for an overview:
+#+begin_example
+  lsf.str("package:MASS")
+  ls("package:MASS")  
+#+end_example
+
 * Load datasets
 
 - After loading a package that contains data sets, you must load them
@@ -654,15 +674,13 @@ Summary:
 #+caption: structure of the built-in data set mtcars
 [[../img/3_mtcars.png]]
 
-* Practice: R package commands
-#+attr_html: :width 500px
-[[../img/practice.jpg]]
+* TODO Practice: R package commands
 
-Summary:
-- You can install, uninstall packages and data sets in them
-- You must load packages and data sets before using them
-- Your current R session keeps track of all loaded objects
-- Display structure, head and tail of loaded data sets
+1) Open an R console: either change to an existing console in another
+   buffer, or open a new R console with =M-x R=.
+   
+2) 
+
 
 * Saving your workspace
 
