@@ -668,11 +668,9 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 [[../img/3_rstudioball.png]]
 
 
-- [ ] New quiz (25 questions) live later today
-- [ ] New DataCamp lessons live (Introduction to R)
-- [ ] Introduction to R 
-
-
+- [X] New quiz (25 questions) live later today
+- [X] New DataCamp lessons live (Introduction to R)
+- [X] Introduction to R 
 
 ** NEXT Introduction to R 
 [[../img/3_Rlogo.png]]

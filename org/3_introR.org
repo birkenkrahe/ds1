@@ -110,7 +110,7 @@ URL: https://cran.r-project.org/mirrors.html
 #+ATTR_HTML: :width 600 px
 [[../img/3_cran.png]]
 
-- CRAN = "Comprehensive R Archive Network"x at [[https://www.r-project.org][r-project.org]]
+- CRAN = "Comprehensive R Archive Network" at [[https://www.r-project.org][r-project.org]]
 
 - Use /[[https://cran.r-project.org/mirrors.html][mirror sites]]/ (*what's that?*) for download (open browser)
 
@@ -248,10 +248,36 @@ Open a terminal to execute the following shell commands. Do either:
      which R
    #+end_src
 
+   #+RESULTS:
+   : /usr/bin/R
+
+   The location of applications is stored in the ~$PATH~ (environmental
+   variable):
+   #+begin_src bash :results output
+     echo $PATH
+   #+end_src
+
+   #+RESULTS:
+   : /home/marcus/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
 2. View the top of the file:
    #+begin_src bash :results output :exports both
      cat /usr/bin/R | head -10
    #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   #!/bin/bash
+   # Shell wrapper for R executable.
+
+   R_HOME_DIR=/usr/lib/R
+   if test "${R_HOME_DIR}" = "/usr/lib/R"; then
+      case "linux-gnu" in
+      linux*)
+        run_arch=`uname -m`
+        case "$run_arch" in
+           x86_64|mips64|ppc64|powerpc64|sparc64|s390x)
+   #+end_example
 
 3. The R files are contained in =$R_HOME_DIR=, which is =/usr/lib/R=
 
@@ -260,17 +286,40 @@ Open a terminal to execute the following shell commands. Do either:
      which Rscript
    #+end_src
 
-5. Create an R test file =test.R=, list and view it:
+   #+RESULTS:
+   : /usr/bin/Rscript
+
+5. Create an R test file =test.R= on the shell list and view it:
    #+begin_src bash :results output :exports both
      echo "str(mtcars)" > test.R
      ls -l test.R
      cat test.R
    #+end_src
 
+   #+RESULTS:
+   : -rw-rw-r-- 1 marcus marcus 12 Sep  9 11:37 test.R
+   : str(mtcars)
+
 6. Run the file on the command line as a script:
    #+begin_src bash :results output :exports both
      Rscript test.R
    #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   'data.frame':	32 obs. of  11 variables:
+    $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+    $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+    $ disp: num  160 160 108 258 360 ...
+    $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+    $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+    $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+    $ qsec: num  16.5 17 18.6 19.4 17 ...
+    $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+    $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+    $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+    $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+   #+end_example
 
 7. Run the file as a batch job (in the background):
    #+begin_src bash :results none :exports both
@@ -281,6 +330,46 @@ Open a terminal to execute the following shell commands. Do either:
    #+begin_src bash :results output :exports both
      cat test.Rout
    #+end_src
+
+   #+RESULTS:
+   #+begin_example
+
+   R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+   Copyright (C) 2021 The R Foundation for Statistical Computing
+   Platform: x86_64-pc-linux-gnu (64-bit)
+
+   R is free software and comes with ABSOLUTELY NO WARRANTY.
+   You are welcome to redistribute it under certain conditions.
+   Type 'license()' or 'licence()' for distribution details.
+
+     Natural language support but running in an English locale
+
+   R is a collaborative project with many contributors.
+   Type 'contributors()' for more information and
+   'citation()' on how to cite R or R packages in publications.
+
+   Type 'demo()' for some demos, 'help()' for on-line help, or
+   'help.start()' for an HTML browser interface to help.
+   Type 'q()' to quit R.
+
+   > str(mtcars)
+   'data.frame':	32 obs. of  11 variables:
+    $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+    $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+    $ disp: num  160 160 108 258 360 ...
+    $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+    $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+    $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+    $ qsec: num  16.5 17 18.6 19.4 17 ...
+    $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+    $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+    $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+    $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+   > 
+   > proc.time()
+      user  system elapsed 
+     0.343   0.053   0.373 
+   #+end_example
 
 * R shell: Version and platform
 #+NAME: fig:cli-1
@@ -297,6 +386,149 @@ Open a terminal to execute the following shell commands. Do either:
 
 - The =uname= command prints system information. In Emacs, run =M-x man
   RET uname= to access the manual page.
+
+- To find out more about your system, enter
+  #+begin_src bash :results output
+    cat /etc/os-release
+  #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  NAME="Linux Mint"
+  VERSION="21.3 (Virginia)"
+  ID=linuxmint
+  ID_LIKE="ubuntu debian"
+  PRETTY_NAME="Linux Mint 21.3"
+  VERSION_ID="21.3"
+  HOME_URL="https://www.linuxmint.com/"
+  SUPPORT_URL="https://forums.linuxmint.com/"
+  BUG_REPORT_URL="http://linuxmint-troubleshooting-guide.readthedocs.io/en/latest/"
+  PRIVACY_POLICY_URL="https://www.linuxmint.com/"
+  VERSION_CODENAME=virginia
+  UBUNTU_CODENAME=jammy
+  #+end_example
+
+- You can also look at CPU information:
+    #+begin_src bash :results output
+    cat /proc/cpuinfo
+  #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  processor	: 0
+  vendor_id	: GenuineIntel
+  cpu family	: 6
+  model		: 78
+  model name	: Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz
+  stepping	: 3
+  microcode	: 0xf0
+  cpu MHz		: 1300.002
+  cache size	: 3072 KB
+  physical id	: 0
+  siblings	: 4
+  core id		: 0
+  cpu cores	: 2
+  apicid		: 0
+  initial apicid	: 0
+  fpu		: yes
+  fpu_exception	: yes
+  cpuid level	: 22
+  wp		: yes
+  flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust sgx bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+  vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml
+  bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds mmio_stale_data retbleed gds
+  bogomips	: 3999.93
+  clflush size	: 64
+  cache_alignment	: 64
+  address sizes	: 39 bits physical, 48 bits virtual
+  power management:
+
+  processor	: 1
+  vendor_id	: GenuineIntel
+  cpu family	: 6
+  model		: 78
+  model name	: Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz
+  stepping	: 3
+  microcode	: 0xf0
+  cpu MHz		: 2000.000
+  cache size	: 3072 KB
+  physical id	: 0
+  siblings	: 4
+  core id		: 1
+  cpu cores	: 2
+  apicid		: 2
+  initial apicid	: 2
+  fpu		: yes
+  fpu_exception	: yes
+  cpuid level	: 22
+  wp		: yes
+  flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust sgx bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+  vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml
+  bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds mmio_stale_data retbleed gds
+  bogomips	: 3999.93
+  clflush size	: 64
+  cache_alignment	: 64
+  address sizes	: 39 bits physical, 48 bits virtual
+  power management:
+
+  processor	: 2
+  vendor_id	: GenuineIntel
+  cpu family	: 6
+  model		: 78
+  model name	: Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz
+  stepping	: 3
+  microcode	: 0xf0
+  cpu MHz		: 1300.000
+  cache size	: 3072 KB
+  physical id	: 0
+  siblings	: 4
+  core id		: 0
+  cpu cores	: 2
+  apicid		: 1
+  initial apicid	: 1
+  fpu		: yes
+  fpu_exception	: yes
+  cpuid level	: 22
+  wp		: yes
+  flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust sgx bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+  vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml
+  bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds mmio_stale_data retbleed gds
+  bogomips	: 3999.93
+  clflush size	: 64
+  cache_alignment	: 64
+  address sizes	: 39 bits physical, 48 bits virtual
+  power management:
+
+  processor	: 3
+  vendor_id	: GenuineIntel
+  cpu family	: 6
+  model		: 78
+  model name	: Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz
+  stepping	: 3
+  microcode	: 0xf0
+  cpu MHz		: 1300.003
+  cache size	: 3072 KB
+  physical id	: 0
+  siblings	: 4
+  core id		: 1
+  cpu cores	: 2
+  apicid		: 3
+  initial apicid	: 3
+  fpu		: yes
+  fpu_exception	: yes
+  cpuid level	: 22
+  wp		: yes
+  flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust sgx bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+  vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml
+  bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds mmio_stale_data retbleed gds
+  bogomips	: 3999.93
+  clflush size	: 64
+  cache_alignment	: 64
+  address sizes	: 39 bits physical, 48 bits virtual
+  power management:
+
+  #+end_example
+
 
 #+begin_notes
 This is the first screen you see (figure [[fig:cli-1]]) after starting R
