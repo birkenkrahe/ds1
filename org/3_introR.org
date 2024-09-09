@@ -910,8 +910,27 @@ for an overview:
 
 1) Open an R console: either change to an existing console in another
    buffer, or open a new R console with =M-x R=.
+
+  Time: 15 min
+
+  1) Open an R shell with ~M-x R~
+  2) Install the ~MASS~ package with ~install.packages~
+  3) List all data sets in ~MASS~ with ~data(package="MASS")~
+  4) Open the help for the data set ~MASS::Boston~ - how many rows
+     (observations) and columns (variables) does it have?
+     #+begin_quote
+     The ~Boston~ data set has ... rows and ... columns
+     #+end_quote
+  5) Load the ~MASS~ package into your current R session
+  6) Load the data set ~Boston~ into your current R session
+  7) List all loaded packages with ~search()~
+  8) List all loaded objects with ~ls()~
+  9) Display the structure of ~Boston~ with ~str(Boston)~
+  10) Display the first *three* rows of ~Boston~ with ~head~
+  11) Remove all loaded objects with ~rm(list=ls())~
+  12) Detach the ~MASS~ package with ~detach("package:MASS")~ and list the
+      loaded packages again.
    
-2) 
 
 
 * Saving your workspace
@@ -952,8 +971,28 @@ for an overview:
   (Fischetti, 2014)
 
 * Practice: Customizing at startup
-#+attr_html: :width 500px
-[[../img/practice.jpg]]
+
+  Time: 15 min
+
+  1) Find out which directory Emacs (and R) consider to be ~$HOME~:
+     - Open an ~eshell~ in Emacs
+     - Enter ~echo $HOME~ - the output is your Emacs/R home directory
+     - Open your ~$HOME~ directory in Emacs by opening ~~/~
+
+  2) Create a file ~.Rprofile~ in your Emacs ~$HOME~ directory and put the
+     following lines into it[fn:6]:
+     #+begin_example R
+     options(repos=c("https://mirrors.nics.utk.edu/cran/"))
+     options(crayon.enabled = FALSE)
+     message("*** Loaded .Rprofile ***")
+     #+end_example
+
+  3) Open a new R shell and display the value of ~options()$repos~ that
+     you just reset. Every time a new R shell is started, ~.Rprofile~ is
+     read. Make sure that the ~message~ is displayed.
+
+  4) Re-install the ~MASS~ package from the new location.
+
 
 Summary:
 - Emacs and R have a home directory (~~/~) for startup files[fn:4]
