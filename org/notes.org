@@ -667,13 +667,13 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 #+attr_html: :width 700px:
 [[../img/Shell-Southbank-Plaza.jpg]]
 
-- [ ] Where was I on 9/11?
+- [X] Where was I on 9/11?
 - [X] New quiz (25 questions) live later today
 - [X] New DataCamp lessons live (Introduction to R)
 - [X] Introduction to R
-- [ ] Project - using ~app.litmaps.com~ for references
-- [ ] Project - analytics is not the same as prediction
-- [ ] Project - proposal deadline is Friday 13 Sept 11:59 pm
+- [X] Project - using ~app.litmaps.com~ for references
+- [X] Project - analytics is not the same as prediction
+- [X] Project - proposal deadline is Friday 13 Sept 11:59 pm
 
 ** TODO Review questions: Introduction to R (1)
 
@@ -684,11 +684,14 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    downloading R and its libraries. Link: https://cran.r-project.org
    #+END_QUOTE   
 
-2. What command would you use to find where R is installed on your
+2. What command would you use to find where the R program is on your
    system?
    #+begin_src bash :results output
      which R
    #+end_src
+
+   #+RESULTS:
+   : /usr/bin/R
 
 3. How can you run an R script from the command line? Where will you
    see the output?

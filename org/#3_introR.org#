@@ -682,10 +682,12 @@ In the R console:
 
    - Using a relative path address: from the current location (=.=)
      #+begin_src R
-       getwd()
        setwd("..")
        getwd()
      #+end_src
+
+     #+RESULTS:
+     : /home/marcus/GitHub/ds1
 
    - Using an absolute path address: from the root directory (=/=)
      #+begin_src R
@@ -698,15 +700,52 @@ In the R console:
      system("pwd")  # present working directory
    #+end_src
 
+   #+RESULTS:
+   : /home/marcus/GitHub/ds1/org
+
    A file listing command:
    #+begin_src R :session *R* :results output :exports both
      system("ls") # list files
    #+end_src
 
+   #+RESULTS:
+   #+begin_example
+    0_overview.org
+    1_infrastructure_DataLab.org
+    1_infrastructure_Emacs.org
+    1_infrastructure_Google_Cloud_Shell.org
+    1_infrastructure_Google_Cloud_Shell_pdf.org
+    2_datascience.org
+    2_datascience_reveal.html
+    2_datascience_reveal.org
+    2_datascience_reveal_print.org
+    3d_scatterplot.png
+   '#3_introR.org#'
+    3_introR.org
+    3_introR_practice.org
+    hello.txt
+    mtcars.png
+    notes.org
+    Rpractice.org
+    syllabus.org
+    syllabus_pdf.org
+    test2.R
+    testPython.org
+    test.R
+    testR2.org
+    testR3.org
+    testR3.org~
+    testR.org
+    test.Rout
+   #+end_example
+
    A shell pipe with a file listing and a counting command combined:
    #+begin_src R :session *R* :results output :exports both
      system("ls -la | wc -l") # count number of lines in file listing
    #+end_src
+
+   #+RESULTS:
+   : 33
 
 #+begin_notes
 When you start R, you may be asked, which working directory you wish
