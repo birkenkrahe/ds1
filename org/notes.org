@@ -663,16 +663,45 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 - [X] Data science jobs
 - [X] Data science processes
 
-* Week 4 - Where was I on 9/11?
+* Week 4 - Introduction to R
 #+attr_html: :width 700px:
 [[../img/Shell-Southbank-Plaza.jpg]]
 
-
+- [ ] Where was I on 9/11?
 - [X] New quiz (25 questions) live later today
 - [X] New DataCamp lessons live (Introduction to R)
-- [X] Introduction to R 
+- [X] Introduction to R
+- [ ] Project - using ~app.litmaps.com~ for references
+- [ ] Project - analytics is not the same as prediction
+- [ ] Project - proposal deadline is Friday 13 Sept 11:59 pm
 
-** NEXT Introduction to R 
+** TODO Review questions: Introduction to R (1)
+
+1. What is CRAN and why is it important for R users?
+   #+BEGIN_QUOTE
+   CRAN (Comprehensive R Archive Network) is the repository where R
+   and its packages are stored. It provides the official sources for
+   downloading R and its libraries. Link: https://cran.r-project.org
+   #+END_QUOTE   
+
+2. What command would you use to find where R is installed on your
+   system?
+   #+begin_src bash :results output
+     which R
+   #+end_src
+
+3. How can you run an R script from the command line? Where will you
+   see the output?
+   #+begin_quote
+   You can run an R script ~script.R~ with ~Rscript script.R~, or in the
+   background with ~R CMD BATCH script.R~.
+
+   ~Rscript~ will print the output to the screen (=stdout=).
+
+   ~R CMD BATCH~ will generate a file ~script.Rout~ with the results.
+   #+end_quote
+
+** IN PROGRESS Introduction to R 
 [[../img/3_Rlogo.png]]
 
 - [X] Why R?
@@ -684,9 +713,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 
 The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice][tinyurl.com/intro-R-practice]]
 
-
-
-** TODO Review questions: Introduction to R
+** Summary for Introduction to R
 
 Summary R shell
 
@@ -723,3 +750,8 @@ Summary of R packages
 - Your current R session keeps track of all loaded objects
 - Display structure, head and tail rows of loaded data sets
 
+Summary:
+- Emacs and R have a home directory (~~/~) for startup files[fn:4]
+- You can determine R's startup behavior in ~~/.Rprofile~
+- ~~/.Rprofile~ is read every time a new R shell is started
+  

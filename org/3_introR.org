@@ -1,6 +1,6 @@
 #+TITLE: INTRODUCTION TO R
 #+AUTHOR: R Installation and First Steps
-#+SUBTITLE: Introduction to Data Science DSC 105 Fall 2022
+#+SUBTITLE: Introduction to Data Science DSC 105 Fall 2024
 #+startup: hideblocks overview indent inlineimages
 #+ATTR_HTML: :width 200px
 #+CAPTION: RStudio Ball Logo (Source: rstudio.com)
@@ -242,7 +242,7 @@ Open a terminal to execute the following shell commands. Do either:
 - Open a "smart" terminal inside Emacs (=M-x shell=)
 - Create an Org-mode file with =bash= code blocks (like here)
 
-  
+
 1. Check where the R executable is located:
    #+begin_src bash :results output :exports both
      which R
@@ -307,7 +307,7 @@ Open a terminal to execute the following shell commands. Do either:
 
    #+RESULTS:
    #+begin_example
-   'data.frame':	32 obs. of  11 variables:
+   'data.frame':        32 obs. of  11 variables:
     $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
     $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
     $ disp: num  160 160 108 258 360 ...
@@ -353,7 +353,7 @@ Open a terminal to execute the following shell commands. Do either:
    Type 'q()' to quit R.
 
    > str(mtcars)
-   'data.frame':	32 obs. of  11 variables:
+   'data.frame':        32 obs. of  11 variables:
     $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
     $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
     $ disp: num  160 160 108 258 360 ...
@@ -365,13 +365,13 @@ Open a terminal to execute the following shell commands. Do either:
     $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
     $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
     $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
-   > 
+   >
    > proc.time()
-      user  system elapsed 
-     0.343   0.053   0.373 
+      user  system elapsed
+     0.343   0.053   0.373
    #+end_example
 
-* R shell: Version and platform
+* NEXT R shell: Version and platform
 #+NAME: fig:cli-1
 #+attr_html: :width 550px:
 [[../img/3_opening_R_1.png]]
@@ -409,122 +409,122 @@ Open a terminal to execute the following shell commands. Do either:
   #+end_example
 
 - You can also look at CPU information:
-    #+begin_src bash :results output
+  #+begin_src bash :results output
     cat /proc/cpuinfo
   #+end_src
 
   #+RESULTS:
   #+begin_example
-  processor	: 0
-  vendor_id	: GenuineIntel
-  cpu family	: 6
-  model		: 78
-  model name	: Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz
-  stepping	: 3
-  microcode	: 0xf0
-  cpu MHz		: 1300.002
-  cache size	: 3072 KB
-  physical id	: 0
-  siblings	: 4
-  core id		: 0
-  cpu cores	: 2
-  apicid		: 0
-  initial apicid	: 0
-  fpu		: yes
-  fpu_exception	: yes
-  cpuid level	: 22
-  wp		: yes
-  flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust sgx bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
-  vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml
-  bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds mmio_stale_data retbleed gds
-  bogomips	: 3999.93
-  clflush size	: 64
-  cache_alignment	: 64
-  address sizes	: 39 bits physical, 48 bits virtual
+  processor     : 0
+  vendor_id     : GenuineIntel
+  cpu family    : 6
+  model         : 78
+  model name    : Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz
+  stepping      : 3
+  microcode     : 0xf0
+  cpu MHz               : 1300.002
+  cache size    : 3072 KB
+  physical id   : 0
+  siblings      : 4
+  core id               : 0
+  cpu cores     : 2
+  apicid                : 0
+  initial apicid        : 0
+  fpu           : yes
+  fpu_exception : yes
+  cpuid level   : 22
+  wp            : yes
+  flags         : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust sgx bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+  vmx flags     : vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml
+  bugs          : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds mmio_stale_data retbleed gds
+  bogomips      : 3999.93
+  clflush size  : 64
+  cache_alignment       : 64
+  address sizes : 39 bits physical, 48 bits virtual
   power management:
 
-  processor	: 1
-  vendor_id	: GenuineIntel
-  cpu family	: 6
-  model		: 78
-  model name	: Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz
-  stepping	: 3
-  microcode	: 0xf0
-  cpu MHz		: 2000.000
-  cache size	: 3072 KB
-  physical id	: 0
-  siblings	: 4
-  core id		: 1
-  cpu cores	: 2
-  apicid		: 2
-  initial apicid	: 2
-  fpu		: yes
-  fpu_exception	: yes
-  cpuid level	: 22
-  wp		: yes
-  flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust sgx bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
-  vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml
-  bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds mmio_stale_data retbleed gds
-  bogomips	: 3999.93
-  clflush size	: 64
-  cache_alignment	: 64
-  address sizes	: 39 bits physical, 48 bits virtual
+  processor     : 1
+  vendor_id     : GenuineIntel
+  cpu family    : 6
+  model         : 78
+  model name    : Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz
+  stepping      : 3
+  microcode     : 0xf0
+  cpu MHz               : 2000.000
+  cache size    : 3072 KB
+  physical id   : 0
+  siblings      : 4
+  core id               : 1
+  cpu cores     : 2
+  apicid                : 2
+  initial apicid        : 2
+  fpu           : yes
+  fpu_exception : yes
+  cpuid level   : 22
+  wp            : yes
+  flags         : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust sgx bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+  vmx flags     : vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml
+  bugs          : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds mmio_stale_data retbleed gds
+  bogomips      : 3999.93
+  clflush size  : 64
+  cache_alignment       : 64
+  address sizes : 39 bits physical, 48 bits virtual
   power management:
 
-  processor	: 2
-  vendor_id	: GenuineIntel
-  cpu family	: 6
-  model		: 78
-  model name	: Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz
-  stepping	: 3
-  microcode	: 0xf0
-  cpu MHz		: 1300.000
-  cache size	: 3072 KB
-  physical id	: 0
-  siblings	: 4
-  core id		: 0
-  cpu cores	: 2
-  apicid		: 1
-  initial apicid	: 1
-  fpu		: yes
-  fpu_exception	: yes
-  cpuid level	: 22
-  wp		: yes
-  flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust sgx bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
-  vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml
-  bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds mmio_stale_data retbleed gds
-  bogomips	: 3999.93
-  clflush size	: 64
-  cache_alignment	: 64
-  address sizes	: 39 bits physical, 48 bits virtual
+  processor     : 2
+  vendor_id     : GenuineIntel
+  cpu family    : 6
+  model         : 78
+  model name    : Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz
+  stepping      : 3
+  microcode     : 0xf0
+  cpu MHz               : 1300.000
+  cache size    : 3072 KB
+  physical id   : 0
+  siblings      : 4
+  core id               : 0
+  cpu cores     : 2
+  apicid                : 1
+  initial apicid        : 1
+  fpu           : yes
+  fpu_exception : yes
+  cpuid level   : 22
+  wp            : yes
+  flags         : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust sgx bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+  vmx flags     : vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml
+  bugs          : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds mmio_stale_data retbleed gds
+  bogomips      : 3999.93
+  clflush size  : 64
+  cache_alignment       : 64
+  address sizes : 39 bits physical, 48 bits virtual
   power management:
 
-  processor	: 3
-  vendor_id	: GenuineIntel
-  cpu family	: 6
-  model		: 78
-  model name	: Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz
-  stepping	: 3
-  microcode	: 0xf0
-  cpu MHz		: 1300.003
-  cache size	: 3072 KB
-  physical id	: 0
-  siblings	: 4
-  core id		: 1
-  cpu cores	: 2
-  apicid		: 3
-  initial apicid	: 3
-  fpu		: yes
-  fpu_exception	: yes
-  cpuid level	: 22
-  wp		: yes
-  flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust sgx bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
-  vmx flags	: vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml
-  bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds mmio_stale_data retbleed gds
-  bogomips	: 3999.93
-  clflush size	: 64
-  cache_alignment	: 64
-  address sizes	: 39 bits physical, 48 bits virtual
+  processor     : 3
+  vendor_id     : GenuineIntel
+  cpu family    : 6
+  model         : 78
+  model name    : Intel(R) Core(TM) i3-6006U CPU @ 2.00GHz
+  stepping      : 3
+  microcode     : 0xf0
+  cpu MHz               : 1300.003
+  cache size    : 3072 KB
+  physical id   : 0
+  siblings      : 4
+  core id               : 1
+  cpu cores     : 2
+  apicid                : 3
+  initial apicid        : 3
+  fpu           : yes
+  fpu_exception : yes
+  cpuid level   : 22
+  wp            : yes
+  flags         : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust sgx bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d arch_capabilities
+  vmx flags     : vnmi preemption_timer invvpid ept_x_only ept_ad ept_1gb flexpriority tsc_offset vtpr mtf vapic ept vpid unrestricted_guest ple pml
+  bugs          : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit srbds mmio_stale_data retbleed gds
+  bogomips      : 3999.93
+  clflush size  : 64
+  cache_alignment       : 64
+  address sizes : 39 bits physical, 48 bits virtual
   power management:
 
   #+end_example
@@ -552,7 +552,7 @@ have (most importantly: 64-bit)? (Linux: =cat /etc/cpuinfo=)
 [[../img/3_opening_R_2.png]]
 
 - Open the R console, either in a dumb or in a smart terminal (=M-x
-  shell)=, or in a dedicated R buffer (=*R*=).
+  shell)=, or in a dedicated R buffer (=*R*=), or in Emacs (=M-x R=).
 
 - Type ~license()~. What is "GNU"?
 
@@ -579,6 +579,7 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
 
 On the R console:
 - Enter ~citation()~. Why cite software?
+
 - Enter ~contributors()~. Who can contribute?
 
   #+begin_notes
@@ -606,12 +607,20 @@ On the R console:
 [[../img/3_opening_R_4.png]]
 
 Do this on an R console in a dumb or smart shell:
+
 1) Enter ~demo(graphics)~ for some graphics examples.
 
 2) Enter ~help.start()~ - where is this page?
    #+begin_src R :session *R* :results output :exports both
      help.start()
    #+end_src
+
+3) Calling ~help~ or ~?~ on Linux opens the manual page for the item
+   (don't do this in a code block but in the R console):
+   #+begin_example R
+     ?Nile
+     help(mtcars)
+   #+end_example
 
    #+begin_notes
    The section higlighted in figure [[fig:cli-4]] suggests a few commands
@@ -665,23 +674,55 @@ In the R console:
 
 2) Use ~setwd()~ to change directory to your user home directory (=$HOME=):
 
-   1) Using an absolute path address: from the root directory (=/=)
-      #+begin_src R
-        setwd("../../../")
-        getwd()
-      #+end_src
-     
-      #+RESULTS:
-      : /home/aletheia
+   - Using a relative path address: from the current location (=.=)
+     #+begin_src R
+       setwd("../../../")
+       getwd()
+     #+end_src
 
-   2) Using a relative path address: from the current location (=.=)
-      #+begin_src R
-        setwd("/home/aletheia")
-        getwd()
-      #+end_src
+     #+RESULTS:
+     : /home/aletheia
 
-      #+RESULTS:
-      : /home/aletheia
+   - Using an absolute path address: from the root directory (=/=)
+     #+begin_src R
+       setwd("/home/aletheia")
+       getwd()
+     #+end_src
+
+     #+RESULTS:
+     : /home/aletheia
+
+3) Use ~system~ to run =bash= shell commands from inside R:
+   #+begin_src R :session *R* :results output :exports both
+     system("pwd")  # present working directory
+   #+end_src
+
+   #+RESULTS:
+   : /home/aletheia/GitHub/ds1/org
+
+   A file listing command:
+   #+begin_src R :session *R* :results output :exports both
+     system("ls") # list files
+   #+end_src
+
+   #+RESULTS:
+   : 0_overview.org                                  3d_scatterplot.png     syllabus.org
+   : 1_infrastructure_DataLab.org                    3_introR.html          syllabus_pdf.org
+   : 1_infrastructure_Emacs.org              3_introR.org           test2.R
+   : 1_infrastructure_Google_Cloud_Shell.org      3_introR.pdf      testPython.org
+   : 1_infrastructure_Google_Cloud_Shell_pdf.org  3_introR_practice.org  test.R
+   : 2_datascience.org                       hello.txt              testR2.org
+   : 2_datascience_reveal.html               mtcars.png             testR3.org
+   : 2_datascience_reveal.org                notes.org              testR.org
+   : 2_datascience_reveal_print.org                  Rpractice.org          test.Rout
+
+   A shell pipe with a file listing and a counting command combined:
+   #+begin_src R :session *R* :results output :exports both
+     system("ls -la | wc -l") # count number of lines in file listing
+   #+end_src
+
+   #+RESULTS:
+   : 2172
 
 #+begin_notes
 When you start R, you may be asked, which working directory you wish
@@ -707,17 +748,14 @@ will use) is also available within Windows 10 [[posey][(Posey 2018]]).
 [[../img/3_opening_R_6.png]]
 
 1) The function =options= controls all glocal options for R:
-   #+begin_src R :session *R* :results output :exports both
+   #+begin_example R
      help(options)
-   #+end_src
+   #+end_example
 
 2) =options= is a list:
    #+begin_src R :session *R* :results output :exports both
      class(options())
    #+end_src
-
-   #+RESULTS:
-   : [1] "list"
 
 3) You can look at it:
    #+begin_src R :session *R* :results output :exports both
@@ -730,25 +768,16 @@ will use) is also available within Windows 10 [[posey][(Posey 2018]]).
      options()$prompt
    #+end_src
 
-   #+RESULTS:
-   : [1] "> "
-
 5) Another important option setting is for the repository that R uses
    to download packages: Set to the default CRAN repo in my ~.Rprofile~
    #+begin_src R :session *R* :results output :exports both
      options()$repos
    #+end_src
 
-   #+RESULTS:
-   :                          CRAN 
-   : "https://cloud.r-project.org"
-
 6) Change the shell prompt to ~R>~:
    #+begin_src R :session *R* :results output :exports both
      options(prompt="R> ")
    #+end_src
-
-   #+RESULTS:
 
 7) The change affects only your current R session. Change to the ~*R*~
    console buffer to check this:
@@ -757,17 +786,17 @@ will use) is also available within Windows 10 [[posey][(Posey 2018]]).
    > options(prompt="R> ")
    'org_babel_R_eoe'
    R> [1] "org_babel_R_eoe"
-   R> 
+   R>
    #+end_example
 
 8) On the R console, change the prompt back to what it was.
    #+begin_example
-   R> 
+   R>
    R> options(prompt="> ")
-   > 
+   >
    > options()$prompt
    [1] "> "
-   > 
+   >
    #+end_example
 
 #+begin_notes
@@ -783,7 +812,6 @@ game.
 #+end_notes
 
 * R computing and commenting
-
 #+NAME: fig:cli-8
 #+ATTR_HTML: :height 300 px
 [[../img/3_opening_R_8.png]]
@@ -793,7 +821,8 @@ game.
 3) Run both operations again but with an inline comment
 4) Put the code into an R script ~print.R~ (C-x C-f)
 5) Open a shell with ~M-x shell~ and run the script there.
-  
+6) Run the script again but as a background "batch" job.
+
 #+begin_notes
 One of the advantages of the interactive command-line is the ability
 to perform arithmetic operations. In figure [[fig:cli-8]] we begin with
@@ -825,10 +854,14 @@ ordered in columns and rows.
 [[../img/3_opening_R_9.png]]
 
 - To install package "~MASS~": enter ~install.packages("MASS")~
+
 - Installation includes identifying location on your computer: you may
   have to do it on the R console and confirm creation of a local repo
+
 - Installation downloads compressed /tarball/ from a CRAN mirror site
+
 - ~md5sum~ is a GNU utility program that checks correct file transfer
+
 - Package version and R version may be out of synch
 
 * Installing older versions of packages for older version of R
@@ -848,90 +881,196 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
 
 * Miscellaneous package commands
 
-- To uninstall a package, use ~remove.packages(package="[pkgname]")~
-
-- To see all installed packages: ~installed.packages()~
-
-- To update packages: ~update.packages()~ (this can take a while)
-
-  #+attr_html: :width 700px
-  #+caption: Updating the R package MASS (R session screenshot)
-  [[../img/3_update_package_MASS.png]]
-
-- For a short package description: ~packageDescription("...")~
-
-- To see all datasets in a package: ~data(package="...")~
-
-- ~data()~ will list all datasets for all installed packages
+- For a list of currently loaded packages: ~search()~
 
 - To load a package into current R session only: ~library("...")~
 
-- For a list of currently loaded packages: ~search()~
+- ~data()~ will list all datasets for all installed packages
+
+- To uninstall a package, use ~remove.packages("[pkgname]")~:
+  for example, install =dyplr=, load it, and then remove it again.
+
+- Close your R console (where ~dplyr~ is still loaded), open a new one,
+  and try to load it.
+
+- To see all installed packages: ~installed.packages()~
+
+- That's a lot of packages. To look only at the top/bottom of the
+  list, pipe (~|>~) the command into ~head()~ and ~tail()~:
+  #+begin_example R
+  installed.packages() |> head()  # top of the list
+  installed.packages() |> tail()  # bottom of the list
+  #+end_example
+
+- To update packages: ~update.packages()~ (this can take a while and
+  you'll have to confirm updates - run it and =cancel=.)
+
+- For a short package description: ~packageDescription("...")~. Get the
+  description for the =base= package:
+  #+begin_src R :session *R* :results output :exports both
+    packageDescription("base")
+  #+end_src
+
+- To see all datasets in a package: ~data(package="...")~. List all
+  datasets in the base R datasets collection =datasets=:
+  #+begin_src R :session *R* :results output :exports both
+    data(package="datasets")
+  #+end_src
 
 - For a list of search paths (to find pkgs): ~searchpaths()~
+  #+begin_src R :session *R* :results output :exports both
+    searchpaths()
+  #+end_src
 
-  #+attr_html: :width 500px
-  #+caption: Search paths for R packages on my Windows box
-  [[../img/3_searchpaths.png]]
-
-To list functions in a package, use =lsf.str= for lots of detail, or =ls=
-for an overview:
-#+begin_example
-  lsf.str("package:MASS")
-  ls("package:MASS")  
-#+end_example
+- To list functions in a package, use =lsf.str= for lots of detail, or
+  =ls= for an overview - you must load the package first:
+  #+begin_src R :session *R* :results output :exports both
+    library(MASS)
+    ls("package:MASS")
+    lsf.str("package:MASS")
+  #+end_src
 
 * Load datasets
 
-- After loading a package that contains data sets, you must load them
+- After loading a package that contains data sets, the data sets are
+  not loaded (they may be very large).
 
 - To load a data set contained in package, use ~data([name])~.
 
-- You can (often) get help on datasets with ~?~ or ~help([name])~  [fn:3]
+- You can (often) get help on datasets with ~?~ or ~help([name])~ [fn:3]
 
-  #+attr_html: :width 300px
-  #+caption: Loading MASS, MASS::phones, listing and delisting
-  [[../img/3_data.png]]
+- Example: =phones= data set in the =MASS= package - add and remove it
+  #+begin_src R :session *R* :results output :exports both
+    ls()  # user-defined data that are loaded in the current session
+    library(MASS) # load MASS package
+    ls()
+    rm(list=ls())
+    ls()
+  #+end_src
+
+- Why is the printout of the empty listing =character(0)=?
+  #+begin_src R :session *R* :results output :exports both
+    ls()
+    class(ls())  # ls() is a `character` vector
+  #+end_src
+
+  #+RESULTS:
+  : character(0)
+  : [1] "character"
 
 * Explore data
 
-- When you've loaded a data set, you should take a look at it
+- When you've loaded a data set, you should take a look at it.
 
 - Most useful: ~str~ to see the data structure, ~head~ and ~tail~ to see the
-  first and last few rows
+  first and last few rows.
 
-- These functions have many different attributes (check the help)
+  Structure:
+  #+begin_src R :session *R* :results output :exports both
+    str(ToothGrowth)  # structure of built-in ToothGrowth dataset
+  #+end_src
 
-#+attr_html: :width 600px
-#+caption: structure of the built-in data set mtcars
-[[../img/3_mtcars.png]]
+  #+RESULTS:
+  : 'data.frame':       60 obs. of  3 variables:
+  :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
+  :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
+  :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
 
-* TODO Practice: R package commands
+  Head: To display =m= rows only, add the parameter ~n = m~.
+  #+begin_src R :session *R* :results output :exports both
+    head(ToothGrowth, n = 3)
+  #+end_src
 
-1) Open an R console: either change to an existing console in another
-   buffer, or open a new R console with =M-x R=.
+  #+RESULTS:
+  :    len supp dose
+  : 1  4.2   VC  0.5
+  : 2 11.5   VC  0.5
+  : 3  7.3   VC  0.5
 
-  Time: 15 min
+  Tail:
+  #+begin_src R :session *R* :results output :exports both
+    tail(ToothGrowth, n = 3)
+  #+end_src
 
-  1) Open an R shell with ~M-x R~
-  2) Install the ~MASS~ package with ~install.packages~
-  3) List all data sets in ~MASS~ with ~data(package="MASS")~
-  4) Open the help for the data set ~MASS::Boston~ - how many rows
-     (observations) and columns (variables) does it have?
-     #+begin_quote
-     The ~Boston~ data set has ... rows and ... columns
-     #+end_quote
-  5) Load the ~MASS~ package into your current R session
-  6) Load the data set ~Boston~ into your current R session
-  7) List all loaded packages with ~search()~
-  8) List all loaded objects with ~ls()~
-  9) Display the structure of ~Boston~ with ~str(Boston)~
-  10) Display the first *three* rows of ~Boston~ with ~head~
-  11) Remove all loaded objects with ~rm(list=ls())~
-  12) Detach the ~MASS~ package with ~detach("package:MASS")~ and list the
-      loaded packages again.
+  #+RESULTS:
+  :     len supp dose
+  : 58 27.3   OJ    2
+  : 59 29.4   OJ    2
+  : 60 23.0   OJ    2
+
+- These functions have many different attributes (check the help).
+
+* Practice: R package commands
+
+1) Open an R shell with ~M-x R~
+
+2) [Install the ~MASS~ package with ~install.packages~ IF NOT DONE YET]
+   #+begin_example R
+     install.packages("MASS")
+   #+end_example
+
+3) List all data sets in ~MASS~ with ~data(package="MASS")~
+   #+begin_src R :session *R* :results output :exports both
+     data(package="MASS")
+   #+end_src
+
+4) Open the ~help~ for the data set ~Boston~ in ~MASS~ - how many rows
+   (observations) and columns (variables) does it have?
+   #+begin_example R
+     help(Boston)
+   #+end_example
    
+5) Load the ~MASS~ package into your current R session
+   #+begin_src R :session *R* :results none :exports both
+     library(MASS)
+   #+end_src
 
+6) Load the data set ~Boston~ into your current R session
+   #+begin_src R :session *R* :results none :exports both
+     data(Boston)
+   #+end_src
+
+7) List all loaded packages with ~search()~
+   #+begin_src R :session *R* :results output :exports both
+     search()
+   #+end_src
+   
+8) List all loaded objects with ~ls()~ (which output do you expect?)
+   #+begin_src R :session *R* :results output :exports both
+     ls()
+   #+end_src
+
+9) Display the structure of ~Boston~ with ~str(Boston)~
+   #+begin_src R :session *R* :results output :exports both
+     str(Boston)
+   #+end_src
+   
+10) Display the first *three* rows of ~Boston~ with ~head~
+    #+begin_src R :session *R* :results output :exports both
+      head(Boston,3)
+    #+end_src
+
+    #+RESULTS:
+    :      crim zn indus chas   nox    rm  age    dis rad tax ptratio  black lstat medv
+    : 1 0.00632 18  2.31    0 0.538 6.575 65.2 4.0900   1 296    15.3 396.90  4.98 24.0
+    : 2 0.02731  0  7.07    0 0.469 6.421 78.9 4.9671   2 242    17.8 396.90  9.14 21.6
+    : 3 0.02729  0  7.07    0 0.469 7.185 61.1 4.9671   2 242    17.8 392.83  4.03 34.7
+    
+11) Check loaded object list with ~ls()~, then remove all loaded objects
+    with ~rm(list=ls())~
+    #+begin_src R :session *R* :results output :exports both
+      ls()
+      rm(list=ls())
+      ls()
+    #+end_src
+
+12) List loaded packages with ~search()~. Then detach the ~MASS~ package
+    with ~detach("package:MASS")~ and list the loaded packages again.
+    #+begin_src R :session *R* :results output :exports both
+      search()
+      detach("package:MASS")
+      search()
+    #+end_src
 
 * Saving your workspace
 
@@ -945,11 +1084,10 @@ for an overview:
   readable text file ~.Rhistory~), and all data (in a machine-readable
   file ~.RData~).
 
-#+NAME: fig:cli-8
-#+attr_html: :width 600px
-[[../img/3_opening_R_7.png]]
+- Quit a current R session with ~y~ and check those files out (open a
+  =Dired= buffer with =C-x C-d= or find them with =C-x C-f=.
 
-* Customizing at startup
+n* Customizing at startup
 
 - When you install packages, you do not need administrative rights,
   even if R is installed in a read-only portion of your computer. The
@@ -959,48 +1097,54 @@ for an overview:
   process, Windows forces you to pick a mirror. You can disable this
   by creating your own ~~/.Rprofile~ file and specifying a download
   mirror.
-
-#+attr_html: :width 600px
-[[../img/3_housekeeping.png]]
-
-- Saved R commands: ~.Rhistory~
-- Saved R variables: ~.RData~
-- R profile settings: ~.Rprofile~
+  + Saved R commands: ~.Rhistory~
+  + Saved R variables: ~.RData~
+  + R profile settings: ~.Rprofile~
 
 - See also: [[https://www.r-bloggers.com/2014/09/fun-with-rprofile-and-customizing-r-startup/]["Fun with .Rprofile and customizing R startup"]]
   (Fischetti, 2014)
 
 * Practice: Customizing at startup
 
-  Time: 15 min
+1) Check where the R home is:
+   #+begin_src R :session *R* :results output :exports both
+     R.home(component="home")
+   #+end_src
 
-  1) Find out which directory Emacs (and R) consider to be ~$HOME~:
-     - Open an ~eshell~ in Emacs
-     - Enter ~echo $HOME~ - the output is your Emacs/R home directory
-     - Open your ~$HOME~ directory in Emacs by opening ~~/~
+2) Check if there's a system-wide ~.Rprofile~ configuration file:
+   #+begin_src R :session *R* :results output :exports both
+     system("cd /usr/lib/R; ls -la .Rprofile")  # must use R's Home directory
+   #+end_src
 
-  2) Create a file ~.Rprofile~ in your Emacs ~$HOME~ directory and put the
-     following lines into it[fn:6]:
-     #+begin_example R
-     options(repos=c("https://mirrors.nics.utk.edu/cran/"))
-     options(crayon.enabled = FALSE)
-     message("*** Loaded .Rprofile ***")
-     #+end_example
+3) Find out which directory Emacs (and R) consider to be your ~$HOME~:
+   #+begin_src R :session *R* :results output :exports both
+     system("echo $HOME") # $HOME is the the same as ~/
+   #+end_src
 
-  3) Open a new R shell and display the value of ~options()$repos~ that
-     you just reset. Every time a new R shell is started, ~.Rprofile~ is
-     read. Make sure that the ~message~ is displayed.
+4) Create a file ~.Rprofile~ in your Emacs ~$HOME~ directory and put the
+   following lines into it [fn:4]:
+   #+begin_example R
+   options(repos=c("https://mirrors.nics.utk.edu/cran/"))
+   options(crayon.enabled = FALSE)
+   message("*** Loaded .Rprofile ***")
+   #+end_example
 
-  4) Re-install the ~MASS~ package from the new location.
+5) Open a new R shell and display the value of ~options()$repos~ that
+   you just reset. Every time a new R shell is started, ~.Rprofile~ is
+   read. Make sure that the ~message~ is displayed.
+   #+begin_src R :session *R* :results output :exports both
+     options()$repos
+   #+end_src
 
+   #+RESULTS:
+   : [1] "https://mirrors.nics.utk.edu/cran/"
 
-Summary:
-- Emacs and R have a home directory (~~/~) for startup files[fn:4]
-- You can determine R's startup behavior in ~~/.Rprofile~
-- ~~/.Rprofile~ is read every time a new R shell is started
-
+7) Install the ~remotes~ package from the new location.
+   #+begin_example R
+     install.packages("remotes")
+   #+end_example
+   
 * The RStudio IDE
-
 #+attr_html: :width 600px
 [[../img/3_rstudio.png]]
 
@@ -1243,10 +1387,10 @@ customizable, but nowhere near as flexible as Emacs + ESS + Orgmode.
 
 [fn:6]Data science is a mixed affair when it comes to this last tip:
 because of the importance of statistics and models for COVID-19,
-public discussions e.g. on Twitter are often instantly politicized and
-emotionally charged. However, to be able to navigate these waters and
-still extract the common good, is an important ability that is, for
-me, also part of "data literacy". Learning how to read and discern
+public discussions e.g. on X/Twitter are often instantly politicized
+and emotionally charged. However, to be able to navigate these waters
+and still extract the common good, is an important ability that is,
+for me, also part of "data literacy". Learning how to read and discern
 different views, focus on facts and problem-solving, while not
 ignoring the wider problem setting, is my working definition of the
 scientific method.
