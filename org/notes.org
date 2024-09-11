@@ -663,9 +663,9 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 - [X] Data science jobs
 - [X] Data science processes
 
-* Week 4
-#+attr_html: :width 200px:
-[[../img/3_rstudioball.png]]
+* Week 4 - Where was I on 9/11?
+#+attr_html: :width 700px:
+[[../img/Shell-Southbank-Plaza.jpg]]
 
 
 - [X] New quiz (25 questions) live later today
@@ -675,14 +675,16 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 ** NEXT Introduction to R 
 [[../img/3_Rlogo.png]]
 
-- [ ] Why R?
-- [ ] What is R?
-- [ ] R shell practice
+- [X] Why R?
+- [X] What is R?
+- [X] R shell practice
 - [ ] Exploring =base:options=
 - [ ] R package commands
 - [ ] R customization at startup in ~~/.Rprofile~
 
 The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice][tinyurl.com/intro-R-practice]]
+
+
 
 ** TODO Review questions: Introduction to R
 
