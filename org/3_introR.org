@@ -765,7 +765,7 @@ shell that I use on my Linux computer (and that most MacOS users
 will use) is also available within Windows 10 [[posey][(Posey 2018]]).
 #+end_notes
 
-* NEXT R display ~options~
+* R display ~options~
 #+NAME: fig:cli-6
 #+attr_html: :width 550px:
 [[../img/3_opening_R_6.png]]
