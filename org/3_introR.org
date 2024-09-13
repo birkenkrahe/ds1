@@ -22,7 +22,7 @@
 
 * Why we are using R
 #+NAME: fig:tiobe
-#+ATTR_HTML: :width 700px
+#+ATTR_HTML: :width 600px
 [[../img/3_tiobe.png]]
 
 - One of the 'big three' (Python, R, SQL)
@@ -91,7 +91,7 @@ interest in COVID-19 data analysis.
 * Matloff's 10 reasons
 
 #+name: fig:matloff
-#+attr_html: :width 700px
+#+attr_html: :width 600px
 [[../img/3_tarp.png]]
 
 Source: [[https://nostarch.com/artofr.htm][The Art of R Programming (2011)]]
@@ -548,11 +548,10 @@ have (most importantly: 64-bit)? (Linux: =cat /etc/cpuinfo=)
 
 * R shell: Distribution license
 #+NAME: fig:cli-2
-#+attr_html: :width 700px:
+#+attr_html: :width 600px:
 [[../img/3_opening_R_2.png]]
 
-- Open the R console, either in a dumb or in a smart terminal (=M-x
-  shell)=, or in a dedicated R buffer (=*R*=), or in Emacs (=M-x R=).
+- Open an R console (=M-x R=) to enter the following commands.
 
 - Type ~license()~. What is "GNU"?
   
@@ -574,10 +573,11 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
 
 * R shell: The R project
 #+NAME: fig:cli-3
-#+attr_html: :width 700px:
+#+attr_html: :width 600px:
 [[../img/3_opening_R_3.png]]
 
-On the R console:
+Open an R console (=M-x R=) to enter the following commands.
+
 - Enter ~citation()~. Why cite software?
 
 - Enter ~contributors()~. Who can contribute?
@@ -603,10 +603,10 @@ On the R console:
 
 * R shell: Demo and help
 #+NAME: fig:cli-4
-#+attr_html: :width 700px:
+#+attr_html: :width 600px:
 [[../img/3_opening_R_4.png]]
 
-Do this on an R console in a dumb or smart shell:
+Open an R console (=M-x R=) to enter the following commands.
 
 1) Enter ~demo(graphics)~ for some graphics examples.
 
@@ -665,10 +665,10 @@ Do this on an R console in a dumb or smart shell:
 
 * R environment: working directory
 #+NAME: fig:cli-5
-#+attr_html: :width 700px:
+#+attr_html: :width 600px:
 [[../img/3_opening_R_5.png]]
 
-In the R console:
+Open an R console (=M-x R=) to enter the following commands.
 
 1) Enter ~getwd()~ ("get working dir")
    #+begin_src R :session *R* :results output :exports both
@@ -765,10 +765,12 @@ shell that I use on my Linux computer (and that most MacOS users
 will use) is also available within Windows 10 [[posey][(Posey 2018]]).
 #+end_notes
 
-* R display ~options~
+* NEXT R display ~options~
 #+NAME: fig:cli-6
 #+attr_html: :width 550px:
 [[../img/3_opening_R_6.png]]
+
+Open an R console (=M-x R=) to enter the following commands.
 
 1) The function =options= controls all glocal options for R:
    #+begin_example R
@@ -871,9 +873,8 @@ ordered in columns and rows.
 [[../img/3_MASS.png]]
 
 * Install R packages
-
 #+NAME: fig:cli-9
-#+attr_html: :width 700px
+#+attr_html: :width 600px
 [[../img/3_opening_R_9.png]]
 
 - To install package "~MASS~": enter ~install.packages("MASS")~
@@ -885,7 +886,7 @@ ordered in columns and rows.
 
 - ~md5sum~ is a GNU utility program that checks correct file transfer
 
-- Package version and R version may be out of synch
+- Package version and R version may be out of sync
 
 * Installing older versions of packages for older version of R
 
@@ -895,14 +896,21 @@ an earlier package version using the [[https://cran.r-project.org/src/contrib/Ar
 For example, if you have R version 4.0.4 (2021-02-15), then version
 7.3.54 from 2021-05-03 is a safe bet:
 #+begin_example R
+
   install.packages("remotes")
+  
   require(remotes)
+  
   install_version("MASS", version="7.3.54")
+  
   library(MASS)
+  
   search()  # MASS appears in environment list
 #+end_example
 
 * Miscellaneous package commands
+
+*Open an R console (=M-x R=) to enter the following commands.*
 
 - For a list of currently loaded packages: ~search()~
 
@@ -930,12 +938,14 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
 
 - For a short package description: ~packageDescription("...")~. Get the
   description for the =base= package:
+
   #+begin_src R :session *R* :results output :exports both
     packageDescription("base")
   #+end_src
 
 - To see all datasets in a package: ~data(package="...")~. List all
   datasets in the base R datasets collection =datasets=:
+
   #+begin_src R :session *R* :results output :exports both
     data(package="datasets")
   #+end_src
@@ -977,11 +987,7 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
     class(ls())  # ls() is a `character` vector
   #+end_src
 
-  #+RESULTS:
-  : character(0)
-  : [1] "character"
-
-* Explore data
+* Explore data (lightly)
 
 - When you've loaded a data set, you should take a look at it.
 
@@ -1025,7 +1031,7 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
 
 * Practice: R package commands
 
-1) Open an R shell with ~M-x R~
+*Open an R console (=M-x R=) to enter the following commands.*
 
 2) [Install the ~MASS~ package with ~install.packages~ IF NOT DONE YET]
    #+begin_example R
@@ -1072,12 +1078,6 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
     #+begin_src R :session *R* :results output :exports both
       head(Boston,3)
     #+end_src
-
-    #+RESULTS:
-    :      crim zn indus chas   nox    rm  age    dis rad tax ptratio  black lstat medv
-    : 1 0.00632 18  2.31    0 0.538 6.575 65.2 4.0900   1 296    15.3 396.90  4.98 24.0
-    : 2 0.02731  0  7.07    0 0.469 6.421 78.9 4.9671   2 242    17.8 396.90  9.14 21.6
-    : 3 0.02729  0  7.07    0 0.469 7.185 61.1 4.9671   2 242    17.8 392.83  4.03 34.7
     
 11) Check loaded object list with ~ls()~, then remove all loaded objects
     with ~rm(list=ls())~
@@ -1110,7 +1110,7 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
 - Quit a current R session with ~y~ and check those files out (open a
   =Dired= buffer with =C-x C-d= or find them with =C-x C-f=.
 
-n* Customizing at startup
+* Customizing at startup
 
 - When you install packages, you do not need administrative rights,
   even if R is installed in a read-only portion of your computer. The
@@ -1128,6 +1128,8 @@ n* Customizing at startup
   (Fischetti, 2014)
 
 * Practice: Customizing at startup
+
+*Open an R console (=M-x R=) to enter the following commands.*
 
 1) Check where the R home is:
    #+begin_src R :session *R* :results output :exports both
