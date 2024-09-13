@@ -703,10 +703,10 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    ~R CMD BATCH~ will generate a file ~script.Rout~ with the results.
    #+end_quote
 
-** NEXT Review questions: Introduction to R (2)
+** Review questions: Introduction to R (2)
 
 1. How can you check the current directory of your R console from the
-   R console? What's the difference between these commands?
+   R console? What's the difference between the two commands?
 
    #+begin_src R :session *R* :results output :exports both
 
@@ -719,8 +719,8 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+end_src
 
    #+RESULTS:
-   : /home/aletheia/GitHub/ds1/org
-   : [1] "/home/aletheia/GitHub/ds1/org"
+   : /home/marcus/GitHub/ds1/org
+   : [1] "/home/marcus/GitHub/ds1/org"
 
 2. What's the difference between asking for help with =?= vs. =??=
 
@@ -741,16 +741,21 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    
    #+begin_example 
 
-   setwd("org")
+   setwd("org")  # will work if ./org exists - relative path
 
-   setwd("/home/user/org")
+   setwd("/home/user/org")  # will work if $HOME/org exists - absolute path
    
    #+end_example
 
 4. What does the following command do?
 
    #+begin_src R :session *R* :results output :exports both
-     system("ls .. > ls.txt && cat ls.txt") 
+     ## executes an OS/Linux shell command
+     ## lists all files in the directory above the current directory
+     ## redirects (>) the output into a file ls.txt
+     ## view the ls.txt file
+     ## this is NOT a pipe
+     system("ls .. > ls.txt && cat ls.txt")
    #+end_src
 
    #+RESULTS:
@@ -780,9 +785,19 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 
    3) In an Org-mode file, activate an R code block that has a
       =:session= header argument.
-      
+
+   This works outside of Emacs only with interpreted languages like
+   R, Python, Julia, and not with compiled languages.
+         
    #+end_quote
 
+Example in C:
+#+begin_src C :main yes :includes <stdio.h> :results output
+  printf("hello, Isaac");
+#+end_src
+
+#+RESULTS:
+: hello, Isaac
 
 ** IN PROGRESS Introduction to R 
 [[../img/3_Rlogo.png]]

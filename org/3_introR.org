@@ -779,13 +779,326 @@ Open an R console (=M-x R=) to enter the following commands.
 
 2) =options= is a list:
    #+begin_src R :session *R* :results output :exports both
-     class(options())
+     class(options())   # `class` returns the data type
    #+end_src
+
+   #+RESULTS:
+   : [1] "list"
 
 3) You can look at it:
    #+begin_src R :session *R* :results output :exports both
      options()
    #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   $add.smooth
+   [1] TRUE
+
+   $bitmapType
+   [1] "cairo"
+
+   $browser
+   [1] "xdg-open"
+
+   $browserNLdisabled
+   [1] FALSE
+
+   $CBoundsCheck
+   [1] FALSE
+
+   $check.bounds
+   [1] FALSE
+
+   $citation.bibtex.max
+   [1] 1
+
+   $continue
+   [1] "+ "
+
+   $contrasts
+           unordered           ordered 
+   "contr.treatment"      "contr.poly" 
+
+   $crayon.enabled
+   [1] FALSE
+
+   $defaultPackages
+   [1] "datasets"  "utils"     "grDevices" "graphics"  "stats"     "methods"  
+
+   $demo.ask
+   [1] "default"
+
+   $deparse.cutoff
+   [1] 60
+
+   $device
+   function (display = "", width, height, pointsize, gamma, bg, 
+       canvas, fonts, family, xpos, ypos, title, type, antialias, 
+       symbolfamily) 
+   {
+       if (display != "XImage") {
+           check <- Sys.getenv("_R_CHECK_SCREEN_DEVICE_", "")
+           msg <- "screen devices should not be used in examples etc"
+           if (identical(check, "stop")) 
+               stop(msg, domain = NA)
+           else if (identical(check, "warn")) 
+               warning(msg, immediate. = TRUE, noBreaks. = TRUE, 
+                   domain = NA)
+       }
+       if (display == "" && .Platform$GUI == "AQUA" && is.na(Sys.getenv("DISPLAY", 
+           NA))) 
+           Sys.setenv(DISPLAY = ":0")
+       new <- list()
+       if (!missing(display)) 
+           new$display <- display
+       if (!missing(width)) 
+           new$width <- width
+       if (!missing(height)) 
+           new$height <- height
+       if (!missing(gamma)) 
+           new$gamma <- gamma
+       if (!missing(pointsize)) 
+           new$pointsize <- pointsize
+       if (!missing(bg)) 
+           new$bg <- bg
+       if (!missing(canvas)) 
+           new$canvas <- canvas
+       if (!missing(xpos)) 
+           new$xpos <- xpos
+       if (!missing(ypos)) 
+           new$ypos <- ypos
+       if (!missing(title)) 
+           new$title <- title
+       if (!checkIntFormat(new$title)) 
+           stop("invalid 'title'")
+       if (!missing(type)) {
+           new$type <- match.arg(type, c("Xlib", "cairo", "nbcairo", 
+               "dbcairo"))
+           if (!capabilities("cairo") && type != "Xlib") 
+               warning("cairo-based types are not supported on this build - using \"Xlib\"")
+       }
+       if (!missing(family)) 
+           new$family <- family
+       if (!missing(fonts)) 
+           new$fonts <- fonts
+       if (!missing(antialias) && type != "Xlib") 
+           new$antialias <- match.arg(antialias, aa.cairo)
+       if (!missing(symbolfamily)) 
+           new$symbolfamily <- symbolfamily
+       d <- check.options(new, name.opt = ".X11.Options", envir = .X11env)
+       if (d$type == "Xlib" && !missing(family)) {
+           fns <- X11Fonts()
+           if (!family %in% names(fns)) 
+               stop("unknown family for X11(type = \"XLib\")")
+           d$fonts[1] <- fns[[family]]
+       }
+       type <- if (capabilities("cairo")) 
+           switch(d$type, cairo = 1L, nbcairo = 2L, dbcairo = 3L, 
+               0L)
+       else 0L
+       if (display == "XImage") 
+           type <- 0L
+       antialias <- match(d$antialias, aa.cairo)
+       if (grepl("darwin", R.version$os)) 
+           check_for_XQuartz()
+       .External2(C_X11, d$display, d$width, d$height, d$pointsize, 
+           d$gamma, d$colortype, d$maxcubesize, d$bg, d$canvas, 
+           d$fonts, NA_integer_, d$xpos, d$ypos, d$title, type, 
+           antialias, d$family, optionSymbolFont(d$symbolfamily))
+       invisible()
+   }
+   <bytecode: 0x55dfac41c060>
+   <environment: namespace:grDevices>
+
+   $device.ask.default
+   [1] FALSE
+
+   $digits
+   [1] 7
+
+   $dvipscmd
+   [1] "dvips"
+
+   $echo
+   [1] TRUE
+
+   $editor
+   [1] "emacsclient"
+
+   $encoding
+   [1] "native.enc"
+
+   $example.ask
+   [1] "default"
+
+   $expressions
+   [1] 5000
+
+   $help.search.types
+   [1] "vignette" "demo"     "help"    
+
+   $help.try.all.packages
+   [1] FALSE
+
+   $HTTPUserAgent
+   [1] "R (4.1.2 x86_64-pc-linux-gnu x86_64 linux-gnu)"
+
+   $internet.info
+   [1] 2
+
+   $keep.parse.data
+   [1] TRUE
+
+   $keep.parse.data.pkgs
+   [1] FALSE
+
+   $keep.source
+   [1] TRUE
+
+   $keep.source.pkgs
+   [1] FALSE
+
+   $length
+   [1] 99999
+
+   $locatorBell
+   [1] TRUE
+
+   $mailer
+   [1] "mailto"
+
+   $matprod
+   [1] "default"
+
+   $max.print
+   [1] 99999
+
+   $menu.graphics
+   [1] TRUE
+
+   $na.action
+   [1] "na.omit"
+
+   $nwarnings
+   [1] 50
+
+   $OutDec
+   [1] "."
+
+   $pager
+   [1] "cat"
+
+   $papersize
+   [1] "letter"
+
+   $PCRE_limit_recursion
+   [1] NA
+
+   $PCRE_study
+   [1] FALSE
+
+   $PCRE_use_JIT
+   [1] TRUE
+
+   $pdfviewer
+   [1] "/usr/bin/xdg-open"
+
+   $pkgType
+   [1] "source"
+
+   $printcmd
+   [1] "/usr/bin/lpr"
+
+   $prompt
+   [1] "> "
+
+   $repos
+                            CRAN 
+   "https://cloud.r-project.org" 
+
+   $rl_word_breaks
+   [1] " \t\n\"\\'`><=%;,|&{()}"
+
+   $scipen
+   [1] 0
+
+   $show.coef.Pvalues
+   [1] TRUE
+
+   $show.error.locations
+   [1] TRUE
+
+   $show.error.messages
+   [1] TRUE
+
+   $show.signif.stars
+   [1] TRUE
+
+   $STERM
+   [1] "iESS"
+
+   $str
+   $str$strict.width
+   [1] "no"
+
+   $str$digits.d
+   [1] 3
+
+   $str$vec.len
+   [1] 4
+
+   $str$list.len
+   [1] 99
+
+   $str$deparse.lines
+   NULL
+
+   $str$drop.deparse.attr
+   [1] TRUE
+
+   $str$formatNum
+   function (x, ...) 
+   format(x, trim = TRUE, drop0trailing = TRUE, ...)
+   <environment: 0x55dface3cb10>
+
+
+   $str.dendrogram.last
+   [1] "'"
+
+   $stringsAsFactors
+   [1] FALSE
+
+   $texi2dvi
+   [1] "/usr/bin/texi2dvi"
+
+   $timeout
+   [1] 60
+
+   $ts.eps
+   [1] 1e-05
+
+   $ts.S.compat
+   [1] FALSE
+
+   $unzip
+   [1] "/usr/bin/unzip"
+
+   $useFancyQuotes
+   [1] TRUE
+
+   $verbose
+   [1] FALSE
+
+   $warn
+   [1] 0
+
+   $warning.length
+   [1] 1000
+
+   $width
+   [1] 118
+   #+end_example
 
 4) You can extract display options with ~$~, e.g. for the R console
    prompt:
@@ -793,16 +1106,25 @@ Open an R console (=M-x R=) to enter the following commands.
      options()$prompt
    #+end_src
 
+   #+RESULTS:
+   : [1] "> "
+
 5) Another important option setting is for the repository that R uses
    to download packages: Set to the default CRAN repo in my ~.Rprofile~
    #+begin_src R :session *R* :results output :exports both
      options()$repos
    #+end_src
 
+   #+RESULTS:
+   :                          CRAN 
+   : "https://cloud.r-project.org"
+
 6) Change the shell prompt to ~R>~:
    #+begin_src R :session *R* :results output :exports both
-     options(prompt="R> ")
+     options(prompt = "R> ")
    #+end_src
+
+   #+RESULTS:
 
 7) The change affects only your current R session. Change to the ~*R*~
    console buffer to check this:
@@ -898,7 +1220,7 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
 #+begin_example R
 
   install.packages("remotes")
-  
+
   require(remotes)
   
   install_version("MASS", version="7.3.54")
