@@ -860,7 +860,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 
 /Image: SpaceX Polaris Dawn Mission - Apollo Altitude Record Reached/
 
-- [ ] Project update 
+- [X] Project update - first sprint review
   1. I'll upload proposal + feedback to shared drive.
   2. If you used AI for your research, you must say how & cite it.
   3. Next sprint review: Methodology. Deliverable: literature review
