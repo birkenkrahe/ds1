@@ -139,22 +139,37 @@ See also: [[https://catalog.lyon.edu/202425-academic-calendar][2024-25 Academic 
 |------+---------------------------------------------+-------------------|
 | Week | DataCamp assignments                        | Project           |
 |------+---------------------------------------------+-------------------|
-|    1 | [[https://app.datacamp.com/learn/courses/understanding-data-science][Introduction to data science]]                |                   |
-|    2 | Data Collection and Storage                 |                   |
-|    3 | Preparation, Exploration, and Visualization |                   |
-|    4 | Experimentation and Prediction              | 1st sprint review |
-|    5 | [[https://app.datacamp.com/learn/courses/free-introduction-to-r][Introduction to R: Basics]]                   |                   |
-|    6 | Introduction to R: Vectors                  |                   |
-|    7 | Introduction to R: Matrices                 |                   |
-|    8 | Introduction to R: Factors                  | 2nd sprint review |
-|    9 | Introduction to R: Data frames              |                   |
-|   10 | Introduction to R: Lists                    |                   |
-|   11 | EDA in R: Categorical data                  |                   |
-|   12 | EDA in R: Numerical data                    | 3rd sprint review |
-|   13 | EDA in R: Numerical Summaries               |                   |
-|   14 | EDA in R: Case study                        |                   |
-|   15 | Python for R Users: The Basics              |                   |
-|   16 |                                             | 4th sprint review |
+|    0 | [[https://app.datacamp.com/learn/courses/understanding-data-science][Introduction to data science]]                |                   |
+|------+---------------------------------------------+-------------------|
+|    1 | Data Collection and Storage                 |                   |
+|------+---------------------------------------------+-------------------|
+|    2 | Preparation, Exploration, and Visualization |                   |
+|------+---------------------------------------------+-------------------|
+|    3 | Experimentation and Prediction              | 1st sprint review |
+|------+---------------------------------------------+-------------------|
+|    4 | [[https://app.datacamp.com/learn/courses/free-introduction-to-r][Introduction to R: Basics]]                   |                   |
+|------+---------------------------------------------+-------------------|
+|    5 | Introduction to R: Vectors                  |                   |
+|------+---------------------------------------------+-------------------|
+|    6 | Introduction to R: Matrices                 |                   |
+|------+---------------------------------------------+-------------------|
+|    7 | Introduction to R: Factors                  | 2nd sprint review |
+|------+---------------------------------------------+-------------------|
+|    8 | Introduction to R: Data frames              |                   |
+|------+---------------------------------------------+-------------------|
+|    9 | Introduction to R: Lists                    |                   |
+|------+---------------------------------------------+-------------------|
+|   10 | EDA in R: Categorical data                  |                   |
+|------+---------------------------------------------+-------------------|
+|   11 | EDA in R: Numerical data                    | 3rd sprint review |
+|------+---------------------------------------------+-------------------|
+|   12 | EDA in R: Numerical Summaries               |                   |
+|------+---------------------------------------------+-------------------|
+|   13 | EDA in R: Case study                        |                   |
+|------+---------------------------------------------+-------------------|
+|   14 | Python for R Users: The Basics              |                   |
+|------+---------------------------------------------+-------------------|
+|   15 |                                             | 4th sprint review |
 |------+---------------------------------------------+-------------------|
 
 * A note on using AI to write code for you or debug your code
