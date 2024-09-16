@@ -662,7 +662,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 - [X] Data science jobs
 - [X] Data science processes
 
-* Week 4 - Introduction to R
+* Week 4 - Introduction to R (9/11)
 #+attr_html: :width 700px:
 [[../img/Shell-Southbank-Plaza.jpg]]
 
@@ -853,5 +853,25 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 - Emacs and R have a home directory (~~/~) for startup files[fn:4]
 - You can determine R's startup behavior in ~~/.Rprofile~
 - ~~/.Rprofile~ is read every time a new R shell is started
-  
-  
+
+* Week 5 - Arithmetic with R (SpaceX)
+#+attr_html: :width 700px: 
+[[../img/spacex-polaris-dawn-spacewalk.jpeg]]
+
+/Image: SpaceX Polaris Dawn Mission - Apollo Altitude Record Reached/
+
+- [ ] Project update 
+  1. I'll upload proposal + feedback to shared drive.
+  2. If you used AI for your research, you must say how & cite it.
+  3. Next sprint review: Methodology. Deliverable: literature review
+     (Oct 11).
+  4. Using Google Docs etc. is OK but using a notebook (e.g. in
+     Org-mode) makes more sense for a data science project.
+     
+- [ ] R package commands & practice
+
+- [ ] Customizing at startup & practice
+
+- [ ] Arithmetic with R
+
+- [ ] Vectors in R

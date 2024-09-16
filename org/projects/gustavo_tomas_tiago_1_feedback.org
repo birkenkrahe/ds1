@@ -1,0 +1,116 @@
+#+title: Project Proposal+
+#+author: Gustavo Giesbrecht, Biasi Tomas, Donadon Tiago
+#+subtitle: Analyzing Player Performance with R (or Power BI)
+#+STARTUP: hideblocks overview indent
+
+#+begin_comment
+I added feedback and suggestions for fixes in =comment= blocks. Please
+address all suggestions as soon as possible but no later than the next
+sprint review (Oct 11).
+#+end_comment
+
+* Project Proposal
+
+The goal of this project is to leverage R for analyzing player
+performance in teamsports by utilizing event data metrics such as
+passes, tackles, shots and saves. This framework aims to help teams
+identify overperforming and underperforming players, pinpoint areas
+for improvement, and select the best players for specific game plans
+or playstyles.
+
+* Reason
+
+Understanding player performance is crucial for teams to enhance their
+strategies and outcomes. By leveraging data analytics, teams can make
+informed decisions about player selection and training focus,
+ultimately leading to better performance on the fIeld.
+
+#+begin_comment
+From talking to Gustavo, I recall that there were more pressing
+concerns, namely that the current system of data analysis at Lyon
+Soccer is broken. This should be mentioned, and you should research
+it.
+#+end_comment
+
+* Constraints
+
+- Technical: Integrating and processing large datasets from various sources
+  may present challenges. Ensuring data accuracy and consistency
+  is vital for reliable performance analysis.
+- Conceptual: Developing metrics that accurately reflect player contributions
+  without being overly simplistic or misleading.
+- Personal: Balancing this project with other assignments, because it is
+  hard to tell the difficulties and complexities of this project,
+  also that I would be doing by myself, impacting project depth
+  and quality.
+
+* Goals
+1. Create a comprehensive set of performance metrics derived from
+   event data.
+
+   #+begin_comment
+   This is doable. For the next sprint review (methodology) you need
+   to break this step down into more steps and split them up among
+   team members to do. 
+   #+end_comment
+
+2. Develop a visual dashboard to present player performance
+   analytics.
+
+   #+begin_comment
+   This is probably too much though with Power BI or Tableau you could
+   give it a try. The dashboard project is a good project for the data
+   visualization class (DSC 302). You could also review existing
+   dashboards for this type of data.
+   #+end_comment
+   
+3. Conduct case studies on specific players or teams to validate the
+   framework.
+   #+begin_comment
+   This means that you would gather primary data from human subject
+   unless you only use yourselves, which I would recommend to avoid
+   having to talk to Lyon's Institutional Review Board.
+
+   In any case, you ought to test your framework & specify what
+   exactly you're going to deliver as part of it. A framework usually
+   is a reusable set of guidelines and tools that a developer can use
+   to build software applications (e.g. a dashboard).
+
+   So this needs to be much more specific and you need to turn it into
+   a series of well-defined steps so that you know what every team
+   member must do every week. If you don't know that, you didn't break
+   it down enough.
+   #+end_comment
+
+* Non Goals
+
+- Conducting extensive qualitative analysis of player behavior.
+- Covering all possible sports; this project will focus on one
+  specific sport.
+
+#+begin_comment
+This is a good identification of your non-goals.
+#+end_comment
+
+* Metrics
+
+- Accuracy of performance metrics compared to expert evaluations.
+- Feedback from coaches on the utility of the performance insights.
+
+#+begin_comment
+Both of these are very good.
+#+end_comment
+
+* References
+- Cotton R, and Miller, I L (Nov 2022). How Data Science is Changing
+  Soccer. In: DataCamp blog, URL: [[https://www.datacamp.com/blog/how-data-science-is-changing-soccer][datacamp.com]].
+- Opta Sports. (2023). *Understanding Event Data Metrics in Sports*.
+  URL: [[https://www.optasports.com][Opta Sports]].
+- Example on how to visualize data, URL: [[https://medium.com/@DataThinker/football-data-analytics-lets-start-4ad1a28ee357][Football Data Analytics]].
+
+#+begin_comment
+The Opta Sports URL does not work, please fix it. The references
+should be: 1) consistently cited (same format - they all seem to have
+different format), 2) complete (the last one is not complete. Please
+fix that.
+#+end_comment

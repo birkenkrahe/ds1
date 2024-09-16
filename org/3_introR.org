@@ -1351,7 +1351,7 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
 
 - These functions have many different attributes (check the help).
 
-* Practice: R package commands
+* NEXT Practice: R package commands
 
 *Open an R console (=M-x R=) to enter the following commands.*
 

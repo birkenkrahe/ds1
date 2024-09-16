@@ -1,0 +1,94 @@
+
+I add feedback and suggestions for fixes in =comment= blocks. Please
+address all suggestions as soon as possible but no later than the next
+sprint review (Oct 11).
+
+Your proposal is missing the proper formatting for an Org-mode
+file. Use the meta data header of any of my lecture files for title,
+author, subtitle and status meta data.
+
+Use M-q to auto-indent long lines of text, and `-` for bullet
+points. You seem to have copied this from WORD or something. Use `#`
+for headlines, and C-c C-l to hide links behind the text.
+
+Since I don't want to do your job for you, I'm going to put all my
+comments in this top blob.
+
+1. *Proposal* - this should be part of the =#+title:= of the document.
+
+2. *Problem* seems interesting. What are the "top three streaming
+   platforms", and are you talking about movie, news, games streaming?
+   If you don't know this yet it can also become part of the
+   project. "User engagement" and "content diversity" are not
+   immediately quantifiable (they're derived metrics).
+
+3. *Reasons*: Do you also have personal reasons? This would be useful to
+   mention.
+
+4. 
+
+-----
+
+Proposal
+
+Problem:
+
+The project aims to analyze and visualize data from the top three
+streaming platforms over the last five years to determine which
+platform is the most influential and effective for the users. This
+involves evaluating various metrics such as user growth, revenue,
+content diversity, and user engagement.
+
+Reasons:
+
+Understanding which streaming platform stands out in terms of
+influence and effectiveness is valuable for multiple stakeholders like
+consumers and creators. For consumers, it gives ideas about the
+platform which provide proper and good content without unnecessary
+content. It also gives the best idea to choose which platform and
+which services to use. For creators, it helps identify best platform
+to partner with based on reach and engagement on them.
+
+Constraints:
+
+· Technical: Some platforms may not provide every data to public. Combining data from different source may require significant effort in terms of standardizing formats and handling inconsistencies.
+
+· Conceptual: Choosing the right metrics to measure influence and effectiveness can be a little subjective and may vary based on each perspective.
+
+· Personal: Specific skills and tools may need for advance analysis. Time management can be another one.
+
+Goals:
+
+· Conducting a comparative analysis of top three streaming platforms based on selected metrics.
+
+· Creating a clear and compressive visualization to represent trends and comparisons.
+
+· Giving some recommendation based on the analysis to guide consumers and creators.
+
+Non-Goals:
+
+· Using the data of only five years (which may change in future but never above 5).
+
+· Technical performance reviews of the platforms are not part of the scope.
+
+· Only the top three platforms will be given priority and not others.
+
+Metrics
+
+· Change in the consumer numbers.
+
+· Annual revenue figures and growth rates.
+
+· Number of titles and genres available.
+
+· Overall market share relative to other platforms.
+
+References: · Software: R and its packages (some) (https://www.R-project.org)
+
+Emacs.
+
+· Websites: Litmaps
+
+Statista (Portal for market data and research)
+
+Nielsen (Portal with insights about what people watch and listen)
