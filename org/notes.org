@@ -868,7 +868,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
   4. Using Google Docs etc. is OK but using a notebook (e.g. in
      Org-mode) makes more sense for a data science project.
      
-- [ ] R package commands & practice
+- [X] R package commands & practice
 
 - [ ] Customizing at startup & practice
 
