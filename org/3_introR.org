@@ -708,36 +708,6 @@ Open an R console (=M-x R=) to enter the following commands.
      system("ls") # list files
    #+end_src
 
-   #+RESULTS:
-   #+begin_example
-    0_overview.org
-    1_infrastructure_DataLab.org
-    1_infrastructure_Emacs.org
-    1_infrastructure_Google_Cloud_Shell.org
-    1_infrastructure_Google_Cloud_Shell_pdf.org
-    2_datascience.org
-    2_datascience_reveal.html
-    2_datascience_reveal.org
-    2_datascience_reveal_print.org
-    3d_scatterplot.png
-   '#3_introR.org#'
-    3_introR.org
-    3_introR_practice.org
-    hello.txt
-    mtcars.png
-    notes.org
-    Rpractice.org
-    syllabus.org
-    syllabus_pdf.org
-    test2.R
-    testPython.org
-    test.R
-    testR2.org
-    testR3.org
-    testR3.org~
-    testR.org
-    test.Rout
-   #+end_example
 
    A shell pipe with a file listing and a counting command combined:
    #+begin_src R :session *R* :results output :exports both
@@ -782,323 +752,20 @@ Open an R console (=M-x R=) to enter the following commands.
      class(options())   # `class` returns the data type
    #+end_src
 
-   #+RESULTS:
-   : [1] "list"
-
 3) You can look at it:
    #+begin_src R :session *R* :results output :exports both
-     options()
+     options() |> head(n=3)
    #+end_src
 
    #+RESULTS:
-   #+begin_example
-   $add.smooth
-   [1] TRUE
-
-   $bitmapType
-   [1] "cairo"
-
-   $browser
-   [1] "xdg-open"
-
-   $browserNLdisabled
-   [1] FALSE
-
-   $CBoundsCheck
-   [1] FALSE
-
-   $check.bounds
-   [1] FALSE
-
-   $citation.bibtex.max
-   [1] 1
-
-   $continue
-   [1] "+ "
-
-   $contrasts
-           unordered           ordered 
-   "contr.treatment"      "contr.poly" 
-
-   $crayon.enabled
-   [1] FALSE
-
-   $defaultPackages
-   [1] "datasets"  "utils"     "grDevices" "graphics"  "stats"     "methods"  
-
-   $demo.ask
-   [1] "default"
-
-   $deparse.cutoff
-   [1] 60
-
-   $device
-   function (display = "", width, height, pointsize, gamma, bg, 
-       canvas, fonts, family, xpos, ypos, title, type, antialias, 
-       symbolfamily) 
-   {
-       if (display != "XImage") {
-           check <- Sys.getenv("_R_CHECK_SCREEN_DEVICE_", "")
-           msg <- "screen devices should not be used in examples etc"
-           if (identical(check, "stop")) 
-               stop(msg, domain = NA)
-           else if (identical(check, "warn")) 
-               warning(msg, immediate. = TRUE, noBreaks. = TRUE, 
-                   domain = NA)
-       }
-       if (display == "" && .Platform$GUI == "AQUA" && is.na(Sys.getenv("DISPLAY", 
-           NA))) 
-           Sys.setenv(DISPLAY = ":0")
-       new <- list()
-       if (!missing(display)) 
-           new$display <- display
-       if (!missing(width)) 
-           new$width <- width
-       if (!missing(height)) 
-           new$height <- height
-       if (!missing(gamma)) 
-           new$gamma <- gamma
-       if (!missing(pointsize)) 
-           new$pointsize <- pointsize
-       if (!missing(bg)) 
-           new$bg <- bg
-       if (!missing(canvas)) 
-           new$canvas <- canvas
-       if (!missing(xpos)) 
-           new$xpos <- xpos
-       if (!missing(ypos)) 
-           new$ypos <- ypos
-       if (!missing(title)) 
-           new$title <- title
-       if (!checkIntFormat(new$title)) 
-           stop("invalid 'title'")
-       if (!missing(type)) {
-           new$type <- match.arg(type, c("Xlib", "cairo", "nbcairo", 
-               "dbcairo"))
-           if (!capabilities("cairo") && type != "Xlib") 
-               warning("cairo-based types are not supported on this build - using \"Xlib\"")
-       }
-       if (!missing(family)) 
-           new$family <- family
-       if (!missing(fonts)) 
-           new$fonts <- fonts
-       if (!missing(antialias) && type != "Xlib") 
-           new$antialias <- match.arg(antialias, aa.cairo)
-       if (!missing(symbolfamily)) 
-           new$symbolfamily <- symbolfamily
-       d <- check.options(new, name.opt = ".X11.Options", envir = .X11env)
-       if (d$type == "Xlib" && !missing(family)) {
-           fns <- X11Fonts()
-           if (!family %in% names(fns)) 
-               stop("unknown family for X11(type = \"XLib\")")
-           d$fonts[1] <- fns[[family]]
-       }
-       type <- if (capabilities("cairo")) 
-           switch(d$type, cairo = 1L, nbcairo = 2L, dbcairo = 3L, 
-               0L)
-       else 0L
-       if (display == "XImage") 
-           type <- 0L
-       antialias <- match(d$antialias, aa.cairo)
-       if (grepl("darwin", R.version$os)) 
-           check_for_XQuartz()
-       .External2(C_X11, d$display, d$width, d$height, d$pointsize, 
-           d$gamma, d$colortype, d$maxcubesize, d$bg, d$canvas, 
-           d$fonts, NA_integer_, d$xpos, d$ypos, d$title, type, 
-           antialias, d$family, optionSymbolFont(d$symbolfamily))
-       invisible()
-   }
-   <bytecode: 0x55dfac41c060>
-   <environment: namespace:grDevices>
-
-   $device.ask.default
-   [1] FALSE
-
-   $digits
-   [1] 7
-
-   $dvipscmd
-   [1] "dvips"
-
-   $echo
-   [1] TRUE
-
-   $editor
-   [1] "emacsclient"
-
-   $encoding
-   [1] "native.enc"
-
-   $example.ask
-   [1] "default"
-
-   $expressions
-   [1] 5000
-
-   $help.search.types
-   [1] "vignette" "demo"     "help"    
-
-   $help.try.all.packages
-   [1] FALSE
-
-   $HTTPUserAgent
-   [1] "R (4.1.2 x86_64-pc-linux-gnu x86_64 linux-gnu)"
-
-   $internet.info
-   [1] 2
-
-   $keep.parse.data
-   [1] TRUE
-
-   $keep.parse.data.pkgs
-   [1] FALSE
-
-   $keep.source
-   [1] TRUE
-
-   $keep.source.pkgs
-   [1] FALSE
-
-   $length
-   [1] 99999
-
-   $locatorBell
-   [1] TRUE
-
-   $mailer
-   [1] "mailto"
-
-   $matprod
-   [1] "default"
-
-   $max.print
-   [1] 99999
-
-   $menu.graphics
-   [1] TRUE
-
-   $na.action
-   [1] "na.omit"
-
-   $nwarnings
-   [1] 50
-
-   $OutDec
-   [1] "."
-
-   $pager
-   [1] "cat"
-
-   $papersize
-   [1] "letter"
-
-   $PCRE_limit_recursion
-   [1] NA
-
-   $PCRE_study
-   [1] FALSE
-
-   $PCRE_use_JIT
-   [1] TRUE
-
-   $pdfviewer
-   [1] "/usr/bin/xdg-open"
-
-   $pkgType
-   [1] "source"
-
-   $printcmd
-   [1] "/usr/bin/lpr"
-
-   $prompt
-   [1] "> "
-
-   $repos
-                            CRAN 
-   "https://cloud.r-project.org" 
-
-   $rl_word_breaks
-   [1] " \t\n\"\\'`><=%;,|&{()}"
-
-   $scipen
-   [1] 0
-
-   $show.coef.Pvalues
-   [1] TRUE
-
-   $show.error.locations
-   [1] TRUE
-
-   $show.error.messages
-   [1] TRUE
-
-   $show.signif.stars
-   [1] TRUE
-
-   $STERM
-   [1] "iESS"
-
-   $str
-   $str$strict.width
-   [1] "no"
-
-   $str$digits.d
-   [1] 3
-
-   $str$vec.len
-   [1] 4
-
-   $str$list.len
-   [1] 99
-
-   $str$deparse.lines
-   NULL
-
-   $str$drop.deparse.attr
-   [1] TRUE
-
-   $str$formatNum
-   function (x, ...) 
-   format(x, trim = TRUE, drop0trailing = TRUE, ...)
-   <environment: 0x55dface3cb10>
-
-
-   $str.dendrogram.last
-   [1] "'"
-
-   $stringsAsFactors
-   [1] FALSE
-
-   $texi2dvi
-   [1] "/usr/bin/texi2dvi"
-
-   $timeout
-   [1] 60
-
-   $ts.eps
-   [1] 1e-05
-
-   $ts.S.compat
-   [1] FALSE
-
-   $unzip
-   [1] "/usr/bin/unzip"
-
-   $useFancyQuotes
-   [1] TRUE
-
-   $verbose
-   [1] FALSE
-
-   $warn
-   [1] 0
-
-   $warning.length
-   [1] 1000
-
-   $width
-   [1] 118
-   #+end_example
+   : $add.smooth
+   : [1] TRUE
+   : 
+   : $bitmapType
+   : [1] "cairo"
+   : 
+   : $browser
+   : [1] "xdg-open"
 
 4) You can extract display options with ~$~, e.g. for the R console
    prompt:
@@ -1374,7 +1041,10 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
   #+begin_src R :session *R* :results output :exports both
     ls()  # user-defined data that are loaded in the current session
     library(MASS) # load MASS package
+    message("...now loading MASS::phones...")
+    data(phones)
     ls()
+    message("...now removing MASS::phones...")
     rm(list=ls())
     ls()
   #+end_src
@@ -1392,92 +1062,96 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
 - Most useful: ~str~ to see the data structure, ~head~ and ~tail~ to see the
   first and last few rows.
 
-  Structure:
+- Structure:
   #+begin_src R :session *R* :results output :exports both
     str(ToothGrowth)  # structure of built-in ToothGrowth dataset
   #+end_src
 
-  #+RESULTS:
-  : 'data.frame':       60 obs. of  3 variables:
-  :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
-  :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
-  :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
-
-  Head: To display =m= rows only, add the parameter ~n = m~.
+- Head: To display =m= rows only, add the parameter ~n = m~
   #+begin_src R :session *R* :results output :exports both
     head(ToothGrowth, n = 3)
   #+end_src
 
-  #+RESULTS:
-  :    len supp dose
-  : 1  4.2   VC  0.5
-  : 2 11.5   VC  0.5
-  : 3  7.3   VC  0.5
-
-  Tail:
+- Tail: Same thing - to display =m= rows only, add the parameter ~n=m~
   #+begin_src R :session *R* :results output :exports both
     tail(ToothGrowth, n = 3)
   #+end_src
 
-  #+RESULTS:
-  :     len supp dose
-  : 58 27.3   OJ    2
-  : 59 29.4   OJ    2
-  : 60 23.0   OJ    2
+- These three functions work for multiple data structures - they're
+  message("...now loading MASS::phones.."generic" R functions. You can
+  check this by calling =methods= on them:
+  #+begin_src R :session *R* :results output :exports both
+    methods(str)
+    methods(head)
+    methods(tail)
+  #+end_src
 
-- These functions have many different attributes (check the help).
+  #+RESULTS:
+  : [1] str.data.frame* str.Date*       str.default*    str.dendrogram* str.logLik*    
+  : [6] str.POSIXt*    
+  : see '?methods' for accessing help and source code
+  : [1] head.array*      head.data.frame* head.default*    head.ftable*     head.function*  
+  : [6] head.matrix     
+  : see '?methods' for accessing help and source code
+  : [1] tail.array*      tail.data.frame* tail.default*    tail.ftable*     tail.function*  
+  : [6] tail.matrix      tail.table*     
+  : see '?methods' for accessing help and source code
+
+- There is a lot you can see in data even if you're not able to plot
+  them yet.
 
 * Practice: R package commands
 
 *Open an R console (=M-x R=) to enter the following commands.*
 
-2) [Install the ~MASS~ package with ~install.packages~ IF NOT DONE YET]
+1) [Install the =MASS= package with =install.packages= IF NOT DONE YET]
    #+begin_example R
      install.packages("MASS")
    #+end_example
 
-3) List all data sets in ~MASS~ with ~data(package="MASS")~
-   #+begin_src R :session *R* :results output :exports both
-     data(package="MASS")
-   #+end_src
-
-4) Open the ~help~ for the data set ~Boston~ in ~MASS~ - how many rows
-   (observations) and columns (variables) does it have?
-   #+begin_example R
-     help(Boston)
-   #+end_example
-   
-5) Load the ~MASS~ package into your current R session
+2) Load the =MASS= package into your current R session
    #+begin_src R :session *R* :results none :exports both
      library(MASS)
    #+end_src
 
-6) Load the data set ~Boston~ into your current R session
-   #+begin_src R :session *R* :results none :exports both
+3) List all data sets in =MASS=:
+   #+begin_src R :session *R* :results output :exports both
+     data(package="MASS")
+   #+end_src
+   
+4) On the R shell, open the =help= for the data set =Boston= in =MASS= - how
+   many rows (observations) and columns (variables) does it have?
+   #+begin_example R
+     help(Boston) # dataset dim = 506 x 14
+   #+end_example
+
+5) Load the data set ~Boston~ into your current R session
+   #+begin_src R :session *R* :results output :exports both
      data(Boston)
+     dim(Boston)
    #+end_src
 
-7) List all loaded packages with ~search()~
+6) List all packages that are currently loaded
    #+begin_src R :session *R* :results output :exports both
      search()
    #+end_src
    
-8) List all loaded objects with ~ls()~ (which output do you expect?)
+7) List all R objects that are currently loaded (what do you expect?)
    #+begin_src R :session *R* :results output :exports both
      ls()
    #+end_src
 
-9) Display the structure of ~Boston~ with ~str(Boston)~
+8) Display the structure of the data frame ~Boston~ 
    #+begin_src R :session *R* :results output :exports both
      str(Boston)
    #+end_src
    
-10) Display the first *three* rows of ~Boston~ with ~head~
-    #+begin_src R :session *R* :results output :exports both
-      head(Boston,3)
-    #+end_src
+9) Display the first *three* rows of ~Boston~
+   #+begin_src R :session *R* :results output :exports both
+     head(Boston,3)
+   #+end_src
     
-11) Check loaded object list with ~ls()~, then remove all loaded objects
+10) Check loaded object list with ~ls()~, then remove all loaded objects
     with ~rm(list=ls())~
     #+begin_src R :session *R* :results output :exports both
       ls()
@@ -1485,8 +1159,17 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
       ls()
     #+end_src
 
-12) List loaded packages with ~search()~. Then detach the ~MASS~ package
-    with ~detach("package:MASS")~ and list the loaded packages again.
+11) Add an R object with the command =x = 2= and then remove it with
+    =rm(x)=. Check the list on either side of the command with =ls()=.
+    #+begin_src R :session *R* :results output :exports both
+      x = 2
+      ls()
+      rm(x)
+      ls()
+    #+end_src
+
+11) List loaded packages. Then detach the ~MASS~ package, and list the
+    loaded packages again.
     #+begin_src R :session *R* :results output :exports both
       search()
       detach("package:MASS")
@@ -1558,9 +1241,6 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
    #+begin_src R :session *R* :results output :exports both
      options()$repos
    #+end_src
-
-   #+RESULTS:
-   : [1] "https://mirrors.nics.utk.edu/cran/"
 
 7) Install the ~remotes~ package from the new location.
    #+begin_example R

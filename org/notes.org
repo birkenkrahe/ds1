@@ -875,3 +875,64 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 - [ ] Arithmetic with R
 
 - [ ] Vectors in R
+
+* TODO Review: R options and package management
+
+1. What's the policy regarding AI assistence in your projects?
+
+2. How can you see the global options?
+   #+begin_src R :session *R* :results output :exports both
+     options() |> head(n=3)
+   #+end_src
+
+3. What data structure are the global options?
+   #+begin_src R :session *R* :results output :exports both
+     class(options())
+   #+end_src
+
+4. What data type is an individual option?
+   #+begin_src R :session *R* :results output :exports both
+     class(options()$prompt)
+   #+end_src
+
+5. How would you change the R shell prompt e.g. to ="R> "=, and how
+   could you check it?
+   #+begin_src R :session *R* :results output :exports both
+     options(prompt="R> ")
+     options()$prompt
+   #+end_src
+
+6. How can you load and remove a package from an R session?
+   #+begin_src R :session *R* :results output :exports both
+     library(MASS)
+     any(grep("MASS",search()))  # "is there any 'MASS' in the search()
+                                 # vector?"
+     detach("package:MASS")
+     any(grep("MASS",search()))
+   #+end_src
+
+7. How can you see all datasets in the current R session?
+   #+begin_src R :session *R* :results output :exports both
+     data()
+   #+end_src
+
+8. How can you be sure these datasets have to be loaded?
+   #+begin_src R :session *R* :results output :exports both
+     detach("package:MASS")
+     any(grep("MASS",data()))  # any MASS datasets available?
+     library(MASS)
+     any(grep("MASS",data()))     
+   #+end_src
+
+9. What's the difference between =search()= and =searchpaths()=?
+   #+begin_src R :session *R* :results output :exports both
+     search()  # returns character vector of loaded packages
+     searchpaths()  # returns file system locations of loaded packages
+   #+end_src
+
+10. What is the difference between =ls()= and =ls("package:base")=?
+    #+begin_src R :session *R* :results output :exports both
+      library(MASS)
+      ls()  # lists all user-defined objects (functions, variables)
+      ls("package:MASS")  # lists all functions and datasets in MASS only
+    #+end_src

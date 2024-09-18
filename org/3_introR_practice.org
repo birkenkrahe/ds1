@@ -1,8 +1,0 @@
-#+TITLE:Practice: Introduction to R
-#+AUTHOR: [YourName] (pledged)
-#+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
-#+OPTIONS: toc:nil num:nil ^:nil
-* README
-
-  - Practice instructions for the introduction to R lectures
-  - Emacs + .emacs + ESS + Org-mode + R must be installed
