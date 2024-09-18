@@ -1028,7 +1028,7 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
     ls()
   #+end_src
 
-* NEXT Load datasets
+* Load datasets
 
 - After loading a package that contains data sets, the data sets are
   not loaded (they may be very large).
@@ -1055,6 +1055,10 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
     class(ls())  # ls() is a `character` vector
   #+end_src
 
+  #+RESULTS:
+  : character(0)
+  : [1] "character"
+
 * Explore data (lightly)
 
 - When you've loaded a data set, you should take a look at it.
@@ -1067,15 +1071,33 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
     str(ToothGrowth)  # structure of built-in ToothGrowth dataset
   #+end_src
 
+  #+RESULTS:
+  : 'data.frame':	60 obs. of  3 variables:
+  :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
+  :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
+  :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
+
 - Head: To display =m= rows only, add the parameter ~n = m~
   #+begin_src R :session *R* :results output :exports both
-    head(ToothGrowth, n = 3)
+    head(ToothGrowth,n=3)
   #+end_src
+
+  #+RESULTS:
+  :    len supp dose
+  : 1  4.2   VC  0.5
+  : 2 11.5   VC  0.5
+  : 3  7.3   VC  0.5
 
 - Tail: Same thing - to display =m= rows only, add the parameter ~n=m~
   #+begin_src R :session *R* :results output :exports both
     tail(ToothGrowth, n = 3)
   #+end_src
+
+  #+RESULTS:
+  :     len supp dose
+  : 58 27.3   OJ    2
+  : 59 29.4   OJ    2
+  : 60 23.0   OJ    2
 
 - These three functions work for multiple data structures - they're
   message("...now loading MASS::phones.."generic" R functions. You can
@@ -1087,8 +1109,7 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
   #+end_src
 
   #+RESULTS:
-  : [1] str.data.frame* str.Date*       str.default*    str.dendrogram* str.logLik*    
-  : [6] str.POSIXt*    
+  : [1] str.data.frame* str.Date*       str.default*    str.dendrogram* str.logLik*     str.POSIXt*    
   : see '?methods' for accessing help and source code
   : [1] head.array*      head.data.frame* head.default*    head.ftable*     head.function*  
   : [6] head.matrix     
@@ -1116,8 +1137,102 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
 
 3) List all data sets in =MASS=:
    #+begin_src R :session *R* :results output :exports both
-     data(package="MASS")
+     data(package="MASS")  # must look at the help(data)
    #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   Data sets in package ‘MASS’:
+
+   Aids2                         Australian AIDS Survival Data
+   Animals                       Brain and Body Weights for 28 Species
+   Boston                        Housing Values in Suburbs of Boston
+   Cars93                        Data from 93 Cars on Sale in the USA in 1993
+   Cushings                      Diagnostic Tests on Patients with Cushing's Syndrome
+   DDT                           DDT in Kale
+   GAGurine                      Level of GAG in Urine of Children
+   Insurance                     Numbers of Car Insurance claims
+   Melanoma                      Survival from Malignant Melanoma
+   OME                           Tests of Auditory Perception in Children with OME
+   Pima.te                       Diabetes in Pima Indian Women
+   Pima.tr                       Diabetes in Pima Indian Women
+   Pima.tr2                      Diabetes in Pima Indian Women
+   Rabbit                        Blood Pressure in Rabbits
+   Rubber                        Accelerated Testing of Tyre Rubber
+   SP500                         Returns of the Standard and Poors 500
+   Sitka                         Growth Curves for Sitka Spruce Trees in 1988
+   Sitka89                       Growth Curves for Sitka Spruce Trees in 1989
+   Skye                          AFM Compositions of Aphyric Skye Lavas
+   Traffic                       Effect of Swedish Speed Limits on Accidents
+   UScereal                      Nutritional and Marketing Information on US Cereals
+   UScrime                       The Effect of Punishment Regimes on Crime Rates
+   VA                            Veteran's Administration Lung Cancer Trial
+   abbey                         Determinations of Nickel Content
+   accdeaths                     Accidental Deaths in the US 1973-1978
+   anorexia                      Anorexia Data on Weight Change
+   bacteria                      Presence of Bacteria after Drug Treatments
+   beav1                         Body Temperature Series of Beaver 1
+   beav2                         Body Temperature Series of Beaver 2
+   biopsy                        Biopsy Data on Breast Cancer Patients
+   birthwt                       Risk Factors Associated with Low Infant Birth Weight
+   cabbages                      Data from a cabbage field trial
+   caith                         Colours of Eyes and Hair of People in Caithness
+   cats                          Anatomical Data from Domestic Cats
+   cement                        Heat Evolved by Setting Cements
+   chem                          Copper in Wholemeal Flour
+   coop                          Co-operative Trial in Analytical Chemistry
+   cpus                          Performance of Computer CPUs
+   crabs                         Morphological Measurements on Leptograpsus Crabs
+   deaths                        Monthly Deaths from Lung Diseases in the UK
+   drivers                       Deaths of Car Drivers in Great Britain 1969-84
+   eagles                        Foraging Ecology of Bald Eagles
+   epil                          Seizure Counts for Epileptics
+   farms                         Ecological Factors in Farm Management
+   fgl                           Measurements of Forensic Glass Fragments
+   forbes                        Forbes' Data on Boiling Points in the Alps
+   galaxies                      Velocities for 82 Galaxies
+   gehan                         Remission Times of Leukaemia Patients
+   genotype                      Rat Genotype Data
+   geyser                        Old Faithful Geyser Data
+   gilgais                       Line Transect of Soil in Gilgai Territory
+   hills                         Record Times in Scottish Hill Races
+   housing                       Frequency Table from a Copenhagen Housing Conditions Survey
+   immer                         Yields from a Barley Field Trial
+   leuk                          Survival Times and White Blood Counts for Leukaemia Patients
+   mammals                       Brain and Body Weights for 62 Species of Land Mammals
+   mcycle                        Data from a Simulated Motorcycle Accident
+   menarche                      Age of Menarche in Warsaw
+   michelson                     Michelson's Speed of Light Data
+   minn38                        Minnesota High School Graduates of 1938
+   motors                        Accelerated Life Testing of Motorettes
+   muscle                        Effect of Calcium Chloride on Muscle Contraction in Rat
+                                 Hearts
+   newcomb                       Newcomb's Measurements of the Passage Time of Light
+   nlschools                     Eighth-Grade Pupils in the Netherlands
+   npk                           Classical N, P, K Factorial Experiment
+   npr1                          US Naval Petroleum Reserve No. 1 data
+   oats                          Data from an Oats Field Trial
+   painters                      The Painter's Data of de Piles
+   petrol                        N. L. Prater's Petrol Refinery Data
+   phones                        Belgium Phone Calls 1950-1973
+   quine                         Absenteeism from School in Rural New South Wales
+   road                          Road Accident Deaths in US States
+   rotifer                       Numbers of Rotifers by Fluid Density
+   ships                         Ships Damage Data
+   shoes                         Shoe wear data of Box, Hunter and Hunter
+   shrimp                        Percentage of Shrimp in Shrimp Cocktail
+   shuttle                       Space Shuttle Autolander Problem
+   snails                        Snail Mortality Data
+   steam                         The Saturated Steam Pressure Data
+   stormer                       The Stormer Viscometer Data
+   survey                        Student Survey Data
+   synth.te                      Synthetic Classification Problem
+   synth.tr                      Synthetic Classification Problem
+   topo                          Spatial Topographic Data
+   waders                        Counts of Waders at 15 Sites in South Africa
+   whiteside                     House Insulation: Whiteside's Data
+   wtloss                        Weight Loss Data from an Obese Patient
+   #+end_example
    
 4) On the R shell, open the =help= for the data set =Boston= in =MASS= - how
    many rows (observations) and columns (variables) does it have?
@@ -1131,25 +1246,61 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
      dim(Boston)
    #+end_src
 
+   #+RESULTS:
+   : [1] 506  14
+
 6) List all packages that are currently loaded
    #+begin_src R :session *R* :results output :exports both
      search()
    #+end_src
+
+   #+RESULTS:
+   :  [1] ".GlobalEnv"        "package:MASS"      "ESSR"              "package:stats"    
+   :  [5] "package:graphics"  "package:grDevices" "package:utils"     "package:datasets" 
+   :  [9] "package:methods"   "Autoloads"         "package:base"
    
 7) List all R objects that are currently loaded (what do you expect?)
    #+begin_src R :session *R* :results output :exports both
      ls()
    #+end_src
 
+   #+RESULTS:
+   : [1] "Boston"
+
 8) Display the structure of the data frame ~Boston~ 
    #+begin_src R :session *R* :results output :exports both
      str(Boston)
    #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   'data.frame':	506 obs. of  14 variables:
+    $ crim   : num  0.00632 0.02731 0.02729 0.03237 0.06905 ...
+    $ zn     : num  18 0 0 0 0 0 12.5 12.5 12.5 12.5 ...
+    $ indus  : num  2.31 7.07 7.07 2.18 2.18 2.18 7.87 7.87 7.87 7.87 ...
+    $ chas   : int  0 0 0 0 0 0 0 0 0 0 ...
+    $ nox    : num  0.538 0.469 0.469 0.458 0.458 0.458 0.524 0.524 0.524 0.524 ...
+    $ rm     : num  6.58 6.42 7.18 7 7.15 ...
+    $ age    : num  65.2 78.9 61.1 45.8 54.2 58.7 66.6 96.1 100 85.9 ...
+    $ dis    : num  4.09 4.97 4.97 6.06 6.06 ...
+    $ rad    : int  1 2 2 3 3 3 5 5 5 5 ...
+    $ tax    : num  296 242 242 222 222 222 311 311 311 311 ...
+    $ ptratio: num  15.3 17.8 17.8 18.7 18.7 18.7 15.2 15.2 15.2 15.2 ...
+    $ black  : num  397 397 393 395 397 ...
+    $ lstat  : num  4.98 9.14 4.03 2.94 5.33 ...
+    $ medv   : num  24 21.6 34.7 33.4 36.2 28.7 22.9 27.1 16.5 18.9 ...
+   #+end_example
    
 9) Display the first *three* rows of ~Boston~
    #+begin_src R :session *R* :results output :exports both
-     head(Boston,3)
+     head(Boston,n=3)
    #+end_src
+
+   #+RESULTS:
+   :      crim zn indus chas   nox    rm  age    dis rad tax ptratio  black lstat medv
+   : 1 0.00632 18  2.31    0 0.538 6.575 65.2 4.0900   1 296    15.3 396.90  4.98 24.0
+   : 2 0.02731  0  7.07    0 0.469 6.421 78.9 4.9671   2 242    17.8 396.90  9.14 21.6
+   : 3 0.02729  0  7.07    0 0.469 7.185 61.1 4.9671   2 242    17.8 392.83  4.03 34.7
     
 10) Check loaded object list with ~ls()~, then remove all loaded objects
     with ~rm(list=ls())~
@@ -1159,24 +1310,43 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
       ls()
     #+end_src
 
+    #+RESULTS:
+    : [1] "Boston"
+    : character(0)
+
 11) Add an R object with the command =x = 2= and then remove it with
     =rm(x)=. Check the list on either side of the command with =ls()=.
     #+begin_src R :session *R* :results output :exports both
-      x = 2
+      x = 2  # create an R object and add it to the session
       ls()
       rm(x)
       ls()
     #+end_src
 
+    #+RESULTS:
+    : [1] "x"
+    : character(0)
+
 11) List loaded packages. Then detach the ~MASS~ package, and list the
     loaded packages again.
     #+begin_src R :session *R* :results output :exports both
+      library(MASS)
       search()
-      detach("package:MASS")
+      message("Detached?")
+      detach("package:MASS")  # this is the element for MASS in search()
       search()
     #+end_src
 
-* Saving your workspace
+    #+RESULTS:
+    :  [1] ".GlobalEnv"        "package:MASS"      "ESSR"              "package:stats"    
+    :  [5] "package:graphics"  "package:grDevices" "package:utils"     "package:datasets" 
+    :  [9] "package:methods"   "Autoloads"         "package:base"
+    : Detached?
+    :  [1] ".GlobalEnv"        "ESSR"              "package:stats"     "package:graphics" 
+    :  [5] "package:grDevices" "package:utils"     "package:datasets"  "package:methods"  
+    :  [9] "Autoloads"         "package:base"
+
+* NEXT Saving your workspace
 
 - When you quit an R session with ~q()~ or ~quit()~, you're asked if you
   want to save the /workspace image/.

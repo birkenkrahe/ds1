@@ -876,24 +876,49 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 
 - [ ] Vectors in R
 
-* TODO Review: R options and package management
+* Review: R options and package management
 
 1. What's the policy regarding AI assistence in your projects?
+   #+begin_quote
+   You should say if you used it, how you used it, what your
+   experiences were, and you ought to reference it.
+   #+end_quote
 
-2. How can you see the global options?
+   Example for a complete software reference:
+   #+begin_src R :session *R* :results output :exports both :noweb yes
+     citation()
+   #+end_src
+
+2. How can you see the global options for R?
    #+begin_src R :session *R* :results output :exports both
      options() |> head(n=3)
    #+end_src
+
+   #+RESULTS:
+   : $add.smooth
+   : [1] TRUE
+   : 
+   : $bitmapType
+   : [1] "cairo"
+   : 
+   : $browser
+   : [1] "xdg-open"
 
 3. What data structure are the global options?
    #+begin_src R :session *R* :results output :exports both
      class(options())
    #+end_src
 
-4. What data type is an individual option?
+   #+RESULTS:
+   : [1] "list"
+
+4. What data type does the individual option =options()$prompt= have?
    #+begin_src R :session *R* :results output :exports both
      class(options()$prompt)
    #+end_src
+
+   #+RESULTS:
+   : [1] "character"
 
 5. How would you change the R shell prompt e.g. to ="R> "=, and how
    could you check it?
@@ -902,14 +927,24 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
      options()$prompt
    #+end_src
 
+   #+RESULTS:
+   : [1] "R> "
+
 6. How can you load and remove a package from an R session?
    #+begin_src R :session *R* :results output :exports both
-     library(MASS)
      any(grep("MASS",search()))  # "is there any 'MASS' in the search()
-                                 # vector?"
+
+     library(MASS)
+     any(grep("MASS",search()))
+     
      detach("package:MASS")
      any(grep("MASS",search()))
    #+end_src
+
+   #+RESULTS:
+   : [1] FALSE
+   : [1] TRUE
+   : [1] FALSE
 
 7. How can you see all datasets in the current R session?
    #+begin_src R :session *R* :results output :exports both
@@ -918,11 +953,16 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 
 8. How can you be sure these datasets have to be loaded?
    #+begin_src R :session *R* :results output :exports both
+     library(MASS)
      detach("package:MASS")
      any(grep("MASS",data()))  # any MASS datasets available?
      library(MASS)
      any(grep("MASS",data()))     
    #+end_src
+
+   #+RESULTS:
+   : [1] FALSE
+   : [1] TRUE
 
 9. What's the difference between =search()= and =searchpaths()=?
    #+begin_src R :session *R* :results output :exports both
@@ -930,9 +970,75 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
      searchpaths()  # returns file system locations of loaded packages
    #+end_src
 
+   #+RESULTS:
+   #+begin_example
+    [1] ".GlobalEnv"        "package:MASS"      "ESSR"              "package:stats"    
+    [5] "package:graphics"  "package:grDevices" "package:utils"     "package:datasets" 
+    [9] "package:methods"   "Autoloads"         "package:base"
+    [1] ".GlobalEnv"                                         
+    [2] "/home/marcus/R/x86_64-pc-linux-gnu-library/4.1/MASS"
+    [3] "ESSR"                                               
+    [4] "/usr/lib/R/library/stats"                           
+    [5] "/usr/lib/R/library/graphics"                        
+    [6] "/usr/lib/R/library/grDevices"                       
+    [7] "/usr/lib/R/library/utils"                           
+    [8] "/usr/lib/R/library/datasets"                        
+    [9] "/usr/lib/R/library/methods"                         
+   [10] "Autoloads"                                          
+   [11] "/usr/lib/R/library/base"
+   #+end_example
+
 10. What is the difference between =ls()= and =ls("package:base")=?
     #+begin_src R :session *R* :results output :exports both
       library(MASS)
+      s <- "hello"
       ls()  # lists all user-defined objects (functions, variables)
       ls("package:MASS")  # lists all functions and datasets in MASS only
     #+end_src
+
+    #+RESULTS:
+    #+begin_example
+    [1] "s"
+      [1] "abbey"             "accdeaths"         "addterm"           "Aids2"            
+      [5] "Animals"           "anorexia"          "area"              "as.fractions"     
+      [9] "bacteria"          "bandwidth.nrd"     "bcv"               "beav1"            
+     [13] "beav2"             "biopsy"            "birthwt"           "Boston"           
+     [17] "boxcox"            "cabbages"          "caith"             "Cars93"           
+     [21] "cats"              "cement"            "chem"              "con2tr"           
+     [25] "contr.sdif"        "coop"              "corresp"           "cov.mcd"          
+     [29] "cov.mve"           "cov.rob"           "cov.trob"          "cpus"             
+     [33] "crabs"             "Cushings"          "DDT"               "deaths"           
+     [37] "denumerate"        "dose.p"            "drivers"           "dropterm"         
+     [41] "eagles"            "enlist"            "epil"              "eqscplot"         
+     [45] "farms"             "fbeta"             "fgl"               "fitdistr"         
+     [49] "forbes"            "fractions"         "frequency.polygon" "GAGurine"         
+     [53] "galaxies"          "gamma.dispersion"  "gamma.shape"       "gehan"            
+     [57] "genotype"          "geyser"            "gilgais"           "ginv"             
+     [61] "glm.convert"       "glm.nb"            "glmmPQL"           "hills"            
+     [65] "hist.FD"           "hist.scott"        "housing"           "huber"            
+     [69] "hubers"            "immer"             "Insurance"         "is.fractions"     
+     [73] "isoMDS"            "kde2d"             "lda"               "ldahist"          
+     [77] "leuk"              "lm.gls"            "lm.ridge"          "lmsreg"           
+     [81] "lmwork"            "loglm"             "loglm1"            "logtrans"         
+     [85] "lqs"               "lqs.formula"       "ltsreg"            "mammals"          
+     [89] "mca"               "mcycle"            "Melanoma"          "menarche"         
+     [93] "michelson"         "minn38"            "motors"            "muscle"           
+     [97] "mvrnorm"           "nclass.freq"       "neg.bin"           "negative.binomial"
+    [101] "negexp.SSival"     "newcomb"           "nlschools"         "npk"              
+    [105] "npr1"              "Null"              "oats"              "OME"              
+    [109] "painters"          "parcoord"          "petrol"            "phones"           
+    [113] "Pima.te"           "Pima.tr"           "Pima.tr2"          "polr"             
+    [117] "psi.bisquare"      "psi.hampel"        "psi.huber"         "qda"              
+    [121] "quine"             "Rabbit"            "rational"          "renumerate"       
+    [125] "rlm"               "rms.curv"          "rnegbin"           "road"             
+    [129] "rotifer"           "Rubber"            "sammon"            "select"           
+    [133] "Shepard"           "ships"             "shoes"             "shrimp"           
+    [137] "shuttle"           "Sitka"             "Sitka89"           "Skye"             
+    [141] "snails"            "SP500"             "stdres"            "steam"            
+    [145] "stepAIC"           "stormer"           "studres"           "survey"           
+    [149] "synth.te"          "synth.tr"          "theta.md"          "theta.ml"         
+    [153] "theta.mm"          "topo"              "Traffic"           "truehist"         
+    [157] "ucv"               "UScereal"          "UScrime"           "VA"               
+    [161] "waders"            "whiteside"         "width.SJ"          "write.matrix"     
+    [165] "wtloss"
+    #+end_example
