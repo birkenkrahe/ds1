@@ -1412,9 +1412,9 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
      options()$repos
    #+end_src
 
-7) Install the ~remotes~ package from the new location.
+7) Install the =data.table= package from the new location.
    #+begin_example R
-     install.packages("remotes")
+     install.packages("data.table")
    #+end_example
    
 * The RStudio IDE
