@@ -1346,7 +1346,7 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
     :  [5] "package:grDevices" "package:utils"     "package:datasets"  "package:methods"  
     :  [9] "Autoloads"         "package:base"
 
-* NEXT Saving your workspace
+* Saving your workspace
 
 - When you quit an R session with ~q()~ or ~quit()~, you're asked if you
   want to save the /workspace image/.
