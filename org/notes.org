@@ -876,7 +876,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 
 - [ ] Vectors in R
 
-* Review: R options and package management
+** Review: R options and package management
 
 1. What's the policy regarding AI assistence in your projects?
    #+begin_quote
@@ -1042,3 +1042,5 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
     [161] "waders"            "whiteside"         "width.SJ"          "write.matrix"     
     [165] "wtloss"
     #+end_example
+
+

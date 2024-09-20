@@ -1367,10 +1367,10 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
   even if R is installed in a read-only portion of your computer. The
   OS will offer you to install packages in a user directory.
 
-- When downloading the package as part of the installation or updating
-  process, Windows forces you to pick a mirror. You can disable this
-  by creating your own ~~/.Rprofile~ file and specifying a download
-  mirror.
+- *Windoze*: When downloading the package as part of the installation or
+  updating process, Windows forces you to pick a mirror. You can
+  disable this by creating your own ~~/.Rprofile~ file and specifying a
+  download mirror.
   + Saved R commands: ~.Rhistory~
   + Saved R variables: ~.RData~
   + R profile settings: ~.Rprofile~
@@ -1387,17 +1387,23 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
      R.home(component="home")
    #+end_src
 
-2) Check if there's a system-wide ~.Rprofile~ configuration file:
+2) You can also use the OS shell to find this out:
+#+begin_src bash :results output :exports both
+  which R  # location of R executable
+  cat $(which R) | grep -m 1 HOME  # search for first occurrence of HOME
+#+end_src
+
+1) Check if there's a system-wide ~.Rprofile~ configuration file:
    #+begin_src R :session *R* :results output :exports both
-     system("cd /usr/lib/R; ls -la .Rprofile")  # must use R's Home directory
+     system("cd /usr/lib/R; ls -la .Rprofile")  # must use first
    #+end_src
 
-3) Find out which directory Emacs (and R) consider to be your ~$HOME~:
+2) Find out which directory Emacs (and R) consider to be your ~$HOME~:
    #+begin_src R :session *R* :results output :exports both
      system("echo $HOME") # $HOME is the the same as ~/
    #+end_src
 
-4) Create a file ~.Rprofile~ in your Emacs ~$HOME~ directory and put the
+3) Create a file ~.Rprofile~ in your Emacs ~$HOME~ directory and put the
    following lines into it [fn:4]:
    #+begin_example R
    options(repos=c("https://mirrors.nics.utk.edu/cran/"))
@@ -1405,14 +1411,14 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
    message("*** Loaded .Rprofile ***")
    #+end_example
 
-5) Open a new R shell and display the value of ~options()$repos~ that
+4) Open a new R shell and display the value of ~options()$repos~ that
    you just reset. Every time a new R shell is started, ~.Rprofile~ is
    read. Make sure that the ~message~ is displayed.
    #+begin_src R :session *R* :results output :exports both
      options()$repos
    #+end_src
 
-7) Install the =data.table= package from the new location.
+5) Install the =data.table= package from the new location.
    #+begin_example R
      install.packages("data.table")
    #+end_example
@@ -1428,6 +1434,18 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
 
 - You can [[https://www.rstudio.com/products/rstudio/download/][download RStudio from here]] - perhaps you learn to like
   it[fn:5]
+
+- Let's look at RStudio in the cloud: [[https://posit.co/products/cloud/cloud/][posit.co/products/cloud/cloud/]]
+  1) Sign up using your Lyon email account
+  2) Open RStudio demo (slow but then you'll see what it is about)
+  3) Run a code block in the notebook
+  4) On the R console, look for the loaded packages
+  5) Render the notebook as PDF
+
+- This is pretty much all that you have in Emacs as well - you can
+  rebuild this dashboard easily enough (and customize it more):
+  #+attr_html: :width 600px: 
+  [[../img/emacs_rstudio.png]]
 
 * Concept Summary
 
@@ -1480,13 +1498,14 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
 
 See also: [[https://youtu.be/ARJ8cAGm6JE][HAL 9000: "I'm sorry Dave, I'm afraid I can't do that."]]
 
-* What now? read!
+* What now? Read!
 
 #+NAME: fig:read
 #+ATTR_HTML: :width 400 px
 [[../img/3_read.jpg]]
 
 - Read frequently and widely
+
 - Go both deep and stay shallow: You've seen that I don't just cite
   peer-reviewed papers but blog posts, too. The truth is that I have
   personally learnt a lot more from them than from scientific
@@ -1502,11 +1521,21 @@ See also: [[https://youtu.be/ARJ8cAGm6JE][HAL 9000: "I'm sorry Dave, I'm afraid 
   reason. If you do this for any topic that is being discussed on a
   factual (rather than an overly political or emotional) basis,
   you'll learn more faster[fn:6].
-- For example: take a look at "[[https://rweekly.org/][R Weekly]]" for a weekly, curated
-  collection of articles from the R community. This will give you an
+
+- For example: take a look at "[[https://www.r-bloggers.com/][R-bloggers]]" or "[[https://rweekly.org/][R Weekly]]" for curated
+  collections of articles from the R community. This will give you an
   idea of the spread of information.
 
-* What now? play!
+* What now? Practice
+
+- Install the DataCamp mobile app and solve 5 simple problems per day
+  based on your lesson history.
+
+- Work through DataCamp using Emacs (or DataLab or whatever):
+  #+attr_html: :width 600px: 
+  [[../img/datacamp_practice.png]]
+
+* What now? Play!
 
 #+NAME: fig:play
 #+ATTR_HTML: :width 400 px
@@ -1514,18 +1543,20 @@ See also: [[https://youtu.be/ARJ8cAGm6JE][HAL 9000: "I'm sorry Dave, I'm afraid 
 
 [[https://drkeithmcnulty.com/2020/06/23/data-scientists-should-learn-through-play/][Read: Data Scientists Should Learn Through Play]]
 
+#+begin_notes
 To understand why you should play (see figure [[fig:play]]), check the
 article by an active blogger and professional in the R-blogosphere,
 Keith McNulty, who leads data science at the global strategy
 consulting firm McKinsey & Co. He argues that "learning through
-playing around" with the software is a good way to learn ([[mcnulty][McNulty
-2020]]) - I agree. Though I am often distracted by having to create
-teaching material for you, playing around on or off the command-line,
-looking at interesting data and combing through them using the
-analytical tools R offers, or checking other people's plots or
-inferences, is the most fun way of learning R. There's nothing wrong
-with reading or working through a course, watching teaching videos, of
-course, either.  #+end_notes
+playing around" with the software is a good way to learn
+([[mcnulty][McNulty 2020]]) - I agree. Though I am often distracted by
+having to create teaching material for you, playing around on or off
+the command-line, looking at interesting data and combing through them
+using the analytical tools R offers, or checking other people's plots
+or inferences, is the most fun way of learning R. There's nothing
+wrong with reading or working through a course, watching teaching
+videos, of course, either.
+#+end_notes
 
 * What's the next topic?
 
@@ -1552,7 +1583,7 @@ Arithmetic with R
 - <<matloff>> Norman Matloff (2019). TidyverseSceptic. Online:
   [[https://github.com/matloff/TidyverseSkeptic][github.com]].
 - <<mcnulty>> Keith McNulty (23 Jun 2020). Data Scientists Should
-  Learn Through Play. Online: [[https://drkeithmcnulty.com/2020/06/23/data-scientists-should-learn-through-play/][drkeithmcnulty.com]].
+  Learn Through Play. Online: [[https://towardsdatascience.com/data-scientists-should-learn-through-play-649412faaa12][towardsdatascience.com]].
 - <<muenchen>> Robert A. Muenchen (2017). Why R is Hard to
   Learn. Online: [[http://r4stats.com/articles/why-r-is-hard-to-learn/][r4stats.com]].
 - <<posey>> Brien Posey (5 Feb 2018). How To Navigate the File
@@ -1651,7 +1682,8 @@ documented and are accompanied by short and detailed descriptions, or
 even papers (so-called "vignettes"). An example is the ~Rcpp~ package
 that interfaces R and C++.
 
-[fn:4]You can also re-set this home directory - [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-to-set-a-new-emacs-home-directory][this FAQ explains how]].
+[fn:4]You can also re-set this home directory - useful in Windoze, if
+you're being redirected to some hidden `AppData`: [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-to-set-a-new-emacs-home-directory][FAQ explains how]].
 
 [fn:5]I don't like it because I think it's way too complicated but
 some developers swear by it. It contains a script editor, an R
