@@ -1387,21 +1387,35 @@ For example, if you have R version 4.0.4 (2021-02-15), then version
      R.home(component="home")
    #+end_src
 
+   #+RESULTS:
+   : [1] "/usr/lib/R"
+
 2) You can also use the OS shell to find this out:
 #+begin_src bash :results output :exports both
   which R  # location of R executable
   cat $(which R) | grep -m 1 HOME  # search for first occurrence of HOME
 #+end_src
 
+#+RESULTS:
+: /usr/bin/R
+: R_HOME_DIR=/usr/lib/R
+
 1) Check if there's a system-wide ~.Rprofile~ configuration file:
    #+begin_src R :session *R* :results output :exports both
      system("cd /usr/lib/R; ls -la .Rprofile")  # must use first
    #+end_src
 
+   #+RESULTS:
+   : ls: cannot access '.Rprofile': No such file or directory
+
 2) Find out which directory Emacs (and R) consider to be your ~$HOME~:
-   #+begin_src R :session *R* :results output :exports both
+
+      #+begin_src R :session *R* :results output :exports both
      system("echo $HOME") # $HOME is the the same as ~/
    #+end_src
+
+   #+RESULTS:
+   : /home/marcus
 
 3) Create a file ~.Rprofile~ in your Emacs ~$HOME~ directory and put the
    following lines into it [fn:4]:
@@ -1532,7 +1546,7 @@ See also: [[https://youtu.be/ARJ8cAGm6JE][HAL 9000: "I'm sorry Dave, I'm afraid 
   based on your lesson history.
 
 - Work through DataCamp using Emacs (or DataLab or whatever):
-  #+attr_html: :width 600px: 
+  #+attr_html: :width 700px: 
   [[../img/datacamp_practice.png]]
 
 * What now? Play!
