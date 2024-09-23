@@ -358,8 +358,8 @@ of 10.
 #+end_notes
 
 * E-xamples
-
-[[../img/4_penguins.gif]]
+#+attr_html: :width 600px: 
+[[../img/penguins2.jpg]]
 
 - 10,0000 = ~10 * 10 * 10 * 10 * 10~ = 1 * 10^5 = ~1e+05~
 
