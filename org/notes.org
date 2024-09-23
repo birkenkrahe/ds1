@@ -662,7 +662,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 - [X] Data science jobs
 - [X] Data science processes
 
-* Week 4 - Introduction to R (9/11)
+* Week 4 - Introduction to the R shell (9/11)
 #+attr_html: :width 700px:
 [[../img/Shell-Southbank-Plaza.jpg]]
 
@@ -854,7 +854,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 - You can determine R's startup behavior in ~~/.Rprofile~
 - ~~/.Rprofile~ is read every time a new R shell is started
 
-* Week 5 - Arithmetic with R (SpaceX)
+* Week 5 - R options and packages (SpaceX)
 #+attr_html: :width 700px: 
 [[../img/spacex-polaris-dawn-spacewalk.jpeg]]
 
@@ -870,7 +870,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
      
 - [X] R package commands & practice
 
-- [ ] Customizing at startup & practice
+- [X] Customizing at startup & practice
 
 - [ ] Arithmetic with R
 
@@ -1042,5 +1042,19 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
     [161] "waders"            "whiteside"         "width.SJ"          "write.matrix"     
     [165] "wtloss"
     #+end_example
+
+* Week 6 - Arithmetic in R 
+#+attr_html: :width 600px: 
+[[../img/Hollerith_Punched_Card.jpg]]
+
+/Image: Hollerith Tabulator punch card - patented on 9/23/1884/.
+
+Arithmetic in R:
+- [ ] Perform basic numerical operations
+- [ ] Translate complex mathematical formulas
+- [ ] Use logarithms and exponentials
+- [ ] Brush up on mathematical E-notation
+- [ ] Know R's special numbers
+- [ ] Understand logical values and operators
 
 

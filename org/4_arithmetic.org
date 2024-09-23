@@ -1,0 +1,545 @@
+#+TITLE: ARITHMETIC in R
+#+AUTHOR: Introduction to data science (DSC 105) Fall 2022
+#+startup: hideblocks indent overview inlineimages entitiespretty
+[[../img/4_math.jpg]]
+* What will you learn?
+#+attr_html: :width 500px
+#+caption: The Arithmetic 1492-94 Fresco Palazzi Pontifici, Vatican Borgia Apartment
+[[../img/4_aritmetica.jpg]]
+
+- Perform basic numerical operations
+- Translate complex mathematical formulas
+- Use logarithms and exponentials
+- Brush up on mathematical E-notation
+- Know R's special numbers
+- Understand logical values and operators
+
+#+begin_notes
+*Image:* The Arithmetic 1492-94 Fresco Palazzi Pontifici, Vatican
+Borgia Apartment (Wikipedia).
+
+*Sources:* Some material for this lesson comes from [[davies][Davies (2016)]] and
+[[matloff][Matloff (2020)]]. These and other sources have been important to me in
+preparing this course and getting into R int he first place. Check
+them out for a more systematic treatment of R. There is also a more
+philosophical, personal view on my use of sources [[https://github.com/birkenkrahe/ds101/wiki/Why-R,-my-path,-DataCamp][in the Wiki]] for the
+2020 version of this course.
+
+*What is this?* When we say "Arithmetic", we don't mean that we "study"
+numbers but that we use them to perform computations. After this
+section, you'll be able to perform any arithmetic operation using R.
+
+We will look at /operators/ first, then at simple but important
+functions that occur again and again, especially in /statistics/.
+
+*How can you learn better?* This presentation consists mostly of text
+and code chunks. Because this is dry stuff, I urge you (both if you
+hear this in class, and if you work through this on your own) to open
+an R session on the side and type along - this will build muscle
+memory and keep you entertained, too! Another trick, which you will
+find in [[matloff][Matloff's excellent beginner's tutorial]], is to make your own
+little exercises by varying the instructions. A third way is to go
+through the lecture and create your own Emacs Org-mode notebook with R
+code blocks.
+#+end_notes
+* Please Excuse My Dear Aunt Sally
+
+*Operator order:*
+
+1) *P* arentheses: ~()~
+2) *E* xponentiation: ~^~ or ~**~
+3) *M* ultiplication: ~*~
+4) *D* ivision: ~/~
+5) *A* ddition: ~+~
+6) *S* ubtraction: ~-~
+
+/Tip: You can check identity in R with the ~identical~ function./
+
+#+begin_notes
+In R, standard mathematical rules apply. The order of operators is as
+usual - left to right, parentheses, exponents, multiplication,
+division, addition, subtraction (PEMDAS = Please Excuse My Dear Aunt
+Sally) mnemonic).
+
+The operators ~^~ and ~**~ for exponentiation are identical, though ~^~ is
+more common. You can check that in the R console with the ~identical~
+function - the result should be ~TRUE~ (this is a truth or Boolean
+value - more on this below) - see figure:
+
+[[../img/4_identical.png]]
+
+#+end_notes
+
+* Practice: Formula Translator
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
+
+- For the practice exercises, create a new Org-mode file.
+
+- Make sure your file contains this in the top line:
+  #+begin_example
+  #+PROPERTY: header-args:R :session *R* :results output
+  #+end_example  
+
+- If you enter this line for the first time, run it with =C-c C-c=.
+
+** Formula translator I
+
+- What is the result of this expression?
+  #+attr_html: :width 400px:
+  [[../img/4_challenge1.png]]
+
+- Why?
+  #+begin_src R :session *R* :results output :exports both
+    2**3 * ((6/3 * 5)) + (24 - 9)
+  #+end_src
+
+- Why? Remember the PEMDAS order:
+  #+begin_example
+  2**3 = 2^3 = 8
+  6/3 = 2
+  2 * 5 * 8 = 80
+  24 + 80 = 104
+  104 - 9 = 95
+  #+end_example
+
+- Instead of ~^~ you can use ~**~
+
+- R code:
+  #+name: formula
+  #+begin_src R :session *R* :results output :exports both
+    24 + 6/3 * 5 * 2**3 - 9  # as written
+    2**3 * ((6/3 * 5)) + (24 - 9)  # as computed
+  #+end_src
+
+  #+RESULTS: formula
+  : [1] 95
+  : [1] 95
+  
+** Formula translator II
+
+[[../img/4_challenge2.png]]
+
+- Compute the expressions (2)-(5)
+
+- You need parentheses in the exponent
+
+- Note: ~-2~ is interpreted as ~-1 * 2~
+
+- Use your Org-mode file so that you can fix errors more easily!
+
+** Solution II
+
+[[../img/4_fig_formula.png]]
+
+- You need parentheses in the exponent
+- ~-2~ is interpreted as ~-1 * 2~
+
+#+begin_notes
+When you use R, you'll often have to translate a formula into
+code. Consider the formulas above, hich seem pretty complicated: the
+only trick here is that you often need to use parentheses, e.g. around
+calculations in the exponent, or when calculating with negative
+numbers in eq. (4), because the number ~-2~ e.g. is interpreted by R as
+the operation ~-1 * 2~.
+#+end_notes
+
+** TODO Formula Translator V
+
+- What does ~(-1)^(1/2)~ return?
+- Use a function to compute this last command
+- Can you explain the result?
+
+- Solution in R:
+  #+begin_src R :results output
+  (-1)^(1/2)
+  sqrt(-1)
+#+end_src
+
+#+RESULTS:
+: [1] NaN
+: [1] NaN
+
+  #+begin_notes
+  Complex numbers? The "~NaN~" result, which is also "[[https://www.menshealth.com/entertainment/a31782879/square-root-negative-one-westworld/][The Math Problem
+  That Broke the Westworld Simulation]]" (the 2019 AI TV
+  mini-series). Basically, R will hand you a "Not A Number" whenever
+  you try to, e.g. take the square root of a negative number (try
+  ~sqrt(-1)~ or ~(-1)^(1/2))~. We won't need complex numbers in this
+  course, but (of course) there are functions to handle them ([[https://stat.ethz.ch/R-manual/R-devel/library/base/html/complex.html][see here]]
+  or run ~?complex~).
+  #+end_notes
+  
+* Mathematical functions
+[[../img/4_maths1.gif]]
+
+- ~?sqrt~ ( \radic )
+
+- ~?log10~ ( log_10)
+
+- ~?exp~ (e)
+
+- ~?pi~ (\pi)
+
+*Do you know how to compute these without library functions?*[fn:1]
+
+*Do you remember how these functions are defined?*[fn:2]
+
+*Are logarithm, exponential function and \pi connected somehow?*[fn:3]
+
+* Logarithmic transformation
+#+ATTR_HTML: :width 800px
+[[../img/4_exp_log_plot.png]]
+#+SOURCE: r-graph-gallery.com, Book of R Chapter 2
+
+Some examples:
+#+begin_example R
+log10(1 * 10^7) = 7
+
+log10(100) = 2 , log10(1000) = 3 , log10(1e3) = log10(1 * 10^3) = 3
+
+log(1) = 0, log10(1) = 0
+
+log(x=100,b=100) = 1 , log(4.583,4.583) = 1
+
+log(x=100,b=10) = 2 , log(b=10,x=100) = 2
+#+end_example
+
+#+begin_notes
+It is often necessary to transform numerical data, e.g. transforming
+data using the logarithm leading e.g. from the left to the right graph
+in the figure. As you can see, this transformation leads to a
+*compression* of the ~y~-values, so that more of these values can be
+shown. It's a semi-logarithmic transformation (only one axis).
+
+The /logarithm/ of a number ~x~ is always computed using a /base/ ~b~. In
+the diagram, ~b=10~, the numbers on the ~x~ axis were transformed
+using the ~log()~ function, the logarithm with base ~10~. The logarithm
+of ~x=100~ to the base ~10~ is ~2~, because 10^2 = 100. In R,
+~log(x=100,b=10) = 2~ (try this yourself!).
+#+end_notes
+
+Let's make such a graph - it's not hard in R:
+#+begin_src R :file exp.png :session *R* :results file graphics output :exports both
+  x <- abs(rnorm(1000))
+  y <- exp(x)
+  plot(x,y)
+  title("Exponential function")
+#+end_src
+
+#+RESULTS:
+[[file:exp.png]]
+
+And now the logarithmic transformation:
+#+begin_src R :file log.png :session *R* :results file graphics output :exports both
+  plot(x,log10(y))
+  title("Logarithmic transformation")
+#+end_src
+
+#+RESULTS:
+[[file:log.png]]
+
+But to see what's going on you need to see them next to one another:
+#+begin_src R :file explog.png :session *R* :results file graphics output :exports both
+  par(mfrow=c(1,2),pty='s')
+  plot(x,y,main="Exponential function")
+  plot(x,log10(y),main="Log transformation")
+#+end_src
+
+#+RESULTS:
+[[file:explog.png]]
+
+Notice that the logarithm of x values between 0 and 1 is negative, and
+that I take the absolute value because the logarithm of negative
+values is not defined and leads to =NaN=.
+#+begin_src R :session *R* :results output :exports both
+  r <- head(rnorm(1000))
+  r
+  log(r)
+#+end_src
+
+#+RESULTS:
+: [1] -1.21069522  0.06978235 -0.00677834  0.11242379 -0.27988289  0.02153828
+: [1]       NaN -2.662374       NaN -2.185480       NaN -3.837923
+: Warning message:
+: In log(r) : NaNs produced
+
+* Logarithm rules
+
+[[../img/4_rules.gif]]
+
+- Argument ~x~ and base ~b~ must be positive
+- For all x: log_x(x) = ~log(x, b=x) = 1~ since only x^1 = x
+- For all b: log_b(1) = ~log(x=1, b) = 0~ since b^0 = 1
+
+* Exponential function
+#+attr_html: :width 500px
+[[../img/4_euler.jpeg]]
+
+- In R, ~log(x)~ implies ~b = e \approx 2.7182~
+
+- In mathematics, the /Euler constant/ ~e~ is as magical as the other
+  mysterious constants \pi, 0, 1 and i (the imaginary unit). There are
+  [[https://en.wikipedia.org/wiki/E_(mathematical_constant)][different ways]] to arrive at its value of approximately
+  2.718282. 
+
+- The Wikipedia entry on ~e~ contains some fun stuff for nerds
+  ([[https://en.wikipedia.org/wiki/E_(mathematical_constant)#In_computer_culture][here]]). Apparently, /Steve Wozniak/ computed ~e~ to 116,000 digits on
+  an "ancient" Apple II computer in /1981/!
+
+- For now, we only care about the fact that $e$ is the base of the
+  natural logarithm, denoted as ~ln~ or log_e(x).
+
+* Practice: logarithms and constants
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
+
+
+e^{ln^{x}} = ln(e^x) or exp(log(x)) = log(exp(x)) = x
+
+1) Compute the log of 10,000,000 to base 10 in R
+2) Enter ~log10(10,000,000)~ in R. What's going on?
+3) Find the logarithm to base 10 for 10,000,010.
+4) Why is the result the same as before?
+5) Tip: enter ~log10(10000100)~
+
+- Solution:
+  #+begin_src R :session *R* :results output :exports both
+    log10(10000000) # 7 because 10,000,000 = 10^7
+    log(10000000,10) # same thing
+
+    log10(10000010) # still 7
+    log10(10000100) # 7.000004
+
+    options(digits=10)
+    log10(10000010) # 7.000000434 
+  #+end_src
+
+  #+RESULTS:
+  : [1] 7
+  : [1] 7
+  : [1] 7
+  : [1] 7.000004
+  : [1] 7.000000434
+
+#+begin_notes
+See figure below:
+1) The error in the first line results from the fact that in R
+   functions, the comma separates arguments, so it looks to R as if
+   3 arguments were provided where only one is required, because,
+   unlike the function ~log()~, ~log10()~ already has a fixed base
+   ~b=10~. This is fixed in the next line.
+2) The trouble with the seemingly identical results of
+   ~log10(10000010)~ and ~log10(10000000)~ lies in the suppression of
+   digits. This can be fixed with the ~options()~ utility function,
+   which we met in an earlier lecture. After setting
+   ~options(digits=10)~, the missing numbers appear.
+3) Typing ~log10(10000100)~ would have revealed the problem, because
+   this result can be shown with the default number of digits (~7~).
+
+   [[../img/4_logerror.png]]
+
+#+end_notes
+
+* TODO E-notation
+#+NAME: fig:powers
+#+ATTR_HTML: :height 400px
+[[../img/4_powers-ten.png]]
+
+#+begin_notes
+You already know that the number of digits that is displayed by R can
+be changed using the ~options()~ utility function. The default number of
+digits displayed is 7.
+
+In order to display values with many more digits than that - either
+very large, or very small numbers, we use the scientific or
+e-notation. In this notation, any number is expressed as a multiple
+of 10.
+#+end_notes
+
+* E-xamples
+
+[[../img/4_penguins.gif]]
+
+- 10,0000 = ~10 * 10 * 10 * 10 * 10~ = 1 * 10^5 = ~1e+05~
+
+- ~7.45678389e12~ = 7.45678389 * 10^12 = 745.678389 * 10^10
+
+- ~exp(1)~ = e = ~271828182845e-11~ = 271828182845\times10^{-11}
+
+* Practice: e-notation
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
+
+#+begin_notes
+To get from the e-notation with exponent y or -y to the complete
+number of digits, simply move the decimal point by y places to the
+right or to the left, resp.
+
+No information is lost even if R hides digits; e-notation is purely
+to improve readability. Extra bits are stored by R
+
+~Inf~, ~-Inf~ and ~NaN~ are special numbers.
+#+end_notes
+
+* Math help in R
+
+[[../img/4_help.gif]]
+
+- ~?Arithmetic~
+- ~?Math~
+- ~?Comparison~ etc.
+
+* Special numbers
+
+#+attr_html: :width 400px
+[[../img/4_special.jpg]]
+
+- ~Inf~ for positive infinity (\infty)
+- ~-Inf~ for negative infinity (-\infty)
+- ~NaN~ for "not-a-number" (not displayable)
+- ~NA~ for "not available" (missing value)
+
+#+begin_notes
+1) ~NA~ values are especially important when we clean data and must
+   remove missing values. There are Boolean (logical) functions to
+   test for special values.
+2) Missing values can be created easily by doing "forbidden" stuff. An
+   example is trying to compute the square root of a negative number,
+   e.g. ~(-2)^(1/2)~. The result is a complex number (in this case the
+   solution to the quadratic equation $x²+1=0$, called the imaginary
+   number $i$). You can also use the function ~is.na~ to test for
+   missing values: compute ~is.nan(sqrt(-1))~ for example.
+#+end_notes
+
+* Practice: special numbers
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
+
+* Special functions
+
+#+attr_html: :width 600px
+[[../img/4_penguins.gif]]
+
+| ~is.finite(Inf)~ | ~is.infinite(Inf)~ |
+| ~is.finite(NA)~  | ~is.na(NA)~        |
+| ~is.nan(NaN)~    | ~is.nan(NA)~       |
+
+#+begin_notes
+
+[[../img/4_is_finite.png]]
+
+#+end_notes
+
+* Practice: special functions
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
+* Logical values and operators
+#+attr_html: :width 300px
+#+caption: George Boole
+[[../img/4_boole.jpg]]
+
+#+begin_notes
+~TRUE~ and ~FALSE~ are reserved in R for logical values, and the variables
+~T~ and ~F~ are already predefined. This can cause problems, because these
+variable names are not reserved, i.e. you can redefine them. So better
+stay away from saving time by using the short versions of these
+values.
+#+end_notes
+
+* Practice: logical values
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
+
+* Logical operators
+
+There are three logical operators in R:
+
+~!~ for "/not/":  ~1 != 1~            
+
+~&~ for "/and/":  ~(1==1) & (1==2)~   
+
+~|~ for  "/or/": ~(1==2) ~| (1!=1)~ 
+
+#+begin_notes
+
+[[../img/4_logops.png]]
+
+In the last command, we generated a ~FALSE~ value by comparing two
+~FALSE~ values, which is the only way to make an ~|~ statement ~FALSE~.
+
+#+end_notes
+
+* Practice: logical operators
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
+
+* Concept summary
+#+attr_html: :width 400px
+[[../img/4_summary.jpg]]
+
+- In R mathematical expressions are evaluated according to the
+  /PEMDAS/ rule.
+
+- The natural logarithm ln(x) is the inverse of the exponential
+  function e^x.
+
+- In the scientific or e-notation, numbers are expressed as positive
+  or negative multiples of 10.
+
+- Each positive or negative multiple shifts the digital point to the
+  right or left, respectively.
+
+- Infinity ~Inf~, not-a-number ~NaN~, and not available numbers ~NA~
+  are /special values/ in R.
+
+* Code summary
+
+| CODE           | DESCRIPTION                           |
+|----------------+---------------------------------------|
+| ~log(x=,b=)~     | logarithm of ~x~, base ~b~                |
+| ~exp(x)~         | $e^x$, exp[onential] of $x$           |
+| ~is.finite(x)~   | tests for finiteness of ~x~             |
+| ~is.infinite(x)~ | tests for infiniteness of ~x~           |
+| ~is.nan(x)~      | checks if ~x~ is not-a-number           |
+| ~is.na(x)~       | checks if ~x~ is not available          |
+| ~all.equal(x,y)~ | tests near equality                   |
+| ~identical(x,y)~ | tests exact equality                  |
+| ~1e2~, ~1e-2~      | $10^{2}=100$, $10^{-2}=\frac{1}{100}$ |
+
+* References
+
+- <<cotton>> Richard Cotton (2013). [[http://duhi23.github.io/Analisis-de-datos/Cotton.pdf][Learning R.]] O'Reilly Media.
+
+- <<davies>> Tilman M. Davies (2016). [[https://nostarch.com/bookofr][The Book of R. (No Starch
+  Press).]]
+
+- <<irizarry>> Rafael A. Irizarry (2020). [[https://rafalab.github.io/dsbook/][Introduction to Data Science]]
+  (also: CRC Press, 2019).
+
+- <<matloff>> Norman Matloff (2020). [[https://github.com/matloff/fasteR][fasteR: Fast Lane to Learning R!]].
+  <<pemdas>>
+
+* Footnotes
+
+[fn:1]I've recently been reminded [[https://bigthink.com/13-8/math-thinking/][through this article]] how important
+it may be to be able to do computations without the help of
+machines. Here are [[https://gauravvjn.quora.com/4-ways-to-calculate-Square-Root-without-using-inbuilt-functions-in-C-language-Interview-Puzzle][4 ways]] to compute ~sqrt~ in C (though not very
+fast). In general: 1) using logarithms and exponentials
+(sqrt(x)=e^{0.5 \times ln(x)}), 2) using successive approximate
+numerical methods like [[https://mathworld.wolfram.com/NewtonsIteration.html][Newton's iteration]], 3) using modified long
+division ([[https://www.wikihow.com/Calculate-a-Square-Root-by-Hand#Finding_Square_Roots_Manually_sub][prime factorization]]), 4) [[https://www.mathworks.com/help/fixedpoint/ug/implement-fixed-point-square-root-using-lookup-table.html][looking it up in a table]] (source:
+[[https://www.quora.com/How-do-computers-calculate-square-roots][quora.com]])
+
+[fn:2] The square root of x is the number that returns x when the
+square root is squared: For example, sqrt(4) = 2^2 = 4. The logarithm
+of x to the base b is the power of b that returns x: log_10(100) =
+log_10(10^2) = 2, and log_2(4) = log_2(2^2) = 2. The exponential (power)
+function is the inverse of the logarithm: log_10(10^1) = 1 (b=10),
+log(e)=log_e(e)=log_e(e^1)=1 (b=e), and log_2(2^1)=1 (b=2).
+
+[fn:3]Logarithm and exponential are the inverse of one another, and
+the exponential function e and \pi are connected via this beautiful,
+mysterious formula by Euler: e^{i\pi} + 1 = 0 or more general e^ix =
+cos(x) + sin(x), where i is the imaginary unit, i^2 = -1. Used in
+physics and engineering for example to analyse oscillatory systems.
