@@ -144,7 +144,7 @@ numbers in eq. (4), because the number ~-2~ e.g. is interpreted by R as
 the operation ~-1 * 2~.
 #+end_notes
 
-** TODO Formula Translator V
+** Formula Translator V
 
 - What does ~(-1)^(1/2)~ return?
 - Use a function to compute this last command
@@ -160,7 +160,7 @@ the operation ~-1 * 2~.
 : [1] NaN
 : [1] NaN
 
-  #+begin_notes
+#+begin_notes
   Complex numbers? The "~NaN~" result, which is also "[[https://www.menshealth.com/entertainment/a31782879/square-root-negative-one-westworld/][The Math Problem
   That Broke the Westworld Simulation]]" (the 2019 AI TV
   mini-series). Basically, R will hand you a "Not A Number" whenever
@@ -188,13 +188,13 @@ the operation ~-1 * 2~.
 *Are logarithm, exponential function and \pi connected somehow?*[fn:3]
 
 * Logarithmic transformation
-#+ATTR_HTML: :width 800px
+#+ATTR_HTML: :width 500px
 [[../img/4_exp_log_plot.png]]
 #+SOURCE: r-graph-gallery.com, Book of R Chapter 2
 
 Some examples:
 #+begin_example R
-log10(1 * 10^7) = 7
+log10(1 * 10^7) = 7        log10(x) = log(x, b=10) = log(x,10)
 
 log10(100) = 2 , log10(1000) = 3 , log10(1e3) = log10(1 * 10^3) = 3
 
@@ -222,7 +222,7 @@ of ~x=100~ to the base ~10~ is ~2~, because 10^2 = 100. In R,
 Let's make such a graph - it's not hard in R:
 #+begin_src R :file exp.png :session *R* :results file graphics output :exports both
   x <- abs(rnorm(1000))
-  y <- exp(x)
+  y <- exp(x) # f(x)
   plot(x,y)
   title("Exponential function")
 #+end_src
@@ -253,16 +253,14 @@ Notice that the logarithm of x values between 0 and 1 is negative, and
 that I take the absolute value because the logarithm of negative
 values is not defined and leads to =NaN=.
 #+begin_src R :session *R* :results output :exports both
-  r <- head(rnorm(1000))
+  r <- head(abs(rnorm(1000)))
   r
   log(r)
 #+end_src
 
 #+RESULTS:
-: [1] -1.21069522  0.06978235 -0.00677834  0.11242379 -0.27988289  0.02153828
-: [1]       NaN -2.662374       NaN -2.185480       NaN -3.837923
-: Warning message:
-: In log(r) : NaNs produced
+: [1] 0.49724434 1.40578599 0.27832216 0.28569854 0.09999153 0.28914166
+: [1] -0.6986738  0.3405966 -1.2789760 -1.2528181 -2.3026698 -1.2408386
 
 * Logarithm rules
 
@@ -309,17 +307,17 @@ e^{ln^{x}} = ln(e^x) or exp(log(x)) = log(exp(x)) = x
     log(10000000,10) # same thing
 
     log10(10000010) # still 7
-    log10(10000100) # 7.000004
+    log10(10000100) # 7.000004  (six digits is default)
 
-    options(digits=10)
+    options(digits=10)  # change digit formatting default
     log10(10000010) # 7.000000434 
   #+end_src
 
   #+RESULTS:
   : [1] 7
   : [1] 7
-  : [1] 7
-  : [1] 7.000004
+  : [1] 7.000000434
+  : [1] 7.000004343
   : [1] 7.000000434
 
 #+begin_notes
@@ -532,11 +530,12 @@ division ([[https://www.wikihow.com/Calculate-a-Square-Root-by-Hand#Finding_Squa
 [[https://www.quora.com/How-do-computers-calculate-square-roots][quora.com]])
 
 [fn:2] The square root of x is the number that returns x when the
-square root is squared: For example, sqrt(4) = 2^2 = 4. The logarithm
-of x to the base b is the power of b that returns x: log_10(100) =
-log_10(10^2) = 2, and log_2(4) = log_2(2^2) = 2. The exponential (power)
-function is the inverse of the logarithm: log_10(10^1) = 1 (b=10),
-log(e)=log_e(e)=log_e(e^1)=1 (b=e), and log_2(2^1)=1 (b=2).
+square root is squared: For example, sqrt(4) = sqrt(2^2) = 2. The
+logarithm of x to the base b is the power of b that returns x:
+log_10(100) = log_10(10^2) = 2, and log_2(4) = log_2(2^2) = 2. The
+exponential (power) function is the inverse of the logarithm:
+log_10(10^1) = 1 (b=10), log(e)=log_e(e)=log_e(e^1)=1 (b=e), and log_2(2^1)=1
+(b=2).
 
 [fn:3]Logarithm and exponential are the inverse of one another, and
 the exponential function e and \pi are connected via this beautiful,
