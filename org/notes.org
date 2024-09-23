@@ -1043,7 +1043,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
     [165] "wtloss"
     #+end_example
 
-* Week 6 - Arithmetic in R 
+* Week 6 - Arithmetic in R and special numbers
 #+attr_html: :width 600px: 
 [[../img/Hollerith_Punched_Card.jpg]]
 
