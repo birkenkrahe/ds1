@@ -541,6 +541,37 @@ it with ~C-c C-c~, think about the likely output!
 9) ~NaN~
 10) ~NaN + NaN~
 
+#+begin_src R :session *R* :results output :exports both :noweb yes
+  Inf + 1
+  Inf - 1
+  Inf - Inf
+  Inf / 0
+  Inf / Inf
+  1/0
+  NA
+  NA + NA
+  NaN
+  NaN + NaN
+  NaN + NA
+  1 + NA
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[1] Inf
+[1] Inf
+[1] NaN
+[1] Inf
+[1] NaN
+[1] Inf
+[1] NA
+[1] NA
+[1] NaN
+[1] NaN
+[1] NaN
+[1] NA
+#+end_example
+
 Solution:
 #+begin_src R :session *R* :results output :exports both
 
