@@ -1062,10 +1062,12 @@ Arithmetic in R:
 1. What's the result of =(-1)^(1/2) = sqrt(-1)=
    #+begin_src R :session *R* :results output :exports both
      (-1)^(1/2)
+     class(NaN)
    #+end_src
 
    #+RESULTS:
    : [1] NaN
+   : [1] "numeric"
 
 2. Which R package must be loaded to use =sqrt= and =log=?
    #+begin_quote
@@ -1073,7 +1075,7 @@ Arithmetic in R:
    #+end_quote
    #+begin_src R :session *R* :results output :exports both
      sqrt(4)
-     log10(100)
+     log(x=100,b=10)
    #+end_src
 
    #+RESULTS:
@@ -1084,6 +1086,10 @@ Arithmetic in R:
    #+begin_src R :session *R* :results output :exports both
      2 + 3 * 4  
    #+end_src
+
+   #+RESULTS:
+   : [1] 14
+
    #+begin_quote
    It shows that multiplication has a higher precedence than addition.
    #+end_quote
@@ -1096,6 +1102,12 @@ Arithmetic in R:
      identical(log10(10000000),
                log10(10000010))
    #+end_src
+
+   #+RESULTS:
+   : [1] 7
+   : [1] 7
+   : [1] FALSE
+
    Solution:
    #+begin_quote
    The default value for =options()$digit= is 6, and it needs to be
@@ -1111,7 +1123,7 @@ Arithmetic in R:
 
    #+RESULTS:
    : [1] 7
-   : [1] 7.000000434
+   : [1] 7
    : [1] 7
    : [1] 7.0000004
    
@@ -1121,7 +1133,10 @@ Arithmetic in R:
                log10(10000010))
    #+end_src
 
-5. You transform a plot semi-logarithmically, using log10 on the
+   #+RESULTS:
+   : [1] "Mean relative difference: 6.2042038e-08"
+
+5. You transform a 2D plot semi-logarithmically, using log10 on the
    y-axis values. What happens when y = 0, y = 1e-7, or y = 1?
    #+begin_src R :session *R* :results output :exports both
      log10(0) 
