@@ -1050,11 +1050,102 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 /Image: Hollerith Tabulator punch card - patented on 9/23/1884/.
 
 Arithmetic in R:
-- [ ] Perform basic numerical operations
-- [ ] Translate complex mathematical formulas
-- [ ] Use logarithms and exponentials
+- [X] Perform basic numerical operations
+- [X] Translate complex mathematical formulas
+- [X] Use logarithms and exponentials
 - [ ] Brush up on mathematical E-notation
 - [ ] Know R's special numbers
 - [ ] Understand logical values and operators
 
+* Review: Basic arithmetic, logarithms
 
+1. What's the result of =(-1)^(1/2) = sqrt(-1)=
+   #+begin_src R :session *R* :results output :exports both
+     (-1)^(1/2)
+   #+end_src
+
+   #+RESULTS:
+   : [1] NaN
+
+2. Which R package must be loaded to use =sqrt= and =log=?
+   #+begin_quote
+   None. This is not Python.
+   #+end_quote
+   #+begin_src R :session *R* :results output :exports both
+     sqrt(4)
+     log10(100)
+   #+end_src
+
+   #+RESULTS:
+   : [1] 2
+   : [1] 2
+
+3. What does the following code demonstrate?
+   #+begin_src R :session *R* :results output :exports both
+     2 + 3 * 4  
+   #+end_src
+   #+begin_quote
+   It shows that multiplication has a higher precedence than addition.
+   #+end_quote
+
+4. The =identical= function checks for identity of its two
+   arguments. What about the following code?
+   #+begin_src R :session *R* :results output :exports both
+     log10(10000000)
+     log10(10000010)
+     identical(log10(10000000),
+               log10(10000010))
+   #+end_src
+   Solution:
+   #+begin_quote
+   The default value for =options()$digit= is 6, and it needs to be
+   increased to show all digits of the result.
+   #+end_quote
+   #+begin_src R :session *R* :results output :exports both
+     log10(10000000)
+     log10(10000010)
+     options(digits=8)
+     log10(10000000)
+     log10(10000010)
+   #+end_src
+
+   #+RESULTS:
+   : [1] 7
+   : [1] 7.000000434
+   : [1] 7
+   : [1] 7.0000004
+   
+   Another way:
+   #+begin_src R :session *R* :results output :exports both
+     all.equal(log10(10000000),
+               log10(10000010))
+   #+end_src
+
+5. You transform a plot semi-logarithmically, using log10 on the
+   y-axis values. What happens when y = 0, y = 1e-7, or y = 1?
+   #+begin_src R :session *R* :results output :exports both
+     log10(0) 
+     log10(0.0000001)
+     log10(1)
+   #+end_src
+
+   #+RESULTS:
+   : [1] -Inf
+   : [1] -7
+   : [1] 0
+
+6. What's the difference between =log10(10^3)= and =log(exp(3))=?
+   #+begin_src R :session *R* :results output :exports both
+     x <- log10(10^3)
+     y <- log(exp(3))
+     x
+     y
+     identical(x,y)
+     all.equal(x,y)
+   #+end_src
+
+   #+RESULTS:
+   : [1] 3
+   : [1] 3
+   : [1] TRUE
+   : [1] TRUE
