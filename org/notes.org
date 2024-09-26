@@ -1165,6 +1165,16 @@ Arithmetic in R:
    : [1] TRUE
    : [1] TRUE
 
-* TODO Euler's number is special
 
+* TODO Review: 
+
+* TODO Euler's number is special
+#+attr_html: :width 400px: 
+[[../img/euler.png]]
+
+Re: Christopher's question about the repeated pattern in e:
+- e like \pi is irrational - cannot be represented by a fraction.
+- Irrational numbers are mysterious: between each two distinct
+  rational numbers there are infinitely many irrational numbers.
+- Put differently: $\mathbb{R} \backslash \mathbb{Q}$ is /dense/.
 
