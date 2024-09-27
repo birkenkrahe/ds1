@@ -1,0 +1,75 @@
+* 1st Sprint Review
+Names: Chris Burris and Isaac Rice, pledged
+Class: Intro to R and Data Visualization
+Date: 13 Sep 2024
+
+** Problem
+We are trying to find a correlation between players' ages and their
+points in fantasy football
+** Reason
+According to statista.com, 29.2 million people played fantasy football
+in 2023.
+** Constraints
+There are certainly players that perform at an elite level for far
+longer than expected(e.g. Tom Brady). It will be difficult to account
+for their exceptionally consistent production in our model.
+** Goals
+- What age groups produce the largest number of points on average
+- What is the impact of age on players versus years they are pro.
+- What positions' scores are more affected by age
+- On average, at what age does production "tick up," and when does it
+  begin to deteriorate.
+** Metrics
+A success will result in high levels of correlation between players'
+ages and their average points scored per game. A failure would mean no
+conclusions could be drawn as to the relationship between age and
+production.
+** References
+- "Search StatMuse, Save Time." /StatMuse/, www.statmuse.com/. Accessed
+  13 Sep. 2024
+- "The Statistics Portal." /Statista/, www.statista.com/. Accessed 13
+  Sep. 2024
+
+* Feedback
+
+** Org stuff
+
+You could have made this more easily readable by adding this:
+#+STARTUP: overview indent
+
+I just did it! Also, use meta data =#+TITLE:=, =#+AUTHOR:=, and
+=#+SUBTITLE:= at the top (which will automatically be added to any
+output from the file.
+
+You can and should use inline links, like [[https://statista.com][statista.com]]. That way you
+can direct readers directly to the source (web advantage!). 
+
+** A for effort? Really?
+
+You get an 'A' for effort this first time but I hope you'll put a
+little more sweat into future submissions given that you had a lot of
+time to come up with this - and that you've got some skills already.
+
+** What I like
+
+Sounds interesting - given the popularity (?) of "Fantasy Football",
+you may not be the first to try and find these things out. A thorough
+literature search is key for that. Alternatively, you can do it from
+scratch and then check later if you were the first, but your next
+deliverable (2nd sprint review) is a literature review anyway.
+
+The questions seem all interesting, doable, and specific enough
+provided you can get hold of the data.
+
+** Improvements
+
+I don't know what "fantasy football" is. I have heard the name of Tom
+Brady but I thought he was a real person. You should not assume too
+much from your customer (me) especially in terms of culture/sports.
+
+You mention a model but that's not very specific. You identify
+"success" and "failure" very narrowly in terms of correlation
+yes/no/unknown. As for the project success, I'd rather see it measured
+in terms of what you learn from it.
+
+Hope this helps!
