@@ -1,3 +1,15 @@
+#+begin_notes MB
+
+You could have made this more easily readable by adding this:
+=#+STARTUP: overview indent=
+
+Also, use meta data =#+TITLE:=, =#+AUTHOR:=, and =#+SUBTITLE:= at the top
+(which will automatically be added to any output from the file.
+
+You can and should use inline links, like [[https://statista.com][statista.com]]. That way you
+can direct readers directly to the source (web advantage!). 
+#+end_notes
+
 * 1st Sprint Review
 Names: Chris Burris and Isaac Rice, pledged
 Class: Intro to R and Data Visualization
@@ -30,19 +42,7 @@ production.
 - "The Statistics Portal." /Statista/, www.statista.com/. Accessed 13
   Sep. 2024
 
-* Feedback
-
-** Org stuff
-
-You could have made this more easily readable by adding this:
-#+STARTUP: overview indent
-
-I just did it! Also, use meta data =#+TITLE:=, =#+AUTHOR:=, and
-=#+SUBTITLE:= at the top (which will automatically be added to any
-output from the file.
-
-You can and should use inline links, like [[https://statista.com][statista.com]]. That way you
-can direct readers directly to the source (web advantage!). 
+* Feedback (MB)
 
 ** A for effort? Really?
 

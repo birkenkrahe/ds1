@@ -1,8 +1,15 @@
 
-I add feedback and suggestions for fixes in =comment= blocks. Please
+#+begin_notes
+I add feedback and suggestions for fixes in =notes= blocks. Please
 address all suggestions as soon as possible but no later than the next
 sprint review (Oct 11), that is for your next deliverable.
 
+Otherwise - well done!
+#+end_notes
+
+Proposal
+
+#+begin_notes
 Your proposal is missing the proper formatting for an Org-mode
 file. Use the meta data header of any of my lecture files for title,
 author, subtitle and status meta data.
@@ -10,41 +17,7 @@ author, subtitle and status meta data.
 Use M-q to auto-indent long lines of text, and `-` for bullet
 points. You seem to have copied this from WORD or something. Use `#`
 for headlines, and C-c C-l to hide links behind the text.
-
-Since I don't want to do your job for you, I'm going to put all my
-comments in this top blob.
-
-1. Problem seems interesting. What are the "top three streaming
-   platforms"? Which content? Music, games, news? If you don't know
-   this yet it becomes also part of the project. "User engagement" and
-   "content diversity" are not immediately quantifiable (they're
-   derived metrics).
-
-2. Your next deliverable is a literature review. You need to improve
-   your citation technique. References must be consistent (same
-   format) and complete - yours aren't either of these, please fix for
-   the next submission. Not sure why you put Emacs in the
-   references. As a software? You can get the way R ought to be cited
-   from R itself, with the command `citation()`.
-
-3. Your data sources and your metrics are the crucial ingredients. Not
-   clear where you will get the (public) data from
-   exactly. "Consumers" for these platforms is also not clear: are
-   these subscribers? Casual users, viewers? Revenue/growth can be
-   validated.
-
-4. To identify the right platforms, data, metrics, you may want to be
-   more specific what exactly you're looking for. You're not
-   investors, or developers, or influencers yourself, I presume, but
-   customers - and perhaps you want to work for these platforms. Your
-   project will have the greatest energy if you find something you
-   really want to know and that you already know something about.
-
-   Otherwise - well done!
-
------
-
-Proposal
+#+end_notes
 
 Problem:
 
@@ -54,6 +27,13 @@ platform is the most influential and effective for the users. This
 involves evaluating various metrics such as user growth, revenue,
 content diversity, and user engagement.
 
+#+begin_notes
+ Problem seems interesting. What are the "top three streaming
+ platforms"? Which content? Music, games, news? If you don't know this
+ yet it becomes also part of the project. "User engagement" and
+ "content diversity" are not immediately quantifiable (they're derived
+ metrics).
+#+end_notes
 Reasons:
 
 Understanding which streaming platform stands out in terms of
@@ -88,6 +68,15 @@ and comparisons.
 · Giving some recommendation based on the analysis to guide consumers
 and creators.
 
+#+begin_notes
+To identify the right platforms, data, metrics, you may want to be
+more specific what exactly you're looking for. You're not investors,
+or developers, or influencers yourself, I presume, but customers - and
+perhaps you want to work for these platforms. Your project will have
+the greatest energy if you find something you really want to know and
+that you already know something about.
+#+end_notes
+
 Non-Goals:
 
 · Using the data of only five years (which may change in future but
@@ -108,6 +97,13 @@ Metrics
 
 · Overall market share relative to other platforms.
 
+#+begin_notes
+Your data sources and your metrics are the crucial ingredients. Not
+clear where you will get the (public) data from exactly. "Consumers"
+for these platforms is also not clear: are these subscribers? Casual
+users, viewers? Revenue/growth can be validated.
+#+end_notes
+
 References: · Software: R and its packages (some)
 (https://www.R-project.org)
 
@@ -118,3 +114,12 @@ Emacs.
 Statista (Portal for market data and research)
 
 Nielsen (Portal with insights about what people watch and listen)
+
+#+begin_notes
+Your next deliverable is a literature review. You need to improve your
+citation technique. References must be consistent (same format) and
+complete - yours aren't either of these, please fix for the next
+submission. Not sure why you put Emacs in the references. As a
+software? You can get the way R ought to be cited from R itself, with
+the command =citation()=.
+#+end_notes

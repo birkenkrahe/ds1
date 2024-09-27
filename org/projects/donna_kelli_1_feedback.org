@@ -1,0 +1,177 @@
+#+TITLE: Context Matters - Exploring the Origins and Journeys of the British Museum's Collections
+#+NAME: Donna Terrell & Kelli Meythaler [Pledged]
+#+STARTUP: overview hideblocks indent
+Context Matters: Exploring the Origins and Journeys of the British Museums Collections
+
+#+begin_notes MB
+- Some meta data missing/wrong: =#+AUTHOR:= instead of =#+NAME:=, and you
+  need a =#+STARTUP:= line (I added it) for indentation/collapsing
+  headlines.
+- Otherwise very nicely conceived overall - enjoyed. You find more
+  comments as I read below in =notes= blocks like this one.
+#+end_notes
+
+* *Problem*
+
+The British Museum has a diverse collections include a wide range of
+culturally and historically significant works of art. However, when
+viewed in the museum, the audience may feel a disconnect from the
+works, as it can be difficult to fully grasp their significance and/or
+context. The goal of our project is to spark the average person with
+curiosity by encouraging the exploration of the connections between
+the origins of the pieces, their cultural contexts, and how they were
+acquired. To achieve this goal, we will utilize the website Kaggle.com
+to present eight datasets in a dashboard that is easily navigated and
+understood.
+
+#+begin_notes MB
+It might be good to get used to proper referencing from the start - in
+short, you need a reference whenever you make a non-trivial claim or
+when you cite someone else's work. In this paragraph, you mention
+=kaggle.com= but it's not referenced.
+
+Also, this is online so you could put an inline link behind it and
+direct the reader and your customer (me!) straight to the
+dataset. [[https://www.kaggle.com/datasets/dkaane/british-museum-egyptian-objects-700-330-bce][This is such a link]] to the BM's Egyptian collection.
+
+Otherwise: well posed problem, including a specific deliverable, a
+data dashboard (which may be a bit too much at the start but perhaps
+not!).
+#+end_notes
+
+* *Reason*
+
+We feel this project is important because personally,  I did not
+find history very intriguing until I took World Art One. It was
+through the study of artistic craftsmanship that I developed a new
+perspective and appreciation on historical settings and cultures. In
+2023, I went on a class trip to New York City with Lyon College. It
+wasn't until this year, 2024, that I discovered the significance
+behind some of the works that I had merely glanced at in renowned museums such as the MET and MoMA.
+
+I chose this project in hopes that others would find a new
+appreciation for the histories of different periods and cultures like I myself have found through these masterpieces.
+
+#+begin_notes MB
+You're submitting this as a team but you use the first person - you
+should rewrite this accordingly, as in "One of us (DT)...", and if you
+mention personal motivation, both of you should be part of it.
+
+Org-mode trivia: You should use M-q to indent a whole paragraph then
+it's easier to read in Emacs.
+#+end_notes
+
+* *Constraints*
+
+    - *Technical constraints:*
+      - =Lack of experience in creating dashboards:=
+        We are unfamiliar with the process of designing and developing a functional dashboard.
+      - =Limited knowledge in data visualization:=
+        We are unsure how to effectively transform raw data into meaningful graphs and visuals.
+      - =Inexperience with R:=
+        We are not proficient in using R, which presents a challenge for both data analysis and dashboard creation. Uncertainty in data handling: We are unsure how to download, clean, or interpret the dataset properly.
+
+    - *Conceptual constraints*
+      - =Dashboard layout and presentation:=
+
+        We are unclear on how to format the dashboard and present the
+        visualized data in a clear and organized manner.
+      - =Choosing appropriate graphs:=
+        We are uncertain about which types of graphs will best represent the data and provide useful insights.
+      - =Data scope management:= We have limited the data sets to eight, but we are unsure if we will have to add more or less data.
+
+    - *Personal constraints:*
+      - =Task delegation:=
+        It is challenging to assign tasks since both of us are still
+        learning and are unsure of the specific steps involved in the project.
+      - =Time management:=
+        Our busy schedules and misaligned availability make collaboration and effective communication difficult.
+      - =Ongoing research:=
+        We both need to dedicate time to learning how to use R, how to create dashboards, and how to resolve any technical issues that arise during the project.
+
+    #+begin_notes MB
+    Very thorough. I agree that dashboard design and deployment is
+    probably out of reach, but you can take the first step towards
+    it. DT is in the data visualizations class where she can focus on
+    this aspect if she wants. This proposal was for "Intro to data
+    science", I thought and here you should focus on working with the
+    data themselves to see what you can learn from them using R.
+
+    Though I am also open to a non-R project either involving another
+    language if you already know it better, or no programming at all:
+    in this last case, you'll have to find (and validate) secondary
+    data.
+    #+end_notes
+    
+* *Goals*
+
+   - *Goals:*
+
+   1) =Documentation:= Heavily recording any and all progress on a joint Github repository.
+
+   2) =Data Importing:= Successfully import the dataset into R, ensuring it is ready for analysis.
+
+   3) =Data Cleaning:= Utilize R libraries to clean and process the dataset, preparing it for accurate analysis and visualization.
+
+   4) =Data Manipulation:= Apply various techniques to manipulate and shape the dataset, enabling effective analysis and graphical representation.
+
+   5) =Data Visualization:= Create visual representations of the data through plots, graphs, and a dashboard that provide clear insights.
+
+   6) =Learning:= Acquire the knowledge and skills related to analyzing and visualizing relevant data, with a focus on using R for these tasks.
+
+   7) =Completion:= Completing a dashboard visualization that successfully conveys the data.
+
+   #+begin_notes MB
+   Excellent breakdown. I cannot remember if you said you used AI to
+   help you write this? If you did, as I said in class: You ought to
+   own up to it, say how/why you did, and reference it.
+
+   As for the goals themselves: this is a lot, and you should remember
+   that I reward effort and not only results. Research success is
+   measured in terms of due diligence and learning, too, not just
+   raw findings.
+   #+end_notes
+
+   *Non-Goals*:
+
+   1) =Mastery of R:= More than likely we will not master R during this project
+
+   2) =More Data:= We would like to encompass more data for the project but it is not a long-term goal since we already have a lot to sift through.
+
+   3) =Dashboards:= We would like to create multiple dashboards from the
+      various amounts of data sets given, but that would be a whole
+      different project in itself.
+
+   #+begin_notes MB
+   Agree on (3) in particular.
+   #+end_notes
+
+* *Metrics*
+
+The project will be considered a success if we heavily document, put continuous effort, and successfully convert the data into a dashboard.
+
+#+begin_notes MB
+Well put. Documentation does not have to be "heavy" - I'd settle for
+"meaningful", and "thorough". You also may have to think about some
+metrics for the project itself not only the process.
+
+As in: what are you looking for, and how will you know that you have
+found it. Example: A list of all Egyptian pharaos, and as a result a
+time series of pharaos in the museum's collections.
+#+end_notes
+
+* *References*
+
+1) na667788 ying. british museum data. Kaggle.com. Published 2024. Accessed September 11, 2024.
+
+2) R Core Team (2021). R: A language and environment for statistical
+   computing. R Foundation for Statistical Computing, Vienna,
+   Austria. RL https://www.R-project.org/
+
+3) GitHub. (2024). GitHub. GitHub. https://github.com/
+
+#+begin_notes MB
+References need to be consistent and complete. 2-3 seem to be both,
+but not (1). Looks as if you used two different styles. Also,
+Kaggle.com is online so add a link.
+#+end_notes   

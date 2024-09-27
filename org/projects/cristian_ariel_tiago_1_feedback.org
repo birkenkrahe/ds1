@@ -1,0 +1,156 @@
+#+begin_notes MB
+I'm just going to add my comments here at the top because I don't have
+many:
+
+1. It's "Wanderer above the Sea of Fog" by Caspar David Friedrich (the
+   painting [[https://en.wikipedia.org/wiki/Wanderer_above_the_Sea_of_Fog][hangs in Hamburg]] where I grew up, and I've often admired
+   it).
+
+2. Especially the command of Org-mode is impressive!
+
+3. The list of references is insufficient - it only includes image
+   references. For example what motivated these questions? For a
+   survey, the methodology including questions and embedding of the
+   questions in current research and applications is crucial.
+
+Otherwise, this project is on a good path, and I'm curious to see what
+comes next. Actually, next up is the literature review, which will be
+good for you.
+#+end_notes
+
+* Mapping the use of GAI in an higher educational context
+   #+LATEX_HEADER: \usepackage{float}
+   #+CAPTION: "The Death of Marat" by Jacques-Louis David
+   #+ATTR_LATEX: :float nil :placement [H] :width 0.5\textwidth
+   [[file:Death_of_Marat.jpg]]
+
+** Brief Research Description
+
+   This project aims to systematically investigate the utilization of 
+   Generative AI (GAI) by students within the university context, specifically at
+   Lyon College. The primary objectives of this study are to identify the 
+   prevalence, extent, and nature of GAI usage among students. The research aims 
+   to address the following questions: 
+   
+   1. What proportion of students at Lyon College engage with Generative AI in 
+      their academic activities?
+
+   2. How frequently do students utilize Generative AI in their academic pursuits? 
+      (e.g., daily, weekly, occasionally)
+
+   3. For what specific academic purposes do students employ Generative AI? 
+      (e.g., completing assignments, enhancing study practices, generating creative content)
+
+   4. Which Generative AI tools are most commonly favored by students?
+
+   5. In which academic disciplines is Generative AI usage most prevalent among students?
+
+   #+LATEX_HEADER: \usepackage{float}
+   #+CAPTION: "Pandora opening the box" by John William Waterhouse
+   #+ATTR_LATEX: :float nil :placement [H] :width 0.5\textwidth
+   [[file:PandoraPainting.jpg]]
+
+** Reasons
+
+  This research is of significant interest because it provides an opportunity to gather raw, 
+  real-world data on the use of Generative AI among college students, particularly within the 
+  context of education. Given the growing attention and concerns surrounding the use of AI in 
+  academic settings, this study addresses a timely and relevant issue. 
+  
+  Also, our curiosity about how these tools are being integrated into students' academic lives 
+  motivates us to pursue this project. 
+
+  Moreover, the potential for a publishable outcome adds value to this research, as it 
+  offers the possibility of contributing new insights to the broader academic 
+  conversation on AI in education.
+  
+  #+LATEX_HEADER: \usepackage{float}
+  #+CAPTION: "Wander above the sea of fog" by David Friedrich
+  #+ATTR_LATEX: :float nil :placement [H] :width 0.5\textwidth
+  [[file:Wanderer_above_the_sea_of_fog.jpg]]
+
+** Constraints
+
+   Difficulties in the project may include:
+
+   1. *Creating a comprehensive poll with minimal bias*: Ensuring that the questions are well-designed and unbiased can be challenging, as it requires careful consideration of wording and structure.
+
+   2. *Involving a sufficient number of students in participating in the poll*: Encouraging enough students to complete the poll to gather representative data may be difficult, especially in terms of outreach and engagement.
+
+   3. *Organizing the data collected from the poll into a suitable form for analysis*: Ensuring that the data is clean, well-structured, and ready for analysis.
+   
+   #+LATEX_HEADER: \usepackage{float}
+   #+CAPTION: "The Fall of Icarus" by Jacob Peter Gowy
+   #+ATTR_LATEX: :float nil :placement [H] :width 0.5\textwidth
+   [[file:FallOfIcarus.jpg]]
+
+** Goals and Non-Goals
+
+   *Goals* for this project include finding answers to the questions outlined 
+   in the research description:
+
+   1. *Determine the proportion of students at Lyon College who engage with 
+      Generative AI in their academic activities.*
+
+   2. *Assess the frequency with which students utilize Generative AI in 
+      their academic pursuits.*
+
+   3. *Identify the specific academic purposes for which students employ 
+      Generative AI.*
+
+   4. *Determine the Generative AI tools that are most commonly favored by students.*
+
+   5. *Analyze the academic disciplines where Generative AI usage is most prevalent 
+      among students.*
+
+
+   *Non-Goals* include:
+   
+   1. *Asses the consequences of using AI in an academic context for a student.*
+
+   2. *Evaluating the effectiveness of Generative AI tools in enhancing 
+      academic performance.*
+   
+   3. *Developing or recommending specific policies or guidelines for AI 
+      usage in education.*
+ 
+   4. *Evaluating the ethical implications of Generative AI usage in education.*
+   
+   #+LATEX_HEADER: \usepackage{float}
+   #+CAPTION: "The Kiss" by Francesco Hayez
+   #+ATTR_LATEX: :float nil :placement [H] :width 0.5\textwidth
+   [[file:TheKiss.jpg]]
+** Metrics
+
+   The success of the project will be measured using the following criteria:
+   
+   1. *Survey Participation Rate*: 200+ students participated.
+      
+   2. *Data Completeness and Quality*: manage to structure the data in 
+      a proper way for analysis.
+
+   3. *Alignment with Research Questions*: Answer all the research questions in
+      a clear and concise manner.
+
+   4. *Publication*
+
+   #+LATEX_HEADER: \usepackage{float} 
+   #+CAPTION: "Liberté guidant le peuple" by Eugène Delacroix
+   #+ATTR_LATEX: :float nil :placement [H] :width 0.5\textwidth
+   [[file:Liberté_guidant_le_peuple.jpg]]
+
+** References
+   David, Jacques-Louis. The Death of Marat. 1793, Royal Museums of Fine Arts of Belgium, Brussels.
+
+   Waterhouse, John William. Pandora Opening the Box. 1896, private collection.
+
+   Friedrich, Caspar David. Wanderer Above the Sea of Fog. 1818, Kunsthalle Hamburg, Hamburg.
+
+   Gowy, Jacob Peter. The Fall of Icarus. c. 1636-1638, Museo del Prado, Madrid.
+
+   Hayez, Francesco. The Kiss. 1859, Pinacoteca di Brera, Milan.
+
+   Delacroix, Eugène. Liberté guidant le peuple. 1830, Louvre Museum, Paris.
+   
+
+   
