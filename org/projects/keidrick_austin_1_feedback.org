@@ -1,0 +1,87 @@
+#+TITLE: Sprint Proposal 1
+#+AUTHORS: Keidrick Wooten, Austin Swaim (pledged)
+#+COURSE: Introduction to Data Science
+
+#+begin_notes MB
+Use standard meta data and =#+STARTUP: indent overview= - there is no
+=#+COURSE= keyword, but there is =#+SUBTITLE:= and =#+AUTHOR:= (not
+#+AUTHORS).
+#+end_notes
+
+* Problem
+  What are you trying to do? We are trying to see how many people use
+  cash and how many people use debit/credit cards.
+
+  #+begin_notes MB
+  The problem is posed in too general a way. Is this for your family?
+  Batesville? Arkansas? The US? The world?
+  #+end_notes
+  
+* Reason
+  Why is this problem interesting to you or others? This problem is
+  interesting because we are in a time period where physical cash
+  isn't used as often as digital "=cash=".
+
+  #+begin_notes MB
+  I agree it's interesting, and there is probably a lot published
+  about it - your next sprint review is a literature review (you need
+  more references than Popeye and R).
+
+  "Time period" is too vague. Since when is this an issue, what is the
+  history of analog vs digital cash? Finding this out is already part
+  of the project. Do you also have a personal motivation? Those are
+  stronger than "who wouldn't like to know if..."
+  #+end_notes  
+  
+* Constraints
+  Which difficulties do you foresee? The only difficulties we could
+  expereince is if the card reading machine wasn't working during the
+  time of the project. Or if something were to happen the store
+  getting shut down.
+
+  #+begin_notes MB
+  Typo - use the fact that you're two people and check each other's
+  submissions. I'm beginning to understand only now that you're
+  talking about a specific place (probably Popeye's). Are you allowed
+  to use data from this store?
+  #+end_notes
+  
+* Goals
+  What deliverables are you going to develop? We hope to develop a
+  system that can track how many people use cards vs. cash. Other
+  goals include tracking amount of people, average transaction of
+  cash, and average transaction of cards. Goals we might not achieve
+  would be the longevity of cash flow vs. card cash flow to see what
+  people use more over a long period of time.
+
+  #+begin_notes MB
+  Interesting. You should think about this afresh but also check if
+  and how other people have addressed this problem.
+  #+end_notes
+  
+* Metrics
+  How are you going to measure if your project is successful or not?
+  To be successful in a project using technilogical devices is
+  difficult because technology doesn't work all the time like it
+  should. But we think if everything goes accordingly we can have a
+  good argument whether physical cash or card "=cash=" is used more. 
+
+  #+begin_notes MB
+  You don't have to finish and get all of your results to have a
+  successful research project. It's also about learning things along
+  the way. Tying yourself to technology and a particular place is
+  always risky - think about ways to mitigate this risk.
+  #+end_notes
+
+* Refrences
+1.)  Popeyes Louisiana Kitchen. (n.d.). About us. Retrieved
+  September 15, 2024, from https://www.popeyes.com/about-us
+
+2.) R Core Team. (2023). R: A language and environment for
+statistical computing [Software]. R Foundation for Statistical
+Computing. https://www.R-project.org/
+
+#+begin_notes MB
+Type in headline. References need to be consistent and complete. Seems
+complete but not consistent.
+#+end_notes

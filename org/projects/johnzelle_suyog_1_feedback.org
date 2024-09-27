@@ -102,6 +102,10 @@ Your data sources and your metrics are the crucial ingredients. Not
 clear where you will get the (public) data from exactly. "Consumers"
 for these platforms is also not clear: are these subscribers? Casual
 users, viewers? Revenue/growth can be validated.
+
+The question here was more about "How will you know that you have
+succeeded?", and not about specific data metrics (though that's
+important, too).
 #+end_notes
 
 References: · Software: R and its packages (some)

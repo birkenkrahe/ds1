@@ -1,0 +1,83 @@
+Fowler & Sidney
+Sprint Review
+September 13th 2024
+
+#+begin_notes MB
+Looks as if you did this in a speedy fashion. Take more time next
+time. This first time you get an A for effort but not next time.
+
+Your header is insufficient, use =#+TITLE:=, =#+AUTHOR:= etc. instead. Add
+a =#+STARTUP:= line to increase readability like in all my lectures and
+assignments. Just copy and adapt it.
+#+end_notes
+
+* Project Summary
+** Problem
+Analyze NCAA statistics for the Oklahoma State Wrestling team from the
+past couple years to determine how they will perform this year.
+
+#+begin_notes MB
+You are lucky that I know what NCAA is: always explain an acronym when
+you first use it. Is this the male or female team or is there only one
+(unlikely)? Why Oklahoma, why wrestling? What is the state of art of
+data analysis for this target?
+#+end_notes
+
+** Reason
+I think to people interested in sports or those who play sports it
+would be benificial to know how those atheletes will perform.
+
+#+begin_notes MB
+Typo. You're two people, check each other's writing for errors and
+possible improvements. Also: Why exactly would it be "beneficial". Who
+benefits how exactly?
+#+end_notes
+** Constraints
+I think that it is a pretty straightforward project.  The only
+difficutlies or constraints would be creating the code for the
+project, the graphs, and the math involved.
+
+#+begin_notes MB
+I don't know what "straightforward" in this context means. You should
+be more specific with regard to helping or hindering factors,
+e.g. where are the data coming from? Which language are you going to
+use (if any)? What's this "math" you're talking about?
+#+end_notes
+** Goal
+The goal to show off at the end of the semester is a list of the
+players and their projected outcome of matches as well as graphs to
+display and the code to show.
+#+begin_notes MB
+You need slightly more formal language than "show off" here. Getting
+good (valid) data should also be a goal, and identifying a way to
+solve your problem, and a literature review (next sprint).
+#+end_notes
+** Metrics
+I think if we have completed code and results to show in the final
+presentation we have at least partially completed our goals.  I think
+how many players are in our completed data sets determine our success.
+#+begin_notes MB
+Sure thing, if you have a working model that'll speak for itself -
+however, I am not sure you've got the skills right now (you also did
+not say how exactly you were planning on doing it, which language
+etc.)
+#+end_notes
+** References
+
+Both of these references are rosters and stats for players which is
+all we need to start coding the project.
+
+Find Schedules,Rosters, and Results for Youth,High School & College
+Wrestling Teams and CLubs. Trackwrestling.com Published 2024. Accessed
+September 14, 2024.
+https://www.trackwrestling.com/seasons/index.jsp?
+
+WrestleStat | College Wrestling Rankings, Dual Comparison, Rosters,
+Schedules, Fantasy.www.wrestlestat.com.
+https://www.wrestlestat.com/
+
+#+begin_notes MB
+Give me a better idea (as your customer) what you're coding or
+planning on coding. Formally, you don't need long URLs for references
+but they need to be consistent and complete.
+#+end_notes

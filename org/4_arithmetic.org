@@ -595,26 +595,28 @@ Solution:
 2) Subtract ~sqrt(2)**2~ from ~2~. What's going on?
 3) Show that ~sqrt(2)**2~ and ~2~ are not identical using ~identical~
 4) Show that ~sqrt(2)**2~ and ~2~ are almost identical using ~all.equal~
-5) Is ~NA~ finite in R?
-6) Show that ~NaN~ is not a number
-7) Are missing values numbers in R?
+5) Subtract 2 from =sqrt(2)^2=
+6) Is ~NA~ finite in R?
+7) Show that ~NaN~ is not a number
+8) Are missing values numbers in R?
 
-Solution:
-#+begin_src R :results output
-  10^309 # Inf - cannot be represented by a 64-bit computer
-  10^308
-  2-sqrt(2)**2
-  identical(sqrt(2)**2,2)
-  all.equal(sqrt(2)**2,2)
-  is.finite(NA)
-  is.nan(NA) # missing values are not non-numbers
-#+end_src
+9) Solution:
+   #+begin_src R :results output
+     10^309 # Inf - cannot be represented by a 64-bit computer
+     10^308
+     2-sqrt(2)**2
+     identical(sqrt(2)**2,2)
+     all.equal(sqrt(2)**2,2)
+     is.finite(NA)
+     is.nan(NA) # missing values are not non-numbers
+     sqrt(2)^2 - 2
+   #+end_src
 
 #+begin_notes
 1) ~10^309~ is ~Inf~. The last number is infinite, because the largest
    number that can be represented by a 64-bit computer is
    1.7976931348623157e+308.
-2) Subtract ~sqrt(2)^2~ from ~2~. The answer is: ~4.440892e-16~.
+2) Subtract 2 from ~sqrt(2)^2~. The answer is: ~4.440892e-16~.
 #+end_notes
 
 * Logical values and operators
@@ -632,12 +634,13 @@ values.
 
 * Practice: logical values
 
-1) Print ~TRUE~
-2) Can you use ~true~ instead of ~TRUE~?
-4) Can you use ~T~ instead of ~TRUE~?
-5) Assign ~FALSE~ to an R object named ~T~
-6) Print ~T~
-7) What type of R object is ~TRUE~?
+- Tasks:
+  1) Print ~TRUE~
+  2) Can you use ~true~ instead of ~TRUE~?
+  4) Can you use ~T~ instead of ~TRUE~?
+  5) Assign ~FALSE~ to an R object named ~T~
+  6) Print ~T~
+  7) What type of R object is ~TRUE~?
 
 - Solution:
   #+begin_src R :session *R* :results output :exports both

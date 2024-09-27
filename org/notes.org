@@ -484,7 +484,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 
    #+RESULTS:
    #+begin_example
-   'data.frame':	4 obs. of  4 variables:
+   'data.frame':        4 obs. of  4 variables:
     $ Name   : chr  "Sara" "Lis" "Hadrien" "Lis"
     $ Age    : int  27 30 NA 30
     $ Size   : num  1.77 5.58 1.8 5.58
@@ -563,12 +563,12 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+end_src
 
    #+RESULTS:
-   :      Name                Age             Size         Country         
-   :  Length:3           Min.   :27.00   Min.   :1.770   Length:3          
-   :  Class :character   1st Qu.:27.50   1st Qu.:1.785   Class :character  
-   :  Mode  :character   Median :28.00   Median :1.800   Mode  :character  
-   :                     Mean   :28.33   Mean   :3.050                     
-   :                     3rd Qu.:29.00   3rd Qu.:3.690                     
+   :      Name                Age             Size         Country
+   :  Length:3           Min.   :27.00   Min.   :1.770   Length:3
+   :  Class :character   1st Qu.:27.50   1st Qu.:1.785   Class :character
+   :  Mode  :character   Median :28.00   Median :1.800   Mode  :character
+   :                     Mean   :28.33   Mean   :3.050
+   :                     3rd Qu.:29.00   3rd Qu.:3.690
    :                     Max.   :30.00   Max.   :5.580
 
 5. What does Anscombe's quartet illustrate in the context of EDA?
@@ -582,12 +582,12 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+end_src
 
    #+RESULTS:
-   :        x1             x2             y1               y2       
-   :  Min.   : 4.0   Min.   : 4.0   Min.   : 4.260   Min.   :3.100  
-   :  1st Qu.: 6.5   1st Qu.: 6.5   1st Qu.: 6.315   1st Qu.:6.695  
-   :  Median : 9.0   Median : 9.0   Median : 7.580   Median :8.140  
-   :  Mean   : 9.0   Mean   : 9.0   Mean   : 7.501   Mean   :7.501  
-   :  3rd Qu.:11.5   3rd Qu.:11.5   3rd Qu.: 8.570   3rd Qu.:8.950  
+   :        x1             x2             y1               y2
+   :  Min.   : 4.0   Min.   : 4.0   Min.   : 4.260   Min.   :3.100
+   :  1st Qu.: 6.5   1st Qu.: 6.5   1st Qu.: 6.315   1st Qu.:6.695
+   :  Median : 9.0   Median : 9.0   Median : 7.580   Median :8.140
+   :  Mean   : 9.0   Mean   : 9.0   Mean   : 7.501   Mean   :7.501
+   :  3rd Qu.:11.5   3rd Qu.:11.5   3rd Qu.: 8.570   3rd Qu.:8.950
    :  Max.   :14.0   Max.   :14.0   Max.   :10.840   Max.   :9.260
 
    #+begin_src R :file ../img/anscombe.png :session *R* :results file graphics output :exports both
@@ -681,7 +681,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    CRAN (Comprehensive R Archive Network) is the repository where R
    and its packages are stored. It provides the official sources for
    downloading R and its libraries. Link: https://cran.r-project.org
-   #+END_QUOTE   
+   #+END_QUOTE
 
 2. What command would you use to find where the R program is on your
    system?
@@ -711,10 +711,10 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+begin_src R :session *R* :results output :exports both
 
      ## run OS/Linux command from R to get present working directory
-     system("echo $PWD") 
+     system("echo $PWD")
 
      ## use an R function to get current working directory
-     getwd()  
+     getwd()
 
    #+end_src
 
@@ -727,24 +727,24 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+begin_example R
 
    ## open on-board help page
-   ?getwd  
+   ?getwd
 
    ## list all help files matching `getwd` using fuzzy matching
    ??getwd
 
-   ## `help` commands work best on R console, not in Org-mode     
+   ## `help` commands work best on R console, not in Org-mode
    #+end_example
-   
+
 3. You're at =$HOME=, in =/home/user/=, and you want to go to
    =/home/user/org=. Will these commands work and how are they
    different?
-   
-   #+begin_example 
+
+   #+begin_example
 
    setwd("org")  # will work if ./org exists - relative path
 
    setwd("/home/user/org")  # will work if $HOME/org exists - absolute path
-   
+
    #+end_example
 
 4. What does the following command do?
@@ -779,16 +779,16 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 
    #+begin_quote
 
-   1) Open an R shell buffer in Emacs with =M-x R=
-      
-   2) Open a terminal (OS shell) and open an R shell by entering =R=
+1) Open an R shell buffer in Emacs with =M-x R=
 
-   3) In an Org-mode file, activate an R code block that has a
-      =:session= header argument.
+2) Open a terminal (OS shell) and open an R shell by entering =R=
+
+3) In an Org-mode file, activate an R code block that has a
+   =:session= header argument.
 
    This works outside of Emacs only with interpreted languages like
    R, Python, Julia, and not with compiled languages.
-         
+
    #+end_quote
 
 Example in C:
@@ -799,7 +799,7 @@ Example in C:
 #+RESULTS:
 : hello, Isaac
 
-** IN PROGRESS Introduction to R 
+** IN PROGRESS Introduction to R
 [[../img/3_Rlogo.png]]
 
 - [X] Why R?
@@ -821,7 +821,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 - You can run R scripts in the foreground with =Rscript= or in the
   background as a "batch" job with =R CMD BATCH=.
 
-*** Summary R environment  
+*** Summary R environment
 
 - Function without arguments: ~getwd()~
 - Function with arguments: ~setwd('...')~
@@ -832,12 +832,12 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 
 - The functions ~options~ controls display options
 - You can extract display options with ~$~, e.g. ~options()$prompt~
-- You can get help with the ~help~ function (or ~?~) 
+- You can get help with the ~help~ function (or ~?~)
 
 *** Summary R computing and commenting
 
 - You can print results with or without ~print~
-- Create (inline) comments with ~#~ 
+- Create (inline) comments with ~#~
 - ~eshell~ is a Linux-type shell in Emacs ([[https://www.gnu.org/software/emacs/manual/html_mono/eshell.html#:~:text=Eshell%20is%20a%20command%20shell,code%20is%20natural%20and%20seamless.][doc]])
 - On Linux you can also use ~shell~ (M-x shell)
 
@@ -855,7 +855,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 - ~~/.Rprofile~ is read every time a new R shell is started
 
 * Week 5 - R options and packages (SpaceX)
-#+attr_html: :width 700px: 
+#+attr_html: :width 700px:
 [[../img/spacex-polaris-dawn-spacewalk.jpeg]]
 
 /Image: SpaceX Polaris Dawn Mission - Apollo Altitude Record Reached/
@@ -867,7 +867,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
      (Oct 11).
   4. Using Google Docs etc. is OK but using a notebook (e.g. in
      Org-mode) makes more sense for a data science project.
-     
+
 - [X] R package commands & practice
 
 - [X] Customizing at startup & practice
@@ -897,10 +897,10 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
    #+RESULTS:
    : $add.smooth
    : [1] TRUE
-   : 
+   :
    : $bitmapType
    : [1] "cairo"
-   : 
+   :
    : $browser
    : [1] "xdg-open"
 
@@ -936,7 +936,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 
      library(MASS)
      any(grep("MASS",search()))
-     
+
      detach("package:MASS")
      any(grep("MASS",search()))
    #+end_src
@@ -957,7 +957,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
      detach("package:MASS")
      any(grep("MASS",data()))  # any MASS datasets available?
      library(MASS)
-     any(grep("MASS",data()))     
+     any(grep("MASS",data()))
    #+end_src
 
    #+RESULTS:
@@ -972,19 +972,19 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 
    #+RESULTS:
    #+begin_example
-    [1] ".GlobalEnv"        "package:MASS"      "ESSR"              "package:stats"    
-    [5] "package:graphics"  "package:grDevices" "package:utils"     "package:datasets" 
+    [1] ".GlobalEnv"        "package:MASS"      "ESSR"              "package:stats"
+    [5] "package:graphics"  "package:grDevices" "package:utils"     "package:datasets"
     [9] "package:methods"   "Autoloads"         "package:base"
-    [1] ".GlobalEnv"                                         
+    [1] ".GlobalEnv"
     [2] "/home/marcus/R/x86_64-pc-linux-gnu-library/4.1/MASS"
-    [3] "ESSR"                                               
-    [4] "/usr/lib/R/library/stats"                           
-    [5] "/usr/lib/R/library/graphics"                        
-    [6] "/usr/lib/R/library/grDevices"                       
-    [7] "/usr/lib/R/library/utils"                           
-    [8] "/usr/lib/R/library/datasets"                        
-    [9] "/usr/lib/R/library/methods"                         
-   [10] "Autoloads"                                          
+    [3] "ESSR"
+    [4] "/usr/lib/R/library/stats"
+    [5] "/usr/lib/R/library/graphics"
+    [6] "/usr/lib/R/library/grDevices"
+    [7] "/usr/lib/R/library/utils"
+    [8] "/usr/lib/R/library/datasets"
+    [9] "/usr/lib/R/library/methods"
+   [10] "Autoloads"
    [11] "/usr/lib/R/library/base"
    #+end_example
 
@@ -999,52 +999,52 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
     #+RESULTS:
     #+begin_example
     [1] "s"
-      [1] "abbey"             "accdeaths"         "addterm"           "Aids2"            
-      [5] "Animals"           "anorexia"          "area"              "as.fractions"     
-      [9] "bacteria"          "bandwidth.nrd"     "bcv"               "beav1"            
-     [13] "beav2"             "biopsy"            "birthwt"           "Boston"           
-     [17] "boxcox"            "cabbages"          "caith"             "Cars93"           
-     [21] "cats"              "cement"            "chem"              "con2tr"           
-     [25] "contr.sdif"        "coop"              "corresp"           "cov.mcd"          
-     [29] "cov.mve"           "cov.rob"           "cov.trob"          "cpus"             
-     [33] "crabs"             "Cushings"          "DDT"               "deaths"           
-     [37] "denumerate"        "dose.p"            "drivers"           "dropterm"         
-     [41] "eagles"            "enlist"            "epil"              "eqscplot"         
-     [45] "farms"             "fbeta"             "fgl"               "fitdistr"         
-     [49] "forbes"            "fractions"         "frequency.polygon" "GAGurine"         
-     [53] "galaxies"          "gamma.dispersion"  "gamma.shape"       "gehan"            
-     [57] "genotype"          "geyser"            "gilgais"           "ginv"             
-     [61] "glm.convert"       "glm.nb"            "glmmPQL"           "hills"            
-     [65] "hist.FD"           "hist.scott"        "housing"           "huber"            
-     [69] "hubers"            "immer"             "Insurance"         "is.fractions"     
-     [73] "isoMDS"            "kde2d"             "lda"               "ldahist"          
-     [77] "leuk"              "lm.gls"            "lm.ridge"          "lmsreg"           
-     [81] "lmwork"            "loglm"             "loglm1"            "logtrans"         
-     [85] "lqs"               "lqs.formula"       "ltsreg"            "mammals"          
-     [89] "mca"               "mcycle"            "Melanoma"          "menarche"         
-     [93] "michelson"         "minn38"            "motors"            "muscle"           
+      [1] "abbey"             "accdeaths"         "addterm"           "Aids2"
+      [5] "Animals"           "anorexia"          "area"              "as.fractions"
+      [9] "bacteria"          "bandwidth.nrd"     "bcv"               "beav1"
+     [13] "beav2"             "biopsy"            "birthwt"           "Boston"
+     [17] "boxcox"            "cabbages"          "caith"             "Cars93"
+     [21] "cats"              "cement"            "chem"              "con2tr"
+     [25] "contr.sdif"        "coop"              "corresp"           "cov.mcd"
+     [29] "cov.mve"           "cov.rob"           "cov.trob"          "cpus"
+     [33] "crabs"             "Cushings"          "DDT"               "deaths"
+     [37] "denumerate"        "dose.p"            "drivers"           "dropterm"
+     [41] "eagles"            "enlist"            "epil"              "eqscplot"
+     [45] "farms"             "fbeta"             "fgl"               "fitdistr"
+     [49] "forbes"            "fractions"         "frequency.polygon" "GAGurine"
+     [53] "galaxies"          "gamma.dispersion"  "gamma.shape"       "gehan"
+     [57] "genotype"          "geyser"            "gilgais"           "ginv"
+     [61] "glm.convert"       "glm.nb"            "glmmPQL"           "hills"
+     [65] "hist.FD"           "hist.scott"        "housing"           "huber"
+     [69] "hubers"            "immer"             "Insurance"         "is.fractions"
+     [73] "isoMDS"            "kde2d"             "lda"               "ldahist"
+     [77] "leuk"              "lm.gls"            "lm.ridge"          "lmsreg"
+     [81] "lmwork"            "loglm"             "loglm1"            "logtrans"
+     [85] "lqs"               "lqs.formula"       "ltsreg"            "mammals"
+     [89] "mca"               "mcycle"            "Melanoma"          "menarche"
+     [93] "michelson"         "minn38"            "motors"            "muscle"
      [97] "mvrnorm"           "nclass.freq"       "neg.bin"           "negative.binomial"
-    [101] "negexp.SSival"     "newcomb"           "nlschools"         "npk"              
-    [105] "npr1"              "Null"              "oats"              "OME"              
-    [109] "painters"          "parcoord"          "petrol"            "phones"           
-    [113] "Pima.te"           "Pima.tr"           "Pima.tr2"          "polr"             
-    [117] "psi.bisquare"      "psi.hampel"        "psi.huber"         "qda"              
-    [121] "quine"             "Rabbit"            "rational"          "renumerate"       
-    [125] "rlm"               "rms.curv"          "rnegbin"           "road"             
-    [129] "rotifer"           "Rubber"            "sammon"            "select"           
-    [133] "Shepard"           "ships"             "shoes"             "shrimp"           
-    [137] "shuttle"           "Sitka"             "Sitka89"           "Skye"             
-    [141] "snails"            "SP500"             "stdres"            "steam"            
-    [145] "stepAIC"           "stormer"           "studres"           "survey"           
-    [149] "synth.te"          "synth.tr"          "theta.md"          "theta.ml"         
-    [153] "theta.mm"          "topo"              "Traffic"           "truehist"         
-    [157] "ucv"               "UScereal"          "UScrime"           "VA"               
-    [161] "waders"            "whiteside"         "width.SJ"          "write.matrix"     
+    [101] "negexp.SSival"     "newcomb"           "nlschools"         "npk"
+    [105] "npr1"              "Null"              "oats"              "OME"
+    [109] "painters"          "parcoord"          "petrol"            "phones"
+    [113] "Pima.te"           "Pima.tr"           "Pima.tr2"          "polr"
+    [117] "psi.bisquare"      "psi.hampel"        "psi.huber"         "qda"
+    [121] "quine"             "Rabbit"            "rational"          "renumerate"
+    [125] "rlm"               "rms.curv"          "rnegbin"           "road"
+    [129] "rotifer"           "Rubber"            "sammon"            "select"
+    [133] "Shepard"           "ships"             "shoes"             "shrimp"
+    [137] "shuttle"           "Sitka"             "Sitka89"           "Skye"
+    [141] "snails"            "SP500"             "stdres"            "steam"
+    [145] "stepAIC"           "stormer"           "studres"           "survey"
+    [149] "synth.te"          "synth.tr"          "theta.md"          "theta.ml"
+    [153] "theta.mm"          "topo"              "Traffic"           "truehist"
+    [157] "ucv"               "UScereal"          "UScrime"           "VA"
+    [161] "waders"            "whiteside"         "width.SJ"          "write.matrix"
     [165] "wtloss"
     #+end_example
 
 * Week 6 - Arithmetic in R and special numbers
-#+attr_html: :width 600px: 
+#+attr_html: :width 600px:
 [[../img/Hollerith_Punched_Card.jpg]]
 
 /Image: Hollerith Tabulator punch card - patented on 9/23/1884/.
@@ -1055,7 +1055,9 @@ Arithmetic in R:
 - [X] Use logarithms and exponentials
 - [X] Brush up on mathematical E-notation
 - [X] Know R's special numbers
+- [ ] Know R's special number functions
 - [ ] Understand logical values and operators
+- [ ] Review DataCamp lesson on vectors
 
 * DONE Review: Basic arithmetic, logarithms
 
@@ -1084,7 +1086,7 @@ Arithmetic in R:
 
 3. What does the following code demonstrate?
    #+begin_src R :session *R* :results output :exports both
-     2 + 3 * 4  
+     2 + 3 * 4
    #+end_src
 
    #+RESULTS:
@@ -1126,7 +1128,7 @@ Arithmetic in R:
    : [1] 7
    : [1] 7
    : [1] 7.0000004
-   
+
    Another way:
    #+begin_src R :session *R* :results output :exports both
      all.equal(log10(10000000),
@@ -1139,7 +1141,7 @@ Arithmetic in R:
 5. You transform a 2D plot semi-logarithmically, using log10 on the
    y-axis values. What happens when y = 0, y = 1e-7, or y = 1?
    #+begin_src R :session *R* :results output :exports both
-     log10(0) 
+     log10(0)
      log10(0.0000001)
      log10(1)
    #+end_src
@@ -1165,11 +1167,18 @@ Arithmetic in R:
    : [1] TRUE
    : [1] TRUE
 
+* NEXT Project update
 
-* TODO Review: 
+
+- Left detailed feedback for every project
+
+- Next sprint review: October 11 ("Literature Review")
+
+- Two approaches to
+
 
 * TODO Euler's number is special
-#+attr_html: :width 400px: 
+#+attr_html: :width 400px:
 [[../img/euler.png]]
 
 Re: Christopher's question about the repeated pattern in e:
@@ -1178,3 +1187,188 @@ Re: Christopher's question about the repeated pattern in e:
   rational numbers there are infinitely many irrational numbers.
 - Put differently: $\mathbb{R} \backslash \mathbb{Q}$ is /dense/.
 
+Recommended: What is Mathematics by Richard Courant (1941)
+#+attr_html: :width 200px:
+[[../img/courant.png]]
+
+#+begin_quote
+"Once during my undergraduate years, I used the word 'infinity', and
+my mathematics professor said 'I won't have bad language in my class."
+#+end_quote
+
+* TODO Review: DataCamp lesson on vectors
+
+#+begin_quote
+"To know vectors is to know R."
+#+end_quote
+
+1. How can you create a vector?
+   #+begin_src R :session *R* :results output :exports both
+     foo <- vector()
+     foo
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     mode(foo)
+     class(foo)
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     foo <- vector(mode="numeric",length=5)
+     foo
+     str(foo)
+   #+end_src
+
+2. Given a vector =heights <- (180,170,175)= of heights belonging to Jim,
+   Joe, and Jeff, how can I assign their names to =heights=?
+   #+begin_src R :session *R* :results output :exports both
+     heights <- c(180,170,175)
+     heights
+     names(heights)
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     class(NULL)
+     NULL
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     c("Jim", "Joe", "Jeff") -> names(heights)
+     heights
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     str(heights)
+     NULL -> names(heights)
+     str(heights)
+   #+end_src
+
+3. Can I assign names to some, but not to all elements of a vector?
+   #+begin_src R :session *R* :results output :exports both
+     heights <- c("Jim"=180,170,175)
+     heights
+     names(heights)
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     names(heights)[1]
+     names(heights)[2] <- "Joe"
+     names(heights)[3] <- "Jeff"
+     heights
+   #+end_src
+
+   #+RESULTS:
+   : [1] "Jim"
+   : Jim  Joe Jeff
+   :  180  170  175
+
+4. How can I extract values from a named vector?
+   #+begin_src R :session *R* :results output :exports both
+     heights <- c("Jim"=180, "Joe"=170, "Jeff"=175)
+     heights
+
+     heights[2]
+     heights["Joe"]
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     heights[-2]
+     heights[-c(1,3)]
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     heights$Jim
+     heights[-c("Jim","Jeff")]
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     str(heights)
+   #+end_src
+   
+5. What is "logical indexing"?
+   #+begin_src R :session *R* :results output :exports both
+     heights <- c("Jim"=180, "Joe"=170, "Jeff"=175)
+   #+end_src
+
+   #+begin_quote
+   |       |       |       |        | class       | ops |
+   |-------+-------+-------+--------+-------------+-----|
+   | name  | "Jim" | "Joe" | "Jeff" | "character" | ==  |
+   | value |   180 |   170 |    175 | "numeric"   | + * |
+   | index |     1 |     2 |      3 | "numeric"   | [ ] |
+   #+end_quote
+
+   #+begin_src R :session *R* :results output :exports both
+     idx <- heights > 170
+     idx
+     heights[idx]
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     idx <- which(heights > 170)
+     idx
+     heights[idx]
+   #+end_src
+
+6. And what you can do with vectors?
+   #+begin_src R :file vector.png :session *R* :results file graphics output :exports both
+     plot(heights,pch=16,cex=3)
+   #+end_src
+
+   #+RESULTS:
+   [[file:vector.png]]
+
+   #+begin_src R :file vector2.png :session *R* :results file graphics output :exports both
+     color = c(Jim="red",Joe="green",Jeff="blue")
+     barplot(heights, col=color)
+   #+end_src
+
+* TODO Review: E-notation, special numbers
+
+1. What's the difference between the R functions =identical= and
+   =all.equal=?
+   #+begin_src R :session *R* :results output :exports both
+
+     foo <- exp(log(100))
+     bar <- log(exp(100))
+
+     options(digits=17)
+     foo
+     bar
+
+     identical(foo,bar) # checks numerical identity (strict)
+     all.equal(foo,bar) # checks machine identity (soft)
+   #+end_src
+
+2. How can you get rid of scientific notation, e.g. for 100,000,000?
+   #+begin_src R :session *R* :results output :exports both
+     foo <- 100000000
+     foo
+     format(foo,scientific=FALSE)
+   #+end_src
+
+3. How can you compute with "100"?
+   #+begin_src R :session *R* :results output :exports both
+     foo <- format("100",scientific=FALSE)
+     foo
+     class(foo)
+   #+end_src
+
+   #+begin_src R :session *R* :results output :exports both
+     bar <- as.numeric("100")
+     bar
+     is.numeric(bar)
+     bar**2
+   #+end_src
+
+4. What is: log(0, b=10)? What is log(1)?
+   #+begin_src R :session *R* :results output :exports both
+     log(0, b=10)
+     log(1)
+     log(1, base=exp(1))
+   #+end_src
+
+5. What's the data type of a missing number?
+   #+begin_src R :session *R* :results output :exports both
+     class(NA)
+   #+end_src
