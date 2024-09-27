@@ -1055,11 +1055,11 @@ Arithmetic in R:
 - [X] Use logarithms and exponentials
 - [X] Brush up on mathematical E-notation
 - [X] Know R's special numbers
+- [X] Review DataCamp lesson on vectors
 - [ ] Know R's special number functions
 - [ ] Understand logical values and operators
-- [ ] Review DataCamp lesson on vectors
 
-* DONE Review: Basic arithmetic, logarithms
+** Review: Basic arithmetic, logarithms
 
 1. What's the result of =(-1)^(1/2) = sqrt(-1)=
    #+begin_src R :session *R* :results output :exports both
@@ -1167,7 +1167,7 @@ Arithmetic in R:
    : [1] TRUE
    : [1] TRUE
 
-* Project update
+** Project update
 
 - Left detailed feedback for every project
 
@@ -1179,7 +1179,7 @@ Arithmetic in R:
 
   2) Build on the work of others (articles, videos...)
 
-* TODO Euler's number is special
+** Euler's number is special
 #+attr_html: :width 400px:
 [[../img/euler.png]]
 
@@ -1201,12 +1201,13 @@ Recommended: What is Mathematics by Richard Courant (1941)
 #+attr_html: :width 200px:
 [[../img/courant.png]]
 
+Quote (by Courant):
 #+begin_quote
 "Once during my undergraduate years, I used the word 'infinity', and
 my mathematics professor said 'I won't have bad language in my class."
 #+end_quote
 
-* TODO Review: DataCamp lesson on vectors
+** Review: DataCamp lesson on vectors
 
 #+begin_quote
 "To know vectors is to know R."
@@ -1345,7 +1346,7 @@ my mathematics professor said 'I won't have bad language in my class."
    #+RESULTS:
    [[file:vector2.png]]
 
-* TODO Review: E-notation, special numbers
+** Review: E-notation, special numbers
 
 1. What's the difference between the R functions =identical= and
    =all.equal=?
@@ -1424,3 +1425,13 @@ my mathematics professor said 'I won't have bad language in my class."
 
    #+RESULTS:
    : [1] "logical"
+
+* Week 7 - Vectors in R
+#+attr_html: :width 400px: 
+[[../img/5_workhorse.png]]
+
+Arithmetic in R:
+- [ ] Know R's special number functions
+- [ ] Understand logical values and operators
+
+Vectors in R:
