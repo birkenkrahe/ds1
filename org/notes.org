@@ -1167,15 +1167,17 @@ Arithmetic in R:
    : [1] TRUE
    : [1] TRUE
 
-* NEXT Project update
-
+* Project update
 
 - Left detailed feedback for every project
 
 - Next sprint review: October 11 ("Literature Review")
 
-- Two approaches to
+- Two approaches to solving any problems
 
+  1) Do it yourself (using books, and other people)
+
+  2) Build on the work of others (articles, videos...)
 
 * TODO Euler's number is special
 #+attr_html: :width 400px:
@@ -1186,6 +1188,14 @@ Re: Christopher's question about the repeated pattern in e:
 - Irrational numbers are mysterious: between each two distinct
   rational numbers there are infinitely many irrational numbers.
 - Put differently: $\mathbb{R} \backslash \mathbb{Q}$ is /dense/.
+
+#+begin_src R :session *R* :results output :exports both :noweb yes
+  options(digits=20)
+  exp(1)
+#+end_src
+
+#+RESULTS:
+: [1] 2.7182818284590450908
 
 Recommended: What is Mathematics by Richard Courant (1941)
 #+attr_html: :width 200px:
@@ -1209,8 +1219,8 @@ my mathematics professor said 'I won't have bad language in my class."
    #+end_src
 
    #+begin_src R :session *R* :results output :exports both
-     mode(foo)
-     class(foo)
+     mode(foo)   # storage mode
+     class(foo)  # object type
    #+end_src
 
    #+begin_src R :session *R* :results output :exports both
@@ -1227,6 +1237,10 @@ my mathematics professor said 'I won't have bad language in my class."
      names(heights)
    #+end_src
 
+   #+RESULTS:
+   : [1] 180 170 175
+   : NULL
+   
    #+begin_src R :session *R* :results output :exports both
      class(NULL)
      NULL
@@ -1251,16 +1265,14 @@ my mathematics professor said 'I won't have bad language in my class."
    #+end_src
 
    #+begin_src R :session *R* :results output :exports both
-     names(heights)[1]
+     heights <- c("Jim"=180,170,175)
+     names(heights)
      names(heights)[2] <- "Joe"
+     names(heights)
      names(heights)[3] <- "Jeff"
+     names(heights)
      heights
    #+end_src
-
-   #+RESULTS:
-   : [1] "Jim"
-   : Jim  Joe Jeff
-   :  180  170  175
 
 4. How can I extract values from a named vector?
    #+begin_src R :session *R* :results output :exports both
@@ -1268,17 +1280,18 @@ my mathematics professor said 'I won't have bad language in my class."
      heights
 
      heights[2]
-     heights["Joe"]
+    heights["Joe"]
    #+end_src
 
    #+begin_src R :session *R* :results output :exports both
      heights[-2]
      heights[-c(1,3)]
+     heights
    #+end_src
 
    #+begin_src R :session *R* :results output :exports both
-     heights$Jim
-     heights[-c("Jim","Jeff")]
+      heights$Jim
+      heights[-c("Jim","Jeff")]
    #+end_src
 
    #+begin_src R :session *R* :results output :exports both
@@ -1288,7 +1301,12 @@ my mathematics professor said 'I won't have bad language in my class."
 5. What is "logical indexing"?
    #+begin_src R :session *R* :results output :exports both
      heights <- c("Jim"=180, "Joe"=170, "Jeff"=175)
+     heights
    #+end_src
+
+   #+RESULTS:
+   :  Jim  Joe Jeff 
+   :  180  170  175
 
    #+begin_quote
    |       |       |       |        | class       | ops |
@@ -1301,13 +1319,14 @@ my mathematics professor said 'I won't have bad language in my class."
    #+begin_src R :session *R* :results output :exports both
      idx <- heights > 170
      idx
-     heights[idx]
+     heights[idx]    # this is more computer sciencey
+     heights[heights > 170]   # this is more mathematical
    #+end_src
 
    #+begin_src R :session *R* :results output :exports both
-     idx <- which(heights > 170)
-     idx
-     heights[idx]
+     idx2 <- which(heights > 170)
+     idx2
+     heights[idx2]
    #+end_src
 
 6. And what you can do with vectors?
@@ -1322,6 +1341,9 @@ my mathematics professor said 'I won't have bad language in my class."
      color = c(Jim="red",Joe="green",Jeff="blue")
      barplot(heights, col=color)
    #+end_src
+
+   #+RESULTS:
+   [[file:vector2.png]]
 
 * TODO Review: E-notation, special numbers
 
@@ -1344,8 +1366,12 @@ my mathematics professor said 'I won't have bad language in my class."
    #+begin_src R :session *R* :results output :exports both
      foo <- 100000000
      foo
-     format(foo,scientific=FALSE)
+     format(foo, scientific=FALSE)
    #+end_src
+
+   #+RESULTS:
+   : [1] 1e+08
+   : [1] "100000000"
 
 3. How can you compute with "100"?
    #+begin_src R :session *R* :results output :exports both
@@ -1354,12 +1380,30 @@ my mathematics professor said 'I won't have bad language in my class."
      class(foo)
    #+end_src
 
+   #+RESULTS:
+   : [1] "100"
+   : [1] "character"
+
    #+begin_src R :session *R* :results output :exports both
      bar <- as.numeric("100")
      bar
      is.numeric(bar)
      bar**2
    #+end_src
+
+   #+RESULTS:
+   : [1] 100
+   : [1] TRUE
+   : [1] 10000
+
+   #+begin_src R :session *R* :results output :exports both :noweb yes
+     as.numeric("Marcus")
+   #+end_src
+
+   #+RESULTS:
+   : [1] NA
+   : Warning message:
+   : NAs introduced by coercion
 
 4. What is: log(0, b=10)? What is log(1)?
    #+begin_src R :session *R* :results output :exports both
@@ -1368,7 +1412,15 @@ my mathematics professor said 'I won't have bad language in my class."
      log(1, base=exp(1))
    #+end_src
 
+   #+RESULTS:
+   : [1] -Inf
+   : [1] 0
+   : [1] 0
+
 5. What's the data type of a missing number?
    #+begin_src R :session *R* :results output :exports both
      class(NA)
    #+end_src
+
+   #+RESULTS:
+   : [1] "logical"
