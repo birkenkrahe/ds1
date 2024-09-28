@@ -494,6 +494,25 @@ to improve readability. Extra bits are stored by R
 ~Inf~, ~-Inf~ and ~NaN~ are special numbers.
 #+end_notes
 
+* NEXT Getting rid of scientific notation
+
+- The =format= function with the =scientific=FALSE= parameter setting has
+  a disadvantage: the result is a =character=, and not a number.
+
+- Another way of getting rid of scientific notation is with =options=:
+  #+begin_src R :session *R* :results output :exports both
+    1000000
+    options(scipen=999)
+    1000000
+    options(scipen=1)
+    1000000
+  #+end_src
+
+  #+RESULTS:
+  : [1] 1e+06
+  : [1] 1000000
+  : [1] 1e+06
+
 * Math help in R
 #+attr_html: :width 400px:
 [[../img/math_help.png]]
@@ -577,7 +596,7 @@ Solution:
 
 #+end_src
 
-* Special functions
+* TODO Special functions
 
 | ~is.finite(Inf)~ | ~is.infinite(Inf)~ |
 | ~is.finite(NA)~  | ~is.na(NA)~        |
