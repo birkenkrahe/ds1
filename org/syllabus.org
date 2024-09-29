@@ -159,17 +159,17 @@ See also: [[https://catalog.lyon.edu/202425-academic-calendar][2024-25 Academic 
 |------+---------------------------------------------+-------------------|
 |    9 | Introduction to R: Lists                    |                   |
 |------+---------------------------------------------+-------------------|
-|   10 | EDA in R: Categorical data                  |                   |
+|   10 | [[https://app.datacamp.com/learn/courses/data-manipulation-with-datatable-in-r][Introduction to data.table]]                  |                   |
 |------+---------------------------------------------+-------------------|
-|   11 | EDA in R: Numerical data                    | 3rd sprint review |
+|   11 | [[https://app.datacamp.com/learn/courses/exploratory-data-analysis-in-r][EDA in R: Categorical data]]                  | 3rd sprint review |
 |------+---------------------------------------------+-------------------|
-|   12 | EDA in R: Numerical Summaries               |                   |
+|   12 | EDA in R: Numerical data                    |                   |
 |------+---------------------------------------------+-------------------|
-|   13 | EDA in R: Case study                        |                   |
+|   13 | EDA in R: Numerical Summaries               |                   |
 |------+---------------------------------------------+-------------------|
-|   14 | Python for R Users: The Basics              |                   |
+|   14 | EDA in R: Case study                        |                   |
 |------+---------------------------------------------+-------------------|
-|   15 |                                             | 4th sprint review |
+|   15 | [[https://app.datacamp.com/learn/courses/python-for-r-users][Python for R Users: The Basics]]              | 4th sprint review |
 |------+---------------------------------------------+-------------------|
 
 * A note on using AI to write code for you or debug your code
