@@ -1428,7 +1428,7 @@ my mathematics professor said 'I won't have bad language in my class."
 
 * Week 7 - Project update - Vectors in R
 #+attr_html: :width 400px:
-[[../img/mancave.jpeg]]
+[[../img/careerfair.png]]
 
 /Image: This is still my ideal man cave. No digital devices./
 
