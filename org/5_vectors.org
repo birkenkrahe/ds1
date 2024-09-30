@@ -651,7 +651,8 @@ The fix:
 [[../img/5_gnome.jpg]]
 
 - Practice what you've learnt by solving problems independently.
-o- You find the practice file in [[https://app.datacamp.com/workspace/w/5216b6fe-cb9d-4f83-81cb-5105a35d0ccc/edit][here in DataCamp workspace]].
+
+- Download the practice file from here: tinyurl.com/ds105-vector-practice
 
 * Naming vectors
 
