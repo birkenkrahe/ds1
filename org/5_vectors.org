@@ -199,7 +199,7 @@ Let's call ~class~ for our three sample vectors:
     class(specvec1)
   #+end_src
 
-* Base R - what's that again?
+n* Base R - what's that again?
 
 - Let's not forget that there are real data out there!
 
@@ -843,39 +843,6 @@ o- You find the practice file in [[https://app.datacamp.com/workspace/w/5216b6fe
   | ~names(x)~                                 | return names of vector ~x~ (or ~NULL~)        |
   | ~as.character~, ~as.numeric~, ~as.logical~ | coerce arguments to the resp. class           |
 
-* Concept summary
-#+attr_html: :width 400px
-[[../img/4_summary.jpg]]
-
-- In R mathematical expressions are evaluated according to the
-  /PEMDAS/ rule.
-
-- The natural logarithm $ln(x)$ is the inverse of the exponential
-  function e^x.
-
-- In the scientific or e-notation, numbers are expressed as positive
-  or negative multiples of 10.
-
-- Each positive or negative multiple shifts the digital point to the
-  right or left, respectively.
-
-- Infinity ~Inf~, not-a-number ~NaN~, and not available numbers ~NA~
-  are /special values/ in R.
-
-* Code summary
-
-| CODE           | DESCRIPTION                           |
-|----------------+---------------------------------------|
-| ~log(x=,b=)~     | logarithm of ~x~, base ~b~                |
-| ~exp(x)~         | $e^x$, exp[onential] of $x$           |
-| ~is.finite(x)~   | tests for finiteness of ~x~             |
-| ~is.infinite(x)~ | tests for infiniteness of ~x~           |
-| ~is.nan(x)~      | checks if ~x~ is not-a-number           |
-| ~is.na(x)~       | checks if ~x~ is not available          |
-| ~all.equal(x,y)~ | tests near equality                   |
-| ~identical(x,y)~ | tests exact equality                  |
-| ~1e2~, ~1e-2~      | $10^{2}=100$, $10^{-2}=\frac{1}{100}$ |
-
 * References
 
 - <<cotton>> Richard Cotton (2013). [[http://duhi23.github.io/Analisis-de-datos/Cotton.pdf][Learning R.]] O'Reilly Media.
@@ -909,40 +876,40 @@ whenever we deal with qualities or categories (like "male" or
 [fn:4] You should look up the examples in ~help(names)~: the data set
 ~islands~ is a named vector suited to play around with vector naming.
 
-[fn:5]You know this, too: ~str(Nile)~ for the structure, or
-~head(Nile)~ to see the first few (6) elements.
+[fn:5] DEFINITION NOT FOUND.
 
-[fn:6] This page-wise presentation mode with previous|next|up|down
-navigation is actually the page-wise [[https://www.emacswiki.org/emacs/InfoMode][(Emacs) ~Info~]] style
-presentation.
+[fn:6] "Arithmetic (from the Greek ἀριθμός arithmos, 'number' and τική
+[τέχνη], tiké [téchne], 'art') is a branch of mathematics that
+consists of the study of numbers, especially the properties of the
+traditional operations on them—addition, subtraction, multiplication,
+division, exponentiation and extraction of roots." ([[https://en.wikipedia.org/wiki/Arithmetic][Wikipedia]])
 
-[fn:7] Enter ~help(Nile)~, or ~?Nile~. This is one of the more useful
-commands. Will only work if the corresponding dataset has been
-loaded - for ~Nile~, this is the case.
+[fn:7] Not just one MOOC, in fact, but a series of nine courses
+altogether, with which you can get a professional certificate. These
+MOOCs are hosted by [[https://www.edx.org/professional-certificate/harvardx-data-science][edX.org]].
 
-[fn:8] This was mentioned in the "Getting started with R" lesson. To
-list all built-in datasets in base-R, enter simply ~data()~. This is
-the same function that you use to load a dataset after loading the
-respective library (which contains more than one dataset).
+[fn:8] For a while, I had also envisioned that I might use a
+block-based, visual programming language like MIT's [[https://scratch.mit.edu/][Scratch]] or its
+able cousin from Berkeley U., [[https://snap.berkeley.edu/][Snap!]] OpenSAP offers great [[https://open.sap.com/courses/snap2][(free)
+courses]] on Snap! and you can learn all about Scratch online, too.
 
 [fn:9] Fun fact: 'FORTRAN' stands for 'FORmula TRANslator'. A large
 part of R's code base is written in FORTRAN, which is the oldest
 programming language specifically used for scientific computations
 (e.g. it was the first language I learnt at university).
 
-[fn:10] For a while, I had also envisioned that I might use a
-block-based, visual programming language like MIT's [[https://scratch.mit.edu/][Scratch]] or its
-able cousin from Berkeley U., [[https://snap.berkeley.edu/][Snap!]] OpenSAP offers great [[https://open.sap.com/courses/snap2][(free)
-courses]] on Snap! and you can learn all about Scratch online, too.
+[fn:10] This was mentioned in the "Getting started with R" lesson. To
+list all built-in datasets in base-R, enter simply ~data()~. This is
+the same function that you use to load a dataset after loading the
+respective library (which contains more than one dataset).
 
-[fn:11] Not just one MOOC, in fact, but a series of nine courses
-altogether, with which you can get a professional certificate. These
-MOOCs are hosted by [[https://www.edx.org/professional-certificate/harvardx-data-science][edX.org]].
+[fn:11] Enter ~help(Nile)~, or ~?Nile~. This is one of the more useful
+commands. Will only work if the corresponding dataset has been
+loaded - for ~Nile~, this is the case.
 
-[fn:12] "Arithmetic (from the Greek ἀριθμός arithmos, 'number' and τική
-[τέχνη], tiké [téchne], 'art') is a branch of mathematics that
-consists of the study of numbers, especially the properties of the
-traditional operations on them—addition, subtraction, multiplication,
-division, exponentiation and extraction of roots." ([[https://en.wikipedia.org/wiki/Arithmetic][Wikipedia]])
+[fn:12] This page-wise presentation mode with previous|next|up|down
+navigation is actually the page-wise [[https://www.emacswiki.org/emacs/InfoMode][(Emacs) ~Info~]] style
+presentation.
 
-[fn:13] DEFINITION NOT FOUND.
+[fn:13]You know this, too: ~str(Nile)~ for the structure, or
+~head(Nile)~ to see the first few (6) elements.

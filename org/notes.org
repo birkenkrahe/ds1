@@ -1241,7 +1241,7 @@ my mathematics professor said 'I won't have bad language in my class."
    #+RESULTS:
    : [1] 180 170 175
    : NULL
-   
+
    #+begin_src R :session *R* :results output :exports both
      class(NULL)
      NULL
@@ -1281,7 +1281,7 @@ my mathematics professor said 'I won't have bad language in my class."
      heights
 
      heights[2]
-    heights["Joe"]
+     heights["Joe"]
    #+end_src
 
    #+begin_src R :session *R* :results output :exports both
@@ -1291,14 +1291,14 @@ my mathematics professor said 'I won't have bad language in my class."
    #+end_src
 
    #+begin_src R :session *R* :results output :exports both
-      heights$Jim
-      heights[-c("Jim","Jeff")]
+     heights$Jim
+     heights[-c("Jim","Jeff")]
    #+end_src
 
    #+begin_src R :session *R* :results output :exports both
      str(heights)
    #+end_src
-   
+
 5. What is "logical indexing"?
    #+begin_src R :session *R* :results output :exports both
      heights <- c("Jim"=180, "Joe"=170, "Jeff"=175)
@@ -1306,7 +1306,7 @@ my mathematics professor said 'I won't have bad language in my class."
    #+end_src
 
    #+RESULTS:
-   :  Jim  Joe Jeff 
+   :  Jim  Joe Jeff
    :  180  170  175
 
    #+begin_quote
@@ -1426,12 +1426,41 @@ my mathematics professor said 'I won't have bad language in my class."
    #+RESULTS:
    : [1] "logical"
 
-* Week 7 - Vectors in R
-#+attr_html: :width 400px: 
-[[../img/5_workhorse.png]]
+* Week 7 - Project update - Vectors in R
+#+attr_html: :width 400px:
+[[../img/mancave.jpeg]]
 
-Arithmetic in R:
+/Image: This is still my ideal man cave. No digital devices./
+
+Project Update
+
+Finish "Arithmetic in R":
 - [ ] Know R's special number functions
 - [ ] Understand logical values and operators
 
-Vectors in R:
+New topic: "Vectors in R"
+- [ ] Why we need vectors
+- [ ] Creating vectors
+- [ ] Plotting vectors
+- [ ] Sorting and measuring vectors
+- [ ] Naming vectors
+- [ ] Indexing vectors
+- [ ] Coercing vectors
+
+** Project update
+#+attr_html: :width 400px: 
+[[../img/projects.png]]
+
+- Give a very short overview of your project status
+- Articulate clearly:
+  1) What is your main research question?
+  2) What is your main methodology?
+  3) What is your literature review strategy?
+
+** Vectors in R:
+#+attr_html: :width 400px:
+[[../img/5_workhorse.png]]
+
+*** Review 1
+
+*** Review 2
