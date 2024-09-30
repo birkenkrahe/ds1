@@ -1432,7 +1432,9 @@ my mathematics professor said 'I won't have bad language in my class."
 
 /Image: This is still my ideal man cave. No digital devices./
 
-Project Update
+Project Update - change of plans
+#+attr_html: :width 400px: 
+[[../img/notebooklm.png]]
 
 Finish "Arithmetic in R":
 - [ ] Know R's special number functions
@@ -1456,6 +1458,20 @@ New topic: "Vectors in R"
   1) What is your main research question?
   2) What is your main methodology?
   3) What is your literature review strategy?
+
+- 2nd sprint review: NotebookLM experiment: notebooklm.google.com is
+  an experimental Google product that creates source-based notebooks
+  for you but also instant podcasts. 
+
+- Here is an example - based on a finished recent paper:
+  [[https://tinyurl.com/notebooklm-demo][tinyurl.com/notebooklm-demo]]
+  
+- I'm going to change your 2nd sprint remit from "literature review"
+  to "create a Google NotebookLM using your sources".
+
+- Share the resulting notebook with me and with your team mates.
+
+- Generate a podcast and share it with everyone on the Google Chat.
 
 ** Vectors in R:
 #+attr_html: :width 400px:
