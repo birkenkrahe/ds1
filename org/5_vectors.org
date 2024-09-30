@@ -1,5 +1,5 @@
 #+TITLE: VECTORS in R
-#+AUTHOR: Introduction to data science (DSC 105) Fall 2022
+#+AUTHOR: Introduction to data science (DSC 105) Fall 2024
 #+startup: hideblocks indent overview inlineimages entitiespretty
 #+PROPERTY: header-args:R :results output :session *R* :exports both :noweb yes
 #+options: toc:1
@@ -652,7 +652,8 @@ The fix:
 
 - Practice what you've learnt by solving problems independently.
 
-- Download the practice file from here: tinyurl.com/ds105-vector-practice
+- Download the practice file from here:
+  [[https://tinyurl.com/ds105-vectors-practice][tinyurl.com/ds105-vectors-practice]]
 
 * Naming vectors
 
