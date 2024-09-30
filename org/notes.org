@@ -1430,7 +1430,7 @@ my mathematics professor said 'I won't have bad language in my class."
 #+attr_html: :width 400px:
 [[../img/careerfair.png]]
 
-/Image: This is still my ideal man cave. No digital devices./
+/Image: Lyon Career Expo - You gotta go!/
 
 Project Update - change of plans
 #+attr_html: :width 400px: 
@@ -1453,11 +1453,12 @@ New topic: "Vectors in R"
 #+attr_html: :width 400px: 
 [[../img/projects.png]]
 
-- Give a very short overview of your project status
+- Give a very short overview of your project status.
 - Articulate clearly:
-  1) What is your main research question?
-  2) What is your main methodology?
-  3) What is your literature review strategy?
+  1) What is your main research question? (What)
+  2) What is your main methodology? (How)
+  3) What is your literature review strategy? (Next?)
+  4) How are you working this as a team?
 
 - 2nd sprint review: NotebookLM experiment: notebooklm.google.com is
   an experimental Google product that creates source-based notebooks
