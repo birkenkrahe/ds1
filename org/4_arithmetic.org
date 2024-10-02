@@ -494,7 +494,7 @@ to improve readability. Extra bits are stored by R
 ~Inf~, ~-Inf~ and ~NaN~ are special numbers.
 #+end_notes
 
-* NEXT Getting rid of scientific notation
+* Getting rid of scientific notation
 
 - The =format= function with the =scientific=FALSE= parameter setting has
   a disadvantage: the result is a =character=, and not a number.
@@ -610,6 +610,8 @@ Solution:
 
 * Practice: special functions
 
+Open an R console or an R chunk in Org-mode:
+
 1) Enter ~10^309~ and ~10^308~. What's going on?
 2) Subtract ~sqrt(2)**2~ from ~2~. What's going on?
 3) Show that ~sqrt(2)**2~ and ~2~ are not identical using ~identical~
@@ -619,7 +621,7 @@ Solution:
 7) Show that ~NaN~ is not a number
 8) Are missing values numbers in R?
 
-9) Solution:
+Solution:
    #+begin_src R :results output
      10^309 # Inf - cannot be represented by a 64-bit computer
      10^308
