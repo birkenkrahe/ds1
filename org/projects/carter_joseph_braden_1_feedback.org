@@ -1,0 +1,107 @@
+#+GROUP MEMBERS: Carter Sprague,Joseph Carpenter, Braden Hendrix
+
+#+begin_notes MB
+You should use standard meta data that Emacs can read when it renders
+documents, like in your assignments: =#+TITLE:=, =#+AUTHOR:=, and =#+SUBTITLE:=.
+
+Your headlines should use standard syntax, too: =*=, =**= etc. 
+
+If you improve these things, your document will be more readable and
+also much more easy to work with.
+#+end_notes
+
+#+PROJECT IDEA: The goal of this project is to combine historical performance/stats
+                with current conditions to come up with a formula to help analyze
+                who the top HB will be in the upcoming NFL season
+
+#+begin_notes MB
+As your customer, am I supposed to know what "HP" and "NFL" is? Always
+define acronyms when you first use them (if you use them again).
+
+In terms of purpose, this is ambitious and you seem to want to do
+predictive analytics but I am not sure you have the technical skills
+to do this. If you don't do it yourself you can still take other
+people's data and publications - but doing your own analysis is more
+fun - in your team, Braden has done a project (solo), he can tell you.
+#+end_notes		
+
+#+PROBLEM: The probelm we are trying to solve is, we want to find a formula
+           using previous years stats and trends to help up make an accurate assumption
+           on who the top HB's in the league will be for the upcoming NFL season
+
+#+begin_notes MB
+Seems a little fast written - typo here, and above there are
+others. Make sure you take enough time before you submit - you're
+three people who can check each other's stuff, and you have one month
+between sprint reviews.
+
+When you say 'formula', you probably mean a model. If you mean a
+mathematical formula then you're probably out of luck unless you know
+a lot more than I do. Instead, you are probably better advised to do
+some exploratory analysis with existing data to identify patterns,
+create visuals based on these, and find out which variables/features
+contribute to a team's success. That's work which you must do before
+attempting to find any "formula".
+#+end_notes	   
+
+#+CONSTRAINTS: Some difficulties we will have with this project is
+               1. Which stats will we use to incorporate into our formula
+               2. What our formula will be
+               3. How many years back do we want to go to get an accuarte pool of data
+
+#+begin_notes MB
+1 and 3 are excellent questions, not so much constraints. First
+though: which data and where from? The second question is
+ill-defined. You can split goals amongst yourselves too.
+
+Constraints include things that may help or hinder your success. Data
+availability, skill set, people to ask etc.
+#+end_notes
+		  
+#+GOALS: 1. Analyzing large pools of stats and better understanding how to find
+           useful information within the numbers
+     
+         2.Coming up with a formula using past stats and trends
+
+         3. Better understand how to code using data sets
+
+#+begin_notes MB
+1 AND 3 are good - though you need to define "useful information" in
+the context of your application (sports). "Code using data sets" is
+all what R is about. Getting to know complicated data and finding some
+patterns may be sufficient.
+#+end_notes
+	 
+
+#+Non-Goals: 1.Perfect accuracy in the results
+             2. Predicting injuries that can occur throughout the season
+         
+
+#+METRICES: We will measure if our project is succesful or not by 
+            1. If our formula is able to give us names of players that project to do good
+            2. If we check back at the end of the NFL season and some of our answers
+               are actually top performers in the NFL for this season
+
+#+begin_notes MB
+Metrics can also include things you're looking for in the data. For
+this and for the next section (references) you need to check the
+literature (what's been published in this field already and how people
+have done this) - that's also your next sprint review deliverable.
+
+Sometimes all you need and can do is check and work through other
+people's work and you'd be surprised how easy it is often to find
+mistakes.
+#+end_notes	       
+
+#+REFERENCES: Kacsmar S. Pro Football Stats, history,scores,standings,playoffs,Schedules
+              & Records. Pro. 2000. Accessed Septembers 13,2024.
+              https://www.pro-football-reference.com/#:~:text=Pro%20Football%20Stats%2C%20History%2C%20Scores,Pro%2DReference.com
+
+#+begin_notes MB
+You need more references and you're not referencing some things you
+need to reference. For example, are you going to work with R? You also
+don't need long links/URLs in a reference, but inline links, [[https://www.pro-football-reference.com/#:~:text=Pro%20Football%20Stats%2C%20History%2C%20Scores,Pro%2DReference.com][like this]].
+
+References need to be consistent (all of the same format) and
+complete.
+#+end_notes	      

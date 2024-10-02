@@ -1433,8 +1433,8 @@ my mathematics professor said 'I won't have bad language in my class."
 /Image: Lyon Career Expo - You gotta go!/
 
 Project Update - change of plans
-#+attr_html: :width 400px: 
-[[../img/notebooklm.png]]
+- [ ] Literature review with litmaps.com
+- [ ] Podcast with notebooklm.googl.com
 
 Finish "Arithmetic in R":
 - [ ] Know R's special number functions
@@ -1451,7 +1451,7 @@ New topic: "Vectors in R"
 
 ** Project update
 #+attr_html: :width 400px: 
-[[../img/projects.png]]
+[[../img/notebooklm.png]]
 
 - Give a very short overview of your project status.
 - Articulate clearly:
@@ -1474,10 +1474,18 @@ New topic: "Vectors in R"
 
 - Generate a podcast and share it with everyone on the Google Chat.
 
+
+** NEXT 
+
+** DataCamp check-in
+
+** Back to "Arithmetic in R"
+
+- There is a new 10 minutes podcast now (see Google chat).
+- I've also posted a link to a YouTube video playlist.
+- Let's finish up our remaining topics from this section.
+
 ** Vectors in R:
 #+attr_html: :width 400px:
 [[../img/5_workhorse.png]]
 
-*** Review 1
-
-*** Review 2
