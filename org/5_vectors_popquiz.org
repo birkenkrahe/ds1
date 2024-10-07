@@ -1,0 +1,83 @@
+#+PROPERTY: header-args:R :results output :exports both :session *R*
+
+* Vectors and Matrices (DataCamp) popquiz & =NA= extension
+
+1. Create a vector =temp= of temperatures predicted for next week. The
+   temperatures (from Monday to Friday) were: 76, 75, 77, 79, 81.
+   #+begin_src R
+
+   #+end_src
+
+2. Create a vector =week= of weekdays from Monday (Mon) to Friday (Fri):
+   #+begin_src R
+
+   #+end_src
+
+3. Name the =temp= vector according to days of =week=:
+   #+begin_src R
+
+   #+end_src
+
+4. Print temperatures that are not below 80 degrees Fahrenheit:
+   #+begin_src R
+
+   #+end_src
+
+5. Compute the average of the temperatures for the =week=:
+   #+begin_src R
+
+   #+end_src
+
+6. Compute the average of the temperature for the =week= without the
+   days on which the temperature was at least 80 degrees Fahrenheit:
+   #+begin_src R
+
+   #+end_src
+
+7. Create an unnamed vector =temp2= from =temp=:
+   #+begin_src R
+
+   #+end_src
+
+8. Convert the vector =temp2= into a 2 x 5 =matrix= =temp_m=:
+   #+begin_src R
+
+   #+end_src
+
+9. Name the columns of the matrix according to =week= names:
+   #+begin_src R
+
+   #+end_src
+
+10. Compute the average temperature without using the =mean= function:
+    #+begin_src R
+
+    #+end_src
+
+11. Compute the average temperature using the =mean= function:
+    #+begin_src R
+
+    #+end_src
+
+12. Compute the average temperature with =mean= only for the days where
+    the temperature was greater or equal 80 degrees Fahrenheit:
+    #+begin_src R
+
+    #+end_src
+
+13. Add a row of missing values to the matrix and store it in =temp_m2=:
+    #+begin_src R
+
+    #+end_src
+
+14. Compute the average temperature of =temp_m2= using =mean=:
+    #+begin_src R
+
+    #+end_src
+
+15. Compute the average temperature with =mean= only for the days where
+    the temperature was greater or equal 80 degrees Fahrenheit:
+    #+begin_src R
+
+    #+end_src
+    
