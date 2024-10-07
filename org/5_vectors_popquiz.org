@@ -75,7 +75,7 @@
     #+end_src
 
 15. Compute the average temperature with =mean= only for the days where
-    the temperature was greater or equal 80 degrees Fahrenheit:
+    the temperature was lower than 80 degrees Fahrenheit (Mon-Thu):
     #+begin_src R
 
     #+end_src
