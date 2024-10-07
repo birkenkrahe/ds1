@@ -1,0 +1,199 @@
+#+PROPERTY: header-args:R :results output :exports both :session *R*
+* Vectors and Matrices (DataCamp) popquiz & =NA= extension
+
+1. Create a vector =temp= of temperatures predicted for next week. The
+   temperatures (from Monday to Friday) were: 76, 75, 77, 79, 81.
+   #+begin_src R
+     c(76, 75, 77, 79, 81) -> temp
+     temp
+   #+end_src
+
+   #+RESULTS:
+   : [1] 76 75 77 79 81
+
+2. Create a vector =week= of weekdays from Monday (Mon) to Friday (Fri):
+   #+begin_src R
+     c("Mon","Tue","Wed","Thu","Fri") -> week
+     week
+   #+end_src
+
+   #+RESULTS:
+   : [1] "Mon" "Tue" "Wed" "Thu" "Fri"
+
+3. Name the =temp= vector according to days of =week=:
+   #+begin_src R
+     week -> names(temp)
+     temp
+     str(temp)  # structure of the vector
+   #+end_src
+
+   #+RESULTS:
+   : Mon Tue Wed Thu Fri 
+   :  76  75  77  79  81
+   :  Named num [1:5] 76 75 77 79 81
+   :  - attr(*, "names")= chr [1:5] "Mon" "Tue" "Wed" "Thu" ...
+
+4. Print temperatures that are not below 80 degrees Fahrenheit:
+   #+begin_src R
+     temp >= 80  # Boolean / logical vector (flag)
+     temp[temp>=76 & temp<79]
+
+     temp >= 80 -> temperatures_greater_or_equal_80 
+     temp[temperatures_greater_or_equal_80]
+
+     temp < 80 -> idx
+     temp[idx]
+
+     temp["Mon"]  # using the name to extract a value
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+     Mon   Tue   Wed   Thu   Fri 
+   FALSE FALSE FALSE FALSE  TRUE
+   Mon Wed 
+    76  77
+   Fri 
+    81
+   Mon Tue Wed Thu 
+    76  75  77  79
+   Mon 
+    76
+   #+end_example
+
+5. Compute the average of the temperatures for the =week=:
+   #+begin_src R
+     mean(week)  # won't work because...
+     class(week) # `week` is a character vector
+     mean(temp)
+   #+end_src
+
+   #+RESULTS:
+   : [1] NA
+   : Warning message:
+   : In mean.default(week) : argument is not numeric or logical: returning NA
+   : [1] "character"
+   : [1] 77.6
+
+6. Compute the average of the temperature for the =week= without the
+   days on which the temperature was at least 80 degrees Fahrenheit:
+   #+begin_src R
+     temp[-c(2:4)]  # exclude certain values
+     mean(temp[-5]) # average if you know it's 5
+
+     idx <- temp < 80 
+     idx
+     temp[idx]
+
+     mean(temp[idx])
+   #+end_src
+
+   #+RESULTS:
+   : Mon Fri 
+   :  76  81
+   : [1] 76.75
+   :   Mon   Tue   Wed   Thu   Fri 
+   :  TRUE  TRUE  TRUE  TRUE FALSE
+   : Mon Tue Wed Thu 
+   :  76  75  77  79
+   : [1] 76.75
+
+7. Create an unnamed vector =temp2= from =temp=:
+   #+begin_src R
+     names(temp)  # print the names
+     temp -> temp2  # make a copy 
+     temp2                  
+     names(temp2) <- NULL  # delete the names
+     temp2  # print the unnamed = nameless vector
+   #+end_src
+
+   #+RESULTS:
+   : [1] "Mon" "Tue" "Wed" "Thu" "Fri"
+   : Mon Tue Wed Thu Fri 
+   :  76  75  77  79  81
+   : [1] 76 75 77 79 81
+
+8. Convert the vector =temp2= into a 1 x 5 =matrix= =temp_m=:
+   #+begin_src R
+     matrix(1:9,nrow=3) # example 3 x 3 matrix of numbers 1-9
+
+     matrix(temp,nrow=1) -> temp_m
+     temp_m
+   #+end_src
+
+   #+RESULTS:
+   :      [,1] [,2] [,3]
+   : [1,]    1    4    7
+   : [2,]    2    5    8
+   : [3,]    3    6    9
+   :      [,1] [,2] [,3] [,4] [,5]
+   : [1,]   76   75   77   79   81
+
+9. Name the columns of the matrix according to =week= names:
+   #+begin_src R
+     colnames(temp_m) <- week
+     temp_m
+   #+end_src
+
+   #+RESULTS:
+   :      Mon Tue Wed Thu Fri
+   : [1,]  76  75  77  79  81
+
+10. Compute the average temperature without using the =mean= function:
+    #+begin_src R
+      rowSums(temp_m) / length(temp_m)
+    #+end_src
+
+    #+RESULTS:
+    : [1] 77.6
+
+11. Compute the average temperature using the =mean= function:
+    #+begin_src R
+      mean(temp_m)
+    #+end_src
+
+    #+RESULTS:
+    : [1] 77.6
+
+12. Compute the average temperature with =mean= only for the days where
+    the temperature was greater or equal 80 degrees Fahrenheit:
+    #+begin_src R
+      mean(temp_m[temp<80])
+    #+end_src
+
+    #+RESULTS:
+    : [1] 76.75
+
+13. Add a row of missing values to the matrix and store it in =temp_m2=:
+    #+begin_src R
+      rbind(temp_m,NA) -> temp_m2
+      temp_m2
+    #+end_src
+
+    #+RESULTS:
+    :      Mon Tue Wed Thu Fri
+    : [1,]  76  75  77  79  81
+    : [2,]  NA  NA  NA  NA  NA
+
+14. Compute the average temperature of =temp_m2= using =mean=:
+    #+begin_src R
+      mean(temp_m2, na.rm=TRUE)
+    #+end_src
+
+    #+RESULTS:
+    : [1] 77.6
+
+15. Compute the average temperature with =mean= only for the days where
+    the temperature was greater or equal 80 degrees Fahrenheit:
+    #+begin_src R
+      idx
+      mean(temp_m2[idx],na.rm=TRUE)  # this is not right!
+      mean(na.omit(temp_m2)[idx])
+    #+end_src
+
+    #+RESULTS:
+    :   Mon   Tue   Wed   Thu   Fri 
+    :  TRUE  TRUE  TRUE  TRUE FALSE
+    : [1] 77.75
+    : [1] 76.75
+    
