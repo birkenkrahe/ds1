@@ -1,5 +1,4 @@
 #+PROPERTY: header-args:R :results output :exports both :session *R*
-
 * Vectors and Matrices (DataCamp) popquiz & =NA= extension
 
 1. Create a vector =temp= of temperatures predicted for next week. The
@@ -20,7 +19,7 @@
 
 4. Print temperatures that are not below 80 degrees Fahrenheit:
    #+begin_src R
-
+     
    #+end_src
 
 5. Compute the average of the temperatures for the =week=:
@@ -39,7 +38,7 @@
 
    #+end_src
 
-8. Convert the vector =temp2= into a 2 x 5 =matrix= =temp_m=:
+8. Convert the vector =temp2= into a 1 x 5 =matrix= =temp_m=:
    #+begin_src R
 
    #+end_src

@@ -1472,7 +1472,6 @@ Finish "Arithmetic in R":
 - [X] I've also posted a link to a YouTube video playlist.
 - [ ] Let's finish up our remaining topics from this section.
 
-
 * Week 8 - Vectors in R
 #+attr_html: :width 600px:
 [[../img/5_workhorse.png]]
@@ -1490,7 +1489,7 @@ Finish "Arithmetic in R":
 - [ ] Indexing vectors
 - [ ] Coercing vectors
 
-* Vectors and Matrices (DataCamp) popquiz & =NA= extension
+** DONE Vectors and Matrices (DataCamp) popquiz & =NA= extension
 
 1. Create a vector =temp= of temperatures predicted for next week. The
    temperatures (from Monday to Friday) were: 76, 75, 77, 79, 81.
@@ -1583,7 +1582,7 @@ Finish "Arithmetic in R":
    #+end_src
 
    #+RESULTS:
-   :      [,1] [,2] [,3] [,4] [,5]
+   : [,1] [,2] [,3] [,4] [,5]
    : [1,]   76   75   77   79   81
 
 9. Name the columns of the matrix according to =week= names:
@@ -1593,7 +1592,7 @@ Finish "Arithmetic in R":
    #+end_src
 
    #+RESULTS:
-   :      Mon Tue Wed Thu Fri
+   : Mon Tue Wed Thu Fri
    : [1,]  76  75  77  79  81
 
 10. Compute the average temperature without using the =mean= function:
@@ -1615,15 +1614,17 @@ Finish "Arithmetic in R":
 12. Compute the average temperature with =mean= only for the days where
     the temperature was greater or equal 80 degrees Fahrenheit:
     #+begin_src R
-      idx_m <- temp_m >= 80
+      idx_m <- (temp_m >= 80)
       idx_m
-      mean(temp_m[idx_m])      
+      temp_m[-which(idx_m)]
+      mean(temp_m[-which(idx_m)])
     #+end_src
 
     #+RESULTS:
-    :        Mon   Tue   Wed   Thu  Fri
+    : Mon   Tue   Wed   Thu  Fri
     : [1,] FALSE FALSE FALSE FALSE TRUE
-    : [1] 81
+    : [1] 76 75 77 79
+    : [1] 76.75
 
 13. Add a row of missing values to the matrix and store it in =temp_m2=:
     #+begin_src R
@@ -1632,7 +1633,7 @@ Finish "Arithmetic in R":
     #+end_src
 
     #+RESULTS:
-    :      Mon Tue Wed Thu Fri
+    : Mon Tue Wed Thu Fri
     : [1,]  76  75  77  79  81
     : [2,]  NA  NA  NA  NA  NA
 
@@ -1655,7 +1656,7 @@ Finish "Arithmetic in R":
     #+end_src
 
     #+RESULTS:
-    :        Mon   Tue   Wed   Thu  Fri
+    : Mon   Tue   Wed   Thu  Fri
     : [1,] FALSE FALSE FALSE FALSE TRUE
     : [1] 76.75
     
