@@ -1495,79 +1495,167 @@ Finish "Arithmetic in R":
 1. Create a vector =temp= of temperatures predicted for next week. The
    temperatures (from Monday to Friday) were: 76, 75, 77, 79, 81.
    #+begin_src R
-
+     temp <- c(76, 75, 77, 79, 81)
+     temp
    #+end_src
+
+   #+RESULTS:
+   : [1] 76 75 77 79 81
 
 2. Create a vector =week= of weekdays from Monday (Mon) to Friday (Fri):
    #+begin_src R
-
+     c("Mon","Tue","Wed","Thu","Fri") -> week
+     week
    #+end_src
+
+   #+RESULTS:
+   : [1] "Mon" "Tue" "Wed" "Thu" "Fri"
 
 3. Name the =temp= vector according to days of =week=:
    #+begin_src R
-
+     names(temp) <- week
+     temp
+     str(temp)
    #+end_src
+
+   #+RESULTS:
+   : Mon Tue Wed Thu Fri 
+   :  76  75  77  79  81
+   :  Named num [1:5] 76 75 77 79 81
+   :  - attr(*, "names")= chr [1:5] "Mon" "Tue" "Wed" "Thu" ...
 
 4. Print temperatures that are not below 80 degrees Fahrenheit:
    #+begin_src R
-
+     idx <- temp>=80
+     idx
+     temp[idx]
+     temp[temp>=80]
    #+end_src
+
+   #+RESULTS:
+   :   Mon   Tue   Wed   Thu   Fri 
+   : FALSE FALSE FALSE FALSE  TRUE
+   : Fri 
+   :  81
+   : Fri 
+   :  81
 
 5. Compute the average of the temperatures for the =week=:
    #+begin_src R
-
+     mean(temp)
    #+end_src
+
+   #+RESULTS:
+   : [1] 77.6
 
 6. Compute the average of the temperature for the =week= without the
    days on which the temperature was at least 80 degrees Fahrenheit:
    #+begin_src R
-
+     which(idx)
+     temp[-which(idx)]
+     mean(temp[-which(idx)])
    #+end_src
+
+   #+RESULTS:
+   : Fri 
+   :   5
+   : Mon Tue Wed Thu 
+   :  76  75  77  79
+   : [1] 76.75
 
 7. Create an unnamed vector =temp2= from =temp=:
    #+begin_src R
-
+     temp2 <- temp
+     temp2
+     NULL -> names(temp2)
+     temp2
    #+end_src
 
-8. Convert the vector =temp2= into a 2 x 5 =matrix= =temp_m=:
+   #+RESULTS:
+   : Mon Tue Wed Thu Fri 
+   :  76  75  77  79  81
+   : [1] 76 75 77 79 81
+
+8. Convert the vector =temp2= into a 1 x 5 =matrix= =temp_m=:
    #+begin_src R
-
+     matrix(temp, nrow=1) -> temp_m
+     temp_m
    #+end_src
+
+   #+RESULTS:
+   :      [,1] [,2] [,3] [,4] [,5]
+   : [1,]   76   75   77   79   81
 
 9. Name the columns of the matrix according to =week= names:
    #+begin_src R
-
+     colnames(temp_m) <- week
+     temp_m
    #+end_src
+
+   #+RESULTS:
+   :      Mon Tue Wed Thu Fri
+   : [1,]  76  75  77  79  81
 
 10. Compute the average temperature without using the =mean= function:
     #+begin_src R
-
+      rowSums(temp_m)/length(temp_m)
     #+end_src
+
+    #+RESULTS:
+    : [1] 77.6
 
 11. Compute the average temperature using the =mean= function:
     #+begin_src R
-
+      mean(temp_m)
     #+end_src
+
+    #+RESULTS:
+    : [1] 77.6
 
 12. Compute the average temperature with =mean= only for the days where
     the temperature was greater or equal 80 degrees Fahrenheit:
     #+begin_src R
-
+      idx_m <- temp_m >= 80
+      idx_m
+      mean(temp_m[idx_m])      
     #+end_src
+
+    #+RESULTS:
+    :        Mon   Tue   Wed   Thu  Fri
+    : [1,] FALSE FALSE FALSE FALSE TRUE
+    : [1] 81
 
 13. Add a row of missing values to the matrix and store it in =temp_m2=:
     #+begin_src R
-
+      rbind(temp_m,rep(NA,5)) -> temp_m2
+      temp_m2
     #+end_src
+
+    #+RESULTS:
+    :      Mon Tue Wed Thu Fri
+    : [1,]  76  75  77  79  81
+    : [2,]  NA  NA  NA  NA  NA
 
 14. Compute the average temperature of =temp_m2= using =mean=:
     #+begin_src R
-
+      mean(temp_m2,na.rm=TRUE)
+      mean(temp_m2[1,])  # does not generalize (need to know where NA are)
     #+end_src
+
+    #+RESULTS:
+    : [1] 77.6
+    : [1] 77.6
 
 15. Compute the average temperature with =mean= only for the days where
     the temperature was greater or equal 80 degrees Fahrenheit:
     #+begin_src R
-
+      idx <- na.omit(temp_m2)>=80
+      idx
+      mean(temp_m2[1,-which(idx)], na.rm=TRUE)
     #+end_src
+
+    #+RESULTS:
+    :        Mon   Tue   Wed   Thu  Fri
+    : [1,] FALSE FALSE FALSE FALSE TRUE
+    : [1] 76.75
     
