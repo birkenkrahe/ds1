@@ -347,13 +347,14 @@ Code along.
     (specvec2 <- c(specvec, Inf, -Inf))
     is.finite(specvec2)   # output is logical!
     is.infinite(specvec2)   # output is logical!
-    class(specvec12
+    class(specvec2)
   #+end_src
 
   #+RESULTS:
   : [1]   NA  NaN  Inf -Inf
   : [1] FALSE FALSE FALSE FALSE
   : [1] FALSE FALSE  TRUE  TRUE
+  : [1] "numeric"
 
 
   #+begin_src R
