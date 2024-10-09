@@ -1485,8 +1485,8 @@ Finish "Arithmetic in R":
 - [ ] *Friday*: Lab with exercises from the topics of the week
 
 *New topic: "Vectors in R"*
-- [ ] Why we need vectors
-- [ ] Creating vectors
+- [X] Why we need vectors
+- [X] Creating vectors
 - [ ] Plotting vectors
 - [ ] Sorting and measuring vectors
 - [ ] Naming vectors
@@ -1691,3 +1691,42 @@ Finish "Arithmetic in R":
     : [1] 77.75
     : [1] 76.75
     
+
+** NEXT Review: Creating (special) vectors
+
+1. How can you append ~foo~ to ~bar~ if ~c(1,2,3) -> foo~, ~c(4,5,6) -> bar~?
+   #+begin_src R
+     c(1,2,3) -> foo
+     c(4,5,6) -> bar
+     c(bar,foo)
+   #+end_src
+
+2. How can you turn ~c("a","b") -> baz~ into a ~numeric~ vector?
+   #+begin_src R
+     c("a","b") -> baz
+     as.numeric(baz)
+   #+end_src
+
+3. How can you turn ~c(1,2,3) -> foo~ into a ~character~ vector?
+   #+begin_src R
+     c(1,2,3) -> foo
+     as.character(foo)
+   #+end_src
+
+4. What will ~c(1,1,1.0)~, ~c(1,1,1.1)~, ~c(1,1,1e+6)~, ~c(1,1,0.000001e6)~ print?
+   #+begin_src R
+     c(1,1,1.0)
+     c(1,1,1.1)
+     c(1,1,1e6)
+     c(1,1,0.000001e6)
+   #+end_src
+
+5. What R object class are: ~Inf~, ~NA~, ~NaN~, ~NULL~, and ~c(NA, NaN, Inf)~?
+   #+begin_src R
+     class(Inf)  # special number
+     class(NA)   # special (Boolean) number
+     class(NaN)  # special number (but "not a number")
+     class(NULL) # special type (only object of type NULL)
+     class(c(NA,NaN,Inf))  # vector of special numbers
+     class(c(NA,NaN,Inf,NULL))  # vector of special numbers
+   #+end_src

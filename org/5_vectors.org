@@ -162,7 +162,6 @@ Code along:
      : [1] "barf" "foo"
      : character(0)
 
-    
 * Why we need vectors [[https://youtu.be/iFsB_34mnR0][(video)]]
 
 - We need vectors to handle multiple items in R ('collection')
@@ -368,7 +367,7 @@ Code along.
     class(specvec1)
   #+end_src
 
-* Base R - what's that again?
+* NEXT Base R - what's that again?
 
 - Let's not forget that there are real data out there!
 
