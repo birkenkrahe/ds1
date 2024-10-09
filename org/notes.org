@@ -1478,9 +1478,9 @@ Finish "Arithmetic in R":
 
 - [X] *Popquiz*: Vectors & Matrices & =NA= extension.
 
-- [ ] *Poll:* Did anyone listen to the last two podcasts or videos?
+- [X] *Poll:* Did anyone listen to the last two podcasts or videos?
 
-- [ ] *Video*: I recorded sample solutions to the popquiz ([[https://youtube.com/playlist?list=PLwgb17bzeNyhPl0kUNTRkLM2-pnfC2kHR&si=kzsSLx7R8pdkLOIr][playlist]])
+- [X] *Video*: I recorded sample solutions to the popquiz ([[https://youtube.com/playlist?list=PLwgb17bzeNyhPl0kUNTRkLM2-pnfC2kHR&si=kzsSLx7R8pdkLOIr][playlist]])
 
 - [ ] *Friday*: Lab with exercises from the topics of the week
 
