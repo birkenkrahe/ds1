@@ -38,17 +38,18 @@ After this lesson, you should be able to:
 
 #+begin_notes
 R is a functional, object-oriented language: everything's an object,
-and functions rule, as you already know. Because functions rule,
-there are usually many different ways to achieve the same
-result. They often differ in terms of performance, ease of use, and
-clarity. Performance becomes important when you work with truly
-large data sets, otherwise not so much. Ease of use to some extent
-determines the fun you do or don't have when using the
-language. Clarity is essential when communicating your methods
-(including your code) and your results to others. This is not a nice
-to have. Views of different packages (like the Tidyverse) differ
-massively regarding all of these.
+and functions rule, as you already know. Because functions rule, there
+are usually many different ways to achieve the same result. They often
+differ in terms of performance, ease of use, and clarity. Performance
+becomes important when you work with truly large data sets, otherwise
+not so much. Ease of use to some extent determines the fun you do or
+don't have when using the language. Clarity is essential when
+communicating your methods (including your code) and your results to
+others. This is not a nice to have. Views of different packages (like
+the Tidyverse) differ massively regarding all of these.
 #+end_notes
+
+/Image: The instructor during COVID in his Berlin appartamento (1912)./
 
 * Assigning objects [[https://youtu.be/WZqJ_AyoOEU][(video)​]]
 
@@ -56,20 +57,20 @@ massively regarding all of these.
 - Use ~<-~ for objects, and ~=~ to assign function parameters
 - Object names must start with a letter and avoid reserved words
 
-- Challenge (15 min):
-
   1) Create an object ~foo~ that stores the value 3^2 \times 4^{1/8} and
      display it.
      #+begin_src R
        foo <- 3**2 * 4**(1/8)
        foo
      #+end_src
+
   2) Overwrite ~foo~ with itself divided by 2.33. Print the result to
-     the console.
+     the screen.
      #+begin_src R
        foo <- foo / 2.33
        foo
      #+end_src
+
   3) Experiment with different formats and types - look all
      functions that you don't know up using ~help~:
      1. Create a new object ~bar~ with the value -8.2 \times 10^{-13} using
@@ -86,10 +87,12 @@ massively regarding all of these.
        class(barf)
        as.numeric(barf)
      #+end_src
+
   4) Print the result of multiplying ~foo~ and ~bar~ to the console.
      #+begin_src R
        foo * bar
      #+end_src
+
   5) Check all variables created in the current session so far with
      ~ls~, then delete them with ~rm~, and check that they're all gone.
      #+begin_src R
@@ -97,13 +100,14 @@ massively regarding all of these.
        rm(list=ls())
        ls()
      #+end_src
+
 * Why we need vectors [[https://youtu.be/iFsB_34mnR0][(video)]]
 
 - We need vectors to handle multiple items in R
 - Vectors contain observations or measurements of a single variable
 - Each vector can have only one data type - e.g. ~numeric~ [fn:1]
 
-1) Give three examples of such collections for vectors:
+1) Three examples of such collections for vectors using this class:
    - numbers, e.g. the heights of students in this class
    - text, e.g. the names of students of this class
    - logical values, e.g. sex of students of this class
@@ -115,12 +119,14 @@ massively regarding all of these.
 
 #+begin_notes
 *Solution:*
-1) the heights of every student of this class, in cm.
-2) the first names of every student of this class (strings).
+1) the *heights* of every student of this class, in cm.
+2) the first *names* of every student of this class (strings).
 3) observations, if a student is male or not male (male means ~TRUE~).
 
 Let's put some wood behind the arrow and define sample vectors for these:
 #+end_notes
+
+Example code: The three vectors for names, heights, and sex
 #+begin_src R :session
   s_heights <- c(180, 181, 158, 175, 179, 168)
   s_names <- c("Vincent", "Natalija", "Adrian", "Andres", "Helena")
@@ -129,11 +135,6 @@ Let's put some wood behind the arrow and define sample vectors for these:
   s_names
   s_male
 #+end_src
-
-#+RESULTS:
-: [1] 180 181 158 175 179 168
-: [1] "Vincent"  "Natalija" "Adrian"   "Andres"   "Helena"
-: [1]  TRUE FALSE  TRUE  TRUE FALSE
 
 * R object ~class~
 #+attr_latex: :width 400px
@@ -154,12 +155,15 @@ and enter the examples at the bottom of the help page.
 
 Let's call ~class~ for our three sample vectors:
 #+end_notes
+
 #+begin_src R :session :results output
   class(s_heights) # what type vector is this?
   class(s_names)   # what type vector is this?
   class(s_male)    # what type vector is this?
 #+end_src
 * Creating vectors [[https://youtu.be/Ov6SIrpY_io][(video)]]
+
+Code along.
 
 - The function to create a vector, or "combine values", is ~c()~:
   #+begin_src R :session
@@ -185,7 +189,7 @@ Let's call ~class~ for our three sample vectors:
 - In the resulting output, the two vectors were put side by side. The
   new vector now has 11 = 4 + 7 elements.
 
-- [ ] What about missing values, ~NA~, and non-numbers, ~NaN~, and what
+- *What about missing values*, ~NA~, and non-numbers, ~NaN~, and what
   about the special values ~Inf~ and ~-Inf~ - can you have these in
   vectors, too? Can you think about a way to test this?
   #+begin_src R
@@ -199,12 +203,12 @@ Let's call ~class~ for our three sample vectors:
     class(specvec1)
   #+end_src
 
-n* Base R - what's that again?
+* Base R - what's that again?
 
 - Let's not forget that there are real data out there!
 
 - R (i.e. "[[https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf][Base R]]") includes a number of built-in datasets
-  #+attr_html: :width 300px
+  #+attr_html: :width 700px
   [[../img/baseR.png]]
 
 - Do you remember how to find these pre-loaded datasets? One of these
@@ -218,39 +222,36 @@ n* Base R - what's that again?
 #+attr_html: :width 600px
 [[../img/nile.png]]
 
-- What data structure is ~Nile~?
+- What data structure (type of R object) is ~Nile~?
 
 - ~Nile~ contains a so-called "time series", a sequence of numbers that
   correspond to measurements of the annual flow (in billion - 10⁸ -
   cubic meters) of the river Nile at [[https://en.wikipedia.org/wiki/Aswan][Aswan]], measured between
-  1871-1970. You can use ~class~ to confirm it:
+  1871-1970.
+
+- For a full characterization, you need more than one function:
   #+begin_src R :session
-    class(Nile)  # what type of dataset is this?
+    class(Nile)  # what type of dataset is this? (R object class)
+    typeof(Nile)  # this is the storage type (machine)
+    mode(Nile)  # this is the data type
   #+end_src
-  #+begin_notes time series
-  The output is ~"ts"~ or time series. You may remember that we
-  previously looked at large datasets. ~mtcars~ for example was a
-  "data frame" (we'll learn more about them later).
-  #+end_notes
+
 - How can we print this dataset, or parts of it, on the screen?
-  #+begin_notes solution
-  *Solution:* there are different ways to look inside ~Nile~:
-  #+end_notes
   #+begin_src R :session
     str(Nile)   # show dataset structure
     head(Nile)  # show first few elements
     Nile        # this prints the whole dataset
   #+end_src
+
   #+begin_notes
+  Because we don't know yet how to look at sub-vectors or individual
+  vector elements, we cannot directly check what type the elements of
+  ~Nile~ have, but the output seems to suggest that the Nile flow is
+  measured in integer numbers.
 
-Because we don't know yet how to look at sub-vectors or individual
-vector elements, we cannot directly check what type the elements of
-~Nile~ have, but the output seems to suggest that the Nile flow is
-measured in integer numbers.
-
-You can also see from the print output of ~Nile~ how row labels
-work: there are 15 numbers per row, and the second row starts with
-the 16th number, indicated by ~[16]~.
+  You can also see from the print output of ~Nile~ how row labels work:
+  there are 15 numbers per row, and the second row starts with the
+  16th number, indicated by ~[16]~.
   #+end_notes
 
 * Plotting the nile [[https://youtu.be/c_BvsnKU7T4][(video)]]
@@ -264,6 +265,10 @@ the 16th number, indicated by ~[16]~.
 - What you're really after is a picture of a value /distribution/
 
 - Why are /histograms/ called "histograms"?
+  #+begin_quote
+  The word is derived from the Greek 'histos' (upright, like a
+  column), and 'gramma' (drawing). Introduced by Pearson.
+  #+end_quote
 
 - How can you find out more about plotting a histogram in R?
 
@@ -281,6 +286,8 @@ the 16th number, indicated by ~[16]~.
   ~hist(Nile)~, you get the same type of graph as in the example except
   that we know what the data are (annual Nile flow measurements in ~10⁸
   m³~, or 100,000,000 (100 million) of cubic metres.
+
+  If you run ~example(Nile)~ you get a number of interesting plots, too.
   #+end_notes
 
 * Plotting the histogram
@@ -290,88 +297,90 @@ the 16th number, indicated by ~[16]~.
     hist(Nile)
   #+end_src
 
-- [ ] *Can you interpret the plot given what you know about the data?*
+- *Can you interpret the plot given what you know about the data?* For
+  example, what is the meaning of the longest bar in the histogram?
+  #+begin_quote
+  The longest bar represents the flow recordings with the highest
+  counts in the period of observation (1870-1970). They correspond to
+  flow volumes between 800 and 900 mio cubic meters of Nile water.
+  #+end_quote
 
-- [ ] Add the argument ~breaks=20~ to the ~hist~ function call. Change the
+- Add the argument ~breaks=20~ to the ~hist~ function call. Change the
   file name in the code block header if you want to create a new PNG file
   #+begin_src R :exports both :session :results output graphics file :file ../img/histNile20.png
     hist(Nile, breaks=20)
   #+end_src
 
-#+begin_notes hist function
-The ~hist~ function creates 10 bins by default and distributes the data
-accordingly. You can alter this number of bins by changing the
-argument ~breaks~, e.g. ~hist(Nile, breaks=20)~ (try it!).
-
-We'll get back to the ~Nile~ once we know more about vectors! In the
-next four sections, we're going to look at useful functions.
-#+end_notes
+- Some of you might already know how to put both of these plots on one
+  page using the =par= function:
+  #+begin_src R :file Nile2.png :session *R* :results file graphics output :exports both
+    par(mfrow=c(1,2),pty='s')
+    hist(Nile,main="binwidth = 'Sturges'")  # check ?nclass.Sturges
+    hist(Nile,breaks=20,main="binwidth = 20",ylab="")
+  #+end_src
 
 * Plotting the line plot
 
-Since ~Nile~ is a time series, every data point has a time label
+Since ~Nile~ is a time series, every data point has a time label.
 
-You can easily plot the evolution of the date over time with ~plot~
+You can easily plot the evolution of the date over time with ~plot~.
 
-A line plot is useful to visualize two continuous numeric variables
+A line plot is useful to visualize two continuous numeric variables.
 
 This leads to a so-called /line plot/
 #+begin_src R :exports both :session :results output graphics file :file ../img/lineNile.png
   plot(Nile)
 #+end_src
 
-- [ ] *Can you interpret the plot given what you know about the data?*
+#+RESULTS:
+[[file:../img/lineNile.png]]
 
-Is =hist= a generic function?
-- Try to make a histogram of ~mtcars~.
-- Check out the structure of ~mtcars~ to see the column vector data types.
-- Make a histogram of ~mtcars$mpg~:
-  #+begin_src R :results graphics output file :file ../img/histmtcars.png
-    hist(mtcars$mpg)
+- *Can you interpret the plot given what you know about the data?*
+  #+begin_quote
+  The line plot shows the change of water flow through the Nil in mio
+  cubic metres over a period of 100 years from 1870 to 1970.
+  #+end_quote
+
+- Is =hist= a generic function?
+  - Try to make a histogram of ~mtcars~.
+  - Check out the structure of ~mtcars~ to see the column vector data types.
+  - Make a histogram of ~mtcars$mpg~:
+
+    Graphical data:
+    #+begin_src R :results graphics output file :file ../img/histmtcars.png
+
+    #+end_src
+
+    Non-graphical data:
+    #+begin_src R :session *R* :results output :exports both
+
+    #+end_src
+
+- Will =hist= work with =factor= vectors? Check out ~ToothGrowth~, another
+  built-in dataset:
+  #+begin_src R
+    str(ToothGrowth)
   #+end_src
 
-  #+RESULTS:
-  [[file:../img/histmtcars.png]]
+- Try to create a histogram of the ~supp~ =factor= vector (what do you expect?)
+  #+begin_src R
+    tgs <- ToothGrowth$supp
+  #+end_src
 
-Will =hist= work with =factor= vectors? Check out ~ToothGrowth~, another
-built-in dataset:
-#+begin_src R
-  str(ToothGrowth)
-#+end_src
+- Can we turn the =factor= values into numbers?
+  #+begin_src R :graphics
+    tgs <- as.numeric(tgs)
+    tgs
+  #+end_src
 
-#+RESULTS:
-: 'data.frame': 60 obs. of  3 variables:
-:  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
-:  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
-:  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
-
-Try to create a histogram of the ~supp~ =factor= vector:
-#+begin_src R
-  tgs <- ToothGrowth$supp
-                                          # hist(tgs) #  Error in hist.default(tgs) : 'x' must be numeric
-#+end_src
-
-Can we turn the =factor= values into numbers?
-#+begin_src R :graphics
-  tgs <- as.numeric(tgs)
-  tgs
-#+end_src
-
-#+RESULTS:
-:  [1] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 1 1 1 1 1 1
-: [41] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-
-Now we can plot the values as a histogram:
-#+begin_src R :results graphics output file :file ../img/tghist.png
-  hist(tgs,
-       breaks = 2,
-       col = "purple",
-       border = "white",
-       xlab = "Supply type (orange juice/vitamin C)")
-#+end_src
-
-#+RESULTS:
-[[file:../img/tghist.png]]
+- Now we can plot the values as a (fancy) histogram:
+  #+begin_src R :results graphics output file :file ../img/tghist.png
+    hist(tgs,
+         breaks = 2,
+         col = "purple",
+         border = "white",
+         xlab = "Supply type (orange juice/vitamin C)")
+  #+end_src
 
 For these and other settings, check out =help(hist)=, and =example(hist)=
 for the examples listed at the end of the documentation (see next
@@ -411,42 +420,42 @@ look at help pages, the more you recognize known concepts.
 #+end_src
 
 Check what type of R object ~3:21~ is by applying the functions:
-  - ~class~ (R object class),
-  - ~mode~ (R object storage mode)
-  - ~is.vector~ (R vector check)
-    #+begin_src R
-      class(3:27)
-      mode(3:27)
-      is.vector(3:27)
-    #+end_src
+- ~class~ (R object class),
+- ~mode~ (R object storage mode)
+- ~is.vector~ (R vector check)
+  #+begin_src R
+    class(3:27)
+    mode(3:27)
+    is.vector(3:27)
+  #+end_src
 
-    Sequences created this way can also be stored.
-    #+begin_src R
-      foo <- 5.3
-      bar <- foo:10
-      bar
-    #+end_src
+  Sequences created this way can also be stored.
+  #+begin_src R
+    foo <- 5.3
+    bar <- foo:10
+    bar
+  #+end_src
 
-    What happens if the first argument of ~:~ is smaller than the second?
-    #+begin_src R
-      x <- 10:foo
-      x
-    #+end_src
+  What happens if the first argument of ~:~ is smaller than the second?
+  #+begin_src R
+    x <- 10:foo
+    x
+  #+end_src
 
-    You can perform computations to specify the range.
-    #+begin_src R
-      baz <- foo:(-47+1.5)
-      baz
-    #+end_src
+  You can perform computations to specify the range.
+  #+begin_src R
+    baz <- foo:(-47+1.5)
+    baz
+  #+end_src
 
-    #+begin_notes details
-    Try to understand what happened here by checking the numbers: the
-    first value of the sequence is ~foo = 5.3~. The last value is a
-    negative value, ~-47+1.5 = -45.5~. In order to generate the
-    sequence, R counts down in steps of ~1~ from the first to the last
-    value. It stops at ~-44.7~, because the next value, ~-45.7~ would be
-    outside of the interval $[5.3,-45.5])$.
-    #+end_notes
+  #+begin_notes details
+  Try to understand what happened here by checking the numbers: the
+  first value of the sequence is ~foo = 5.3~. The last value is a
+  negative value, ~-47+1.5 = -45.5~. In order to generate the
+  sequence, R counts down in steps of ~1~ from the first to the last
+  value. It stops at ~-44.7~, because the next value, ~-45.7~ would be
+  outside of the interval $[5.3,-45.5])$.
+  #+end_notes
 
 ** Challenge: weird histogram
 
@@ -623,9 +632,9 @@ The fix:
   #+end_src
 
   #+RESULTS:
-  : [1] length.hashtab* length.POSIXlt 
+  : [1] length.hashtab* length.POSIXlt
   : see '?methods' for accessing help and source code
-  
+
 - If you have functions inside the object definition, ~length~ gives you
   the number of entries /after/ the inner functions have been executed:
   #+begin_src R
@@ -726,7 +735,7 @@ The fix:
     names(bar) <- NULL # remove names altogether
     bar
   #+end_src
-  
+
 * Indexing vectors
 
 - Passing a vector of positive numbers returns the slice of the
@@ -798,7 +807,7 @@ The fix:
 - Conversion with ~as.logical~ has a surprise: any non-zero number is
   turned into ~TRUE~ if the vector is ~numeric~.
   #+begin_src R
-    
+
     as.logical(c(1,0,-1, 0.333, -Inf, NaN ))
   #+end_src
 

@@ -1476,9 +1476,13 @@ Finish "Arithmetic in R":
 #+attr_html: :width 600px:
 [[../img/5_workhorse.png]]
 
-*Poll:* Did anyone listen to the last two podcasts or videos?
+- [X] *Popquiz*: Vectors & Matrices & =NA= extension.
 
-*Popquiz*: Vectors & Matrices & =NA= extension
+- [ ] *Poll:* Did anyone listen to the last two podcasts or videos?
+
+- [ ] *Video*: I recorded sample solutions to the popquiz ([[https://youtube.com/playlist?list=PLwgb17bzeNyhPl0kUNTRkLM2-pnfC2kHR&si=kzsSLx7R8pdkLOIr][playlist]])
+
+- [ ] *Friday*: Lab with exercises from the topics of the week
 
 *New topic: "Vectors in R"*
 - [ ] Why we need vectors
