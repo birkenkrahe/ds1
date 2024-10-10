@@ -1473,8 +1473,8 @@ Finish "Arithmetic in R":
 - [ ] Let's finish up our remaining topics from this section.
 
 * Week 8 - Vectors in R
-#+attr_html: :width 600px:
-[[../img/5_workhorse.png]]
+#+attr_html: :width 450px:
+[[../img/1846-suffolk-punch.jpg]]
 
 - [X] *Popquiz*: Vectors & Matrices & =NA= extension.
 
@@ -1692,41 +1692,12 @@ Finish "Arithmetic in R":
     : [1] 76.75
     
 
-** NEXT Review: Creating (special) vectors
+** NEXT Lecture & DataCamp review: mini-lab
 
-1. How can you append ~foo~ to ~bar~ if ~c(1,2,3) -> foo~, ~c(4,5,6) -> bar~?
-   #+begin_src R
-     c(1,2,3) -> foo
-     c(4,5,6) -> bar
-     c(bar,foo)
-   #+end_src
+- Download the practice file from [[https://tinyurl.com/vectors-lab][tinyurl.com/vectors-lab]]
 
-2. How can you turn ~c("a","b") -> baz~ into a ~numeric~ vector?
-   #+begin_src R
-     c("a","b") -> baz
-     as.numeric(baz)
-   #+end_src
+- Complete the questions on your own
 
-3. How can you turn ~c(1,2,3) -> foo~ into a ~character~ vector?
-   #+begin_src R
-     c(1,2,3) -> foo
-     as.character(foo)
-   #+end_src
+- Upload your result to Canvas
 
-4. What will ~c(1,1,1.0)~, ~c(1,1,1.1)~, ~c(1,1,1e+6)~, ~c(1,1,0.000001e6)~ print?
-   #+begin_src R
-     c(1,1,1.0)
-     c(1,1,1.1)
-     c(1,1,1e6)
-     c(1,1,0.000001e6)
-   #+end_src
-
-5. What R object class are: ~Inf~, ~NA~, ~NaN~, ~NULL~, and ~c(NA, NaN, Inf)~?
-   #+begin_src R
-     class(Inf)  # special number
-     class(NA)   # special (Boolean) number
-     class(NaN)  # special number (but "not a number")
-     class(NULL) # special type (only object of type NULL)
-     class(c(NA,NaN,Inf))  # vector of special numbers
-     class(c(NA,NaN,Inf,NULL))  # vector of special numbers
-   #+end_src
+- Review the solutions in class with me

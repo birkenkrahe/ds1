@@ -1,0 +1,72 @@
+#+Title: Vectors and Factors Lab
+#+Author: [yourname] (pledged)
+#+Subtitle: DSC 105, Introduction to data science, Lyon College, Fall 2024
+#+PROPERTY: header-args:R :results output :exports both :session *R*
+#+startup: overview hideblocks indent entitiespretty: 
+* Vectors and Factors
+
+1. How can you append ~foo~ to ~bar~ if ~c(1,2,3) -> foo~, ~c(4,5,6) -> bar~?
+   #+begin_src R
+
+   #+end_src
+
+2. How can you turn ~c("a","b") -> baz~ into a ~numeric~ vector?
+   #+begin_src R
+
+   #+end_src
+
+3. How can you turn ~c(1,2,3) -> foo~ into a ~character~ vector?
+   #+begin_src R
+
+   #+end_src
+
+4. What will ~c(1,1,1.0)~, ~c(1,1,1.1)~, ~c(1,1,1e+6)~, ~c(1,1,0.000001e6)~ print?
+   #+begin_src R
+
+   #+end_src
+
+5. What R object class are: ~Inf~, ~NA~, ~NaN~, ~NULL~, and ~c(NA, NaN, Inf)~?
+   #+begin_src R
+
+   #+end_src
+
+6. Convert the vector ~names~ with the elements ~"Joe", "Jeff", "Jim",
+   "Jane"~ to a factor and store it in ~names_f~. 
+   #+begin_src R
+
+   #+end_src
+
+7. Extract the levels vector and determine its object class using a
+   pipe!
+   #+begin_src R
+
+   #+end_src
+
+8. Create a named vector ~grades~ with the elements A, C, B, B for the
+   ~grades~ of Jeff, Jim, Jane and Joe, respectively.
+   #+begin_src R
+
+   #+end_src
+
+9. Convert ~grades~ to an ordered factor ~grades_f~ with the ~levels~ A, B,
+   C so that A > B > C,
+   #+begin_src R
+
+   #+end_src
+
+10. Store ~grades~ and ~grades_f~ in a ~data.frame~ named ~df~, and then apply
+    first ~str~ and then ~summary~ to ~df~.
+    #+begin_src R
+
+    #+end_src
+
+11. Use ~grades_f~ to show that Jeff is a better student than Jim.
+    #+begin_src R
+
+    #+end_src
+
+12. Add two levels, D and F, to ~grades_f~, and then test with ~str~ if it
+    worked.
+    #+begin_src R
+
+    #+end_src
