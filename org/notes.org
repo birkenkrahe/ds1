@@ -1441,7 +1441,7 @@ Finish "Arithmetic in R":
 - [X] Understand logical values and operators
 
 ** Project update
-#+attr_html: :width 400px: 
+#+attr_html: :width 400px:
 [[../img/notebooklm.png]]
 
 - Give a very short overview of your project status.
@@ -1453,11 +1453,11 @@ Finish "Arithmetic in R":
 
 - 2nd sprint review: NotebookLM experiment: notebooklm.google.com is
   an experimental Google product that creates source-based notebooks
-  for you but also instant podcasts. 
+  for you but also instant podcasts.
 
 - Here is an example - based on a finished recent paper:
   [[https://tinyurl.com/notebooklm-demo][tinyurl.com/notebooklm-demo]]
-  
+
 - I'm going to change your 2nd sprint remit from "literature review"
   to "create a Google NotebookLM using your sources".
 
@@ -1483,6 +1483,10 @@ Finish "Arithmetic in R":
 - [X] *Video*: I recorded sample solutions to the popquiz ([[https://youtube.com/playlist?list=PLwgb17bzeNyhPl0kUNTRkLM2-pnfC2kHR&si=kzsSLx7R8pdkLOIr][playlist]])
 
 - [ ] *Friday*: Lab with exercises from the topics of the week
+
+- [ ] Update: Projects and "Data Science is not Science"
+
+- [ ] Update: 
 
 *New topic: "Vectors in R"*
 - [X] Why we need vectors
@@ -1522,7 +1526,7 @@ Finish "Arithmetic in R":
    #+end_src
 
    #+RESULTS:
-   : Mon Tue Wed Thu Fri 
+   : Mon Tue Wed Thu Fri
    :  76  75  77  79  81
    :  Named num [1:5] 76 75 77 79 81
    :  - attr(*, "names")= chr [1:5] "Mon" "Tue" "Wed" "Thu" ...
@@ -1532,7 +1536,7 @@ Finish "Arithmetic in R":
      temp >= 80  # Boolean / logical vector (flag)
      temp[temp>=76 & temp<79]
 
-     temp >= 80 -> temperatures_greater_or_equal_80 
+     temp >= 80 -> temperatures_greater_or_equal_80
      temp[temperatures_greater_or_equal_80]
 
      temp < 80 -> idx
@@ -1543,15 +1547,15 @@ Finish "Arithmetic in R":
 
    #+RESULTS:
    #+begin_example
-     Mon   Tue   Wed   Thu   Fri 
+     Mon   Tue   Wed   Thu   Fri
    FALSE FALSE FALSE FALSE  TRUE
-   Mon Wed 
+   Mon Wed
     76  77
-   Fri 
+   Fri
     81
-   Mon Tue Wed Thu 
+   Mon Tue Wed Thu
     76  75  77  79
-   Mon 
+   Mon
     76
    #+end_example
 
@@ -1575,7 +1579,7 @@ Finish "Arithmetic in R":
      temp[-c(2:4)]  # exclude certain values
      mean(temp[-5]) # average if you know it's 5
 
-     idx <- temp < 80 
+     idx <- temp < 80
      idx
      temp[idx]
 
@@ -1583,27 +1587,27 @@ Finish "Arithmetic in R":
    #+end_src
 
    #+RESULTS:
-   : Mon Fri 
+   : Mon Fri
    :  76  81
    : [1] 76.75
-   :   Mon   Tue   Wed   Thu   Fri 
+   :   Mon   Tue   Wed   Thu   Fri
    :  TRUE  TRUE  TRUE  TRUE FALSE
-   : Mon Tue Wed Thu 
+   : Mon Tue Wed Thu
    :  76  75  77  79
    : [1] 76.75
 
 7. Create an unnamed vector =temp2= from =temp=:
    #+begin_src R
      names(temp)  # print the names
-     temp -> temp2  # make a copy 
-     temp2                  
+     temp -> temp2  # make a copy
+     temp2
      names(temp2) <- NULL  # delete the names
      temp2  # print the unnamed = nameless vector
    #+end_src
 
    #+RESULTS:
    : [1] "Mon" "Tue" "Wed" "Thu" "Fri"
-   : Mon Tue Wed Thu Fri 
+   : Mon Tue Wed Thu Fri
    :  76  75  77  79  81
    : [1] 76 75 77 79 81
 
@@ -1686,13 +1690,92 @@ Finish "Arithmetic in R":
     #+end_src
 
     #+RESULTS:
-    :   Mon   Tue   Wed   Thu   Fri 
+    :   Mon   Tue   Wed   Thu   Fri
     :  TRUE  TRUE  TRUE  TRUE FALSE
     : [1] 77.75
     : [1] 76.75
-    
 
-** NEXT Lecture & DataCamp review: mini-lab
+
+** TODO Project update - first podcasts & literature reviews
+#+attr_html: :width 400px: 
+[[../img/notebooklm_example.png]]
+
+Your deliverables for this 2nd sprint are:
+1. [ ] *Find* at least one *scholarly* article relevant to your project.
+2. [ ] *Build* a litmap for the article with litmaps.com.
+3. [ ] Make a screenshot of the litmap.
+4. [ ] Convert the screenshot to a PDF (e.g. using Google Docs).
+5. [ ] *Upload* the LitMap screenshot & other sources to NotebookLM.
+6. [ ] *Improve* your proposal by adding relevant references.
+7. [ ] *Upload* your (improved) project proposal (as text) to NotebookLM.
+8. [ ] *Generate* a podcast based on your collected sources.
+9. [ ] *Share* your Google NotebookLM project with me.
+10. [ ] *Submit* the link to your Google NotebookLM project in Canvas.
+11. [ ] *Upload* your podcast to your shared drive.
+12. [ ] *Share* the link to the podcast on the Chat for this class.
+
+Tips:
+- [ ] *Meet* the deadline or earn a 50% penalty.
+- [ ] *Start* this assignment *early*, don't leave it to the last minute.
+- [ ] Give yourself *time* to *evaluate* & *discuss* the NotebookLM output.
+- [ ] *Share* your comments and thoughts in a *thread* in Canvas.
+
+Example: "Mapping the use of GAI in university"
+- [X] Found one podcast in a GDrive (so far)
+- [X] Shared notebook with me (it shows up in my dashboard)
+- [ ] No link submitted in Canvas (yet)
+
+*Q&A:*
+- [ ] Is it OK that the podcast is more about the sources?
+- [ ] Should we add more references without commenting?
+- [ ] Should we add our first proposal to the notebook?
+- [ ] Do we each have to upload a submission?
+
+
+** TODO "Data Science is not a Science"
+#+attr_html: :width 600px: 
+[[../img/rant.png]]
+
+- My last [[https://drive.google.com/file/d/1e1YStWDWH88FPO2n2s_FibUz2TcAhZfv/view?usp=drive_link][NotebookLM podcast]] is a major improvement over its original
+  source on [[https://youtu.be/U5f3iufE-bI?si=D_ve6I8sF52v6Zk-][YouTube]], a foul-mouthed, whiny video by a German physicist
+  who earned a data science certificate (which she used to get a job).
+
+- The podcast edited out all of the bad language, the sloppy speech
+  patterns, and the hostility (for example against Human Resources).
+
+- It refocused the original content and boiled it down to a core
+  message: To succeed in data science, you need some skills, but you
+  also need some domain knowledge, some deep understanding of data.
+
+- My personal take: Don't feel sorry for bad choices that you made in
+  the past but instead look ahead and make better choices from now on.
+
+- Google Chat post:
+  #+begin_quote
+  Major rant by a German (?) physicist: "[[https://youtu.be/ALPOwJlOj1k?si=w7exo24j65EEJRgq][Data science is not science]]"
+  (YouTube)? She's a bit like [[https://www.youtube.com/c/SabineHossenfelder/videos][Sabine Hossenfelder]] (German particle
+  physicist) for data science ... a real rant, bad language, but Germans
+  don't know any better (we don't really 'feel' it when we curse in
+  English). Apparently, Almani is also a physicist, who earned a data
+  science certificate (?). She could also have said this briefly and
+  without so much cursing. In fact the resulting [[https://drive.google.com/file/d/1e1YStWDWH88FPO2n2s_FibUz2TcAhZfv/view?usp=sharing][NotebookLM podcast]] is a
+  MAJOR improvement on her video which I found very hard to listen to
+  (her accent is also terrible): It organizes Almani's thoughts, cleans
+  up the language, and focuses on the main arguments as part of a
+  civilized conversation. Upshot: The synthesized podcast is worth
+  listening to, the original YouTube video is not. Take away: As a data
+  scientist, you do need to have domain knowledge - something that you
+  understand deeply so that you can understand the data and deliver the
+  analysis. (By the way, I also don't think data science is a "science"
+  yet, much like computer science, compared to physics or chemistry, and
+  I teach it consequently as a vocation and a craft rather than a
+  science.)
+  #+end_quote
+
+
+** NEXT Lecture & DataCamp review as Lab (30 min)
+
+- Quiz 7 is ready for you (complete by Oct 18)
 
 - Download the practice file from [[https://tinyurl.com/vectors-lab][tinyurl.com/vectors-lab]]
 
@@ -1700,4 +1783,4 @@ Finish "Arithmetic in R":
 
 - Upload your result to Canvas
 
-- Review the solutions in class with me
+- I will post a video with the solutions
