@@ -1,8 +1,9 @@
 #+Title: Vectors and Factors Lab
-#+Author: [yourname] (pledged)
+#+Author: Marcus Birkenkrahe (pledged)
 #+Subtitle: DSC 105, Introduction to data science, Lyon College, Fall 2024
 #+PROPERTY: header-args:R :results output :exports both :session *R*
 #+startup: overview hideblocks indent entitiespretty: 
+#+options: toc:nil num:nil ^:nil: 
 * Vectors and Factors
 
 1. How can you append ~foo~ to ~bar~ if ~c(1,2,3) -> foo~, ~c(4,5,6) -> bar~?
@@ -36,7 +37,7 @@
 
    #+end_src
 
-7. Extract the levels vector and determine its object class using a
+7. Extract the levels vector of =names_f= and determine its object class using a
    pipe!
    #+begin_src R
 
@@ -45,7 +46,6 @@
 8. Create a named vector ~grades~ with the elements A, C, B, B for the
    ~grades~ of Jeff, Jim, Jane and Joe, respectively.
    #+begin_src R
-
    #+end_src
 
 9. Convert ~grades~ to an ordered factor ~grades_f~ with the ~levels~ A, B,
