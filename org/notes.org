@@ -1482,11 +1482,11 @@ Finish "Arithmetic in R":
 
 - [X] *Video*: I recorded sample solutions to the popquiz ([[https://youtube.com/playlist?list=PLwgb17bzeNyhPl0kUNTRkLM2-pnfC2kHR&si=kzsSLx7R8pdkLOIr][playlist]])
 
+- [X] Update: new quiz will be available later 
+
+- [ ] *Update:* Projects and "Data Science is not Science"
+
 - [ ] *Friday*: Lab with exercises from the topics of the week
-
-- [ ] Update: Projects and "Data Science is not Science"
-
-- [ ] Update: 
 
 *New topic: "Vectors in R"*
 - [X] Why we need vectors
@@ -1695,44 +1695,7 @@ Finish "Arithmetic in R":
     : [1] 77.75
     : [1] 76.75
 
-
-** TODO Project update - first podcasts & literature reviews
-#+attr_html: :width 400px: 
-[[../img/notebooklm_example.png]]
-
-Your deliverables for this 2nd sprint are:
-1. [ ] *Find* at least one *scholarly* article relevant to your project.
-2. [ ] *Build* a litmap for the article with litmaps.com.
-3. [ ] Make a screenshot of the litmap.
-4. [ ] Convert the screenshot to a PDF (e.g. using Google Docs).
-5. [ ] *Upload* the LitMap screenshot & other sources to NotebookLM.
-6. [ ] *Improve* your proposal by adding relevant references.
-7. [ ] *Upload* your (improved) project proposal (as text) to NotebookLM.
-8. [ ] *Generate* a podcast based on your collected sources.
-9. [ ] *Share* your Google NotebookLM project with me.
-10. [ ] *Submit* the link to your Google NotebookLM project in Canvas.
-11. [ ] *Upload* your podcast to your shared drive.
-12. [ ] *Share* the link to the podcast on the Chat for this class.
-
-Tips:
-- [ ] *Meet* the deadline or earn a 50% penalty.
-- [ ] *Start* this assignment *early*, don't leave it to the last minute.
-- [ ] Give yourself *time* to *evaluate* & *discuss* the NotebookLM output.
-- [ ] *Share* your comments and thoughts in a *thread* in Canvas.
-
-Example: "Mapping the use of GAI in university"
-- [X] Found one podcast in a GDrive (so far)
-- [X] Shared notebook with me (it shows up in my dashboard)
-- [ ] No link submitted in Canvas (yet)
-
-*Q&A:*
-- [ ] Is it OK that the podcast is more about the sources?
-- [ ] Should we add more references without commenting?
-- [ ] Should we add our first proposal to the notebook?
-- [ ] Do we each have to upload a submission?
-
-
-** TODO "Data Science is not a Science"
+** DONE "Data Science is not a Science"
 #+attr_html: :width 600px: 
 [[../img/rant.png]]
 
@@ -1779,8 +1742,8 @@ Example: "Mapping the use of GAI in university"
 
 - Download the practice file from [[https://tinyurl.com/vectors-lab][tinyurl.com/vectors-lab]]
 
-- Complete the questions on your own
+- Complete the questions on your own!
 
-- Upload your result to Canvas
+- Upload your result to Canvas ("Vectors lab" assignment)
 
-- I will post a video with the solutions
+- I will post a video with the solutions!
