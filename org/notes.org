@@ -1472,7 +1472,7 @@ Finish "Arithmetic in R":
 - [X] I've also posted a link to a YouTube video playlist.
 - [ ] Let's finish up our remaining topics from this section.
 
-* Week 8 - Vectors in R
+* Week 8 - Vectors & Factors in R
 #+attr_html: :width 450px:
 [[../img/1846-suffolk-punch.jpg]]
 
@@ -1735,7 +1735,6 @@ Finish "Arithmetic in R":
   science.)
   #+end_quote
 
-
 ** NEXT Lecture & DataCamp review as Lab (30 min)
 
 - Quiz 7 is ready for you (complete by Oct 18)
@@ -1747,3 +1746,10 @@ Finish "Arithmetic in R":
 - Upload your result to Canvas ("Vectors lab" assignment)
 
 - I will post a video with the solutions!
+
+* Week 9 - Vectors and Dataframes in R
+#+attr_html: :width 600px: 
+[[../img/chirico.jpg]]
+
+/Image: Giorgio Di Chirico, The Joy and Enigma of the Strange Hour (1913)/
+
