@@ -368,7 +368,7 @@ Code along.
   class(specvec1)
 #+end_src
 
-* NEXT Base R - what's that again?
+* Base R - what's that again?
 
 - Let's not forget that there are real data out there!
 
@@ -379,29 +379,69 @@ Code along.
 - Do you remember how to find these pre-loaded datasets? One of these
   is ~Nile~. Do you remember how to get information on such a dataset
   (or on any R object)?
-  #+begin_example R
 
+  #+begin_example R
+    data()
   #+end_example
 
 - What are the four environment functions to remember?
-  #+begin_example R
-
-  #+end_example
-
-- Displaying installed packages (convert to =data.frame= first):
-  #+begin_src R :session *R* :results output :exports both
-
+  #+begin_src R
+    ls()
+    search()
+    #data()
+    installed.packages()
   #+end_src
+  
+- Displaying installed packages (convert to =data.frame= first):
+  #+begin_src R
+    installed.packages() |> as.data.frame() |> str() |> capture.output(file="ip.txt")
+    system("ls -l ip.txt")
+    system("head -n 5 ip.txt")    
+  #+end_src
+
+  #+RESULTS:
+  : -rw-rw-r-- 1 marcus marcus 1299 Oct 14 11:34 ip.txt
+  : 'data.frame':	107 obs. of  16 variables:
+  :  $ Package              : chr  "abind" "backports" "bit" "bit64" ...
+  :  $ LibPath              : chr  "/home/marcus/R/x86_64-pc-linux-gnu-library/4.1" "/home/marcus/R/x86_64-pc-linux-gnu-library/4.1" "/home/marcus/R/x86_64-pc-linux-gnu-library/4.1" "/home/marcus/R/x86_64-pc-linux-gnu-library/4.1" ...
+  :  $ Version              : chr  "1.4-5" "1.4.1" "4.0.5" "4.0.5" ...
+  :  $ Priority             : chr  NA NA NA NA ...
 
 - List only the packages:
   #+begin_src R :session *R* :results output :exports both
-
+    as.data.frame(installed.packages()) -> packages
+    packages$Package
   #+end_src
+
+  #+RESULTS:
+  #+begin_example
+    [1] "abind"         "backports"     "bit"           "bit64"         "brio"          "broom"        
+    [7] "callr"         "carData"       "cli"           "clipr"         "colorspace"    "cpp11"        
+   [13] "crayon"        "data.table"    "DEoptimR"      "desc"          "diffobj"       "digest"       
+   [19] "ellipsis"      "EnvStats"      "evaluate"      "fansi"         "farver"        "fs"           
+   [25] "generics"      "ggplot2"       "glue"          "gtable"        "hms"           "isoband"      
+   [31] "jsonlite"      "labeling"      "lifecycle"     "magrittr"      "MASS"          "Matrix"       
+   [37] "MatrixModels"  "minqa"         "munsell"       "nortest"       "numDeriv"      "pillar"       
+   [43] "pkgbuild"      "pkgconfig"     "pkgload"       "praise"        "prettyunits"   "processx"     
+   [49] "progress"      "ps"            "purrr"         "quantreg"      "R6"            "RColorBrewer" 
+   [55] "Rcpp"          "RcppEigen"     "readr"         "rematch2"      "remotes"       "rlang"        
+   [61] "robustbase"    "rprojroot"     "scales"        "scatterplot3d" "SparseM"       "stringi"      
+   [67] "stringr"       "testthat"      "tibble"        "tidyr"         "tidyselect"    "tzdb"         
+   [73] "utf8"          "vctrs"         "viridisLite"   "vroom"         "waldo"         "withr"        
+   [79] "base"          "boot"          "class"         "cluster"       "codetools"     "compiler"     
+   [85] "datasets"      "foreign"       "graphics"      "grDevices"     "grid"          "KernSmooth"   
+   [91] "lattice"       "MASS"          "Matrix"        "methods"       "mgcv"          "nlme"         
+   [97] "nnet"          "parallel"      "rpart"         "spatial"       "splines"       "stats"        
+  [103] "stats4"        "survival"      "tcltk"         "tools"         "utils"
+  #+end_example
 
 - How many packages are installed on your system?
   #+begin_src R :session *R* :results output :exports both
-
+    length(packages$Package)
   #+end_src
+
+  #+RESULTS:
+  : [1] 107
 
 * Example: down the Nile [[https://youtu.be/wwsD2KuoKt8][(video)]]
 #+attr_html: :width 600px
@@ -415,14 +455,68 @@ Code along.
   1871-1970.
 
 - For a full characterization, you need more than one function:
-  #+begin_src R :session
-
+  #+begin_src R
+    class(Nile) # object class aka data structures
+    typeof(Nile)  # storage type
+    mode(Nile) # data type
   #+end_src
+
+  #+RESULTS:
+  : [1] "ts"
+  : [1] "double"
+  : [1] "numeric"
 
 - How can we print this dataset, or parts of it, on the screen?
-  #+begin_src R :session
 
+  Structure of a time series:
+  #+begin_src R 
+    str(Nile)
   #+end_src
+
+  #+RESULTS:
+  :  Time-Series [1:100] from 1871 to 1970: 1120 1160 963 1210 1160 1160 813 1230 1370 1140 ...
+
+  Extracting the =time= dimension from the time series:
+  #+begin_src R
+    time(Nile)
+  #+end_src
+
+  #+RESULTS:
+  : Time Series:
+  : Start = 1871 
+  : End = 1970 
+  : Frequency = 1 
+  :   [1] 1871 1872 1873 1874 1875 1876 1877 1878 1879 1880 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891
+  :  [22] 1892 1893 1894 1895 1896 1897 1898 1899 1900 1901 1902 1903 1904 1905 1906 1907 1908 1909 1910 1911 1912
+  :  [43] 1913 1914 1915 1916 1917 1918 1919 1920 1921 1922 1923 1924 1925 1926 1927 1928 1929 1930 1931 1932 1933
+  :  [64] 1934 1935 1936 1937 1938 1939 1940 1941 1942 1943 1944 1945 1946 1947 1948 1949 1950 1951 1952 1953 1954
+  :  [85] 1955 1956 1957 1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970
+
+  Top and bottom of the dataset:
+  #+begin_src R
+    head(Nile)
+    tail(Nile)
+  #+end_src
+
+  #+RESULTS:
+  : [1] 1120 1160  963 1210 1160 1160
+  : [1] 912 746 919 718 714 740
+
+  The dataset:
+  #+begin_src R
+    Nile
+  #+end_src
+
+  #+RESULTS:
+  : Time Series:
+  : Start = 1871 
+  : End = 1970 
+  : Frequency = 1 
+  :   [1] 1120 1160  963 1210 1160 1160  813 1230 1370 1140  995  935 1110  994 1020  960 1180  799  958 1140 1100
+  :  [22] 1210 1150 1250 1260 1220 1030 1100  774  840  874  694  940  833  701  916  692 1020 1050  969  831  726
+  :  [43]  456  824  702 1120 1100  832  764  821  768  845  864  862  698  845  744  796 1040  759  781  865  845
+  :  [64]  944  984  897  822 1010  771  676  649  846  812  742  801 1040  860  874  848  890  744  749  838 1050
+  :  [85]  918  986  797  923  975  815 1020  906  901 1170  912  746  919  718  714  740
 
   #+begin_notes
   Because we don't know yet how to look at sub-vectors or individual
@@ -447,8 +541,7 @@ Code along.
 
 - Why are /histograms/ called "histograms"?
   #+begin_quote
-
-
+  Translation from the Greek for "upright columns".
   #+end_quote
 
 - How can you find out more about plotting a histogram in R?
@@ -474,14 +567,19 @@ Code along.
 * Plotting the histogram
 
 - Let's plot the histogram of ~Nile~
-  #+begin_src R :exports both :session :results output graphics file :file ../img/histNile.png
-
+  #+begin_src R :results output graphics file :file Nile.png
+    hist(Nile)
   #+end_src
+
+  #+RESULTS:
+  [[file:Nile.png]]
 
 - *Can you interpret the plot given what you know about the data?* For
   example, what is the meaning of the longest bar in the histogram?
   #+begin_quote
-
+  The longest bar represents the flow recordings with the counts in the period
+  of observation (1870-1970), corresponding to flow volumes of 800-900 bio cubic
+  metres of water at Assuan.
   #+end_quote
 
 - Add the argument ~breaks=20~ to the ~hist~ function call. Change the

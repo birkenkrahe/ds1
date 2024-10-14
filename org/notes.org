@@ -1759,86 +1759,166 @@ Finish "Arithmetic in R":
 
 *Problems:* ds1/org/5_vectors_lab.org - [[https://tinyurl.com/vectors-lab][tinyurl.com/vectors-lab]]
 
-*Upload* complete file no 
+*Upload* complete file to Canvas
 
 1. How can you append ~foo~ to ~bar~ if ~c(1,2,3) -> foo~, ~c(4,5,6) -> bar~?
    #+begin_src R
      c(1,2,3) -> foo
      c(4,5,6) -> bar
-
+     c(bar,foo)
    #+end_src
+
+   #+RESULTS:
+   : [1] 4 5 6 1 2 3
 
 2. How can you turn ~c("a","b") -> baz~ into a ~numeric~ vector?
    #+begin_src R
      c("a","b") -> baz
-
+     as.numeric(baz)
+     class(as.numeric(c("1","2")))
    #+end_src
+
+   #+RESULTS:
+   : [1] NA NA
+   : Warning message:
+   : NAs introduced by coercion
+   : [1] "numeric"
 
 3. How can you turn ~c(1,2,3) -> foo~ into a ~character~ vector?
    #+begin_src R
      c(1,2,3) -> foo
-
+     as.character(foo)     
+     as.character(foo) |> as.numeric()
    #+end_src
+
+   #+RESULTS:
+   : [1] "1" "2" "3"
+   : [1] 1 2 3
 
 4. What will ~c(1,1,1.0)~, ~c(1,1,1.1)~, ~c(1,1,1e+6)~, ~c(1,1,0.000001e6)~ print?
    #+begin_src R
-     c(1,1,1.0)
-     c(1,1,1.1)
-     c(1,1,1e6)
-     c(1,1,0.000001e6)
+     c(1,1,1.0)  # not coerced into floating point
+     c(1,1,1.1)  # coerced into floating-point
+     c(1,1,1e6)  # forced into scientific notation
+     c(1,1,0.000001e6) 
    #+end_src
 
-5. What R object class are: ~Inf~, ~NA~, ~NaN~, ~NULL~, and ~c(NA, NaN, Inf)~?
+   #+RESULTS:
+   : [1] 1 1 1
+   : [1] 1.0 1.0 1.1
+   : [1] 1e+00 1e+00 1e+06
+   : [1] 1 1 1
+
+5. What R object =class= are: ~Inf~, ~NA~, ~NaN~, ~NULL~, and ~c(NA, NaN, Inf)~?
    #+begin_src R
      class(Inf)  # special number
-     class(NA)   # special (Boolean) number
+     class(NA)   # special (Boolean/logical) number
      class(NaN)  # special number (but "not a number")
      class(NULL) # special type (only object of type NULL)
      class(c(NA,NaN,Inf))  # vector of special numbers
      class(c(NA,NaN,Inf,NULL))  # vector of special numbers
    #+end_src
 
+   #+RESULTS:
+   : [1] "numeric"
+   : [1] "logical"
+   : [1] "numeric"
+   : [1] "NULL"
+   : [1] "numeric"
+   : [1] "numeric"
+
 6. Convert the vector ~names~ with the elements ~"Joe", "Jeff", "Jim",
    "Jane"~ to a factor and store it in ~names_f~. 
    #+begin_src R
      names <- c("Joe", "Jeff", "Jim", "Jane") # character vector
-
+     factor(names) -> names_f
+     names_f
    #+end_src
+
+   #+RESULTS:
+   : [1] Joe  Jeff Jim  Jane
+   : Levels: Jane Jeff Jim Joe
 
 7. Extract the levels vector and determine its object class using a
    pipe!
    #+begin_src R
-
+     levels(names_f) |> class()
    #+end_src
+
+   #+RESULTS:
+   : [1] "character"
 
 8. Create a named vector ~grades~ with the elements A, C, B, B for the
    ~grades~ of Jeff, Jim, Jane and Joe, respectively.
    #+begin_src R
-
+     grades <- c(Jeff='A', Jim='C', Jane='B', Joe='B')
+     grades
+     names(grades)
    #+end_src
+
+   #+RESULTS:
+   : Jeff  Jim Jane  Joe 
+   :  "A"  "C"  "B"  "B"
+   : [1] "Jeff" "Jim"  "Jane" "Joe"
 
 9. Convert ~grades~ to an ordered factor ~grades_f~ with the ~levels~ A, B,
    C so that A > B > C,
    #+begin_src R
-
+     factor(grades,order=TRUE,
+            levels=c('C','B','A')) -> grades_f
+     grades_f
    #+end_src
+
+   #+RESULTS:
+   : Jeff  Jim Jane  Joe 
+   :    A    C    B    B 
+   : Levels: C < B < A
 
 10. Store ~grades~ and ~grades_f~ in a ~data.frame~ named ~df~, and then apply
     first ~str~ and then ~summary~ to ~df~.
     #+begin_src R
-
+      data.frame(grades,grades_f) -> df
+      df
+      str(df)
+      summary(df)
     #+end_src
+
+    #+RESULTS:
+    #+begin_example
+         grades grades_f
+    Jeff      A        A
+    Jim       C        C
+    Jane      B        B
+    Joe       B        B
+    'data.frame':	4 obs. of  2 variables:
+     $ grades  : chr  "A" "C" "B" "B"
+     $ grades_f: Ord.factor w/ 3 levels "C"<"B"<"A": 3 1 2 2
+        grades          grades_f
+     Length:4           C:1     
+     Class :character   B:2     
+     Mode  :character   A:1
+    #+end_example
 
 11. Use ~grades_f~ to show that Jeff is a better student than Jim.
     #+begin_src R
-
+      grades_f["Jeff"] > grades_f["Jim"]
     #+end_src
+
+    #+RESULTS:
+    : [1] TRUE
 
 12. Add two levels, D and F, to ~grades_f~, and then test with ~str~ if it
     worked.
     #+begin_src R
-
+      c("F", "D", levels(grades_f)) -> levels(grades_f)
+      levels(grades_f)
+      str(grades_f)
     #+end_src
+
+    #+RESULTS:
+    : [1] "F" "D" "C" "B" "A"
+    :  Ord.factor w/ 5 levels "F"<"D"<"C"<"B"<..: 1 1 2 2
+    :  - attr(*, "names")= chr [1:4] "Jeff" "Jim" "Jane" "Joe"
 
 
 ** Vectors in R (continued)
@@ -1847,6 +1927,7 @@ Finish "Arithmetic in R":
 - [ ] Base R plotting
 - [ ] Creating vector sequences and repetitions
 - [ ] Sorting and measuring vector lengths
+
 
 ** Vector lab II (Friday - no class - founder's day convocation)
 
