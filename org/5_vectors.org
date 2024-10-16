@@ -368,7 +368,7 @@ Code along.
   class(specvec1)
 #+end_src
 
-* NEXT Base R - what's that again?
+* Base R - what's that again?
 
 - Let's not forget that there are real data out there!
 
@@ -542,13 +542,19 @@ Code along.
 
 - Add the argument ~breaks=20~ to the ~hist~ function call. Change the
   file name in the code block header if you want to create a new PNG file
-  #+begin_src R :exports both :session :results output graphics file :file ../img/histNile20.png
+  #+begin_src R :exports both :session :results output graphics file :file Nile2.png
     hist(Nile, breaks=20)
   #+end_src
 
+- What's the new insight?
+  #+begin_quote
+  The flow interval that occurred the most lies actually between 800
+  and 825 bio cubic meters of Nile water.
+  #+end_quote
+
 - Some of you might already know how to put both of these plots on one
   page using the =par= function:
-  #+begin_src R :file Nile2.png :session *R* :results file graphics output :exports both
+  #+begin_src R :file Nile3.png :session *R* :results file graphics output :exports both
     par(mfrow=c(1,2),pty='s')
     hist(Nile,main="binwidth = 'Sturges'")  # check ?nclass.Sturges
     hist(Nile,breaks=20,main="binwidth = 20",ylab="")
@@ -572,7 +578,7 @@ This leads to a so-called /line plot/
 
 - *Can you interpret the plot given what you know about the data?*
   #+begin_quote
-  The line plot shows the change of water flow through the Nil in mio
+  The line plot shows the change of water flow through the Nile in mio
   cubic metres over a period of 100 years from 1870 to 1970.
   #+end_quote
 
@@ -637,9 +643,24 @@ This leads to a so-called /line plot/
   #+RESULTS:
   [[file:cylBar.png]]
 
-- Will =hist= work with =factor= vectors? Check out ~ToothGrowth~, another
-  built-in dataset.
+- Print the =table= argument to see what =barplot= has to work with:
+  #+begin_src R
+    table(mtcars$cyl)
+  #+end_src
   
+- Will =hist= work with =factor= vectors? Check out ~ToothGrowth~, another
+  built-in dataset, using =str=:
+  #+begin_src R
+    str(ToothGrowth)
+  #+end_src
+
+- You get this result because...
+  #+begin_quote
+  ...you can only generate a histogram for a single, continous,
+  numeric variable, and not for a discrete, categorical variable.
+  #+end_quote
+  
+
 - Let's try to create a histogram of the ~supp~ =factor= vector (what
   result do you expect?)
   #+begin_example R
@@ -684,6 +705,75 @@ This leads to a so-called /line plot/
 For these and other settings, check out =help(hist)=, and =example(hist)=
 for the examples listed at the end of the documentation (see next
 section).
+
+* Plotting the scatter plot
+
+- Check out the structure of =ToothGrowth= again.
+  #+begin_src R
+    str(ToothGrowth)
+  #+end_src
+
+  #+RESULTS:
+  : 'data.frame':	60 obs. of  3 variables:
+  :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
+  :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
+  :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
+
+- Make a =plot= of the =len= variable (tooth length of the guinea pigs):
+  #+begin_src R :file tg1.png :session *R* :results file graphics output :exports both
+    plot(ToothGrowth$len)
+  #+end_src
+
+  #+RESULTS:
+  [[file:tg1.png]]
+
+- Make a new vector by sorting the =len= variable with =sort=
+  #+begin_src R
+    l <- ToothGrowth$len
+    l
+    sort(l) -> l_sorted
+    l_sorted
+  #+end_src
+
+  #+RESULTS:
+  : [1]  4.2 11.5  7.3  5.8  6.4 10.0 11.2 11.2  5.2  7.0 16.5 16.5 15.2 17.3 22.5 17.3 13.6
+  : [18] 14.5 18.8 15.5 23.6 18.5 33.9 25.5 26.4 32.5 26.7 21.5 23.3 29.5 15.2 21.5 17.6  9.7
+  : [35] 14.5 10.0  8.2  9.4 16.5  9.7 19.7 23.3 23.6 26.4 20.0 25.2 25.8 21.2 14.5 27.3 25.5
+  : [52] 26.4 22.4 24.5 24.8 30.9 26.4 27.3 29.4 23.0
+  : [1]  4.2  5.2  5.8  6.4  7.0  7.3  8.2  9.4  9.7  9.7 10.0 10.0 11.2 11.2 11.5 13.6 14.5
+  : [18] 14.5 14.5 15.2 15.2 15.5 16.5 16.5 16.5 17.3 17.3 17.6 18.5 18.8 19.7 20.0 21.2 21.5
+  : [35] 21.5 22.4 22.5 23.0 23.3 23.3 23.6 23.6 24.5 24.8 25.2 25.5 25.5 25.8 26.4 26.4 26.4
+  : [52] 26.4 26.7 27.3 27.3 29.4 29.5 30.9 32.5 33.9
+
+- Now plot the new vector  
+    #+begin_src R :file tg2.png :session *R* :results file graphics output :exports both
+    plot(sort(l_sorted)
+  #+end_src
+
+  #+RESULTS:
+  [[file:tg2.png]]
+
+- What happens to this scatterplot if you use the =supp= variable for =x=
+  to plot the =len= variable as =y= (plot =len= as a function of =supp=)?
+  #+begin_src R :file tg3.png :session *R* :results file graphics output :exports both
+    plot(x=ToothGrowth$supp,ToothGrowth$len)
+  #+end_src
+
+  #+RESULTS:
+  [[file:tg3.png]]
+
+- What's happening here?
+  #+begin_quote
+  This type of plot is called boxplot and it is used to compare two
+  (numeric) value distributions, in this case the tooth lengths of the
+  two observation groups of guinea pigs (Orange Juice and Vitamin C).
+  #+end_quote
+
+- What do we learn?
+  #+begin_quote
+  The scatterplot is useful to plot two (or more) numeric vectors -
+  like =mpg= and =wt= for =mtcars=.
+  #+end_quote
 
 * Asking for help
 #+attr_latex: :width 400px

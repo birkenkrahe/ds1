@@ -575,9 +575,14 @@ Code along.
     
   #+end_src
 
+- What's the new insight?
+  #+begin_quote
+
+  #+end_quote
+
 - Some of you might already know how to put both of these plots on one
   page using the =par= function:
-  #+begin_src R :file Nile2.png :session *R* :results file graphics output :exports both
+  #+begin_src R :file Nile3.png :session *R* :results file graphics output :exports both
 
   #+end_src
 
@@ -604,7 +609,7 @@ This leads to a so-called /line plot/
   - Check out the structure of ~mtcars~ to see the column vector data types.
   - Make a histogram of ~mtcars$mpg~:
 
-- Non-graphical data (structure):
+- Non-graphical data (structure with =str=):
   #+begin_src R :session *R* :results output :exports both
 
   #+end_src
@@ -635,8 +640,13 @@ This leads to a so-called /line plot/
 
   #+end_src
 
+- Print the =table= argument to see what =barplot= has to work with:
+  #+begin_src R
+
+  #+end_src
+  
 - Will =hist= work with =factor= vectors? Check out ~ToothGrowth~, another
-  built-in dataset:
+  built-in dataset, using =str=:
   #+begin_src R
 
   #+end_src
@@ -647,6 +657,11 @@ This leads to a so-called /line plot/
 
   #+end_src
 
+- You get this result because...
+  #+begin_quote
+  ...
+  #+end_quote
+  
 - Solution:
   1) Save the =factor= in an object =tgs=
      #+begin_src R
@@ -671,6 +686,43 @@ This leads to a so-called /line plot/
 For these and other settings, check out =help(hist)=, and =example(hist)=
 forp the examples listed at the end of the documentation (see next
 section).
+* Plotting the scatter plot
+
+- Check out the structure of =ToothGrowth= again.
+  #+begin_src R
+
+  #+end_src
+
+- Make a =plot= of the =len= variable (tooth length of the guinea pigs):
+  #+begin_src R :file tg1.png :session *R* :results file graphics output :exports both
+
+  #+end_src
+
+- Make a new vector by sorting the =len= variable with =sort=
+  #+begin_src R
+
+  #+end_src
+
+- Now plot the new vector  
+    #+begin_src R :file tg2.png :session *R* :results file graphics output :exports both
+
+  #+end_src
+
+- What happens to this scatterplot if you use the =supp= variable for =x=
+  to plot the =len= variable as =y= (plot =len= as a function of =supp=)?
+  #+begin_src R :file tg3.png :session *R* :results file graphics output :exports both
+
+  #+end_src
+
+- What's happening here?
+  #+begin_quote
+
+  #+end_quote
+
+- What did we learn?
+  #+begin_quote
+
+  #+end_quote
 
 * Asking for help
 
@@ -805,6 +857,7 @@ The fix:
 #+end_src
 
 * Repetition
+
 - Use ~rep~ to repeat a value, e.g. the number 1, four times:
   #+begin_src R
 
@@ -848,7 +901,6 @@ The fix:
   #+end_notes
 
 * Sorting and measuring lengths [[https://youtu.be/KRghGmuS6Ck][(video)]]
-
 * Sorting vector elements
 
 - /Sorting/ is important because we don't care about memory locations
