@@ -1926,7 +1926,7 @@ Finish "Arithmetic in R":
     :  - attr(*, "names")= chr [1:4] "Jeff" "Jim" "Jane" "Joe"
 
 
-** NEXT Vector lab II (Friday - no class - founder's day convocation)
+** Vector lab II (Friday - no class - founder's day convocation)
 
 - Download practice file (later): [[https://tinyurl.com/vectors-plotting-24][tinyurl.com/vectors-plotting-24]] 
 
@@ -1935,22 +1935,6 @@ Finish "Arithmetic in R":
 - Upload completed practice file to Canvas by next Monday
 
 - We will review the solutions next week
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ** IN PROGRESS Vectors in R (continued)
 
