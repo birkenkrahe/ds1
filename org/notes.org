@@ -1755,6 +1755,11 @@ Finish "Arithmetic in R":
 
 *NO CLASS THIS FRIDAY - FOUNDER'S DAY CONVOCATION AT 11 AM*
 
+- [X] Review: Vectors and factors
+- [ ] Lecture & codealong: Vectors in R (=plot=, =hist=, =seq=, =rep=)
+- [ ] Practice file for Founder's Day Friday (no class meeting)
+- [ ] Weekend: Quiz 8 on DataCamp and vectors
+
 ** Review: vectors and factors
 
 *Problems:* ds1/org/5_vectors_lab.org - [[https://tinyurl.com/vectors-lab][tinyurl.com/vectors-lab]]
@@ -1943,11 +1948,13 @@ emacs --file vectors.org
 
 Code alongside me!
 
+
 ** Vector lab II (Friday - no class - founder's day convocation)
 
-- Download practice file
+- Download practice file: [[https://tinyurl.com/vectors-practice-24][tinyurl.com/vectors-practice-24]]
 - Complete practice file
-- Upload completed practice file
+- Upload completed practice file to Canvas by next Monday
+- We will review the solutions next week
 
 
 
