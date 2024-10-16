@@ -1925,21 +1925,11 @@ Finish "Arithmetic in R":
     :  Ord.factor w/ 5 levels "F"<"D"<"C"<"B"<..: 1 1 2 2
     :  - attr(*, "names")= chr [1:4] "Jeff" "Jim" "Jane" "Joe"
 
-
-** Vector lab II (Friday - no class - founder's day convocation)
-
-- Download practice file (later): [[https://tinyurl.com/vectors-plotting-24][tinyurl.com/vectors-plotting-24]] 
-
-- Complete practice file
-
-- Upload completed practice file to Canvas by next Monday
-
-- We will review the solutions next week
-
 ** IN PROGRESS Vectors in R (continued)
 
 - [X] Base R
-- [X] Base R plotting
+- [X] Base R plotting: Histograms
+- [ ] Bar plots, line plots, scatter plots, box plots
 - [ ] Creating vector sequences and repetitions
 - [ ] Sorting and measuring vector lengths
 
@@ -1958,4 +1948,14 @@ emacs --file vectors.org
 
 Code alongside me!
 
+
+** TODO Vector lab II (Friday - no class - founder's day convocation)
+
+- Download practice file (later): [[https://tinyurl.com/vectors-plotting-24][tinyurl.com/vectors-plotting-24]] 
+
+- Complete practice file
+
+- Upload completed practice file to Canvas by next Monday
+
+- We will review the solutions next week
 
