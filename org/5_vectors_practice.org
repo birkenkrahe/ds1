@@ -1,6 +1,6 @@
 #+TITLE:Practice: Vectors in R
 #+AUTHOR: [YourName] 
-#+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
+#+SUBTITLE: Introduction to data science (DSC 105) Fall 2024
 #+STARTUP: overview hideblocks indent
 #+PROPERTY: header-args:R :session *R* :results output
 * README
@@ -18,7 +18,10 @@
   - Put your cursor on the headline of this section, and type ~S <LEFT>~
     until you see ~DONE~ instead of ~TODO~ next to the title.
   - Perform this last step each time you complete a section.
-
+  - When you're done, upload the completed file to Canvas
+  - Create R code blocks at will to answer all questions.
+  - We will review this content at the start of the next session.
+    
 * TODO Create and store a sequence
 
 1) Create a sequence of values from ~5~ to ~-11~ that progresses in steps

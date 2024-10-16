@@ -1921,13 +1921,27 @@ Finish "Arithmetic in R":
     :  - attr(*, "names")= chr [1:4] "Jeff" "Jim" "Jane" "Joe"
 
 
-** Vectors in R (continued)
+** IN PROGRESS Vectors in R (continued)
 
 - [X] Base R
 - [X] Base R plotting
 - [ ] Creating vector sequences and repetitions
 - [ ] Sorting and measuring vector lengths
 
+Download and open this file to codealong:
+[[https://tinyurl.com/vectors-codealong][tinyurl.com/vectors-codealong]]
+
+In Linux:
+#+begin_example bash
+wget -O vectors.org tinyurl.com/vectors-codealong
+#+end_example
+
+Open Emacs:
+#+begin_example
+emacs --file vectors.org
+#+end_example
+
+Code alongside me!
 
 ** Vector lab II (Friday - no class - founder's day convocation)
 
