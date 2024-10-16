@@ -1923,8 +1923,8 @@ Finish "Arithmetic in R":
 
 ** Vectors in R (continued)
 
-- [ ] Base R
-- [ ] Base R plotting
+- [X] Base R
+- [X] Base R plotting
 - [ ] Creating vector sequences and repetitions
 - [ ] Sorting and measuring vector lengths
 
@@ -1934,6 +1934,7 @@ Finish "Arithmetic in R":
 - Download practice file
 - Complete practice file
 - Upload completed practice file
+
 
 
 

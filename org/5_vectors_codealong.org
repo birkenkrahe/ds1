@@ -584,8 +584,8 @@ Code along.
 
 - Add the argument ~breaks=20~ to the ~hist~ function call. Change the
   file name in the code block header if you want to create a new PNG file
-  #+begin_src R :exports both :session :results output graphics file :file ../img/histNile20.png
-
+  #+begin_src R :file Nile2.png :results output graphics file :session *R* 
+    
   #+end_src
 
 - Some of you might already know how to put both of these plots on one
