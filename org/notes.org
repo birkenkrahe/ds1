@@ -1756,11 +1756,11 @@ Finish "Arithmetic in R":
 *NO CLASS THIS FRIDAY - FOUNDER'S DAY CONVOCATION AT 11 AM*
 
 - [X] Review: Vectors and factors
-- [ ] Lecture & codealong: Vectors in R (=plot=, =hist=, =barplot=)
-- [ ] Practice file for Founder's Day Friday (no class meeting)
+- [X] Lecture & codealong: Vectors in R (=plot=, =hist=, =barplot=)
+- [X] Practice file for Founder's Day Friday (no class meeting)
 - [ ] Weekend: Quiz 8 on DataCamp and plotting vectors
 
-** DONE Review: vectors and factors
+** Review: vectors and factors
 
 *Problems:* ds1/org/5_vectors_lab.org - [[https://tinyurl.com/vectors-lab][tinyurl.com/vectors-lab]]
 
@@ -1925,11 +1925,12 @@ Finish "Arithmetic in R":
     :  Ord.factor w/ 5 levels "F"<"D"<"C"<"B"<..: 1 1 2 2
     :  - attr(*, "names")= chr [1:4] "Jeff" "Jim" "Jane" "Joe"
 
-** IN PROGRESS Vectors in R (continued)
+
+** Vectors in R (continued)
 
 - [X] Base R
 - [X] Base R plotting: Histograms
-- [ ] Bar plots, line plots, scatter plots, box plots
+- [X] Bar plots, line plots, scatter plots, box plots
 - [ ] Creating vector sequences and repetitions
 - [ ] Sorting and measuring vector lengths
 
@@ -1949,7 +1950,7 @@ emacs --file vectors.org
 Code alongside me!
 
 
-** TODO Vector lab II (Friday - no class - founder's day convocation)
+** Vector lab II (Friday - no class - founder's day convocation)
 
 - Download practice file (later): [[https://tinyurl.com/vectors-plotting-24][tinyurl.com/vectors-plotting-24]] 
 
@@ -1958,4 +1959,29 @@ Code alongside me!
 - Upload completed practice file to Canvas by next Monday
 
 - We will review the solutions next week
+
+* Week 10 - Sequencing, repeating and subsetting vectors
+
+
+** Vectors in R (continued)
+
+- [ ] Creating vector sequences and repetitions (Monday)
+- [ ] Sorting and measuring vector lengths (Wednesday)
+- [ ] Lab with practice file (Friday)
+
+Download and open this file to codealong:
+[[https://tinyurl.com/vectors-codealong][tinyurl.com/vectors-codealong]]
+
+In Linux:
+#+begin_example bash
+wget -O vectors.org tinyurl.com/vectors-codealong
+#+end_example
+
+Open Emacs:
+#+begin_example
+emacs --file vectors.org
+#+end_example
+
+Code alongside me!
+
 
