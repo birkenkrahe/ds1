@@ -1760,7 +1760,7 @@ Finish "Arithmetic in R":
 - [ ] Practice file for Founder's Day Friday (no class meeting)
 - [ ] Weekend: Quiz 8 on DataCamp and plotting vectors
 
-** Review: vectors and factors
+** DONE Review: vectors and factors
 
 *Problems:* ds1/org/5_vectors_lab.org - [[https://tinyurl.com/vectors-lab][tinyurl.com/vectors-lab]]
 
@@ -1952,9 +1952,6 @@ Finish "Arithmetic in R":
 
 
 
-
-
-
 ** IN PROGRESS Vectors in R (continued)
 
 - [X] Base R
@@ -1976,4 +1973,5 @@ emacs --file vectors.org
 #+end_example
 
 Code alongside me!
+
 
