@@ -4,8 +4,6 @@
 #+PROPERTY: header-args:R :results output :session *R* :exports both :noweb yes
 #+options: toc:1
 * What will you learn?
-#+attr_html: :width 500px
-[[../img/5_workhorse.jpg]]
 
 After this lesson, you should be able to:
 
@@ -19,8 +17,6 @@ After this lesson, you should be able to:
 /Most sections are accompanied by YouTube videos./
 
 * Everything is an object [[https://youtu.be/7Ab2RQs7Lj8][video​]]
-#+attr_html: :width 400px
-[[../img/5_berlin.png]]
 
 - R is a functional, object-oriented language
 
@@ -218,8 +214,6 @@ Example code: The three vectors for names, heights, and sex
 #+end_src
 
 * R object ~class~
-#+attr_latex: :width 400px
-[[../img/5_class.jpg]]
 
 - The function ~class~ (check the help) returns the R object type
 
@@ -373,8 +367,6 @@ Code along.
 - Let's not forget that there are real data out there!
 
 - R (i.e. "[[https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf][Base R]]") includes a number of built-in datasets
-  #+attr_html: :width 700px
-  [[../img/baseR.png]]
 
 - Do you remember how to find these pre-loaded datasets? One of these
   is ~Nile~. Do you remember how to get information on such a dataset
@@ -444,8 +436,6 @@ Code along.
   : [1] 107
 
 * Example: down the Nile [[https://youtu.be/wwsD2KuoKt8][(video)]]
-#+attr_html: :width 600px
-[[../img/nile.png]]
 
 - What data structure (type of R object) is ~Nile~?
 
@@ -571,9 +561,6 @@ Code along.
     hist(Nile)
   #+end_src
 
-  #+RESULTS:
-  [[file:Nile.png]]
-
 - *Can you interpret the plot given what you know about the data?* For
   example, what is the meaning of the longest bar in the histogram?
   #+begin_quote
@@ -686,8 +673,6 @@ forp the examples listed at the end of the documentation (see next
 section).
 
 * Asking for help
-#+attr_latex: :width 400px
-[[../img/5_help.jpg]]
 
 - When you see a new function or dataset, look it up
 
@@ -709,8 +694,9 @@ look at help pages, the more you recognize known concepts.
 #+end_notes
 
 * Creating sequences and repetitions [[https://youtu.be/G2P_MVq3eyM][(video)]]
-#+attr_html: :width 600px
-[[../img/5_sequence.jpg]]
+
+You can create vectors using the =seq= and =rep= commands. This is
+especially useful when plotting, and when analyzing data frames.
 
 * The colon ~:~ operator
 
@@ -862,8 +848,6 @@ The fix:
   #+end_notes
 
 * Sorting and measuring lengths [[https://youtu.be/KRghGmuS6Ck][(video)]]
-#+attr_html: :width 400px
-[[../img/5_sorting.jpg]]
 
 * Sorting vector elements
 
@@ -912,8 +896,6 @@ The fix:
   #+end_src
 
 * Practice: creating vectors
-#+attr_html: :width 400px
-[[../img/5_gnome.jpg]]
 
 - Practice what you've learnt by solving problems independently.
 
