@@ -8,8 +8,8 @@
 
 - Put your name at the top.
 - Answer all questions that you can answer.
-- You can look up the techniques on GitHub ([[https://github.com/birkenkrahe/ds1/blob/main/org/5_vectors.org][5_vectors.org]])
-- Upload your file to Canvas
+- You can find examples on GitHub ([[https://github.com/birkenkrahe/ds1/blob/main/org/5_vectors.org][5_vectors.org]]).
+- Upload your completed file to Canvas.
 
 * VECTORS PLOTTING PRACTICE
 
