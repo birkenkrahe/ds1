@@ -1,0 +1,107 @@
+#+Title: Vectors plotting practice
+#+Author: [your name] (pledged)
+#+Subtitle: DSC 105, Introduction to data science, Lyon College, Fall 2024
+#+PROPERTY: header-args:R :results output :exports both :session *R*
+#+startup: overview hideblocks indent entitiespretty:
+#+options: toc:nil num:nil ^:nil:
+* README
+
+- Put your name at the top.
+- Answer all questions that you can answer.
+- You can look up the techniques on GitHub ([[https://github.com/birkenkrahe/ds1/blob/main/org/5_vectors.org][5_vectors.org]])
+- Upload your file to Canvas
+
+* VECTORS PLOTTING PRACTICE
+
+This is a short 30-45 minute exercise to review plotting vectors in
+various formats - as histogram, barplot, line plot, or scatter plot.
+
+1. Load the dataset =uspop= into your current R session, and list all
+   user-defined objects of this session (the output should be
+   "uspop").
+   #+begin_src R
+
+     
+   #+end_src
+
+2. Check the structure of the =uspop= dataset.
+   #+begin_src R
+
+   #+end_src
+
+3. Print the values of the =uspop= dataset.
+   #+begin_src R
+
+   #+end_src
+
+4. Look up the help for =uspop= - you need to switch to the R console to
+   do this. Copy the description into this ~example~ block:
+   #+begin_quote
+
+   #+end_quote
+
+5. =uspop= is a time series just like =Nile= from class. Create a
+   line plot for =uspop=. Make sure you can open/close it with
+   <F6>/<F7>.
+   #+begin_src R :file uspop.png :session *R* :results file graphics output :exports both
+
+   #+end_src
+
+6. Replace the x- and y-axis labels and add a title: use "Year", and
+   for the y-axis, use "Population [millions]". For the title, use
+   "U.S. population 1790-1970 Decennical Census Data"
+   #+begin_src R :file uspop2.png :session *R* :results file graphics output :exports both
+
+   #+end_src
+
+7. Return to the help file. It should still be open in one of your
+   Emacs buffers: =*help[R](uspop)*=. Scroll to the end of the document
+   (=M-SHIFT->=) and copy the =plot= command in the "Examples" section
+   into the code block below, then run it.
+   #+begin_src R :file uspop3.png :session *R* :results file graphics output :exports both
+
+   #+end_src
+
+8. Can you explain the difference between these two plots? Write your
+   answer in the box below:
+   #+begin_quote
+
+   #+end_quote
+
+9. What would a histogram of this dataset look like? Create one (it's
+   not very interesting because it doesn't show change over
+   time). Change the title to "Histogram of U.S. population
+   1790-1970", and the x-axis label to "Population [millions]".
+   #+begin_src R :file uspopHist.png :session *R* :results file graphics output :exports both
+
+   #+end_src
+
+10. Load the =women= dataset and display its structure:
+    #+begin_src R :session *R* :results output :exports both
+
+    #+end_src
+
+11. Create a scatterplot of the womens' =weight= as a function of
+    =height=. Title the plot "Womens' height vs. weight", and rename the
+    x- and y-axis labels to "Height (in)" and "Weight [lbs]",
+    respectively.
+    #+begin_src R :file women.png :session *R* :results file graphics output :exports both
+
+    #+end_src
+
+12. Load the =ChickWeight= dataset. It has a numeric vector =weight= and a
+    =factor= named =Diet= for different diets of the chickens.
+
+    Plot the =weight= of the chickens as a function of the =Diet=:
+    #+begin_src R :file chickDiet.png :session *R* :results file graphics output :exports both
+
+    #+end_src
+
+13. Create a bar plot of the =factor= variable =Diet= of the =ChickWeight=
+    dataset, title it "Chickens by diet type", change the factor level
+    labels to "Diet 1", "Diet 2", "Diet 3" and "Diet 4", and add an
+    y-axis label "Number of chickens".
+    #+begin_src R :file barChick.png :session *R* :results file graphics output :exports both
+
+    #+end_src
+
