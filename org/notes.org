@@ -1963,6 +1963,19 @@ Code alongside me!
 * Week 10 - Sequencing, repeating and subsetting vectors
 
 
+** Project: 2nd sprint review with NotebookLM/podcasts
+#+attr_html: :width 600px: 
+[[../img/litreview.png]]
+
+- Very interesting results! Not everybody understood how the
+  application works. You've been sent feedback via Team Chat.
+
+- Please take some time now to add your responses to the podcast in
+  the thread below your own Google Chat post (with the .wav file).
+
+- Discuss with your team members what to write, and then briefly
+  present your lessons learnt and your view of NotebookLM.
+
 ** Vectors in R (continued)
 
 - [ ] Creating vector sequences and repetitions (Monday)
