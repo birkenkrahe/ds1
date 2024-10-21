@@ -1961,20 +1961,45 @@ Code alongside me!
 - We will review the solutions next week
 
 * Week 10 - Sequencing, repeating and subsetting vectors
-
+#+attr_html: :width 600px: 
+#+caption: Claude Monet, Cap d'Antibes, Mistral (1888)
+[[../img/Monet_Cap_dAntibes_Mistral_1888.jpg]]
 
 ** Project: 2nd sprint review with NotebookLM/podcasts
-#+attr_html: :width 600px: 
+#+attr_html: :width 500px: 
 [[../img/litreview.png]]
 
 - Very interesting results! Not everybody understood how the
-  application works. You've been sent feedback via Team Chat.
+  application works. You were penalized for not submitting [[https://lyon.instructure.com/courses/2628/assignments/35174][requested]]
+  deliverables (like the litmap - did you understand why you used
+  it?). I added your *feedback* to your NotebookLM as a new note.
 
-- Please take some time now to add your responses to the podcast in
-  the thread below your own Google Chat post (with the .wav file).
+- Some of you didn't seem to have looked at the notebooks: they were
+  untitled or they were titled "Sprint review 2" or something like
+  it. *You need to make things easier for your customer (me).* The
+  customer cannot read your mind.
 
-- Discuss with your team members what to write, and then briefly
-  present your lessons learnt and your view of NotebookLM.
+- Some of you found sources but did not add them in the sidebar - how
+  should the AI know what you want it to talk about? The *Summary* at
+  below the "Notebook guide" should have tipped you off. *You need to
+  make it easier for the AI to give you what you need.* The AI cannot
+  read your mind either.
+
+- *Highlights:* Donna/Kelli's adding data from the British Museum, and
+  Johnzelle/Suyog/Gavin using a list of paper abstracts as
+  source. *Unpacking* the podcast could be your whole code-free project.
+
+- Please take some time now to answer the following questions:
+
+  1. *Did you like the exercise? Why or why not?*
+  2. *Did you find the podcast useful in any way?*
+  3. *Which lessons did you extract from the podcast?*
+  4. *What is your next step for sprint no. 3* ("Results", due on
+     Friday, November 15).
+
+- Discuss with your team members what to write, and then put your
+  answers on this Kanban board with one post-it per question:
+  [[https://tinyurl.com/notebook-kanban][tinyurl.com/notebook-kanban]]
 
 ** Vectors in R (continued)
 
