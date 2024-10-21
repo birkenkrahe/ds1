@@ -4,7 +4,6 @@
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+PROPERTY: header-args:R :session *R* :results output :exports both
 * Week 0 - Orientation ([[https://github.com/birkenkrahe/ds1/blob/main/org/0_overview.org][GitHub]])
-
 #+attr_html: :width 300px:
 [[../img/difficulty.png]]
 
@@ -1965,7 +1964,13 @@ Code alongside me!
 #+caption: Claude Monet, Cap d'Antibes, Mistral (1888)
 [[../img/Monet_Cap_dAntibes_Mistral_1888.jpg]]
 
-** Vector plotting practice (failed)
+- [ ] Review of the (failed) vector plotting practice
+- [ ] Review of the DataCamp lesson on "Data Frames"
+- [ ] Review of the 2nd sprint results "Literature Review"
+- [ ] Vectors in R: sequences, repetitions, sorting, measuring
+- [ ] Vectors in R: short lab practice (Canvas upload)
+
+* Vector plotting practice (failed?)
 #+attr_html: :width 400px:
 [[../img/plotting_practice.png]]
 
@@ -1973,9 +1978,10 @@ Code alongside me!
 - Do yourself a favor and complete the practice file.
 - The questions are part of the current online quiz.
 - Check your solutions with the PDF and/or my video.
+- Remember to take or keep up your DataCamp practice!
 
 
-** Review: DataCamp "Data frames"
+* Review: DataCamp "Data frames"
 
 1. What is a data frame, and why is it useful in data analysis?
    #+begin_quote
@@ -2030,9 +2036,6 @@ Code alongside me!
      mtcars$mpg[idx]
    #+end_src
 
-   #+RESULTS:
-   : [1] 32.4 30.4 33.9 27.3 26.0 30.4
-
 5. Which cars satisfy this condition?
    #+begin_src R
      which(mtcars$mpg > 25) -> rows25  # row index vector
@@ -2040,23 +2043,10 @@ Code alongside me!
      rownames(mtcars[rows25,]) # select row names
    #+end_src
 
-   #+RESULTS:
-   : [1] 18 19 20 26 27 28
-   : [1] "Fiat 128"       "Honda Civic"    "Toyota Corolla" "Fiat X1-9"      "Porsche 914-2"  "Lotus Europa"
-
    Works as well:
    #+begin_src R
      subset(mtcars[1], mpg>25)
    #+end_src
-
-   #+RESULTS:
-   :                 mpg
-   : Fiat 128       32.4
-   : Honda Civic    30.4
-   : Toyota Corolla 33.9
-   : Fiat X1-9      27.3
-   : Porsche 914-2  26.0
-   : Lotus Europa   30.4
 
 6. Which function is used to create a =data.frame=?
    #+begin_src R
@@ -2068,7 +2058,7 @@ Code alongside me!
    #+end_src
 
 
-** Project: 2nd sprint review with NotebookLM/podcasts
+* Project: 2nd sprint review with NotebookLM/podcasts
 
 - Very interesting results! Not everybody understood how the
   application works. You were penalized for not submitting [[https://lyon.instructure.com/courses/2628/assignments/35174][requested]]
@@ -2103,7 +2093,7 @@ Code alongside me!
   [[https://tinyurl.com/notebook-kanban][tinyurl.com/notebook-kanban]]
 
 
-** Vectors in R (continued)
+* Vectors in R (continued)
 
 - [ ] Creating vector sequences and repetitions
 - [ ] Sorting and measuring vector lengths
