@@ -1989,17 +1989,32 @@ Code alongside me!
    structure similar to a =table= where data is stored in *rows* and
    *columns*, commonly used for data manipulation in languages like R
    and Python. Data frames allow for access, manipulation, and
-   analysis of structured data in multiple data types.
+   analysis of structured data in *multiple data types*.
    #+end_quote
 
-2. How do you select specific rows and columns from a =data.frame=? For
+2. Which function is used to create a =data.frame=?
+   #+begin_src R
+     data.frame(
+       nums=c(1,2,3),
+       name=c("Jim","Joe","Jane"),
+       bool=c(TRUE,TRUE,FALSE)
+     )
+   #+end_src
+
+   #+RESULTS:
+   :   nums name  bool
+   : 1    1  Jim  TRUE
+   : 2    2  Joe  TRUE
+   : 3    3 Jane FALSE
+
+3. How do you select specific rows and columns from a =data.frame=? For
    example, the first two rows of =mtcars=?
    #+begin_src R
      ## With subsetting functions
-     head(mtcars,n=2)
+     head(mtcars,n=2) # mtcars |> head(2)
      subset(mtcars,mpg==21)
      ## With bracket / index operator notation []
-     mtcars[c(1,2),]
+     mtcars[c(1,2), ]
      ## With the accessor operator $ - individual columns only
      mtcars$mpg[c(1,2)]
    #+end_src
@@ -2009,6 +2024,10 @@ Code alongside me!
        wget -O ../data/mtcars.csv https://gist.githubusercontent.com/seankross/a412dfbd88b3db70b74b/raw/5f23f993cd87c283ce766e7ac6b329ee7cc2e1d1/mtcars.csv
        head --lines=2 ../data/mtcars.csv
      #+end_src
+
+     #+RESULTS:
+     : model,mpg,cyl,disp,hp,drat,wt,qsec,vs,am,gear,carb
+     : Mazda RX4,21,6,160,110,3.9,2.62,16.46,0,1,4,4
 
    - The code is quite a bit more complicated:
      #+begin_src python :results output :session *Python* :python python3 :exports both
@@ -2023,38 +2042,46 @@ Code alongside me!
        print(mtcars.loc[:1, "mpg"])
      #+end_src
 
-3. How do you sort the values of a =data.frame= by a specific column in
+4. How do you sort the values of a =data.frame= by a specific column in
    descending order? For example the =mpg= column of =mtcars=?
    #+begin_src R
      sort(mtcars$mpg,decreasing=TRUE)
    #+end_src
 
-4. How do you filter those elements of =mtcars= with more than 25
+   #+RESULTS:
+   :  [1] 33.9 32.4 30.4 30.4 27.3 26.0 24.4 22.8 22.8 21.5 21.4 21.4 21.0 21.0 19.7 19.2 19.2 18.7 18.1 17.8 17.3 16.4 15.8 15.5
+   : [25] 15.2 15.2 15.0 14.7 14.3 13.3 10.4 10.4
+
+5. How do you filter those elements of =mtcars= with more than 25
    miles-per-gallon?
    #+begin_src R
      mtcars$mpg > 25 -> idx # index vector
      mtcars$mpg[idx]
    #+end_src
 
-5. Which cars satisfy this condition?
+   #+RESULTS:
+   : [1] 32.4 30.4 33.9 27.3 26.0 30.4
+
+6. Which cars satisfy this condition?
+
+   The car types are not stored in the data frame (they are names):
+   #+begin_src R
+     head(mtcars,2)
+   #+end_src
+
    #+begin_src R
      which(mtcars$mpg > 25) -> rows25  # row index vector
      rows25  
-     rownames(mtcars[rows25,]) # select row names
+     rownames(mtcars[rows25,]) # select row names from dataframe argument
    #+end_src
+
+   #+RESULTS:
+   : [1] 18 19 20 26 27 28
+   : [1] "Fiat 128"       "Honda Civic"    "Toyota Corolla" "Fiat X1-9"      "Porsche 914-2"  "Lotus Europa"
 
    Works as well:
    #+begin_src R
      subset(mtcars[1], mpg>25)
-   #+end_src
-
-6. Which function is used to create a =data.frame=?
-   #+begin_src R
-     data.frame(
-       nums=c(1,2,3),
-       name=c("Jim","Joe","Jane"),
-       bool=c(TRUE,TRUE,FALSE)
-     )
    #+end_src
 
 
@@ -2086,7 +2113,7 @@ Code alongside me!
   2. *Did you find the podcast useful in any way?*
   3. *Which lessons did you extract from the podcast?*
   4. *What is your next step for sprint no. 3* ("Results", due on
-     Friday, November 15).
+     Friday, November 15, with an abstract as a deliverable).
 
 - Discuss with your team members what to write, and then put your
   answers on this Kanban board with one post-it per question:
