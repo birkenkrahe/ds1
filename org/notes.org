@@ -2004,13 +2004,13 @@ Code alongside me!
      mtcars$mpg[c(1,2)]
    #+end_src
 
-   - Get the data:
+   - For Python: Get the data first:
      #+begin_src bash :results output :exports both
        wget -O ../data/mtcars.csv https://gist.githubusercontent.com/seankross/a412dfbd88b3db70b74b/raw/5f23f993cd87c283ce766e7ac6b329ee7cc2e1d1/mtcars.csv
        head --lines=2 ../data/mtcars.csv
      #+end_src
 
-   - In Python:
+   - The code is quite a bit more complicated:
      #+begin_src python :results output :session *Python* :python python3 :exports both
        import pandas as pd
        mtcars = pd.read_csv("../data/mtcars.csv")
