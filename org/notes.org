@@ -1482,7 +1482,7 @@ Finish "Arithmetic in R":
 
 - [X] *Video*: I recorded sample solutions to the popquiz ([[https://youtube.com/playlist?list=PLwgb17bzeNyhPl0kUNTRkLM2-pnfC2kHR&si=kzsSLx7R8pdkLOIr][playlist]])
 
-- [X] Update: new quiz will be available later 
+- [X] Update: new quiz will be available later
 
 - [ ] *Update:* Projects and "Data Science is not Science"
 
@@ -1696,7 +1696,7 @@ Finish "Arithmetic in R":
     : [1] 76.75
 
 ** "Data Science is not a Science"
-#+attr_html: :width 600px: 
+#+attr_html: :width 600px:
 [[../img/rant.png]]
 
 - My last [[https://drive.google.com/file/d/1e1YStWDWH88FPO2n2s_FibUz2TcAhZfv/view?usp=drive_link][NotebookLM podcast]] is a major improvement over its original
@@ -1748,7 +1748,7 @@ Finish "Arithmetic in R":
 - I will post a video with the solutions!
 
 * Week 9 - Vectors and Dataframes in R
-#+attr_html: :width 600px: 
+#+attr_html: :width 600px:
 [[../img/chirico.jpg]]
 
 /Image: Giorgio Di Chirico, The Joy and Enigma of the Strange Hour (1913)/
@@ -1792,7 +1792,7 @@ Finish "Arithmetic in R":
 3. How can you turn ~c(1,2,3) -> foo~ into a ~character~ vector?
    #+begin_src R
      c(1,2,3) -> foo
-     as.character(foo)     
+     as.character(foo)
      as.character(foo) |> as.numeric()
    #+end_src
 
@@ -1805,7 +1805,7 @@ Finish "Arithmetic in R":
      c(1,1,1.0)  # not coerced into floating point
      c(1,1,1.1)  # coerced into floating-point
      c(1,1,1e6)  # forced into scientific notation
-     c(1,1,0.000001e6) 
+     c(1,1,0.000001e6)
    #+end_src
 
    #+RESULTS:
@@ -1833,7 +1833,7 @@ Finish "Arithmetic in R":
    : [1] "numeric"
 
 6. Convert the vector ~names~ with the elements ~"Joe", "Jeff", "Jim",
-   "Jane"~ to a factor and store it in ~names_f~. 
+   "Jane"~ to a factor and store it in ~names_f~.
    #+begin_src R
      names <- c("Joe", "Jeff", "Jim", "Jane") # character vector
      factor(names) -> names_f
@@ -1862,7 +1862,7 @@ Finish "Arithmetic in R":
    #+end_src
 
    #+RESULTS:
-   : Jeff  Jim Jane  Joe 
+   : Jeff  Jim Jane  Joe
    :  "A"  "C"  "B"  "B"
    : [1] "Jeff" "Jim"  "Jane" "Joe"
 
@@ -1875,8 +1875,8 @@ Finish "Arithmetic in R":
    #+end_src
 
    #+RESULTS:
-   : Jeff  Jim Jane  Joe 
-   :    A    C    B    B 
+   : Jeff  Jim Jane  Joe
+   :    A    C    B    B
    : Levels: C < B < A
 
 10. Store ~grades~ and ~grades_f~ in a ~data.frame~ named ~df~, and then apply
@@ -1895,12 +1895,12 @@ Finish "Arithmetic in R":
     Jim       C        C
     Jane      B        B
     Joe       B        B
-    'data.frame':	4 obs. of  2 variables:
+    'data.frame':       4 obs. of  2 variables:
      $ grades  : chr  "A" "C" "B" "B"
      $ grades_f: Ord.factor w/ 3 levels "C"<"B"<"A": 3 1 2 2
         grades          grades_f
-     Length:4           C:1     
-     Class :character   B:2     
+     Length:4           C:1
+     Class :character   B:2
      Mode  :character   A:1
     #+end_example
 
@@ -1952,7 +1952,7 @@ Code alongside me!
 
 ** Vector lab II (Friday - no class - founder's day convocation)
 
-- Download practice file (later): [[https://tinyurl.com/vectors-plotting-24][tinyurl.com/vectors-plotting-24]] 
+- Download practice file (later): [[https://tinyurl.com/vectors-plotting-24][tinyurl.com/vectors-plotting-24]]
 
 - Complete practice file
 
@@ -1961,13 +1961,114 @@ Code alongside me!
 - We will review the solutions next week
 
 * Week 10 - Sequencing, repeating and subsetting vectors
-#+attr_html: :width 600px: 
+#+attr_html: :width 600px:
 #+caption: Claude Monet, Cap d'Antibes, Mistral (1888)
 [[../img/Monet_Cap_dAntibes_Mistral_1888.jpg]]
 
+** Vector plotting practice (failed)
+#+attr_html: :width 400px:
+[[../img/plotting_practice.png]]
+
+- Only three submissions: what were *you* doing on Friday?
+- Do yourself a favor and complete the practice file.
+- The questions are part of the current online quiz.
+- Check your solutions with the PDF and/or my video.
+
+
+** Review: DataCamp "Data frames"
+
+1. What is a data frame, and why is it useful in data analysis?
+   #+begin_quote
+   A =data.frame= (R) or =DataFrame= (Python) is a two-dimensional data
+   structure similar to a =table= where data is stored in *rows* and
+   *columns*, commonly used for data manipulation in languages like R
+   and Python. Data frames allow for access, manipulation, and
+   analysis of structured data in multiple data types.
+   #+end_quote
+
+2. How do you select specific rows and columns from a =data.frame=? For
+   example, the first two rows of =mtcars=?
+   #+begin_src R
+     ## With subsetting functions
+     head(mtcars,n=2)
+     subset(mtcars,mpg==21)
+     ## With bracket / index operator notation []
+     mtcars[c(1,2),]
+     ## With the accessor operator $ - individual columns only
+     mtcars$mpg[c(1,2)]
+   #+end_src
+
+   - Get the data:
+     #+begin_src bash :results output :exports both
+       wget -O ../data/mtcars.csv https://gist.githubusercontent.com/seankross/a412dfbd88b3db70b74b/raw/5f23f993cd87c283ce766e7ac6b329ee7cc2e1d1/mtcars.csv
+       head --lines=2 ../data/mtcars.csv
+     #+end_src
+
+   - In Python:
+     #+begin_src python :results output :session *Python* :python python3 :exports both
+       import pandas as pd
+       mtcars = pd.read_csv("../data/mtcars.csv")
+       print(mtcars.head(n=2)) # function
+
+       print(mtcars.iloc[:2])  # slicing based on integer-location
+       print(mtcars.iloc[:2]["mpg"])
+
+       print(mtcars.loc[:1])   # slicing based on row labels (0,1)
+       print(mtcars.loc[:1, "mpg"])
+     #+end_src
+
+3. How do you sort the values of a =data.frame= by a specific column in
+   descending order? For example the =mpg= column of =mtcars=?
+   #+begin_src R
+     sort(mtcars$mpg,decreasing=TRUE)
+   #+end_src
+
+4. How do you filter those elements of =mtcars= with more than 25
+   miles-per-gallon?
+   #+begin_src R
+     mtcars$mpg > 25 -> idx # index vector
+     mtcars$mpg[idx]
+   #+end_src
+
+   #+RESULTS:
+   : [1] 32.4 30.4 33.9 27.3 26.0 30.4
+
+5. Which cars satisfy this condition?
+   #+begin_src R
+     which(mtcars$mpg > 25) -> rows25  # row index vector
+     rows25  
+     rownames(mtcars[rows25,]) # select row names
+   #+end_src
+
+   #+RESULTS:
+   : [1] 18 19 20 26 27 28
+   : [1] "Fiat 128"       "Honda Civic"    "Toyota Corolla" "Fiat X1-9"      "Porsche 914-2"  "Lotus Europa"
+
+   Works as well:
+   #+begin_src R
+     subset(mtcars[1], mpg>25)
+   #+end_src
+
+   #+RESULTS:
+   :                 mpg
+   : Fiat 128       32.4
+   : Honda Civic    30.4
+   : Toyota Corolla 33.9
+   : Fiat X1-9      27.3
+   : Porsche 914-2  26.0
+   : Lotus Europa   30.4
+
+6. Which function is used to create a =data.frame=?
+   #+begin_src R
+     data.frame(
+       nums=c(1,2,3),
+       name=c("Jim","Joe","Jane"),
+       bool=c(TRUE,TRUE,FALSE)
+     )
+   #+end_src
+
+
 ** Project: 2nd sprint review with NotebookLM/podcasts
-#+attr_html: :width 500px: 
-[[../img/litreview.png]]
 
 - Very interesting results! Not everybody understood how the
   application works. You were penalized for not submitting [[https://lyon.instructure.com/courses/2628/assignments/35174][requested]]
@@ -2001,11 +2102,12 @@ Code alongside me!
   answers on this Kanban board with one post-it per question:
   [[https://tinyurl.com/notebook-kanban][tinyurl.com/notebook-kanban]]
 
+
 ** Vectors in R (continued)
 
-- [ ] Creating vector sequences and repetitions (Monday)
-- [ ] Sorting and measuring vector lengths (Wednesday)
-- [ ] Lab with practice file (Friday)
+- [ ] Creating vector sequences and repetitions
+- [ ] Sorting and measuring vector lengths
+- [ ] Lab with practice file
 
 Download and open this file to codealong:
 [[https://tinyurl.com/vectors-codealong][tinyurl.com/vectors-codealong]]
@@ -2021,5 +2123,3 @@ emacs --file vectors.org
 #+end_example
 
 Code alongside me!
-
-
