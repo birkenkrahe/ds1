@@ -3,7 +3,7 @@
 #+startup: hideblocks indent overview inlineimages entitiespretty
 #+PROPERTY: header-args:R :results output :session *R* :exports both :noweb yes
 #+options: toc:1
-* What will you learn?
+* DONE What will you learn?
 
 After this lesson, you should be able to:
 
@@ -16,7 +16,7 @@ After this lesson, you should be able to:
 
 /Most sections are accompanied by YouTube videos./
 
-* Everything is an object [[https://youtu.be/7Ab2RQs7Lj8][video​]]
+* DONE Everything is an object [[https://youtu.be/7Ab2RQs7Lj8][video​]]
 
 - R is a functional, object-oriented language
 
@@ -47,7 +47,7 @@ the Tidyverse) differ massively regarding all of these.
 
 /Image: The instructor during COVID in his Berlin appartamento (1912)./
 
-* Assigning objects [[https://youtu.be/WZqJ_AyoOEU][(video)​]]
+* DONE Assigning objects [[https://youtu.be/WZqJ_AyoOEU][(video)​]]
 
 Code along:
 1. Open Linux
@@ -158,7 +158,7 @@ Code along:
      : [1] "barf" "foo"
      : character(0)
 
-* Why we need vectors [[https://youtu.be/iFsB_34mnR0][(video)]]
+* DONE Why we need vectors [[https://youtu.be/iFsB_34mnR0][(video)]]
 
 - We need vectors to handle multiple items in R ('collection')
 - Vectors contain observations or measurements of a single variable
@@ -213,7 +213,7 @@ Example code: The three vectors for names, heights, and sex
   s_male
 #+end_src
 
-* R object ~class~
+* DONE R object ~class~
 
 - The function ~class~ (check the help) returns the R object type
 
@@ -248,7 +248,7 @@ With pipes:
   class(s_names)   # what type vector is this?
   class(s_male)    # what type vector is this?
 #+end_src
-* Creating vectors [[https://youtu.be/Ov6SIrpY_io][(video)]]
+* DONE Creating vectors [[https://youtu.be/Ov6SIrpY_io][(video)]]
 
 Code along.
 
@@ -362,7 +362,7 @@ Code along.
   class(specvec1)
 #+end_src
 
-* Base R - what's that again?
+* DONE Base R - what's that again?
 
 - Let's not forget that there are real data out there!
 
@@ -380,20 +380,20 @@ Code along.
   #+begin_src R
     ls()
     search()
-    #data()
+                                            #data()
     installed.packages()
   #+end_src
-  
+
 - Displaying installed packages (convert to =data.frame= first):
   #+begin_src R
     installed.packages() |> as.data.frame() |> str() |> capture.output(file="ip.txt")
     system("ls -l ip.txt")
-    system("head -n 5 ip.txt")    
+    system("head -n 5 ip.txt")
   #+end_src
 
   #+RESULTS:
   : -rw-rw-r-- 1 marcus marcus 1299 Oct 14 11:34 ip.txt
-  : 'data.frame':	107 obs. of  16 variables:
+  : 'data.frame':       107 obs. of  16 variables:
   :  $ Package              : chr  "abind" "backports" "bit" "bit64" ...
   :  $ LibPath              : chr  "/home/marcus/R/x86_64-pc-linux-gnu-library/4.1" "/home/marcus/R/x86_64-pc-linux-gnu-library/4.1" "/home/marcus/R/x86_64-pc-linux-gnu-library/4.1" "/home/marcus/R/x86_64-pc-linux-gnu-library/4.1" ...
   :  $ Version              : chr  "1.4-5" "1.4.1" "4.0.5" "4.0.5" ...
@@ -407,23 +407,23 @@ Code along.
 
   #+RESULTS:
   #+begin_example
-    [1] "abind"         "backports"     "bit"           "bit64"         "brio"          "broom"        
-    [7] "callr"         "carData"       "cli"           "clipr"         "colorspace"    "cpp11"        
-   [13] "crayon"        "data.table"    "DEoptimR"      "desc"          "diffobj"       "digest"       
-   [19] "ellipsis"      "EnvStats"      "evaluate"      "fansi"         "farver"        "fs"           
-   [25] "generics"      "ggplot2"       "glue"          "gtable"        "hms"           "isoband"      
-   [31] "jsonlite"      "labeling"      "lifecycle"     "magrittr"      "MASS"          "Matrix"       
-   [37] "MatrixModels"  "minqa"         "munsell"       "nortest"       "numDeriv"      "pillar"       
-   [43] "pkgbuild"      "pkgconfig"     "pkgload"       "praise"        "prettyunits"   "processx"     
-   [49] "progress"      "ps"            "purrr"         "quantreg"      "R6"            "RColorBrewer" 
-   [55] "Rcpp"          "RcppEigen"     "readr"         "rematch2"      "remotes"       "rlang"        
-   [61] "robustbase"    "rprojroot"     "scales"        "scatterplot3d" "SparseM"       "stringi"      
-   [67] "stringr"       "testthat"      "tibble"        "tidyr"         "tidyselect"    "tzdb"         
-   [73] "utf8"          "vctrs"         "viridisLite"   "vroom"         "waldo"         "withr"        
-   [79] "base"          "boot"          "class"         "cluster"       "codetools"     "compiler"     
-   [85] "datasets"      "foreign"       "graphics"      "grDevices"     "grid"          "KernSmooth"   
-   [91] "lattice"       "MASS"          "Matrix"        "methods"       "mgcv"          "nlme"         
-   [97] "nnet"          "parallel"      "rpart"         "spatial"       "splines"       "stats"        
+    [1] "abind"         "backports"     "bit"           "bit64"         "brio"          "broom"
+    [7] "callr"         "carData"       "cli"           "clipr"         "colorspace"    "cpp11"
+   [13] "crayon"        "data.table"    "DEoptimR"      "desc"          "diffobj"       "digest"
+   [19] "ellipsis"      "EnvStats"      "evaluate"      "fansi"         "farver"        "fs"
+   [25] "generics"      "ggplot2"       "glue"          "gtable"        "hms"           "isoband"
+   [31] "jsonlite"      "labeling"      "lifecycle"     "magrittr"      "MASS"          "Matrix"
+   [37] "MatrixModels"  "minqa"         "munsell"       "nortest"       "numDeriv"      "pillar"
+   [43] "pkgbuild"      "pkgconfig"     "pkgload"       "praise"        "prettyunits"   "processx"
+   [49] "progress"      "ps"            "purrr"         "quantreg"      "R6"            "RColorBrewer"
+   [55] "Rcpp"          "RcppEigen"     "readr"         "rematch2"      "remotes"       "rlang"
+   [61] "robustbase"    "rprojroot"     "scales"        "scatterplot3d" "SparseM"       "stringi"
+   [67] "stringr"       "testthat"      "tibble"        "tidyr"         "tidyselect"    "tzdb"
+   [73] "utf8"          "vctrs"         "viridisLite"   "vroom"         "waldo"         "withr"
+   [79] "base"          "boot"          "class"         "cluster"       "codetools"     "compiler"
+   [85] "datasets"      "foreign"       "graphics"      "grDevices"     "grid"          "KernSmooth"
+   [91] "lattice"       "MASS"          "Matrix"        "methods"       "mgcv"          "nlme"
+   [97] "nnet"          "parallel"      "rpart"         "spatial"       "splines"       "stats"
   [103] "stats4"        "survival"      "tcltk"         "tools"         "utils"
   #+end_example
 
@@ -435,7 +435,7 @@ Code along.
   #+RESULTS:
   : [1] 107
 
-* Example: down the Nile [[https://youtu.be/wwsD2KuoKt8][(video)]]
+* DONE Example: down the Nile [[https://youtu.be/wwsD2KuoKt8][(video)]]
 
 - What data structure (type of R object) is ~Nile~?
 
@@ -459,7 +459,7 @@ Code along.
 - How can we print this dataset, or parts of it, on the screen?
 
   Structure of a time series:
-  #+begin_src R 
+  #+begin_src R
     str(Nile)
   #+end_src
 
@@ -473,9 +473,9 @@ Code along.
 
   #+RESULTS:
   : Time Series:
-  : Start = 1871 
-  : End = 1970 
-  : Frequency = 1 
+  : Start = 1871
+  : End = 1970
+  : Frequency = 1
   :   [1] 1871 1872 1873 1874 1875 1876 1877 1878 1879 1880 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891
   :  [22] 1892 1893 1894 1895 1896 1897 1898 1899 1900 1901 1902 1903 1904 1905 1906 1907 1908 1909 1910 1911 1912
   :  [43] 1913 1914 1915 1916 1917 1918 1919 1920 1921 1922 1923 1924 1925 1926 1927 1928 1929 1930 1931 1932 1933
@@ -499,9 +499,9 @@ Code along.
 
   #+RESULTS:
   : Time Series:
-  : Start = 1871 
-  : End = 1970 
-  : Frequency = 1 
+  : Start = 1871
+  : End = 1970
+  : Frequency = 1
   :   [1] 1120 1160  963 1210 1160 1160  813 1230 1370 1140  995  935 1110  994 1020  960 1180  799  958 1140 1100
   :  [22] 1210 1150 1250 1260 1220 1030 1100  774  840  874  694  940  833  701  916  692 1020 1050  969  831  726
   :  [43]  456  824  702 1120 1100  832  764  821  768  845  864  862  698  845  744  796 1040  759  781  865  845
@@ -519,7 +519,7 @@ Code along.
   16th number, indicated by ~[16]~.
   #+end_notes
 
-* Plotting the nile [[https://youtu.be/c_BvsnKU7T4][(video)]]
+* DONE Plotting the nile [[https://youtu.be/c_BvsnKU7T4][(video)]]
 
 - Plotting is often a good entry into exploring data
 
@@ -554,7 +554,7 @@ Code along.
   If you run ~example(Nile)~ you get a number of interesting plots, too.
   #+end_notes
 
-* Plotting the histogram
+* DONE Plotting the histogram
 
 - Let's plot the histogram of ~Nile~
   #+begin_src R :results output graphics file :file Nile.png
@@ -574,13 +574,13 @@ Code along.
 
 - Add the argument ~breaks=20~ to the ~hist~ function call. Change the
   file name in the code block header if you want to create a new PNG file
-  #+begin_src R :file Nile2.png :results output graphics file :session *R* 
+  #+begin_src R :file Nile2.png :results output graphics file :session *R*
     hist(Nile,breaks=20)
   #+end_src
 
   #+RESULTS:
   [[file:Nile2.png]]
-  
+
 - What's the new insight?
   #+begin_quote
   The flow interval that occurred the most lies actually between
@@ -598,7 +598,7 @@ Code along.
   #+RESULTS:
   [[file:Nile3.png]]
 
-* Plotting the line plot
+* DONE Plotting the line plot
 
 Since ~Nile~ is a time series, every data point has a time label.
 
@@ -636,7 +636,7 @@ This leads to a so-called /line plot/
 
   #+RESULTS:
   #+begin_example
-  'data.frame':	32 obs. of  11 variables:
+  'data.frame': 32 obs. of  11 variables:
    $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
    $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
    $ disp: num  160 160 108 258 360 ...
@@ -673,11 +673,11 @@ This leads to a so-called /line plot/
 - Structure of the =cyl= vector
   #+begin_src R
     mtcars$cyl
-  #+end_src  
+  #+end_src
 
   #+RESULTS:
   :  [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4
-  
+
 - Plot the =cyl= vector as a histogram.
   #+begin_src R :file cylHist.png :session *R* :results file graphics output :exports both
     hist(mtcars$cyl)
@@ -701,10 +701,10 @@ This leads to a so-called /line plot/
   #+end_src
 
   #+RESULTS:
-  : 
-  :  4  6  8 
+  :
+  :  4  6  8
   : 11  7 14
-  
+
 - Will =hist= work with =factor= vectors? Check out ~ToothGrowth~, another
   built-in dataset, using =str=:
   #+begin_src R
@@ -715,7 +715,7 @@ This leads to a so-called /line plot/
   :  [1] VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC VC OJ OJ OJ OJ OJ
   : [36] OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ OJ
   : Levels: OJ VC
-  : 'data.frame':	60 obs. of  3 variables:
+  : 'data.frame':       60 obs. of  3 variables:
   :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
   :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
   :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
@@ -734,7 +734,7 @@ This leads to a so-called /line plot/
   ...you can only generate a histogram for a single, continous
   numeric variable, and not for a discrete, categorical variable.
   #+end_quote
-  
+
 - Solution:
   1) Save the =factor= in an object =tgs=
      #+begin_src R
@@ -773,7 +773,7 @@ This leads to a so-called /line plot/
 For these and other settings, check out =help(hist)=, and =example(hist)=
 forp the examples listed at the end of the documentation (see next
 section).
-* Plotting the scatter plot
+* DONE Plotting the scatter plot
 
 - Check out the structure of =ToothGrowth= again.
   #+begin_src R
@@ -781,7 +781,7 @@ section).
   #+end_src
 
   #+RESULTS:
-  : 'data.frame':	60 obs. of  3 variables:
+  : 'data.frame':       60 obs. of  3 variables:
   :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
   :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
   :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
@@ -810,9 +810,9 @@ section).
   : [22] 15.5 16.5 16.5 16.5 17.3 17.3 17.6 18.5 18.8 19.7 20.0 21.2 21.5 21.5 22.4 22.5 23.0 23.3 23.3 23.6 23.6
   : [43] 24.5 24.8 25.2 25.5 25.5 25.8 26.4 26.4 26.4 26.4 26.7 27.3 27.3 29.4 29.5 30.9 32.5 33.9
 
-- Now plot the new vector  
-    #+begin_src R :file tg2.png :session *R* :results file graphics output :exports both
-      plot(l_sorted)
+- Now plot the new vector
+  #+begin_src R :file tg2.png :session *R* :results file graphics output :exports both
+    plot(l_sorted)
   #+end_src
 
   #+RESULTS:
@@ -838,7 +838,7 @@ section).
 
   #+end_quote
 
-* Asking for help
+* DONE Asking for help
 
 - When you see a new function or dataset, look it up
 
@@ -866,15 +866,15 @@ especially useful when plotting, and when analyzing data frames.
 
 * The colon ~:~ operator
 
-~1:n~ creates a sequence of numbers separated by intervals of 1
-#+begin_src R
+- ~1:n~ creates a sequence of numbers separated by intervals of 1
+  #+begin_src R
 
-#+end_src
+  #+end_src
 
-Check what type of R object ~3:21~ is by applying the functions:
-- ~class~ (R object class),
-- ~mode~ (R object storage mode)
-- ~is.vector~ (R vector check)
+- Check what type of R object ~3:21~ is by applying the functions:
+  + ~class~ (R object class),
+  + ~mode~ (R object storage mode)
+  + ~is.vector~ (R vector check)
   #+begin_src R
 
   #+end_src
@@ -894,15 +894,6 @@ Check what type of R object ~3:21~ is by applying the functions:
 
   #+end_src
 
-  #+begin_notes details
-  Try to understand what happened here by checking the numbers: the
-  first value of the sequence is ~foo = 5.3~. The last value is a
-  negative value, ~-47+1.5 = -45.5~. In order to generate the
-  sequence, R counts down in steps of ~1~ from the first to the last
-  value. It stops at ~-44.7~, because the next value, ~-45.7~ would be
-  outside of the interval $[5.3,-45.5])$.
-  #+end_notes
-
 ** Challenge: weird histogram
 
 The following code creates a weird histogram:
@@ -917,42 +908,32 @@ number (all bars should have height 1)? See below for the solution.
 
 The function ~seq~ allows modifying the step-width with ~by~:
 #+begin_src R
-  
+
 #+end_src
 
 ~seq~ always starts at ~from~ but not always end on ~to~:
 #+begin_src R
-  
+
 #+end_src
 
 To end exactly on the last value, use ~length.out~:
 #+begin_src R
-  
+
 #+end_src
 
 What is the step-width in the last case? Compute it and use it
 to create a sequence of 40 numbers from 3 to 27 exactly, with ~seq~.
-#+begin_notes solution
 #+begin_src R
-  s <- seq(from = 3, to = 27, length.out = 40)
-  s[2]-s[1] # step-width
-  seq(from = 3, to = 27, by = s[2]-s[1])
-#+end_src
 
-#+end_notes
+#+end_src
 
 ~length.out~ can only be positive (there is no 'negative length').
 
 Create a decreasing sequence of length 5 from 5 to -5. Use
 ~length.out~ first, then use ~by~ to achieve the same result.
-#+begin_notes solution
 #+begin_src R
-  myseq <- seq(from=5, to=-5, length.out=5)
-  myseq
-  myseq1 <- seq(from=5, to=-5, by = -2.5)
-  myseq1
+
 #+end_src
-#+end_notes
 
 * Solution: odd histogram with colon op =:=
 
@@ -987,7 +968,7 @@ The fix:
 
   #+end_src
 
-- [ ] The default of ~times~ and ~each~ is ~1~. What is ~rep(c(3,62))~ ?
+- The default of ~times~ and ~each~ is ~1~. What is ~rep(c(3,62))~ ?
 
 - As with ~seq~, you can include the result of ~rep~ in a vector of the
   same data type (e.g. ~numeric~):

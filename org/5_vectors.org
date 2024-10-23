@@ -1,4 +1,4 @@
-#+TITLE: VECTORS in R
+#+TITLE: VECTORS in R - Creation and Plotting
 #+AUTHOR: Introduction to data science (DSC 105) Fall 2024
 #+startup: hideblocks indent overview inlineimages entitiespretty
 #+PROPERTY: header-args:R :results output :session *R* :exports both :noweb yes
@@ -542,9 +542,12 @@ Code along.
 
 - Add the argument ~breaks=20~ to the ~hist~ function call. Change the
   file name in the code block header if you want to create a new PNG file
-  #+begin_src R :exports both :session :results output graphics file :file Nile2.png
+  #+begin_src R :exports both :session :results output graphics file :file ../img/Nile2.png
     hist(Nile, breaks=20)
   #+end_src
+
+  #+RESULTS:
+  [[file:Nile2.png]]
 
 - What's the new insight?
   #+begin_quote
@@ -554,7 +557,7 @@ Code along.
 
 - Some of you might already know how to put both of these plots on one
   page using the =par= function:
-  #+begin_src R :file Nile3.png :session *R* :results file graphics output :exports both
+  #+begin_src R :file ../img/Nile3.png :session *R* :results file graphics output :exports both
     par(mfrow=c(1,2),pty='s')
     hist(Nile,main="binwidth = 'Sturges'")  # check ?nclass.Sturges
     hist(Nile,breaks=20,main="binwidth = 20",ylab="")
@@ -614,7 +617,7 @@ This leads to a so-called /line plot/
   #+end_quote  
 
 - Graphical data (histogram): plot the =mpg= vector
-  #+begin_src R :results graphics output file :file histmtcars.png
+  #+begin_src R :results graphics output file :file ../img/histmtcars.png
     hist(mtcars$mpg)
   #+end_src
 
@@ -627,7 +630,7 @@ This leads to a so-called /line plot/
   #+end_quote
 
 - Plot the =cyl= vector as a histogram.
-  #+begin_src R :file cylHist.png :session *R* :results file graphics output :exports both
+  #+begin_src R :file ../img/cylHist.png :session *R* :results file graphics output :exports both
     hist(mtcars$cyl, breaks=3)
   #+end_src
 
@@ -636,7 +639,7 @@ This leads to a so-called /line plot/
 
 - A better plot type is the bar plot (because =cyl= is a categorical
   variable):
-  #+begin_src R :file cylBar.png :session *R* :results file graphics output :exports both
+  #+begin_src R :file ../img/cylBar.png :session *R* :results file graphics output :exports both
     barplot(table(mtcars$cyl))
   #+end_src
 
@@ -681,7 +684,7 @@ This leads to a so-called /line plot/
      #+end_src
 
   3) Plot the the values as a (fancy) histogram:
-     #+begin_src R :results graphics output file :file tghist.png
+     #+begin_src R :results graphics output file :file ../img/tghist.png
        hist(tgs,
             breaks = 2,
             col = "purple",
@@ -693,7 +696,7 @@ This leads to a so-called /line plot/
      [[file:tghist.png]]
 
 - Again, a barplot is more meaningful (because =supp= is categorical):
-  #+begin_src R :file bartg.png :session *R* :results file graphics output :exports both
+  #+begin_src R :file ../img/bartg.png :session *R* :results file graphics output :exports both
     barplot(table(tgs),
             names.arg=c("Orange Juice","Vitamin C"),
             main="ToothGrowth dataset - supply breakdown")
@@ -720,7 +723,7 @@ section).
   :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
 
 - Make a =plot= of the =len= variable (tooth length of the guinea pigs):
-  #+begin_src R :file tg1.png :session *R* :results file graphics output :exports both
+  #+begin_src R :file ../img/tg1.png :session *R* :results file graphics output :exports both
     plot(ToothGrowth$len)
   #+end_src
 
@@ -736,26 +739,26 @@ section).
   #+end_src
 
   #+RESULTS:
-  : [1]  4.2 11.5  7.3  5.8  6.4 10.0 11.2 11.2  5.2  7.0 16.5 16.5 15.2 17.3 22.5 17.3 13.6
-  : [18] 14.5 18.8 15.5 23.6 18.5 33.9 25.5 26.4 32.5 26.7 21.5 23.3 29.5 15.2 21.5 17.6  9.7
-  : [35] 14.5 10.0  8.2  9.4 16.5  9.7 19.7 23.3 23.6 26.4 20.0 25.2 25.8 21.2 14.5 27.3 25.5
-  : [52] 26.4 22.4 24.5 24.8 30.9 26.4 27.3 29.4 23.0
-  : [1]  4.2  5.2  5.8  6.4  7.0  7.3  8.2  9.4  9.7  9.7 10.0 10.0 11.2 11.2 11.5 13.6 14.5
-  : [18] 14.5 14.5 15.2 15.2 15.5 16.5 16.5 16.5 17.3 17.3 17.6 18.5 18.8 19.7 20.0 21.2 21.5
-  : [35] 21.5 22.4 22.5 23.0 23.3 23.3 23.6 23.6 24.5 24.8 25.2 25.5 25.5 25.8 26.4 26.4 26.4
-  : [52] 26.4 26.7 27.3 27.3 29.4 29.5 30.9 32.5 33.9
+  : [1]  4.2 11.5  7.3  5.8  6.4 10.0 11.2 11.2  5.2  7.0 16.5 16.5 15.2 17.3 22.5 17.3 13.6 14.5
+  : [19] 18.8 15.5 23.6 18.5 33.9 25.5 26.4 32.5 26.7 21.5 23.3 29.5 15.2 21.5 17.6  9.7 14.5 10.0
+  : [37]  8.2  9.4 16.5  9.7 19.7 23.3 23.6 26.4 20.0 25.2 25.8 21.2 14.5 27.3 25.5 26.4 22.4 24.5
+  : [55] 24.8 30.9 26.4 27.3 29.4 23.0
+  : [1]  4.2  5.2  5.8  6.4  7.0  7.3  8.2  9.4  9.7  9.7 10.0 10.0 11.2 11.2 11.5 13.6 14.5 14.5
+  : [19] 14.5 15.2 15.2 15.5 16.5 16.5 16.5 17.3 17.3 17.6 18.5 18.8 19.7 20.0 21.2 21.5 21.5 22.4
+  : [37] 22.5 23.0 23.3 23.3 23.6 23.6 24.5 24.8 25.2 25.5 25.5 25.8 26.4 26.4 26.4 26.4 26.7 27.3
+  : [55] 27.3 29.4 29.5 30.9 32.5 33.9
 
 - Now plot the new vector  
-    #+begin_src R :file tg2.png :session *R* :results file graphics output :exports both
-    plot(sort(l_sorted)
+    #+begin_src R :file ../img/tg2.png :session *R* :results file graphics output :exports both
+    plot(sort(l_sorted))
   #+end_src
 
   #+RESULTS:
-  [[file:tg2.png]]
+  [[file:../img/tg2.png]]
 
 - What happens to this scatterplot if you use the =supp= variable for =x=
   to plot the =len= variable as =y= (plot =len= as a function of =supp=)?
-  #+begin_src R :file tg3.png :session *R* :results file graphics output :exports both
+  #+begin_src R :file ../img/tg3.png :session *R* :results file graphics output :exports both
     plot(x=ToothGrowth$supp,ToothGrowth$len)
   #+end_src
 
@@ -798,410 +801,6 @@ system of learning - looking up the help content - and the more you
 look at help pages, the more you recognize known concepts.
 #+end_notes
 
-* Creating sequences and repetitions [[https://youtu.be/G2P_MVq3eyM][(video)]]
-#+attr_html: :width 600px
-[[../img/5_sequence.jpg]]
-* The colon ~:~ operator
-
-~1:n~ creates a sequence of numbers separated by intervals of 1
-#+begin_src R
-  3:21
-#+end_src
-
-Check what type of R object ~3:21~ is by applying the functions:
-- ~class~ (R object class),
-- ~mode~ (R object storage mode)
-- ~is.vector~ (R vector check)
-  #+begin_src R
-    class(3:27)
-    mode(3:27)
-    is.vector(3:27)
-  #+end_src
-
-  Sequences created this way can also be stored.
-  #+begin_src R
-    foo <- 5.3
-    bar <- foo:10
-    bar
-  #+end_src
-
-  What happens if the first argument of ~:~ is smaller than the second?
-  #+begin_src R
-    x <- 10:foo
-    x
-  #+end_src
-
-  You can perform computations to specify the range.
-  #+begin_src R
-    baz <- foo:(-47+1.5)
-    baz
-  #+end_src
-
-  #+begin_notes details
-  Try to understand what happened here by checking the numbers: the
-  first value of the sequence is ~foo = 5.3~. The last value is a
-  negative value, ~-47+1.5 = -45.5~. In order to generate the
-  sequence, R counts down in steps of ~1~ from the first to the last
-  value. It stops at ~-44.7~, because the next value, ~-45.7~ would be
-  outside of the interval $[5.3,-45.5])$.
-  #+end_notes
-
-** Challenge: weird histogram
-
-The following code creates a weird histogram:
-#+begin_src R :results output graphics file :file ../colonhist.png
-  hist(1:10, breaks=10)
-#+end_src
-
-#+RESULTS:
-[[file:../colonhist.png]]
-
-What can you do to see the proper distribution with breaks at every
-number (all bars should have height 1)? See below for the solution.
-
-* Sequences
-
-The function ~seq~ allows modifying the step-width with ~by~:
-#+begin_src R
-  seq(from = 3, to = 27, by = 3)
-#+end_src
-
-~seq~ always starts at ~from~ but not always end on ~to~:
-#+begin_src R
-  seq(from=1, to=10, by=2) # range even, stepsize even
-  seq(from=1, to=11, by=2) # range odd, stepsize even
-#+end_src
-
-To end exactly on the last value, use ~length.out~:
-#+begin_src R
-  seq(from=1, to=10, length.out=10) # either by or length.out
-  seq(from = 3, to = 27, length.out = 40)
-#+end_src
-
-What is the step-width in the last case? Compute it and use it
-to create a sequence of 40 numbers from 3 to 27 exactly, with ~seq~.
-#+begin_notes solution
-#+begin_src R
-  s <- seq(from = 3, to = 27, length.out = 40)
-  s[2]-s[1] # step-width
-  seq(from = 3, to = 27, by = s[2]-s[1])
-#+end_src
-
-#+end_notes
-
-~length.out~ can only be positive (there is no 'negative length').
-
-Create a decreasing sequence of length 5 from 5 to -5. Use
-~length.out~ first, then use ~by~ to achieve the same result.
-#+begin_notes solution
-#+begin_src R
-  myseq <- seq(from=5, to=-5, length.out=5)
-  myseq
-  myseq1 <- seq(from=5, to=-5, by = -2.5)
-  myseq1
-#+end_src
-#+end_notes
-
-* Solution: odd histogram with colon op =:=
-
-When creating a histogram of the vector ~1:10~ with binwidth 10, the
-resulting graph looks wrong:
-#+begin_src R :results output graphics file :file ../colonhist.png
-  hist(1:10, breaks=10)
-#+end_src
-
-#+RESULTS:
-[[file:../colonhist.png]]
-
-The fix:
-#+begin_src R :results output graphics file :file ../img/colonhist2.png
-  hist(x = 1:10,
-       breaks = seq(from=1,
-                    to=10,
-                    length.out=11))
-#+end_src
-
-#+RESULTS:
-[[file:../img/colonhist2.png]]
-
-* Repetition
-- Use ~rep~ to repeat a value, e.g. the number 1, four times:
-  #+begin_src R
-    rep( x = 1, times = 4)
-  #+end_src
-- You can repeat any R object, e.g. the vector ~c(3, 62, 8, 3)~, or the
-  scalar ~foo~, or an arbitrary arithmetic expression:
-  #+begin_src R
-    rep(x=c(3,62,8,3),times=3)
-    rep(x=foo, times=2)
-    rep(x=2*2, times=(foo*2)) # times must be a positive integer
-  #+end_src
-- The ~each~ argument of ~rep(x)~ says how many times each element of ~x~ is
-  repeated:
-  #+begin_src R :session :results output
-    rep(x=c(3,62), times=3)  # repeat vector three times
-    rep(x=c(3,62), each=2)   # repeat each vector element twice
-    rep(x=c(3,62), times=3, each=2) # repeat each vector element twice,
-                                            # and repeat the result three times
-  #+end_src
-- [ ] The default of ~times~ and ~each~ is ~1~. What is ~rep(c(3,62))~ ?
-- As with ~seq~, you can include the result of ~rep~ in a vector of the
-  same data type (e.g. ~numeric~):
-  #+begin_src R
-    foo <- 4 # store 4 in foo
-
-    ## create vector with rep and seq
-    c(3, 8.3, rep(x=32,times=foo), seq(from=-2,to=1,length.out=foo+1))
-  #+end_src
-* Repetition with characters
-
-- ~rep~ also works for characters and character vectors:
-  #+begin_src R
-    rep(x="data science", times=2)
-    rep(x=c("data","science"), times=2)
-    rep(x=c("data","science"), times=2, each=2)
-  #+end_src
-- [ ] What happens if you try to mix characters, numbers, Booleans?
-  Repeat an expression that has all three data types in it.
-  #+begin_src R
-    rep(x=c("data", 1, TRUE), times=2)
-  #+end_src
-
-  #+begin_notes coercion
-  When you call a function with an argument of the wrong
-  type, or, as in the case of ~c~, you try to create a vector of
-  different data types, R responds with "[[https://www.oreilly.com/library/view/r-in-a/9781449358204/ch05s08.html][coercion]]" to make it happen.
-  #+end_notes
-* Sorting and measuring lengths [[https://youtu.be/KRghGmuS6Ck][(video)]]
-#+attr_html: :width 400px
-[[../img/5_sorting.jpg]]
-* Sorting vector elements
-
-- /Sorting/ is important because we don't care about memory locations
-
-- ~sort(x)~ arranges the elements of x according to size
-
-- The default order is ascending, or ~decreasing = FALSE~
-  #+begin_src R
-    sort(x = c(2.5, -1, -10, 3.44))  # sort ascending
-    sort(x = c(2.5, -1, -10, 3.44), decreasing = FALSE) # sort ascending
-    sort(x = c(2.5, -1, -10, 3.44), decreasing = TRUE)  # sort descending
-  #+end_src
-
-- Special values are removed, put last or first with ~na.last~. This
-  works for all special values - ~NA~, ~NaN~ and ~Inf~.
-  #+begin_src R
-    sort(x = c(2.5, -1, -10, 3.44,NA), na.last=TRUE)  # put NA last
-    sort(x = c(2.5, -1, -10, 3.44,NaN), na.last=TRUE) # put NaN last
-    sort(x = c(2.5, -1, -10, 3.44,Inf), na.last=TRUE) # put Inf last
-    sort(x = c(2.5, -1, -10, 3.44,NA), na.last=FALSE) # put NA first
-    sort(x = c(2.5, -1, -10, 3.44,NA), na.last=NA)    # remove NA
-  #+end_src
-
-- [ ] Remember that ~NA~ is a ~logical~ object. How can you check that?
-  #+begin_src R
-    class(NA)
-  #+end_src
-
-  #+RESULTS:
-  : [1] "logical"
-
-* Length of vectors
-
-- The ~length~ function gets or sets the length of vectors[fn:3]:
-  #+begin_src R
-    length(x = c(3,2,8,1,10))  # vector of 5 elements
-    length(x = 5:13)           # vector of 9 elements
-    length(x = c(3,2,2^3,5*3)) # vector of 4 elements
-    length(1000)               # scalar/vector of 1 element
-  #+end_src
-
-  #+begin_src R
-    methods(length)
-  #+end_src
-
-  #+RESULTS:
-  : [1] length.hashtab* length.POSIXlt
-  : see '?methods' for accessing help and source code
-
-- If you have functions inside the object definition, ~length~ gives you
-  the number of entries /after/ the inner functions have been executed:
-  #+begin_src R
-    foo <- 4
-    bar <- c(3,8.3,rep(x=32,times=foo),seq(from=-2,to=1,length.out=foo+1))
-    bar
-    length(bar)
-  #+end_src
-
-- [ ] R's display options are stored in ~options()~, which is a
-  ~list~. Lists have a length like options. How many options does
-  ~options()~ have?
-  #+begin_src R
-    class(options())   # class of options()
-    length(options())  # length of options() : number of options
-    class(options)     # class of options as a function
-    class(options()$digits) # class of one options() element
-    length(options()$digits) # length of one options() element
-  #+end_src
-
-* Practice: creating vectors
-#+attr_html: :width 400px
-[[../img/5_gnome.jpg]]
-
-- Practice what you've learnt by solving problems independently.
-
-- Download the practice file from here:
-  [[https://tinyurl.com/ds105-vectors-practice][tinyurl.com/ds105-vectors-practice]]
-
-* Naming vectors
-
-- Naming vector elements makes code more readable.
-  #+begin_src R :session
-    c(apple = 1, banana = 2, "kiwi fruit" = 3, 4)
-  #+end_src
-- Or you can name elements explicitly using the function ~names~[fn:4]
-  #+begin_src R :session
-    x <- 1:4
-    names(x) <- c("apple", "bananas", "kiwi fruit", "")
-    x
-    names(x)
-  #+end_src
-- Looking under the hood of ~names~:
-  #+begin_src R :session
-    foo <- 1:4  # vector 1,2,3,4
-    names(foo)  # vector is not named (NULL)
-    names(foo) <- letters[1:4]  # assign letter names
-    names(foo)
-    foo  # default display includes names
-    str(foo)  # structures reveals names as attributes
-    attributes(foo) # attributes is a list of 1 element, $names
-    str(attributes(foo))
-  #+end_src
-
-  #+RESULTS:
-
-* Length of ~names~ vs. vector
-
-- What if your names are too short (or too long) for your vector?
-
-- Define a vector ~week~ whose elements are the names of weekdays
-  #+begin_src R
-    week <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
-    week
-  #+end_src
-
-  #+RESULTS:
-  : [1] "Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun"
-
-- Define a vector ~foo~ that contains seven numbers, and name its
-  elements according to the ~week~.
-  #+begin_src R
-    foo <- 1:7
-    names(foo) <- week
-    foo
-  #+end_src
-
-  #+RESULTS:
-  : Mon Tue Wed Thu Fri Sat Sun
-  :   1   2   3   4   5   6   7
-
-- Copy ~week~ to ~workweek~, and remove ~"Saturday"~ and ~"Sunday"~ from the
-  ~workweek~.
-  #+begin_src R
-    workweek <- week[1:5] # or week[-(6:7)]
-    workweek
-  #+end_src
-
-  #+RESULTS:
-  : [1] "Mon" "Tue" "Wed" "Thu" "Fri"
-
-- Copy ~foo~ to ~bar~, and overwrite ~names(bar)~ with ~workweek~.
-  #+begin_src R results output
-    bar <- foo
-    bar
-    names(bar) <- workweek
-    names(bar[6:7])  # names of the last two elements missing - NA
-    names(bar) <- NULL # remove names altogether
-    bar
-  #+end_src
-
-* Indexing vectors
-
-- Passing a vector of positive numbers returns the slice of the
-  vector containing the elements at those locations.
-  #+begin_src R
-    x <- (1:5)^2   # example vector
-    x
-    x[1] # extract the first element only
-    x[c(1,3,5)] # extract elements with indices 1,3,5
-  #+end_src
-
-  #+RESULTS:
-  : [1]  1  4  9 16 25
-  : [1] 1
-  : [1]  1  9 25
-
-- Passing a vector of negative numbers returns the slice of the vector
-  containing the elements everywhere except at those locations.
-  #+begin_src R
-    x[c(-2,-4)]
-  #+end_src
-- Passing a logical vector returns the slice of the vector containing
-  the elements where the index is ~TRUE~.
-  #+begin_src R
-    x[c(TRUE, FALSE, TRUE, FALSE, TRUE)]
-  #+end_src
-- For named vectors, passing a character vector of names returns the
-  slice of the vector containing the elements with those names.
-  #+begin_src R
-    names(x) <- c("one", "four", "nine", "sixteen", "twenty five")
-    x[c("one", "nine", "twenty five")]
-  #+end_src
-
-* Coercion
-
-- All vector elements have to be of the same ~class~ or type
-
-- When you try to mix them, R will create vectores with "coercion":
-  #+begin_src R
-    foo <- c("a",NA,1)
-    foo
-    class(foo)  # foo becomes a character vector
-  #+end_src
-
-- Missing values ~NA~ are not coerced to ~character~ (e.g. ~"NA"~) because
-  this would mean altering their main property, to be missing.
-
-- Still, the whole vector is a ~character~ vector object:
-  #+begin_src R
-    mode(foo)  # R storage mode
-    class(foo) # R object class
-  #+end_src
-
-- You can also explicitly convert elements using the functions
-  ~as.character~, ~as.logical~ or ~as.numeric~.
-  #+begin_src R
-    as.character(c(1,2,TRUE)) # convert vector to character values
-    as.numeric(c("a",2,TRUE)) # R turns characters and Booleans into NA
-    as.logical(c("a",0,TRUE)) # R turns characters and numerics into NA
-  #+end_src
-
-  #+RESULTS:
-  : [1] "1" "2" "1"
-  : [1] NA  2 NA
-  : Warning message:
-  : NAs introduced by coercion
-  : [1]   NA   NA TRUE
-
-- Conversion with ~as.logical~ has a surprise: any non-zero number is
-  turned into ~TRUE~ if the vector is ~numeric~.
-  #+begin_src R
-
-    as.logical(c(1,0,-1, 0.333, -Inf, NaN ))
-  #+end_src
-
-- The lesson: don't mix data types in vectors if you can avoid it!
-
 * Summary with examples
 
 - R is a functional language in which everything's an object.
@@ -1214,12 +813,6 @@ The fix:
 - A vector can have arithmetic calculations or vectors as elements.
 - A histogram distributes data by frequency across evenly spaced
   bins.
-- Sequences of numbers can be created using the colon operator, or
-  the functions ~seq~ or ~rep~.
-- Vectors can be sorted with ~sort~ in either direction.
-- Vector length can be measured as the number of vector elements with ~length~.
-- Index vectors can be used to select sub-vectors.
-- Negative index values delete the corresponding vector elements
 
   *R CODE EXAMPLES:*
   | ~x <- 5~                                   | assign ~5~ to object ~x~                      |
@@ -1227,19 +820,6 @@ The fix:
   | ~c(1,2,3,4)~                               | define (numerical) vector                     |
   | ~class(bar)~                               | check type of object ~bar~                    |
   | ~hist(x,breaks=foo)~                       | histogram of dataset ~x~ with ~foo~ bins      |
-  | ~m:n~                                      | sequence ~m~ to ~n~ at intervals ~= 1~        |
-  | ~seq(from=foo,to=bar,by=baz)~              | sequence from ~foo~ to ~bar~ intervals ~=baz~ |
-  | ~seq(from=foo,to=bar,length.out=fuz)~      | seq. ~foo~ to ~bar~, ~fuz~ equal intervals    |
-  | ~rep(x=foo,times=bar,each=baz)~            | repeat ~foo~ times ~bar~, and                 |
-  |                                            | repeat each element of ~foo~ times ~baz~      |
-  | ~vector("numeric",foo), numeric(foo)~      | empty numeric vector of length ~foo~          |
-  | ~vector("character",foo), character(foo)~  | empty numeric vector of length ~foo~          |
-  | ~vector("logical",foo), logical(foo)~      | empty numeric vector of length ~foo~          |
-  | ~sort(x=foo, decreasing=FALSE)~            | sort vector ~foo~ from smallest to largest    |
-  | ~sort(x=foo, decreasing=TRUE)~             | sort vector ~foo~ from largest to smallest    |
-  | ~length(x=foo)~                            | print length of vector ~foo~                  |
-  | ~[n]~, ~[n:m]~, ~[-n]~                     | indices ~n~, ~n~ to ~m~, deleting element ~n~ |
-  | ~prod(foo)~, ~sum(foo)~                    | multiply / sum up all elements of vector foo  |
   | ~names(x)~                                 | return names of vector ~x~ (or ~NULL~)        |
   | ~as.character~, ~as.numeric~, ~as.logical~ | coerce arguments to the resp. class           |
 
@@ -1268,48 +848,3 @@ origin of the name "histogram" is not clear - it was probably invented
 by Pearson, who introduced this type of graph, and is short for
 "HISTorical diaGRAM".
 
-[fn:3] Both ~length~ and ~sort~, as you can read in the respective help
-pages, work both for vectors and for factors. These are necessary
-whenever we deal with qualities or categories (like "male" or
-"female") rather than quantities. You'll learn about them soon!
-
-[fn:4] You should look up the examples in ~help(names)~: the data set
-~islands~ is a named vector suited to play around with vector naming.
-
-[fn:5] DEFINITION NOT FOUND.
-
-[fn:6] "Arithmetic (from the Greek ἀριθμός arithmos, 'number' and τική
-[τέχνη], tiké [téchne], 'art') is a branch of mathematics that
-consists of the study of numbers, especially the properties of the
-traditional operations on them—addition, subtraction, multiplication,
-division, exponentiation and extraction of roots." ([[https://en.wikipedia.org/wiki/Arithmetic][Wikipedia]])
-
-[fn:7] Not just one MOOC, in fact, but a series of nine courses
-altogether, with which you can get a professional certificate. These
-MOOCs are hosted by [[https://www.edx.org/professional-certificate/harvardx-data-science][edX.org]].
-
-[fn:8] For a while, I had also envisioned that I might use a
-block-based, visual programming language like MIT's [[https://scratch.mit.edu/][Scratch]] or its
-able cousin from Berkeley U., [[https://snap.berkeley.edu/][Snap!]] OpenSAP offers great [[https://open.sap.com/courses/snap2][(free)
-courses]] on Snap! and you can learn all about Scratch online, too.
-
-[fn:9] Fun fact: 'FORTRAN' stands for 'FORmula TRANslator'. A large
-part of R's code base is written in FORTRAN, which is the oldest
-programming language specifically used for scientific computations
-(e.g. it was the first language I learnt at university).
-
-[fn:10] This was mentioned in the "Getting started with R" lesson. To
-list all built-in datasets in base-R, enter simply ~data()~. This is
-the same function that you use to load a dataset after loading the
-respective library (which contains more than one dataset).
-
-[fn:11] Enter ~help(Nile)~, or ~?Nile~. This is one of the more useful
-commands. Will only work if the corresponding dataset has been
-loaded - for ~Nile~, this is the case.
-
-[fn:12] This page-wise presentation mode with previous|next|up|down
-navigation is actually the page-wise [[https://www.emacswiki.org/emacs/InfoMode][(Emacs) ~Info~]] style
-presentation.
-
-[fn:13]You know this, too: ~str(Nile)~ for the structure, or
-~head(Nile)~ to see the first few (6) elements.

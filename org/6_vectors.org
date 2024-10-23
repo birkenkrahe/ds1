@@ -1,0 +1,682 @@
+#+TITLE: VECTORS in R - Sequencing, Indexing, and Naming
+#+AUTHOR: Introduction to data science (DSC 105) Fall 2024
+#+startup: hideblocks indent overview inlineimages entitiespretty
+#+PROPERTY: header-args:R :results output :session *R* :exports both :noweb yes
+#+options: toc:1
+* What will you learn?
+#+attr_html: :width 500px
+[[../img/5_workhorse.jpg]]
+
+After this lesson, you should be able to:
+
+- Creating vectors, sequences and repetitions
+- Sorting and measuring vector length
+- Subsetting and extracting vector elements
+- Vectorizing (rescaling)
+- Classes and logical vectors
+
+Most sections of this lecture are accompanied by YouTube videos on my
+channel @LiterateProgramming.
+
+* Creating sequences and repetitions [[https://youtu.be/G2P_MVq3eyM][(video)]]
+
+- You can create vectors using the =seq= and =rep= commands. This is
+  especially useful when plotting, and when analyzing data frames.
+
+- Example: Subsetting a data frame at regular intervals.
+  #+begin_src R :results output
+    ## Create a simple data frame
+    df <- data.frame(
+      id = 1:10,
+      value = c(10, 20, 15, 30, 25, 35, 40, 45, 50, 55)
+    )
+
+    ## Generate a sequence with seq() to subset the data frame at regular intervals
+    ## For example, we want to analyze every 2nd row
+    subset_df <- df[seq(1, nrow(df), by = 2), ]
+
+    ## Display the subsetted data frame
+    subset_df
+  #+end_src
+
+* The colon ~:~ operator
+
+- The command ~1:n~ creates a sequence separated by intervals of 1:
+  #+begin_src R
+    3:21
+  #+end_src
+
+  #+RESULTS:
+  :  [1]  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21
+
+- Check what type of R object you have created with these functions:
+  + ~class~ (R object class),
+  + ~mode~ (R object storage mode)
+  + ~is.vector~ (R vector check)
+  #+begin_src R
+    class(3:27)
+    mode(3:27)
+    is.vector(3:27)
+  #+end_src
+
+  #+RESULTS:
+  : [1] "integer"
+  : [1] "numeric"
+  : [1] TRUE
+
+- Sequences created this way can also be stored.
+  1. Store 5.3 in =foo=
+  2. Store =foo:10= in =bar=
+  3. Show =bar=
+  #+begin_src R
+    foo <- 5.3
+    bar <- foo:10
+    bar
+  #+end_src
+
+  #+RESULTS:
+  : [1] 5.3 6.3 7.3 8.3 9.3
+
+- What happens if the first argument of ~:~ is smaller than the second?
+  Create a sequence with =:= from 10 to =foo= and save it in =x=
+  #+begin_src R
+    x <- 10:foo
+    x
+  #+end_src
+
+  #+RESULTS:
+  : [1] 10  9  8  7  6
+
+- You can perform computations to specify the range.
+  #+begin_src R
+    baz <- foo:(-47+1.5)
+    baz
+  #+end_src
+
+- Try to understand the starting and ending values of the sequence you
+  just generated.
+  #+begin_notes details
+  Try to understand what happened here by checking the numbers: the
+  first value of the sequence is ~foo = 5.3~. The last value is a
+  negative value, ~-47+1.5 = -45.5~. In order to generate the
+  sequence, R counts down in steps of ~1~ from the first to the last
+  value. It stops at ~-44.7~, because the next value, ~-45.7~ would be
+  outside of the interval $[5.3,-45.5])$.
+  #+end_notes
+
+* Weird histogram
+
+The following code creates a weird histogram:
+#+begin_src R :results output graphics file :file ../img/colonhist.png
+  hist(1:10, breaks=10)
+#+end_src
+
+#+RESULTS:
+[[file:../img/colonhist.png]]
+
+What can you do to see the proper distribution with breaks at every
+number (all bars should have height 1)? See below for the solution.
+
+* Sequences
+
+- The function ~seq~ allows modifying the step-width with ~by~:
+  #+begin_src R
+    seq(from = 3, to = 27, by = 3)
+  #+end_src
+
+  #+RESULTS:
+  : [1]  3  6  9 12 15 18 21 24 27
+
+- ~seq~ always starts at ~from~ but not always end on ~to~:
+  #+begin_src R
+    seq(from=1, to=10, by=2) # range even, stepsize even
+    seq(from=1, to=11, by=2) # range odd, stepsize even
+  #+end_src
+
+  #+RESULTS:
+  : [1] 1 3 5 7 9
+  : [1]  1  3  5  7  9 11
+
+- To end exactly on the last value, use ~length.out~:
+  #+begin_src R
+    seq(from=1, to=10, length.out=10) # either by or length.out
+    seq(from = 3, to = 27, length.out = 40)
+  #+end_src
+
+  #+RESULTS:
+  :  [1]  1  2  3  4  5  6  7  8  9 10
+  : [1]  3.0  3.6  4.2  4.8  5.5  6.1  6.7  7.3  7.9  8.5  9.2  9.8 10.4 11.0 11.6 12.2 12.8 13.5
+  : [19] 14.1 14.7 15.3 15.9 16.5 17.2 17.8 18.4 19.0 19.6 20.2 20.8 21.5 22.1 22.7 23.3 23.9 24.5
+  : [37] 25.2 25.8 26.4 27.0
+
+- What is the step-width in the last case? Compute it and use it to
+  create a sequence of 40 numbers from 3 to 27 exactly, with ~seq~.
+  #+begin_src R
+    s <- seq(from = 3, to = 27, length.out = 40)
+    s[2]-s[1] # step-width
+    seq(from = 3, to = 27, by = s[2]-s[1])
+  #+end_src
+
+  #+RESULTS:
+  : [1] 0.62
+  : [1]  3.0  3.6  4.2  4.8  5.5  6.1  6.7  7.3  7.9  8.5  9.2  9.8 10.4 11.0 11.6 12.2 12.8 13.5
+  : [19] 14.1 14.7 15.3 15.9 16.5 17.2 17.8 18.4 19.0 19.6 20.2 20.8 21.5 22.1 22.7 23.3 23.9 24.5
+  : [37] 25.2 25.8 26.4 27.0
+
+- ~length.out~ can only be positive (there is no 'negative length').
+
+- Create a decreasing sequence of length 5 from 5 to -5. Use
+  ~length.out~ first, then use ~by~ to achieve the same result.
+  #+begin_src R
+    myseq <- seq(from=5, to=-5, length.out=5)
+    myseq
+    myseq1 <- seq(from=5, to=-5, by = -2.5)
+    myseq1
+  #+end_src
+
+  #+RESULTS:
+  : [1]  5.0  2.5  0.0 -2.5 -5.0
+  : [1]  5.0  2.5  0.0 -2.5 -5.0
+
+* Solution: odd histogram with colon op =:=
+
+When creating a histogram of the vector ~1:10~ with binwidth 10, the
+resulting graph looks wrong:
+#+begin_src R :results output graphics file :file ../img/colonhist.png
+  hist(1:10, breaks=10)
+#+end_src
+
+#+RESULTS:
+[[file:../img/colonhist.png]]
+
+The fix:
+#+begin_src R :results output graphics file :file ../img/colonhist2.png
+  hist(x = 1:10,
+       breaks = seq(from=1,
+                    to=10,
+                    length.out=11))
+#+end_src
+
+#+RESULTS:
+[[file:../img/colonhist2.png]]
+
+* Repetition
+
+- Use ~rep~ to repeat a value, e.g. the number 1, four times:
+  #+begin_src R
+    rep( x = 1, times = 4)
+  #+end_src
+
+  #+RESULTS:
+  : [1] 1 1 1 1
+
+- You can repeat any R object, e.g. the vector ~c(3, 62, 8, 3)~, or the
+  scalar ~foo~, or an arbitrary arithmetic expression:
+  #+begin_src R
+    rep(x=c(3,62,8,3),times=3)
+    rep(x=foo, times=2)
+    rep(x=2*2, times=(foo*2)) # times must be a positive integer
+  #+end_src
+
+  #+RESULTS:
+  :  [1]  3 62  8  3  3 62  8  3  3 62  8  3
+  : [1] 5.3 5.3
+  : [1] 4 4 4 4 4 4 4 4 4 4
+
+- The ~each~ argument of ~rep(x)~ says how many times each element of ~x~ is
+  repeated:
+  #+begin_src R :session :results output
+    rep(x=c(3,62), times=3)  # repeat vector three times
+    rep(x=c(3,62), each=2)   # repeat each vector element twice
+    rep(x=c(3,62), times=3, each=2) # repeat each vector element twice,
+                                            # and repeat the result three times
+  #+end_src
+
+  #+RESULTS:
+  : [1]  3 62  3 62  3 62
+  : [1]  3  3 62 62
+  : [1]  3  3 62 62  3  3 62 62  3  3 62 62
+
+- The default of ~times~ and ~each~ is ~1~. What is ~rep(c(3,62))~?
+  #+begin_src R
+    rep(c(3,62)) # same as rep(c(3,62),times=1,each=1)
+  #+end_src
+
+  #+RESULTS:
+  : [1]  3 62
+
+- As with ~seq~, you can include the result of ~rep~ in a vector of the
+  same data type (e.g. ~numeric~):
+  #+begin_src R
+    foo <- 4 # store 4 in foo
+
+    ## create vector with rep and seq
+    c(3, 8.3, rep(x=32,times=foo), seq(from=-2,to=1,length.out=foo+1))
+  #+end_src
+
+  #+RESULTS:
+  : [1]  3.00  8.30 32.00 32.00 32.00 32.00 -2.00 -1.25 -0.50  0.25  1.00
+
+* Repetition with characters
+
+- ~rep~ also works for characters and character vectors:
+  #+begin_src R
+    rep(x="data science", times=2)
+    rep(x=c("data","science"), times=2)
+    rep(x=c("data","science"), times=2, each=2)
+  #+end_src
+
+- What happens if you try to mix characters, numbers, Booleans?
+  Repeat an expression that has all three data types in it.
+  #+begin_src R
+    rep(x=c("data", 1, TRUE), times=2)
+  #+end_src
+
+  #+begin_notes coercion
+  When you call a function with an argument of the wrong
+  type, or, as in the case of ~c~, you try to create a vector of
+  different data types, R responds with "[[https://www.oreilly.com/library/view/r-in-a/9781449358204/ch05s08.html][coercion]]" to make it happen.
+  #+end_notes
+
+* Sorting and measuring lengths [[https://youtu.be/KRghGmuS6Ck][(video)]]
+
+An important part of working with vectors is sorting vector elements
+and measuring vector lengths.
+
+* Sorting vector elements
+
+- /Sorting/ is important because we don't care about memory locations
+
+- ~sort(x)~ arranges the elements of x according to size
+
+- The default order is ascending, or ~decreasing = FALSE~
+  #+begin_src R
+    sort(x = c(2.5, -1, -10, 3.44))  # sort ascending
+    sort(x = c(2.5, -1, -10, 3.44), decreasing = FALSE) # sort ascending
+    sort(x = c(2.5, -1, -10, 3.44), decreasing = TRUE)  # sort descending
+  #+end_src
+
+  #+RESULTS:
+  : [1] -10.0  -1.0   2.5   3.4
+  : [1] -10.0  -1.0   2.5   3.4
+  : [1]   3.4   2.5  -1.0 -10.0
+
+- Special values are removed, put last or first with ~na.last~. This
+  works for all special values - ~NA~, ~NaN~ and ~Inf~.
+  #+begin_src R
+    sort(x = c(2.5, -1, -10, 3.44,NA), na.last=TRUE)  # put NA last
+    sort(x = c(2.5, -1, -10, 3.44,NaN), na.last=TRUE) # put NaN last
+    sort(x = c(2.5, -1, -10, 3.44,Inf), na.last=TRUE) # put Inf last
+    sort(x = c(2.5, -1, -10, 3.44,NA), na.last=FALSE) # put NA first
+    sort(x = c(2.5, -1, -10, 3.44,NA), na.last=NA)    # remove NA
+  #+end_src
+
+  #+RESULTS:
+  : [1] -10.0  -1.0   2.5   3.4    NA
+  : [1] -10.0  -1.0   2.5   3.4   NaN
+  : [1] -10.0  -1.0   2.5   3.4   Inf
+  : [1]    NA -10.0  -1.0   2.5   3.4
+  : [1] -10.0  -1.0   2.5   3.4
+
+- [ ] Remember that ~NA~ is a ~logical~ object. How can you check that?
+  #+begin_src R
+    class(NA)
+  #+end_src
+
+  #+RESULTS:
+  : [1] "logical"
+
+* Length of vectors
+
+- The ~length~ function gets or sets the length of vectors[fn:1]:
+  #+begin_src R
+    length(x = c(3,2,8,1,10))  # vector of 5 elements
+    length(x = 5:13)           # vector of 9 elements
+    length(x = c(3,2,2^3,5*3)) # vector of 4 elements
+    length(1000)               # scalar/vector of 1 element
+  #+end_src
+
+  #+RESULTS:
+  : [1] 5
+  : [1] 9
+  : [1] 4
+  : [1] 1
+
+- Is =length= generic? Does =mtcars= have a =length=?
+  #+begin_src R
+    methods(length)
+  #+end_src
+
+  #+RESULTS:
+  : [1] length.POSIXlt
+  : see '?methods' for accessing help and source code
+  : [1] 11
+
+- If you have functions inside the object definition, ~length~ gives you
+  the number of entries /after/ the inner functions have been executed:
+  #+begin_src R
+    foo <- 4
+    bar <- c(3,8.3,rep(x=32,times=foo),seq(from=-2,to=1,length.out=foo+1))
+    bar
+    length(bar)
+  #+end_src
+
+  #+RESULTS:
+  : [1]  3.00  8.30 32.00 32.00 32.00 32.00 -2.00 -1.25 -0.50  0.25  1.00
+  : [1] 11
+
+- [ ] R's display options are stored in ~options()~, which is a
+  ~list~. Lists have a length like options. How many options does
+  ~options()~ have?
+  #+begin_src R
+    class(options())   # class of options()
+    length(options())  # length of options() : number of options
+    class(options)     # class of options as a function
+    class(options()$digits) # class of one options() element
+    length(options()$digits) # length of one options() element
+  #+end_src
+
+  #+RESULTS:
+  : [1] "list"
+  : [1] 69
+  : [1] "function"
+  : [1] "integer"
+  : [1] 1
+
+* Practice: creating vectors
+#+attr_html: :width 400px
+[[../img/5_gnome.jpg]]
+
+- Practice what you've learnt by solving problems independently.
+
+- Download the practice file from here:
+  [[https://tinyurl.com/ds105-vectors-practice][tinyurl.com/ds105-vectors-practice]]
+
+* Naming vectors
+
+- Naming vector elements makes code more readable.
+  #+begin_src R :session
+    c(apple = 1, banana = 2, "kiwi fruit" = 3, 4)
+  #+end_src
+
+  #+RESULTS:
+  :      apple     banana kiwi fruit            
+  :          1          2          3          4
+
+- Or you can name elements explicitly using the function ~names~[fn:2]
+  #+begin_src R :session
+    x <- 1:4
+    names(x) <- c("apple", "bananas", "kiwi fruit", "")
+    x
+    names(x)
+  #+end_src
+
+  #+RESULTS:
+  : apple    bananas kiwi fruit            
+  :          1          2          3          4
+  : [1] "apple"      "bananas"    "kiwi fruit" ""
+
+- Looking under the hood of ~names~:
+  #+begin_src R :session
+    foo <- 1:4  # vector 1,2,3,4
+    names(foo)  # vector is not named (NULL)
+    names(foo) <- letters[1:4]  # assign letter names
+    names(foo)
+    foo  # default display includes names
+    str(foo)  # structures reveals names as attributes
+    attributes(foo) # attributes is a list of 1 element, $names
+    str(attributes(foo))
+  #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  NULL
+  [1] "a" "b" "c" "d"
+  a b c d 
+  1 2 3 4
+  Named int [1:4] 1 2 3 4
+   - attr(*, "names")= chr [1:4] "a" "b" "c" "d"
+  $names
+  [1] "a" "b" "c" "d"
+  List of 1
+   $ names: chr [1:4] "a" "b" "c" "d"
+  #+end_example
+
+
+* Length of ~names~ vs. vector
+
+- What if your names are too short (or too long) for your vector?
+
+- Define a vector ~week~ whose elements are the names of weekdays
+  #+begin_src R
+    week <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+    week
+  #+end_src
+
+  #+RESULTS:
+  : [1] "Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun"
+
+- Define a vector ~foo~ that contains seven numbers, and name its
+  elements according to the ~week~.
+  #+begin_src R
+    foo <- 1:7
+    names(foo) <- week
+    foo
+  #+end_src
+
+  #+RESULTS:
+  : Mon Tue Wed Thu Fri Sat Sun 
+  :   1   2   3   4   5   6   7
+
+- Copy ~week~ to ~workweek~, and remove ~"Saturday"~ and ~"Sunday"~ from the
+  ~workweek~.
+  #+begin_src R
+    workweek <- week[1:5] # or week[-(6:7)]
+    workweek
+  #+end_src
+
+  #+RESULTS:
+  : [1] "Mon" "Tue" "Wed" "Thu" "Fri"
+
+- Copy ~foo~ to ~bar~, and overwrite ~names(bar)~ with ~workweek~.
+  #+begin_src R results output
+    bar <- foo
+    bar
+    names(bar) <- workweek
+    names(bar[6:7])  # names of the last two elements missing - NA
+    names(bar) <- NULL # remove names altogether
+    bar
+  #+end_src
+
+  #+RESULTS:
+  : Mon Tue Wed Thu Fri Sat Sun 
+  :   1   2   3   4   5   6   7
+  : [1] NA NA
+  : [1] 1 2 3 4 5 6 7
+
+* Indexing vectors
+
+- Passing a vector of positive numbers returns the slice of the
+  vector containing the elements at those locations.
+  #+begin_src R
+    x <- (1:5)^2   # example vector
+    x
+    x[1] # extract the first element only
+    x[c(1,3,5)] # extract elements with indices 1,3,5
+  #+end_src
+
+  #+RESULTS:
+  : [1]  1  4  9 16 25
+  : [1] 1
+  : [1]  1  9 25
+
+- Passing a vector of negative numbers returns the slice of the vector
+  containing the elements everywhere except at those locations.
+  #+begin_src R
+    x[c(-2,-4)]
+  #+end_src
+
+  #+RESULTS:
+  : [1]  1  9 25
+
+- Passing a logical vector returns the slice of the vector containing
+  the elements where the index is ~TRUE~.
+  #+begin_src R
+    x[c(TRUE, FALSE, TRUE, FALSE, TRUE)]
+  #+end_src
+
+  #+RESULTS:
+  : [1]  1  9 25
+
+- For named vectors, passing a character vector of names returns the
+  slice of the vector containing the elements with those names.
+  #+begin_src R
+    names(x) <- c("one", "four", "nine", "sixteen", "twenty five")
+    x[c("one", "nine", "twenty five")]
+  #+end_src
+
+  #+RESULTS:
+  : one        nine twenty five 
+  :           1           9          25
+
+* Coercion
+
+- All vector elements have to be of the same ~class~ or type
+
+- When you try to mix them, R will create vectores with "coercion":
+  #+begin_src R
+    foo <- c("a",NA,1)
+    foo
+    class(foo)  # foo becomes a character vector
+  #+end_src
+
+  #+RESULTS:
+  : [1] "a" NA  "1"
+  : [1] "character"
+
+- Missing values ~NA~ are not coerced to ~character~ (e.g. ~"NA"~) because
+  this would mean altering their main property, to be missing.
+
+- Still, the whole vector is a ~character~ vector object:
+  #+begin_src R
+    mode(foo)  # R storage mode
+    class(foo) # R object class
+  #+end_src
+
+  #+RESULTS:
+  : [1] "character"
+  : [1] "character"
+
+- You can also explicitly convert elements using the functions
+  ~as.character~, ~as.logical~ or ~as.numeric~.
+  #+begin_src R
+    as.character(c(1,2,TRUE)) # convert vector to character values
+    as.numeric(c("a",2,TRUE)) # R turns characters and Booleans into NA
+    as.logical(c("a",0,TRUE)) # R turns characters and numerics into NA
+  #+end_src
+
+  #+RESULTS:
+  : [1] "1" "2" "1"
+  : [1] NA  2 NA
+  : Warning message:
+  : NAs introduced by coercion
+  : [1]   NA   NA TRUE
+
+- Conversion with ~as.logical~ has a surprise: any non-zero number is
+  turned into ~TRUE~ if the vector is ~numeric~.
+  #+begin_src R
+
+    as.logical(c(1,0,-1, 0.333, -Inf, NaN ))
+  #+end_src
+
+  #+RESULTS:
+  : [1]  TRUE FALSE  TRUE  TRUE  TRUE    NA
+
+- The lesson: don't mix data types in vectors if you can avoid it!
+
+* Summary with examples
+
+- Sequences of numbers can be created using the colon operator, or
+  the functions ~seq~ or ~rep~.
+- Vectors can be sorted with ~sort~ in either direction.
+- Vector length can be measured as the number of vector elements with ~length~.
+- Index vectors can be used to select sub-vectors.
+- Negative index values delete the corresponding vector elements
+
+  *R CODE EXAMPLES:*
+  | ~m:n~                                      | sequence ~m~ to ~n~ at intervals ~= 1~        |
+  | ~seq(from=foo,to=bar,by=baz)~              | sequence from ~foo~ to ~bar~ intervals ~=baz~ |
+  | ~seq(from=foo,to=bar,length.out=fuz)~      | seq. ~foo~ to ~bar~, ~fuz~ equal intervals    |
+  | ~rep(x=foo,times=bar,each=baz)~            | repeat ~foo~ times ~bar~, and                 |
+  |                                            | repeat each element of ~foo~ times ~baz~      |
+  | ~vector("numeric",foo), numeric(foo)~      | empty numeric vector of length ~foo~          |
+  | ~vector("character",foo), character(foo)~  | empty numeric vector of length ~foo~          |
+  | ~vector("logical",foo), logical(foo)~      | empty numeric vector of length ~foo~          |
+  | ~sort(x=foo, decreasing=FALSE)~            | sort vector ~foo~ from smallest to largest    |
+  | ~sort(x=foo, decreasing=TRUE)~             | sort vector ~foo~ from largest to smallest    |
+  | ~length(x=foo)~                            | print length of vector ~foo~                  |
+  | ~[n]~, ~[n:m]~, ~[-n]~                     | indices ~n~, ~n~ to ~m~, deleting element ~n~ |
+  | ~prod(foo)~, ~sum(foo)~                    | multiply / sum up all elements of vector foo  |
+  | ~names(x)~                                 | return names of vector ~x~ (or ~NULL~)        |
+  | ~as.character~, ~as.numeric~, ~as.logical~ | coerce arguments to the resp. class           |
+
+* References
+
+- <<cotton>> Richard Cotton (2013). [[http://duhi23.github.io/Analisis-de-datos/Cotton.pdf][Learning R.]] O'Reilly Media.
+
+- <<davies>> Tilman M. Davies (2016). [[https://nostarch.com/bookofr][The Book of R. (No Starch
+  Press).]]
+
+- <<irizarry>> Rafael A. Irizarry (2020). [[https://rafalab.github.io/dsbook/][Introduction to Data Science]]
+  (also: CRC Press, 2019).
+
+- <<matloff>> Norman Matloff (2020). [[https://github.com/matloff/fasteR][fasteR: Fast Lane to Learning R!]].
+  <<pemdas>>
+
+* Footnotes
+
+[fn:1] Both ~length~ and ~sort~, as you can read in the respective help
+pages, work both for vectors and for factors. These are necessary
+whenever we deal with qualities or categories (like "male" or
+"female") rather than quantities. You'll learn about them soon!
+
+[fn:2] You should look up the examples in ~help(names)~: the data set
+~islands~ is a named vector suited to play around with vector naming.
+
+[fn:3]You know this, too: ~str(Nile)~ for the structure, or
+~head(Nile)~ to see the first few (6) elements.
+
+[fn:4] This page-wise presentation mode with previous|next|up|down
+navigation is actually the page-wise [[https://www.emacswiki.org/emacs/InfoMode][(Emacs) ~Info~]] style
+presentation.
+
+[fn:5] Enter ~help(Nile)~, or ~?Nile~. This is one of the more useful
+commands. Will only work if the corresponding dataset has been
+loaded - for ~Nile~, this is the case.
+
+[fn:6] This was mentioned in the "Getting started with R" lesson. To
+list all built-in datasets in base-R, enter simply ~data()~. This is
+the same function that you use to load a dataset after loading the
+respective library (which contains more than one dataset).
+
+[fn:7] Fun fact: 'FORTRAN' stands for 'FORmula TRANslator'. A large
+part of R's code base is written in FORTRAN, which is the oldest
+programming language specifically used for scientific computations
+(e.g. it was the first language I learnt at university).
+
+[fn:8] For a while, I had also envisioned that I might use a
+block-based, visual programming language like MIT's [[https://scratch.mit.edu/][Scratch]] or its
+able cousin from Berkeley U., [[https://snap.berkeley.edu/][Snap!]] OpenSAP offers great [[https://open.sap.com/courses/snap2][(free)
+courses]] on Snap! and you can learn all about Scratch online, too.
+
+[fn:9] Not just one MOOC, in fact, but a series of nine courses
+altogether, with which you can get a professional certificate. These
+MOOCs are hosted by [[https://www.edx.org/professional-certificate/harvardx-data-science][edX.org]].
+
+[fn:10] "Arithmetic (from the Greek ἀριθμός arithmos, 'number' and τική
+[τέχνη], tiké [téchne], 'art') is a branch of mathematics that
+consists of the study of numbers, especially the properties of the
+traditional operations on them—addition, subtraction, multiplication,
+division, exponentiation and extraction of roots." ([[https://en.wikipedia.org/wiki/Arithmetic][Wikipedia]])
+
+[fn:11] DEFINITION NOT FOUND.

@@ -2120,9 +2120,10 @@ Code alongside me!
 
 * Vectors in R (continued)
 
-- [ ] Creating vector sequences and repetitions
+- [ ] Creating vector sequences and repetitions 
 - [ ] Sorting and measuring vector lengths
-- [ ] Lab with practice file
+- [ ] Naming and coercing vectors
+- [ ] Lab with practice file for Canvas upload
 
 Download and open this file to codealong:
 [[https://tinyurl.com/vectors-codealong][tinyurl.com/vectors-codealong]]
