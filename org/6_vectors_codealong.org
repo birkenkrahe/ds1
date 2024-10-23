@@ -177,7 +177,7 @@ and measuring vector lengths.
 
 * Length of vectors
 
-- The ~length~ function gets or sets the length of vectors[fn:3]:
+- The ~length~ function gets or sets the length of vectors:
   #+begin_src R
 
   #+end_src
@@ -206,7 +206,7 @@ and measuring vector lengths.
   #+begin_src R :session
 
   #+end_src
-- Or you can name elements explicitly using the function ~names~[fn:4]
+- Or you can name elements explicitly using the function ~names~:
   #+begin_src R :session
 
   #+end_src
@@ -298,114 +298,3 @@ and measuring vector lengths.
 
 - The lesson: don't mix data types in vectors if you can avoid it!
 
-* Summary with examples
-
-- R is a functional language in which everything's an object.
-- R functions differ in: performance (speed), ease-of-use and
-  clarity.
-- To assign values to objects, use the ~<-~ operator.
-- To assign values to arguments in functions, use the ~=~ operator.
-- The elements of a numeric, character or logical vector are
-  numbers, letters or truth values.
-- A vector can have arithmetic calculations or vectors as elements.
-- A histogram distributes data by frequency across evenly spaced
-  bins.
-- Sequences of numbers can be created using the colon operator, or
-  the functions ~seq~ or ~rep~.
-- Vectors can be sorted with ~sort~ in either direction.
-- Vector length can be measured as the number of vector elements with ~length~.
-- Index vectors can be used to select sub-vectors.
-- Negative index values delete the corresponding vector elements
-
-  *R CODE EXAMPLES:*
-  | ~x <- 5~                                   | assign ~5~ to object ~x~                      |
-  | ~x <- x+1~                                 | overwrite ~x~ (new value)                     |
-  | ~c(1,2,3,4)~                               | define (numerical) vector                     |
-  | ~class(bar)~                               | check type of object ~bar~                    |
-  | ~hist(x,breaks=foo)~                       | histogram of dataset ~x~ with ~foo~ bins      |
-  | ~m:n~                                      | sequence ~m~ to ~n~ at intervals ~= 1~        |
-  | ~seq(from=foo,to=bar,by=baz)~              | sequence from ~foo~ to ~bar~ intervals ~=baz~ |
-  | ~seq(from=foo,to=bar,length.out=fuz)~      | seq. ~foo~ to ~bar~, ~fuz~ equal intervals    |
-  | ~rep(x=foo,times=bar,each=baz)~            | repeat ~foo~ times ~bar~, and                 |
-  |                                            | repeat each element of ~foo~ times ~baz~      |
-  | ~vector("numeric",foo), numeric(foo)~      | empty numeric vector of length ~foo~          |
-  | ~vector("character",foo), character(foo)~  | empty numeric vector of length ~foo~          |
-  | ~vector("logical",foo), logical(foo)~      | empty numeric vector of length ~foo~          |
-  | ~sort(x=foo, decreasing=FALSE)~            | sort vector ~foo~ from smallest to largest    |
-  | ~sort(x=foo, decreasing=TRUE)~             | sort vector ~foo~ from largest to smallest    |
-  | ~length(x=foo)~                            | print length of vector ~foo~                  |
-  | ~[n]~, ~[n:m]~, ~[-n]~                     | indices ~n~, ~n~ to ~m~, deleting element ~n~ |
-  | ~prod(foo)~, ~sum(foo)~                    | multiply / sum up all elements of vector foo  |
-  | ~names(x)~                                 | return names of vector ~x~ (or ~NULL~)        |
-  | ~as.character~, ~as.numeric~, ~as.logical~ | coerce arguments to the resp. class           |
-
-* References
-
-- <<cotton>> Richard Cotton (2013). [[http://duhi23.github.io/Analisis-de-datos/Cotton.pdf][Learning R.]] O'Reilly Media.
-
-- <<davies>> Tilman M. Davies (2016). [[https://nostarch.com/bookofr][The Book of R. (No Starch
-  Press).]]
-
-- <<irizarry>> Rafael A. Irizarry (2020). [[https://rafalab.github.io/dsbook/][Introduction to Data Science]]
-  (also: CRC Press, 2019).
-
-- <<matloff>> Norman Matloff (2020). [[https://github.com/matloff/fasteR][fasteR: Fast Lane to Learning R!]].
-  <<pemdas>>
-
-* Footnotes
-
-[fn:1]Note: If a vector contains different data types, R coerces the
-vector elements to conform to one type, as we will see later. A data
-type that can hold any type of value is called a ~list~.
-
-[fn:2]The [[https://en.wikipedia.org/wiki/Histogram][Wikipedia entry for "histogram"]] is not bad as a start, lots
-of examples and you'll soon find out how to make these yourself! The
-origin of the name "histogram" is not clear - it was probably invented
-by Pearson, who introduced this type of graph, and is short for
-"HISTorical diaGRAM".
-
-[fn:3] Both ~length~ and ~sort~, as you can read in the respective help
-pages, work both for vectors and for factors. These are necessary
-whenever we deal with qualities or categories (like "male" or
-"female") rather than quantities. You'll learn about them soon!
-
-[fn:4] You should look up the examples in ~help(names)~: the data set
-~islands~ is a named vector suited to play around with vector naming.
-
-[fn:5] DEFINITION NOT FOUND.
-
-[fn:6] "Arithmetic (from the Greek ἀριθμός arithmos, 'number' and τική
-[τέχνη], tiké [téchne], 'art') is a branch of mathematics that
-consists of the study of numbers, especially the properties of the
-traditional operations on them—addition, subtraction, multiplication,
-division, exponentiation and extraction of roots." ([[https://en.wikipedia.org/wiki/Arithmetic][Wikipedia]])
-
-[fn:7] Not just one MOOC, in fact, but a series of nine courses
-altogether, with which you can get a professional certificate. These
-MOOCs are hosted by [[https://www.edx.org/professional-certificate/harvardx-data-science][edX.org]].
-
-[fn:8] For a while, I had also envisioned that I might use a
-block-based, visual programming language like MIT's [[https://scratch.mit.edu/][Scratch]] or its
-able cousin from Berkeley U., [[https://snap.berkeley.edu/][Snap!]] OpenSAP offers great [[https://open.sap.com/courses/snap2][(free)
-courses]] on Snap! and you can learn all about Scratch online, too.
-
-[fn:9] Fun fact: 'FORTRAN' stands for 'FORmula TRANslator'. A large
-part of R's code base is written in FORTRAN, which is the oldest
-programming language specifically used for scientific computations
-(e.g. it was the first language I learnt at university).
-
-[fn:10] This was mentioned in the "Getting started with R" lesson. To
-list all built-in datasets in base-R, enter simply ~data()~. This is
-the same function that you use to load a dataset after loading the
-respective library (which contains more than one dataset).
-
-[fn:11] Enter ~help(Nile)~, or ~?Nile~. This is one of the more useful
-commands. Will only work if the corresponding dataset has been
-loaded - for ~Nile~, this is the case.
-
-[fn:12] This page-wise presentation mode with previous|next|up|down
-navigation is actually the page-wise [[https://www.emacswiki.org/emacs/InfoMode][(Emacs) ~Info~]] style
-presentation.
-
-[fn:13]You know this, too: ~str(Nile)~ for the structure, or
-~head(Nile)~ to see the first few (6) elements.

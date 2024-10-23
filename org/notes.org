@@ -2126,16 +2126,16 @@ Code alongside me!
 - [ ] Lab with practice file for Canvas upload
 
 Download and open this file to codealong:
-[[https://tinyurl.com/vectors-codealong][tinyurl.com/vectors-codealong]]
+[[https://tinyurl.com/vectors-codealong-2][tinyurl.com/vectors-codealong-2]]
 
 In Linux:
 #+begin_example bash
-wget -O vectors.org tinyurl.com/vectors-codealong
+wget -O vectors2.org tinyurl.com/vectors-codealong-2
 #+end_example
 
 Open Emacs:
 #+begin_example
-emacs --file vectors.org
+emacs --file vectors2.org
 #+end_example
 
 Code alongside me!
