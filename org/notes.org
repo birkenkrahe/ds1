@@ -1975,10 +1975,10 @@ Code alongside me!
 [[../img/plotting_practice.png]]
 
 - Only three submissions: what were *you* doing on Friday?
-- Do yourself a favor and complete the practice file.
+- Do yourself a favor and complete the practice file!
 - The questions are part of the current online quiz.
 - Check your solutions with the PDF and/or my video.
-- Remember to take or keep up your DataCamp practice!
+- Remember to keep up your DataCamp practice!
 
 ** Review: DataCamp "Data frames"
 
