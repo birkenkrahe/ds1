@@ -1970,7 +1970,7 @@ Code alongside me!
 - [ ] Vectors in R: sequences, repetitions, sorting, measuring
 - [ ] Vectors in R: short lab practice (Canvas upload)
 
-* Vector plotting practice (failed?)
+** Vector plotting practice (failed?)
 #+attr_html: :width 400px:
 [[../img/plotting_practice.png]]
 
@@ -1980,8 +1980,7 @@ Code alongside me!
 - Check your solutions with the PDF and/or my video.
 - Remember to take or keep up your DataCamp practice!
 
-
-* Review: DataCamp "Data frames"
+** Review: DataCamp "Data frames"
 
 1. What is a data frame, and why is it useful in data analysis?
    #+begin_quote
@@ -2085,7 +2084,7 @@ Code alongside me!
    #+end_src
 
 
-* Project: 2nd sprint review with NotebookLM/podcasts
+** Project: 2nd sprint review with NotebookLM/podcasts
 
 - Very interesting results! Not everybody understood how the
   application works. You were penalized for not submitting [[https://lyon.instructure.com/courses/2628/assignments/35174][requested]]
@@ -2118,7 +2117,6 @@ Code alongside me!
 - Discuss with your team members what to write, and then put your
   answers on this Kanban board with one post-it per question:
   [[https://tinyurl.com/notebook-kanban][tinyurl.com/notebook-kanban]]
-
 
 * Vectors in R (continued)
 
