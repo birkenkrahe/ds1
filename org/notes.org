@@ -2120,9 +2120,9 @@ Code alongside me!
 
 * Vectors in R (continued)
 
-- [ ] Creating vector sequences and repetitions 
-- [ ] Sorting and measuring vector lengths
-- [ ] Naming and coercing vectors
+- [X] Creating vector sequences and repetitions 
+- [X] Sorting and measuring vector lengths
+- [X] Naming and coercing vectors
 - [ ] Lab with practice file for Canvas upload
 
 Download and open this file to codealong:
@@ -2139,3 +2139,11 @@ emacs --file vectors2.org
 #+end_example
 
 Code alongside me!
+
+* Week 11: Subsetting vectors [Oct 28]
+* Week 12: Data frames [Nov 4]
+
+* Week 13: R Package =data.table= & Lists [Nov 11]
+
+* Week 14: Exploratory Data Analysis in R & Plots [Nov 25]
+* Week 15: Final presentations [Dec 2]
