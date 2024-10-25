@@ -2084,7 +2084,6 @@ Code alongside me!
      subset(mtcars[1], mpg>25)
    #+end_src
 
-
 ** Project: 2nd sprint review with NotebookLM/podcasts
 
 - Very interesting results! Not everybody understood how the
@@ -2119,6 +2118,7 @@ Code alongside me!
   answers on this Kanban board with one post-it per question:
   [[https://tinyurl.com/notebook-kanban][tinyurl.com/notebook-kanban]]
 
+
 * Vectors in R (continued)
 
 - [X] Creating vector sequences and repetitions 
@@ -2141,6 +2141,7 @@ emacs --file vectors2.org
 
 Code alongside me!
 
+
 * Early morning: Moments of Happiness in a Fast-changing World
 #+attr_html: :width 400px: 
 [[../img/5_gnome.jpg]]
@@ -2155,7 +2156,8 @@ constancy, and continuity of the digital world in the face of change.
 3. Open file in Emacs
 4. Complete file
 5. Upload to Canvas
-6. Happy weekend!
+6. Review the last exercise
+7. Happy weekend!
 
 #+begin_example bash
   wget -O vectorlab.org tinyurl.com/6-vectors-lab
@@ -2163,6 +2165,118 @@ constancy, and continuity of the digital world in the face of change.
   emacs --file vectorlab.org
 #+end_example
 
+*Review of the data frame exercise:*
+
+1. Setup with vectors =seq_vec=, =rep_vec=, and =char_vec=:
+   #+begin_src R :results none
+     rep_vec <- rep(x=c(-1,3,-5,7,-9),each=10,times=2)
+     seq_vec <- sort(seq(from=5,to=-11,by=-0.3))
+     char_vec <- c("Jim", "Jane", "Joe", "Jeff")
+   #+end_src
+
+2. These vectors have different lengths:
+   #+begin_src R
+     length(seq_vec)
+     length(rep_vec)
+     length(char_vec)
+   #+end_src   
+
+   #+RESULTS:
+   : [1] 54
+   : [1] 100
+   : [1] 4
+
+3. Create data frame & show first 6 rows:
+   #+begin_src R
+     data.frame(
+       "Numbers" = seq_vec,
+       "Repeats" = rep(rep_vec, length.out=length(seq_vec)),
+       "Names" = rep(char_vec, length.out=length(seq_vec))
+       ) -> df
+     head(df)
+   #+end_src
+
+   #+RESULTS:
+   :   Numbers Repeats Names
+   : 1   -10.9      -1   Jim
+   : 2   -10.6      -1  Jane
+   : 3   -10.3      -1   Joe
+   : 4   -10.0      -1  Jeff
+   : 5    -9.7      -1   Jim
+   : 6    -9.4      -1  Jane
+
+4. Calculate summary stats for =Numbers= and =Repeats= columns:
+   #+begin_src R
+     summary(df[ , c("Numbers","Repeats")])
+   #+end_src
+
+   #+RESULTS:
+   :     Numbers           Repeats  
+   :  Min.   :-10.900   Min.   :-9  
+   :  1st Qu.: -6.925   1st Qu.:-5  
+   :  Median : -2.950   Median :-1  
+   :  Mean   : -2.950   Mean   :-1  
+   :  3rd Qu.:  1.025   3rd Qu.: 3  
+   :  Max.   :  5.000   Max.   : 7
+
+5. Filter rows with positive =Numbers= and =Repeats= below 5:
+   #+begin_src R
+     subset(df, Numbers > 0 & Repeats < 5)
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+      Numbers Repeats Names
+   41     1.1      -9   Jim
+   42     1.4      -9  Jane
+   43     1.7      -9   Joe
+   44     2.0      -9  Jeff
+   45     2.3      -9   Jim
+   46     2.6      -9  Jane
+   47     2.9      -9   Joe
+   48     3.2      -9  Jeff
+   49     3.5      -9   Jim
+   50     3.8      -9  Jane
+   51     4.1      -1   Joe
+   52     4.4      -1  Jeff
+   53     4.7      -1   Jim
+   54     5.0      -1  Jane
+   #+end_example
+
+6. Sort by =Names= column in ascending order, show first 10 rows:
+   #+begin_src R
+     sort(df$Names)  # values
+     order(df$Names)  # indices used to extract values 
+   #+end_src
+
+   #+RESULTS:
+   :  [1] "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jeff"
+   : [16] "Jeff" "Jeff" "Jeff" "Jeff" "Jeff" "Jeff" "Jeff" "Jeff" "Jeff" "Jeff" "Jeff" "Jeff" "Jim"  "Jim"  "Jim" 
+   : [31] "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Joe"  "Joe"  "Joe"  "Joe" 
+   : [46] "Joe"  "Joe"  "Joe"  "Joe"  "Joe"  "Joe"  "Joe"  "Joe"  "Joe"
+   :  [1]  2  6 10 14 18 22 26 30 34 38 42 46 50 54  4  8 12 16 20 24 28 32 36 40 44 48 52  1  5  9 13 17 21 25 29 33
+   : [37] 37 41 45 49 53  3  7 11 15 19 23 27 31 35 39 43 47 51
+
+   #+begin_src R
+     #df[order(df$Names), ] |> head(10)
+     #head(df[order(df$Names), ],n=10)
+     df[order(df$Names), ][1:10,]
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+      Numbers Repeats Names
+   2    -10.6      -1  Jane
+   6     -9.4      -1  Jane
+   10    -8.2      -1  Jane
+   14    -7.0       3  Jane
+   18    -5.8       3  Jane
+   22    -4.6      -5  Jane
+   26    -3.4      -5  Jane
+   30    -2.2      -5  Jane
+   34    -1.0       7  Jane
+   38     0.2       7  Jane
+   #+end_example
 
 * Week 11: Subsetting vectors [Oct 28]
 * Week 12: Data frames [Nov 4]

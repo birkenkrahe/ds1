@@ -136,7 +136,7 @@ following:
    - =Numbers=: Contains the sequence of values stored in =seq_vec=.
      
    - =Repeats=: Contains the values stored in =rep_vec=. Since =rep_vec= is
-     shorter than =seq_vec=, expand it by repeating it enough times to
+     different length than =seq_vec=, contract it by repeating it to
      match the length of =seq_vec=.
      
    - =Names=: Contains the names stored in =char_vec=. Since =char_vec= is
