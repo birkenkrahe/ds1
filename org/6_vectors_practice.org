@@ -7,9 +7,8 @@
 
 - Practice file for the lecture on "Vectors in R" ([[https://github.com/birkenkrahe/ds1/blob/piHome/org/5_vectors.orghttps://github.com/birkenkrahe/ds1/blob/main/org/6_vectors.org][GitHub]])
 - All content from "Vectors in R" is also available [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXl3_YDc-8SS5EuG4h1aILHz][on YouTube]]
-- Create, execute and debug R code blocks as needed
 - Emacs + ESS + Org-mode and R must be installed
-- Upload the completed file as a class assignment to Canvs
+- Upload the completed file as a class assignment to Canvas
 
 * TODO IDENTIFY YOURSELF
 
@@ -18,30 +17,75 @@
   - Put your cursor on the headline of this section, and type ~S <LEFT>~
     until you see ~DONE~ instead of ~TODO~ next to the title.
   - Perform this last step each time you complete a section.
-  - When you're done, upload the completed file to Canvas
-  - Create R code blocks at will to answer all questions.
-  - We will review this content at the start of the next session.
     
 * TODO Create and store a sequence
 
 1) Create a sequence of values from ~5~ to ~-11~ that progresses in steps
    of ~0.3~.
+
+   #+begin_src R
+
+   #+end_src
+
 2) Store the sequence as an object ~seq_vec~ and print it.
+   #+begin_src R
+
+   #+end_src
 
 * TODO Reverse sequence order
 
 Overwrite ~seq_vec~ from the last exercise, using the same sequence with
-the order reversed.
+the order reversed. There are different solutions to this - find two:
+
+First solution:
+#+begin_src R
+
+#+end_src
+
+Another solution:
+#+begin_src R
+
+#+end_src
 
 * TODO Create vector by repetition
 
 1) Repeat the vector ~c(-1,3,-5,7,-9)~ twice, with each element repeated
    ~10~ times
 
-2) Store the result as ~rep_vec~.
+   #+begin_src R
 
-3) Display the result sorted from largest to smallest.
+   #+end_src
 
+2) Store the result as ~rep_vec~ and print it.
+   #+begin_src R
+
+   #+end_src
+
+3) Display the result so that the elements are displayed from largest
+   to smallest.
+
+   #+begin_src R
+
+   #+end_src
+
+4) Apply the function =rev= to =rep_vec= and compare the result: =rev=
+   reverses purely based on positional order without regard for the
+   signs.
+   
+   #+begin_src R
+
+   #+end_src
+
+5) The =rep= function also has a =length.out= parameter! It repeats the
+   target vector so that the total number of elements is
+   =length.out=. Repeat the vector =c(5,2)= ten times with =length.out= and
+   compare it with using the =times= parameter and the =each= parameter,
+   all set to the value 10.
+
+   #+begin_src R
+
+   #+end_src
+   
 * TODO Putting it all together, and measuring
 
 Create and store a vector that contains, in any configuration, the
@@ -53,3 +97,85 @@ following:
      number that is the total length of the vector ~rep_vec~ created
      earlier.
    - Confirm that the length of the vector created is ~20~
+
+   #+begin_src R
+
+   #+end_src
+
+* TODO Character vectors
+
+1) Define a character vector that contains the following names, in
+   this order: Jim, Jane, Joe, and Jeff.
+   #+begin_src R
+
+   #+end_src
+
+2) Store the vector in the R object =char_vec=.
+   #+begin_src R
+
+   #+end_src
+
+4) Sort =char_vec= in two different ways: With =sort= and with =rev=.
+   #+begin_src R
+
+   #+end_src   
+
+* TODO Create and store a =data.frame= using the existing vectors
+
+1) Combine the =seq_vec=, =rep_vec=, and =char_vec= vectors you created
+   earlier into a single =data.frame= called =my_data_frame=.
+
+2) One difficulty is that all of these vectors have different length,
+   and a =data.frame= is a rectangular structure. Display their lengths:
+   #+begin_src R
+     
+   #+end_src
+
+3) Create the data frame, and assign the following column names:
+
+   - =Numbers=: Contains the sequence of values stored in =seq_vec=.
+     
+   - =Repeats=: Contains the values stored in =rep_vec=. Since =rep_vec= is
+     shorter than =seq_vec=, expand it by repeating it enough times to
+     match the length of =seq_vec=.
+     
+   - =Names=: Contains the names stored in =char_vec=. Since =char_vec= is
+     shorter than the other vectors, expand it by repeating it enough
+     times to match the length of =seq_vec=.
+
+   When you're done, show the first 6 rows of =my_data_frame=:
+
+   #+begin_src R
+
+   #+end_src
+
+2) Calculate and display summary statistics for the =Numbers= and
+   =Repeats= columns in =my_data_frame= only.
+
+   #+begin_src R
+
+   #+end_src
+
+3) Filter the =data.frame= to show only rows where =Numbers= is positive
+   and =Repeats= is less than 5.
+
+   #+begin_src R
+
+   #+end_src
+
+4) Sort the =data.frame= by the =Names= column in ascending order and
+   display the first 10 rows.
+
+   /Tip:/ =sort= sorts the values and returns the sorted values, but =order=
+   sorts the values and returns the corresponding indices:
+   #+begin_src R
+     sort(c("Zane", "Peter", "Jim"))
+     order(c("Zane", "Peter", "Jim"))x
+   #+end_src
+
+   Solution:
+   #+begin_src R
+
+   #+end_src
+
+
