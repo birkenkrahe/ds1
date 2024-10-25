@@ -2150,7 +2150,18 @@ constancy, and continuity of the digital world in the face of change.
 
 * Vector lab
 
-Download tinyurl.com
+1. Download [[https://tinyurl.com/6-vectors-lab][tinyurl.com/6-vectors-lab]]
+2. List file
+3. Open file in Emacs
+4. Complete file
+5. Upload to Canvas
+6. Happy weekend!
+
+#+begin_example bash
+  wget -O vectorlab.org tinyurl.com/6-vectors-lab
+  ls -l vectorlab.org
+  emacs --file vectorlab.org
+#+end_example
 
 * Week 11: Subsetting vectors [Oct 28]
 * Week 12: Data frames [Nov 4]
