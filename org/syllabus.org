@@ -12,7 +12,7 @@
 - Professor: Marcus Birkenkrahe
 - Professor's Office: Derby Science Building 210
 - Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
-- Office hours: [[https://calendar.app.google/yjr7tB7foMYowRJm7][by appointment]] MWF 4pm, Tue/Thu 3pm, Fri 4 pm
+- Office hours: [[https://calendar.app.google/39YLWRbCw5twD7iG9][by appointment]] MWF 4pm, Tue/Thu 3pm, Fri 4 pm
 - Textbook (optional): fasteR - Fast Lane to Learning R! by Norm
   Matloff (GitHub). Book of R by T.D. Davies. Dive into Data Science
   by Bradford Tuckfield, NoStarch 2023. Recommended: Data Science from
