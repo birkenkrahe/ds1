@@ -2150,7 +2150,7 @@ constancy, and continuity of the digital world in the face of change.
 
 * Vector lab
 
-
+Download tinyurl.com
 
 * Week 11: Subsetting vectors [Oct 28]
 * Week 12: Data frames [Nov 4]
