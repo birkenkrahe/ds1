@@ -170,7 +170,7 @@ following:
    sorts the values and returns the corresponding indices:
    #+begin_src R
      sort(c("Zane", "Peter", "Jim"))
-     order(c("Zane", "Peter", "Jim"))x
+     order(c("Zane", "Peter", "Jim"))
    #+end_src
 
    Solution:
