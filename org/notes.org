@@ -3,7 +3,7 @@
 #+SUBTITLE: DSC 105 Data Structures Lyon College Fall 2024
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+PROPERTY: header-args:R :session *R* :results output :exports both
-* Week 0 - Orientation ([[https://github.com/birkenkrahe/ds1/blob/main/org/0_overview.org][GitHub]])
+* DONE Week 0 - Orientation ([[https://github.com/birkenkrahe/ds1/blob/main/org/0_overview.org][GitHub]])
 #+attr_html: :width 300px:
 [[../img/difficulty.png]]
 
@@ -14,7 +14,7 @@ What did we achieve: Just a little overview and exposure to Linux and
 Emacs using the Google Cloud Shell platform (while waiting for Lyon's
 Linux server). See also: review questions in week 2.
 
-* Week 1 - Infrastructure Injection
+* DONE Week 1 - Infrastructure Injection
 #+attr_html: :width 600px:
 [[../img/penguins.jpg]]
 
@@ -218,7 +218,7 @@ exercise to the end:
 Note: You need to install Google Cloud Shell as an app in order to
 have all keybindings in Emacs (esp. =C-v= and =C-n=).
 
-* Week 2 - DataLab & Data Collection and Storage
+* DONE Week 2 - DataLab & Data Collection and Storage
 #+attr_html: :width 400px:
 [[../img/2_pythagoras.jpg]]
 
@@ -442,7 +442,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
       possible.
     #+end_quote
 
-* Week 3 - Introduction to data science
+* DONE Week 3 - Introduction to data science
 #+attr_html: :width 600px:
 [[../img/frankenstein.jpeg]]
 
@@ -661,7 +661,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 - [X] Data science jobs
 - [X] Data science processes
 
-* Week 4 - Introduction to the R shell (9/11)
+* DONE Week 4 - Introduction to the R shell (9/11)
 #+attr_html: :width 700px:
 [[../img/Shell-Southbank-Plaza.jpg]]
 
@@ -853,7 +853,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 - You can determine R's startup behavior in ~~/.Rprofile~
 - ~~/.Rprofile~ is read every time a new R shell is started
 
-* Week 5 - R options and packages (SpaceX)
+* DONE Week 5 - R options and packages (SpaceX)
 #+attr_html: :width 700px:
 [[../img/spacex-polaris-dawn-spacewalk.jpeg]]
 
@@ -1042,7 +1042,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
     [165] "wtloss"
     #+end_example
 
-* Week 6 - Arithmetic in R and special numbers
+* DONE Week 6 - Arithmetic in R and special numbers
 #+attr_html: :width 600px:
 [[../img/Hollerith_Punched_Card.jpg]]
 
@@ -1425,7 +1425,7 @@ my mathematics professor said 'I won't have bad language in my class."
    #+RESULTS:
    : [1] "logical"
 
-* Week 7 - Project update, special functions, logical operators
+* DONE Week 7 - Project update, special functions, logical operators
 #+attr_html: :width 400px:
 [[../img/career.jpeg]]
 
@@ -1471,7 +1471,7 @@ Finish "Arithmetic in R":
 - [X] I've also posted a link to a YouTube video playlist.
 - [ ] Let's finish up our remaining topics from this section.
 
-* Week 8 - Vectors & Factors in R
+* DONE Week 8 - Vectors & Factors in R
 #+attr_html: :width 450px:
 [[../img/1846-suffolk-punch.jpg]]
 
@@ -1746,7 +1746,7 @@ Finish "Arithmetic in R":
 
 - I will post a video with the solutions!
 
-* Week 9 - Vectors and Dataframes in R
+* DONE Week 9 - Vectors and Dataframes in R
 #+attr_html: :width 600px:
 [[../img/chirico.jpg]]
 
@@ -1959,17 +1959,16 @@ Code alongside me!
 
 - We will review the solutions next week
 
-
-* Week 10 - Sequencing, repeating and subsetting vectors
+* DONE Week 10 - Sequencing, repeating, and measuring vectors
 #+attr_html: :width 600px:
 #+caption: Claude Monet, Cap d'Antibes, Mistral (1888)
 [[../img/Monet_Cap_dAntibes_Mistral_1888.jpg]]
 
-- [ ] Review of the (failed) vector plotting practice
-- [ ] Review of the DataCamp lesson on "Data Frames"
-- [ ] Review of the 2nd sprint results "Literature Review"
-- [ ] Vectors in R: sequences, repetitions, sorting, measuring
-- [ ] Vectors in R: short lab practice (Canvas upload)
+- [X] Review of the (failed) vector plotting practice
+- [X] Review of the DataCamp lesson on "Data Frames"
+- [X] Review of the 2nd sprint results "Literature Review"
+- [X] Vectors in R: sequences, repetitions, sorting, measuring
+- [X] Vectors in R: short lab practice (Canvas upload)
 
 ** Vector plotting practice (failed?)
 #+attr_html: :width 400px:
@@ -2118,8 +2117,7 @@ Code alongside me!
   answers on this Kanban board with one post-it per question:
   [[https://tinyurl.com/notebook-kanban][tinyurl.com/notebook-kanban]]
 
-
-* Vectors in R (continued)
+** Vectors in R (continued)
 
 - [X] Creating vector sequences and repetitions 
 - [X] Sorting and measuring vector lengths
@@ -2141,15 +2139,14 @@ emacs --file vectors2.org
 
 Code alongside me!
 
-
-* Early morning: Moments of Happiness in a Fast-changing World
+** Early morning: Moments of Happiness in a Fast-changing World
 #+attr_html: :width 400px: 
 [[../img/5_gnome.jpg]]
 
 I feel happy every morning when I log in, because of the certainty,
 constancy, and continuity of the digital world in the face of change.
 
-* Vector lab
+** Vector lab
 
 1. Download [[https://tinyurl.com/6-vectors-lab][tinyurl.com/6-vectors-lab]]
 2. List file
@@ -2278,8 +2275,10 @@ constancy, and continuity of the digital world in the face of change.
    38     0.2       7  Jane
    #+end_example
 
+
 * Week 11: Subsetting vectors [Oct 28]
-* Week 12: Data frames [Nov 4]
+
+* Week 12: Data frames & =data.table= [Nov 4]
 
 * Week 13: R Package =data.table= & Lists [Nov 11]
 
