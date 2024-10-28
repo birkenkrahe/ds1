@@ -12,7 +12,7 @@ Subsetting and extracting relates to vectorization:
 - How to create matrices and arrays
 - How to mix different data types
 
-* Vectorization 1-2-3
+* DONE Vectorization 1-2-3
 
   - In R, you don't need loops to perform operations on all elements of
     a vector - this ability is called /vectorization/.
