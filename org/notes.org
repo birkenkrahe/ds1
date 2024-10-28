@@ -2290,9 +2290,9 @@ constancy, and continuity of the digital world in the face of change.
   it to make a final push towards some results.
 - The final presentation should contain a "discussion" (see image):
   1) Big summary (what do the results show?)
-  2) Findings (How do the findings relate to the literature?)
+  2) Findings (How do the findings relate to what we already know?)
   3) Outlook (What else could or should one do now?)
-  4) Limitations (What limits the importance of this research?)
+  4) Limitations (What limits the validity of this research?)
 
 * Review: Manipulating Data Frames
 
@@ -2314,7 +2314,7 @@ constancy, and continuity of the digital world in the face of change.
 
    #+RESULTS:
    #+begin_example
-   foo bar
+      foo bar
    1    1   1
    2    2   2
    3    3   3
@@ -2327,36 +2327,7 @@ constancy, and continuity of the digital world in the face of change.
    10  10   5
    #+end_example
 
-3. Why are the rows of the =data.frame= numbered?
-   #+begin_quote
-   The row numbers are actually elements of the =character= vector
-   =row.names= when the default =NULL= is active:
-   #+end_quote
-   #+begin_src R
-     row.names(mtcars)
-     data.frame(mtcars,row.names=NULL) -> mtcars_no_names
-     row.names(mtcars_no_names)
-   #+end_src
-
-   #+RESULTS:
-   #+begin_example
-    [1] "Mazda RX4"           "Mazda RX4 Wag"       "Datsun 710"
-    [4] "Hornet 4 Drive"      "Hornet Sportabout"   "Valiant"
-    [7] "Duster 360"          "Merc 240D"           "Merc 230"
-   [10] "Merc 280"            "Merc 280C"           "Merc 450SE"
-   [13] "Merc 450SL"          "Merc 450SLC"         "Cadillac Fleetwood"
-   [16] "Lincoln Continental" "Chrysler Imperial"   "Fiat 128"
-   [19] "Honda Civic"         "Toyota Corolla"      "Toyota Corona"
-   [22] "Dodge Challenger"    "AMC Javelin"         "Camaro Z28"
-   [25] "Pontiac Firebird"    "Fiat X1-9"           "Porsche 914-2"
-   [28] "Lotus Europa"        "Ford Pantera L"      "Ferrari Dino"
-   [31] "Maserati Bora"       "Volvo 142E"
-   [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10" "11" "12" "13" "14" "15"
-   [16] "16" "17" "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29" "30"
-   [31] "31" "32"
-   #+end_example
-
-4. If two =numeric= vectors =foo= and =bar= have =length= 10 and 6, how can I
+3. If two =numeric= vectors =foo= and =bar= have =length= 10 and 6, how can I
    put them into a =data.frame=?
    #+begin_src R
      foo2 <- 1:10
@@ -2370,34 +2341,20 @@ constancy, and continuity of the digital world in the face of change.
 
    Solution:
    #+begin_src R
+     foo2 <- 1:10
+     bar2 <- 1:6
      ## Fill remainder of shorter vector with NA
-     c(bar,
+     c(bar2,
        rep(x=NA,
            times=length(foo2)-length(bar2))) -> bar3
      bar3
      data.frame(foo2,bar3)
-     
-     c(bar,
-       rep(x=NA,
-           length.out=length(foo2)-length(bar2))) -> bar4
-     data.frame(foo2,bar4)
    #+end_src
 
    #+RESULTS:
    #+begin_example
-   [1]  1  2  3  4  5  6 NA NA NA NA
-   foo2 bar3
-   1     1    1
-   2     2    2
-   3     3    3
-   4     4    4
-   5     5    5
-   6     6    6
-   7     7   NA
-   8     8   NA
-   9     9   NA
-   10   10   NA
-   foo2 bar4
+    [1]  1  2  3  4  5  6 NA NA NA NA
+      foo2 bar3
    1     1    1
    2     2    2
    3     3    3
@@ -2410,6 +2367,72 @@ constancy, and continuity of the digital world in the face of change.
    10   10   NA
    #+end_example
 
+4. Why are the rows of the =data.frame= numbered?
+   #+begin_quote
+   The row numbers are actually elements of the =character= vector
+   =row.names= when the default =NULL= is active:
+   #+end_quote
+   #+begin_src R
+     row.names(mtcars)
+     data.frame(mtcars,row.names=NULL) -> mtcars_no_names
+     row.names(mtcars_no_names)
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+    [1] "Mazda RX4"           "Mazda RX4 Wag"       "Datsun 710"          "Hornet 4 Drive"     
+    [5] "Hornet Sportabout"   "Valiant"             "Duster 360"          "Merc 240D"          
+    [9] "Merc 230"            "Merc 280"            "Merc 280C"           "Merc 450SE"         
+   [13] "Merc 450SL"          "Merc 450SLC"         "Cadillac Fleetwood"  "Lincoln Continental"
+   [17] "Chrysler Imperial"   "Fiat 128"            "Honda Civic"         "Toyota Corolla"     
+   [21] "Toyota Corona"       "Dodge Challenger"    "AMC Javelin"         "Camaro Z28"         
+   [25] "Pontiac Firebird"    "Fiat X1-9"           "Porsche 914-2"       "Lotus Europa"       
+   [29] "Ford Pantera L"      "Ferrari Dino"        "Maserati Bora"       "Volvo 142E"
+    [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10" "11" "12" "13" "14" "15" "16" "17" "18" "19" "20"
+   [21] "21" "22" "23" "24" "25" "26" "27" "28" "29" "30" "31" "32"
+   #+end_example
+
+   #+begin_src R
+     mtcars_no_names
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+       mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+   1  21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+   2  21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+   3  22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+   4  21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+   5  18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+   6  18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+   7  14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+   8  24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+   9  22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+   10 19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+   11 17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+   12 16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+   13 17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+   14 15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+   15 10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+   16 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+   17 14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+   18 32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+   19 30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+   20 33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+   21 21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+   22 15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+   23 15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+   24 13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+   25 19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+   26 27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+   27 26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+   28 30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+   29 15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+   30 19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+   31 15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+   32 21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2
+   #+end_example
+   
 5. How can you select two columns from a =data.frame=? E.g. the =mpg= and
    =wt= columns of =mtcars=?
    #+begin_src R
@@ -2424,7 +2447,7 @@ constancy, and continuity of the digital world in the face of change.
    : Mazda RX4     21.0 2.620
    : Mazda RX4 Wag 21.0 2.875
    : Datsun 710    22.8 2.320
-   : mpg    wt
+   :    mpg    wt
    : 1 21.0 2.620
    : 2 21.0 2.875
    : 3 22.8 2.320
@@ -2433,7 +2456,7 @@ constancy, and continuity of the digital world in the face of change.
    in an interval [x,y]? E.g. cars in =mtcars= with =mpg= in (22,25)?
    #+begin_src R
      ## with subset
-     subset(mtcars, mpg > 22 & mpg < 25)
+     subset(mtcars, mpg > 22 & mpg < 25) # target: mtcars + logic condition
 
      ## without subset
      mtcars$mpg -> mpg # extract column
@@ -2442,11 +2465,11 @@ constancy, and continuity of the digital world in the face of change.
    #+end_src
 
    #+RESULTS:
-   : mpg cyl  disp hp drat   wt  qsec vs am gear carb
+   :             mpg cyl  disp hp drat   wt  qsec vs am gear carb
    : Datsun 710 22.8   4 108.0 93 3.85 2.32 18.61  1  1    4    1
    : Merc 240D  24.4   4 146.7 62 3.69 3.19 20.00  1  0    4    2
    : Merc 230   22.8   4 140.8 95 3.92 3.15 22.90  1  0    4    2
-   : mpg cyl  disp hp drat   wt  qsec vs am gear carb
+   :             mpg cyl  disp hp drat   wt  qsec vs am gear carb
    : Datsun 710 22.8   4 108.0 93 3.85 2.32 18.61  1  1    4    1
    : Merc 240D  24.4   4 146.7 62 3.69 3.19 20.00  1  0    4    2
    : Merc 230   22.8   4 140.8 95 3.92 3.15 22.90  1  0    4    2
@@ -2459,10 +2482,10 @@ constancy, and continuity of the digital world in the face of change.
    #+end_src
 
    #+RESULTS:
-   : [1]  1  2  3  4  5  6  7  8  9 10
-   : [1]  1  2  3  4  5  6  7  8  9 10
+   :  [1]  1  2  3  4  5  6  7  8  9 10
+   :  [1]  1  2  3  4  5  6  7  8  9 10
 
-8. What is the difference between =order= and =sort= for this political
+8. What is the difference between =order= and =sort= for this 'political'
    vector: =quz <- c("Trump","Vance","Harris","Walz")=?
    #+begin_src R
      quz <- c("Trump","Vance","Harris","Walz")
@@ -2483,6 +2506,13 @@ constancy, and continuity of the digital world in the face of change.
    You don't need a loop to perform operations on all elements of a
    vector.
    #+end_quote
+
+   #+begin_src R
+     foo  # 1) vectorize: take every element 2) print it
+   #+end_src
+
+   #+RESULTS:
+   :  [1]  1  2  3  4  5  6  7  8  9 10
 
 10. How many data structure layers does a named vector have? How many
     does a factor have?
@@ -2510,9 +2540,9 @@ constancy, and continuity of the digital world in the face of change.
 
     #+RESULTS:
     : [1] "Joe"  "Jim"  "Jane"
-    : Joe  Jim Jane 
+    :  Joe  Jim Jane 
     :  180  178  172
-    : Joe  Jim Jane 
+    :  Joe  Jim Jane 
     :    1    2    3
     : [1] "172" "178" "180"
 
@@ -2527,6 +2557,7 @@ constancy, and continuity of the digital world in the face of change.
 - [ ] Negative indices
 - [ ] Putting dissected vectors together
 - [ ] Practice lab
+
 
 * Week 12: Data frames & =data.table= [Nov 4]
 

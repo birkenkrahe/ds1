@@ -1,0 +1,58 @@
+#+PROPERTY: header-args:R :results output :session *R*
+#+STARTUP: hideblocks overview indent : 
+* Vectorization with examples
+
+1) You don't need loops:
+   #+begin_src R
+     foo <- c(1, -1, 4, 4, 0, 59, 3)
+
+     foo + 3
+     foo / 3.2
+
+     bar <- foo[-c(4:length(foo))]
+     bar
+
+     rep(x=bar, times=2)
+
+     class(exp(pi*1i) + 1)
+
+     prod(c(1,2,3,4,5)) # 5!
+
+     sapply(X=c(5), FUN=factorial) # apply FUN to X = 5!
+   #+end_src
+
+   #+RESULTS:
+   : [1]  4  2  7  7  3 62  6
+   : [1]  0.3125 -0.3125  1.2500  1.2500  0.0000 18.4375  0.9375
+   : [1]  1 -1  4
+   : [1]  1 -1  4  1 -1  4
+   : [1] "complex"
+   : [1] 120
+   : [1] 120
+
+2) A function takes a vector as input and calculates a summary
+   statistic:
+   #+begin_src R
+     sum(1:5)
+     mean(1:5)
+     summary(1:5)
+     #+end_src   
+
+   #+RESULTS:
+   : [1] 15
+   : [1] 3
+   :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   :       1       2       3       3       4       5
+
+3) A function calculates a summary from several of its
+   arguments:
+   #+begin_src R
+     sum(1,2,3,4,5)
+     mean(1,2,3,4,5)
+     mean(c(1,2,3,4,5))
+   #+end_src   
+
+   #+RESULTS:
+   : [1] 15
+   : [1] 1
+   : [1] 3
