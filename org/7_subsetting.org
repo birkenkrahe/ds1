@@ -59,10 +59,30 @@ Subsetting and extracting relates to vectorization:
     #+begin_src R
       Nile
     #+end_src
+
+    #+RESULTS:
+    #+begin_example
+    Time Series:
+    Start = 1871 
+    End = 1970 
+    Frequency = 1 
+      [1] 1120 1160  963 1210 1160 1160  813 1230 1370 1140  995  935 1110  994 1020  960
+     [17] 1180  799  958 1140 1100 1210 1150 1250 1260 1220 1030 1100  774  840  874  694
+     [33]  940  833  701  916  692 1020 1050  969  831  726  456  824  702 1120 1100  832
+     [49]  764  821  768  845  864  862  698  845  744  796 1040  759  781  865  845  944
+     [65]  984  897  822 1010  771  676  649  846  812  742  801 1040  860  874  848  890
+     [81]  744  749  838 1050  918  986  797  923  975  815 1020  906  901 1170  912  746
+     [97]  919  718  714  740
+    #+end_example
+
   - Never investigate in the dark - always check data structure first:
     #+begin_src R
       str(Nile)
     #+end_src
+
+    #+RESULTS:
+    :  Time-Series [1:100] from 1871 to 1970: 1120 1160 963 1210 1160 1160 813 1230 1370 1140 ...
+
   - Subsetting means retrieving a subset of vector elements. For
     "atomic" vectors (not part of a data frame or list as column
     vectors), you need to use the ~[ ]~ index operator.
@@ -71,10 +91,15 @@ Subsetting and extracting relates to vectorization:
     #+begin_src R
       Nile[1]
     #+end_src
+
+    #+RESULTS:
+    : [1] 1120
+
   - What's the corresponding data science (*not R*) question?
     #+begin_quote
     » What was the average flow through the Nile in 1871? «
     #+end_quote
+
   - To extract the time at which a time series was sampled, use ~time~,
     which is a function wrapper of the time series, and also a ~ts~ object
     #+begin_src R
@@ -105,13 +130,20 @@ Subsetting and extracting relates to vectorization:
       foo <- c(-1,3.0,4,67,330,-3) # assign vector to foo
       foo
     #+end_src
+
+    #+RESULTS:
+    : [1]  -1   3   4  67 330  -3
+
   - You can now use the colon operator ~:~ for intervals of indices
     #+begin_src R
       bar <- foo[2:5]
       bar
     #+end_src
 
-  - [ ] Check using R: is ~foo[n]:foo[m]~ the same as ~foo[n:m]~?
+    #+RESULTS:
+    : [1]   3   4  67 330
+
+  - Distributivity? Is ~foo[n]:foo[m]~ the same as ~foo[n:m]~?
     #+begin_src R
       foo # original vector
       bar # subset of indices 2:5
@@ -120,41 +152,74 @@ Subsetting and extracting relates to vectorization:
       all.equal(bar,baz)  # are they near equal at last?
     #+end_src
 
+    #+RESULTS:
+    : [1]  -1   3   4  67 330  -3
+    : [1]   3   4  67 330
+    : [1] FALSE
+    : [1] "Numeric: lengths (4, 328) differ"
+
 * Statistical functions work on subsets
 
-  - [ ] What is the average (~mean~) of the elements 2 to 5 in ~foo~?
+  - What is the average (~mean~) of the elements 2 to 5 in ~foo~? Compare
+    with the average of =foo=.
     #+begin_src R
       foo[2:5]
       mean(foo[2:5])
       mean(foo)
     #+end_src
-  - [ ] What is the ~sum~ of the elements 2 to 5 in ~foo~?
+
+    #+RESULTS:
+    : [1]   3   4  67 330
+    : [1] 101
+    : [1] 66.66667
+
+  - What is the ~sum~ of the elements 2 to 5 in ~foo~? Compare with the
+    =sum= of =foo=.
     #+begin_src R
       foo
       sum(foo[2:5])
       sum(foo)
     #+end_src
-  - [ ] What is the statistical ~summary~ of the elements 2 to 5 in ~foo~?
+
+    #+RESULTS:
+    : [1]  -1   3   4  67 330  -3
+    : [1] 404
+    : [1] 400
+
+  - What is the statistical ~summary~ of the elements 2 to 5 in ~foo~?
+    Compare with the =summary= of =foo=.
     #+begin_src R
       foo
       summary(foo[2:5])
       summary(foo)
     #+end_src
 
+    #+RESULTS:
+    : [1]  -1   3   4  67 330  -3
+    : Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    :    3.00    3.75   35.50  101.00  132.75  330.00
+    : Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    :   -3.00    0.00    3.50   66.67   51.25  330.00
+
 * Logical functions in vectors: ~<~, ~>~, ~!=~, ~==~
 
   - You can directly use logical operators to subset vectors
 
-  - Modify the sample vector ~foo~:  ~-1   3   4  67 330  -3~
+  - Modify the sample vector ~foo~:  ~-1   3   4  67 330  -3~. Do the following
+    in one command using the concatenation function =c()=..
     1) add a ~5~ between ~4~ and ~67~
-    2) add ~-99 0 0 44~ at the end of the vector
+    2) add ~-99 0 0 44~ at the end of the vector 
+       retype it).
     #+begin_src R
       foo <- c(-1,3.0,4,67,330,-3) # original vector
       foo <- c(foo[1:3],5,foo[4:length(foo)], c(-99,0,0,44))
       foo
     #+end_src
 
-    You can also use ~append~ to append another vector to a vector
+    #+RESULTS:
+    : [1]  -1   3   4   5  67 330  -3 -99   0   0  44
+
+  - You can also use ~append~ to append another vector to a vector
     #+begin_src R
       foo <- c(-1,3.0,4,67,330,-3) # original vector
       foo <- c(foo[1:3],5,foo[4:length(foo)])
@@ -163,7 +228,7 @@ Subsetting and extracting relates to vectorization:
     #+end_src
 
     #+RESULTS:
-    :  [1]  -1   3   4   5  67 330  -3 -99   0   0  44
+    : [1]  -1   3   4   5  67 330  -3 -99   0   0  44
     
   - /Tip: reset your variables with ~rm(list=ls())~ at any time/
 
@@ -184,18 +249,22 @@ Subsetting and extracting relates to vectorization:
     #+end_src
 
     #+RESULTS:
-    :  [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE
-    :  [1]  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE
-    :  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE
+    : [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE  TRUE
+    : [1]  TRUE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE FALSE
+    : [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE
 
   - What is ~c(foo = 0)~?
     #+begin_src R
-      c(foo=0)
+      c(foo=0) # same as c(0) = 0 but `foo` is unchanged 
+      foo
+      names(c(foo=0)) # a named vector with one element `0`
     #+end_src
 
     #+RESULTS:
     : foo 
     :   0
+    : [1]  -1   3   4   5  67 330  -3 -99   0   0  44
+    : [1] "foo"
 
   - What happens if you ~sum~ the logical index vectors?
     #+begin_src R
@@ -203,6 +272,11 @@ Subsetting and extracting relates to vectorization:
       sum(foo_neg)
       sum(foo_nul)
     #+end_src
+
+    #+RESULTS:
+    : [1] 6
+    : [1] 3
+    : [1] 2
 
 * Selecting with logical index vectors
 
@@ -212,16 +286,31 @@ Subsetting and extracting relates to vectorization:
       foo[foo_pos]  # using an index vector
       foo[foo>0]    # using a logical operator
     #+end_src
+
+    #+RESULTS:
+    : [1]   3   4   5  67 330  44
+    : [1]   3   4   5  67 330  44
+
   - For example, to extract all /negative/ elements from ~foo~
     #+begin_src R
       foo[foo_neg]  # using an index vector
       foo[foo<0]    # using a logical operator
     #+end_src
+
+    #+RESULTS:
+    : [1]  -1  -3 -99
+    : [1]  -1  -3 -99
+
   - For example, to extract all 0 elements from ~foo~
     #+begin_src R
       foo[foo_nul]  # using an index vector
       foo[foo==0]    # using a logical operator
     #+end_src
+
+    #+RESULTS:
+    : [1] 0 0
+    : [1] 0 0
+
   - Why would you define logical flag vectors instead of using operators?
     #+begin_quote
     Because you can define and alter the index vector definition in
@@ -239,10 +328,13 @@ Subsetting and extracting relates to vectorization:
 
     #+RESULTS:
     : [1]  815 1020  906  901 1170  912  746
-    : numeric(0)
-    : Warning message:
-    : In t >= 1960 && t <= 1966 :
-    :   'length(x) = 100 > 1' in coercion to 'logical(1)'
+    : [1] 1120 1160  963 1210 1160 1160  813 1230 1370 1140  995  935 1110  994 1020  960
+    :  [17] 1180  799  958 1140 1100 1210 1150 1250 1260 1220 1030 1100  774  840  874  694
+    :  [33]  940  833  701  916  692 1020 1050  969  831  726  456  824  702 1120 1100  832
+    :  [49]  764  821  768  845  864  862  698  845  744  796 1040  759  781  865  845  944
+    :  [65]  984  897  822 1010  771  676  649  846  812  742  801 1040  860  874  848  890
+    :  [81]  744  749  838 1050  918  986  797  923  975  815 1020  906  901 1170  912  746
+    :  [97]  919  718  714  740
     : [1] 6470
 
 * Negative indices
@@ -256,6 +348,9 @@ Subsetting and extracting relates to vectorization:
       foo
     #+end_src
 
+    #+RESULTS:
+    : [1]  -1   3   4   5  67 330  -3 -99   0   0  44
+
   - [ ] Remove the first element of ~foo~, then remove the last element
     of ~foo~ (without storing), and finally remove both elements
     simultaneously (don't overwrite ~foo~)
@@ -266,14 +361,20 @@ Subsetting and extracting relates to vectorization:
       foo[-c(1,length(foo))]
     #+end_src
 
-  - [ ] What is the difference between ~foo[length(foo)]~ and
+    #+RESULTS:
+    :  [1]  -1   3   4   5  67 330  -3 -99   0   0  44
+    : [1]   3   4   5  67 330  -3 -99   0   0  44
+    : [1]  -1   3   4   5  67 330  -3 -99   0   0
+    : [1]   3   4   5  67 330  -3 -99   0   0
+
+  - What is the difference between ~foo[length(foo)]~ and
     ~foo[-length(foo)]~?
     #+begin_notes
     - ~foo[(length(foo)]~ selects the last element of ~foo~
     - ~foo[-(length(foo)]~ removes the last element of ~foo~
     #+end_notes
     
-  - [ ] I've made an entry mistake: I defined a vector
+  - I've made an entry mistake: I defined a vector
 
     ~vec <- c(5,-2,3,4,6,10,40221,-8)~ but I really wanted:
 
@@ -288,6 +389,11 @@ Subsetting and extracting relates to vectorization:
       vec
     #+end_src
 
+    #+RESULTS:
+    : [1] -2  3
+    : [1]     5    -2     4     6    10 40221    -8
+    : [1]     5.0    -2.3     4.0     6.0    10.0 40221.0    -8.0
+
 * Putting dissected vectors back together
 
   We're going to remove the next-to-last element of a vector and store
@@ -300,17 +406,28 @@ Subsetting and extracting relates to vectorization:
        bar
      #+end_src
 
+     #+RESULTS:
+     : [1]     5.0    -2.3     4.0     6.0    10.0 40221.0    -8.0
+     : [1] 40221
+
   2) Store all other elements of ~vec~ in ~qux~
      #+begin_src R
        qux <- vec[-(length(vec)-1)]
        qux
      #+end_src
 
+     #+RESULTS:
+     : [1]  5.0 -2.3  4.0  6.0 10.0 -8.0
+
   3) [ ] Now put ~qux~ and ~bar~ together again to get the original ~vec~ -
      use only one command!
      #+begin_src R
        c(qux[-length(qux)],bar,qux[length(qux)])
      #+end_src
+
+     #+RESULTS:
+     : [1]     5.0    -2.3     4.0     6.0    10.0 40221.0    -8.0
+
      #+begin_notes
      1. remove last element of ~qux~
      2. add ~bar~ at the end

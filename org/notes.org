@@ -2275,12 +2275,13 @@ constancy, and continuity of the digital world in the face of change.
    38     0.2       7  Jane
    #+end_example
 
+
 * Week 11: Subsetting vectors [Oct 28]
 #+attr_html: :width 300px:
 #+caption: The Sleep of Reason Produces Monsters, Goya (1799)
 [[../img/the_sleep_or_reason_produces_monsters.jpg]]
 
-* Project Preview: Discussion / Presentation
+** DONE Project Preview: Discussion / Presentation
 #+attr_html: :width 600px:
 [[../img/discussion.jpeg]]
 
@@ -2294,7 +2295,7 @@ constancy, and continuity of the digital world in the face of change.
   3) Outlook (What else could or should one do now?)
   4) Limitations (What limits the validity of this research?)
 
-* Review: Manipulating Data Frames
+** DONE Review: Manipulating Data Frames
 
 1. Two vectors have different lengths - can I put them in a =data.frame=?
    #+begin_quote
@@ -2546,9 +2547,10 @@ constancy, and continuity of the digital world in the face of change.
     :    1    2    3
     : [1] "172" "178" "180"
 
-* Subsetting data structures in R (and elsewhere)
 
-- [ ] Vectorization
+** Subsetting data structures in R (and elsewhere)
+
+- [X] Vectorization
 - [ ] Retrieving vector elements
 - [ ] Using the colon operator
 - [ ] Statistical functions on subsets
@@ -2558,6 +2560,9 @@ constancy, and continuity of the digital world in the face of change.
 - [ ] Putting dissected vectors together
 - [ ] Practice lab
 
+If you want to continue where we stopped, download/open
+[[https://raw.githubusercontent.com/birkenkrahe/ds1/refs/heads/main/org/7_subsetting_codealong.org][tinyurl.com/sub-code]]. Then code along with your own headlines,
+comments and code blocks.
 
 * Week 12: Data frames & =data.table= [Nov 4]
 
