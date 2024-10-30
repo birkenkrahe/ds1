@@ -57,5 +57,282 @@
    : [1] 1
    : [1] 3
 
-   
-   
+* Retrieving vector elements
+
+All values of =Nile=
+#+begin_src R
+  Nile
+  str(Nile)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Time Series:
+Start = 1871 
+End = 1970 
+Frequency = 1 
+  [1] 1120 1160  963 1210 1160 1160  813 1230 1370 1140  995  935 1110  994 1020  960 1180  799  958
+ [20] 1140 1100 1210 1150 1250 1260 1220 1030 1100  774  840  874  694  940  833  701  916  692 1020
+ [39] 1050  969  831  726  456  824  702 1120 1100  832  764  821  768  845  864  862  698  845  744
+ [58]  796 1040  759  781  865  845  944  984  897  822 1010  771  676  649  846  812  742  801 1040
+ [77]  860  874  848  890  744  749  838 1050  918  986  797  923  975  815 1020  906  901 1170  912
+ [96]  746  919  718  714  740
+ Time-Series [1:100] from 1871 to 1970: 1120 1160 963 1210 1160 1160 813 1230 1370 1140 ...
+#+end_example
+
+First element of =Nile=
+#+begin_src R
+  Nile[1] # Average flow through the Nile in 1871
+#+end_src
+
+#+RESULTS:
+: [1] 1120
+
+To extract the time at which time series data were sampled, use =time=
+#+begin_src R
+  time(Nile)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Time Series:
+Start = 1871 
+End = 1970 
+Frequency = 1 
+  [1] 1871 1872 1873 1874 1875 1876 1877 1878 1879 1880 1881 1882 1883 1884 1885 1886 1887 1888 1889
+ [20] 1890 1891 1892 1893 1894 1895 1896 1897 1898 1899 1900 1901 1902 1903 1904 1905 1906 1907 1908
+ [39] 1909 1910 1911 1912 1913 1914 1915 1916 1917 1918 1919 1920 1921 1922 1923 1924 1925 1926 1927
+ [58] 1928 1929 1930 1931 1932 1933 1934 1935 1936 1937 1938 1939 1940 1941 1942 1943 1944 1945 1946
+ [77] 1947 1948 1949 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960 1961 1962 1963 1964 1965
+ [96] 1966 1967 1968 1969 1970
+#+end_example
+
+#+begin_src R
+  class(time(Nile))
+  time(Nile)[1]  # NOT time(Nile[1]) - the time at which Nile[1] was sampled
+#+end_src
+
+#+RESULTS:
+: [1] "ts"
+: [1] 1871
+
+What's the value of the *last* element of =Nile=?
+#+begin_src R
+  Nile[length(Nile)]  # same as Nile[100] but more general
+  Nile[100] # what was the avg flow of the Nile in the last year of observation
+#+end_src
+
+#+RESULTS:
+: [1] 740
+: [1] 740
+
+Which year was the last year of observation for =Nile=:
+#+begin_src R
+  time(Nile)[length(Nile)]
+#+end_src
+
+#+RESULTS:
+: [1] 1970
+
+* Using the colon operator
+
+Create sample vector:
+#+begin_src R
+  c(-1, 3.0, 4, 67, 330, -3) -> foo
+  foo
+#+end_src
+
+#+RESULTS:
+: [1]  -1   3   4  67 330  -3
+
+Extract the 2,3 and 5,6 element:
+#+begin_src R
+  foo[c(2,3,5,6)]
+#+end_src
+
+#+RESULTS:
+: [1]   3   4 330  -3
+
+Extract the 2nd to the fifth element of =foo= (save in =bar=)
+#+begin_src R
+  foo[c(2,3,4,5)]
+  foo[2:5] -> bar
+  bar
+#+end_src
+
+#+RESULTS:
+: [1]   3   4  67 330
+: [1]   3   4  67 330
+
+What about distributivity: Is =foo[n]:foo[m]= the same as
+=foo[n:m]=? Show this in R:
+#+begin_src R
+  foo
+  bar
+  foo[2:5]
+  head(foo[2]:foo[5])
+  foo[2]:foo[5] -> baz
+#+end_src
+
+#+RESULTS:
+: [1]  -1   3   4  67 330  -3
+: [1]   3   4  67 330
+: [1]   3   4  67 330
+: [1] 3 4 5 6 7 8
+
+#+begin_src R
+  identical(bar,baz)
+  all.equal(bar,baz)
+#+end_src
+
+#+RESULTS:
+: [1] FALSE
+: [1] "Numeric: lengths (4, 328) differ"
+
+The colon operator is definitely NOT distributive!
+
+* Statistical functions
+
+What is the average of the elements 2 to 5 in =foo=? Compare with
+the average of =foo=:
+#+begin_src R
+  foo[2:5] -> f
+  mean(f)
+  mean(foo)
+#+end_src
+
+#+RESULTS:
+: [1] 101
+: [1] 66.66667
+
+What about the sum?
+#+begin_src R
+  sum(f)
+  sum(foo)
+#+end_src
+
+#+RESULTS:
+: [1] 404
+: [1] 400
+
+What about the stats summary?
+#+begin_src R
+  summary(f)
+  summary(foo)
+#+end_src
+
+#+RESULTS:
+:    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+:    3.00    3.75   35.50  101.00  132.75  330.00
+:    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+:   -3.00    0.00    3.50   66.67   51.25  330.00
+
+* Logical functions
+
+Take =foo= and do the following in one command: Add the number =5= between
+=4= and =67=
+#+begin_src R
+  foo
+  foo[1:3]
+  foo[4:length(foo)]
+  c(foo[1:3], 5, foo[4:length(foo)]) -> foo
+  foo
+#+end_src
+
+#+RESULTS:
+:  [1]  -1   3   4   5  67 330  -3 -99   0   0  44
+: [1] -1  3  4
+: [1]   5  67 330  -3 -99   0   0  44
+:  [1]  -1   3   4   5   5  67 330  -3 -99   0   0  44
+
+Take the new =foo= and append =-99, 0 0 44= at the end, and overwrite
+=foo= with the new vector
+#+begin_src R
+  #foo <- c(foo, c(-99,0,0,44))  # manually
+  #append(foo, c(-99,0,0,44)) # with `append` function
+  foo
+#+end_src
+
+#+RESULTS:
+:  [1]  -1   3   4   5   5  67 330  -3 -99   0   0  44
+
+Using logical functions, create sub-vectors of the positive, negative,
+and zero elements:
+#+begin_src R
+  foo
+  foo > 0  -> foo_pos # logical index/flag vector
+  foo[foo > 0]
+  foo[foo_pos]  # using the index vector
+#+end_src
+
+#+RESULTS:
+:  [1]  -1   3   4   5   5  67 330  -3 -99   0   0  44
+: [1]   3   4   5   5  67 330  44
+: [1]   3   4   5   5  67 330  44
+
+Negative elements of =foo=
+#+begin_src R
+  foo < 0 -> foo_neg
+  foo[foo_neg]
+#+end_src
+
+#+RESULTS:
+: [1]  -1  -3 -99
+
+Zero elements of =foo=
+#+begin_src R
+  foo == 0 -> foo_nul
+  foo[foo_nul]
+#+end_src
+
+#+RESULTS:
+: [1] 0 0
+
+What about =c(foo = 0)=
+#+begin_src R
+  c(foo = 0)  # same as c("foo"=0)
+  c(foo == 0)
+#+end_src
+
+#+RESULTS:
+: foo 
+:   0
+:  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE
+:  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE FALSE
+
+* Select using logical index or flag vectors
+
+What was the flow through the Nile from 1960 to 1966?
+#+begin_src R
+  time(Nile) -> t  # contains the times
+  Nile[t >= 1960]  # selects Nile values using time
+  Nile[t <= 1966]
+  Nile[ t >= 1960 & t <= 1966] # values recorded 1960-1966
+  sum(Nile[ t >= 1960 & t <= 1966]) # total average flow 1960-1966
+#+end_src
+
+#+RESULTS:
+:  [1]  815 1020  906  901 1170  912  746  919  718  714  740
+:  [1] 1120 1160  963 1210 1160 1160  813 1230 1370 1140  995  935 1110  994 1020  960 1180  799  958
+: [20] 1140 1100 1210 1150 1250 1260 1220 1030 1100  774  840  874  694  940  833  701  916  692 1020
+: [39] 1050  969  831  726  456  824  702 1120 1100  832  764  821  768  845  864  862  698  845  744
+: [58]  796 1040  759  781  865  845  944  984  897  822 1010  771  676  649  846  812  742  801 1040
+: [77]  860  874  848  890  744  749  838 1050  918  986  797  923  975  815 1020  906  901 1170  912
+: [96]  746
+: [1]  815 1020  906  901 1170  912  746
+: [1] 6470
+
+* Negative indices
+
+#+begin_src R
+  foo
+  foo[-1]
+  foo[-length(foo)]
+  foo[-c(1,length(foo))]
+#+end_src
+
+#+RESULTS:
+:  [1]  -1   3   4   5   5  67 330  -3 -99   0   0  44
+:  [1]   3   4   5   5  67 330  -3 -99   0   0  44
+:  [1]  -1   3   4   5   5  67 330  -3 -99   0   0
+:  [1]   3   4   5   5  67 330  -3 -99   0   0
