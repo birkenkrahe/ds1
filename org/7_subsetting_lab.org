@@ -77,10 +77,7 @@
 10) Append =baz= to =bar= and store the result in =foo2=. Output:
     =7 6 2 8 8 -5 -1 -10 -3 -2=.
     #+begin_src R
-      bar
-      baz
-      c(bar,baz) -> foo2
-      foo2
+
     #+end_src
 
 * TODO 10 QUESTIONS ABOUT THE NILE
@@ -99,46 +96,42 @@
    Write a full sentence.
 
    #+begin_quote
-   ...
+   Answer:
    #+end_quote
 
+4) Extract the year that corresponds to the last value of
+   ~Nile~. Remember that the years are stored in ~time(Nile)~.
    #+begin_src R
 
    #+end_src
 
-4) Extract the year that corresponds to the last value of
-   ~Nile~. Remember that the years are stored in ~time(Nile)~.
-#+begin_src R
-
-#+end_src
-
 5) What was the Nile flow in 1967? Tip: use a logical operator, and
    store ~time(Nile)~ in ~t~ for the remaining questions.
-#+begin_src R
+   #+begin_src R
 
-#+end_src
+   #+end_src
 
 6) What is the index of the third-to-last element of ~Nile~? Use the
    ~which~ function to answer this question.
-#+begin_src R
+   #+begin_src R
 
-#+end_src
+   #+end_src
 
 7) How many values of ~Nile~ are larger than the third-to-last value?
-#+begin_src R
+   #+begin_src R
 
-#+end_src
+   #+end_src
 
 8) How much water flowed down the Nile between 1871 and 1970?
-#+begin_src R
+   #+begin_src R
 
-#+end_src
+   #+end_src
 
 9) In which year was the Nile at its lowest level? Use the ~min~
    function for this task and store the result in ~tmin~
-#+begin_src R
+   #+begin_src R
 
-#+end_src
+   #+end_src
 
 10) Make a line plot of all observations in the data set ~Nile~ using
     ~plot~, mark the year of the lowest level of the Nile with a
@@ -148,8 +141,8 @@
     You can draw a vertical line at point ~x~ with ~abline(v=x)~, and a
     horizontal line at point ~y~ with ~abline(h=y)~.
 
-    #+begin_src R :results graphics file :file nile.png
-      ...
+    #+begin_src R :results graphics file output :file nile.png
+
     #+end_src
 
     Tip: You can change the appearance of lines with the parameters ~col~,
