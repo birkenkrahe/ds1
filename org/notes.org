@@ -2574,6 +2574,7 @@ complete it.
 - Upload your results to Canvas by the end of today.
 - Solutions will be made available as PDF in GitHub.
 
+
 ** TODO BONUS Exercise "10 Questions on =islands="
 
 - You can work on this exercise for bonus points and/or to test your
@@ -2583,6 +2584,7 @@ complete it.
   about 1/2 hour to 1 hour.
 
 - You can upload the result to Canvas afterwards by the end of term.
+
 
 * Week 12: Data frames & =data.table= [Nov 4]
 
