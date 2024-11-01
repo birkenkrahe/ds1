@@ -2566,6 +2566,7 @@ comments and code blocks.
 
 ** NEXT Subsetting Lab
 
+
 * Week 12: Data frames & =data.table= [Nov 4]
 
 * Week 13: R Package =data.table= & Lists [Nov 11]
