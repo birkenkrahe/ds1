@@ -13,39 +13,111 @@
 - Upload the completed file as a class assignment to Canvas
 - You find the solutions in the PDF repository later (GitHub)
 
+* TODO 10 SUBSETTING QUESTIONS
+
+1) Store a vector of these 10 values in ~foo~: ~7 5 6 1 2 10 8 3 8 2~,
+   print it and show that it has 10 elements using a function.
+
+   #+begin_src R
+
+   #+end_src
+
+2) Extract the fifth through the seventh element of =foo= and add =5= to
+   these elements to get the output: =7 15 13=
+
+   #+begin_src R
+
+   #+end_src
+
+3) Create a logical flag vector of those elements of =foo= that are
+   greater than =5= and store it in =idx=.
+
+   #+begin_src R
+
+   #+end_src
+
+4) Extract the values of =foo= that are greater than =5= using =idx=.
+
+   #+begin_src R
+
+   #+end_src
+
+5) =Which= vector indices of =foo= correspond to the values greater or
+   equal than =5=? Store the answer in =idx2=
+
+   #+begin_src R
+
+   #+end_src
+
+6) Use =idx2= to extract the values of =foo= that are greater or equal than =5=.
+
+   #+begin_src R
+
+   #+end_src
+
+7) Extract every 2nd element of =foo= using =seq=. Output: =7 6 2 8 8=.
+
+   #+begin_src R
+
+   #+end_src
+
+8) Remove the elements with even indices from =foo= and store them in
+   =bar=, and store the elements with odd indices from =foo= in =baz=.
+
+   #+begin_src R
+
+   #+end_src
+
+9) Make all elements of =baz= negative.
+
+   #+begin_src R
+
+   #+end_src
+
+10) Append =baz= to =bar= and store the result in =foo2=. Output:
+    =7 6 2 8 8 -5 -1 -10 -3 -2=.
+    #+begin_src R
+      bar
+      baz
+      c(bar,baz) -> foo2
+      foo2
+    #+end_src
+
 * TODO 10 QUESTIONS ABOUT THE NILE
 
 1) Print the length of the data set ~Nile~ using an R function.
-#+begin_src R
+   #+begin_src R
 
-#+end_src
+   #+end_src
+
 2) Retrieve the second to fifth value of the ~Nile~ data set.
-#+begin_src R
+   #+begin_src R
 
-#+end_src
+   #+end_src
 
 3) Which data science (not R) question does the last output answer?
    Write a full sentence.
 
    #+begin_quote
-     ...
+   ...
    #+end_quote
-#+begin_src R
 
-#+end_src
+   #+begin_src R
+
+   #+end_src
 
 4) Extract the year that corresponds to the last value of
-   ~Nile~. Remember that the years are stored in ~time(Nile)~. 
+   ~Nile~. Remember that the years are stored in ~time(Nile)~.
 #+begin_src R
 
 #+end_src
-  
+
 5) What was the Nile flow in 1967? Tip: use a logical operator, and
    store ~time(Nile)~ in ~t~ for the remaining questions.
 #+begin_src R
 
 #+end_src
-   
+
 6) What is the index of the third-to-last element of ~Nile~? Use the
    ~which~ function to answer this question.
 #+begin_src R

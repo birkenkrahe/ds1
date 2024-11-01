@@ -2547,8 +2547,7 @@ constancy, and continuity of the digital world in the face of change.
     :    1    2    3
     : [1] "172" "178" "180"
 
-
-** Subsetting data structures in R (and elsewhere)
+** DONE Subsetting data structures in R (and elsewhere)
 
 - [X] Vectorization
 - [X] Retrieving vector elements
@@ -2564,8 +2563,22 @@ If you want to continue where we stopped, download/open
 [[https://raw.githubusercontent.com/birkenkrahe/ds1/refs/heads/main/org/7_subsetting_codealong.org][tinyurl.com/sub-code]]. Then code along with your own headlines,
 comments and code blocks.
 
+
 ** NEXT Subsetting Lab
 
+- 10 questions to test your subsetting and indexing skills.
+- 10 questions to apply these skills to the "Nile" data set.
+- Upload your results to Canvas by the end of today.
+
+** TODO BONUS Exercise "10 Questions on =islands="
+
+- You can work on this exercise for bonus points and/or to test your
+  data science chops. 
+
+- You should be able to answer all questions without difficulty in
+  about 1/2 hour to 1 hour.
+
+- You can upload the result to Canvas afterwards by the end of term.
 
 * Week 12: Data frames & =data.table= [Nov 4]
 
