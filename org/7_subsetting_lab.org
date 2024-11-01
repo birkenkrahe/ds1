@@ -148,6 +148,3 @@
     Tip: You can change the appearance of lines with the parameters ~col~,
     ~lty~, ~lwd~. E.g. ~col="red, lty=2, lwd=2~ for a red, dashed, thick
     line.
-#+begin_src R
-
-#+end_src
