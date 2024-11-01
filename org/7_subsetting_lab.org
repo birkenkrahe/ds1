@@ -88,7 +88,9 @@
 
    #+end_src
 
-2) Retrieve the second to fifth value of the ~Nile~ data set.
+2) Retrieve the second to fifth value of the ~Nile~ data set. There are
+   (at least) two ways to do this, with the concatenation function or
+   with the colon operator.
    #+begin_src R
 
    #+end_src
