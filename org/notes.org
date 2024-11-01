@@ -2566,9 +2566,13 @@ comments and code blocks.
 
 ** NEXT Subsetting Lab
 
+Download the lab file from [[https://tinyurl.com/sub-lab][tinyurl.com/sub-lab]], open it in Emacs and
+complete it.
+
 - 10 questions to test your subsetting and indexing skills.
 - 10 questions to apply these skills to the "Nile" data set.
 - Upload your results to Canvas by the end of today.
+- Solutions will be made available as PDF in GitHub.
 
 ** TODO BONUS Exercise "10 Questions on =islands="
 

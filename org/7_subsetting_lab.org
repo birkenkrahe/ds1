@@ -43,13 +43,14 @@
    #+end_src
 
 5) =Which= vector indices of =foo= correspond to the values greater or
-   equal than =5=? Store the answer in =idx2=
+   equal than =5=? Store the answer in =idx2= - Output: =1 2 3 6 7 9=.
 
    #+begin_src R
 
    #+end_src
 
-6) Use =idx2= to extract the values of =foo= that are greater or equal than =5=.
+6) Use =idx2= to extract the values of =foo= that are greater or equal
+   than =5=. Output: =7  5  6 10  8  8=
 
    #+begin_src R
 
