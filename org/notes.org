@@ -2281,7 +2281,7 @@ constancy, and continuity of the digital world in the face of change.
 #+caption: The Sleep of Reason Produces Monsters, Goya (1799)
 [[../img/the_sleep_or_reason_produces_monsters.jpg]]
 
-** DONE Project Preview: Discussion / Presentation
+** Project Preview: Discussion / Presentation
 #+attr_html: :width 600px:
 [[../img/discussion.jpeg]]
 
@@ -2295,7 +2295,7 @@ constancy, and continuity of the digital world in the face of change.
   3) Outlook (What else could or should one do now?)
   4) Limitations (What limits the validity of this research?)
 
-** DONE Review: Manipulating Data Frames
+** Review: Manipulating Data Frames
 
 1. Two vectors have different lengths - can I put them in a =data.frame=?
    #+begin_quote
@@ -2547,7 +2547,7 @@ constancy, and continuity of the digital world in the face of change.
     :    1    2    3
     : [1] "172" "178" "180"
 
-** DONE Subsetting data structures in R (and elsewhere)
+** Subsetting data structures in R (and elsewhere)
 
 - [X] Vectorization
 - [X] Retrieving vector elements
@@ -2563,8 +2563,7 @@ If you want to continue where we stopped, download/open
 [[https://raw.githubusercontent.com/birkenkrahe/ds1/refs/heads/main/org/7_subsetting_codealong.org][tinyurl.com/sub-code]]. Then code along with your own headlines,
 comments and code blocks.
 
-
-** NEXT Subsetting Lab
+** Subsetting Lab
 
 Download the lab file from [[https://tinyurl.com/sub-lab][tinyurl.com/sub-lab]], open it in Emacs and
 complete it.
@@ -2574,15 +2573,12 @@ complete it.
 - Upload your results to Canvas by the end of today.
 - Solutions will be made available as PDF in GitHub.
 
-
-** TODO BONUS Exercise "10 Questions on =islands="
+** BONUS Exercise "10 Questions on =islands="
 
 - You can work on this exercise for bonus points and/or to test your
   data science chops. 
-
 - You should be able to answer all questions without difficulty in
   about 1/2 hour to 1 hour.
-
 - You can upload the result to Canvas afterwards by the end of term.
 
 
