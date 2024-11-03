@@ -88,8 +88,7 @@ Hints:
   5) Select rows 2 to 3, and columns 1 and 4 using ~[]~ and ~$~
 
   #+begin_src R
-    ## select subsets using index operators
-
+  
   #+end_src
 
 * Select indices and values using ~which~, ~names~, ~%in%~
