@@ -2590,17 +2590,164 @@ complete it.
 
 - [ ] Bonus exercise with the =islands= dataset
 - [ ] New quiz on =data.table= and sub-setting vectors
+- [ ] DataCamp review: =data.table=
 - [ ] Review: data frames and factors
 - [ ] Practice with data frames and factors
+- [ ] DataCamp: 4-part EDA series with =dplyr= and =ggplot2=
 
-** DataCamp review: =data.table=
+** NEXT DataCamp review: =data.table=
+#+attr_html: :width 150px: 
+[[../img/dtlogo.png]]
 
-** Data frames and Factors
+1) What is =data.table=? How can you get it? How can you find out more?
+   #+begin_quote
+   - =data.table= is an enhanced ("multithreaded" = parallelized)
+     version of =data.frame= - to organize data of different data types
+     in a rectangular table of rows and column vectors.
+
+   - You have to install and load the =data.table= package.
+
+   - More information at [[https://r-datatable.com][r-datatable.com]]: documentation, getting
+     started tutorial, examples, and cheat sheet.
+   #+end_quote
+
+   #+begin_src R
+     # R console: install.packages("data.table")
+     library(data.table)
+   #+end_src
+
+2) How would you create a =data.table= from scratch?
+   
+   #+begin_src R
+     ## Load data.table package
+     library(data.table)
+
+     ## Create a data.table from scratch
+     dt <- data.table(
+       ID = 1:5,
+       Name = c("Alice", "Bob", "Charlie", "David", "Eve"),
+       Score = c(88, 92, 78, 85, 91)
+     )
+
+     ## Display the data.table
+     dt
+   #+end_src   
+
+   #+RESULTS:
+   : ID    Name Score
+   :    <int>  <char> <num>
+   : 1:     1   Alice    88
+   : 2:     2     Bob    92
+   : 3:     3 Charlie    78
+   : 4:     4   David    85
+   : 5:     5     Eve    91
+
+   #+begin_quote
+   Notice that the printout shows the data types (like a "tibble")
+   #+end_quote
+
+   #+begin_src R
+     tibble(
+       ID = 1:5,
+       Name = c("Alice", "Bob", "Charlie", "David", "Eve"),
+       Score = c(88, 92, 78, 85, 91)
+     )
+   #+end_src
+
+   #+RESULTS:
+   : # A tibble: 5 × 3
+   :      ID Name    Score
+   :   <int> <chr>   <dbl>
+   : 1     1 Alice      88
+   : 2     2 Bob        92
+   : 3     3 Charlie    78
+   : 4     4 David      85
+   : 5     5 Eve        91
+
+3) How would you turn a =data.frame= into a =data.table=?
+
+   #+begin_src R
+     library(data.table)
+     DT = as.data.table(iris)
+     DT
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+               <num>       <num>        <num>       <num>    <fctr>
+     1:          5.1         3.5          1.4         0.2    setosa
+     2:          4.9         3.0          1.4         0.2    setosa
+     3:          4.7         3.2          1.3         0.2    setosa
+     4:          4.6         3.1          1.5         0.2    setosa
+     5:          5.0         3.6          1.4         0.2    setosa
+    ---                                                            
+   146:          6.7         3.0          5.2         2.3 virginica
+   147:          6.3         2.5          5.0         1.9 virginica
+   148:          6.5         3.0          5.2         2.0 virginica
+   149:          6.2         3.4          5.4         2.3 virginica
+   150:          5.9         3.0          5.1         1.8 virginica
+   #+end_example
+
+   #+begin_quote
+   The printout is reminiscent of Python's =pandas= display format.
+   #+end_quote
+
+4) How can you use =data.table= to filter rows, select and group by
+   columns?
+
+   #+begin_src R 
+     ## FROM[WHERE, SELECT, GROUP BY]
+     ## DT  [i,     j,      by]
+
+     ## Filter rows i with petal width greater than 1.0
+     DT[ Petal.Width > 1.0, ] |> head()
+
+     ## Select the petal length column
+     DT[ Petal.Width > 1.0, Petal.Length ] |> head()
+
+     ## Compute the average of the resulting values        
+     DT[ Petal.Width > 1.0, mean(Petal.Length)] 
+
+     ## Group by species
+     DT[ Petal.Width > 1.0, mean(Petal.Length), by = Species] -> dt
+     dt
+
+     ## Rename new column
+     setnames(dt, "V1", "Average")
+     dt
+   #+end_src
+
+   #+begin_quote
+   Note that =data.table= expressions and syntax is reminiscent of SQL's
+   =SELECT= command (more in: CSC 330 Database Theory and Applications).
+   #+end_quote
+
+5) You're handling Terabytes (1,024 GB) or Petabytes (1 mio GigaBytes,
+   or 1,024 TB). Would you use =dplyr= in the "Tidyverse" or =data.table=?
+   #+begin_quote
+   - For TB, as long as your computer can hold this much data,
+     =data.table= is much faster.
+   - For PB, distributed processing is required. Examples are: Apache
+     Spark (Python,Java,R), BigQuery (SQL), or Snowflat (SQL,Python).
+   #+end_quote
+
+   
+** TODO Data frames, Factors, Lists
+
+Download and open the code along file: [[https://tinyurl.com/df-codealong][tinyurl.com/df-codealong]]
 
 - [ ] Creating data frames
 - [ ] Sub-setting data frames
+- [ ] Useful functions
+- [ ] Factor and list creation
+
 
 * Week 13: R Package =data.table= & Lists [Nov 11]
 
+
+** DataCamp review: Exploring categorical data
+
 * Week 14: Exploratory Data Analysis in R & Plots [Nov 25]
+
 * Week 15: Final presentations [Dec 2]
