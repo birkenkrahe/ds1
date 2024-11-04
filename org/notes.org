@@ -3703,14 +3703,14 @@ complete it.
 
 *REMEMBER: NO CLASS MEETING THIS WEEK ON FRIDAY*
 
-- [ ] *Complete* bonus exercise with the =islands= dataset
-- [ ] *Complete* new quiz on =data.table= and sub-setting vectors
-- [ ] *Review* DataCamp lesson: =data.table=
+- [X] *Complete* bonus exercise with the =islands= dataset
+- [X] *Complete* new quiz on =data.table= and sub-setting vectors
+- [X] *Complete* in DataCamp: 4-part EDA series with =dplyr= and =ggplot2=
+- [X] *Review* DataCamp lesson: =data.table=
 - [ ] *Code along*: data frames and factors
 - [ ] *Practice* with data frames and factors
-- [ ] *Complete* in DataCamp: 4-part EDA series with =dplyr= and =ggplot2=
 
-** NEXT DataCamp review: =data.table=
+** DONE DataCamp review: =data.table=
 #+attr_html: :width 150px: 
 [[../img/dtlogo.png]]
 
@@ -3724,7 +3724,7 @@ complete it.
 
    - More information at [[https://r-datatable.com][r-datatable.com]]: documentation, getting
      started tutorial, examples, and cheat sheet.
-   #+end_quote
+        #+end_quote
 
    #+begin_src R
      # R console: install.packages("data.table")
@@ -3732,6 +3732,7 @@ complete it.
    #+end_src
 
    #+RESULTS:
+   : data.table 1.16.0 using 2 threads (see ?getDTthreads).  Latest news: r-datatable.com
 
 2) How would you create a =data.table= from scratch?
    
@@ -3751,7 +3752,7 @@ complete it.
    #+end_src   
 
    #+RESULTS:
-   : ID    Name Score
+   :       ID    Name Score
    :    <int>  <char> <num>
    : 1:     1   Alice    88
    : 2:     2     Bob    92
@@ -3760,7 +3761,7 @@ complete it.
    : 5:     5     Eve    91
 
    #+begin_quote
-   Notice that the printout shows the data types (like a "tibble")
+   Notice that the printout shows the data types (like a "tibble").
    #+end_quote
 
    #+begin_src R
@@ -3772,14 +3773,9 @@ complete it.
    #+end_src
 
    #+RESULTS:
-   : # A tibble: 5 × 3
-   :      ID Name    Score
-   :   <int> <chr>   <dbl>
-   : 1     1 Alice      88
-   : 2     2 Bob        92
-   : 3     3 Charlie    78
-   : 4     4 David      85
-   : 5     5 Eve        91
+   : Error in library(dplyr) : there is no package called ‘dplyr’
+   : Error in tibble(ID = 1:5, Name = c("Alice", "Bob", "Charlie", "David",  : 
+   :   could not find function "tibble"
 
 3) How would you turn a =data.frame= into a =data.table=?
 
@@ -3791,84 +3787,94 @@ complete it.
 
    #+RESULTS:
    #+begin_example
-   Sepal.Length        Sepal.Width       Petal.Length         Petal.Width
-                     <num>              <num>              <num>               <num>
-     1: 5.0999999999999996 3.5000000000000000 1.3999999999999999 0.20000000000000001
-     2: 4.9000000000000004 3.0000000000000000 1.3999999999999999 0.20000000000000001
-     3: 4.7000000000000002 3.2000000000000002 1.3000000000000000 0.20000000000000001
-     4: 4.5999999999999996 3.1000000000000001 1.5000000000000000 0.20000000000000001
-     5: 5.0000000000000000 3.6000000000000001 1.3999999999999999 0.20000000000000001
-    ---                                                                             
-   146: 6.7000000000000002 3.0000000000000000 5.2000000000000002 2.29999999999999982
-   147: 6.2999999999999998 2.5000000000000000 5.0000000000000000 1.89999999999999991
-   148: 6.5000000000000000 3.0000000000000000 5.2000000000000002 2.00000000000000000
-   149: 6.2000000000000002 3.3999999999999999 5.4000000000000004 2.29999999999999982
-   150: 5.9000000000000004 3.0000000000000000 5.0999999999999996 1.80000000000000004
-          Species
-           <fctr>
-     1:    setosa
-     2:    setosa
-     3:    setosa
-     4:    setosa
-     5:    setosa
-    ---          
-   146: virginica
-   147: virginica
-   148: virginica
-   149: virginica
-   150: virginica
+        Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+               <num>       <num>        <num>       <num>    <fctr>
+     1:          5.1         3.5          1.4         0.2    setosa
+     2:          4.9         3.0          1.4         0.2    setosa
+     3:          4.7         3.2          1.3         0.2    setosa
+     4:          4.6         3.1          1.5         0.2    setosa
+     5:          5.0         3.6          1.4         0.2    setosa
+    ---                                                            
+   146:          6.7         3.0          5.2         2.3 virginica
+   147:          6.3         2.5          5.0         1.9 virginica
+   148:          6.5         3.0          5.2         2.0 virginica
+   149:          6.2         3.4          5.4         2.3 virginica
+   150:          5.9         3.0          5.1         1.8 virginica
    #+end_example
 
    #+begin_quote
    The printout is reminiscent of Python's =pandas= display format.
    #+end_quote
 
+   By contrast, =data.frame= prints everything
+   #+begin_src R
+     head(iris)
+     tail(iris)     
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+     Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+   1          5.1         3.5          1.4         0.2  setosa
+   2          4.9         3.0          1.4         0.2  setosa
+   3          4.7         3.2          1.3         0.2  setosa
+   4          4.6         3.1          1.5         0.2  setosa
+   5          5.0         3.6          1.4         0.2  setosa
+   6          5.4         3.9          1.7         0.4  setosa
+       Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+   145          6.7         3.3          5.7         2.5 virginica
+   146          6.7         3.0          5.2         2.3 virginica
+   147          6.3         2.5          5.0         1.9 virginica
+   148          6.5         3.0          5.2         2.0 virginica
+   149          6.2         3.4          5.4         2.3 virginica
+   150          5.9         3.0          5.1         1.8 virginica
+   #+end_example
+
 4) How can you use =data.table= to filter rows, select and group by
    columns?
 
-   #+begin_src R 
-     ## FROM[WHERE, SELECT, GROUP BY]
-     ## DT  [i,     j,      by]
+  #+begin_src R 
+    ## FROM[WHERE, SELECT, GROUP BY]
+    ## DT  [i,     j,      by]
 
-     ## Filter rows i with petal width greater than 1.0
-     DT[ Petal.Width > 1.0, ] |> head()
+    ## Filter rows i with petal width greater than 1.0
+    DT[ Petal.Width > 1.0, ] |> head()
 
-     ## Select the petal length column
-     DT[ Petal.Width > 1.0, Petal.Length ] |> head()
+    ## Select the petal length column
+    DT[ Petal.Width > 1.0, Petal.Length ] |> head()
 
-     ## Compute the average of the resulting values        
-     DT[ Petal.Width > 1.0, mean(Petal.Length)] 
+    ## Compute the average of the resulting values        
+    DT[ Petal.Width > 1.0, mean(Petal.Length)] 
 
-     ## Group by species
-     DT[ Petal.Width > 1.0, mean(Petal.Length), by = Species] -> dt
-     dt
+    ## Group by species
+    DT[ Petal.Width > 1.0, mean(Petal.Length), by = Species] -> dt
+    dt
 
-     ## Rename new column
-     setnames(dt, "V1", "Average")
+    ## Rename new column
+     setnames(dt, "V1", "Average Petal Length")
      dt
    #+end_src
 
    #+RESULTS:
    #+begin_example
-   Sepal.Length        Sepal.Width       Petal.Length        Petal.Width    Species
-                   <num>              <num>              <num>              <num>     <fctr>
-   1: 7.0000000000000000 3.2000000000000002 4.7000000000000002 1.3999999999999999 versicolor
-   2: 6.4000000000000004 3.2000000000000002 4.5000000000000000 1.5000000000000000 versicolor
-   3: 6.9000000000000004 3.1000000000000001 4.9000000000000004 1.5000000000000000 versicolor
-   4: 5.5000000000000000 2.2999999999999998 4.0000000000000000 1.3000000000000000 versicolor
-   5: 6.5000000000000000 2.7999999999999998 4.5999999999999996 1.5000000000000000 versicolor
-   6: 5.7000000000000002 2.7999999999999998 4.5000000000000000 1.3000000000000000 versicolor
-   [1] 4.7000000000000002 4.5000000000000000 4.9000000000000004 4.0000000000000000
-   [5] 4.5999999999999996 4.5000000000000000
-   [1] 5.0021505376344084
-   Species                 V1
-          <fctr>              <num>
-   1: versicolor 4.3627906976744182
-   2:  virginica 5.5519999999999996
-   Species            Average
-          <fctr>              <num>
-   1: versicolor 4.3627906976744182
-   2:  virginica 5.5519999999999996
+      Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+             <num>       <num>        <num>       <num>     <fctr>
+   1:          7.0         3.2          4.7         1.4 versicolor
+   2:          6.4         3.2          4.5         1.5 versicolor
+   3:          6.9         3.1          4.9         1.5 versicolor
+   4:          5.5         2.3          4.0         1.3 versicolor
+   5:          6.5         2.8          4.6         1.5 versicolor
+   6:          5.7         2.8          4.5         1.3 versicolor
+   [1] 4.7 4.5 4.9 4.0 4.6 4.5
+   [1] 5.002151
+         Species       V1
+          <fctr>    <num>
+   1: versicolor 4.362791
+   2:  virginica 5.552000
+         Species Average Petal Length
+          <fctr>                <num>
+   1: versicolor             4.362791
+   2:  virginica             5.552000
    #+end_example
 
    #+begin_quote
@@ -3876,13 +3882,25 @@ complete it.
    =SELECT= command (more in: CSC 330 Database Theory and Applications).
    #+end_quote
 
+   #+begin_src R
+     str(iris)
+   #+end_src
+
+   #+RESULTS:
+   : 'data.frame':	150 obs. of  5 variables:
+   :  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+   :  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+   :  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+   :  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+   :  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+
 5) You're handling Terabytes (1,024 GB) or Petabytes (1 mio GigaBytes,
    or 1,024 TB). Would you use =dplyr= in the "Tidyverse" or =data.table=?
    #+begin_quote
    - For TB, as long as your computer can hold this much data,
      =data.table= is much faster.
    - For PB, distributed processing is required. Examples are: Apache
-     Spark (Python,Java,R), BigQuery (SQL), or Snowflat (SQL,Python).
+     Spark (Python,Java,R), BigQuery (SQL), or Snowflake (SQL,Python).
    #+end_quote
 
    
@@ -3894,7 +3912,6 @@ Download and open the code along file: [[https://tinyurl.com/df-codealong][tinyu
 - [ ] Sub-setting data frames
 - [ ] Useful functions
 - [ ] Factor and list creation
-
 
 * Week 13: R Package =data.table= & Lists [Nov 11]
 
