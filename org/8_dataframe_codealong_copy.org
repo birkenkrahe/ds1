@@ -148,7 +148,7 @@ Hints:
  $ price: num  2.5 8 10 7
 #+end_example
 
-* Select subsets using index operators
+* NEXT Select subsets using index operators
 
 - Use the dataframe =df= [[https://github.com/birkenkrahe/ds1/blob/main/img/7_df.png][shown here]] that you created earlier.
 
