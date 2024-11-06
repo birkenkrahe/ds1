@@ -28,7 +28,7 @@
   #+end_src
 
   #+RESULTS:
-  : [1] "A" "A" "C" "B" "C" "A" "B" "C" "B" "A"
+  :  [1] "C" "A" "C" "C" "C" "A" "B" "B" "A" "C"
 
 - Create a data frame =df= from the number =1=, the vector =1:10=, and =fac=.
   #+name: dataframe_unnamed
@@ -38,10 +38,10 @@
   #+end_src
 
   #+RESULTS: dataframe_unnamed
-  : 'data.frame':	10 obs. of  3 variables:
+  : 'data.frame':       10 obs. of  3 variables:
   :  $ X1   : num  1 1 1 1 1 1 1 1 1 1
   :  $ X1.10: int  1 2 3 4 5 6 7 8 9 10
-  :  $ fac  : chr  "A" "A" "C" "B" ...
+  :  $ fac  : chr  "C" "A" "C" "C" ...
 
 - Create a data frame =df2= with the same content but name the first
   column =x= and the second column =y=:
@@ -52,10 +52,10 @@
   #+end_src
 
   #+RESULTS: dataframe_named
-  : 'data.frame':	10 obs. of  3 variables:
+  : 'data.frame':       10 obs. of  3 variables:
   :  $ x  : num  1 1 1 1 1 1 1 1 1 1
   :  $ y  : int  1 2 3 4 5 6 7 8 9 10
-  :  $ fac: chr  "A" "A" "C" "B" ...
+  :  $ fac: chr  "C" "A" "C" "C" ...
 
 - More information: check out ~example(data.frame)~ (on the R console).
 
@@ -86,17 +86,17 @@
 
   #+RESULTS:
   #+begin_example
-  'data.frame':	10 obs. of  3 variables:
+  'data.frame': 10 obs. of  3 variables:
    $ x  : num  1 1 1 1 1 1 1 1 1 1
    $ y  : int  1 2 3 4 5 6 7 8 9 10
-   $ fac: chr  "A" "A" "C" "B" ...
-  'data.frame':	10 obs. of  6 variables:
+   $ fac: chr  "C" "A" "C" "C" ...
+  'data.frame': 10 obs. of  6 variables:
    $ X1   : num  1 1 1 1 1 1 1 1 1 1
    $ X1.10: int  1 2 3 4 5 6 7 8 9 10
-   $ fac  : chr  "A" "A" "C" "B" ...
+   $ fac  : chr  "C" "A" "C" "C" ...
    $ x    : num  1 1 1 1 1 1 1 1 1 1
    $ y    : int  1 2 3 4 5 6 7 8 9 10
-   $ fac.1: chr  "A" "A" "C" "B" ...
+   $ fac.1: chr  "C" "A" "C" "C" ...
   #+end_example
 
 * Practice
@@ -129,19 +129,19 @@ Hints:
 
 #+RESULTS:
 #+begin_example
-ID       items store price
+  ID       items store price
 1 10        book  TRUE   2.5
 2 20         pen FALSE   8.0
 3 30    textbook  TRUE  10.0
 4 40 pencil_case FALSE   7.0
 [1] "1" "2" "3" "4"
 [1] "ID"    "items" "store" "price"
-'data.frame':	4 obs. of  4 variables:
+'data.frame':   4 obs. of  4 variables:
  $ ID   : num  10 20 30 40
  $ items: chr  "book" "pen" "textbook" "pencil_case"
  $ store: logi  TRUE FALSE TRUE FALSE
  $ price: num  2.5 8 10 7
-'data.frame':	4 obs. of  4 variables:
+'data.frame':   4 obs. of  4 variables:
  $ ID   : num  10 20 30 40
  $ items: Factor w/ 4 levels "book","pen","pencil_case",..: 1 2 4 3
  $ store: logi  TRUE FALSE TRUE FALSE
@@ -155,95 +155,199 @@ ID       items store price
 - Run all code blocks up to this point with =C-c C-v b= (or =M-x
   org-babel-execute-buffer=).
 
+- Structure:
+  #+begin_src R
+    str(df)
+  #+end_src
+
+  #+RESULTS:
+  : 'data.frame':       4 obs. of  4 variables:
+  :  $ ID   : num  10 20 30 40
+  :  $ items: chr  "book" "pen" "textbook" "pencil_case"
+  :  $ store: logi  TRUE FALSE TRUE FALSE
+  :  $ price: num  2.5 8 10 7
+
 - Select subsets using the index operators ~$~ and ~[]~:
   1) Select rows 1 to 2 using ~[]~
      #+begin_src R
-  
+       df[1:2, ] # rows 1-2 and all columns
+       df[c(1,2), ]
      #+end_src
-  2) Select column 1 using ~[]~ and ~$~
-x     #+begin_src R
 
+     #+RESULTS:
+     :   ID items store price
+     : 1 10  book  TRUE   2.5
+     : 2 20   pen FALSE   8.0
+     :   ID items store price
+     : 1 10  book  TRUE   2.5
+     : 2 20   pen FALSE   8.0
+
+  2) Select column 1 using ~[]~ and ~$~
+     #+begin_src R
+       df$ID
+       df$"ID"
+       df[ ,1]
+       df[ ,"ID"]
      #+end_src
+
+     #+RESULTS:
+     : [1] 10 20 30 40
+     : [1] 10 20 30 40
+     : [1] 10 20 30 40
+     : [1] 10 20 30 40
+
   3) Select row 3 of column 2  using ~[]~ and ~$~
      #+begin_src R
-
+       df[3,2]
+       df$items[3]
      #+end_src
+
   4) Select rows 1 to 3 in columns 3 and 4 using ~[]~
      #+begin_src R
-
+       df[1:3,3:4]
      #+end_src
+
   5) Select rows 2 to 3, and columns 1 and 4 using ~[]~
      #+begin_src R
-  
+       df[2:3, c(1,4)]
+       df[c(2,3), c("ID","price")]
      #+end_src
 
 * Select indices and values using ~which~, ~names~, ~%in%~
 
 Select data frame indices using functions ~which~, ~colnames~ and ~%in%~:
 1) Print the column index for the column ~price~ using ~colnames~
+   #+begin_src R
+     colnames(df)
+     colnames(df) == "price"
+     which(colnames(df) == "price")
+   #+end_src
+
 2) Store the row index for ~textbook~ in ~idx~
+   #+begin_src R
+     which(df$items == "textbook") -> idx # logical flag vector
+     idx
+   #+end_src
+
+   #+RESULTS:
+   : [1] 3
+
 3) Print the entry ~textbook~ using ~idx~
+   #+begin_src R
+     df$items[idx]  # using flag vector to subset
+   #+end_src
+
+   #+RESULTS:
+   : [1] "textbook"
+
 4) Check if ~pencil_case~ is a store item using ~%in%~
+   #+begin_src R
+     df$items
+     "pencil_case" %in% df$items
+   #+end_src
+
+   #+RESULTS:
+   : [1] "book"        "pen"         "textbook"    "pencil_case"
+   : [1] TRUE
 
 For the last question, the format of the ~%in%~ matching function to
 find a string is: ~string %in% vector~
 
 #+begin_src R
-
-
+  str(df)
 #+end_src
 
 #+RESULTS:
+: 'data.frame': 4 obs. of  4 variables:
+:  $ ID   : num  10 20 30 40
+:  $ items: chr  "book" "pen" "textbook" "pencil_case"
+:  $ store: logi  TRUE FALSE TRUE FALSE
+:  $ price: num  2.5 8 10 7
 
 * Select subsets using the ~subset~ function
 
 Using ~subset~,
 1) Select product IDs above 20
-2) Select all books listed
+2) Select all books listed  (homework!)
 3) Select all items cheaper than $11 and in stock
+#+begin_src R
+  subset(df, ID > 20, select="ID")
+  subset(df, (price < 11) & (store==TRUE))
+#+end_src
 
-   #+begin_src R
+#+RESULTS:
+:   ID
+: 3 30
+: 4 40
+:   ID    items store price
+: 1 10     book  TRUE   2.5
+: 3 30 textbook  TRUE  10.0
+   
+- =subset= syntax reminder:
+  #+begin_src R
+    ## subset( target df, filter FUN, select COL)
+    ##str(airquality)
+    ##subset(airquality, Temp>80, select=c(Ozone,Temp)) |> head(4)
+    subset(airquality, Day==1, select= -c(Temp,Solar.R))
+  #+end_src
 
-   #+end_src
-
-   #+RESULTS:
+  #+RESULTS:
+  :     Ozone Wind Month Day
+  : 1      41  7.4     5   1
+  : 32     NA  8.6     6   1
+  : 62    135  4.1     7   1
+  : 93     39  6.9     8   1
+  : 124    96  6.9     9   1
 
 * Some useful functions
 
 - ~dim~ gives you the data frame dimensions
   #+begin_src R
-
+    dim(df)
   #+end_src
 
   #+RESULTS:
+  : [1] 4 4
 
 - ~nrow~ gives you the number of rows
   #+begin_src R
-
+    nrow(df)
   #+end_src
 
   #+RESULTS:
+  : [1] 4
 
 - ~ncol~ gives you the number of columns
   #+begin_src R
-
+    ncol(df)
   #+end_src
 
   #+RESULTS:
+  : [1] 4
 
 - ~head(x=,N)~ gives you the first ~N~ rows
   #+begin_src R
-
+    head(df,3)
   #+end_src
 
   #+RESULTS:
+  :   ID    items store price
+  : 1 10     book  TRUE   2.5
+  : 2 20      pen FALSE   8.0
+  : 3 30 textbook  TRUE  10.0
 
-- ~order~ gives you the indices of an ordered vector
+- ~order~ gives you the indices of an ordered (=sorted) vector
   #+begin_src R
-
+    df$items -> i
+    i
+    order(i)
+    sort(i)
   #+end_src
 
   #+RESULTS:
+  : [1] "book"        "pen"         "textbook"    "pencil_case"
+  : [1] 1 2 4 3
+  : [1] "book"        "pen"         "pencil_case" "textbook"
 
 - ~subset~ gives you a subset of any data structure
   #+begin_src R
