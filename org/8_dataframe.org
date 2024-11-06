@@ -279,8 +279,15 @@ Using ~subset~,
 
    #+begin_src R
      ## select subsets using the subset function
-     
+     subset(df,"book"  df$items)
    #+end_src
+
+   #+RESULTS:
+   :   ID       items store price
+   : 1 10        book  TRUE   2.5
+   : 2 20         pen FALSE   8.0
+   : 3 30    textbook  TRUE  10.0
+   : 4 40 pencil_case FALSE   7.0
 
 * Some useful functions
 
