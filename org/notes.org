@@ -3697,8 +3697,7 @@ complete it.
 
 * Week 12: Data frames, Factors & =data.table= [Nov 4]
 #+attr_html: :width 600px: 
-#+caption: Landslide: 1936 US Presidential Election (Roosevelt vs Landon)
-[[../img/ElectoralCollege1936.svg.png]]
+[[../img/election2024.png]]
 
 *REMEMBER: NO CLASS MEETING THIS WEEK ON FRIDAY*
 
@@ -3921,21 +3920,6 @@ How can you create a data frame of two vectors each with values ~1 2 3
   data.frame(1:10,1:10)
 #+end_src
 
-#+RESULTS:
-#+begin_example
-   X1.10 X1.10.1
-1      1       1
-2      2       2
-3      3       3
-4      4       4
-5      5       5
-6      6       6
-7      7       7
-8      8       8
-9      9       9
-10    10      10
-#+end_example
-
 #+begin_quote
 - Rows are automatically numbered
 - Columns have default names ~X1.10~ and ~X1.10.1~
@@ -3975,12 +3959,12 @@ How would you create such a data frame for a survey?
                        levels=c("unhappy", "neutral", "happy")))
 #+end_src
 
-#+RESULTS: create_data.frame
 
 #+begin_src R
   survey
   class(survey)
 #+end_src
+
 *** Which commands are used to explore data frames
 
 Which R commands are used to explore data frames?
@@ -3993,6 +3977,7 @@ Which R commands are used to explore data frames?
 #+begin_src R
   summary(survey)  # statistical view of each variable incl. NA
 #+end_src
+
 *** What do you do with missing values (~NA~)?
 What about ~NA~?
 - Create a new data frame `s_na` with a column `missing` of
@@ -4007,6 +3992,7 @@ What about ~NA~?
 #+begin_src R
   summary(s_na$"missing")
 #+end_src
+
 *** How do you extract values from a data frame?
 
 1) Look at the variables to remind yourself of the data structure

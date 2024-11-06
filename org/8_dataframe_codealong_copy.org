@@ -28,7 +28,7 @@
   #+end_src
 
   #+RESULTS:
-  :  [1] "A" "C" "B" "B" "C" "B" "A" "A" "B" "B"
+  : [1] "A" "A" "C" "B" "C" "A" "B" "C" "B" "A"
 
 - Create a data frame =df= from the number =1=, the vector =1:10=, and =fac=.
   #+name: dataframe_unnamed
@@ -41,7 +41,7 @@
   : 'data.frame':	10 obs. of  3 variables:
   :  $ X1   : num  1 1 1 1 1 1 1 1 1 1
   :  $ X1.10: int  1 2 3 4 5 6 7 8 9 10
-  :  $ fac  : chr  "A" "C" "B" "B" ...
+  :  $ fac  : chr  "A" "A" "C" "B" ...
 
 - Create a data frame =df2= with the same content but name the first
   column =x= and the second column =y=:
@@ -55,7 +55,7 @@
   : 'data.frame':	10 obs. of  3 variables:
   :  $ x  : num  1 1 1 1 1 1 1 1 1 1
   :  $ y  : int  1 2 3 4 5 6 7 8 9 10
-  :  $ fac: chr  "A" "C" "B" "B" ...
+  :  $ fac: chr  "A" "A" "C" "B" ...
 
 - More information: check out ~example(data.frame)~ (on the R console).
 
@@ -89,14 +89,14 @@
   'data.frame':	10 obs. of  3 variables:
    $ x  : num  1 1 1 1 1 1 1 1 1 1
    $ y  : int  1 2 3 4 5 6 7 8 9 10
-   $ fac: chr  "A" "C" "B" "B" ...
+   $ fac: chr  "A" "A" "C" "B" ...
   'data.frame':	10 obs. of  6 variables:
    $ X1   : num  1 1 1 1 1 1 1 1 1 1
    $ X1.10: int  1 2 3 4 5 6 7 8 9 10
-   $ fac  : chr  "A" "C" "B" "B" ...
+   $ fac  : chr  "A" "A" "C" "B" ...
    $ x    : num  1 1 1 1 1 1 1 1 1 1
    $ y    : int  1 2 3 4 5 6 7 8 9 10
-   $ fac.1: chr  "A" "C" "B" "B" ...
+   $ fac.1: chr  "A" "A" "C" "B" ...
   #+end_example
 
 * Practice
@@ -129,7 +129,7 @@ Hints:
 
 #+RESULTS:
 #+begin_example
-  ID       items store price
+ID       items store price
 1 10        book  TRUE   2.5
 2 20         pen FALSE   8.0
 3 30    textbook  TRUE  10.0
@@ -152,16 +152,30 @@ Hints:
 
 - Use the dataframe =df= [[https://github.com/birkenkrahe/ds1/blob/main/img/7_df.png][shown here]] that you created earlier.
 
+- Run all code blocks up to this point with =C-c C-v b= (or =M-x
+  org-babel-execute-buffer=).
+
 - Select subsets using the index operators ~$~ and ~[]~:
   1) Select rows 1 to 2 using ~[]~
-  2) Select column 2 using ~[]~ and ~$~
-  3) Select row 3 of column 2  using ~[]~ and ~$~
-  4) Select rows 1 to 3 in columns 3 and 4 using ~[]~ and ~$~
-  5) Select rows 2 to 3, and columns 1 and 4 using ~[]~ and ~$~
-
-  #+begin_src R
+     #+begin_src R
   
-  #+end_src
+     #+end_src
+  2) Select column 1 using ~[]~ and ~$~
+x     #+begin_src R
+
+     #+end_src
+  3) Select row 3 of column 2  using ~[]~ and ~$~
+     #+begin_src R
+
+     #+end_src
+  4) Select rows 1 to 3 in columns 3 and 4 using ~[]~
+     #+begin_src R
+
+     #+end_src
+  5) Select rows 2 to 3, and columns 1 and 4 using ~[]~
+     #+begin_src R
+  
+     #+end_src
 
 * Select indices and values using ~which~, ~names~, ~%in%~
 
@@ -179,6 +193,8 @@ find a string is: ~string %in% vector~
 
 #+end_src
 
+#+RESULTS:
+
 * Select subsets using the ~subset~ function
 
 Using ~subset~,
@@ -190,32 +206,51 @@ Using ~subset~,
 
    #+end_src
 
+   #+RESULTS:
+
 * Some useful functions
 
 - ~dim~ gives you the data frame dimensions
-  #+begin_src
+  #+begin_src R
 
   #+end_src
+
+  #+RESULTS:
+
 - ~nrow~ gives you the number of rows
-  #+begin_src
+  #+begin_src R
 
   #+end_src
+
+  #+RESULTS:
+
 - ~ncol~ gives you the number of columns
-  #+begin_src
+  #+begin_src R
 
   #+end_src
+
+  #+RESULTS:
+
 - ~head(x=,N)~ gives you the first ~N~ rows
-  #+begin_src
+  #+begin_src R
 
   #+end_src
+
+  #+RESULTS:
+
 - ~order~ gives you the indices of an ordered vector
-  #+begin_src
+  #+begin_src R
 
   #+end_src
+
+  #+RESULTS:
+
 - ~subset~ gives you a subset of any data structure
-  #+begin_src
+  #+begin_src R
 
   #+end_src
+
+  #+RESULTS:
 
 * Trying to create a non-rectangular data frame
 
@@ -226,6 +261,8 @@ Using ~subset~,
 #+begin_src R
 
 #+end_src
+
+#+RESULTS:
 
 - [[https://github.com/birkenkrahe/ds1/blob/main/img/7_challenge.png][This image]] shows what's going on (for two vectors)
 
@@ -239,6 +276,8 @@ Using ~subset~,
 
   #+end_src
 
+  #+RESULTS:
+
 * Extract factor levels from a data frame
 
 - What's the class of ~tg$supp~?
@@ -249,12 +288,16 @@ Using ~subset~,
 
 #+end_src
 
+#+RESULTS:
+
 * What about lists?
 
 1) Check the object and storage type of =mtcars=
    #+begin_src R
 
    #+end_src
+
+   #+RESULTS:
 
 2) Extract the first element of the =mpg= vector of =mtcars=:
    - Using the accessor operator =$=
@@ -264,14 +307,20 @@ Using ~subset~,
 
    #+end_src
 
+   #+RESULTS:
+
 3) Check that both expressions are =identical=.
 
    #+begin_src R
 
    #+end_src
 
+   #+RESULTS:
+
 4) Create a =list= from =mtcars= and check its storage type.
 
    #+begin_src R
 
    #+end_src
+
+   #+RESULTS:
