@@ -28,7 +28,7 @@
   #+end_src
 
   #+RESULTS:
-  :  [1] "C" "A" "C" "C" "C" "A" "B" "B" "A" "C"
+  : [1] "A" "C" "A" "C" "C" "C" "C" "C" "B" "B"
 
 - Create a data frame =df= from the number =1=, the vector =1:10=, and =fac=.
   #+name: dataframe_unnamed
@@ -41,7 +41,7 @@
   : 'data.frame':       10 obs. of  3 variables:
   :  $ X1   : num  1 1 1 1 1 1 1 1 1 1
   :  $ X1.10: int  1 2 3 4 5 6 7 8 9 10
-  :  $ fac  : chr  "C" "A" "C" "C" ...
+  :  $ fac  : chr  "A" "C" "A" "C" ...
 
 - Create a data frame =df2= with the same content but name the first
   column =x= and the second column =y=:
@@ -55,7 +55,7 @@
   : 'data.frame':       10 obs. of  3 variables:
   :  $ x  : num  1 1 1 1 1 1 1 1 1 1
   :  $ y  : int  1 2 3 4 5 6 7 8 9 10
-  :  $ fac: chr  "C" "A" "C" "C" ...
+  :  $ fac: chr  "A" "C" "A" "C" ...
 
 - More information: check out ~example(data.frame)~ (on the R console).
 
@@ -89,14 +89,14 @@
   'data.frame': 10 obs. of  3 variables:
    $ x  : num  1 1 1 1 1 1 1 1 1 1
    $ y  : int  1 2 3 4 5 6 7 8 9 10
-   $ fac: chr  "C" "A" "C" "C" ...
+   $ fac: chr  "A" "C" "A" "C" ...
   'data.frame': 10 obs. of  6 variables:
    $ X1   : num  1 1 1 1 1 1 1 1 1 1
    $ X1.10: int  1 2 3 4 5 6 7 8 9 10
-   $ fac  : chr  "C" "A" "C" "C" ...
+   $ fac  : chr  "A" "C" "A" "C" ...
    $ x    : num  1 1 1 1 1 1 1 1 1 1
    $ y    : int  1 2 3 4 5 6 7 8 9 10
-   $ fac.1: chr  "C" "A" "C" "C" ...
+   $ fac.1: chr  "A" "C" "A" "C" ...
   #+end_example
 
 * Practice
@@ -129,7 +129,7 @@ Hints:
 
 #+RESULTS:
 #+begin_example
-  ID       items store price
+ID       items store price
 1 10        book  TRUE   2.5
 2 20         pen FALSE   8.0
 3 30    textbook  TRUE  10.0
@@ -148,7 +148,7 @@ Hints:
  $ price: num  2.5 8 10 7
 #+end_example
 
-* NEXT Select subsets using index operators
+* Select subsets using index operators
 
 - Use the dataframe =df= [[https://github.com/birkenkrahe/ds1/blob/main/img/7_df.png][shown here]] that you created earlier.
 
@@ -178,7 +178,7 @@ Hints:
      :   ID items store price
      : 1 10  book  TRUE   2.5
      : 2 20   pen FALSE   8.0
-     :   ID items store price
+     : ID items store price
      : 1 10  book  TRUE   2.5
      : 2 20   pen FALSE   8.0
 
@@ -202,16 +202,34 @@ Hints:
        df$items[3]
      #+end_src
 
+     #+RESULTS:
+     : [1] "textbook"
+     : [1] "textbook"
+
   4) Select rows 1 to 3 in columns 3 and 4 using ~[]~
      #+begin_src R
        df[1:3,3:4]
      #+end_src
+
+     #+RESULTS:
+     :   store price
+     : 1  TRUE   2.5
+     : 2 FALSE   8.0
+     : 3  TRUE  10.0
 
   5) Select rows 2 to 3, and columns 1 and 4 using ~[]~
      #+begin_src R
        df[2:3, c(1,4)]
        df[c(2,3), c("ID","price")]
      #+end_src
+
+     #+RESULTS:
+     :   ID price
+     : 2 20     8
+     : 3 30    10
+     : ID price
+     : 2 20     8
+     : 3 30    10
 
 * Select indices and values using ~which~, ~names~, ~%in%~
 
@@ -222,6 +240,11 @@ Select data frame indices using functions ~which~, ~colnames~ and ~%in%~:
      colnames(df) == "price"
      which(colnames(df) == "price")
    #+end_src
+
+   #+RESULTS:
+   : [1] "ID"    "items" "store" "price"
+   : [1] FALSE FALSE FALSE  TRUE
+   : [1] 4
 
 2) Store the row index for ~textbook~ in ~idx~
    #+begin_src R
@@ -268,21 +291,37 @@ find a string is: ~string %in% vector~
 
 Using ~subset~,
 1) Select product IDs above 20
-2) Select all books listed  (homework!)
+   #+begin_src R
+     subset(df, ID > 20, select=c("ID","items"))
+   #+end_src
+
+   #+RESULTS:
+   :   ID       items
+   : 3 30    textbook
+   : 4 40 pencil_case
+
+2) Select all books listed in the table:
+   #+begin_src R
+     subset(df, grepl("book",items), "items")
+     df[grepl("book", df$items), "items"]     
+   #+end_src
+   
+   #+RESULTS:
+   :      items
+   : 1     book
+   : 3 textbook
+   : [1] "book"     "textbook"
+
 3) Select all items cheaper than $11 and in stock
 #+begin_src R
-  subset(df, ID > 20, select="ID")
   subset(df, (price < 11) & (store==TRUE))
 #+end_src
 
 #+RESULTS:
-:   ID
-: 3 30
-: 4 40
 :   ID    items store price
 : 1 10     book  TRUE   2.5
 : 3 30 textbook  TRUE  10.0
-   
+
 - =subset= syntax reminder:
   #+begin_src R
     ## subset( target df, filter FUN, select COL)
@@ -292,7 +331,7 @@ Using ~subset~,
   #+end_src
 
   #+RESULTS:
-  :     Ozone Wind Month Day
+  : Ozone Wind Month Day
   : 1      41  7.4     5   1
   : 32     NA  8.6     6   1
   : 62    135  4.1     7   1

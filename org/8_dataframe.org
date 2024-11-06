@@ -274,20 +274,52 @@ find a string is: ~string %in% vector~
 
 Using ~subset~,
 1) Select product IDs above 20
-2) Select all books listed
-3) Select all items cheaper than $11 and in stock
-
    #+begin_src R
-     ## select subsets using the subset function
-     subset(df,"book"  df$items)
+     subset(df, ID > 20, select=c("ID","items"))
    #+end_src
 
    #+RESULTS:
-   :   ID       items store price
-   : 1 10        book  TRUE   2.5
-   : 2 20         pen FALSE   8.0
-   : 3 30    textbook  TRUE  10.0
-   : 4 40 pencil_case FALSE   7.0
+   :   ID       items
+   : 3 30    textbook
+   : 4 40 pencil_case
+
+2) Select all books listed in the table:
+   #+begin_src R
+     subset(df, grepl("book",items), "items")
+     df[grepl("book", df$items), "items"]     
+   #+end_src
+   
+   #+RESULTS:
+   :      items
+   : 1     book
+   : 3 textbook
+   : [1] "book"     "textbook"
+
+3) Select all items cheaper than $11 and in stock
+#+begin_src R
+  subset(df, (price < 11) & (store==TRUE))
+#+end_src
+
+#+RESULTS:
+:   ID    items store price
+: 1 10     book  TRUE   2.5
+: 3 30 textbook  TRUE  10.0
+
+- =subset= syntax reminder:
+  #+begin_src R
+    ## subset( target df, filter FUN, select COL)
+    ##str(airquality)
+    ##subset(airquality, Temp>80, select=c(Ozone,Temp)) |> head(4)
+    subset(airquality, Day==1, select= -c(Temp,Solar.R))
+  #+end_src
+
+  #+RESULTS:
+  : Ozone Wind Month Day
+  : 1      41  7.4     5   1
+  : 32     NA  8.6     6   1
+  : 62    135  4.1     7   1
+  : 93     39  6.9     8   1
+  : 124    96  6.9     9   1
 
 * Some useful functions
 
