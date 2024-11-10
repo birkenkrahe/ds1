@@ -3695,7 +3695,7 @@ complete it.
   about 1/2 hour to 1 hour.
 - You can upload the result to Canvas afterwards by the end of term.
 
-* Week 12: Data frames, Factors & =data.table= [Nov 4]
+* DONE Week 12: Data frames, Factors & =data.table= [Nov 4]
 #+attr_html: :width 600px: 
 [[../img/election2024.png]]
 
@@ -3906,8 +3906,8 @@ complete it.
 Download and open the code along file: [[https://tinyurl.com/df-codealong][tinyurl.com/df-codealong]]
 
 - [X] Creating data frames
-- [ ] Sub-setting data frames
-- [ ] Useful functions
+- [X] Sub-setting data frames
+- [X] Useful functions
 - [ ] Factor and list creation
 
 ** TODO Data frames full review
