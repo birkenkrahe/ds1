@@ -3919,7 +3919,11 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
 
 ** NEXT Data frame lab
 
-Download and complete the file: [[https://tinyurl.com/dataframe-lab][tinyurl.com/dataframe-lab]]
+- Download and complete the file: [[https://tinyurl.com/dataframe-lab][tinyurl.com/dataframe-lab]]
+
+- Remember to practice completed DataCamp lessons (5 questions/day)
+
+- For DSC 205 (followup course) you will get entry exercises & quiz
 
 ** TODO DataCamp review: Exploring categorical data
 
