@@ -491,7 +491,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    In addition: Warning message:
    In file(file, "rt") :
      cannot open file '../data/cleaning.csv': No such file or directory
-   'data.frame':	144 obs. of  1 variable:
+   'data.frame':        144 obs. of  1 variable:
     $ Passengers: num  112 118 132 129 121 135 148 148 136 119 ...
    Passengers
    1          112
@@ -647,9 +647,9 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+end_src
 
    #+RESULTS:
-   : Error in `$<-.data.frame`(`*tmp*`, Size, value = numeric(0)) : 
+   : Error in `$<-.data.frame`(`*tmp*`, Size, value = numeric(0)) :
    :   replacement has 0 rows, data has 144
-   : 'data.frame':	144 obs. of  2 variables:
+   : 'data.frame':      144 obs. of  2 variables:
    :  $ Passengers: num  112 118 132 129 121 135 148 148 136 119 ...
    :  $ Country   : chr  "BE" "BE" "BE" "BE" ...
 
@@ -1118,7 +1118,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    144        432      BE
    NULL
    NULL
-   Error in `$<-.data.frame`(`*tmp*`, Age, value = c(NA_integer_, NA_integer_,  : 
+   Error in `$<-.data.frame`(`*tmp*`, Age, value = c(NA_integer_, NA_integer_,  :
      replacement has 3 rows, data has 143
    In addition: Warning message:
    In mean.default(df$Age[-3]) :
@@ -1281,12 +1281,12 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+end_src
 
    #+RESULTS:
-   :    Passengers      Country         
-   :  Min.   :104.0   Length:143        
-   :  1st Qu.:180.5   Class :character  
-   :  Median :267.0   Mode  :character  
-   :  Mean   :281.4                     
-   :  3rd Qu.:361.0                     
+   :    Passengers      Country
+   :  Min.   :104.0   Length:143
+   :  1st Qu.:180.5   Class :character
+   :  Median :267.0   Mode  :character
+   :  Mean   :281.4
+   :  3rd Qu.:361.0
    :  Max.   :622.0
 
 5. What does Anscombe's quartet illustrate in the context of EDA?
@@ -1300,12 +1300,12 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    #+end_src
 
    #+RESULTS:
-   :        x1             x2             y1               y2       
-   :  Min.   : 4.0   Min.   : 4.0   Min.   : 4.260   Min.   :3.100  
-   :  1st Qu.: 6.5   1st Qu.: 6.5   1st Qu.: 6.315   1st Qu.:6.695  
-   :  Median : 9.0   Median : 9.0   Median : 7.580   Median :8.140  
-   :  Mean   : 9.0   Mean   : 9.0   Mean   : 7.501   Mean   :7.501  
-   :  3rd Qu.:11.5   3rd Qu.:11.5   3rd Qu.: 8.570   3rd Qu.:8.950  
+   :        x1             x2             y1               y2
+   :  Min.   : 4.0   Min.   : 4.0   Min.   : 4.260   Min.   :3.100
+   :  1st Qu.: 6.5   1st Qu.: 6.5   1st Qu.: 6.315   1st Qu.:6.695
+   :  Median : 9.0   Median : 9.0   Median : 7.580   Median :8.140
+   :  Mean   : 9.0   Mean   : 9.0   Mean   : 7.501   Mean   :7.501
+   :  3rd Qu.:11.5   3rd Qu.:11.5   3rd Qu.: 8.570   3rd Qu.:8.950
    :  Max.   :14.0   Max.   :14.0   Max.   :10.840   Max.   :9.260
 
    #+begin_src R :file ../img/anscombe.png :session *R* :results file graphics output :exports both
@@ -1640,10 +1640,10 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
    #+RESULTS:
    : $add.smooth
    : [1] TRUE
-   : 
+   :
    : $bitmapType
    : [1] "cairo"
-   : 
+   :
    : $browser
    : [1] "xdg-open"
 
@@ -1878,24 +1878,24 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
    #+RESULTS:
    #+begin_example
     [1] ".GlobalEnv"            "package:MASS"          "package:scatterplot3d"
-    [4] "package:dplyr"         "package:data.table"    "package:ggplot2"      
-    [7] "ESSR"                  "package:stats"         "package:graphics"     
-   [10] "package:grDevices"     "package:utils"         "package:datasets"     
+    [4] "package:dplyr"         "package:data.table"    "package:ggplot2"
+    [7] "ESSR"                  "package:stats"         "package:graphics"
+   [10] "package:grDevices"     "package:utils"         "package:datasets"
    [13] "package:methods"       "Autoloads"             "package:base"
-   [1] ".GlobalEnv"                                                    
-    [2] "/usr/lib/R/library/MASS"                                       
+   [1] ".GlobalEnv"
+    [2] "/usr/lib/R/library/MASS"
     [3] "/home/aletheia/R/x86_64-pc-linux-gnu-library/4.1/scatterplot3d"
-    [4] "/home/aletheia/R/x86_64-pc-linux-gnu-library/4.1/dplyr"        
-    [5] "/home/aletheia/R/x86_64-pc-linux-gnu-library/4.1/data.table"   
-    [6] "/home/aletheia/R/x86_64-pc-linux-gnu-library/4.1/ggplot2"      
-    [7] "ESSR"                                                          
-    [8] "/usr/lib/R/library/stats"                                      
-    [9] "/usr/lib/R/library/graphics"                                   
-   [10] "/usr/lib/R/library/grDevices"                                  
-   [11] "/usr/lib/R/library/utils"                                      
-   [12] "/usr/lib/R/library/datasets"                                   
-   [13] "/usr/lib/R/library/methods"                                    
-   [14] "Autoloads"                                                     
+    [4] "/home/aletheia/R/x86_64-pc-linux-gnu-library/4.1/dplyr"
+    [5] "/home/aletheia/R/x86_64-pc-linux-gnu-library/4.1/data.table"
+    [6] "/home/aletheia/R/x86_64-pc-linux-gnu-library/4.1/ggplot2"
+    [7] "ESSR"
+    [8] "/usr/lib/R/library/stats"
+    [9] "/usr/lib/R/library/graphics"
+   [10] "/usr/lib/R/library/grDevices"
+   [11] "/usr/lib/R/library/utils"
+   [12] "/usr/lib/R/library/datasets"
+   [13] "/usr/lib/R/library/methods"
+   [14] "Autoloads"
    [15] "/usr/lib/R/library/base"
    #+end_example
 
@@ -1909,57 +1909,57 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 
     #+RESULTS:
     #+begin_example
-    [1] "anscombe"       "area"           "course"         "course2"        "cyl"           
-     [6] "cyl_gear_table" "d"              "d.0"            "d0"             "d00"           
-    [11] "dd"             "df"             "df_ex"          "df_fac"         "df_lin"        
-    [16] "df_nonlin"      "df2"            "dt"             "DT"             "fac"           
-    [21] "foo"            "gear"           "i"              "ID"             "items"         
-    [26] "L3"             "mtcars"         "mtcars_list"    "Pima.tr2"       "point_size"    
-    [31] "price"          "s"              "sex"            "sexf"           "small"         
-    [36] "store"          "supp"           "supp15"         "tg"             "ToothGrowth"   
-    [41] "transparency"   "whiteside"      "x"              "x1"             "y"             
+    [1] "anscombe"       "area"           "course"         "course2"        "cyl"
+     [6] "cyl_gear_table" "d"              "d.0"            "d0"             "d00"
+    [11] "dd"             "df"             "df_ex"          "df_fac"         "df_lin"
+    [16] "df_nonlin"      "df2"            "dt"             "DT"             "fac"
+    [21] "foo"            "gear"           "i"              "ID"             "items"
+    [26] "L3"             "mtcars"         "mtcars_list"    "Pima.tr2"       "point_size"
+    [31] "price"          "s"              "sex"            "sexf"           "small"
+    [36] "store"          "supp"           "supp15"         "tg"             "ToothGrowth"
+    [41] "transparency"   "whiteside"      "x"              "x1"             "y"
     [46] "y1"
-    [1] "abbey"             "accdeaths"         "addterm"           "Aids2"            
-      [5] "Animals"           "anorexia"          "area"              "as.fractions"     
-      [9] "bacteria"          "bandwidth.nrd"     "bcv"               "beav1"            
-     [13] "beav2"             "biopsy"            "birthwt"           "Boston"           
-     [17] "boxcox"            "cabbages"          "caith"             "Cars93"           
-     [21] "cats"              "cement"            "chem"              "con2tr"           
-     [25] "contr.sdif"        "coop"              "corresp"           "cov.mcd"          
-     [29] "cov.mve"           "cov.rob"           "cov.trob"          "cpus"             
-     [33] "crabs"             "Cushings"          "DDT"               "deaths"           
-     [37] "denumerate"        "dose.p"            "drivers"           "dropterm"         
-     [41] "eagles"            "enlist"            "epil"              "eqscplot"         
-     [45] "farms"             "fbeta"             "fgl"               "fitdistr"         
-     [49] "forbes"            "fractions"         "frequency.polygon" "GAGurine"         
-     [53] "galaxies"          "gamma.dispersion"  "gamma.shape"       "gehan"            
-     [57] "genotype"          "geyser"            "gilgais"           "ginv"             
-     [61] "glm.convert"       "glm.nb"            "glmmPQL"           "hills"            
-     [65] "hist.FD"           "hist.scott"        "housing"           "huber"            
-     [69] "hubers"            "immer"             "Insurance"         "is.fractions"     
-     [73] "isoMDS"            "kde2d"             "lda"               "ldahist"          
-     [77] "leuk"              "lm.gls"            "lm.ridge"          "lmsreg"           
-     [81] "lmwork"            "loglm"             "loglm1"            "logtrans"         
-     [85] "lqs"               "lqs.formula"       "ltsreg"            "mammals"          
-     [89] "mca"               "mcycle"            "Melanoma"          "menarche"         
-     [93] "michelson"         "minn38"            "motors"            "muscle"           
+    [1] "abbey"             "accdeaths"         "addterm"           "Aids2"
+      [5] "Animals"           "anorexia"          "area"              "as.fractions"
+      [9] "bacteria"          "bandwidth.nrd"     "bcv"               "beav1"
+     [13] "beav2"             "biopsy"            "birthwt"           "Boston"
+     [17] "boxcox"            "cabbages"          "caith"             "Cars93"
+     [21] "cats"              "cement"            "chem"              "con2tr"
+     [25] "contr.sdif"        "coop"              "corresp"           "cov.mcd"
+     [29] "cov.mve"           "cov.rob"           "cov.trob"          "cpus"
+     [33] "crabs"             "Cushings"          "DDT"               "deaths"
+     [37] "denumerate"        "dose.p"            "drivers"           "dropterm"
+     [41] "eagles"            "enlist"            "epil"              "eqscplot"
+     [45] "farms"             "fbeta"             "fgl"               "fitdistr"
+     [49] "forbes"            "fractions"         "frequency.polygon" "GAGurine"
+     [53] "galaxies"          "gamma.dispersion"  "gamma.shape"       "gehan"
+     [57] "genotype"          "geyser"            "gilgais"           "ginv"
+     [61] "glm.convert"       "glm.nb"            "glmmPQL"           "hills"
+     [65] "hist.FD"           "hist.scott"        "housing"           "huber"
+     [69] "hubers"            "immer"             "Insurance"         "is.fractions"
+     [73] "isoMDS"            "kde2d"             "lda"               "ldahist"
+     [77] "leuk"              "lm.gls"            "lm.ridge"          "lmsreg"
+     [81] "lmwork"            "loglm"             "loglm1"            "logtrans"
+     [85] "lqs"               "lqs.formula"       "ltsreg"            "mammals"
+     [89] "mca"               "mcycle"            "Melanoma"          "menarche"
+     [93] "michelson"         "minn38"            "motors"            "muscle"
      [97] "mvrnorm"           "nclass.freq"       "neg.bin"           "negative.binomial"
-    [101] "negexp.SSival"     "newcomb"           "nlschools"         "npk"              
-    [105] "npr1"              "Null"              "oats"              "OME"              
-    [109] "painters"          "parcoord"          "petrol"            "phones"           
-    [113] "Pima.te"           "Pima.tr"           "Pima.tr2"          "polr"             
-    [117] "psi.bisquare"      "psi.hampel"        "psi.huber"         "qda"              
-    [121] "quine"             "Rabbit"            "rational"          "renumerate"       
-    [125] "rlm"               "rms.curv"          "rnegbin"           "road"             
-    [129] "rotifer"           "Rubber"            "sammon"            "select"           
-    [133] "Shepard"           "ships"             "shoes"             "shrimp"           
-    [137] "shuttle"           "Sitka"             "Sitka89"           "Skye"             
-    [141] "snails"            "SP500"             "stdres"            "steam"            
-    [145] "stepAIC"           "stormer"           "studres"           "survey"           
-    [149] "synth.te"          "synth.tr"          "theta.md"          "theta.ml"         
-    [153] "theta.mm"          "topo"              "Traffic"           "truehist"         
-    [157] "ucv"               "UScereal"          "UScrime"           "VA"               
-    [161] "waders"            "whiteside"         "width.SJ"          "write.matrix"     
+    [101] "negexp.SSival"     "newcomb"           "nlschools"         "npk"
+    [105] "npr1"              "Null"              "oats"              "OME"
+    [109] "painters"          "parcoord"          "petrol"            "phones"
+    [113] "Pima.te"           "Pima.tr"           "Pima.tr2"          "polr"
+    [117] "psi.bisquare"      "psi.hampel"        "psi.huber"         "qda"
+    [121] "quine"             "Rabbit"            "rational"          "renumerate"
+    [125] "rlm"               "rms.curv"          "rnegbin"           "road"
+    [129] "rotifer"           "Rubber"            "sammon"            "select"
+    [133] "Shepard"           "ships"             "shoes"             "shrimp"
+    [137] "shuttle"           "Sitka"             "Sitka89"           "Skye"
+    [141] "snails"            "SP500"             "stdres"            "steam"
+    [145] "stepAIC"           "stormer"           "studres"           "survey"
+    [149] "synth.te"          "synth.tr"          "theta.md"          "theta.ml"
+    [153] "theta.mm"          "topo"              "Traffic"           "truehist"
+    [157] "ucv"               "UScereal"          "UScrime"           "VA"
+    [161] "waders"            "whiteside"         "width.SJ"          "write.matrix"
     [165] "wtloss"
     #+end_example
 
@@ -2188,7 +2188,7 @@ my mathematics professor said 'I won't have bad language in my class."
    #+end_src
 
    #+RESULTS:
-   : Jim  Joe Jeff 
+   : Jim  Joe Jeff
    :  180  170  175
 
    #+begin_src R :session *R* :results output :exports both
@@ -2210,7 +2210,7 @@ my mathematics professor said 'I won't have bad language in my class."
    #+end_src
 
    #+RESULTS:
-   : Jim         
+   : Jim
    : 180 170 175
    : [1] "Jim" ""    ""
 
@@ -2228,7 +2228,7 @@ my mathematics professor said 'I won't have bad language in my class."
    : [1] "Jim" ""    ""
    : [1] "Jim" "Joe" ""
    : [1] "Jim"  "Joe"  "Jeff"
-   : Jim  Joe Jeff 
+   : Jim  Joe Jeff
    :  180  170  175
 
 4. How can I extract values from a named vector?
@@ -2241,11 +2241,11 @@ my mathematics professor said 'I won't have bad language in my class."
    #+end_src
 
    #+RESULTS:
-   : Jim  Joe Jeff 
+   : Jim  Joe Jeff
    :  180  170  175
-   : Joe 
+   : Joe
    : 170
-   : Joe 
+   : Joe
    : 170
 
    #+begin_src R :session *R* :results output :exports both
@@ -2255,11 +2255,11 @@ my mathematics professor said 'I won't have bad language in my class."
    #+end_src
 
    #+RESULTS:
-   :  Jim Jeff 
+   :  Jim Jeff
    :  180  175
-   : Joe 
+   : Joe
    : 170
-   : Jim  Joe Jeff 
+   : Jim  Joe Jeff
    :  180  170  175
 
    #+begin_src R :session *R* :results output :exports both
@@ -2286,7 +2286,7 @@ my mathematics professor said 'I won't have bad language in my class."
    #+end_src
 
    #+RESULTS:
-   : Jim  Joe Jeff 
+   : Jim  Joe Jeff
    :  180  170  175
 
    #+begin_quote
@@ -2305,11 +2305,11 @@ my mathematics professor said 'I won't have bad language in my class."
    #+end_src
 
    #+RESULTS:
-   : Jim   Joe  Jeff 
+   : Jim   Joe  Jeff
    :  TRUE FALSE  TRUE
-   : Jim Jeff 
+   : Jim Jeff
    :  180  175
-   : Jim Jeff 
+   : Jim Jeff
    :  180  175
 
    #+begin_src R :session *R* :results output :exports both
@@ -2319,9 +2319,9 @@ my mathematics professor said 'I won't have bad language in my class."
    #+end_src
 
    #+RESULTS:
-   : Jim Jeff 
+   : Jim Jeff
    :    1    3
-   : Jim Jeff 
+   : Jim Jeff
    :  180  175
 
 6. And what you can do with vectors?
@@ -2526,7 +2526,7 @@ Finish "Arithmetic in R":
    #+end_src
 
    #+RESULTS:
-   : Mon Tue Wed Thu Fri 
+   : Mon Tue Wed Thu Fri
    :  76  75  77  79  81
    : Named num [1:5] 76 75 77 79 81
    :  - attr(*, "names")= chr [1:5] "Mon" "Tue" "Wed" "Thu" ...
@@ -2547,15 +2547,15 @@ Finish "Arithmetic in R":
 
    #+RESULTS:
    #+begin_example
-     Mon   Tue   Wed   Thu   Fri 
+     Mon   Tue   Wed   Thu   Fri
    FALSE FALSE FALSE FALSE  TRUE
-   Mon Wed 
+   Mon Wed
     76  77
-   Fri 
+   Fri
     81
-   Mon Tue Wed Thu 
+   Mon Tue Wed Thu
     76  75  77  79
-   Mon 
+   Mon
     76
    #+end_example
 
@@ -2587,12 +2587,12 @@ Finish "Arithmetic in R":
    #+end_src
 
    #+RESULTS:
-   : Mon Fri 
+   : Mon Fri
    :  76  81
    : [1] 76.75
-   : Mon   Tue   Wed   Thu   Fri 
+   : Mon   Tue   Wed   Thu   Fri
    :  TRUE  TRUE  TRUE  TRUE FALSE
-   : Mon Tue Wed Thu 
+   : Mon Tue Wed Thu
    :  76  75  77  79
    : [1] 76.75
 
@@ -2607,7 +2607,7 @@ Finish "Arithmetic in R":
 
    #+RESULTS:
    : [1] "Mon" "Tue" "Wed" "Thu" "Fri"
-   : Mon Tue Wed Thu Fri 
+   : Mon Tue Wed Thu Fri
    :  76  75  77  79  81
    : [1] 76 75 77 79 81
 
@@ -2690,7 +2690,7 @@ Finish "Arithmetic in R":
     #+end_src
 
     #+RESULTS:
-    :   Mon   Tue   Wed   Thu   Fri 
+    :   Mon   Tue   Wed   Thu   Fri
     :  TRUE  TRUE  TRUE  TRUE FALSE
     : [1] 77.75
     : [1] 76.75
@@ -2863,7 +2863,7 @@ Finish "Arithmetic in R":
    #+end_src
 
    #+RESULTS:
-   : Jeff  Jim Jane  Joe 
+   : Jeff  Jim Jane  Joe
    :  "A"  "C"  "B"  "B"
    : [1] "Jeff" "Jim"  "Jane" "Joe"
 
@@ -2876,8 +2876,8 @@ Finish "Arithmetic in R":
    #+end_src
 
    #+RESULTS:
-   : Jeff  Jim Jane  Joe 
-   :    A    C    B    B 
+   : Jeff  Jim Jane  Joe
+   :    A    C    B    B
    : Levels: C < B < A
 
 10. Store ~grades~ and ~grades_f~ in a ~data.frame~ named ~df~, and then apply
@@ -2896,12 +2896,12 @@ Finish "Arithmetic in R":
     Jim       C        C
     Jane      B        B
     Joe       B        B
-    'data.frame':	4 obs. of  2 variables:
+    'data.frame':       4 obs. of  2 variables:
      $ grades  : chr  "A" "C" "B" "B"
      $ grades_f: Ord.factor w/ 3 levels "C"<"B"<"A": 3 1 2 2
     grades          grades_f
-     Length:4           C:1     
-     Class :character   B:2     
+     Length:4           C:1
+     Class :character   B:2
      Mode  :character   A:1
     #+end_example
 
@@ -3135,7 +3135,7 @@ Code alongside me!
 
    #+RESULTS:
    : [1] 18 19 20 26 27 28
-   : [1] "Fiat 128"       "Honda Civic"    "Toyota Corolla" "Fiat X1-9"      "Porsche 914-2" 
+   : [1] "Fiat 128"       "Honda Civic"    "Toyota Corolla" "Fiat X1-9"      "Porsche 914-2"
    : [6] "Lotus Europa"
 
    Works as well:
@@ -3277,12 +3277,12 @@ constancy, and continuity of the digital world in the face of change.
    #+end_src
 
    #+RESULTS:
-   :     Numbers           Repeats  
-   :  Min.   :-10.900   Min.   :-9  
-   :  1st Qu.: -6.925   1st Qu.:-5  
-   :  Median : -2.950   Median :-1  
-   :  Mean   : -2.950   Mean   :-1  
-   :  3rd Qu.:  1.025   3rd Qu.: 3  
+   :     Numbers           Repeats
+   :  Min.   :-10.900   Min.   :-9
+   :  1st Qu.: -6.925   1st Qu.:-5
+   :  Median : -2.950   Median :-1
+   :  Mean   : -2.950   Mean   :-1
+   :  3rd Qu.:  1.025   3rd Qu.: 3
    :  Max.   :  5.000   Max.   : 7
 
 5. Filter rows with positive =Numbers= and =Repeats= below 5:
@@ -3318,8 +3318,8 @@ constancy, and continuity of the digital world in the face of change.
    #+RESULTS:
    :  [1] "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane" "Jane"
    : [13] "Jane" "Jane" "Jeff" "Jeff" "Jeff" "Jeff" "Jeff" "Jeff" "Jeff" "Jeff" "Jeff" "Jeff"
-   : [25] "Jeff" "Jeff" "Jeff" "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim" 
-   : [37] "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Joe"  "Joe"  "Joe"  "Joe"  "Joe"  "Joe"  "Joe" 
+   : [25] "Jeff" "Jeff" "Jeff" "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Jim"
+   : [37] "Jim"  "Jim"  "Jim"  "Jim"  "Jim"  "Joe"  "Joe"  "Joe"  "Joe"  "Joe"  "Joe"  "Joe"
    : [49] "Joe"  "Joe"  "Joe"  "Joe"  "Joe"  "Joe"
    : [1]  2  6 10 14 18 22 26 30 34 38 42 46 50 54  4  8 12 16 20 24 28 32 36 40 44 48 52  1  5
    : [30]  9 13 17 21 25 29 33 37 41 45 49 53  3  7 11 15 19 23 27 31 35 39 43 47 51
@@ -3406,7 +3406,7 @@ constancy, and continuity of the digital world in the face of change.
    #+end_src
 
    #+RESULTS:
-   : Error in data.frame(foo2, bar2) : 
+   : Error in data.frame(foo2, bar2) :
    :   arguments imply differing number of rows: 10, 6
 
    Solution:
@@ -3450,16 +3450,16 @@ constancy, and continuity of the digital world in the face of change.
 
    #+RESULTS:
    #+begin_example
-    [1] "Mazda RX4"           "Mazda RX4 Wag"       "Datsun 710"         
-    [4] "Hornet 4 Drive"      "Hornet Sportabout"   "Valiant"            
-    [7] "Duster 360"          "Merc 240D"           "Merc 230"           
-   [10] "Merc 280"            "Merc 280C"           "Merc 450SE"         
-   [13] "Merc 450SL"          "Merc 450SLC"         "Cadillac Fleetwood" 
-   [16] "Lincoln Continental" "Chrysler Imperial"   "Fiat 128"           
-   [19] "Honda Civic"         "Toyota Corolla"      "Toyota Corona"      
-   [22] "Dodge Challenger"    "AMC Javelin"         "Camaro Z28"         
-   [25] "Pontiac Firebird"    "Fiat X1-9"           "Porsche 914-2"      
-   [28] "Lotus Europa"        "Ford Pantera L"      "Ferrari Dino"       
+    [1] "Mazda RX4"           "Mazda RX4 Wag"       "Datsun 710"
+    [4] "Hornet 4 Drive"      "Hornet Sportabout"   "Valiant"
+    [7] "Duster 360"          "Merc 240D"           "Merc 230"
+   [10] "Merc 280"            "Merc 280C"           "Merc 450SE"
+   [13] "Merc 450SL"          "Merc 450SLC"         "Cadillac Fleetwood"
+   [16] "Lincoln Continental" "Chrysler Imperial"   "Fiat 128"
+   [19] "Honda Civic"         "Toyota Corolla"      "Toyota Corona"
+   [22] "Dodge Challenger"    "AMC Javelin"         "Camaro Z28"
+   [25] "Pontiac Firebird"    "Fiat X1-9"           "Porsche 914-2"
+   [28] "Lotus Europa"        "Ford Pantera L"      "Ferrari Dino"
    [31] "Maserati Bora"       "Volvo 142E"
    [1] "1"  "2"  "3"  "4"  "5"  "6"  "7"  "8"  "9"  "10" "11" "12" "13" "14" "15" "16" "17"
    [18] "18" "19" "20" "21" "22" "23" "24" "25" "26" "27" "28" "29" "30" "31" "32"
@@ -3656,9 +3656,9 @@ constancy, and continuity of the digital world in the face of change.
 
     #+RESULTS:
     : [1] "Joe"  "Jim"  "Jane"
-    : Joe  Jim Jane 
+    : Joe  Jim Jane
     :  180  178  172
-    : Joe  Jim Jane 
+    : Joe  Jim Jane
     :    1    2    3
     : [1] "172" "178" "180"
 
@@ -3699,7 +3699,7 @@ complete it.
 - You can upload the result to Canvas afterwards by the end of term.
 
 ** Week 12: Data frames, Factors & =data.table= [Nov 4]
-#+attr_html: :width 600px: 
+#+attr_html: :width 600px:
 [[../img/election2024.png]]
 
 *REMEMBER: NO CLASS MEETING THIS WEEK ON FRIDAY*
@@ -3712,7 +3712,7 @@ complete it.
 - [ ] *Practice* with data frames and factors
 
 *** DONE DataCamp review: =data.table=
-#+attr_html: :width 150px: 
+#+attr_html: :width 150px:
 [[../img/dtlogo.png]]
 
 1) What is =data.table=? How can you get it? How can you find out more?
@@ -3725,10 +3725,10 @@ complete it.
 
    - More information at [[https://r-datatable.com][r-datatable.com]]: documentation, getting
      started tutorial, examples, and cheat sheet.
-        #+end_quote
+   #+end_quote
 
    #+begin_src R
-     # R console: install.packages("data.table")
+                                             # R console: install.packages("data.table")
      library(data.table)
    #+end_src
 
@@ -3736,7 +3736,7 @@ complete it.
    : data.table 1.16.0 using 2 threads (see ?getDTthreads).  Latest news: r-datatable.com
 
 2) How would you create a =data.table= from scratch?
-   
+
    #+begin_src R
      ## Load data.table package
      library(data.table)
@@ -3750,7 +3750,7 @@ complete it.
 
      ## Display the data.table
      dt
-   #+end_src   
+   #+end_src
 
    #+RESULTS:
    :       ID    Name Score
@@ -3775,7 +3775,7 @@ complete it.
 
    #+RESULTS:
    : Error in library(dplyr) : there is no package called ‘dplyr’
-   : Error in tibble(ID = 1:5, Name = c("Alice", "Bob", "Charlie", "David",  : 
+   : Error in tibble(ID = 1:5, Name = c("Alice", "Bob", "Charlie", "David",  :
    :   could not find function "tibble"
 
 3) How would you turn a =data.frame= into a =data.table=?
@@ -3795,7 +3795,7 @@ complete it.
      3:          4.7         3.2          1.3         0.2    setosa
      4:          4.6         3.1          1.5         0.2    setosa
      5:          5.0         3.6          1.4         0.2    setosa
-    ---                                                            
+    ---
    146:          6.7         3.0          5.2         2.3 virginica
    147:          6.3         2.5          5.0         1.9 virginica
    148:          6.5         3.0          5.2         2.0 virginica
@@ -3810,7 +3810,7 @@ complete it.
    By contrast, =data.frame= prints everything
    #+begin_src R
      head(iris)
-     tail(iris)     
+     tail(iris)
    #+end_src
 
    #+RESULTS:
@@ -3834,24 +3834,24 @@ complete it.
 4) How can you use =data.table= to filter rows, select and group by
    columns?
 
-  #+begin_src R 
-    ## FROM[WHERE, SELECT, GROUP BY]
-    ## DT  [i,     j,      by]
+   #+begin_src R
+     ## FROM[WHERE, SELECT, GROUP BY]
+     ## DT  [i,     j,      by]
 
-    ## Filter rows i with petal width greater than 1.0
-    DT[ Petal.Width > 1.0, ] |> head()
+     ## Filter rows i with petal width greater than 1.0
+     DT[ Petal.Width > 1.0, ] |> head()
 
-    ## Select the petal length column
-    DT[ Petal.Width > 1.0, Petal.Length ] |> head()
+     ## Select the petal length column
+     DT[ Petal.Width > 1.0, Petal.Length ] |> head()
 
-    ## Compute the average of the resulting values        
-    DT[ Petal.Width > 1.0, mean(Petal.Length)] 
+     ## Compute the average of the resulting values
+     DT[ Petal.Width > 1.0, mean(Petal.Length)]
 
-    ## Group by species
-    DT[ Petal.Width > 1.0, mean(Petal.Length), by = Species] -> dt
-    dt
+     ## Group by species
+     DT[ Petal.Width > 1.0, mean(Petal.Length), by = Species] -> dt
+     dt
 
-    ## Rename new column
+     ## Rename new column
      setnames(dt, "V1", "Average Petal Length")
      dt
    #+end_src
@@ -3888,7 +3888,7 @@ complete it.
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	150 obs. of  5 variables:
+   : 'data.frame':      150 obs. of  5 variables:
    :  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
    :  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
    :  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
@@ -3914,10 +3914,9 @@ Download and open the code along file: [[https://tinyurl.com/df-codealong][tinyu
 - [X] Useful functions
 - [ ] Factor and list creation
 
-
 * IN PROGRESS Part IV: EDA and Applications
 ** Week 13: =data.frame= lab & Categorical EDA & Lists [Nov 11]
-#+attr_html: :width 700px: 
+#+attr_html: :width 700px:
 [[../img/wedding_at_cana.jpg]]
 
 Image: The largest painting in the Louvre: Wedding in Cana (Paolo
@@ -3932,7 +3931,126 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
 - For DSC 205 (followup course) you will get entry exercises & quiz
 
 
-* TODO DataCamp review: Exploring categorical data (deep dive)
+*** DONE Impromptu lecture: Client-Server Model and Data Science
+#+attr_html: :width 700px:
+[[../img/client_server.png]]
+
+**** Introduction
+- Today, we’ll discuss the client-server-memory model, a core concept
+  in understanding how data is processed, stored, and accessed in
+  distributed systems.
+- We’ll also explore how different programming languages interact with
+  data structures and the types of issues that commonly arise in this
+  context.
+
+**** The Client-Server-Memory Model
+- We can represent the system’s main components as a three-dimensional
+  framework consisting of:
+  1. **Client** - The end-user interface where requests originate and
+     responses are delivered.
+  2. **Server** - Acts as an intermediary that processes requests,
+     applies logic, accesses data, and returns results.
+  3. **Memory** - Storage of data that is accessed or modified based on
+     client requests.
+
+***** Diagram Analysis: Client-Server-Memory as a Coordinate System
+- This diagram presents the client, server, and memory as three
+  interconnected dimensions.
+- Placing data and problems within this "coordinate" system allows us
+  to understand:
+  - Where data resides
+  - Where specific issues arise
+  - Which component or layer is responsible for addressing these issues
+
+***** Common Problems in Each Dimension
+- By considering each pair of dimensions, we can identify common
+  issues:
+  1. **Client-Server**
+     - **Network Latency**: Delays in sending/receiving data.
+     - **Request Failures**: Failed requests due to network issues or
+       incorrect client configurations.
+     - **Authentication Problems**: Incorrect or unauthorized access
+       attempts.
+  2. **Server-Memory**
+     - **Data Consistency**: Ensuring the data remains correct and
+       updated.
+     - **Query Optimization**: Minimizing the time and resources
+       required for data retrieval.
+     - **Caching Strategies**: Storing frequently accessed data in
+       faster memory for quick retrieval.
+  3. **Memory-Client (via server)**
+     - **Data Formatting**: Converting data to a format that the client
+       can handle.
+     - **Access Permissions**: Ensuring clients access only the data
+       they’re authorized to view.
+     - **Client-side Caching**: Reducing server requests by storing some
+       data temporarily on the client.
+
+**** Enhancing the Model: Examples of Data and Problem Types
+- Labeling specific examples within each component can help clarify
+  the purpose of the coordinate system.
+- Examples:
+  - **Client**: User interface errors, data validation issues
+  - **Server**: Processing delays, load balancing, data transformations
+  - **Memory**: Data consistency issues, RDBMS tables, NoSQL documents
+
+***** Diagram Analysis: Examples of Data and Problem Types
+- Enhancing the diagram with examples:
+  - Adding labels to each dimension to clarify types of **data** (e.g.,
+    RDBMS tables, NoSQL documents) and **problems** (e.g., latency,
+    consistency).
+  - This will help students visualize where common issues arise and
+    how they relate to specific data types.
+
+**** Programming Languages and Data Structures
+- Moving to the right side of the diagram, we observe a representation
+  of various programming languages and their typical data structures:
+  - **R**: Factors, data frames - commonly used in statistical and data
+    analysis.
+  - **Python**: Dictionaries - a versatile, high-level data structure
+    for key-value pairs.
+  - **Java**: Classes - a fundamental data structure for object-oriented
+    programming.
+  - **C**: Arrays - low-level, fixed-size collections crucial in systems
+    programming.
+
+***** Core Concepts and "Algol-type" Influence
+- At the center of the diagram is a node labeled **Core
+  ("Algol-type")**.
+- "Algol-type" refers to the influence of the ALGOL programming
+  language family, which laid the groundwork for structured
+  programming.
+- This "Core" likely represents the foundational algorithms and data
+  structures that are shared across high-level languages.
+
+***** Clarifying the Role of Assembly Programming
+- A student might wonder if "Core" includes assembly programming.
+  - While assembly programming is foundational, it operates at a lower
+    level than high-level languages influenced by ALGOL.
+  - The "Core" here seems to refer to common data structures and
+    principles across high-level languages, rather than low-level
+    hardware instructions in assembly.
+- This distinction helps clarify that **assembly is more of a separate
+  foundational layer** focused on hardware specifics, while "Core" in
+  this context represents abstracted, cross-language principles and
+  data structures.
+
+**** Summary and Enhancing the Diagram for Clarity
+- The left side of the diagram (Client-Server-Memory) effectively
+  models where data resides and where issues are likely to arise in a
+  client-server setup.
+- The right side provides a view of typical data structures in various
+  programming languages and their shared foundations.
+
+**** Conclusion
+- Understanding the client-server-memory model and the core data
+  structures in programming languages provides a foundation for
+  exploring distributed systems and data management.
+- This lecture has reviewed key concepts and potential enhancements
+  for the diagram to make it a more effective learning resource.
+
+
+* IN PROGRESS DataCamp review: Exploring categorical data (deep dive)
 
 ** Is the =factor= data structure common in data sets?
 #+begin_quote
@@ -3950,7 +4068,7 @@ e.g. =ToothGrowth=, =mtcars=, =airquality=.
 #+end_src
 
 #+RESULTS:
-: 'data.frame':	153 obs. of  6 variables:
+: 'data.frame': 153 obs. of  6 variables:
 :  $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
 :  $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
 :  $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...
@@ -3970,7 +4088,7 @@ using =unique=, and/or check the data sheet (for example with =help=).
 
 #+RESULTS:
 #+begin_example
-'data.frame':	32 obs. of  11 variables:
+'data.frame':   32 obs. of  11 variables:
  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
  $ disp: num  160 160 108 258 360 ...
@@ -4015,7 +4133,7 @@ Let's build a dataframe from factors:
 #+end_src
 
 #+RESULTS:
-: 'data.frame':	32 obs. of  3 variables:
+: 'data.frame': 32 obs. of  3 variables:
 :  $ cyl: Factor w/ 3 levels "4","6","8": 2 2 1 2 3 2 3 1 1 2 ...
 :  $ vs : Factor w/ 2 levels "0","1": 1 1 2 2 1 2 1 2 2 2 ...
 :  $ am : Factor w/ 2 levels "0","1": 2 2 2 1 1 1 1 1 1 1 ...
@@ -4039,7 +4157,7 @@ simple examples that you can produce without much thinking.
 #+end_src
 
 #+RESULTS:
-: 'data.frame':	4 obs. of  2 variables:
+: 'data.frame': 4 obs. of  2 variables:
 :  $ name      : chr  "Alice" "Bob" "Carol" "David"
 :  $ blood_type: chr  "A" "B" "AB" "O"
 
@@ -4051,9 +4169,9 @@ Turn the =character= vector into a =factor=:
 #+end_src
 
 #+RESULTS:
-: [1] A  B  AB O 
+: [1] A  B  AB O
 : Levels: A AB B O
-: [1] A  B  AB O 
+: [1] A  B  AB O
 : Levels: A AB B O
 
 #+begin_src R
@@ -4062,7 +4180,7 @@ Turn the =character= vector into a =factor=:
 
 #+RESULTS:
 : type
-:  A AB  B  O 
+:  A AB  B  O
 :  1  1  1  1
 
 ** Can you give a concrete example for these applications of =factor= data?
