@@ -3987,6 +3987,7 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
        data temporarily on the client.
 
 **** Enhancing the Model: Examples of Data and Problem Types
+
 - Labeling specific examples within each component can help clarify
   the purpose of the coordinate system.
 - Examples:
@@ -4050,9 +4051,9 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
   for the diagram to make it a more effective learning resource.
 
 
-* IN PROGRESS DataCamp review: Exploring categorical data (deep dive)
+*** IN PROGRESS DataCamp review: Exploring categorical data (deep dive)
 
-** Is the =factor= data structure common in data sets?
+**** Is the =factor= data structure common in data sets?
 #+begin_quote
 No. Outside of R, data sets are stored either in CSV format, or in the
 form of SQL databases (tables), and categorical variables in these
@@ -4076,7 +4077,7 @@ e.g. =ToothGrowth=, =mtcars=, =airquality=.
 :  $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
 :  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
 
-** How can you find out if a variable is (suited to be) a factor?
+**** How can you find out if a variable is (suited to be) a factor?
 #+begin_quote
 Look at the structure of the dataset and check the values for =levels=
 using =unique=, and/or check the data sheet (for example with =help=).
@@ -4115,7 +4116,7 @@ Using =unique=:
 : Levels: OJ VC
 : [1] 5 6 7 8 9
 
-** How can you display the levels of a factor variable in R?
+**** How can you display the levels of a factor variable in R?
 #+begin_quote
 Using the =levels= function. If you have multiple =factor= variables, you
 can put them into a =data.frame=.
@@ -4138,7 +4139,7 @@ Let's build a dataframe from factors:
 :  $ vs : Factor w/ 2 levels "0","1": 1 1 2 2 1 2 1 2 2 2 ...
 :  $ am : Factor w/ 2 levels "0","1": 2 2 2 1 1 1 1 1 1 1 ...
 
-** What is the purpose of using factors in R for categorical data analysis?
+**** What is the purpose of using factors in R for categorical data analysis?
 #+begin_quote
 Factors allow for easy organization, labeling, summarization, and
 visualization of categorical data. What does this mean?
@@ -4183,34 +4184,34 @@ Turn the =character= vector into a =factor=:
 :  A AB  B  O
 :  1  1  1  1
 
-** Can you give a concrete example for these applications of =factor= data?
+**** Can you give a concrete example for these applications of =factor= data?
 
-** What does the `table()` function accomplish when used on categorical variables in R?
+**** What does the `table()` function accomplish when used on categorical variables in R?
 #+begin_quote
 It provides a frequency count of the combinations of factor levels.
 #+end_quote
 
-** What does setting `position = "fill"` in a `geom_bar()` plot do?
+**** What does setting `position = "fill"` in a `geom_bar()` plot do?
 #+begin_quote
 It normalizes bar heights to represent proportions rather than raw counts.
 #+end_quote
 
-** How would this look in base R? How do you get a proportional stacked bar plot?
+**** How would this look in base R? How do you get a proportional stacked bar plot?
 
-** How does a faceted bar chart differ from a stacked bar chart?
+**** How does a faceted bar chart differ from a stacked bar chart?
 #+begin_quote
 A faceted bar chart creates separate subplots for each category, while
 a stacked bar chart combines categories into a single plot.
 #+end_quote
 
-** Why might one choose a bar chart over a pie chart for categorical data analysis?
+**** Why might one choose a bar chart over a pie chart for categorical data analysis?
 #+begin_quote
 Bar charts are generally easier to interpret and allow for better
 comparison of categories.
 #+end_quote
 
 
-*** TODO R Lists
+***** TODO R Lists
 
 
 ** Week 14: EDA: numerical data & visualization [Nov 25]
@@ -4219,7 +4220,8 @@ comparison of categories.
 #+attr_html: :width 600px
 [[../img/checklist.png]]
 
-** Week 16: Final exam (optional) [Dec 9]
+
+** Week 16: Final exam (optional) [Dec 13]
 
 According to the [[https://assets.speakcdn.com/assets/2433/fa24_final_exam_schedule.pdf][published exam schedule]], the final exam will take
 place on Friday, December 13, at 10:30am-12:30pm.
