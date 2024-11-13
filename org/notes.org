@@ -3,7 +3,8 @@
 #+SUBTITLE: DSC 105 Data Structures Lyon College Fall 2024
 #+STARTUP: overview hideblocks indent entitiespretty:
 #+PROPERTY: header-args:R :session *R* :results output :exports both
-* DONE Week 0 - Orientation ([[https://github.com/birkenkrahe/ds1/blob/main/org/0_overview.org][GitHub]])
+* DONE Part I: Introduction to Data Science
+** Week 0 - Orientation ([[https://github.com/birkenkrahe/ds1/blob/main/org/0_overview.org][GitHub]])
 #+attr_html: :width 300px:
 [[../img/difficulty.png]]
 
@@ -14,7 +15,7 @@ What did we achieve: Just a little overview and exposure to Linux and
 Emacs using the Google Cloud Shell platform (while waiting for Lyon's
 Linux server). See also: review questions in week 2.
 
-* DONE Week 1 - Infrastructure Injection
+** Week 1 - Infrastructure Injection
 #+attr_html: :width 600px:
 [[../img/penguins.jpg]]
 
@@ -40,7 +41,7 @@ Linux server). See also: review questions in week 2.
   2. [X] Emacs tutorial
   3. [ ] Datalab demo
 
-** Review questions (Week 1):
+*** Review questions (Week 1):
 
 1. What are my views on using generative AI when learning how to code?
    #+begin_quote
@@ -106,7 +107,7 @@ Linux server). See also: review questions in week 2.
     - You can use [[https://datacamp.com/datalab][DataLab]] as an interactive notebook (similar to Emacs)
     #+end_quote
 
-** Finish Google Cloud Shell exercise ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_cloudshell.org][GitHub]])
+*** Finish Google Cloud Shell exercise ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_cloudshell.org][GitHub]])
 
 Head over to =shell.cloud.google.com=. You should get to the terminal
 right away. Move the editor out of the way, then continue the
@@ -122,7 +123,7 @@ exercise to the end:
 8. Close Emacs
 9. Watch your quota (50 hours/week)
 
-** Review questions: GitHub Hello World Project
+*** Review questions: GitHub Hello World Project
 
 1. What is the purpose of Git, and who created it?
    #+begin_quote
@@ -161,7 +162,7 @@ exercise to the end:
    - You can clone it (create a remote copy on your PC).
    #+end_quote
 
-** Review questions: Understanding data science
+*** Review questions: Understanding data science
 
 1. What role would be expected to build a sales data dashboard in a company?
    #+begin_quote
@@ -209,7 +210,7 @@ exercise to the end:
    #+attr_html: :width 600px:
    [[../img/2_ds_workflow.png]]
 
-** Start: Birkenkrahe's Emacs Tutorial ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_emacs.org][GitHub]])
+*** Start: Birkenkrahe's Emacs Tutorial ([[https://github.com/birkenkrahe/ds1/blob/main/org/1_emacs.org][GitHub]])
 
 1. You'll get a handout. Online: [[https://tinyurl.com/emacs-tutor][tinyurl.com/emacs-tutor]].
 2. Code along with me using Emacs in the cloud.
@@ -218,7 +219,7 @@ exercise to the end:
 Note: You need to install Google Cloud Shell as an app in order to
 have all keybindings in Emacs (esp. =C-v= and =C-n=).
 
-* DONE Week 2 - DataLab & Data Collection and Storage
+** Week 2 - DataLab & Data Collection and Storage
 #+attr_html: :width 400px:
 [[../img/2_pythagoras.jpg]]
 
@@ -229,7 +230,7 @@ Plan:
 - [ ] Introduction to data science (lecture) - 30 min
 - [ ] Introduction to R (lecture/practice) - 60 min
 
-** Datalab demo (GitHub)
+*** Datalab demo (GitHub)
 
 DataCamp's DataLab and Google's Colab or RStudio are alternatives to
 Emacs + Org-mode that you want to know about (and also so that you can
@@ -237,7 +238,7 @@ appreciate what our infrastructure brings to the table).
 
 You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datalab/w/64260e9e-2c3c-4e6b-be4b-2dc6bac45d93/edit][here is my notebook]].
 
-** Linux server has arrived
+*** Linux server has arrived
 
 - You should have received your VM server address and password
 
@@ -264,7 +265,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
     #+end_src
   #+end_example
 
-** Review questions (DataLab & Linux)
+*** Review questions (DataLab & Linux)
 
 1. Which languages does dataLab support?
    #+begin_quote
@@ -332,7 +333,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    located.
    #+end_quote
 
-** Review questions (DataCamp - Data Collection and Storage)
+*** Review questions (DataCamp - Data Collection and Storage)
 
 1) What's an API?
    #+begin_quote
@@ -442,7 +443,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
       possible.
     #+end_quote
 
-* DONE Week 3 - Introduction to data science
+** Week 3 - Introduction to data science
 #+attr_html: :width 600px:
 [[../img/frankenstein.jpeg]]
 
@@ -450,7 +451,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 - [ ] Enter project team & idea in Canvas ([[https://lyon.instructure.com/courses/2628/pages/add-your-project-here][wiki]]) by Friday 11 AM
 - [ ] Lecture: Introduction to Data Science / skills / jobs
 
-** Recap of last week
+*** Recap of last week
 
 - I watched the Zoom recording and checked the Whiteboard screenshots.
 
@@ -471,7 +472,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
   : 41
 
 
-** Review: "Preparation, Exploration, Visualization"
+*** Review: "Preparation, Exploration, Visualization"
 
 1. Why is data preparation important in data science?
    #+begin_quote
@@ -1371,7 +1372,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
     #+RESULTS:
     [[file:../img/labeling.png]]
 
-** Introduction to data science (lecture)
+*** Introduction to data science (lecture)
 
 - [X] Data science popularity
 - [X] Data science definitions
@@ -1379,7 +1380,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 - [X] Data science jobs
 - [X] Data science processes
 
-* DONE Week 4 - Introduction to the R shell (9/11)
+** Week 4 - Introduction to the R shell (9/11)
 #+attr_html: :width 700px:
 [[../img/Shell-Southbank-Plaza.jpg]]
 
@@ -1391,7 +1392,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
 - [X] Project - analytics is not the same as prediction
 - [X] Project - proposal deadline is Friday 13 Sept 11:59 pm
 
-** Review questions: Introduction to R (1)
+*** Review questions: Introduction to R (1)
 
 1. What is CRAN and why is it important for R users?
    #+BEGIN_QUOTE
@@ -1420,7 +1421,7 @@ You'll get a handout of the exercise (PDF), and [[https://www.datacamp.com/datal
    ~R CMD BATCH~ will generate a file ~script.Rout~ with the results.
    #+end_quote
 
-** Review questions: Introduction to R (2)
+*** Review questions: Introduction to R (2)
 
 1. How can you check the current directory of your R console from the
    R console? What's the difference between the two commands?
@@ -1515,7 +1516,7 @@ Example in C:
 #+RESULTS:
 : hello, Isaac
 
-** IN PROGRESS Introduction to R
+*** IN PROGRESS Introduction to R
 [[../img/3_Rlogo.png]]
 
 - [X] Why R?
@@ -1527,9 +1528,9 @@ Example in C:
 
 The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice][tinyurl.com/intro-R-practice]]
 
-** Summary for Introduction to R
+*** Summary for Introduction to R
 
-*** Summary R shell
+**** Summary R shell
 
 - R is an interpreted program with a shell (CLI/console)
 - On Linux, the executable (a wrapper script) is in =/usr/bin/R=
@@ -1537,40 +1538,41 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 - You can run R scripts in the foreground with =Rscript= or in the
   background as a "batch" job with =R CMD BATCH=.
 
-*** Summary R environment
+**** Summary R environment
 
 - Function without arguments: ~getwd()~
 - Function with arguments: ~setwd('...')~
 - Absolute pathname like ~'c:/Users/birkenkrahe/'~
 - Relative pathnames like ~'../../'~ ("go up by 2 levels")
 
-*** Summary R display options
+**** Summary R display options
 
 - The functions ~options~ controls display options
 - You can extract display options with ~$~, e.g. ~options()$prompt~
 - You can get help with the ~help~ function (or ~?~)
 
-*** Summary R computing and commenting
+**** Summary R computing and commenting
 
 - You can print results with or without ~print~
 - Create (inline) comments with ~#~
 - ~eshell~ is a Linux-type shell in Emacs ([[https://www.gnu.org/software/emacs/manual/html_mono/eshell.html#:~:text=Eshell%20is%20a%20command%20shell,code%20is%20natural%20and%20seamless.][doc]])
 - On Linux you can also use ~shell~ (M-x shell)
 
-*** Summary of R packages
+**** Summary of R packages
 
 - You can install, uninstall packages and data sets in them
 - You must load packages and data sets before using them
 - Your current R session keeps track of all loaded objects
 - Display structure, head and tail rows of loaded data sets
 
-*** Summary R startup file
+**** Summary R startup file
 
 - Emacs and R have a home directory (~~/~) for startup files[fn:4]
 - You can determine R's startup behavior in ~~/.Rprofile~
 - ~~/.Rprofile~ is read every time a new R shell is started
 
-* DONE Week 5 - R options and packages (SpaceX)
+* DONE Part II: Introduction to R
+** Week 5 - R options and packages (SpaceX)
 #+attr_html: :width 700px:
 [[../img/spacex-polaris-dawn-spacewalk.jpeg]]
 
@@ -1592,7 +1594,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
 
 - [ ] Vectors in R
 
-** Review: R options and package management
+*** Review: R options and package management
 
 1. What's the policy regarding AI assistence in your projects?
    #+begin_quote
@@ -1961,7 +1963,7 @@ The practice exercises are on GitHub at: [[https://tinyurl.com/intro-R-practice]
     [165] "wtloss"
     #+end_example
 
-* DONE Week 6 - Arithmetic in R and special numbers
+** Week 6 - Arithmetic in R and special numbers
 #+attr_html: :width 600px:
 [[../img/Hollerith_Punched_Card.jpg]]
 
@@ -1977,7 +1979,7 @@ Arithmetic in R:
 - [ ] Know R's special number functions
 - [ ] Understand logical values and operators
 
-** Review: Basic arithmetic, logarithms
+*** Review: Basic arithmetic, logarithms
 
 1. What's the result of =(-1)^(1/2) = sqrt(-1)=
    #+begin_src R :session *R* :results output :exports both
@@ -2085,7 +2087,7 @@ Arithmetic in R:
    : [1] TRUE
    : [1] TRUE
 
-** Project update
+*** Project update
 
 - Left detailed feedback for every project
 
@@ -2097,7 +2099,7 @@ Arithmetic in R:
 
   2) Build on the work of others (articles, videos...)
 
-** Euler's number is special
+*** Euler's number is special
 #+attr_html: :width 400px:
 [[../img/euler.png]]
 
@@ -2125,7 +2127,7 @@ Quote (by Courant):
 my mathematics professor said 'I won't have bad language in my class."
 #+end_quote
 
-** Review: DataCamp lesson on vectors
+*** Review: DataCamp lesson on vectors
 
 #+begin_quote
 "To know vectors is to know R."
@@ -2338,7 +2340,7 @@ my mathematics professor said 'I won't have bad language in my class."
    #+RESULTS:
    [[file:../img/vector2.png]]
 
-** Review: E-notation, special numbers
+*** Review: E-notation, special numbers
 
 1. What's the difference between the R functions =identical= and
    =all.equal=?
@@ -2424,7 +2426,7 @@ my mathematics professor said 'I won't have bad language in my class."
    #+RESULTS:
    : [1] "logical"
 
-* DONE Week 7 - Project update, special functions, logical operators
+** Week 7 - Project update, special functions, logical operators
 #+attr_html: :width 400px:
 [[../img/career.jpeg]]
 
@@ -2438,7 +2440,7 @@ Finish "Arithmetic in R":
 - [X] Know R's special number functions
 - [X] Understand logical values and operators
 
-** Project update
+*** Project update
 #+attr_html: :width 400px:
 [[../img/notebooklm.png]]
 
@@ -2464,13 +2466,13 @@ Finish "Arithmetic in R":
 - Generate a podcast and share it with everyone on the Google Chat.
 
 
-** Back to "Arithmetic in R"
+*** Back to "Arithmetic in R"
 
 - [X] There is a new 10 minutes podcast now (see Google chat).
 - [X] I've also posted a link to a YouTube video playlist.
 - [ ] Let's finish up our remaining topics from this section.
 
-* DONE Week 8 - Vectors & Factors in R
+** Week 8 - Vectors & Factors in R
 #+attr_html: :width 450px:
 [[../img/1846-suffolk-punch.jpg]]
 
@@ -2495,7 +2497,7 @@ Finish "Arithmetic in R":
 - [ ] Indexing vectors
 - [ ] Coercing vectors
 
-** Vectors and Matrices (DataCamp) popquiz & =NA= extension
+*** Vectors and Matrices (DataCamp) popquiz & =NA= extension
 
 1. Create a vector =temp= of temperatures predicted for next week. The
    temperatures (from Monday to Friday) were: 76, 75, 77, 79, 81.
@@ -2693,7 +2695,7 @@ Finish "Arithmetic in R":
     : [1] 77.75
     : [1] 76.75
 
-** "Data Science is not a Science"
+*** "Data Science is not a Science"
 #+attr_html: :width 600px:
 [[../img/rant.png]]
 
@@ -2733,7 +2735,7 @@ Finish "Arithmetic in R":
   science.)
   #+end_quote
 
-** Lecture & DataCamp review as Lab (30 min)
+*** Lecture & DataCamp review as Lab (30 min)
 
 - Quiz 7 is ready for you (complete by Oct 18)
 
@@ -2745,7 +2747,8 @@ Finish "Arithmetic in R":
 
 - I will post a video with the solutions!
 
-* DONE Week 9 - Vectors and Dataframes in R
+* DONE Part III: Data science Data Structures
+** Week 9 - Vectors and Dataframes in R
 #+attr_html: :width 600px:
 [[../img/chirico.jpg]]
 
@@ -2758,7 +2761,7 @@ Finish "Arithmetic in R":
 - [X] Practice file for Founder's Day Friday (no class meeting)
 - [ ] Weekend: Quiz 8 on DataCamp and plotting vectors
 
-** Review: vectors and factors
+*** Review: vectors and factors
 
 *Problems:* ds1/org/5_vectors_lab.org - [[https://tinyurl.com/vectors-lab][tinyurl.com/vectors-lab]]
 
@@ -2924,7 +2927,7 @@ Finish "Arithmetic in R":
     :  - attr(*, "names")= chr [1:4] "Jeff" "Jim" "Jane" "Joe"
 
 
-** Vectors in R (continued)
+*** Vectors in R (continued)
 
 - [X] Base R
 - [X] Base R plotting: Histograms
@@ -2948,7 +2951,7 @@ emacs --file vectors.org
 Code alongside me!
 
 
-** Vector lab II (Friday - no class - founder's day convocation)
+*** Vector lab II (Friday - no class - founder's day convocation)
 
 - Download practice file (later): [[https://tinyurl.com/vectors-plotting-24][tinyurl.com/vectors-plotting-24]]
 
@@ -2958,7 +2961,7 @@ Code alongside me!
 
 - We will review the solutions next week
 
-* DONE Week 10 - Sequencing, repeating, and measuring vectors
+** Week 10 - Sequencing, repeating, and measuring vectors
 #+attr_html: :width 600px:
 #+caption: Claude Monet, Cap d'Antibes, Mistral (1888)
 [[../img/Monet_Cap_dAntibes_Mistral_1888.jpg]]
@@ -2969,7 +2972,7 @@ Code alongside me!
 - [X] Vectors in R: sequences, repetitions, sorting, measuring
 - [X] Vectors in R: short lab practice (Canvas upload)
 
-** Vector plotting practice (failed?)
+*** Vector plotting practice (failed?)
 #+attr_html: :width 400px:
 [[../img/plotting_practice.png]]
 
@@ -2979,7 +2982,7 @@ Code alongside me!
 - Check your solutions with the PDF and/or my video.
 - Remember to keep up your DataCamp practice!
 
-** Review: DataCamp "Data frames"
+*** Review: DataCamp "Data frames"
 
 1. What is a data frame, and why is it useful in data analysis?
    #+begin_quote
@@ -3149,7 +3152,7 @@ Code alongside me!
    : Porsche 914-2  26.000000000000000
    : Lotus Europa   30.399999999999999
 
-** Project: 2nd sprint review with NotebookLM/podcasts
+*** Project: 2nd sprint review with NotebookLM/podcasts
 
 - Very interesting results! Not everybody understood how the
   application works. You were penalized for not submitting [[https://lyon.instructure.com/courses/2628/assignments/35174][requested]]
@@ -3183,7 +3186,7 @@ Code alongside me!
   answers on this Kanban board with one post-it per question:
   [[https://tinyurl.com/notebook-kanban][tinyurl.com/notebook-kanban]]
 
-** Vectors in R (continued)
+*** Vectors in R (continued)
 
 - [X] Creating vector sequences and repetitions
 - [X] Sorting and measuring vector lengths
@@ -3205,14 +3208,14 @@ emacs --file vectors2.org
 
 Code alongside me!
 
-** Early morning: Moments of Happiness in a Fast-changing World
+*** Early morning: Moments of Happiness in a Fast-changing World
 #+attr_html: :width 400px:
 [[../img/5_gnome.jpg]]
 
 I feel happy every morning when I log in, because of the certainty,
 constancy, and continuity of the digital world in the face of change.
 
-** Vector lab
+*** Vector lab
 
 1. Download [[https://tinyurl.com/6-vectors-lab][tinyurl.com/6-vectors-lab]]
 2. List file
@@ -3342,12 +3345,12 @@ constancy, and continuity of the digital world in the face of change.
    38   0.20000000000000018       7  Jane
    #+end_example
 
-* DONE Week 11: Subsetting vectors [Oct 28]
+** Week 11: Subsetting vectors [Oct 28]
 #+attr_html: :width 300px:
 #+caption: The Sleep of Reason Produces Monsters, Goya (1799)
 [[../img/the_sleep_or_reason_produces_monsters.jpg]]
 
-** Project Preview: Discussion / Presentation
+*** Project Preview: Discussion / Presentation
 #+attr_html: :width 600px:
 [[../img/discussion.jpeg]]
 
@@ -3361,7 +3364,7 @@ constancy, and continuity of the digital world in the face of change.
   3) Outlook (What else could or should one do now?)
   4) Limitations (What limits the validity of this research?)
 
-** Review: Manipulating Data Frames
+*** Review: Manipulating Data Frames
 
 1. Two vectors have different lengths - can I put them in a =data.frame=?
    #+begin_quote
@@ -3659,7 +3662,7 @@ constancy, and continuity of the digital world in the face of change.
     :    1    2    3
     : [1] "172" "178" "180"
 
-** Subsetting data structures in R (and elsewhere)
+*** Subsetting data structures in R (and elsewhere)
 
 - [X] Vectorization
 - [X] Retrieving vector elements
@@ -3675,7 +3678,7 @@ If you want to continue where we stopped, download/open
 [[https://raw.githubusercontent.com/birkenkrahe/ds1/refs/heads/main/org/7_subsetting_codealong.org][tinyurl.com/sub-code]]. Then code along with your own headlines,
 comments and code blocks.
 
-** Subsetting Lab
+*** Subsetting Lab
 
 Download the lab file from [[https://tinyurl.com/sub-lab][tinyurl.com/sub-lab]], open it in Emacs and
 complete it.
@@ -3685,7 +3688,7 @@ complete it.
 - Upload your results to Canvas by the end of today.
 - Solutions will be made available as PDF in GitHub.
 
-** BONUS Exercise "10 Questions on =islands="
+*** BONUS Exercise "10 Questions on =islands="
 
 [[https://lyon.instructure.com/courses/2628/assignments/36381][Link in Canvas]]
 
@@ -3695,7 +3698,7 @@ complete it.
   about 1/2 hour to 1 hour.
 - You can upload the result to Canvas afterwards by the end of term.
 
-* DONE Week 12: Data frames, Factors & =data.table= [Nov 4]
+** Week 12: Data frames, Factors & =data.table= [Nov 4]
 #+attr_html: :width 600px: 
 [[../img/election2024.png]]
 
@@ -3708,7 +3711,7 @@ complete it.
 - [ ] *Code along*: data frames and factors
 - [ ] *Practice* with data frames and factors
 
-** DONE DataCamp review: =data.table=
+*** DONE DataCamp review: =data.table=
 #+attr_html: :width 150px: 
 [[../img/dtlogo.png]]
 
@@ -3901,7 +3904,8 @@ complete it.
      Spark (Python,Java,R), BigQuery (SQL), or Snowflake (SQL,Python).
    #+end_quote
 
-** TODO Data frames, Factors, Lists
+
+*** TODO Data frames, Factors, Lists
 
 Download and open the code along file: [[https://tinyurl.com/df-codealong][tinyurl.com/df-codealong]]
 
@@ -3910,14 +3914,16 @@ Download and open the code along file: [[https://tinyurl.com/df-codealong][tinyu
 - [X] Useful functions
 - [ ] Factor and list creation
 
-* Week 13: =data.frame= lab & Categorical EDA & Lists [Nov 11]
+
+* IN PROGRESS Part IV: EDA and Applications
+** Week 13: =data.frame= lab & Categorical EDA & Lists [Nov 11]
 #+attr_html: :width 700px: 
 [[../img/wedding_at_cana.jpg]]
 
 Image: The largest painting in the Louvre: Wedding in Cana (Paolo
 Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
 
-** NEXT Data frame lab
+*** DONE Data frame lab
 
 - Download and complete the file: [[https://tinyurl.com/dataframe-lab][tinyurl.com/dataframe-lab]]
 
@@ -3925,11 +3931,79 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
 
 - For DSC 205 (followup course) you will get entry exercises & quiz
 
-** TODO DataCamp review: Exploring categorical data
 
-** TODO R Lists
+*** TODO DataCamp review: Exploring categorical data
+
+* DataCamp Review: Exploring Categorical Data in R (Deep Dive)
+
+*** Is the =factor= data structure common in data sets?
+#+begin_quote
+No. Outside of R, data sets are stored either in CSV format, or in the
+form of SQL databases (tables), and categorical variables in these
+data sets are represented either as characters, or as numbers.
+
+In R, there are multiple datasets with categorical variables -
+e.g. =ToothGrowth=, =mtcars=, =airquality=.
+#+end_quote
+
+*** How can you find out if a variable is (suited to be) a factor?
+#+begin_quote
+Look at the structure of the dataset and check the values for =levels=
+using =unique=, and/or check the data sheet (for example with =help=).
+#+end_quote
+
+*** How can you display the levels of a factor variable in R?
+#+begin_quote
+Using the =levels= function. If you have multiple =factor= variables, you
+can put them into a =data.frame=.
+#+end_quote
+
+*** What is the purpose of using factors in R for categorical data analysis?
+#+begin_quote
+Factors allow for easy organization, labeling, summarization, and
+visualization of categorical data. What does this mean?
+
+Remember: In a definition, or a statement, you need to really
+understand every word, and every aspect of it. No better way than with
+simple examples that you can produce without much thinking.
+#+end_quote
+
+*** Can you give a concrete example for these applications of =factor= data?
+
+*** What does the `table()` function accomplish when used on categorical variables in R?
+#+begin_quote
+It provides a frequency count of the combinations of factor levels.
+#+end_quote
+
+*** What does setting `position = "fill"` in a `geom_bar()` plot do?
+#+begin_quote
+It normalizes bar heights to represent proportions rather than raw counts.
+#+end_quote
+
+*** How would this look in base R? How do you get a proportional stacked bar plot?
+
+*** How does a faceted bar chart differ from a stacked bar chart?
+#+begin_quote
+A faceted bar chart creates separate subplots for each category, while
+a stacked bar chart combines categories into a single plot.
+#+end_quote
+
+*** Why might one choose a bar chart over a pie chart for categorical data analysis?
+#+begin_quote
+Bar charts are generally easier to interpret and allow for better
+comparison of categories.
+#+end_quote
+
+*** TODO R Lists
 
 
-* Week 14: EDA: numerical data & plots [Nov 25]
+** Week 14: EDA: numerical data & visualization [Nov 25]
 
-* Week 15: Final presentations [Dec 2]
+** Week 15: Final presentations [Dec 2]
+#+attr_html: :width 600px
+[[../img/checklist.png]]
+
+** Week 16: Final exam (optional) [Dec 9]
+
+According to the [[https://assets.speakcdn.com/assets/2433/fa24_final_exam_schedule.pdf][published exam schedule]], the final exam will take
+place on Friday, December 13, at 10:30am-12:30pm.
