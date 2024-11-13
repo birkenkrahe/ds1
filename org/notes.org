@@ -3932,11 +3932,9 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
 - For DSC 205 (followup course) you will get entry exercises & quiz
 
 
-*** TODO DataCamp review: Exploring categorical data
+* TODO DataCamp review: Exploring categorical data (deep dive)
 
-* DataCamp Review: Exploring Categorical Data in R (Deep Dive)
-
-*** Is the =factor= data structure common in data sets?
+** Is the =factor= data structure common in data sets?
 #+begin_quote
 No. Outside of R, data sets are stored either in CSV format, or in the
 form of SQL databases (tables), and categorical variables in these
@@ -3946,19 +3944,83 @@ In R, there are multiple datasets with categorical variables -
 e.g. =ToothGrowth=, =mtcars=, =airquality=.
 #+end_quote
 
-*** How can you find out if a variable is (suited to be) a factor?
+#+begin_src R
+  data(airquality)
+  str(airquality)
+#+end_src
+
+#+RESULTS:
+: 'data.frame':	153 obs. of  6 variables:
+:  $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
+:  $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
+:  $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...
+:  $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...
+:  $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
+:  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
+
+** How can you find out if a variable is (suited to be) a factor?
 #+begin_quote
 Look at the structure of the dataset and check the values for =levels=
 using =unique=, and/or check the data sheet (for example with =help=).
 #+end_quote
 
-*** How can you display the levels of a factor variable in R?
+#+begin_src R
+  str(mtcars)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+'data.frame':	32 obs. of  11 variables:
+ $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+ $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+ $ disp: num  160 160 108 258 360 ...
+ $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+ $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+ $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+ $ qsec: num  16.5 17 18.6 19.4 17 ...
+ $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+ $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+ $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+ $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+#+end_example
+
+Using =unique=:
+#+begin_src R
+  unique(mtcars$cyl)  # cyl is numeric
+  ToothGrowth$supp |> unique() # supp is a factor
+  airquality$Month |> unique()
+#+end_src
+
+#+RESULTS:
+: [1] 6 4 8
+: [1] VC OJ
+: Levels: OJ VC
+: [1] 5 6 7 8 9
+
+** How can you display the levels of a factor variable in R?
 #+begin_quote
 Using the =levels= function. If you have multiple =factor= variables, you
 can put them into a =data.frame=.
 #+end_quote
 
-*** What is the purpose of using factors in R for categorical data analysis?
+Let's build a dataframe from factors:
+#+begin_src R
+  data(mtcars)
+  cyl <- factor(mtcars$cyl) # 4,6,8 cylinders
+  vs <- factor(mtcars$vs) # v-shaped (0) or straight (1) engine
+  am <- factor(mtcars$am) # automatic (0) vs. manual(1)
+
+  data.frame(cyl, vs, am) -> mtcars_f
+  str(mtcars_f)
+#+end_src
+
+#+RESULTS:
+: 'data.frame':	32 obs. of  3 variables:
+:  $ cyl: Factor w/ 3 levels "4","6","8": 2 2 1 2 3 2 3 1 1 2 ...
+:  $ vs : Factor w/ 2 levels "0","1": 1 1 2 2 1 2 1 2 2 2 ...
+:  $ am : Factor w/ 2 levels "0","1": 2 2 2 1 1 1 1 1 1 1 ...
+
+** What is the purpose of using factors in R for categorical data analysis?
 #+begin_quote
 Factors allow for easy organization, labeling, summarization, and
 visualization of categorical data. What does this mean?
@@ -3968,31 +4030,67 @@ understand every word, and every aspect of it. No better way than with
 simple examples that you can produce without much thinking.
 #+end_quote
 
-*** Can you give a concrete example for these applications of =factor= data?
+#+begin_src R
+  blood_data <- data.frame(
+    name = c("Alice", "Bob", "Carol", "David"),
+    blood_type = c("A","B","AB","O"))
 
-*** What does the `table()` function accomplish when used on categorical variables in R?
+  str(blood_data)
+#+end_src
+
+#+RESULTS:
+: 'data.frame':	4 obs. of  2 variables:
+:  $ name      : chr  "Alice" "Bob" "Carol" "David"
+:  $ blood_type: chr  "A" "B" "AB" "O"
+
+Turn the =character= vector into a =factor=:
+#+begin_src R
+  factor(blood_data$blood_type) -> type # factor object
+  type
+  as.factor(blood_data$blood_type)
+#+end_src
+
+#+RESULTS:
+: [1] A  B  AB O 
+: Levels: A AB B O
+: [1] A  B  AB O 
+: Levels: A AB B O
+
+#+begin_src R
+  table(type)  # contingency table
+#+end_src
+
+#+RESULTS:
+: type
+:  A AB  B  O 
+:  1  1  1  1
+
+** Can you give a concrete example for these applications of =factor= data?
+
+** What does the `table()` function accomplish when used on categorical variables in R?
 #+begin_quote
 It provides a frequency count of the combinations of factor levels.
 #+end_quote
 
-*** What does setting `position = "fill"` in a `geom_bar()` plot do?
+** What does setting `position = "fill"` in a `geom_bar()` plot do?
 #+begin_quote
 It normalizes bar heights to represent proportions rather than raw counts.
 #+end_quote
 
-*** How would this look in base R? How do you get a proportional stacked bar plot?
+** How would this look in base R? How do you get a proportional stacked bar plot?
 
-*** How does a faceted bar chart differ from a stacked bar chart?
+** How does a faceted bar chart differ from a stacked bar chart?
 #+begin_quote
 A faceted bar chart creates separate subplots for each category, while
 a stacked bar chart combines categories into a single plot.
 #+end_quote
 
-*** Why might one choose a bar chart over a pie chart for categorical data analysis?
+** Why might one choose a bar chart over a pie chart for categorical data analysis?
 #+begin_quote
 Bar charts are generally easier to interpret and allow for better
 comparison of categories.
 #+end_quote
+
 
 *** TODO R Lists
 
