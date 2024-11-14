@@ -4213,13 +4213,11 @@ comparison of categories.
 
 ***** TODO R Lists
 
-
 ** Week 14: EDA: numerical data & visualization [Nov 25]
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
 [[../img/checklist.png]]
-
 
 ** Week 16: Final exam (optional) [Dec 13]
 
