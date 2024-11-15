@@ -17,76 +17,35 @@
 #+attr_html: :width 600px
 [[../img/practice1.jpg]]
 
-Create a list ~foo~ and print it, then print its structure: 
-#+begin_src R
-  foo <- list(1, c("a","b","c"), list( letters[1:3], 3.14))
-  foo
-#+end_src
+Download this file to practice and code along: [[https://tinyurl.com/lists-org][tinyurl.com/lists-org]]
 
-#+RESULTS:
-#+begin_example
-[[1]]
-[1] 1
-
-[[2]]
-[1] "a" "b" "c"
-
-[[3]]
-[[3]][[1]]
-[1] "a" "b" "c"
-
-[[3]][[2]]
-[1] 3.14
-#+end_example
-
-How long is ~foo~?
-#+begin_src R
-  length(foo)
-#+end_src
-
-#+RESULTS:
-: [1] 3
-
-Show its structure:
-#+begin_src R
-  str(foo)
-#+end_src
-
-#+RESULTS:
-: List of 3
-:  $ : num 1
-:  $ : chr [1:3] "a" "b" "c"
-:  $ :List of 2
-:   ..$ : chr [1:3] "a" "b" "c"
-:   ..$ : num 3.14
-
-What R object class does ~foo~ have, and what object classes do its
-elements have?
-#+begin_src R
-  class(foo)
-
-  ## loop over the list using an apply function
-  lapply(X=foo, FUN=class)
-
-  ## loop over the list using for
-  for (i in foo) print(class(i))
+- Create a list ~foo~ and print it, then print its structure:
+  #+begin_src R
+    foo <- list(1, c("a","b","c"), list( letters[1:3], 3.14))
+    foo
   #+end_src
 
-#+RESULTS:
-#+begin_example
-[1] "list"
-[[1]]
-[1] "numeric"
+- How long is ~foo~?
+  #+begin_src R
+    length(foo)
+  #+end_src
 
-[[2]]
-[1] "character"
+- Show its structure:
+  #+begin_src R
+    str(foo)
+  #+end_src
 
-[[3]]
-[1] "list"
-[1] "numeric"
-[1] "character"
-[1] "list"
-#+end_example
+- What R object class does ~foo~ have, and what object classes do its
+  elements have?
+  #+begin_src R
+    class(foo)
+
+    ## loop over the list using an apply function
+    lapply(X=foo, FUN=class)
+
+    ## loop over the list using for
+    for (i in foo) print(class(i))
+  #+end_src
 
 
 * Why are lists important?
@@ -218,7 +177,7 @@ elements have?
   : [1] "matrix" "array"
   : [1] "character"
   : [1] "numeric"
-  : [1] "matrix" "array" 
+  : [1] "matrix" "array"
   : [1] "character"
 
 * Practice creating a named ~list~
@@ -229,30 +188,30 @@ Create a list that contains, in this order
    column-wise
 3) a ~character~ vector with the two strings ~"don"~ and ~"quixote"~
 
-#+begin_src R 
+#+begin_src R
   seq <- seq(from=-4, to=4, length.out=20)  #1
   mat <- matrix(c(F,T,T,T,F,T,T,F,F),nrow=3,byrow=FALSE) #2
   chr <- c("don","quixote")  #3
   foo <- list(seq, mat, chr)
   foo
-  #+end_src
+#+end_src
 
-  #+RESULTS:
-  #+begin_example
-  [[1]]
-   [1] -4.0000000 -3.5789474 -3.1578947 -2.7368421 -2.3157895 -1.8947368 -1.4736842 -1.0526316
-   [9] -0.6315789 -0.2105263  0.2105263  0.6315789  1.0526316  1.4736842  1.8947368  2.3157895
-  [17]  2.7368421  3.1578947  3.5789474  4.0000000
+#+RESULTS:
+#+begin_example
+[[1]]
+ [1] -4.0000000 -3.5789474 -3.1578947 -2.7368421 -2.3157895 -1.8947368 -1.4736842 -1.0526316
+ [9] -0.6315789 -0.2105263  0.2105263  0.6315789  1.0526316  1.4736842  1.8947368  2.3157895
+[17]  2.7368421  3.1578947  3.5789474  4.0000000
 
-  [[2]]
-        [,1]  [,2]  [,3]
-  [1,] FALSE  TRUE  TRUE
-  [2,]  TRUE FALSE FALSE
-  [3,]  TRUE  TRUE FALSE
+[[2]]
+      [,1]  [,2]  [,3]
+[1,] FALSE  TRUE  TRUE
+[2,]  TRUE FALSE FALSE
+[3,]  TRUE  TRUE FALSE
 
-  [[3]]
-  [1] "don"     "quixote"
-  #+end_example
+[[3]]
+[1] "don"     "quixote"
+#+end_example
 
 * Subsetting lists
 
@@ -283,7 +242,7 @@ Create a list that contains, in this order
   : [1] TRUE TRUE TRUE
   : [1] "don"     "quixote"
   : [1] "quixote"
-  
+
 - Same for the matrix member of the list: use double indices
   1) retrieve the 2nd column of the 1st member of ~foo~
   2) retrieve the 2nd row, 1st column of the 1st member of ~foo~
@@ -368,7 +327,7 @@ Create a list that contains, in this order
     unlist(char1)
     idx <- which(char1==TRUE) # get the index
     foo[[idx]]  # index list
-      #+end_src
+  #+end_src
 
   #+RESULTS:
   : [1] FALSE FALSE  TRUE
@@ -497,15 +456,15 @@ Solve the following extraction problems:
   #+RESULTS:
   #+begin_example
   [1] "a" "b"
-  a 
+  a
   1
-  a 
+  a
   1
-  a b 
+  a b
   1 2
-  a b 
+  a b
   1 2
-  a b 
+  a b
   1 2
   #+end_example
 

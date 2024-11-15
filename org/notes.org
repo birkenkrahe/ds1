@@ -3922,7 +3922,7 @@ Download and open the code along file: [[https://tinyurl.com/df-codealong][tinyu
 Image: The largest painting in the Louvre: Wedding in Cana (Paolo
 Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
 
-*** DONE Data frame lab
+** DONE Data frame lab
 
 - Download and complete the file: [[https://tinyurl.com/dataframe-lab][tinyurl.com/dataframe-lab]]
 
@@ -3931,11 +3931,11 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
 - For DSC 205 (followup course) you will get entry exercises & quiz
 
 
-*** DONE Impromptu lecture: Client-Server Model and Data Science
+** DONE Impromptu lecture: Client-Server Model and Data Science
 #+attr_html: :width 700px:
 [[../img/client_server.png]]
 
-**** Introduction
+*** Introduction
 - Today, we’ll discuss the client-server-memory model, a core concept
   in understanding how data is processed, stored, and accessed in
   distributed systems.
@@ -3943,7 +3943,7 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
   data structures and the types of issues that commonly arise in this
   context.
 
-**** The Client-Server-Memory Model
+*** The Client-Server-Memory Model
 - We can represent the system’s main components as a three-dimensional
   framework consisting of:
   1. **Client** - The end-user interface where requests originate and
@@ -3953,7 +3953,7 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
   3. **Memory** - Storage of data that is accessed or modified based on
      client requests.
 
-***** Diagram Analysis: Client-Server-Memory as a Coordinate System
+**** Diagram Analysis: Client-Server-Memory as a Coordinate System
 - This diagram presents the client, server, and memory as three
   interconnected dimensions.
 - Placing data and problems within this "coordinate" system allows us
@@ -3962,7 +3962,7 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
   - Where specific issues arise
   - Which component or layer is responsible for addressing these issues
 
-***** Common Problems in Each Dimension
+**** Common Problems in Each Dimension
 - By considering each pair of dimensions, we can identify common
   issues:
   1. **Client-Server**
@@ -3986,7 +3986,7 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
      - **Client-side Caching**: Reducing server requests by storing some
        data temporarily on the client.
 
-**** Enhancing the Model: Examples of Data and Problem Types
+*** Enhancing the Model: Examples of Data and Problem Types
 
 - Labeling specific examples within each component can help clarify
   the purpose of the coordinate system.
@@ -3995,7 +3995,7 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
   - **Server**: Processing delays, load balancing, data transformations
   - **Memory**: Data consistency issues, RDBMS tables, NoSQL documents
 
-***** Diagram Analysis: Examples of Data and Problem Types
+**** Diagram Analysis: Examples of Data and Problem Types
 - Enhancing the diagram with examples:
   - Adding labels to each dimension to clarify types of **data** (e.g.,
     RDBMS tables, NoSQL documents) and **problems** (e.g., latency,
@@ -4003,7 +4003,7 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
   - This will help students visualize where common issues arise and
     how they relate to specific data types.
 
-**** Programming Languages and Data Structures
+*** Programming Languages and Data Structures
 - Moving to the right side of the diagram, we observe a representation
   of various programming languages and their typical data structures:
   - **R**: Factors, data frames - commonly used in statistical and data
@@ -4015,7 +4015,7 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
   - **C**: Arrays - low-level, fixed-size collections crucial in systems
     programming.
 
-***** Core Concepts and "Algol-type" Influence
+**** Core Concepts and "Algol-type" Influence
 - At the center of the diagram is a node labeled **Core
   ("Algol-type")**.
 - "Algol-type" refers to the influence of the ALGOL programming
@@ -4024,7 +4024,7 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
 - This "Core" likely represents the foundational algorithms and data
   structures that are shared across high-level languages.
 
-***** Clarifying the Role of Assembly Programming
+**** Clarifying the Role of Assembly Programming
 - A student might wonder if "Core" includes assembly programming.
   - While assembly programming is foundational, it operates at a lower
     level than high-level languages influenced by ALGOL.
@@ -4036,14 +4036,14 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
   this context represents abstracted, cross-language principles and
   data structures.
 
-**** Summary and Enhancing the Diagram for Clarity
+*** Summary and Enhancing the Diagram for Clarity
 - The left side of the diagram (Client-Server-Memory) effectively
   models where data resides and where issues are likely to arise in a
   client-server setup.
 - The right side provides a view of typical data structures in various
   programming languages and their shared foundations.
 
-**** Conclusion
+*** Conclusion
 - Understanding the client-server-memory model and the core data
   structures in programming languages provides a foundation for
   exploring distributed systems and data management.
@@ -4051,9 +4051,9 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
   for the diagram to make it a more effective learning resource.
 
 
-*** IN PROGRESS DataCamp review: Exploring categorical data (deep dive)
+** IN PROGRESS DataCamp review: Exploring categorical data (deep dive)
 
-**** DONE Is the =factor= data structure common in data sets?
+*** DONE Is the =factor= data structure common in data sets?
 #+begin_quote
 No. Outside of R, data sets are stored either in CSV format, or in the
 form of SQL databases (tables), and categorical variables in these
@@ -4077,7 +4077,7 @@ e.g. =ToothGrowth=, =mtcars=, =airquality=.
 :  $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
 :  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
 
-**** DONE How can you find out if a variable is (suited to be) a factor?
+*** DONE How can you find out if a variable is (suited to be) a factor?
 #+begin_quote
 Look at the structure of the dataset and check the values for =levels=
 using =unique=, and/or check the data sheet (for example with =help=).
@@ -4116,7 +4116,7 @@ Using =unique=:
 : Levels: OJ VC
 : [1] 5 6 7 8 9
 
-**** DONE How can you display the levels of a factor variable in R?
+*** DONE How can you display the levels of a factor variable in R?
 #+begin_quote
 Using the =levels= function. If you have multiple =factor= variables, you
 can put them into a =data.frame=.
@@ -4139,7 +4139,7 @@ Let's build a dataframe from factors:
 :  $ vs : Factor w/ 2 levels "0","1": 1 1 2 2 1 2 1 2 2 2 ...
 :  $ am : Factor w/ 2 levels "0","1": 2 2 2 1 1 1 1 1 1 1 ...
 
-**** DONE What is the purpose of using factors in R for categorical data analysis?
+*** DONE What is the purpose of using factors in R for categorical data analysis?
 #+begin_quote
 Factors allow for easy organization, labeling, summarization, and
 visualization of categorical data. What does this mean?
@@ -4149,7 +4149,7 @@ understand every word, and every aspect of it. No better way than with
 simple examples that you can produce without much thinking.
 #+end_quote
 
-**** NEXT Can you give a concrete example for these applications of =factor= data?
+*** NEXT Can you give a concrete example for these applications of =factor= data?
 
 #+begin_src R
   blood_data <- data.frame(
@@ -4186,32 +4186,38 @@ Turn the =character= vector into a =factor=:
 :  A AB  B  O
 :  1  1  1  1
 
-**** What does the `table()` function accomplish when used on categorical variables in R?
+*** What does the `table()` function accomplish when used on categorical variables in R?
 #+begin_quote
 It provides a frequency count of the combinations of factor levels.
 #+end_quote
 
-**** What does setting `position = "fill"` in a `geom_bar()` plot do?
+*** What does setting `position = "fill"` in a `geom_bar()` plot do?
 #+begin_quote
 It normalizes bar heights to represent proportions rather than raw counts.
 #+end_quote
 
-**** How would this look in base R? How do you get a proportional stacked bar plot?
-**** How does a faceted bar chart differ from a stacked bar chart?
+*** How would this look in base R? How do you get a proportional stacked bar plot?
+*** How does a faceted bar chart differ from a stacked bar chart?
 #+begin_quote
 A faceted bar chart creates separate subplots for each category, while
 a stacked bar chart combines categories into a single plot.
 #+end_quote
 
-**** Why might one choose a bar chart over a pie chart for categorical data analysis?
+*** Why might one choose a bar chart over a pie chart for categorical data analysis?
 #+begin_quote
 Bar charts are generally easier to interpret and allow for better
 comparison of categories.
 #+end_quote
 
 
-***** TODO R Lists
+**** TODO R Lists
 
+
+** NEXT R Lists
+#+attr_html: :width 500px
+[[../img/datastructures.png]]
+
+Download this file to practice and code along: [[https://tinyurl.com/lists-org][tinyurl.com/lists-org]]
 
 ** Week 14: EDA: numerical data & visualization [Nov 25]
 
