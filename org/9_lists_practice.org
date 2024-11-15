@@ -1,0 +1,208 @@
+#+title: Lists in R - PRACTICE FILE
+#+AUTHOR: Marcus Birkenkrahe
+#+SUBTITLE: Introduction to data science (DSC 105) Fall 2024
+#+OPTIONS: toc:nil num:nil
+#+STARTUP: overview hideblocks indent inlineimages
+#+PROPERTY: header-args:R :session *R* :exports both :results output
+* Code along: Creating a list
+
+- Create a list ~foo~ and print it, then print its structure:
+  #+begin_src R
+
+  #+end_src
+
+- How long is ~foo~?
+  #+begin_src R
+
+#+end_src
+
+- Show its structure:
+  #+begin_src R
+
+#+end_src
+
+- What R object class does ~foo~ have, and what object classes do its
+  elements have?
+  #+begin_src R
+
+    ## loop over the list using an `apply` function
+
+    ## loop over the list using `for`
+
+  #+end_src
+
+* Code along: Creating (named) lists
+
+- Creating a list is much like creating a vector with the ~c~ function
+
+- You supply the elements to the ~list~ function, separated by commata
+
+- Let's define a list ~foo~ and print it:
+  #+begin_src R
+
+  #+end_src
+
+
+  #+begin_src R
+
+  #+end_src
+
+- List elements are indexed with the ~[[~ operator. Within each element,
+  the elements are indexed according to their data structure
+
+- What is the ~length~ of the list ~foo~?
+  #+begin_src R
+
+  #+end_src
+
+- What is the ~class~ of the list ~foo~ and of its elements?
+  #+begin_src R
+    
+  #+end_src
+
+* Practice creating a ~list~
+
+Create a list that contains, in this order
+1) a ~seq~-uence of 20 evenly spread numbers between ~-4~ and ~4~
+2) a 3 x 3 ~matrix~ of the ~logical~ vector ~c(F,T,T,T,F,T,T,F,F)~ filled
+   column-wise
+3) a ~character~ vector with the two strings ~"don"~ and ~"quixote"~
+
+#+begin_src R
+
+#+end_src
+
+* Code along: Subsetting lists
+
+- Retrieve list members using indices in *double* square brackets =[[]]=
+
+- Retrieve (or remove) list member elements using *single* square
+  brackets =[]=
+
+- Some examples:
+  1) Retrieve the 1st list member of ~foo~ defined earlier.
+  2) Retrieve the 3rd element of the 1st member of ~foo~.
+  3) Retrieve the 2nd through 4th element of the 2nd member.
+  4) Retrieve the 3rd member.
+  5) What is the 2nd element of the 3rd member?
+  #+begin_src R :noweb yes
+
+  #+end_src
+
+- Same for the matrix member of the list: use double indices
+  1) retrieve the 2nd column of the 1st member of ~foo~
+  2) retrieve the 2nd row, 1st column of the 1st member of ~foo~
+  3) retrieve elements 1 through 4 of the 1st member of ~foo~
+  #+begin_src R
+
+  #+end_src
+
+- Using double square brackets on a list is always interpreted with
+  respect to a single member, for example:
+  #+begin_src R
+
+  #+end_src
+
+- Using the ~-~ operator inside the single index brackets to remove:
+  #+begin_src R
+
+  #+end_src
+
+- Preview: how would you extract the string member of ~foo~?
+  #+begin_src R
+    ## with a for loop
+    char <- vector()
+    for (member in foo) {
+      char <- c(char,is.character(member))
+    }
+    char
+    idx <- which(char==TRUE) # get the index
+    foo[[idx]]  # index list
+
+    ## with the lapply function
+    char1 <- lapply(X=foo,FUN=is.character)
+    unlist(char1)
+    idx <- which(char1==TRUE) # get the index
+    foo[[idx]]  # index list
+  #+end_src
+
+- The ~apply~ family of functions will be taught in advanced data
+  science, including ~lapply~ (apply ~FUN~-ctions across a whole ~list~)
+
+* Practice extracting from a ~list~
+
+Solve the following extraction problems:
+1) Extract the 1st member of ~foo~.
+2) Extract the first and the last element of the 1st member of ~foo~.
+3) Extract the elements of the 1st member of ~foo~ with odd indices.
+
+#+begin_src R
+
+#+end_src
+
+* Code along: Removing, overwriting and slicing a ~list~
+
+- To overwrite a list member, use the assignment operator ~<-~
+  #+begin_src R
+
+  #+end_src
+
+- Here, ~paste~ concatenates strings but can also be used for output:
+  #+begin_src R
+
+  #+end_src
+
+- To remove a list member, overwrite it with ~NULL~ (like ~names~)
+  #+begin_src R
+
+  #+end_src
+
+- /List slicing/ means selecting multiple list items at once:
+  #+begin_src R
+
+  #+end_src
+
+- Note that the sliced list is itself a ~list~
+
+* Naming lists
+
+- List members can be /named/ just like vector or data frame elements
+
+- A name is an R /attribute/. An unnamed list has none:
+  #+begin_src R
+
+  #+end_src
+
+- Name the members of ~foo~ using ~names~, then print ~str(foo)~:
+  #+begin_src R
+
+  #+end_src
+
+- You can now use the names to subset the list as usual:
+  1) Print the ~matrix~ member of ~foo~.
+  2) Print the 2nd column of the ~matrix~ member.
+  3) Print the 2nd through 4th element of the ~logical~ member.
+  #+begin_src R
+
+  #+end_src
+
+- Note that the ~names~ are stored as a ~character~ vector but not used
+  with quotes. Also, you cannot use the names inside double brackets
+  #+begin_src R
+
+  #+end_src
+
+- You can also name the list when creating it with ~list~:
+  #+begin_src R
+
+  #+end_src
+
+* Practice naming lists
+
+1) Make a safety copy ~np~ of ~p~
+2) Name the elements of ~np~ in this order: ~num~, ~logmat~, ~char~
+3) Display the structure of the named list ~p~
+4) Remove the 2nd string of the 3rd member using its name
+#+begin_src R
+
+#+end_src

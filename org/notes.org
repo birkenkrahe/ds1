@@ -3916,7 +3916,7 @@ Download and open the code along file: [[https://tinyurl.com/df-codealong][tinyu
 
 * IN PROGRESS Part IV: EDA and Applications
 ** Week 13: =data.frame= lab & Categorical EDA & Lists [Nov 11]
-#+attr_html: :width 700px:
+#+attr_html: :width 400px:
 [[../img/wedding_at_cana.jpg]]
 
 Image: The largest painting in the Louvre: Wedding in Cana (Paolo
@@ -4053,7 +4053,7 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
 
 *** IN PROGRESS DataCamp review: Exploring categorical data (deep dive)
 
-**** Is the =factor= data structure common in data sets?
+**** DONE Is the =factor= data structure common in data sets?
 #+begin_quote
 No. Outside of R, data sets are stored either in CSV format, or in the
 form of SQL databases (tables), and categorical variables in these
@@ -4077,7 +4077,7 @@ e.g. =ToothGrowth=, =mtcars=, =airquality=.
 :  $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
 :  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
 
-**** How can you find out if a variable is (suited to be) a factor?
+**** DONE How can you find out if a variable is (suited to be) a factor?
 #+begin_quote
 Look at the structure of the dataset and check the values for =levels=
 using =unique=, and/or check the data sheet (for example with =help=).
@@ -4116,7 +4116,7 @@ Using =unique=:
 : Levels: OJ VC
 : [1] 5 6 7 8 9
 
-**** How can you display the levels of a factor variable in R?
+**** DONE How can you display the levels of a factor variable in R?
 #+begin_quote
 Using the =levels= function. If you have multiple =factor= variables, you
 can put them into a =data.frame=.
@@ -4139,7 +4139,7 @@ Let's build a dataframe from factors:
 :  $ vs : Factor w/ 2 levels "0","1": 1 1 2 2 1 2 1 2 2 2 ...
 :  $ am : Factor w/ 2 levels "0","1": 2 2 2 1 1 1 1 1 1 1 ...
 
-**** What is the purpose of using factors in R for categorical data analysis?
+**** DONE What is the purpose of using factors in R for categorical data analysis?
 #+begin_quote
 Factors allow for easy organization, labeling, summarization, and
 visualization of categorical data. What does this mean?
@@ -4148,6 +4148,8 @@ Remember: In a definition, or a statement, you need to really
 understand every word, and every aspect of it. No better way than with
 simple examples that you can produce without much thinking.
 #+end_quote
+
+**** NEXT Can you give a concrete example for these applications of =factor= data?
 
 #+begin_src R
   blood_data <- data.frame(
@@ -4184,8 +4186,6 @@ Turn the =character= vector into a =factor=:
 :  A AB  B  O
 :  1  1  1  1
 
-**** Can you give a concrete example for these applications of =factor= data?
-
 **** What does the `table()` function accomplish when used on categorical variables in R?
 #+begin_quote
 It provides a frequency count of the combinations of factor levels.
@@ -4197,7 +4197,6 @@ It normalizes bar heights to represent proportions rather than raw counts.
 #+end_quote
 
 **** How would this look in base R? How do you get a proportional stacked bar plot?
-
 **** How does a faceted bar chart differ from a stacked bar chart?
 #+begin_quote
 A faceted bar chart creates separate subplots for each category, while
@@ -4212,6 +4211,7 @@ comparison of categories.
 
 
 ***** TODO R Lists
+
 
 ** Week 14: EDA: numerical data & visualization [Nov 25]
 
