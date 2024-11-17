@@ -3904,7 +3904,6 @@ complete it.
      Spark (Python,Java,R), BigQuery (SQL), or Snowflake (SQL,Python).
    #+end_quote
 
-
 *** TODO Data frames, Factors, Lists
 
 Download and open the code along file: [[https://tinyurl.com/df-codealong][tinyurl.com/df-codealong]]
@@ -4051,7 +4050,7 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
 
 *** DONE DataCamp review: Exploring categorical data (deep dive)
 
-**** DONE Is the =factor= data structure common in data sets?
+**** Is the =factor= data structure common in data sets?
 #+begin_quote
 No. Outside of R, data sets are stored either in CSV format, or in the
 form of SQL databases (tables), and categorical variables in these
@@ -4075,7 +4074,7 @@ e.g. =ToothGrowth=, =mtcars=, =airquality=.
 :  $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
 :  $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
 
-**** DONE How can you find out if a variable is (suited to be) a factor?
+**** How can you find out if a variable is (suited to be) a factor?
 #+begin_quote
 Look at the structure of the dataset and check the values for =levels=
 using =unique=, and/or check the data sheet (for example with =help=).
@@ -4114,7 +4113,7 @@ Using =unique=:
 : Levels: OJ VC
 : [1] 5 6 7 8 9
 
-**** DONE How can you display the levels of a factor variable in R?
+**** How can you display the levels of a factor variable in R?
 #+begin_quote
 Using the =levels= function. If you have multiple =factor= variables, you
 can put them into a =data.frame=.
@@ -4137,7 +4136,7 @@ Let's build a dataframe from factors:
 :  $ vs : Factor w/ 2 levels "0","1": 1 1 2 2 1 2 1 2 2 2 ...
 :  $ am : Factor w/ 2 levels "0","1": 2 2 2 1 1 1 1 1 1 1 ...
 
-**** DONE What is the purpose of using factors in R for categorical data analysis?
+**** What is the purpose of using factors in R for categorical data analysis?
 #+begin_quote
 Factors allow for easy organization, labeling, summarization, and
 visualization of categorical data. What does this mean?
@@ -4147,7 +4146,7 @@ understand every word, and every aspect of it. No better way than with
 simple examples that you can produce without much thinking.
 #+end_quote
 
-**** DONE Can you give a concrete example for these applications of =factor= data?
+**** Can you give a concrete example for these applications of =factor= data?
 
 #+begin_src R
   blood_data <- data.frame(
@@ -4330,11 +4329,13 @@ Bar charts are generally easier to interpret and allow for better
 comparison of categories.
 #+end_quote
 
+
 *** IN PROGRESS R Lists
 #+attr_html: :width 500px
 [[../img/datastructures.png]]
 
 Download this file to practice and code along: [[https://tinyurl.com/lists-org][tinyurl.com/lists-org]]
+
 
 ** Week 14: EDA: numerical data & visualization [Nov 25]
 

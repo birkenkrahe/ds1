@@ -47,7 +47,6 @@ Download this file to practice and code along: [[https://tinyurl.com/lists-org][
     for (i in foo) print(class(i))
   #+end_src
 
-
 * Why are lists important?
 #+attr_html: :width 500px
 [[../img/datastructures.png]]
