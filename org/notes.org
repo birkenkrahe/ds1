@@ -4349,6 +4349,7 @@ Download this file to practice and code along: [[https://tinyurl.com/lists-org][
 
 *** TODO DataCamp review: EDA for numerical data
 
+
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
 [[../img/checklist.png]]
