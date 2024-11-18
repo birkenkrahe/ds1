@@ -3914,7 +3914,7 @@ Download and open the code along file: [[https://tinyurl.com/df-codealong][tinyu
 - [ ] Factor and list creation
 
 * IN PROGRESS Part IV: EDA and Applications
-** Week 13: =data.frame= lab & Categorical EDA & Lists [Nov 11]
+** DONE Week 13: =data.frame= lab & Categorical EDA & Lists [Nov 11]
 #+attr_html: :width 400px:
 [[../img/wedding_at_cana.jpg]]
 
@@ -4336,8 +4336,9 @@ comparison of categories.
 
 Download this file to practice and code along: [[https://tinyurl.com/lists-org][tinyurl.com/lists-org]]
 
-
 ** Week 14: EDA: numerical data & visualization [Nov 25]
+
+- [ ] Last DataCamp course turned into BONUS lesson
 
 *** IN PROGRESS R Lists
 #+attr_html: :width 500px
@@ -4345,6 +4346,8 @@ Download this file to practice and code along: [[https://tinyurl.com/lists-org][
 
 Download this file to practice and code along: [[https://tinyurl.com/lists-org][tinyurl.com/lists-org]]
 
+
+*** TODO DataCamp review: EDA for numerical data
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
