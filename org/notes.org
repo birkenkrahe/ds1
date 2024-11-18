@@ -4338,7 +4338,11 @@ Download this file to practice and code along: [[https://tinyurl.com/lists-org][
 
 ** Week 14: EDA: numerical data & visualization [Nov 25]
 
-- [ ] Last DataCamp course turned into BONUS lesson
+- [X] Next DataCamp lesson: Numerical summaries (stats)
+- [X] Last quiz (10) is online
+- [X] Presentation details to come
+- [X] 3rd sprint review feedback to come
+- [X] Last DataCamp course turned into BONUS lesson
 
 *** IN PROGRESS R Lists
 #+attr_html: :width 500px
@@ -4346,9 +4350,7 @@ Download this file to practice and code along: [[https://tinyurl.com/lists-org][
 
 Download this file to practice and code along: [[https://tinyurl.com/lists-org][tinyurl.com/lists-org]]
 
-
 *** TODO DataCamp review: EDA for numerical data
-
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
