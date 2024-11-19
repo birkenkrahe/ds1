@@ -4343,6 +4343,7 @@ Download this file to practice and code along: [[https://tinyurl.com/lists-org][
 - [X] Presentation details to come
 - [X] 3rd sprint review feedback to come
 - [X] Last DataCamp course turned into BONUS lesson
+- [ ] Exit quiz for this course in last week of term
 
 *** IN PROGRESS R Lists
 #+attr_html: :width 500px
