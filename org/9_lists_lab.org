@@ -1,4 +1,4 @@
-#+title: Lists in R - Lab exercises
+x#+title: Lists in R - Lab exercises
 #+AUTHOR: [yourname] (pledged)
 #+SUBTITLE: Introduction to data science (DSC 105) Fall 2024
 #+STARTUP: overview hideblocks indent inlineimages

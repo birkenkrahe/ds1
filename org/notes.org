@@ -4345,13 +4345,19 @@ Download this file to practice and code along: [[https://tinyurl.com/lists-org][
 - [X] Last DataCamp course turned into BONUS lesson
 - [ ] Exit quiz for this course in last week of term
 
-*** IN PROGRESS R Lists
+*** DONE R Lists
 #+attr_html: :width 500px
 [[../img/datastructures.png]]
 
 Download this file to practice and code along: [[https://tinyurl.com/lists-org][tinyurl.com/lists-org]]
 
+*** NEXT Lists Lab
+
+Download and complete the file: [[https://tinyurl.com/lists-lab-org][tinyurl.com/lists-lab-org]]
+
 *** TODO DataCamp review: EDA for numerical data
+
+*** TODO A bit of plotting at the end: barplot, histogram, boxplot
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
