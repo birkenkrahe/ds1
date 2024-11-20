@@ -4380,6 +4380,7 @@ Q&A:
 
 *** TODO A bit of plotting at the end: barplot, histogram, boxplot
 
+
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
 [[../img/final_presentation.png]]
