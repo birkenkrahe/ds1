@@ -13,7 +13,7 @@
 - How do you create a (named) list?
 - How can you subset lists?
 
-* TODO Practice: creating lists
+* Practice: creating lists
 #+attr_html: :width 600px
 [[../img/practice1.jpg]]
 
