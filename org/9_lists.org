@@ -195,7 +195,6 @@ Download this file to practice and code along: [[https://tinyurl.com/lists-org][
   : [1] "matrix" "array"
   : [1] "character"
 
-* Practice creating a named ~list~
 
 Create a list that contains, in this order
 1) a ~seq~-uence of 20 evenly spread numbers between ~-4~ and ~4~
@@ -502,15 +501,313 @@ Solve the following extraction problems:
     str(q)
   #+end_src
 
-* Practice naming lists
+* Practice creating, naming, slicing, changing lists
 
-1) Make a safety copy ~np~ of ~p~
-2) Name the elements of ~np~ in this order: ~num~, ~logmat~, ~char~
-3) Display the structure of the named list ~p~
-4) Remove the 2nd string of the 3rd member using its name
-#+begin_src R
-  np <- p                               #1
-  names(np) <- c("num","logmat","char") #2
-  str(np)                               #3
-  np$char[-2]
-#+end_src
+1) Create a /named/ =list= called "List" of the following members:
+   - A =numeric= vector consisting of the whole numbers 1
+     to 10.
+   - A =logical= 3x3 identity matrix - use =diag=, =as.logical=,
+     and =matrix= to build it (=diag(3)= is a 3x3 identity matrix).
+   - A =character= vector, whose elements are the names Matthew, Mark,
+     Luke, and John.
+
+   #+begin_src R
+     list(
+       1:10,
+       matrix(as.logical(diag(3)), ncol=3),
+       c("Matthew","Mark","Luke","John")
+     ) -> List
+   #+end_src
+
+   #+RESULTS:
+
+2) Print =List= and the structure of =List=.
+
+   #+begin_src R
+     List
+     str(List)
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   [[1]]
+    [1]  1  2  3  4  5  6  7  8  9 10
+
+   [[2]]
+         [,1]  [,2]  [,3]
+   [1,]  TRUE FALSE FALSE
+   [2,] FALSE  TRUE FALSE
+   [3,] FALSE FALSE  TRUE
+
+   [[3]]
+   [1] "Matthew" "Mark"    "Luke"    "John"
+   List of 3
+    $ : int [1:10] 1 2 3 4 5 6 7 8 9 10
+    $ : logi [1:3, 1:3] TRUE FALSE FALSE FALSE TRUE FALSE ...
+    $ : chr [1:4] "Matthew" "Mark" "Luke" "John"
+   #+end_example
+
+3) Name the list members ="one to ten"=, ="identity"=, and ="evangelists"=
+   using =names=. Print the =names= of =List=.
+
+   #+begin_src R
+     names(List) <- c("one to ten",
+                      "identity",
+                      "evangelists")
+     names(List)
+   #+end_src
+
+   #+RESULTS:
+   : [1] "one to ten"  "identity"    "evangelists"
+
+4) Print the list structure again.
+
+   #+begin_src R
+     str(List)
+   #+end_src
+
+   #+RESULTS:
+   : List of 3
+   :  $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
+   :  $ identity   : logi [1:3, 1:3] TRUE FALSE FALSE FALSE TRUE FALSE ...
+   :  $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
+
+5) Remove last row of the matrix member and store the resulting list
+   in =List2=. Print the structure of =List2= to confirm. In the correct
+   result, the =identity= member should have the dimension 2 x 3
+   (=logi[1:2,1:3]=)..
+
+   - Tip: You can simply overwrite any list member with a new
+     value. Before doing that, test your code after making a copy of
+     the list!
+
+   - Test with copy:
+     #+begin_src R
+       L <- List
+       str(L)
+       L$identity[-3,]
+       L$identity <- L$identity[-3,]
+       str(L)
+     #+end_src
+
+     #+RESULTS:
+     #+begin_example
+     List of 3
+      $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
+      $ identity   : logi [1:3, 1:3] TRUE FALSE FALSE FALSE TRUE FALSE ...
+      $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
+     [,1]  [,2]  [,3]
+     [1,]  TRUE FALSE FALSE
+     [2,] FALSE  TRUE FALSE
+     List of 3
+      $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
+      $ identity   : logi [1:2, 1:3] TRUE FALSE FALSE TRUE FALSE FALSE
+      $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
+     #+end_example
+
+     - Looks good, so do it with the original:
+       #+begin_src R
+         List$identity <- List$identity[-3,]
+         str(List)
+       #+end_src
+
+       #+RESULTS:
+       : List of 3
+       :  $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
+       :  $ identity   : logi [1:2, 1:3] TRUE FALSE FALSE TRUE FALSE FALSE
+       :  $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
+
+     - Alternative: Build =List2= from the named members of =List= using the
+       =list= function. Name each =list= member. Do not save until you're
+       sure. You can use =rm= to remove objects that you've created.
+
+       #+begin_src R
+         list(
+           "one to ten" = List[[1]],
+           "identity" = List$identity[-3,],
+           "evangelists" = List$evangelists) -> L
+         str(L)
+       #+end_src
+
+       #+RESULTS:
+       : List of 3
+       :  $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
+       :  $ identity   : logi [1:2, 1:3] TRUE FALSE FALSE TRUE FALSE FALSE
+       :  $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
+
+6) Create an ordered =factor= called =price= with the elements: cheap,
+   pricy, cheap, cheap, pricy, where "cheap" is below "pricy".
+
+   Tip: The parameter to order a factor is called =ordered=, and the
+   parameter to order its levels is called =levels=.
+
+   #+begin_src R
+     ## build the factor
+     factor(c("cheap", "pricy", "cheap", "cheap", "pricy"))
+     ## order the factor and save it
+     factor(c("cheap", "pricy", "cheap", "cheap", "pricy"),
+            ordered=TRUE,
+            levels=c("cheap", "pricy")) -> price
+     price
+   #+end_src
+
+   #+RESULTS:
+   : [1] cheap pricy cheap cheap pricy
+   : Levels: cheap pricy
+   : [1] cheap pricy cheap cheap pricy
+   : Levels: cheap < pricy
+
+7) Add the factor =price= to the end of =List2=. Remember to make a copy
+   of list before altering it for good!
+
+   - Adding the list member:
+     #+begin_src R
+       L <- List2
+       L[[4]] <- price
+       str(L)
+     #+end_src
+
+     #+RESULTS:
+     : List of 4
+     :  $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
+     :  $ identity   : logi [1:2, 1:3] TRUE FALSE FALSE TRUE FALSE FALSE
+     :  $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
+     :  $ price      : Ord.factor w/ 2 levels "cheap"<"pricy": 1 2 1 1 2
+
+   #+RESULTS:
+   : List of 4
+   :  $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
+   :  $ identity   : logi [1:2, 1:3] TRUE FALSE FALSE TRUE FALSE FALSE
+   :  $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
+   :  $ price      : Ord.factor w/ 2 levels "cheap"<"pricy": 1 2 1 1 2
+
+   - Now for the real list, =List2=:
+     #+begin_src R
+       List2[[4]] <- price
+       str(List2)
+     #+end_src
+
+     #+RESULTS:
+     : List of 4
+     :  $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
+     :  $ identity   : logi [1:2, 1:3] TRUE FALSE FALSE TRUE FALSE FALSE
+     :  $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
+     :  $ price      : Ord.factor w/ 2 levels "cheap"<"pricy": 1 2 1 1 2
+
+   #+RESULTS:
+   : List of 4
+   :  $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
+   :  $ identity   : logi [1:2, 1:3] TRUE FALSE FALSE TRUE FALSE FALSE
+   :  $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
+   :  $ price      : Ord.factor w/ 2 levels "cheap"<"pricy": 1 2 1 1 2
+
+8) Remove the last element of the =factor= member in =List2= using the
+   =length= function, and save the result to =price2=.
+
+   #+begin_src R
+     ## store last member index
+     length(List2) -> last_member
+     ## show last member
+     List2[[last_member]]
+     ## remove last element from last member and save it
+     List2[[last_member]][-length(last_member)] -> price2
+     price2
+   #+end_src
+
+   #+RESULTS:
+   : [1] cheap pricy cheap cheap pricy
+   : Levels: cheap < pricy
+   : [1] pricy cheap cheap pricy
+   : Levels: cheap < pricy
+
+9) Replace the =price= factor by the new one and update =List2= to =List3=.
+
+   - Tip: To remove member N from a list L, use =L[-N]=.
+
+   - Solution 1: Replacing the element directly
+     #+begin_src R
+       List3 <- List2
+       str(List3)
+       List3$price <- price2
+       str(List3)
+     #+end_src
+
+     #+RESULTS:
+     #+begin_example
+     List of 4
+      $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
+      $ identity   : logi [1:2, 1:3] TRUE FALSE FALSE TRUE FALSE FALSE
+      $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
+      $ price      : Ord.factor w/ 2 levels "cheap"<"pricy": 1 2 1 1 2
+     List of 4
+      $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
+      $ identity   : logi [1:2, 1:3] TRUE FALSE FALSE TRUE FALSE FALSE
+      $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
+      $ price      : Ord.factor w/ 2 levels "cheap"<"pricy": 2 1 1 2
+     #+end_example
+
+10) Transpose the matrix =identity= using the =t= function and save the
+    resulting matrix in a new list =List4= in the second position as
+    before.
+
+    Transposition:
+    #+begin_src R
+      ## transpose matrix and save it
+      t(List3[[2]]) -> mat
+      mat
+    #+end_src
+
+    #+RESULTS:
+    : [,1]  [,2]
+    : [1,]  TRUE FALSE
+    : [2,] FALSE  TRUE
+    : [3,] FALSE FALSE
+
+    Make copy of list and replace matrix member:
+    #+begin_src R
+      ## Copy list into new list
+      List4 <- List3
+      str(List4)
+      ## Replace 2nd element
+      List4[[2]] <- mat
+      str(List4)
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+    List of 4
+     $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
+     $ identity   : logi [1:2, 1:3] TRUE FALSE FALSE TRUE FALSE FALSE
+     $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
+     $ price      : Ord.factor w/ 2 levels "cheap"<"pricy": 2 1 1 2
+    List of 4
+     $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
+     $ identity   : logi [1:3, 1:2] TRUE FALSE FALSE FALSE TRUE FALSE
+     $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
+     $ price      : Ord.factor w/ 2 levels "cheap"<"pricy": 2 1 1 2
+    #+end_example
+
+    Your final result should look like this:
+
+    #+begin_src R
+      List4
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+    $`one to ten`
+     [1]  1  2  3  4  5  6  7  8  9 10
+
+    $identity
+          [,1]  [,2]
+    [1,]  TRUE FALSE
+    [2,] FALSE  TRUE
+    [3,] FALSE FALSE
+
+    $evangelists
+    [1] "Matthew" "Mark"    "Luke"    "John"   
+
+    $price
+    [1] pricy cheap cheap pricy
+    Levels: cheap < pricy
+    #+end_example
