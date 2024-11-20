@@ -4380,11 +4380,9 @@ Q&A:
 
 *** TODO A bit of plotting at the end: barplot, histogram, boxplot
 
-
 ** Week 15: Final presentations [Dec 2]
-
 #+attr_html: :width 600px
-[[../img/checklist.png]]
+[[../img/final_presentation.png]]
 
 ** Week 16: Final exam (optional) [Dec 13]
 
