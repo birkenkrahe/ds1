@@ -4077,7 +4077,7 @@ e.g. =ToothGrowth=, =mtcars=, =airquality=.
 **** How can you find out if a variable is (suited to be) a factor?
 #+begin_quote
 Look at the structure of the dataset and check the values for =levels=
-using =unique=, and/or check the data sheet (for example with =help=).
+using =unique=, and/orc heck the data sheet (for example with =help=).
 #+end_quote
 
 #+begin_src R
@@ -4336,13 +4336,16 @@ comparison of categories.
 
 Download this file to practice and code along: [[https://tinyurl.com/lists-org][tinyurl.com/lists-org]]
 
-** Week 14: EDA: numerical data & visualization [Nov 25]
+** Week 14: EDA: numerical data & visualization [Nov 18]
+#+attr_html: :width 400px:
+[[../img/
 
 - [X] Next DataCamp lesson: Numerical summaries (stats)
 - [X] Last quiz (10) is online
 - [X] Presentation details to come
 - [X] 3rd sprint review feedback to come
 - [X] Last DataCamp course turned into BONUS lesson
+- [ ] R lists lab exercises (no upload, solutions as PDF)
 - [ ] Exit quiz for this course in last week of term
 
 *** DONE R Lists
@@ -4351,15 +4354,35 @@ Download this file to practice and code along: [[https://tinyurl.com/lists-org][
 
 Download this file to practice and code along: [[https://tinyurl.com/lists-org][tinyurl.com/lists-org]]
 
-*** NEXT Lists Lab
+*** DONE Lists Lab
 
 Download and complete the file: [[https://tinyurl.com/lists-lab-org][tinyurl.com/lists-lab-org]]
 
+*** DONE Project: Final presentation
+
+See this checklist for your team before the presentation:
+[[../img/checklist2.png]]
+
+See also the FAQ entry [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-should-we-prepare-for-the-final-presentation]["What should we do in the 4th sprint?"]] in
+GitHub.
+
+Q&A:
+
+1) What: You present your results
+2) Who: All team members must be present
+3) When: FIFO (2 presentations per session)
+4) How: Any way you like
+5) Why: Practice presenting data science results
+
+
 *** TODO DataCamp review: EDA for numerical data
+
 
 *** TODO A bit of plotting at the end: barplot, histogram, boxplot
 
+
 ** Week 15: Final presentations [Dec 2]
+
 #+attr_html: :width 600px
 [[../img/checklist.png]]
 

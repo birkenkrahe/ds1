@@ -927,7 +927,6 @@ In this example, the barplot is saved using three different file formats: PNG, J
   unordered. As soon as you want to display a second variable, or if
   you have more than a few levels, bar charts are to be preferred.
 
-
 * Histograms
 
 - [ ] When do you think of using *barplots*?

@@ -502,6 +502,8 @@ Solve the following extraction problems:
   #+end_src
 
 * Practice creating, naming, slicing, changing lists
+#+attr_html: :width 400px:
+[[../img/gospel.jpg]]
 
 1) Create a /named/ =list= called "List" of the following members:
    - A =numeric= vector consisting of the whole numbers 1
@@ -510,16 +512,14 @@ Solve the following extraction problems:
      and =matrix= to build it (=diag(3)= is a 3x3 identity matrix).
    - A =character= vector, whose elements are the names Matthew, Mark,
      Luke, and John.
-
-   #+begin_src R
+     
+   #+begin_src R :results none
      list(
        1:10,
        matrix(as.logical(diag(3)), ncol=3),
        c("Matthew","Mark","Luke","John")
      ) -> List
    #+end_src
-
-   #+RESULTS:
 
 2) Print =List= and the structure of =List=.
 
@@ -575,7 +575,7 @@ Solve the following extraction problems:
 5) Remove last row of the matrix member and store the resulting list
    in =List2=. Print the structure of =List2= to confirm. In the correct
    result, the =identity= member should have the dimension 2 x 3
-   (=logi[1:2,1:3]=)..
+   (=logi[1:2,1:3]=).
 
    - Tip: You can simply overwrite any list member with a new
      value. Before doing that, test your code after making a copy of
@@ -674,13 +674,6 @@ Solve the following extraction problems:
      :  $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
      :  $ price      : Ord.factor w/ 2 levels "cheap"<"pricy": 1 2 1 1 2
 
-   #+RESULTS:
-   : List of 4
-   :  $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
-   :  $ identity   : logi [1:2, 1:3] TRUE FALSE FALSE TRUE FALSE FALSE
-   :  $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
-   :  $ price      : Ord.factor w/ 2 levels "cheap"<"pricy": 1 2 1 1 2
-
    - Now for the real list, =List2=:
      #+begin_src R
        List2[[4]] <- price
@@ -693,13 +686,6 @@ Solve the following extraction problems:
      :  $ identity   : logi [1:2, 1:3] TRUE FALSE FALSE TRUE FALSE FALSE
      :  $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
      :  $ price      : Ord.factor w/ 2 levels "cheap"<"pricy": 1 2 1 1 2
-
-   #+RESULTS:
-   : List of 4
-   :  $ one to ten : int [1:10] 1 2 3 4 5 6 7 8 9 10
-   :  $ identity   : logi [1:2, 1:3] TRUE FALSE FALSE TRUE FALSE FALSE
-   :  $ evangelists: chr [1:4] "Matthew" "Mark" "Luke" "John"
-   :  $ price      : Ord.factor w/ 2 levels "cheap"<"pricy": 1 2 1 1 2
 
 8) Remove the last element of the =factor= member in =List2= using the
    =length= function, and save the result to =price2=.
@@ -787,27 +773,21 @@ Solve the following extraction problems:
      $ price      : Ord.factor w/ 2 levels "cheap"<"pricy": 2 1 1 2
     #+end_example
 
-    Your final result should look like this:
+Your final result should look like this:
+#+begin_example
+$`one to ten`
+ [1]  1  2  3  4  5  6  7  8  9 10
 
-    #+begin_src R
-      List4
-    #+end_src
+$identity
+      [,1]  [,2]
+[1,]  TRUE FALSE
+[2,] FALSE  TRUE
+[3,] FALSE FALSE
 
-    #+RESULTS:
-    #+begin_example
-    $`one to ten`
-     [1]  1  2  3  4  5  6  7  8  9 10
+$evangelists
+[1] "Matthew" "Mark"    "Luke"    "John"
 
-    $identity
-          [,1]  [,2]
-    [1,]  TRUE FALSE
-    [2,] FALSE  TRUE
-    [3,] FALSE FALSE
-
-    $evangelists
-    [1] "Matthew" "Mark"    "Luke"    "John"   
-
-    $price
-    [1] pricy cheap cheap pricy
-    Levels: cheap < pricy
-    #+end_example
+$price
+[1] pricy cheap cheap pricy
+Levels: cheap < pricy
+#+end_example
