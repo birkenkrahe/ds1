@@ -4066,7 +4066,7 @@ e.g. =ToothGrowth=, =mtcars=, =airquality=.
 #+end_src
 
 #+RESULTS:
-: 'data.frame':	153 obs. of  6 variables:
+: 'data.frame': 153 obs. of  6 variables:
 :  $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
 :  $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
 :  $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...
@@ -4086,7 +4086,7 @@ using =unique=, and/orc heck the data sheet (for example with =help=).
 
 #+RESULTS:
 #+begin_example
-'data.frame':	32 obs. of  11 variables:
+'data.frame':   32 obs. of  11 variables:
  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
  $ disp: num  160 160 108 258 360 ...
@@ -4131,7 +4131,7 @@ Let's build a dataframe from factors:
 #+end_src
 
 #+RESULTS:
-: 'data.frame':	32 obs. of  3 variables:
+: 'data.frame': 32 obs. of  3 variables:
 :  $ cyl: Factor w/ 3 levels "4","6","8": 2 2 1 2 3 2 3 1 1 2 ...
 :  $ vs : Factor w/ 2 levels "0","1": 1 1 2 2 1 2 1 2 2 2 ...
 :  $ am : Factor w/ 2 levels "0","1": 2 2 2 1 1 1 1 1 1 1 ...
@@ -4157,7 +4157,7 @@ simple examples that you can produce without much thinking.
 #+end_src
 
 #+RESULTS:
-: 'data.frame':	4 obs. of  2 variables:
+: 'data.frame': 4 obs. of  2 variables:
 :  $ name      : chr  "Alice" "Bob" "Carol" "David"
 :  $ blood_type: chr  "A" "B" "AB" "O"
 
@@ -4169,9 +4169,9 @@ Turn the =blood_data= =character= vector into a =factor=:
 #+end_src
 
 #+RESULTS:
-: [1] A  B  AB O 
+: [1] A  B  AB O
 : Levels: A AB B O
-: [1] A  B  AB O 
+: [1] A  B  AB O
 : Levels: A AB B O
 
 You can tabulate occurrences of values easily:
@@ -4182,10 +4182,10 @@ You can tabulate occurrences of values easily:
 
 #+RESULTS:
 : type
-:  A AB  B  O 
+:  A AB  B  O
 :  1  1  1  1
-: 
-:  A AB  B 
+:
+:  A AB  B
 :  1  1  1
 
 Visualization: =ToothGrowth
@@ -4195,7 +4195,7 @@ Visualization: =ToothGrowth
 #+end_src
 
 #+RESULTS:
-: 'data.frame':	60 obs. of  3 variables:
+: 'data.frame': 60 obs. of  3 variables:
 :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
 :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
 :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
@@ -4218,7 +4218,7 @@ Extended example:
 #+end_src
 
 #+RESULTS:
-: 'data.frame':	32 obs. of  3 variables:
+: 'data.frame': 32 obs. of  3 variables:
 :  $ cyl: Factor w/ 3 levels "4","6","8": 2 2 1 2 3 2 3 1 1 2 ...
 :  $ vs : Factor w/ 2 levels "0","1": 1 1 2 2 1 2 1 2 2 2 ...
 :  $ am : Factor w/ 2 levels "0","1": 2 2 2 1 1 1 1 1 1 1 ...
@@ -4252,23 +4252,23 @@ It normalizes bar heights to represent proportions rather than raw counts.
 #+begin_src R
   data(mtcars)
 
-  # create the contingency matrix
+                                          # create the contingency matrix
   counts <- table(mtcars$cyl, mtcars$am)
   counts
 
-  # convert counts to proportions within each 'cyl' groups
+                                          # convert counts to proportions within each 'cyl' groups
   props <- prop.table(counts, margin=1) # split by rows
   props
 #+end_src
 
 #+RESULTS:
 #+begin_example
-   
+
      0  1
   4  3  8
   6  4  3
   8 12  2
-   
+
             0         1
   4 0.2727273 0.7272727
   6 0.5714286 0.4285714
@@ -4307,12 +4307,12 @@ A barplot will show these proportions visually:
 #+end_src
 
 #+RESULTS:
-:    
+:
 :             0         1
 :   4 0.2727273 0.7272727
 :   6 0.5714286 0.4285714
 :   8 0.8571429 0.1428571
-:    
+:
 :             4         6         8
 :   0 0.2727273 0.5714286 0.8571429
 :   1 0.7272727 0.4285714 0.1428571
@@ -4346,6 +4346,7 @@ Download this file to practice and code along: [[https://tinyurl.com/lists-org][
 - [X] Last DataCamp course turned into BONUS lesson
 - [X] R lists lab exercises (no upload, solutions as PDF)
 - [X] Exit quiz for this course in last week of term
+- [ ] Boxplots and scatterplots with =quakes= and =iris=
 
 *** DONE R Lists
 #+attr_html: :width 500px
@@ -4380,16 +4381,17 @@ Q&A:
 
 - What's your view of these DataCamp lessons on EDA with R?
 
-*** TODO A bit of plotting at the end: barplot, histogram, boxplot
-#+attr_html: :width 600px: 
+*** TODO A bit of plotting at the end: boxplots and scatterplots
+#+attr_html: :width 600px:
 [[../img/barplots_tuscany.png]]
 
 - You've already seen barplots, histograms, scatterplots and boxplots.
 
-- Barplots are a prominent example in the EDA with R DataCamp lesson.
+- We already covered barplots in our categorical variable "deep dive"
 
-- Their customization is particularly rewarding: the simultaneous
-  presence of continuous and discrete variables is interesting.
+- This practice file is an edited version of parts of that file
+  pertaining only to boxplots and scatterplots, using an earthquake
+  dataset.
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px
