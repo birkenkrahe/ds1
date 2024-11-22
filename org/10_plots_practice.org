@@ -6,374 +6,226 @@
 #+PROPERTY: header-args:R :session *R* :exports both :results output
 * README
 
-- For detail and many more examples, see the lecture script
-  =10_plots.org= in GitHub.
+- For detail and many more examples on barplots, histograms, density
+  plots, and their customization, see the updated (for 2024) lecture
+  script =10_plots.org= in GitHub.
 
-- This practice file is an edited version of parts of that file.
+- This practice file is an edited version of parts of that file
+  pertaining only to boxplots and scatterplots, using an earthquake
+  dataset.
 
-* Barplots for a single categorical variable
+* Boxplots - global summary stats
 
-- Barplots measure continuous values for groups of categories.
+- Box-and-whisker plots, or boxplots represent the five-number
+  ~summary~:
+  1) Minimum
+  2) 1st quartile (25% of the values are below it)
+  3) Median (50% of the values are below/above it)
+  4) Mean (Arithmetic average)
+  5) 3rd quartile (75% of the values are below it)
+  6) Maximum
 
-- Example 1: Single categorical variable (cylinder). The barplot
-  visualizes the contingency =table=.
-
-- Challenge: can you
-
-  1) load the =mtcars= data frame
-
-  2) store the cylinder variable from =mtcars= in an R object =cyl=
-
-  3) create a =barplot= that shows the distribution of cars for
-     different cylinders?
-
-  #+begin_src R :file cyl.png :session *R* :results file graphics output :exports both
-    data(mtcars) # load data
-    cyl <- mtcars$cyl 
-    barplot(table(cyl))
-  #+end_src
-
-* Contingencies for two categorical variables
-
-- We're interested in cylinder and transmission information from the
-  ~mtcars~ data set: for example, how many 4-cylinder cars have
-  automatic transmission?
-
-- To answer this question
-
-  1) store the transmission variable from =mtcars= in =transmission=,
-     and the cylinder variable in =cylinders=.
-     #+begin_src R
-       mtcars$am -> transmission
-       mtcars$cyl -> cylinders
-     #+end_src
-
-  2) create a contingency table for all cars grouped by cylinders,
-     and another one for all cars grouped by transmission:
-     #+begin_src R
-       table(cylinders)
-       table(transmission)
-     #+end_src
-
-     #+RESULTS:
-     : cylinders
-     :  4  6  8 
-     : 11  7 14
-     : transmission
-     :  0  1 
-     : 19 13
-
-  3) create a table of cylinders vs. transmission:
-     #+begin_src R
-       table(cylinders,transmission)
-     #+end_src
-
-     #+RESULTS:
-     :          transmission
-     : cylinders  0  1
-     :         4  3  8
-     :         6  4  3
-     :         8 12  2
-
-  4) you can read the answer to our question from the table (3),
-     or you can extract an answer using subscripting:
-     
-     #+begin_src R
-       cylinders # all cylinder values for all cars
-       cylinders[transmission==0] # cylinder values for manual cars
-       table(cylinders[transmission==0])["4"] # manual 4-cyl cars
-     #+end_src
-
-     #+RESULTS:
-     :  [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4
-     : [1] 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 8 8 8 8
-     : 4 
-     : 3
-
-* Stacked barplots     
-
-- /Stacked/ barplots have bars that are split up vertically
-
-- In /dodged/ or /side-by-side/ barplots, the bars are broken up and
-  placed next to one another - the figure shows the contrast:
-  #+attr_html: :width 500px
-  [[../img/9_cylam.png]]
-
-  Let's build this plot
-
-* Frequency matrix
-
-- To make such plots, ~barplot~ needs a suitably arranged matrix as its
-  first argument. E.g. for ~cylinders~ and ~transmissions~, it shows the
-  number of all cylinders associated with each transmission type:
+- For example for ~x <- c(1,2,3,4,5,6,7,8,9,10)~:
   #+begin_src R
-    cyl.freq.matrix <- table(transmission, cylinders)
-    cyl.freq.matrix
+
   #+end_src
 
-  #+RESULTS:
-  :             cylinders
-  : transmission  4  6  8
-  :            0  3  4 12
-  :            1  8  3  2
+- We use the built-in ~quakes~ data frame of the location of 1,000
+  seismic events with magnitude > 4.0 near the island of Fiji.
 
-- The condition for ~table~ to cross-tabulate categorical variables (or
-  vectors of discrete numeric values) is that the vectors have the
-  *same length*.
+- Check the structure, print the top of the dataset, and compute the
+  summary for the whole data frame.
 
-- Column vectors having the same length means that for each
-  observation, values of both variables were recorded: each car in
-  ~mtcars~ has a ~cylinders~ and a ~transmission~ value.
+  #+begin_src R
 
-- Each bar of the barplot corresponds to a column of the supplied
-  matrix, and it is further split by the row values.
-
-- Creating the barplot:
-  #+begin_src R :results graphics file :file ../img/9_cyl_am.png
-    barplot(cyl.freq.matrix,
-            las = 1) # label orientation
   #+end_src
 
-  #+RESULTS:
-  [[file:../img/9_cyl_am.png]]
+- The observations include the following variables: latitude and
+  longitude, depth and magnitude of the epicenter of the earthquake,
+  and number of the stations that registered the event.
 
-- Each bar/column of the plot corresponds to a column of the
-  categorical variable on the x-axis. Let's customize it!
+- Not all variables are statistically relevant for the =summary=. Pick
+  the ones that are and compute their =summary=.
 
-* Customizing barplots
+  #+begin_src R
 
-- There are a LOT of potential parameters in ~help(barplot)~ with the
-  default values. To find =las=, you need to check =par= (graphics).
-  #+begin_example R
-  barplot(height, width = 1, space = NULL,
-          names.arg = NULL, legend.text = NULL, beside = FALSE,
-          horiz = FALSE, density = NULL, angle = 45,
-          col = NULL, border = par("fg"),
-          main = NULL, sub = NULL, xlab = NULL, ylab = NULL,
-          xlim = NULL, ylim = NULL, xpd = TRUE, log = "",
-          axes = TRUE, axisnames = TRUE,
-          cex.axis = par("cex.axis"), cex.names = par("cex.axis"),
-          inside = TRUE, plot = TRUE, axis.lty = 0, offset = 0,
-          add = FALSE, ann = !add && par("ann"),
-          args.legend = NULL, ...)
-  #+end_example
-
-- Let's look at some of these, which we will customize later:
-
-  1) ~height~ is a non-optional argument (vector or matrix)
-  2) ~horiz = FALSE~ means bars are drawn vertically (first on the
-     left); if ~TRUE~, bars are drawn horizontally (first at bottom)
-  3) ~names.arg = NULL~ means that names for each bar are taken from the
-     ~names~ attribute of ~height~ if it is a vector, or the column
-     names if it is a matrix (which is what happened here):
-     #+begin_src R
-       colnames(cyl.freq.matrix)
-     #+end_src
-
-     #+RESULTS:
-     : [1] "4" "6" "8"
-
-  4) ~beside = FALSE~ means stacked bars, ~TRUE~ means side-by-side bars
-  5) ~legend.text~ is a quick way to add a legend (always useful)
-
-- We already know how to add a title and x- and y-axis labels:
-  #+begin_src R :results graphics file :file ../img/9_cyl_am1.png
-    barplot(cyl.freq.matrix,
-            las = 1,
-            main = "Car counts by transmission and cylinders",
-            xlab = "Number of cylinders",
-            ylab = "Number of cars")
   #+end_src
 
-  #+RESULTS:
-  [[file:../img/9_cyl_am1.png]]
+- The boxplot of the earthquake magnitudes shows the output of ~summary~
+  except the ~mean~, but it also shows /outliers/, extreme values that
+  distort the mean. [[https://github.com/birkenkrahe/ds1/blob/main/img/9_boxplot_explained.png][Here is an illustration of the boxplot]].
 
-- Change the x-axis names to more meaningful values with ~names.arg~:
-  #+begin_src R :results graphics file :file ../img/9_cyl_am2.png
-    barplot(cyl.freq.matrix,
-            las = 1,
-            main = "Car counts by transmission and cylinders",
-            xlab = "Transmission type",
-            ylab = "Number of cars",
-            names.arg = c("V4", "V6", "V8"))
+- Creating a =boxplot= is simple. Do it for the earthquake magnitudes
+  (~quakes$mag~):
+
+  #+begin_src R :results graphics file :file quakes_mag_box.png
+
   #+end_src
 
-  #+RESULTS:
-  [[file:../img/9_cyl_am2.png]]
+- Let's look at histogram and boxplot on top of one another, and then
+  do a minimal customization).
 
-- Add a legend using ~legend.text~:
-  #+begin_src R :results graphics file :file ../img/9_cyl_am3.png
-    barplot(cyl.freq.matrix,
-            las = 1,
-            main = "Car counts by transmission and cylinders",
-            xlab = "Transmission type",
-            ylab = "Number of cars",
-            names.arg = c("V4", "V6", "V8"),
-            legend.text = c("Auto", "Manual"))
+  #+begin_src R :results graphics file :file quakes.png
+
   #+end_src
 
-  #+RESULTS:
-  [[file:../img/9_cyl_am3.png]]
+- Like the histogram, a boxplot shows important *global* (overall)
+  features of the value distribution:
+  + centrality (where is the midpoint of the distribution?)x
+  + spread (how far are the whiskers apart, how wide is the box?)
+  + skewness (where is the box relative to the whiskers?)
 
-- We don't want the legend to overlap with the bars: we use
-  the ~args.legend~ parameter to change the position:
-  #+begin_src R :results graphics file :file ../img/9_cyl_am4.png
-    barplot(cyl.freq.matrix,
-            las = 1,
-            main = "Car counts by transmission and cylinders",
-            xlab = "Transmission type",
-            ylab = "Number of cars",
-            names.arg = c("V4", "V6", "V8"),
-            legend.text = c("Auto", "Manual"),
-            args.legend = list(x="topleft"))
+- The boxplot does *not* show important *local* features, like
+  + modes (multiple significant peaks or maxima)
+  + valleys (local minima)
+
+- Outliers are displayed explicitly, computed as 1.5 times the
+  Inter-Quartile Range or =IQR=.
+
+- The ~range~ parameter in ~boxplot~ determines how far the whiskers
+  should extend from the box. ~range=0~ includes all values.
+  #+begin_src R :results graphics file :file ../img/9_boxplot1.png
+
   #+end_src
 
-  #+RESULTS:
-  [[file:../img/9_cyl_am4.png]]
+* Side-by-side boxplots
 
-- Turning it on its side changing the parameter ~horiz~ to ~TRUE~ (and
-  moving the legend to center ~right~):
-  #+begin_src R :results graphics file :file ../img/9_cyl_am5.png
-    barplot(cyl.freq.matrix,
-            las = 1,
-            main = "Car counts by transmission and cylinders",
-            xlab = "Transmission type",
-            ylab = "Number of cars",
-            names.arg = c("V4", "V6", "V8"),
-            legend.text = c("Auto", "Manual"),
-            args.legend = list(x="right"),
-            horiz = TRUE)
+- Boxplots are useful to compare data features by plotting them
+  side-by-side, e.g. for identifying how many monitoring stations
+  detected each event
+
+- We use ~cut~ to create three levels of stations for three boxes:
+  #+begin_src R
+
   #+end_src
 
-  #+RESULTS:
-  [[file:../img/9_cyl_am5.png]]
+- The factor ~stations~ breaks the observations in three groups
+  1) events detected by 50 stations or fewer ~(0,50]~
+  2) events detected by 51 to 100 stations ~(50,100]~
+  3) events detected by between 100 and 150 stations ~(100,150]~
 
-- Finally, let's look at the dodged version of this plot:
-  #+name: dodged
-  #+begin_src R :results graphics file :file ../img/9_cyl_am6.png
-    barplot(cyl.freq.matrix,
-            las = 1,
-            main = "Car counts by transmission and cylinders",
-            ylab = "Transmission type",
-            xlab = "Number of cars",
-            names.arg = c("V4", "V6", "V8"),
-            legend.text = c("Auto", "Manual"),
-            args.legend = list(x="right"),
-            horiz = TRUE,
-            beside = TRUE)
+- The boxplot compares the distributions of the magnitudes of the
+  events according to these three groups:
+  #+begin_src R :results graphics file :file 9_stations.png
+
   #+end_src
 
-  #+RESULTS: dodged
-  [[file:../img/9_cyl_am6.png]]
+- You can see that the higher the recorded magnitude, the more
+  stations detected the given seismic event.
 
-- Especially for stacked plots, it might be good to see the values
-  attached to the bars. There is no parameter to do this, we must use
-  ~text~: the ~labels~ inside the function use the ~numeric~ values and
-  convert them to ~character~ values for printing.
+* Scatterplots
 
-- For completeness: both final plots in a side-by-side plot array:
-  #+begin_src R :results graphics file :file ../img/9_cyl_am7.png
-    par(mfrow=c(1,2), pty='s')
-    barplot(cyl.freq.matrix,
-            las = 1,
-            xlab = "Transmission type",
-            ylab = "Number of cars",
-            names.arg = c("V4", "V6", "V8"),
-            legend.text = c("Auto", "Manual"),
-            args.legend = list(x="topleft",
-                               cex=0.9))
-    title("Stacked vertical barplot",
-          cex.main=0.9)
-    barplot(cyl.freq.matrix,
-            las = 1,
-            ylab = "Transmission type",
-            xlab = "Number of cars",
-            names.arg = c("V4", "V6", "V8"),
-            legend.text = c("Auto", "Manual"),
-            args.legend = list(x="right",
-                               cex=0.9),
-            horiz = TRUE,
-            beside = TRUE)
-    title("Stacked horizontal barplot",
-          cex.main=0.9)
+- Scatterplots are used to identify relationships between the observed
+  values of two different numeric-continuous variables x,y
+
+- The scatterplot is displayed as an x-y-coordinate plot but not every
+  x-y-plot shows relationships of interest - e.g. a plot of the
+  latitude vs. longitude in ~quakes~:
+  #+begin_src R :results graphics file :file noscatter.png
+
   #+end_src
 
-  #+RESULTS:
-  [[file:9_cyl_am7.png]]
+* Scatterplots of more than two variables
 
-* Barplots with ggplot2
+- The famous ~iris~ dataset, collected in the mid-1930s, contains petal
+  and sepal measurements for three species of perennial iris flowers,
+  /Iris setosa/, /Iris virginica/, and /Iris versicolor/ (Fisher, 1936).
 
-- The ggplot2 package is an alternative to base R plotting
+  [[https://github.com/birkenkrahe/ds1/blob/main/img/iris.png][See image for these flowers]].
 
-- It it based on the "grammar of graphics" methodology: customization
-  is layered on top of the raw data plot using the ~+~ operator
+- View the first few records of the first four variables only:
+  #+begin_src R
 
-- You can use ~ggplot~ to make this plot but the layers stay the same
-  #+attr_html: :width 400px
-  [[../img/7_gg.png]]
-
-- Unlike base R, ggplot2 requires ~data.frame~ format, and is more picky
-
-- The ([[https://ggplot2.tidyverse.org/reference/qplot.html][deprecated]]) function ~ggplot2::qplot~ is a shortcut that looks
-  like ~plot~: the code below produces a basic barplot from ~mtcars$cyl~
-
-  #+begin_src R :results graphics file :file ../img/7_qplot.png
-    library(ggplot2)
-    qplot(factor(mtcars$cyl), geom="bar")
   #+end_src
 
-  #+RESULTS:
-  [[file:../img/7_qplot.png]]
+- To plot every variable against every other, you can plot an array of
+  x-y-plots:
+  + Each column has the shown variable as x- and the others as y-axis
+  + Each row has the shown variable as y- and the others as x-axis
+  + E.g. the square (2,1) shows x = ~Sepal.Length~, y = all others
+  #+begin_src R :results graphics file :file iris.png
 
-- Here, the relevant "geometry" is ~"bar"~ and the ~numeric~ variable must
-  be supplied as a ~factor~ to allow treating it like a category
-
-- To get this plot with ~barplot~ in base R, you need the frequency
-  ~table~ function but you don't need to change the vector to ~factor~
-
-- To produce a ggplot2 version of the dodged barplot created earlier
-  in base R, you can use this code:
-  #+begin_src R :results graphics file :file ../img/7_ggplot.png
-    qplot(
-      factor(mtcars$cyl),
-      geom="blank",
-      fill=factor(mtcars$am),
-      xlab="Number of cylinders",
-      ylab="Number of cars",
-      main="Car counts by transmission and cylinders") +
-      geom_bar(position="dodge") +
-      scale_x_discrete(
-        labels=c("V4", "V6", "V8")) +
-      scale_y_continuous(
-        breaks=seq(0,12,2)) +
-      coord_flip() +
-      theme_bw() +
-      scale_fill_grey(
-        name="Trans",
-        labels=c("auto","manual"))
   #+end_src
 
-  #+RESULTS:
-  [[file:../img/7_ggplot.png]]
+- What can you say about the =Species= variable?
+  #+begin_quote
 
-- Direct contrast between ggplot2 and base R code: the default in
-  ggplot2 is color (you can [[https://ggplot2.tidyverse.org/reference/ggtheme.html][pick another theme]])
-  #+attr_html: :width 700px
-  [[../img/7_plots.png]]
+  #+end_quote
 
-- The default makes the code just as short as the base R solution:
-  #+begin_src R :results graphics file :file ../img/7_ggplot1.png
-    qplot(
-      factor(mtcars$cyl),
-      geom="blank",
-      fill=factor(mtcars$am),
-      xlab="Number of cylinders",
-      ylab="Number of cars",
-      main="Car counts by transmission and cylinders") +
-      geom_bar(position="dodge") +
-      coord_flip()
+  #+begin_src R
+
   #+end_src
 
-  #+RESULTS:
-  [[file:../img/7_ggplot1.png]]
+- The array is much easier to read when adding the iris species as a
+  sixth variable to the plot.
+  #+begin_src R :results graphics file :file 9_iris_col.png
+    
+  #+end_src
 
+- Homing in on one of the diagrams, e.g. ~Sepal.Width~ vs. ~Sepal.Length~:
+  #+begin_src R :results graphics file :file 9_iris1.png
+
+  #+end_src
+
+ - As an example for a fully customized plot with legend:
+  #+begin_src R :results graphics file :file ../img/9_iris_final.png
+    plot(
+      y=iris$Petal.Length, xlab="Petal length (cm)",
+      x=iris$Petal.Width, ylab="Petal width (cm)",
+      col=iris$Species,
+      pch=19)
+    legend("topleft",
+           legend=c("setosa", "virginica","versicolor"),
+           col=c("black","red","green"), pch=19)
+    title("Petal width vs. length for three species of iris")
+  #+end_src
+
+- This dataset is also one example for an [[https://shiny.posit.co/r/gallery/start-simple/kmeans-example/][R Shiny dashboard]] that we've
+  been discussing in the "data visualization" class.
+
+* 10 piccolo problems
+
+1) Create a histogram of the horsepower data of the 32 cars in the
+   ~mtcars~ data set. Run the code.
+   #+begin_src R :results output :session *R* :exports both :noweb yes
+
+   #+end_src
+2) Label the x-axis. Run the code.
+   #+begin_src R :results output :session *R* :exports both :noweb yes
+
+   #+end_src
+3) Label the y-axis. Run the code.
+   #+begin_src R :results output :session *R* :exports both :noweb yes
+
+   #+end_src
+4) Title the plot. Run the code.
+   #+begin_src R :results output :session *R* :exports both :noweb yes
+
+   #+end_src
+5) Print the binwidth.
+   #+begin_src R :results output :session *R* :exports both :noweb yes
+
+   #+end_src
+6) Plot the logarithm of hp to base 10.
+   #+begin_src R :results output :session *R* :exports both :noweb yes
+
+   #+end_src
+7) Plot only the car count for cars with a horsepower of greater or
+   equal ~sub = 220 hp~.
+   #+begin_src R :results output :session *R* :exports both :noweb yes
+
+   #+end_src
+8) Change the x-axis label so that it automatically shows ~sub~.
+   #+begin_src R :results output :session *R* :exports both :noweb yes
+
+   #+end_src
+9) Put the log10 plot and the original plot in one plot array (on top
+   of one another) - without any customization.
+   #+begin_src R :results output :session *R* :exports both :noweb yes
+
+   #+end_src
+10) Put the log10 plot and the original plot in one plot array (side by
+    side) - without any customization.
+    #+begin_src R :results output :session *R* :exports both :noweb yes
+
+    #+end_src
