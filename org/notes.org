@@ -4329,7 +4329,6 @@ Bar charts are generally easier to interpret and allow for better
 comparison of categories.
 #+end_quote
 
-
 *** IN PROGRESS R Lists
 #+attr_html: :width 500px
 [[../img/datastructures.png]]
@@ -4337,16 +4336,16 @@ comparison of categories.
 Download this file to practice and code along: [[https://tinyurl.com/lists-org][tinyurl.com/lists-org]]
 
 ** Week 14: EDA: numerical data & visualization [Nov 18]
-#+attr_html: :width 400px:
-[[../img/
+#+attr_html: :width 600px:
+[[../img/scots.png]]
 
 - [X] Next DataCamp lesson: Numerical summaries (stats)
 - [X] Last quiz (10) is online
 - [X] Presentation details to come
 - [X] 3rd sprint review feedback to come
 - [X] Last DataCamp course turned into BONUS lesson
-- [ ] R lists lab exercises (no upload, solutions as PDF)
-- [ ] Exit quiz for this course in last week of term
+- [X] R lists lab exercises (no upload, solutions as PDF)
+- [X] Exit quiz for this course in last week of term
 
 *** DONE R Lists
 #+attr_html: :width 500px
@@ -4374,12 +4373,23 @@ Q&A:
 4) How: Any way you like
 5) Why: Practice presenting data science results
 
+*** TODO DataCamp review: Numerical variables / Numerical summaries
 
-*** TODO DataCamp review: EDA for numerical data
+- The videos and exercises present what you've already seen using
+  =ggplot2= and =dplyr=, two packages from the =tidyverse= distribution.
 
+- What's your view of these DataCamp lessons on EDA with R?
 
 *** TODO A bit of plotting at the end: barplot, histogram, boxplot
+#+attr_html: :width 600px: 
+[[../img/barplots_tuscany.png]]
 
+- You've already seen barplots, histograms, scatterplots and boxplots.
+
+- Barplots are a prominent example in the EDA with R DataCamp lesson.
+
+- Their customization is particularly rewarding: the simultaneous
+  presence of continuous and discrete variables is interesting.
 
 ** Week 15: Final presentations [Dec 2]
 #+attr_html: :width 600px

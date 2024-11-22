@@ -39,6 +39,7 @@ Data visualization is important for EXPLORATION and for DOCUMENTATION:
 It's easy to miss *relevant details* in graphs, and it's easy to miss
 the *big picture* in tables.
 #+end_quote
+
 * What does visualization depend on?
 #+attr_html: :width 600px
 [[../img/9_viz.png]]
@@ -282,10 +283,10 @@ the *big picture* in tables.
    ~factor~ vectors.
    #+end_quote
 
-3) Save the file at https://tinyurl.com/spdnvxbr as a data frame using
+3) Save the file as a data frame using
    ~read.csv~. Look at the file to check if ~header~ should be ~TRUE~ or
    ~FALSE~, and set ~stringsAsFactors=TRUE~.
-
+p
    #+begin_src R :results silent
      df <- read.csv(file="https://tinyurl.com/spdnvxbr",
                     header=TRUE,
@@ -396,67 +397,6 @@ the *big picture* in tables.
 
     #+RESULTS:
     [[file:../img/9_sex_ann.png]]
-
-
-#+begin_ai
-Save a barplot in R as a file?
-
-[AI]: To save a barplot in R as a file, you can use the `ggsave`
-function from the `ggplot2` package. Here's an example:
-
-```R
-# Example data
-data <- data.frame(
-  category = c("A", "B", "C", "D"),
-  value = c(10, 5, 8, 12)
-)
-
-# Create barplot
-library(ggplot2)
-barplot <- ggplot(data, aes(x = category, y = value)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Barplot", x = "Category", y = "Value")
-
-# Save the barplot as a file
-ggsave("barplot.png", barplot, width = 6, height = 4, dpi = 300)
-```
-
-In this example, the barplot is saved as a PNG file named "barplot.png" in the current working directory. You can customize parameters like width, height, and dpi according to your needs.
-
-[ME]: and in base R
-
-[AI]: To save a barplot in base R as a file, you can use the `png`,
-`jpeg`, or `pdf` functions along with the `barplot` function. Here's
-an example:
-
-```R
-# Example data
-data <- c(10, 5, 8, 12)
-categories <- c("A", "B", "C", "D")
-
-# Create barplot
-barplot(data, names.arg = categories, main = "Barplot", xlab = "Category", ylab = "Value")
-
-# Save the barplot as a file (PNG)
-png("barplot.png", width = 6, height = 4, res = 300)
-barplot(data, names.arg = categories, main = "Barplot", xlab = "Category", ylab = "Value")
-dev.off()
-
-# Save the barplot as a file (JPEG)
-jpeg("barplot.jpeg", width = 6, height = 4, quality = 100)
-barplot(data, names.arg = categories, main = "Barplot", xlab = "Category", ylab = "Value")
-dev.off()
-
-# Save the barplot as a file (PDF)
-pdf("barplot.pdf", width = 6, height = 4)
-barplot(data, names.arg = categories, main = "Barplot", xlab = "Category", ylab = "Value")
-dev.off()
-```
-
-In this example, the barplot is saved using three different file formats: PNG, JPEG, and PDF. You can modify the file names, dimensions, and image quality as per your requirement. The `dev.off()` function is used to close the graphics device after saving the plot.
-
-[ME]: 
-#+end_ai
 
 * Building stacked/dodged barplots
 
@@ -1109,13 +1049,90 @@ In this example, the barplot is saved using three different file formats: PNG, J
 #+attr_html: :width 400px
 [[../img/penguins.jpg]]
 
-- Download and open in GNU Emacs: [[https://tinyurl.com/nhkykkxr][tinyurl.com/nhkykkxr]]
+** Problems
 
-- Work with a friend or with your neighbor in class
+1) Create a histogram of the horsepower data of the 32 cars in the
+   ~mtcars~ data set. Run the code.
+2) Label the x-axis. Run the code.
+3) Label the y-axis. Run the code.
+4) Title the plot. Run the code.
+5) Print the binwidth.
+6) Plot the logarithm of hp to base 10.
+7) Plot only the car count for cars with a horsepower of greater or
+   equal ~sub = 220 hp~.
+8) Change the x-axis label so that it automatically shows ~sub~.
 
-- Complete the problems in the file (we'll discuss at the end)
+** Solutions
 
-- Upload the result (for each participants) [[https://lyon.instructure.com/courses/568/assignments/3755][to Canvas (Practice 10)]]
+- Histogram with customization
+  #+begin_src R :results graphics file :file ./img/9_hphist.png
+    h <- hist(mtcars$hp, #1
+              main="Histogram of horsepower in mtcars", #2
+              xlab="Horsepower [hp]",     #3
+              ylab="Number of cars")   #4
+    h
+  #+end_src
+
+  #+RESULTS:
+  [[file:./img/9_hphist.png]]
+
+- Print the binwidth of the last plot
+  #+begin_src R
+    h$breaks[2]-h$breaks[1]  #5
+  #+end_src
+
+  #+RESULTS:
+  : [1] 50
+
+- Logarithmic transformation:
+  #+begin_src R :results graphics file :file ./img/9_hphist1.png
+    hp <- mtcars$hp
+    hist(log10(hp),  #6
+         main="Histogram of horsepower in mtcars",
+         xlab="Log(Horsepower) [hp]",
+         ylab="Number of cars")
+  #+end_src
+
+  #+RESULTS:
+  [[file:./img/9_hphist1.png]]
+
+- Horsepower greater or equal than 220 hp:
+  #+begin_src R :results graphics file :file ./img/9_hphist2.png
+    hp <- mtcars$hp
+    sub <- 220  # store cut off value
+    idx <- which(hp >= sub)
+    hpsub <- hp[idx]  # hp subset
+                                            #   hist(mtcars$hp[which(mtcars$hp>=220)]) full expression
+    hist(hpsub,  #7
+         main="Histogram of horsepower in mtcars",
+         xlab=paste("Horsepower >", sub,"[hp]"),   #8
+         ylab="Number of cars")
+  #+end_src
+
+  #+RESULTS:
+  [[file:./img/9_hphist2.png]]
+
+- Put the log10 plot and the original plot in one plot array (on top
+  of one another) - without any customization.
+  #+begin_src R :results graphics file :file ./img/9_hphist3.png
+    par(mfrow=c(2,1))
+    hist(hp)
+    hist(log10(hp))
+  #+end_src
+
+  #+RESULTS:
+  [[file:./img/9_hphist3.png]]
+
+- Put the log10 plot and the original plot in one plot array (side by
+  side) - without any customization.
+  #+begin_src R :results graphics file :file ./img/9_hphist4.png
+    par(mfrow=c(1,2))
+    hist(hp)
+    hist(log10(hp))
+  #+end_src
+
+  #+RESULTS:
+  [[file:./img/9_hphist4.png]]
 
 * Boxplots - global summary stats
 
