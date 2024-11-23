@@ -3921,7 +3921,7 @@ Download and open the code along file: [[https://tinyurl.com/df-codealong][tinyu
 Image: The largest painting in the Louvre: Wedding in Cana (Paolo
 Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
 
-*** DONE Data frame lab
+*** Data frame lab
 
 - Download and complete the file: [[https://tinyurl.com/dataframe-lab][tinyurl.com/dataframe-lab]]
 
@@ -3929,7 +3929,7 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
 
 - For DSC 205 (followup course) you will get entry exercises & quiz
 
-*** DONE Impromptu lecture: Client-Server Model and Data Science
+*** Impromptu lecture: Client-Server Model and Data Science
 #+attr_html: :width 700px:
 [[../img/client_server.png]]
 
@@ -4048,7 +4048,7 @@ Veronese, 1563) - hangs directly across Da Vinci's "Mona Lisa".
 - This lecture has reviewed key concepts and potential enhancements
   for the diagram to make it a more effective learning resource.
 
-*** DONE DataCamp review: Exploring categorical data (deep dive)
+*** DataCamp review: Exploring categorical data (deep dive)
 
 **** Is the =factor= data structure common in data sets?
 #+begin_quote
@@ -4329,13 +4329,13 @@ Bar charts are generally easier to interpret and allow for better
 comparison of categories.
 #+end_quote
 
-*** IN PROGRESS R Lists
+*** R Lists
 #+attr_html: :width 500px
 [[../img/datastructures.png]]
 
 Download this file to practice and code along: [[https://tinyurl.com/lists-org][tinyurl.com/lists-org]]
 
-** Week 14: EDA: numerical data & visualization [Nov 18]
+** DONE Week 14: EDA: numerical data & visualization [Nov 18]
 #+attr_html: :width 600px:
 [[../img/scots.png]]
 
@@ -4373,6 +4373,9 @@ Q&A:
 3) When: FIFO (2 presentations per session)
 4) How: Any way you like
 5) Why: Practice presenting data science results
+
+Must upload your materials/presentation/notebook or whatever you're
+going to use to your shared drive folder.
 
 *** TODO DataCamp review: Numerical variables / Numerical summaries
 
