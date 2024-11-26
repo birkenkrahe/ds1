@@ -4402,6 +4402,19 @@ going to use to your shared drive folder.
 #+attr_html: :width 600px
 [[../img/final_presentation.png]]
 
+
+- Please take 5 minutes to evaluate this course (in Canvas).
+
+- If you submitted any DataCamp assignments late, you need to let me
+  know via email or chat otherwise I won't know that you did (with
+  course title).
+
+- Are there any graduating seniors in this class? (Graduating *now*)
+
+- Presentation schedule
+  #+attr_html: :width 700px: 
+  [[../img/presentation_schedule_ds1_fall24.png]]
+
 ** Week 16: Final exam (optional) [Dec 13]
 
 According to the [[https://assets.speakcdn.com/assets/2433/fa24_final_exam_schedule.pdf][published exam schedule]], the final exam will take
