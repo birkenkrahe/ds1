@@ -1,0 +1,218 @@
+#+title: Introduction to Data Science (DSC 105) Syllabus
+#+author: Marcus Birkenkrahe
+#+startup: overview hideblocks indent
+#+subtitle: DSC105 Introduction to Data Science - Syllabus - Fall 2025
+* General Course Information
+#+attr_html: :width 400px:
+[[../img/poster.png]]
+- Course title: Introduction to data science
+- Course number and section: DSC 105.01
+- Meeting Times: Mon-Wed-Fri from 11:00-11:50 am
+- Meeting place: Lyon Building Computer Lab Room 104
+- Professor: Marcus Birkenkrahe
+- Professor's Office: Derby Science Building 210
+- Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
+- Office hours: [[https://calendar.app.google/39YLWRbCw5twD7iG9][by appointment]] MWF 4pm, Tue/Thu 3pm, Fri 4 pm
+- Textbook (optional): fasteR - Fast Lane to Learning R! by Norm
+  Matloff (GitHub). Book of R by T.D. Davies. Dive into Data Science
+  by Bradford Tuckfield, NoStarch 2023. Recommended: Data Science from
+  Scratch by Joel Grus (2e), O'Reilly 2019. Python Data Science
+  Handbook by Jake Vanderplas, O'Reilly 2019.
+
+* Objectives
+
+Data science is concerned with getting data to work for us, to give us
+its (presumed) hidden treasures. Data science has been called "the
+sexiest job of the 21st century". Even if you don't want to become a
+professonial data scientist, it's helpful to master the basic concepts
+if you want to succeed in today's data-driven business.
+
+* Target audience
+
+The course is for anyone who is interested in becoming more data
+literate in their own field of interest - be it languages, theatre,
+biology, psychology or exercise science - and growing their personal
+skill stack. Visualization of data-driven insights and improved
+productivity when working with data and media is a concern for any
+professional.
+
+* Student Learning Outcomes
+
+Students who complete "Introduction to data science" (DSC 105) will be
+able to:
+
+- Learn computer and data science principles by playing with data
+- Acquire basic programming skills using Python, R, SQL, and bash
+- Apply literate programming principles by working with Org-mode
+- Use infrastructure including command line, Jupyter notebooks, GitHub
+- Understand the relationship of humans, machines, and data
+- Develop their critical thinking skills
+- Learn how to effectively use AI coding assistants like Copilot, Code
+  Interpreter (ChatGPT)
+- Understand the impact of, and can code in R, Python, SQL, bash
+- Know how to effectively present assignment and project results
+
+Students, who complete DSC 105 will have fulfilled the prerequisites
+for DSC 205, Introduction to advanced data science, which focuses on
+advanced practices in data exploration, visualization, and integration
+with databases and other languages through R and Python packages and
+APIs.
+
+* Course requirements
+
+Formal prerequisites: Introduction to Programming (either CSC100 or
+CSC115 or CSC109, and MTH101 (College Algebra).
+
+Otherwise no prior knowledge required. Some knowledge of, and
+experience with computers and/or programming is useful but not
+critical. Curiosity is essential. You will gain data literacy skills
+by taking this course. The course will prepare you for further studies
+in computer and data science, or in other disciplines that use modern
+computing, i.e. every discipline, from accounting to zoology).
+
+* Grading
+
+| WHEN    | DESCRIPTION            | IMPACT |
+|---------+------------------------+--------|
+| Weekly  | DataCamp assignments   |    25% |
+| Monthly | Project sprint reviews |    25% |
+| Weekly  | Tests                  |    25% |
+| TBD     | Final exam (optional)  |    25% |
+
+- DataCamp is an online learning platform for data science
+- Sprint reviews are monthly group project progress reports
+- Tests are open-book multiple choice exams to be completed at home
+- The final exam is optional if you want to improve your grade
+
+* Rubric
+
+| Component                    | Weight | Excellent                                                                                            | Good                                                                     | Satisfactory                                                         | Needs Improvement                                                             | Unsatisfactory                                                              |
+|------------------------------+--------+------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+----------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------------|
+| Participation and Attendance |     0% | Consistently attends and actively participates in all classes.                                       | Attends most classes and participates in discussions.                    | Attends classes but participation is minimal.                        | Frequently absent and rarely participates.                                    | Rarely attends classes and does not participate.                            |
+| DataCamp assignments         |    25% | Completes all assignments on time with high accuracy (90-100%).                                      | Completes most assignments on time with good accuracy (80-89%).          | Completes assignments but with some inaccuracies or delays (70-79%). | Frequently late or incomplete assignments with several inaccuracies (60-69%). | Rarely completes assignments and shows minimal understanding (0-59%).       |
+| Project Sprint Reviews       |    25% | Consistently demonstrates significant progress, excellent teamwork, and high-quality work (90-100%). | Shows good progress, effective teamwork, and good-quality work (80-89%). | Adequate progress, teamwork, and satisfactory work quality (70-79%). | Minimal progress, poor teamwork, and below-average work quality (60-69%).     | Little to no progress, ineffective teamwork, and poor-quality work (0-59%). |
+| Tests                        |    25% | Demonstrates thorough understanding and application of concepts (90-100%).                           | Shows good understanding with minor errors (80-89%).                     | Displays basic understanding with some errors (70-79%).              | Limited understanding with several errors (60-69%).                           | Minimal understanding and many errors (0-59%).                              |
+| Final Exam (Optional)        |    25% | Demonstrates comprehensive understanding and application of course concepts (90-100%).               | Shows strong understanding with minor errors (80-89%).                   | Displays adequate understanding with some errors (70-79%).           | Limited understanding with several errors (60-69%).                           | Minimal understanding and many errors (0-59%).                              |
+  
+* Learning management system
+
+- We use Lyon's Canvas installation for this course.
+- The home page contains: assignments, grades, pages, people,
+  syllabus, quizzes, Google Drive, Course evaluation and Zoom.
+- The Zoom page includes cloud recordings of all past sessions.
+- Recorded sessions will be deleted after the last class.
+
+* DataCamp
+
+- The course includes a free subscription to the DataCamp classroom at
+  [[https://datacamp.com/][datacamp.com]] for further study, and the opportunity to earn
+  certificates. DataCamp is a popular data science online learning
+  platform.
+
+- The [[https://datacamp.com/datalab][DataLab workspace]] that comes with the DataCamp subscription will
+  be an occasional stomping to experiment with either Python or R.
+
+* GitHub
+
+All course materials are available in a public GitHub repository
+([[https://github.com/birkenkrahe/ds1][github.com/birkenkrahe/ds1]]). Registration for students includes a
+free subscription to GitHub Codespaces with the AI coding assistant
+Copilot (you need to provide proof of student status yourself). GitHub
+is the worldwide largest online platform for software development.
+
+* Lyon College Standard Policies
+
+Standard Lyon College Policies are incorporated into this syllabus and
+can be found at the following link:
+http://www.lyon.edu/standard-course-policies.
+
+* Dates and class schedule
+
+See also: [[https://catalog.lyon.edu/202425-academic-calendar][2024-25 Academic Calendar]]
+
+- We will cover 15 DataCamp lessons, and 4 project sprint reviews.
+- A whole DataCamp course carries a certificate that you can add to
+  your resume.
+- There will be short weekly multiple choice tests, which form the
+  basis of the (optional) final exam.
+
+|------+---------------------------------------------+-------------------|
+| Week | DataCamp assignments                        | Project           |
+|------+---------------------------------------------+-------------------|
+|    0 | [[https://app.datacamp.com/learn/courses/understanding-data-science][Introduction to data science]]                |                   |
+|------+---------------------------------------------+-------------------|
+|    1 | Data Collection and Storage                 |                   |
+|------+---------------------------------------------+-------------------|
+|    2 | Preparation, Exploration, and Visualization |                   |
+|------+---------------------------------------------+-------------------|
+|    3 | Experimentation and Prediction              | 1st sprint review |
+|------+---------------------------------------------+-------------------|
+|    4 | [[https://app.datacamp.com/learn/courses/free-introduction-to-r][Introduction to R: Basics]]                   |                   |
+|------+---------------------------------------------+-------------------|
+|    5 | Introduction to R: Vectors                  |                   |
+|------+---------------------------------------------+-------------------|
+|    6 | Introduction to R: Matrices                 |                   |
+|------+---------------------------------------------+-------------------|
+|    7 | Introduction to R: Factors                  | 2nd sprint review |
+|------+---------------------------------------------+-------------------|
+|    8 | Introduction to R: Data frames              |                   |
+|------+---------------------------------------------+-------------------|
+|    9 | Introduction to R: Lists                    |                   |
+|------+---------------------------------------------+-------------------|
+|   10 | [[https://app.datacamp.com/learn/courses/data-manipulation-with-datatable-in-r][Introduction to data.table]]                  |                   |
+|------+---------------------------------------------+-------------------|
+|   11 | [[https://app.datacamp.com/learn/courses/exploratory-data-analysis-in-r][EDA in R: Categorical data]]                  | 3rd sprint review |
+|------+---------------------------------------------+-------------------|
+|   12 | EDA in R: Numerical data                    |                   |
+|------+---------------------------------------------+-------------------|
+|   13 | EDA in R: Numerical Summaries               |                   |
+|------+---------------------------------------------+-------------------|
+|   14 | EDA in R: Case study                        |                   |
+|------+---------------------------------------------+-------------------|
+|   15 | [[https://app.datacamp.com/learn/courses/python-for-r-users][Python for R Users: The Basics]]              | 4th sprint review |
+|------+---------------------------------------------+-------------------|
+
+* A note on using AI to write code for you or debug your code
+
+[[https://github.com/birkenkrahe/org/blob/master/fall24/UsingAItoCode.pdf][See full PDF on GitHub.]]
+
+*Short summary:* For students, using AI is a waste of time at best, and
+a crime against your ability to learn at worst. Learning never comes
+without pain and (temporary) desperation. AI is like a pill but one
+that only works some of the time, and you'll never know when. Instead:
+join Lyon's Programming Student Club and experience the pain of not
+knowing first hand every week!
+
+Will you be punished for using AI in my class?*
+
+Not directly because nobody can tell if you used AI or not but
+indirectly by turning in suboptimal results, by learning less, and
+by having less time for other, more productive activities.
+
+
+*Are there any data on this?*
+
+Not much on coding as such but a recent (15 July), substantive, long
+(59 p) paper titled "Generative AI Can Harm Learning"), based on a
+very carefully conducted field experiment with a large (1000) sample
+of high school students concluded: "Our results suggest that students
+attempt to use [AI] as a "crutch" during practice problem sessions,
+and when successful, perform worse on their own. Thus, to maintain
+long-term productivity, we must be cautious when deploying generative
+AI to ensure humans continue to learn critical skills."  ([[https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486&s=03][Bastani et
+al, 2024]]).
+
+Here are two recent accounts from coders: [[https://erikschluntz.com/software/2024/07/30/code-with-ai.html][Schluntz]] / [[https://nicholas.carlini.com/writing/2024/how-i-use-ai.html][Carlini]]
+
+*References*
+
+Bastani, Hamsa and Bastani, Osbert and Sungu, Alp and Ge, Haosen and
+Kabakcı, Özge and Mariman, Rei, Generative AI Can Harm Learning
+(July 15, 2024). [[https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4895486&s=03#][Available at ssrn.com]].
+
+Carlini, How I Use "AI" (August 1, 2024). [[https://nicholas.carlini.com/writing/2024/how-i-use-ai.html][Available at carlini.com]].
+
+Schluntz, Replacing my Right Hand with AI (July 30, 2024). [[https://erikschluntz.com/software/2024/07/30/code-with-ai.html][Available
+at erikschluntz.com]].
+
+
