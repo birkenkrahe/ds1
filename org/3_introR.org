@@ -88,6 +88,10 @@ interest in COVID-19 data analysis.
 
 #+end_notes
 
+* Why C/C++
+
+https://benjdd.com/languages/
+
 * Matloff's 10 reasons
 
 #+name: fig:matloff
