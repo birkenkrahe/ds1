@@ -17,10 +17,6 @@ Find out what ~islands~ contains and what its structure is. Take a look
 at ~example(islands)~, too. Submit the completed file in Canvas for
 bonus points.
 
-#+begin_src R
-
-#+end_src
-
 1) How many elements does the vector ~islands~ have?
    #+begin_src R
 
