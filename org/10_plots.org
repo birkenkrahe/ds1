@@ -905,6 +905,7 @@ p
   :  $ xname   : chr "Nile"
   :  $ equidist: logi TRUE
   :  - attr(*, "class")= chr "histogram"
+  : [1] 100
 
 - [ ] Look at the ~help~ for ~hist~, then change the binwidth to ~30~.
   #+begin_src R :results graphics file :file ../img/9_nile1.png
